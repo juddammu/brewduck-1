@@ -155,8 +155,16 @@
         <!-- END MINI-PROFILE -->
         <!-- BEGIN SIDEBAR MENU -->
         <p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
-        <ul>
-            <li class=""> <a href="/hop/"> <i class="fa fa-th"></i> <span class="title">홉 데이터베이스</span> <span class="label label-important pull-right ">HOT</span></a> </li>
+
+            <ul class="sub-menu">
+                <li > <a href="/style"> 스타일 (BJCP STYLE)</a> </li>
+                <li class="active"> <a href="/hop ">홉 (HOP) <span class=" label label-info pull-right m-r-30">HOT</span></a></li>
+                <li > <a href="/fermentable"> 발효 (Fermentable)</a> </li>
+                <li > <a href="/yeast"> 효모 (Yeas) </a> </li>
+                <li > <a href="/misc"> 첨가물 (Misc) </a> </li>
+            </ul>
+
+            <!--
             <li class="hidden-lg hidden-md hidden-xs" id="more-widgets" > <a href="javascript:;"> <i class="fa fa-plus"></i></a>
                 <ul class="sub-menu">
                     <li class="side-bar-widgets">
@@ -188,8 +196,10 @@
                     </li>
                 </ul>
             </li>
+            -->
         </ul>
         <div class="side-bar-widgets">
+            <!--
             <p class="menu-title">양조 스케줄 <span class="pull-right"><a href="#" class="create-folder"> <i class="fa fa-plus"></i></a></span></p>
             <ul class="folders" >
                 <li><a href="#">
@@ -215,6 +225,7 @@
                     <p>숙성된지 4일이 지났습니다.</p>
                 </div>
             </div>
+            -->
         </div>
         <div class="clearfix"></div>
         <!-- END SIDEBAR MENU -->
