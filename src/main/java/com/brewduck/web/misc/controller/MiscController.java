@@ -38,16 +38,16 @@ public class MiscController {
 
     /**
      * <pre>
-     * 맥주 홉 메인
+     * 맥주 기타 재료 메인
      * </pre>
      *
      * @param model Model
-     * @return 맥주 홉 메인
+     * @return 맥주 기타 재료 메인
      */
 
-    @RequestMapping(value =  {"","/"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String main(Model model) {
-        logger.info("misc index");
+        logger.info("Misc index");
 
         Account account = AuthenticationUtils.getUser();
 
@@ -58,22 +58,23 @@ public class MiscController {
 
     /**
      * <pre>
-     * 맥주 홉 상세 조회.
+     * 맥주 기타 재료 상세 조회.
      * </pre>
      *
      * @param model Model
-     * @return 맥주 홉 상세.
+     * @return 맥주 기타 재료 상세.
      */
-    @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
+    @RequestMapping(value="/detail/{seq}", method=RequestMethod.GET)
     public String detail(Model model, @PathVariable("seq") String seq) {
 
         logger.info("Misc seq : {}", seq);
 
         Misc misc = new Misc();
+        misc.setSeq(seq);
         //misc.setName(name);
        //misc.setSeq(seq);
 
-        // 맥주 홉 상세 조회
+        // 맥주 기타 재료 상세 조회
         Misc miscDetail = miscService.selectMiscDetail(misc);
 
         model.addAttribute("MiscDetail", miscDetail);
@@ -87,19 +88,20 @@ public class MiscController {
      * </pre>
      *
      * @param model Model
-     * @return 맥주 홉 목록
+     * @return 맥주 기타 재료 목록
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Misc> MiscList(Model model, Misc paramMisc) {
         logger.info("Misc List searching.........");
         Misc misc = new Misc();
 
-        // 맥주 홉 목록 조회
+        // 맥주 기타 재료 목록 조회
         List<Misc> list = miscService.selectMiscList(paramMisc);
 
         //logger.info(list.get(0).getTitleInUrl());
         //List<Misc> list = null;
         //logger.info("Misc List Size : {}", list.size());
+        logger.info("Misc List Size : {}", list.size());
         model.addAttribute("list", list);
 
         return list;

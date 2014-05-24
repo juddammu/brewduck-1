@@ -52,6 +52,8 @@ public class Misc implements Serializable {
     private Boolean updateFlag;
     // 삭제 성공 여부
     private Boolean deleteFlag;
+    // 기타 재료 순번
+    private String seq;
 
 
     /**
@@ -399,5 +401,13 @@ public class Misc implements Serializable {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    public String getSeq() {
+        return seq;
+    }
+
+    public void setSeq(String seq) {
+        this.seq = seq;
     }
 }

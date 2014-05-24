@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * <pre>
- * 맥주 스타일 Service 인터페이스.
+ * 맥주 기타 재료 Service 인터페이스.
  * </pre>
  *
  * @author jaeger
@@ -17,52 +17,52 @@ public interface MiscService {
 
     /**
      * <pre>
-     * 맥주 스타일 목록 조회.
+     * 맥주 기타 재료 목록 조회.
      * </pre>
      *
-     * @param style 맥주 스타일
-     * @return 맥주 스타일 목록
+     * @param misc 맥주 기타 재료
+     * @return 맥주 기타 재료 목록
      */
-    public List<Misc> selectMiscList(Misc style);
+    public List<Misc> selectMiscList(Misc misc);
 
     /**
      * <pre>
-     * 맥주 스타일 상세 조회.
+     * 맥주 기타 재료 상세 조회.
      * </pre>
      *
-     * @param style 맥주 스타일
-     * @return 맥주 스타일 내용
+     * @param misc 맥주 기타 재료
+     * @return 맥주 기타 재료 내용
      */
-    public Misc selectMiscDetail(Misc style);
+    public Misc selectMiscDetail(Misc misc);
 
     /**
      * <pre>
-     * 맥주 스타일 저장.
+     * 맥주 기타 재료 저장.
      * </pre>
      *
-     * @param style 맥주 스타일
+     * @param misc 맥주 기타 재료
      * @return 저장 성공 여부
      */
-    public Boolean insertMisc(Misc style);
+    public Boolean insertMisc(Misc misc);
 
     /**
      * <pre>
-     * 맥주 스타일 수정.
+     * 맥주 기타 재료 수정.
      * </pre>
      *
-     * @param style 맥주 스타일
+     * @param misc 맥주 기타 재료
      * @return 수정 성공 여부
      */
-    public Boolean updateMisc(Misc style);
+    public Boolean updateMisc(Misc misc);
 
     /**
      * <pre>
-     * 맥주 스타일 삭제.
+     * 맥주 기타 재료 삭제.
      * </pre>
      *
-     * @param style 맥주 스타일
+     * @param misc 맥주 기타 재료
      * @return 삭제 성공 여부
      */
-    public Boolean deleteMisc(Misc style);
+    public Boolean deleteMisc(Misc misc);
 
 }

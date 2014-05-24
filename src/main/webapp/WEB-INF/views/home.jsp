@@ -158,10 +158,10 @@
 
             <ul class="sub-menu">
                 <li > <a href="/style"> 스타일 (BJCP STYLE)</a> </li>
-                <li class="active"> <a href="/hop ">홉 (HOP) <span class=" label label-info pull-right m-r-30">HOT</span></a></li>
-                <li > <a href="/fermentable"> 발효 (Fermentable)</a> </li>
-                <li > <a href="/yeast"> 효모 (Yeas) </a> </li>
-                <li > <a href="/misc"> 첨가물 (Misc) </a> </li>
+                <li class="active"> <a href="/hop/">홉 (HOP) <span class=" label label-info pull-right m-r-30">HOT</span></a></li>
+                <li > <a href="/fermentable/"> 발효 (Fermentable)</a> </li>
+                <li > <a href="/yeast/"> 효모 (Yeas) </a> </li>
+                <li > <a href="/misc/"> 첨가물 (Misc) </a> </li>
             </ul>
 
             <!--
