@@ -14,6 +14,10 @@ import java.util.Date;
 public class Misc implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    private String titleInUrl;
+
+    // 기타 재료 순번
+    private Integer seq;
     // 기타 재료 영문명
     private String name;
     // 기타 재료 한글명
@@ -52,9 +56,6 @@ public class Misc implements Serializable {
     private Boolean updateFlag;
     // 삭제 성공 여부
     private Boolean deleteFlag;
-    // 기타 재료 순번
-    private String seq;
-
     //기타 재료 타입 향신료 카운트
     public String spiceCnt;
     //기타 재료 타입 향신료 이름
@@ -429,11 +430,11 @@ public class Misc implements Serializable {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 
-    public String getSeq() {
+    public Integer getSeq() {
         return seq;
     }
 
-    public void setSeq(String seq) {
+    public void setSeq(Integer seq) {
         this.seq = seq;
     }
 
@@ -539,5 +540,17 @@ public class Misc implements Serializable {
 
     public void setTypeKorean(String typeKorean) {
         this.typeKorean = typeKorean;
+    }
+
+    public String getTitleInUrl() {
+        return titleInUrl;
+    }
+
+    public void setTitleInUrl(String titleInUrl) {
+
+        titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9\\-\\s\\.]", "");
+        titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
+
+        this.titleInUrl = titleInUrl;
     }
 }

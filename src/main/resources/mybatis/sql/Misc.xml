@@ -5,7 +5,7 @@
     <sql id="Misc.selectMisc">
         SELECT
                A.name             name
-              ,A.name             titleUrl
+              ,A.name             titleInUrl
               ,A.seq              seq
               ,A.korean_name      koreanName
               ,A.version          version
