@@ -58,6 +58,28 @@ public class MiscController {
 
     /**
      * <pre>
+     * 맥주 기타 재료 타입 별 갯수 조회.
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 기타 재료 타입 별 갯수.
+     */
+
+    @RequestMapping(value = "/countMiscType", method = RequestMethod.GET)
+    public Misc countMiscType(Model model) {
+
+        // 맥주 발효재료 국가 별 갯수 조회.
+        Misc countMiscType = miscService.countMiscType();
+
+        // model.addAttribute("Hop", Hop);
+        // return "/Hop/HopView";
+
+        return countMiscType;
+    }
+
+
+    /**
+     * <pre>
      * 맥주 기타 재료 상세 조회.
      * </pre>
      *

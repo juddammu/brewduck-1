@@ -55,6 +55,32 @@ public class Misc implements Serializable {
     // 기타 재료 순번
     private String seq;
 
+    //기타 재료 타입 향신료 카운트
+    public String spiceCnt;
+    //기타 재료 타입 향신료 이름
+    public String spiceCntName;
+    //기타 재료 타입 풍미 카운트
+    public String flavorCnt;
+    //기타 재료 타입 풍미 이름
+    public String flavorCntName;
+    //기타 재료 타입 첨가물 카운트
+    public String waterAgentCnt;
+    //기타 재료 타입 첨가물 이름
+    public String waterAgentCntName;
+    //기타 재료 타입 청정제 카운트
+    public String finingCnt;
+    //기타 재료 타입 청정제 이름
+    public String finingCntName;
+    //기타 재료 타입 허브 카운트
+    public String herbCnt;
+    //기타 재료 타입 허브 이름
+    public String herbCntName;
+    //기타 재료 타입 기타 카운트
+    public String otherCnt;
+    //기타 재료 타입 기타 이름
+    public String otherCntName;
+    //기타 재료 타입 한글 타입
+    public String typeKorean;
 
     /**
      * 기타 재료 영문명
@@ -409,5 +435,109 @@ public class Misc implements Serializable {
 
     public void setSeq(String seq) {
         this.seq = seq;
+    }
+
+    public String getSpiceCnt() {
+        return spiceCnt;
+    }
+
+    public void setSpiceCnt(String spiceCnt) {
+        this.spiceCnt = spiceCnt;
+    }
+
+    public String getSpiceCntName() {
+        return spiceCntName;
+    }
+
+    public void setSpiceCntName(String spiceCntName) {
+        this.spiceCntName = spiceCntName;
+    }
+
+    public String getFlavorCnt() {
+        return flavorCnt;
+    }
+
+    public void setFlavorCnt(String flavorCnt) {
+        this.flavorCnt = flavorCnt;
+    }
+
+    public String getFlavorCntName() {
+        return flavorCntName;
+    }
+
+    public void setFlavorCntName(String flavorCntName) {
+        this.flavorCntName = flavorCntName;
+    }
+
+    public String getWaterAgentCnt() {
+        return waterAgentCnt;
+    }
+
+    public void setWaterAgentCnt(String waterAgentCnt) {
+        this.waterAgentCnt = waterAgentCnt;
+    }
+
+    public String getWaterAgentCntName() {
+        return waterAgentCntName;
+    }
+
+    public void setWaterAgentCntName(String waterAgentCntName) {
+        this.waterAgentCntName = waterAgentCntName;
+    }
+
+    public String getFiningCnt() {
+        return finingCnt;
+    }
+
+    public void setFiningCnt(String finingCnt) {
+        this.finingCnt = finingCnt;
+    }
+
+    public String getFiningCntName() {
+        return finingCntName;
+    }
+
+    public void setFiningCntName(String finingCntName) {
+        this.finingCntName = finingCntName;
+    }
+
+    public String getHerbCnt() {
+        return herbCnt;
+    }
+
+    public void setHerbCnt(String herbCnt) {
+        this.herbCnt = herbCnt;
+    }
+
+    public String getHerbCntName() {
+        return herbCntName;
+    }
+
+    public void setHerbCntName(String herbCntName) {
+        this.herbCntName = herbCntName;
+    }
+
+    public String getOtherCnt() {
+        return otherCnt;
+    }
+
+    public void setOtherCnt(String otherCnt) {
+        this.otherCnt = otherCnt;
+    }
+
+    public String getOtherCntName() {
+        return otherCntName;
+    }
+
+    public void setOtherCntName(String otherCntName) {
+        this.otherCntName = otherCntName;
+    }
+
+    public String getTypeKorean() {
+        return typeKorean;
+    }
+
+    public void setTypeKorean(String typeKorean) {
+        this.typeKorean = typeKorean;
     }
 }

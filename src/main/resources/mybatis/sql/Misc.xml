@@ -85,42 +85,36 @@
 
     <select id="Misc.countMiscType" resultType="Misc">
          SELECT
-        (SELECT COUNT(*) FROM MISC WHERE TYPE = '1') spiceCnt,
+        (SELECT COUNT(*) FROM MISC WHERE TYPE = '2') spiceCnt,
         (SELECT B.attribute1desc
            FROM common_code B
           WHERE common_set = 'misc_type'
-            AND B.common_code = '1') as spiceCntName,
-        (SELECT COUNT(*) FROM MISC WHERE TYPE = '2') flavorCnt,
+            AND B.common_code = '2') as spiceCntName,
+        (SELECT COUNT(*) FROM MISC WHERE TYPE = '3') flavorCnt,
         (SELECT B.attribute1desc
            FROM common_code B
           WHERE common_set = 'misc_type'
-            AND B.common_code = 'DE') as flavorCntName,
-        (SELECT COUNT(*) FROM MISC WHERE TYPE = '3') ukCnt,
+            AND B.common_code = '3') as flavorCntName,
+        (SELECT COUNT(*) FROM MISC WHERE TYPE = '4') waterAgentCnt,
         (SELECT B.attribute1desc
            FROM common_code B
           WHERE common_set = 'misc_type'
-            AND B.common_code = 'UK') as ukCntName,
-        (SELECT COUNT(*) FROM MISC WHERE TYPE = '4') beCnt,
+            AND B.common_code = '4') as waterAgentCntName,
+        (SELECT COUNT(*) FROM MISC WHERE TYPE = '5') finingCnt,
         (SELECT B.attribute1desc
            FROM common_code B
           WHERE common_set = 'misc_type'
-            AND B.common_code = 'BE') as beCntName,
-        (SELECT COUNT(*) FROM MISC WHERE TYPE = '5') caCnt,
+            AND B.common_code = '5') as finingCntName,
+        (SELECT COUNT(*) FROM MISC WHERE TYPE = '6') herbCnt,
         (SELECT B.attribute1desc
            FROM common_code B
           WHERE common_set = 'misc_type'
-            AND B.common_code = 'CA') as caCntName,
-        (SELECT COUNT(*) FROM MISC WHERE TYPE = '6') caCnt,
+            AND B.common_code = '6') as herbCntName,
+        (SELECT COUNT(*) FROM MISC WHERE TYPE = '1') otherCnt,
         (SELECT B.attribute1desc
            FROM common_code B
           WHERE common_set = 'misc_type'
-            AND B.common_code = 'CA') as caCntName,
-        (SELECT COUNT(*) FROM MISC WHERE TYPE != '1' AND ORIGIN != '2' AND ORIGIN != '3' AND ORIGIN != '4' AND ORIGIN != '5') etcCnt,
-        (SELECT B.attribute1desc
-           FROM common_code B
-          WHERE common_set = 'misc_type'
-            AND B.common_code = 'ETC') as etcCntName
-        FROM DUAL
+            AND B.common_code = '1') as otherCntName
     </select>
 
 

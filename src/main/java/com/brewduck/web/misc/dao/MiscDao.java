@@ -1,5 +1,6 @@
 package com.brewduck.web.misc.dao;
 
+import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.domain.Misc;
 
 import java.util.List;
@@ -34,6 +35,15 @@ public interface MiscDao {
      * @return 맥주 스타일
      */
     public Misc selectMiscDetail(Misc misc);
+
+    /**
+     * <pre>
+     * 맥주 맥아 국가 별 갯수 조회.
+     * </pre>
+     *
+     * @return 맥주 맥아
+     */
+    public Misc countMiscType();
 
     /**
      * <pre>

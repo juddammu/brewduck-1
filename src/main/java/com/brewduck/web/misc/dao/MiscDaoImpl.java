@@ -40,6 +40,11 @@ public class MiscDaoImpl implements MiscDao {
     }
 
     @Override
+    public Misc countMiscType() {
+        return sqlSession.selectOne("Misc.countMiscType");
+    }
+
+    @Override
     public Integer insertMisc(Misc misc) {
         return sqlSession.update("Misc.insertMisc", misc);
     }

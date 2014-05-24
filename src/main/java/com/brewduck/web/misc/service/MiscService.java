@@ -27,6 +27,15 @@ public interface MiscService {
 
     /**
      * <pre>
+     * 맥주 기타 재료 타입 별갯수 조회.
+     * </pre>
+     *
+     * @return 맥주 맥타 재료 타입
+     */
+    public Misc countMiscType();
+
+    /**
+     * <pre>
      * 맥주 기타 재료 상세 조회.
      * </pre>
      *
