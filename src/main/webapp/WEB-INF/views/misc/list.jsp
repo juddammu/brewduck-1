@@ -14,7 +14,7 @@
         <td  class="clickable v-align-middle"> ${list.koreanName}</td>
         <td  class="clickable v-align-middle"> ${list.name}</td>
         <td  class="clickable v-align-middle"> ${list.typeKorean}</td>
-        <td  class="clickable v-align-middle"> ${list.use_for}</td>
+        <td  class="clickable v-align-middle"> ${list.useFor}</td>
     </tr>
 </c:forEach>
 

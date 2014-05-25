@@ -108,7 +108,7 @@ public class MiscController {
      * @param model Model
      * @return 맥주 기타 재료 상세.
      */
-    @RequestMapping(value="{seq}", method=RequestMethod.GET)
+    @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
     public String detail(Model model, @PathVariable("seq") Integer seq) {
 
         logger.info("Misc seq : {}", seq);

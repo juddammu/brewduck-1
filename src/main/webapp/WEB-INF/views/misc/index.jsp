@@ -13,8 +13,7 @@
 <div class="grid simple ">
 <div class="grid-title">
     <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
-        <input name="type" type ="text" id="type" type="text"  class="form-control" value=""> <%--타입별--%>
-        <%--<input name="aroma" type ="hidden" id="aroma" type="text"  class="form-control" value=""> &lt;%&ndash;전체/ 향 /쓴맛&ndash;%&gt;--%>
+        <input name="type" type ="hidden" id="type" type="text"  class="form-control" value=""> <%--타입별--%>
 
         <div class="row column-seperation">
             <div class="col-md-6">
@@ -31,12 +30,12 @@
                 <div class="row form-row">
                     <br>
                     <div class="col-md-12">
-                        <button id="spiceButton" type="button" class="btn btn-white btn-xs btn-mini" value="1"> </button>
-                        <button id="flavorButton" type="button" class="btn btn-white btn-xs btn-mini" value="2"> </button>
-                        <button id="waterAgentButton" type="button" class="btn btn-white btn-xs btn-mini" value="3"> </button>
-                        <button id="finingButton" type="button" class="btn btn-white btn-xs btn-mini" value="4"> </button>
-                        <button id="herbButton" type="button" class="btn btn-white btn-xs btn-mini" value="5"> </button>
-                        <button id="otherButton" type="button" class="btn btn-white btn-xs btn-mini" value="6"> </button>
+                        <button id="spiceButton" type="button" class="btn btn-white btn-xs btn-mini" value="2"> </button>
+                        <button id="flavorButton" type="button" class="btn btn-white btn-xs btn-mini" value="3"> </button>
+                        <button id="waterAgentButton" type="button" class="btn btn-white btn-xs btn-mini" value="4"> </button>
+                        <button id="finingButton" type="button" class="btn btn-white btn-xs btn-mini" value="5"> </button>
+                        <button id="herbButton" type="button" class="btn btn-white btn-xs btn-mini" value="6"> </button>
+                        <button id="otherButton" type="button" class="btn btn-white btn-xs btn-mini" value="1"> </button>
                     </div>
                 </div>
             </div>

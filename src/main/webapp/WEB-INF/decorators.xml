@@ -33,7 +33,7 @@
         <pattern>/fermentable/</pattern>
         <pattern>/fermentable/*/*</pattern>
         <pattern>/misc/</pattern>
-        <pattern>/misc/detail/*</pattern>
+        <pattern>/misc/*/*</pattern>
     </decorator>
 
     <decorator name="nonlayout-content" page="nonlayout-content.jsp">

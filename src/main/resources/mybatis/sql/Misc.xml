@@ -17,7 +17,10 @@
               ,A.time             time
               ,A.amount           amount
               ,A.amount_is_weight amountIsWeight
-              ,A.use_for          useFor
+              ,(select B.attribute1desc
+                  from common_code B
+                 where common_set = 'misc_use_for'
+                   and A.use_for = B.common_code) as useFor
               ,A.notes            notes
               ,A.insert_id        insertId
               ,A.insert_date      insertDate
@@ -75,6 +78,9 @@
         <!-- 맥주 기타 재료 상세 조회 -->
         <include refid="Misc.selectMisc" />
         WHERE delete_id IS NULL
+        <if test="seq != null">
+            AND seq = #{seq}
+        </if>
         <if test="name != null">
             AND name = #{name}
         </if>
