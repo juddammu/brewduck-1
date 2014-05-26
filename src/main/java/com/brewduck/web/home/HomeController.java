@@ -53,9 +53,11 @@ public class HomeController {
                        HttpServletRequest request) {
         // Account account = AuthenticationUtils.getUser();
         // model.addAttribute("account", account);
-        List<Hop> list = hopService.selectRandomHop();
+        Hop hop = hopService.selectRandomHop();
 
-        model.addAttribute("list", list);
+        List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
+        model.addAttribute("hop", hop);
+        model.addAttribute("hopAromaList", hopAromaList);
 
         return "home";
         //return "blank";

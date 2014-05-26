@@ -66,8 +66,8 @@ public class HopDaoImpl implements HopDao {
     }
 
     @Override
-    public List<Hop> selectRandomHop() {
-        return sqlSession.selectList("Hop.selectRandomHop");
+    public Hop selectRandomHop() {
+        return sqlSession.selectOne("Hop.selectRandomHop");
     }
 
     @Override

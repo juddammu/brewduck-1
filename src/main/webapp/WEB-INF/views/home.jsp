@@ -155,14 +155,16 @@
         <!-- END MINI-PROFILE -->
         <!-- BEGIN SIDEBAR MENU -->
         <p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
-
-            <ul class="sub-menu">
-                <li > <a href="/style"> 스타일 (BJCP STYLE)</a> </li>
-                <li class="active"> <a href="/hop/">홉 (HOP) <span class=" label label-info pull-right m-r-30">HOT</span></a></li>
-                <li > <a href="/fermentable/"> 발효 (Fermentable)</a> </li>
-                <li > <a href="/yeast/"> 효모 (Yeas) </a> </li>
-                <li > <a href="/misc/"> 첨가물 (Misc) </a> </li>
-            </ul>
+        <ul>
+            <li class="start"> <a href="index.html"> <i class="fa fa-th"></i> <span class="title">데이터 베이스</span> <span class="selected"></span> <span class="arrow open"></span> </a>
+                <ul class="sub-menu">
+                    <li > <a href="/style"> 스타일 (BJCP STYLE)</a> </li>
+                    <li class="active"> <a href="/hop/">홉 (HOP) <span class=" label label-info pull-right m-r-30">HOT</span></a></li>
+                    <li > <a href="/fermentable/"> 발효 (Fermentable)</a> </li>
+                    <li > <a href="/yeast/"> 효모 (Yeas) </a> </li>
+                    <li > <a href="/misc/"> 첨가물 (Misc) </a> </li>
+                </ul>
+            </li>
 
             <!--
             <li class="hidden-lg hidden-md hidden-xs" id="more-widgets" > <a href="javascript:;"> <i class="fa fa-plus"></i></a>
@@ -258,308 +260,24 @@
 
 <div class="row" >
 <!-- BEGIN BLOG POST BIG IMAGE WIDGET -->
-<div class="col-md-6 col-vlg-4 col-sm-12 ">
-    <div class="tiles overflow-hidden full-height tiles-overlay-hover m-b-20 widget-item">
-        <div class="controller overlay right"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-        <div class="overlayer tiles-overlay auto blue">
-            <div class="overlayer-wrapper  p-t-20 p-l-20 p-r-20 p-b-20"> <i class="fa fa-map-marker fa-2x"></i>
-                <p class="p-t-20 text-white-opacity">21 Jan</p>
-                <h3 class="text-white">New Year <span class="semi-bold">UI Bundle <br>
-                  </span> now on webarch</h3>
-                <p class="p-t-20"><span class="bold">214</span> Comments <span class="m-l-10 bold">24k</span> Likes</p>
-            </div>
-        </div>
-        <div class="overlayer bottom-left fullwidth">
-            <div class="overlayer-wrapper">
-                <div class="tiles gradient-grey p-l-20 p-r-20 p-b-20 p-t-20"> <a href="#" class="hashtags transparent"> #citymax </a> <a href="#" class="hashtags transparent"> #new york city </a> <a href="#" class="hashtags transparent"> #amazing </a>
-                    <p class="p-t-10 p-b-10 "><span class="bold">Jane Smith, John Smith, David Jester, pepper</span> post and 214 others like this.</p>
-
-                    <div class="profile-img-wrapper inline m-r-5">
-                        <img src="/resources/assets/img/profiles/avatar_small.jpg" alt="" data-src="/resources/assets/img/profiles/avatar_small.jpg" data-src-retina="/resources/assets/img/profiles/avatar_small2x.jpg" width="35" height="35">
-                    </div>
-
-                    <input type="text" class="dark m-r-5" id="txtinput1" placeholder="Write a comment" style="width:60%">
-                    <button type="button" class="btn btn-primary">Joing Group</button>
-                </div>
-            </div>
-        </div>
-        <img src="/resources/assets/img/others/9.jpg" data-src="/resources/assets/img/others/9.jpg" data-src-retina="/resources/assets/img/others/rob.jpg" alt="" class="image-responsive-width hover-effect-img">
-    </div>
-</div>
-<!-- END BLOG POST BIG IMAGE WIDGET -->
-<!-- BEGIN ANIMATED TILES -->
-<div class="col-md-6 col-vlg-4 col-sm-12">
-    <div class="row " >
-        <div class="col-md-6 col-sm-6 m-b-20"  data-aspect-ratio="true">
-            <div class="live-tile slide ha " data-speed="750" data-delay="3000" data-mode="carousel">
-                <div class="slide-front ha tiles adjust-text">
-                    <div class="p-t-20 p-l-20 p-r-20 p-b-20"> <i class="fa fa-map-marker fa-2x"></i>
-                        <p class="text-white-opacity p-t-10">21 Jan</p>
-                        <h3 class="text-white no-margin">New Year <span class="semi-bold">UI Bundle <br>
-                      </span> now on webarch</h3>
-                        <p class="p-t-20 "><span class="bold">214</span> Comments <span class="m-l-10 bold">24k</span> Likes</p>
-                    </div>
-                </div>
-                <div class="slide-back ha tiles adjust-text">
-                    <div class="p-t-20 p-l-20 p-r-20 p-b-20"> <i class="fa fa-map-marker fa-2x"></i>
-                        <p class="text-white-opacity p-t-10">21 Jan</p>
-                        <h3 class="text-white no-margin">New Year <span class="semi-bold">UI Bundle <br>
-                      </span> now on webarch</h3>
-                        <p class="p-t-20 "><span class="bold">214</span> Comments <span class="m-l-10 bold">24k</span> Likes</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END ANIMATED TILE -->
-        <!-- BEGIN ANIMATED TILE -->
-        <div class="col-md-6 col-sm-6 m-b-20" data-aspect-ratio="true">
-            <div class="live-tile slide ha " data-speed="750" data-delay="4000" data-mode="carousel">
-                <div class="slide-front ha tiles blue ">
-                    <div class="p-t-20 p-l-20 p-r-20 p-b-20" >
-                        <h4 class="text-white no-margin custom-line-height">
-                            <span class="semi-bold" id="hopName" />
-                        </h4>
-                    </div>
-                    <div class="overlayer bottom-left fullwidth">
-                        <div class="overlayer-wrapper">
-                            <div class="user-comment-wrapper">
-                                <div class="profile-wrapper"> <img src="/resources/assets/img/profiles/avatar_small.jpg" alt="" data-src="/resources/assets/img/profiles/avatar_small.jpg" data-src-retina="/resources/assets/img/profiles/avatar_small2x.jpg" width="35" height="35"> </div>
-                                <div class="comment">
-                                    <div class="user-name text-white "><span class="bold"> David</span> Cooper </div>
-                                    <p class="text-white-opacity">@ Revox</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-back ha tiles blue">
-                    <div class="user-comment-wrapper m-t-20">
-                        <div class="profile-wrapper"> <img src="/resources/assets/img/profiles/d.jpg" alt="" data-src="/resources/assets/img/profiles/d.jpg" data-src-retina="/resources/assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-                        <div class="comment">
-                            <div class="user-name text-white "><span class="bold"> Jane</span> Smith </div>
-                            <p class="text-white-opacity">@ Revox</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="overlayer bottom-left fullwidth">
-                        <div class="overlayer-wrapper">
-                            <div class="p-t-20 p-l-20 p-r-20 p-b-20">
-                                <h4 class="text-white no-margin custom-line-height">“Just <span class="semi-bold">Completed</span> the <span class="semi-bold">Heart walk</span> adverting
-                                    campaign”</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END ANIMATED TILE -->
-    </div>
-    <div class="row">
-        <div class="col-md-6  col-sm-6 m-b-20" data-aspect-ratio="true">
-            <div class="live-tile slide ha" data-speed="750" data-delay="4500" data-mode="carousel">
-                <div class="slide-front ha tiles green p-t-20 p-l-20 p-r-20 p-b-20">
-                    <h1 class="semi-bold text-white">15% <i class="icon-custom-up icon-custom-2x"></i></h1>
-                    <div class="overlayer bottom-left fullwidth">
-                        <div class="overlayer-wrapper">
-                            <div class="p-t-20 p-l-20 p-r-20 p-b-20">
-                                <p class="bold">Webarch Dashboard</p>
-                                <p >2,567 USD <span class="m-l-10"><i class="fa fa-sort-desc"></i> 2%</span></p>
-                                <p class="bold p-t-15">Front-end Design</p>
-                                <p >1,420 USD <span class="m-l-10"><i class="fa fa-sort-desc"></i> 1%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-back ha tiles green">
-                    <div class="p-t-20 p-l-20 p-r-20 p-b-20">
-                        <h5 class="text-white semi-bold no-margin p-b-5">Today Sale's</h5>
-                        <h3 class="text-white no-margin">450 <span class="semi-bold">USD</span></h3>
-                        Last Sale 23.45 USD
-
-                    </div>
-                    <div class="overlayer bottom-left fullwidth">
-                        <div class="overlayer-wrapper">
-                            <div id="sales-sparkline"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--랜덤 홉 소개 영역 -->
-        <div class="col-md-6  col-sm-6 m-b-20"  data-aspect-ratio="true">
-            <div class="live-tile slide ha " data-speed="750" data-delay="6000" data-mode="carousel"  >
-
-                <c:forEach items="${list}" var="list" varStatus="i">
-                    <c:choose>
-                        <c:when test="${i.count ==1 }">
-                            <div class="slide-front ha tiles green ">
-                        </c:when>
-                        <c:otherwise>
-                            <div class="slide-back ha tiles green">
-                        </c:otherwise>
-                    </c:choose>
-
-
-
-                    <div class="overlayer bottom-left fullwidth">
-                        <div class="overlayer-wrapper">
-                            <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
-                                <h4 class="text-white semi-bold no-margin"> ${list.koreanName} </h4>
-                                <h5 class="text-white semi-bold ">${list.shortKoreanNotes}</h5>
-                                <p class="text-white semi-bold no-margin" onclick="goDetail('${list.seq}', '${list.titleInUrl}');"><i class="icon-custom-up "></i> ..더 보기</p>
-                            </div>
-                        </div>
-                    </div>
-                    <c:choose>
-                        <c:when test="${i.count ==1 }">
-                            <img src="/resources/assets/img/others/11.png" alt="" class="image-responsive-width xs-image-responsive-width">
-                        </c:when>
-                        <c:otherwise>
-                            <img src="/resources/assets/img/others/cover.jpg" alt="" class="image-responsive-width xs-image-responsive-width">
-                        </c:otherwise>
-                    </c:choose>
-
-                </div>
-                </c:forEach>
-
-            </div>
-        </div>
-        <!-- END ANIMATED TILE -->
-    </div>
-</div>
-<!-- END ANIMATED TILES -->
-
-<!-- START ONLY VISIBLE FOR 1600 AND ABOVE -->
-<div class="col-vlg-4 visible-xlg">
-    <!-- BEGIN MARKET SALES WIDGET -->
-    <div class="row tiles-container tiles white"  data-aspect-ratio="true">
-        <div class="col-md-7 b-grey b-r no-padding" style="height:100%">
-            <div class="p-l-20 p-r-20 p-b-10 p-t-10 b-b b-grey">
-                <h5 class="text-success bold inline">MARKET</h5>
-                <h5 class="text-black bold inline m-l-10">DOW</h5>
-                <div class=""> <i class="fa fa-sort-asc fa-2x text-error inline p-b-10" style="vertical-align: super;"></i>
-                    <h1 class="text-error bold inline no-margin"> 15,580.11</h1>
-                </div>
-            </div>
-            <div class="p-l-20 p-r-20 p-b-10 p-t-10 b-b b-grey">
-                <div class="pull-left">
-                    <p class="text-success">Open</p>
-                    <p class="text-black">16:203.26</p>
-                </div>
-                <div class="pull-right">
-                    <p class="text-success">Day Range</p>
-                    <p class="text-black">15,568.11 - 16,203.25</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="overlayer bottom-left fullwidth">
-                <div class="overlayer-wrapper">
-                    <div class="" id="shares-chart-01" style="width:100%"> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5 no-padding">
-            <div class="p-l-15 p-r-15 p-b-10 p-t-10 b-b b-grey">
-                <h4 class="text-black ">Watchlist</h4>
-                <input type="text" class="dark form-control" id="txtinput2" placeholder="Search" >
-            </div>
-            <div class="scroller" data-height="410px" data-always-visible="1">
-                <div class="p-l-15 p-r-15 p-b-10 p-t-10 b-b b-grey">
-                    <div class="pull-left">
-                        <p class="small-text">GMY</p>
-                    </div>
-                    <div class="pull-right">
-                        <p class="small-text">GMY & SKR 100</p>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="pull-left">
-                        <h4 class="semi-bold">18,500.11</h4>
-                    </div>
-                    <div class="pull-right" style="line-height: 27px;"> <span class="label label-important" style="vertical-align: bottom;">-318.2</span> </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="p-l-15 p-r-15 p-b-10 p-t-10 b-b b-grey">
-                    <div class="pull-left">
-                        <p class="small-text">KPM</p>
-                    </div>
-                    <div class="pull-right">
-                        <p class="small-text">KPMG 350</p>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="pull-left">
-                        <h4 class="semi-bold">15,425.25</h4>
-                    </div>
-                    <div class="pull-right" style="line-height: 27px;"> <span class="label label-success" style="vertical-align: bottom;">+318.2</span> </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="p-l-15 p-r-15 p-b-10 p-t-10 b-b b-grey">
-                    <div class="pull-left">
-                        <p class="small-text">PTR</p>
-                    </div>
-                    <div class="pull-right">
-                        <p class="small-text">PRT & SPR 245</p>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="pull-left">
-                        <h4 class="semi-bold">11,540.11</h4>
-                    </div>
-                    <div class="pull-right" style="line-height: 27px;"> <span class="label label-important" style="vertical-align: bottom;">-345.2</span> </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="p-l-15 p-r-15 p-b-10 p-t-10 b-b b-grey">
-                    <div class="pull-left">
-                        <p class="small-text">HGM</p>
-                    </div>
-                    <div class="pull-right">
-                        <p class="small-text">HGM & POR 450</p>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="pull-left">
-                        <h4 class="semi-bold">9,500</h4>
-                    </div>
-                    <div class="pull-right" style="line-height: 27px;"> <span class="label label-success" style="vertical-align: bottom;">+100.2</span> </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="p-l-15 p-r-15 p-b-10 p-t-10 b-b b-grey">
-                    <div class="pull-left">
-                        <p class="small-text">MKR</p>
-                    </div>
-                    <div class="pull-right">
-                        <p class="small-text">MKR & SPR 547</p>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="pull-left">
-                        <h4 class="semi-bold">15,855.11</h4>
-                    </div>
-                    <div class="pull-right" style="line-height: 27px;"> <span class="label label-important" style="vertical-align: bottom;">-318.2</span> </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END MARKET SALES WIDGET -->
-</div>
-<!-- END ONLY VISIBLE FOR 1600 AND ABOVE -->
-</div>
-<br>
 <div class="row hidden-xlg">
 <div class="col-md-4 col-sm-6">
     <div class="row ">
-        <!-- BEGIN BLOG POST SIMPLE-->
+        <!-- 홉 설명 소개 -->
         <div class="col-md-12 m-b-20">
             <div class="widget-item narrow-margin">
                 <div class="controller overlay right"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
                 <div class="tiles green " style="max-height:345px">
                     <div class="tiles-body">
-                        <h3 class="text-white m-t-50 m-b-30 m-r-20"> Webarch <span class="semi-bold">UI Bundle
-							highly customizable UI
-							elements</span> </h3>
+                        <h3 class="text-white m-t-50 m-b-30 m-r-20"  onclick="goDetail('${hop.seq}', '${hop.titleInUrl}');"><span class="semi-bold">${hop.koreanName}</span></h3>
                         <div class="overlayer bottom-right fullwidth">
                             <div class="overlayer-wrapper">
                                 <div class=" p-l-20 p-r-20 p-b-20 p-t-20">
-                                    <div class="pull-right"> <a href="#" class="hashtags transparent"> #Art Design </a> </div>
+                                    <div class="pull-right">
+                                        <c:forEach items="${hopAromaList}" var="list" varStatus="i">
+                                        <a href="#" class="hashtags transparent"> ${list.aromaName}</a>
+                                        </c:forEach>
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -571,22 +289,24 @@
                     <div class="tiles-body">
                         <div class="row">
                             <div class="user-comment-wrapper pull-left">
-                                <div class="profile-wrapper"> <img src="/resources/assets/img/profiles/avatar_small.jpg" alt="" data-src="/resources/assets/img/profiles/avatar_small.jpg" data-src-retina="/resources/assets/img/profiles/avatar_small2x.jpg" width="35" height="35"> </div>
+                                <div class="profile-wrapper"> <img src="/resources/assets/img/brew/hop.jpg" alt="" data-src="/resources/assets/img/brew/hop.jpg" data-src-retina="/resources/assets/img/profiles/avatar_small2x.jpg" width="35" height="35"> </div>
                                 <div class="comment">
-                                    <div class="user-name text-black bold"> David <span class="semi-bold">Cooper</span> </div>
-                                    <div class="preview-wrapper">@ revox </div>
+                                    <div class="user-name text-black bold"> <span class="semi-bold"> ${hop.typeKorean}  </span> </div>
+                                    <div class="preview-wrapper">@ ${hop.originKorean} </div>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="pull-right m-r-20"> <span class="bold text-black small-text">24m</span> </div>
+                            <div class="pull-right m-r-20"> <span class="bold text-black small-text">${hop.alpha} %</span> </div>
                             <div class="clearfix"></div>
                             <div class="p-l-15 p-t-10 p-r-20">
-                                <p>The attention to detail and the end product is stellar!  I enjoyed the process </p>
+                                <p>${hop.koreanNotes}</p>
                                 <div class="post p-t-10 p-b-10">
-                                    <ul class="action-bar no-margin p-b-20 ">
-                                        <li><a href="#" class="muted bold"><i class="fa fa-comment  m-r-10"></i>1584</a> </li>
-                                        <li><a href="#" class="text-error bold"><i class="fa fa-heart  m-r-10"></i>47k</a> </li>
-                                    </ul>
+                                    <div class="profile-img-wrapper pull-left"> <img src="/resources/assets/img/profiles/avatar_small.jpg" alt="" data-src="/resources/assets/img/profiles/avatar_small.jpg" data-src-retina="/resources/assets/img/profiles/avatar_small2x.jpg" width="35" height="35"> </div>
+                                    <div class="inline pull-right" style="width:86%">
+                                        <div class="input-group transparent ">
+                                            <input type="text" class="form-control" placeholder="댓글을 입력하세요...">
+                                            <span class="input-group-addon"> <i class="fa fa-camera"></i> </span> </div>
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -597,6 +317,7 @@
         </div>
         <!-- END BLOG POST SIMPLE-->
     </div>
+
     <div class="row">
         <!-- BEGIN BLOG POST WITH CAROUSEL IMAGE -->
         <div class="col-md-12 m-b-20">

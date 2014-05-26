@@ -127,12 +127,7 @@ public class HopController {
         return list;
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/randomHop", method = RequestMethod.GET)
-    public List<Hop> randomHop(Model model) {
 
-        return hopService.selectRandomHop();
-    }
 
     /**
      * <pre>

@@ -69,7 +69,7 @@ public interface HopService {
      */
     public Hop selectHopDetail(Hop hop);
 
-    public List<Hop> selectRandomHop();
+    public Hop selectRandomHop();
 
 
     /**

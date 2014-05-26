@@ -62,7 +62,7 @@ public class HopServiceImpl implements HopService {
     }
 
     @Override
-    public List<Hop> selectRandomHop() {
+    public Hop selectRandomHop() {
         return hopDao.selectRandomHop();
     }
 

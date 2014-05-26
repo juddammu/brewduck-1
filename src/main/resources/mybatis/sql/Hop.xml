@@ -124,7 +124,7 @@
         <!-- 맥주 홉 상세 조회 -->
         <include refid="Hop.selectHop" />
            WHERE delete_id IS NULL
-        ORDER BY rand() LIMIT 2
+        ORDER BY rand() LIMIT 1
     </select>
 
 
