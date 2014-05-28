@@ -44,6 +44,15 @@
                     <li > <a href="/misc/"> 첨가물 (Misc) </a> </li>
                 </ul>
             </li>
+            <li class="start"> <a href="index.html"> <i class="fa fa-th"></i> <span class="title">게시판</span> <span class="selected"></span> <span class="arrow open"></span> </a>
+                <ul class="sub-menu">
+                    <li > <a href="/style"> 스타일 (BJCP STYLE)</a> </li>
+                    <li class="active"> <a href="/hop/">홉 (HOP) <span class=" label label-info pull-right m-r-30">HOT</span></a></li>
+                    <li > <a href="/fermentable/"> 발효 (Fermentable)</a> </li>
+                    <li > <a href="/yeast/"> 효모 (Yeas) </a> </li>
+                    <li > <a href="/misc/"> 첨가물 (Misc) </a> </li>
+                </ul>
+            </li>
 
             <!--
             <li class="hidden-lg hidden-md hidden-xs" id="more-widgets" > <a href="javascript:;"> <i class="fa fa-plus"></i></a>
@@ -139,7 +148,7 @@
 
 <div class="row" >
 <!-- BEGIN BLOG POST BIG IMAGE WIDGET -->
-<div class="row hidden-xlg">
+<div class="row">
 <div class="col-md-4 col-sm-6">
     <div class="row ">
         <!-- 홉 설명 소개 -->
