@@ -12,7 +12,7 @@
 
 <!-- BEGIN BODY -->
 <body class="">
-    <!-- BEGIN HEADER -->
+    <!-- 상단메뉴 -->
     <%@ include file="/WEB-INF/views/common/include/home_top_menu.jsp" %>
     <!-- END HEADER -->
 <!-- BEGIN CONTAINER -->
