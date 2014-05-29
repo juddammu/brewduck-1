@@ -87,7 +87,6 @@ public class RecipeController {
     @RequestMapping(value = "/insert/{name}", method = RequestMethod.POST)
     public Recipe insertRecipe(Model model, @PathVariable("name") String name, @RequestBody Recipe paramRecipe) {
         LOGGER.info("Insert Recipe : {}", paramRecipe);
-
         // 맥주 레시피 저장
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
 

@@ -54,6 +54,10 @@
             <div class="nav quick-section pull-right">
                 <!-- start -->
                 <ul class="login">
+                <%
+                    if (AuthenticationUtils.isAuthenticated() == false) {
+                %>
+
                     <li>
                         <input type="text" id="appendedInput" class="form-control input-sm" placeholder="이메일">
                     </li>
@@ -64,24 +68,17 @@
                         <button type="submit" class="btn btn-small btn-primary btn-cons-md"> 로그인</button>
 
                     </li>
-                </ul>
-                <!-- end -->
-                <ul class="nav quick-section pull-right">
+                    <%
+                    } else {
+                    %>
                     <li class="quicklinks">
-<%
-                            if (AuthenticationUtils.isAuthenticated() == false) {
-%>
 
-
-                        <%
-                        } else {
-%>
                         <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
                             <div class="iconset top-settings-dark "></div>
                         </a>
-<%
-                        }
-%>
+                        <%
+                            }
+                        %>
                         <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
                             <li><a href="user-profile.html"> My Account </a> </li>
                             <li><a href="calender.html">My Calendar</a> </li>
@@ -90,20 +87,9 @@
                             <li><a href="login.html"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
                         </ul>
                     </li>
-                    <!--li class="quicklinks"> <a id="chat-menu-toggle" href="#sidr" class="chat-menu-toggle" >
-                        <div class="iconset top-chat-dark "><span class="badge badge-important hide" id="chat-message-count">1</span></div>
-                    </a-->
-                        <div class="simple-chat-popup chat-menu-toggle hide" >
-                            <div class="simple-chat-popup-arrow"></div>
-                            <div class="simple-chat-popup-inner">
-                                <div style="width:100px">
-                                    <div class="semi-bold">David Nester</div>
-                                    <div class="message">Hey you there </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
+                <!-- end -->
+
             </div>
             <!-- END CHAT TOGGLER -->
         </div>
