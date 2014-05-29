@@ -18,7 +18,30 @@
                     </div-->
                     <div class="pull-left">
                         <h2>보스턴 라거 클론</h2>
-                        <h5 class="semi-bold">부분곡물, 미국식 라거 by 샘 아저씨 5.0 </h5>
+
+                        </h5>
+                        <div class="pull-left">
+                            <div class="control">
+                            <h5 class="semi-bold">부분곡물</h5>
+                                <div class="btn-group">
+
+                                    <a href="#" data-toggle="dropdown" class="btn btn-mini dropdown-toggle">
+                                        1A. 라이트 미국식 라거
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="inline"><span class="muted">&nbsp;&nbsp;to</span> <span class="bold small-text">johnsmith@skyace.com</span></label>
+
                     </div>
                     <div class="clearfix"></div>
                     <br>
