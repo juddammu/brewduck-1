@@ -50,17 +50,17 @@ public class RecipeServiceImpl implements RecipeService {
         Recipe newRecipe = recipeDao.selectRecipeDetail(recipe);
 
         // 레시피 제조시 입력한 스타일 맥주 이름
-        Style paramStyle = new Style();
-        paramStyle.setName(newRecipe.getStyleName());
+        //Style paramStyle = new Style();
+        //paramStyle.setName(newRecipe.getStyleName());
 
         // 레시피 작성시 선택한 스타일 맥주
-        newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
+        //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
         // 레시피에 포함되는 맥아 리스트
-        newRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(newRecipe.getName()));
+        //newRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(newRecipe.getName()));
         // 레시피에 포함되는 홉 리스트
-        newRecipe.setHops(hopDao.selectRecipeHopList(newRecipe.getName()));
+        //newRecipe.setHops(hopDao.selectRecipeHopList(newRecipe.getName()));
         // 레시피에 포함되는 이스트 리스트
-        newRecipe.setYeasts(yeastDao.selectRecipeYeastList(newRecipe.getName()));
+        //newRecipe.setYeasts(yeastDao.selectRecipeYeastList(newRecipe.getName()));
 
         // 조회수 업데이트
         // newRecipe.setUpdateId(Integer.toString(account.getId()));

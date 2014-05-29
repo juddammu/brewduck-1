@@ -55,20 +55,20 @@ public class RecipeController {
      * </pre>
      *
      * @param model Model
-     * @param name 맥주 레시피 영문명
+     * @param seq 맥주 레시피 영문명
      * @return 맥주 레시피 상세.
      */
     @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
-    public String selectRecipeDetail(Model model, @PathVariable("seq") String name) {
-        LOGGER.info("Recipe Name : {}", name);
+    public String selectRecipeDetail(Model model, @PathVariable("seq") Integer seq) {
+        LOGGER.info("Recipe Name : {}", seq);
 
         Recipe recipe = new Recipe();
-        recipe.setName(name);
+        recipe.setSeq(seq);
 
         // 맥주 레시피 상세 조회
-        //Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
+        Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
-        //model.addAttribute("recipeDetail", recipeDetail);
+        model.addAttribute("recipeDetail", recipeDetail);
 
         return "recipe/detail";
     }

@@ -7,7 +7,7 @@
         <div class="col-md-11">
             <div class="grid simple">
                 <div class="grid-body no-border invoice-body"> <br>
-                    <div class="pull-left"> <img src="/resources/assets/profile/picture/samadams.jpg" data-src="/resources/assets/profile/picture/samadams.jpg" data-src-retina="/resources/assets/profile/picture/samadams.jpg"
+                    <!--div class="pull-left"> <img src="/resources/assets/profile/picture/samadams.jpg" data-src="/resources/assets/profile/picture/samadams.jpg" data-src-retina="/resources/assets/profile/picture/samadams.jpg"
                                                  width="141" height="103" class="invoice-logo" alt="">
                         <address>
                             <strong>밝은 미국식 라거 - 부분곡물</strong><br>
@@ -15,9 +15,10 @@
                             30 IBU<br>
                             <abbr title="색상">SRM</abbr> 11 (A deep amber to golden)
                         </address>
-                    </div>
-                    <div class="pull-right">
+                    </div-->
+                    <div class="pull-left">
                         <h2>보스턴 라거 클론</h2>
+                        <h5 class="semi-bold">부분곡물, 미국식 라거 by 샘 아저씨 5.0 </h5>
                     </div>
                     <div class="clearfix"></div>
                     <br>
@@ -25,11 +26,10 @@
                     <br>
                     <div class="row">
                         <div class="col-md-9">
-                            <h4 class="semi-bold">코멘트</h4>
-                            <address>
-                                <strong>작성자 : 샘 아저씨</strong><br> <br>
-                                사무엘 아담스 라거는 세션비어로 누구나 쉽게 먹을수 있게 디자인되어있다. <br>
-                            </address>
+                            <blockquote  class="margin-top-20">
+                                <p>사무엘 아담스 라거는 세션비어로 누구나 쉽게 먹을수 있게 디자인되어있다.</p>
+                                <small>리뷰 (3) </small>
+                            </blockquote>
                         </div>
                         <div class="col-md-3"> <br>
                             <div>
@@ -53,7 +53,8 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <td colspan="6" class="text-right"><h4 class="semi-bold">발효재료</h4></td>
+                            <td colspan="4" class="text-left"><h4 class="semi-bold">발효재료</h4></td>
+                            <td colspan="2" class="text-right"><h5 class="semi-bold">19리터</h5></td>
                         </tr>
                         <tr>
                             <th style="width:30px" class="unseen text-center">No</th>
@@ -95,7 +96,8 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <td colspan="7" class="text-right"><h4 class="semi-bold">홉</h4></td>
+                            <td colspan="5" class="text-left"><h4 class="semi-bold">홉</h4></td>
+                            <td colspan="2" class="text-right"><h5 class="semi-bold">60분</h5></td>
                         </tr>
                         <tr>
                             <th style="width:30px" class="unseen text-center">No</th>
@@ -150,7 +152,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <td colspan="7" class="text-right"><h4 class="semi-bold">효모</h4></td>
+                            <td colspan="7" class="text-left"><h4 class="semi-bold">효모</h4></td>
                         </tr>
                         <tr>
                             <th style="width:30px" class="unseen text-center">No</th>
