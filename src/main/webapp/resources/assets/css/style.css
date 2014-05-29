@@ -21,7 +21,10 @@ body {
   background-color:#1B1E24 ;
 }
 
-
+/*Reset*/
+ol, ul {
+    list-style: none;
+}
 /***
 Page header
 ***/
@@ -54,7 +57,7 @@ Page header
  }
 .header-seperation{
 	background-color:#22262e;
-	
+
 }
 .header .navbar-inner {
   background-image: none !important;
@@ -1083,7 +1086,7 @@ span.iconset{
 	width:250px;
 	display:block;
 	float:left;
-	height:60px;
+	height:70px;
 }
 
 .header .header-quick-nav{
@@ -1335,6 +1338,10 @@ span.iconset{
 	margin-right:-6px;
 	margin-top:7px;
 }
+/* 상단 로그인 영역*/
+.pull-right ul.login li {float:left;}
+
+
 /*** Page Loader ***/
 .pace .pace-activity {
 	top: 72px;	

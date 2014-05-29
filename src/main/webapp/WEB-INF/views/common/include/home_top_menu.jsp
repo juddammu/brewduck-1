@@ -51,7 +51,22 @@
             </div>
             <!-- END TOP NAVIGATION MENU -->
             <!-- BEGIN CHAT TOGGLER -->
-            <div class="pull-right">
+            <div class="nav quick-section pull-right">
+                <!-- start -->
+                <ul class="login">
+                    <li>
+                        <input type="text" class="form-control" placeholder="Username">
+
+                    </li>
+                    <li>
+                        <input type="text" value="PASSWORD" style="width:150px; height:37px;"/>
+                    </li>
+                    <li>
+                        <button class="btn btn-block btn-success" type="button">Button Block</button>
+
+                    </li>
+                </ul>
+                <!-- end -->
                 <div class="chat-toggler">
                     <div id="notification-list" style="display:none">
                         <div style="width:300px">
