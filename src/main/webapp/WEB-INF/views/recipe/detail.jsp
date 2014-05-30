@@ -24,7 +24,6 @@
                         <button type="button" class="btn btn-white btn-sm btn-small">4.9% ABV</button>
                     </div>
 
-
                     <div class="pull-right">
                         <br>
                         <address>

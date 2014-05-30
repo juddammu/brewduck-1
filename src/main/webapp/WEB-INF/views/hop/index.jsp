@@ -13,8 +13,8 @@
 <div class="grid simple ">
 <div class="grid-title">
     <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramHop">
-        <input name="origin" type ="hidden" id="origin" type="text"  class="form-control" value=""> <%--국가별--%>
-        <input name="aroma" type ="hidden" id="aroma" type="text"  class="form-control" value=""> <%--전체/ 향 /쓴맛--%>
+        <input name="origin" type ="hidden" id="origin" type="text"  value=""> <%--국가별--%>
+        <input name="aroma" type ="hidden" id="aroma" type="text"  value=""> <%--전체/ 향 /쓴맛--%>
 
         <div class="row column-seperation">
             <div class="col-md-6">
