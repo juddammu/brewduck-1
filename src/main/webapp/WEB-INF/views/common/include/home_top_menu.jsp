@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ page import="com.brewduck.web.domain.Account" %>
+
 
 <div class="header navbar navbar-inverse ">
     <!-- BEGIN TOP NAVIGATION BAR -->
@@ -38,36 +40,34 @@
                 </ul>
                 <ul class="nav quick-section">
                     <li class="quicklinks"> <a href="#" class="" >
-                        <div class="iconset top-reload"></div>
-                    </a> </li>
-                    <li class="quicklinks"> <span class="h-seperate"></span></li>
-                    <li class="quicklinks"> <a href="#" class="" >
                         <div class="iconset top-tiles"></div>
                     </a> </li>
-                    <li class="m-r-10 input-prepend inside search-form no-boarder"> <span class="add-on"> <span class="iconset top-search"></span></span>
-                        <input name="" type="text"  class="no-boarder " placeholder="Search Dashboard" style="width:250px;">
+                    <li class="input-prepend inside search-form no-boarder"> <span class="add-on"> <span class="iconset top-search"></span></span>
+                        <input name="" type="text"  class="no-boarder " placeholder="검색어를 입력하세요" style="width:180px;">
                     </li>
                 </ul>
             </div>
             <!-- END TOP NAVIGATION MENU -->
             <!-- BEGIN CHAT TOGGLER -->
+
             <div class="nav quick-section pull-right">
                 <!-- start -->
                 <ul class="login">
                 <%
                     if (AuthenticationUtils.isAuthenticated() == false) {
                 %>
-
+                    <form:form id="authentication" class="animated fadeIn" method="POST" action="/account/authentication" modelAttribute="account">
                     <li>
-                        <input type="text" id="appendedInput" class="form-control input-sm" placeholder="이메일">
+                        <input type="text" id="email" name="email" class="form-control input-sm" style="width:120px;" placeholder="이메일" />
                     </li>
                     <li>
-                        <input type="password" id="appendedInput" class="form-control input-sm" placeholder="패스워드">
+                        <input type="password" id="password" name="password" class="form-control input-sm" style="width:120px;" placeholder="패스워드" />
                     </li>
                     <li>
                         <button type="submit" class="btn btn-small btn-primary btn-cons-md"> 로그인</button>
 
                     </li>
+                    </form:form>
                     <%
                     } else {
                     %>

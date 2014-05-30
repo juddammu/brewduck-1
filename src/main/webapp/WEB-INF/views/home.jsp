@@ -268,7 +268,7 @@
                             </div>
                         </div>
                     </div>
-                    <img src="/resources/assets/img/others/10.png" alt="" class="lazy hover-effect-img"> </div>
+                    <img src="/resources/assets/img/others/1.jpg" alt="" class="lazy hover-effect-img"> </div>
                 <div class="tiles white ">
                     <div class="tiles-body">
                         <div class="row">
