@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-11">
             <div class="grid simple">
-                <div class="grid-body no-border invoice-body"> <br>
+                <div class="grid-body no-border invoice-body">
                     <!--div class="pull-left"> <img src="/resources/assets/profile/picture/samadams.jpg" data-src="/resources/assets/profile/picture/samadams.jpg" data-src-retina="/resources/assets/profile/picture/samadams.jpg"
                                                  width="141" height="103" class="invoice-logo" alt="">
                         <address>
@@ -17,62 +17,43 @@
                         </address>
                     </div-->
                     <div class="pull-left">
-                        <h2>보스턴 라거 클론</h2>
+                        <%--<h1>보스턴 라거 클론</h1>--%>
+                        <h1>보스턴 라거 클론</h1>
+                        <button type="button" class="btn btn-warning btn-sm btn-small">1A. 라이트 미국식 라거</button>
+                        <button type="button" class="btn btn-primary btn-sm btn-small">부분곡물</button>
+                        <button type="button" class="btn btn-white btn-sm btn-small">4.9% ABV</button>
+                    </div>
 
-                        </h5>
-                        <div class="pull-left">
-                            <div class="control">
-                            <h5 class="semi-bold">부분곡물</h5>
-                                <div class="btn-group">
 
-                                    <a href="#" data-toggle="dropdown" class="btn btn-mini dropdown-toggle">
-                                        1A. 라이트 미국식 라거
-                                        <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <label class="inline"><span class="muted">&nbsp;&nbsp;to</span> <span class="bold small-text">johnsmith@skyace.com</span></label>
+                    <div class="pull-right">
+                        <br>
+                        <address>
+                            <strong> </strong><br>
+                            795 Folsom Ave, Suite 600<br>
+                            San Francisco, CA 94107<br>
+                            <abbr title="Phone">P:</abbr> (123) 456-7890
+                        </address>
 
                     </div>
                     <div class="clearfix"></div>
-                    <br>
-                    <br>
                     <br>
                     <div class="row">
                         <div class="col-md-9">
                             <blockquote  class="margin-top-20">
                                 <p>사무엘 아담스 라거는 세션비어로 누구나 쉽게 먹을수 있게 디자인되어있다.</p>
-                                <small>리뷰 (3) </small>
                             </blockquote>
                         </div>
-                        <div class="col-md-3"> <br>
-                            <div>
-                                <div class="pull-left"> 초기비중 :  </div>
-                                <div class="pull-right"> 1.070</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div>
-                                <div class="pull-left"> 최종비중 : </div>
-                                <div class="pull-right"> 1.018     </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <br>
-                            <div class="well well-small green">
-                                <div class="pull-left"> 4.9% ABV</div>
-                                <div class="pull-right"> 매우 써요! </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
                     </div>
+                </div>
+                <br>
+                <ul class="nav nav-tabs" id="tab-01">
+                    <li class="active"><a href="#tab1hellowWorld">레시피 </a></li>
+                    <li><a href="#tab1hellowWorld">브루잉 로그</a></li>
+                    <li><a href="#tab1FollowUs">리뷰 <span class="badge badge-important">2</span></a></li>
+                    <li><a href="#tab1Inspire">댓글 <span class="badge badge-important">4</span></a></li>
+                </ul>
+
+                <div class="grid-body no-border invoice-body">
                     <table class="table">
                         <thead>
                         <tr>

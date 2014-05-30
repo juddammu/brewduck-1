@@ -108,8 +108,7 @@
     </form:form>
 </div>
 <div class="grid-body ">
-    <table class="table table-bordered no-more-tables">
-
+    <table class="table table-striped">
     <thead>
         <tr>
             <th class="small-cell"> </th>

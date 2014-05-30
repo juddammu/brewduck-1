@@ -263,24 +263,24 @@
                     <div class="overlayer bottom-right fullwidth">
                         <div class="overlayer-wrapper">
                             <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
-                                <div class="pull-right"> <a href="#" class="hashtags transparent"> #Art Design </a> </div>
+                                <div class="pull-right"> <a href="#" class="hashtags transparent"> #라이트 미국식 라거 </a> </div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
-                    <img src="/resources/assets/img/others/1.jpg" alt="" class="lazy hover-effect-img"> </div>
+                    <a href="/recipe/1/보스턴_라거_클론"><img src="/resources/assets/img/others/1.jpg" alt="" class="lazy hover-effect-img"> </a></div>
                 <div class="tiles white ">
                     <div class="tiles-body">
                         <div class="row">
                             <div class="user-profile-pic text-left">
                                 <img width="69" height="69" data-src-retina="/resources/assets/img/profiles/avatar2x.jpg" data-src="/resources/assets/img/profiles/avatar.jpg" src="/resources/assets/img/profiles/avatar.jpg" alt="">
-                                <div class="pull-right m-r-20 m-t-35"> <span class="bold text-black small-text">24m</span> </div>
+                                <div class="pull-right m-r-20 m-t-35"> <span class="bold text-black small-text">4.9% ABV</span> </div>
                             </div>
                             <div class="col-md-5 no-padding">
                                 <div class="user-comment-wrapper">
                                     <div class="comment">
-                                        <div class="user-name text-black bold"> David <span class="semi-bold">Jester</span> </div>
-                                        <div class="preview-wrapper">@ revox </div>
+                                        <div class="user-name text-black bold"> 보스턴 라거 클론 <span class="semi-bold"></span> </div>
+                                        <div class="preview-wrapper">@ 제스퍼 </div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -288,9 +288,16 @@
                             <div class="col-md-7 no-padding">
 
                                 <div class="clearfix"></div>
-                                <div class="m-r-20 m-t-20 m-b-10  m-l-10">
-                                    <p class="p-b-10">The attention to detail and the end product is stellar!  I enjoyed the process </p>
-                                    <a href="#" class="hashtags m-b-5"> #new york city </a> <a href="#" class="hashtags m-b-5"> #amazing </a> <a href="#" class="hashtags m-b-5"> #citymax </a> </div>
+                                <div class="p-l-15 p-t-10 p-r-20">
+                                    <p>사무엘 아담스 라거는 세션비어로 누구나 쉽게 먹을수 있게 디자인되어있다.</p>
+                                    <div class="post p-t-10 p-b-10">
+                                        <ul class="action-bar no-margin p-b-20 ">
+                                            <li><a href="#" class="muted bold"><i class="fa fa-comment  m-r-10"></i>15</a> </li>
+                                            <li><a href="#" class="text-error bold"><i class="fa fa-heart  m-r-10"></i>47</a> </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
