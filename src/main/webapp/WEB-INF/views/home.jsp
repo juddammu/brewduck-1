@@ -44,9 +44,13 @@
                     <li > <a href="/misc/"> 첨가물 (Misc) </a> </li>
                 </ul>
             </li>
-            <li class=""> <a href="/board/"> <i class="fa fa-th"></i> <span class="title">게시판</span> <span class="label label-important pull-right ">HOT</span></a> </li>
-
-
+            <li class="start"> <a href="index.html"> <i class="fa fa-th"></i> <span class="title">게시판</span> <span class="selected"></span> <span class="arrow open"></span> </a>
+                <ul class="sub-menu">
+                    <li class="active"> <a href="/board/freeBoard">자유게시판(Free Board)</a> </li>
+                    <li > <a href="/board/notice">공지사항(Notice)<span class=" label label-info pull-right m-r-30"></span></a></li>
+                    <li > <a href="/board/questionBoard">질문게시판(Q&A)</a> </li>
+                </ul>
+            </li>
             <!--
             <li class="hidden-lg hidden-md hidden-xs" id="more-widgets" > <a href="javascript:;"> <i class="fa fa-plus"></i></a>
                 <ul class="sub-menu">

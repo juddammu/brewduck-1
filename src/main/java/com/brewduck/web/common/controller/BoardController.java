@@ -24,21 +24,59 @@ public class BoardController {
 
     /**
      * <pre>
-     * 게시판 메인
+     * 자유게시판 메인
      * </pre>
      *
      * @param model Model
-     * @return 게시판 메인
+     * @return 자유게시판 메인
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String main(Model model) {
+    @RequestMapping(value = "/freeBoard", method = RequestMethod.GET)
+    public String freeMain(Model model) {
         logger.info("Board index");
 
         Account account = AuthenticationUtils.getUser();
 
         model.addAttribute("account", account);
 
-        return "board/index";
+        return "board/freeBoard";
+    }
+
+    /**
+     * <pre>
+     * 공지사항 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 공지사항 메인
+     */
+    @RequestMapping(value = "/noticeBoard", method = RequestMethod.GET)
+    public String noticeMain(Model model) {
+        logger.info("Board index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "board/noticeBoard";
+    }
+
+    /**
+     * <pre>
+     * 질문게시판 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 질문게시판 메인
+     */
+    @RequestMapping(value = "/questionBoard", method = RequestMethod.GET)
+    public String questionMain(Model model) {
+        logger.info("Board index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "board/questionBoard";
     }
 
 

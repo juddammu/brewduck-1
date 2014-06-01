@@ -133,14 +133,13 @@
         FROM MOVIES
     </select>
 
-    <select id="Common.selectBoardList"
-            resultType="Board">
+    <select id="Common.selectBoardList" resultType="Board">
         SELECT
-            A.NTT_ID          num,
+            A.NTT_ID          nttId,
             A.BBS_ID          bbsId,
-            A.NTT_SJ          bbsNm,
+            A.NTT_SJ          nttSj,
             A.INSERT_ID       insertId,
-            A.INSERT_DATE     insertDate
+            DATE_FORMAT(A.INSERT_DATE,'%y-%m-%d %p %h:%i')     insertDate
             FROM BOARD A,
             BOARD_MASTER B
        WHERE A.USE_AT = 'Y'

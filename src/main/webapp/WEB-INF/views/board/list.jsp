@@ -11,11 +11,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:forEach items="${list}" var="list">
-        <tr onclick="goDetail('${list.bbsId}');">
-            <td  class="small-cell v-align-middle"> ${list.num}</td>
-            <td  class="clickable v-align-middle"> ${list.bbsNm}</td>
-            <td  class="clickable v-align-middle"> ${list.insertId}</td>
-            <td  class="clickable v-align-middle"> 5</td>
+        <tr onclick="goDetail('${list.nttId}');">
+            <td  class="small-cell v-align-middle">${list.nttId}</td>
+            <td  class="clickable v-align-middle">${list.nttSj}</td>
+            <td  class="clickable v-align-middle">${list.insertId}</td>
+            <td  class="clickable v-align-middle">${list.insertDate}</td>
+            <td class="v-align-middle">
+                <button type="button" class="btn btn-danger btn-sm btn-small">10</button>
+            </td>
         </tr>
 </c:forEach>
 
