@@ -84,7 +84,7 @@
                                                     <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-success"></div>
                                                 </div>--%>
                                             </tbody>
-<%--                                            <div class="pull-right margin-top-20">
+                                            <div class="pull-right margin-top-20">
                                                 <div class="dataTables_paginate paging_bootstrap pagination">
                                                     <ul>
                                                         <li class="prev disabled"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
@@ -93,7 +93,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="dataTables_info hidden-xs" id="example_info">Showing <b>1 to 10</b> of 14 entries</div>
-                                            </div>--%>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="tab-content">
