@@ -99,18 +99,12 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="notice">
                                             <tbody id="notice_result" name="result">
-<%--                                            <div class="progress progress-striped active progress-large" id="loading">
-                                                <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-success"></div>
-                                            </div>--%>
                                             </tbody>
                                         </div>
                                     </div>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="question">
                                             <tbody id="question_result" name="result">
-<%--                                            <div class="progress progress-striped active progress-large" id="loading">
-                                                <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-success"></div>
-                                            </div>--%>
                                             </tbody>
                                         </div>
                                     </div>
