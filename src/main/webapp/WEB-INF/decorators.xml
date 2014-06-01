@@ -36,6 +36,9 @@
         <pattern>/fermentable/*/*</pattern>
         <pattern>/misc/</pattern>
         <pattern>/misc/*/*</pattern>
+        <pattern>/board/</pattern>
+        <pattern>/board/*/*</pattern>
+
     </decorator>
 
     <decorator name="nonlayout-content" page="nonlayout-content.jsp">

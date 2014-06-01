@@ -47,6 +47,8 @@ public class Board {
     //패스워드
     private String password;
 
+    private String  bbsNm;
+
     public int getAnswerNo() {
         return answerNo;
     }
@@ -245,5 +247,13 @@ public class Board {
 
     public void setAtchFileId(String atchFileId) {
         this.atchFileId = atchFileId;
+    }
+
+    public String getBbsNm() {
+        return bbsNm;
+    }
+
+    public void setBbsNm(String bbsNm) {
+        this.bbsNm = bbsNm;
     }
 }

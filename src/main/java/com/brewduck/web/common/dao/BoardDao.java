@@ -23,7 +23,7 @@ import java.util.List;
  */
 public interface BoardDao {
 
-    public List<Board> selectBoardList(Board board) throws DataAccessException;
+    public List<Board> selectBoardList(Board board);
 
     public List<Board> selectCommentList(Board board) throws DataAccessException;
 

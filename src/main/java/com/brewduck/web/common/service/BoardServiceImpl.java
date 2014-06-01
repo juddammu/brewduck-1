@@ -27,7 +27,7 @@ import java.util.List;
  */
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
-    Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
 
     @Autowired
     private BoardDao boardDao;

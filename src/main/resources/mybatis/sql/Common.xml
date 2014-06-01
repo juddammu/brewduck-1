@@ -136,34 +136,49 @@
     <select id="Common.selectBoardList"
             resultType="Board">
         SELECT
-            A.BBS_ID,
-            A.BBS_NM,
-            A.BBS_TY_CODE,
-            A.BBS_ATTRB_CODE,
-            A.TMPLAT_ID,
-            B.NTT_ID,
-            B.BBS_ID,
-            B.NTT_NO,
-            B.NTT_SJ,
-            B.NTT_CN,
-            B.ANSWER_AT,
-            B.PARNTSCTT_NO,
-            B.ANSWER_LC,
-            B.SORT_ORDR,
-            B.RDCNT,
-            B.USE_AT,
-            B.NTCE_BGNDE,
-            B.NTCE_ENDDE,
-            B.NTCR_ID,
-            B.NTCR_NM,
-            B.PASSWORD,
-            B.ATCH_FILE_ID
-            FROM BOARD_MASTER A,
-            BOARD B
+            A.NTT_ID          num,
+            A.BBS_ID          bbsId,
+            A.NTT_SJ          bbsNm,
+            A.INSERT_ID       insertId,
+            A.INSERT_DATE     insertDate
+            FROM BOARD A,
+            BOARD_MASTER B
        WHERE A.USE_AT = 'Y'
          AND A.BBS_ID = B.BBS_ID
          AND A.BBS_ID = 'FREEBOARD01'
     </select>
+
+<!--    <select id="Common.selectBoardList"
+            resultType="Board">
+        SELECT
+            A.BBS_ID          bbs_id,
+            A.BBS_NM          bbs_nm,
+            A.BBS_TY_CODE     ty_code,
+            A.BBS_ATTRB_CODE  attrb_code,
+            A.TMPLAT_ID       tmplat_id,
+            B.NTT_ID          b_ntt_id,
+            B.BBS_ID          b_bbs_id,
+            B.NTT_NO          b_ntt_no,
+            B.NTT_SJ          b_ntt_sj,
+            B.NTT_CN          b_ntt_cn,
+            B.ANSWER_AT       b_answer_at,
+            B.PARNTSCTT_NO    b_parntsctt_no,
+            B.ANSWER_LC       b_answer_lc,
+            B.SORT_ORDR       b_sort_order,
+            B.RDCNT           b_rdcnt,
+            B.USE_AT          b_use_at,
+            B.NTCE_BGNDE      b_ntce_bgnde,
+            B.NTCE_ENDDE      b_ntce_endde,
+            B.NTCR_ID         b_ntcr_id,
+            B.NTCR_NM         b_ntcr_nm,
+            B.PASSWORD        b_password,
+            B.ATCH_FILE_ID    b_atch_file_id
+            FROM BOARD_MASTER A,
+            BOARD B
+       WHERE A.USE_AT = 'Y'
+         AND A.BBS_ID = B.BBS_ID
+         AND A.BBS_ID = #{bbsId}
+    </select>-->
 
     <select id="Common.selectCommentList"
             resultType="Board">

@@ -34,7 +34,7 @@ public class BoardDaoImpl implements BoardDao {
     private SqlSessionTemplate sqlSessionTemplate;
 
     @Override
-    public List<Board> selectBoardList(Board board) throws DataAccessException {
+    public List<Board> selectBoardList(Board board){
         return sqlSessionTemplate.selectList("Common.selectBoardList", board);
     }
 

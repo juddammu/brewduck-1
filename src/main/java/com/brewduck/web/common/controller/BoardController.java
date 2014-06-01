@@ -1,6 +1,8 @@
 package com.brewduck.web.common.controller;
 
+import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.common.service.BoardService;
+import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Board;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "board")
+@RequestMapping(value = "/board")
 public class BoardController {
 
     private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
@@ -20,15 +22,36 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model) {
+    /**
+     * <pre>
+     * 게시판 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 게시판 메인
+     */
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String main(Model model) {
+        logger.info("Board index");
 
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "board/index";
+    }
+
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<Board> BoardList(Model model, Board paramBoard) {
+        logger.info("Board List");
         Board board = new Board();
 
-        List<Board> boardList = boardService.selectBoardList(board);
-        model.addAttribute("list", boardList);
+        List<Board> list = boardService.selectBoardList(paramBoard);
+        logger.info("Board List Size : {}", list.size());
+        model.addAttribute("list", list);
 
-        return "board/list";
+        return list;
     }
 
     @ResponseBody
