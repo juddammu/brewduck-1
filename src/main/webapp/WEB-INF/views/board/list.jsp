@@ -16,7 +16,7 @@
             <td  class="clickable v-align-middle">${list.nttSj}</td>
             <td  class="clickable v-align-middle">${list.insertId}</td>
             <td  class="clickable v-align-middle">${list.insertDate}</td>
-            <td class="v-align-middle">
+            <td class="small-cell v-align-middle">
                 <button type="button" class="btn btn-danger btn-sm btn-small">${list.rdcnt}</button>
             </td>
         </tr>
