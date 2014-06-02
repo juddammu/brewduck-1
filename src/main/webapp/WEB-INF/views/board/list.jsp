@@ -17,7 +17,7 @@
             <td  class="clickable v-align-middle">${list.insertId}</td>
             <td  class="clickable v-align-middle">${list.insertDate}</td>
             <td class="v-align-middle">
-                <button type="button" class="btn btn-danger btn-sm btn-small">10</button>
+                <button type="button" class="btn btn-danger btn-sm btn-small">${list.rdcnt}</button>
             </td>
         </tr>
 </c:forEach>

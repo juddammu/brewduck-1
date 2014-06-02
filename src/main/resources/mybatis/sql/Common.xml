@@ -139,7 +139,8 @@
             A.BBS_ID          bbsId,
             A.NTT_SJ          nttSj,
             A.INSERT_ID       insertId,
-            DATE_FORMAT(A.INSERT_DATE,'%y-%m-%d %p %h:%i')     insertDate
+            DATE_FORMAT(A.INSERT_DATE,'%y-%m-%d %p %h:%i')     insertDate,
+            A.RDCNT           rdcnt
             FROM BOARD A,
             BOARD_MASTER B
        WHERE A.USE_AT = 'Y'
