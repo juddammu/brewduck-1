@@ -22,6 +22,7 @@ import java.util.List;
  */
 public interface BoardService {
 
+    public List<Board> selectBoard(Board board);
     //서브 카테고리 리스트
     public List<Board> selectBoardList(Board board);
 

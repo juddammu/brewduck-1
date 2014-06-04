@@ -33,6 +33,11 @@ public class BoardServiceImpl implements BoardService {
     private BoardDao boardDao;
 
     @Override
+    public List<Board> selectBoard(Board board) {
+        return boardDao.selectBoard(board);
+    }
+
+    @Override
     public List<Board> selectBoardList(Board board) {
         return boardDao.selectBoardList(board);
     }

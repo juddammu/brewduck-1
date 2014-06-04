@@ -22,6 +22,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface BoardDao {
+    public List<Board> selectBoard(Board board);
 
     public List<Board> selectBoardList(Board board);
 

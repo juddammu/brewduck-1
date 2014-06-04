@@ -133,11 +133,12 @@
         FROM MOVIES
     </select>
 
-    <select id="Common.selectBoardList" resultType="Board">
+    <sql id="Common.selectBoard">
         SELECT
             A.NTT_ID          nttId,
             A.BBS_ID          bbsId,
             A.NTT_SJ          nttSj,
+            A.NTT_CN          nttCn,
             A.INSERT_ID       insertId,
             DATE_FORMAT(A.INSERT_DATE,'%y-%m-%d %p %h:%i')  insertDate,
             A.RDCNT           rdcnt
@@ -146,8 +147,29 @@
        WHERE A.USE_AT = 'Y'
          AND A.BBS_ID = B.BBS_ID
          AND A.BBS_ID = 'FREEBOARD01'
-    </select>
+    </sql>
 
+
+    <select id="Common.selectBoardList"  parameterType="Board" resultType="Board">
+        <include refid="Common.selectBoard" />
+
+        <choose>
+            <when test="select2 = 1">
+                AND NTT_SJ like CONCAT('%', #{searchVal}, '%')
+            </when>
+            <when test="select2 = 2">
+                AND NTT_CN like CONCAT('%', #{searchVal}, '%')
+            </when>
+            <when test="select2 = 3">
+                AND INSERT_ID like CONCAT('%', #{searchVal}, '%')
+            </when>
+            <otherwise>
+
+            </otherwise>
+        </choose>
+
+        AND A.DELETE_ID IS NULL
+    </select>
 <!--    <select id="Common.selectBoardList"
             resultType="Board">
         SELECT

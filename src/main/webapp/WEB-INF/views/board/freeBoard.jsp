@@ -21,7 +21,7 @@
                 <div class="grid-title">
                     <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
                     <div class="col-md-12">
-                        <input name="bbsId" id="bbsId" type="hidden"  class="form-control" value=""> <%--타입별--%>
+                        <input name="sort" id="sort" type="text"  class="form-control" value=""> <%--타입별--%>
                             <div class="row column-seperation ">
                                 <div class="col-md-6">
                                     <div class="row column-seperation">
@@ -30,14 +30,14 @@
                                             <div class ="controls">
                                                 <div class ="row form-row">
                                                     <div class="col-md-3">
-                                                        <select name="select2" class="styled" >
-                                                            <option id = "titleSort" value="title">제목</option>
-                                                            <option id = "contentSort"value="contents">내용</option>
-                                                            <option id = "userIdSort" value="userId">작성자</option>
+                                                        <select name = "select2" id = "select2" class="styled" >
+                                                            <option id = "titleSort" value="1">제목</option>
+                                                            <option id = "contentSort"value="2">내용</option>
+                                                            <option id = "userIdSort" value="3">작성자</option>
                                                         </select>
                                                     </div>
                                                     <div class="input-group col-md-9">
-                                                        <input id="serchBar" type="text" class="form-control" placeholder="검색어 입력" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                                                        <input id="searchVal" name ="searchVal" type="text" class="form-control" placeholder="검색어 입력" onkeypress="javascript:if(event.keyCode == 13){search();}">
                                                         <span class="input-group-addon primary">
                                                       <span class="arrow"></span>
                                                         <i class="fa fa-align-justify"></i>
@@ -90,22 +90,12 @@
 
 <content tag="local_script">
     <script>
-        function getNationCount(){
-            $.get("/fermentable/countFermentableOrigin", function(data, status){
-                //alert("US 값은 : " + data.usCnt + "\n" + "de 값은 : " + data.deCnt + "\n");
-                $("#usButton").html("("+data.usCntName +data.usCnt+" 건)"); /*미국*/
-                $("#deButton").html("("+data.deCntName +data.deCnt+" 건)"); /*독일*/
-                $("#ukButton").html("("+data.ukCntName +data.ukCnt+" 건)"); /*영국*/
-                $("#beButton").html("("+data.beCntName +data.beCnt+" 건)"); /*벨기에*/
-                $("#caButton").html("("+data.caCntName +data.caCnt+" 건)"); /*캐나다*/
-                $("#etcButton").html("("+data.etcCntName +data.etcCnt+" 건)"); /*기타*/
-            })
-        }
 
         function search(){
             getLoadingTime();                                                   //로딩 아이콘 호출
             $("#result").html("");
             $("#result").load("/board/list", $("#searchForm").serialize());
+            alert(($("#searchForm").serialize()));
             //getResult();
         }
 
@@ -121,9 +111,9 @@
             },500);
         }
 
-        function setOriginSearch(){
-            $("#bbsId").val(jQuery(this).val());
-            search();
+        function setSortSearch(){
+            $("#sort").val(jQuery(this).val());
+            /*search();*/
         }
 
 
@@ -135,7 +125,8 @@
 
             $("#search").click(function(){
                 search();
-            });
+         });
+            $("#select2").click(setSortSearch);
         });
     </script>
 </content>

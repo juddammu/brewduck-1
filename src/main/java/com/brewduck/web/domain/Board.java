@@ -10,21 +10,35 @@ package com.brewduck.web.domain;
 public class Board {
 
     private static final long serialVersionUID = 1L;
-
+    //게시물 ID
     private Integer nttId;
+    //게시판 ID
     private String  bbsId;
+    //게시물 번호
     private Integer nttNo;
+    //게시물 제목
     private String  nttSj;
+    //게시물 내용
     private String  nttCn;
+    //답변여부
     private String  answerAt;
+    //부모글 번호
     private Integer parntscttNo;
+    //답변 위치
     private Integer answerLc;
+    //정렬순서
     private Integer sortOrdr;
+    //조회수
     private Integer rdcnt;
+    //게시시작일
     private String  ntceBgnde;
+    //게시종료일
     private String  ntceEndde;
+    //게시자 ID
     private String  ntcrId;
+    //게시자 명
     private String  ntcrNm;
+    //게시물 첨부파일 아이디
     private String  atchFileId;
     //원글 게시판 번호
     private int answerNo;
@@ -46,8 +60,10 @@ public class Board {
     private String updateId;
     //패스워드
     private String password;
-
+    //게시판명
     private String  bbsNm;
+
+    private String searchVal;
 
     public int getAnswerNo() {
         return answerNo;
@@ -255,5 +271,13 @@ public class Board {
 
     public void setBbsNm(String bbsNm) {
         this.bbsNm = bbsNm;
+    }
+
+    public String getSearchVal() {
+        return searchVal;
+    }
+
+    public void setSearchVal(String searchVal) {
+        this.searchVal = searchVal;
     }
 }
