@@ -12,7 +12,7 @@
         <div class="span12">
             <div class="grid simple ">
                 <div class="grid-title">
-                    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramHop">
+                    <form:form class="form-no-horizontal-spacing" id="boardMaster"  name="boardMaster" modelAttribute="paramHop">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="row form-row">
