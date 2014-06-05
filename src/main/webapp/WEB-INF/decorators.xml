@@ -38,6 +38,7 @@
         <pattern>/misc/*/*</pattern>
         <pattern>/board/</pattern>
         <pattern>/board/freeBoard</pattern>
+        <pattern>/board/addBoard</pattern>
 
     </decorator>
 

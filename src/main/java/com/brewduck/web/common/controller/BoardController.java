@@ -41,6 +41,8 @@ public class BoardController {
         return "board/freeBoard";
     }
 
+
+
     /**
      * <pre>
      * 공지사항 메인
@@ -77,6 +79,25 @@ public class BoardController {
         model.addAttribute("account", account);
 
         return "board/questionBoard";
+    }
+
+    /**
+     * <pre>
+     * 자유게시판 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 자유게시판 메인
+     */
+    @RequestMapping(value = "/addBoard", method = RequestMethod.GET)
+    public String addBoardMain(Model model) {
+        logger.info("addBoard index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "board/addBoard";
     }
 
 

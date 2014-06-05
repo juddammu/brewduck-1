@@ -49,6 +49,7 @@
                     <li class="active"> <a href="/board/freeBoard">자유게시판(Free Board)</a> </li>
                     <li > <a href="/board/notice">공지사항(Notice)<span class=" label label-info pull-right m-r-30"></span></a></li>
                     <li > <a href="/board/questionBoard">질문게시판(Q&A)</a> </li>
+                    <li > <a href="/board/addBoard">게시판 생성</a> </li>
                 </ul>
             </li>
             <!--
