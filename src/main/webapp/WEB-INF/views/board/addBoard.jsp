@@ -78,10 +78,10 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="radio">
-                                            <input id="replyPosblAt" type="radio" name="replyPosblAt" value="Y" checked="checked">
-                                            <label for="replyPosblAt">가능</label>
-                                            <input id="replyImPosblAt" type="radio" name="replyImPosblAt" value="N">
-                                            <label for="replyImPosblAt">불가능</label>
+                                            <input id="replyPossible" type="radio" name="replyPosblAt" value="Y" checked="checked">
+                                            <label for="replyPossible">가능</label>
+                                            <input id="replyImpossible" type="radio" name="replyPosblAt" value="N">
+                                            <label for="replyImpossible">불가능</label>
                                         </div>
                                             <%--                                        <spring:message code="button.possible" /> : <form:radiobutton path="replyPosblAt"  value="Y" />&nbsp;
                                                                                     <spring:message code="button.impossible" /> : <form:radiobutton path="replyPosblAt"  value="N"  />
@@ -92,10 +92,10 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="radio">
-                                            <input id="fileAtchPosblAt" type="radio" name="fileAtchPosblAt" value="Y" checked="checked">
-                                            <label for="fileAtchPosblAt">가능</label>
-                                            <input id="fileAtchImPosblAt" type="radio" name="fileAtchImPosblAt" value="N">
-                                            <label for="fileAtchImPosblAt">불가능</label>
+                                            <input id="filePossible" type="radio" name="fileAtchPosblAt" value="Y" checked="checked">
+                                            <label for="filePossible">가능</label>
+                                            <input id="fileImpossible" type="radio" name="fileAtchPosblAt" value="N">
+                                            <label for="fileImpossible">불가능</label>
                                         </div>
                                             <%--                                        <spring:message code="button.possible" /> : <form:radiobutton path="fileAtchPosblAt"  value="Y" />&nbsp;
                                                                                     <spring:message code="button.impossible" /> : <form:radiobutton path="fileAtchPosblAt"  value="N"  />
