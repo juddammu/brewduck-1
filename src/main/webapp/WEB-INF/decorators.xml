@@ -24,6 +24,7 @@
 
     <decorator name="full-content" page="full-content.jsp">
         <pattern>/recipe/</pattern>
+        <pattern>/recipe/create</pattern>
         <pattern>/recipe/*/*</pattern>
         <pattern>/hop/</pattern>
         <pattern>/hop/*/*</pattern>

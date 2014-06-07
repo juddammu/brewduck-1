@@ -58,21 +58,22 @@
                 %>
                     <form:form id="authentication" class="animated fadeIn" method="POST" action="/account/authentication" modelAttribute="account">
                     <li>
-                        <input type="text" id="email" name="email" class="form-control input-sm" style="width:120px;" placeholder="이메일" />
+                        <input type="text" id="email" name="email" class="form-control input-sm" style="width:120px;" placeholder="이메일" />      &nbsp;    &nbsp;
                     </li>
                     <li>
                         <input type="password" id="password" name="password" class="form-control input-sm" style="width:120px;" placeholder="패스워드" />
                     </li>
                     <li>
                         <button type="submit" class="btn btn-small btn-primary btn-cons-md"> 로그인</button>
-
                     </li>
                     </form:form>
                     <%
                     } else {
                     %>
+                    <li>
+                        <button type="submit" class="btn btn-small btn-primary btn-cons-md"> 새로운 레시피 만들기</button>
+                    </li>
                     <li class="quicklinks">
-
                         <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
                             <div class="iconset top-settings-dark "></div>
                         </a>
@@ -81,10 +82,10 @@
                         %>
                         <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
                             <li><a href="user-profile.html"> My Account </a> </li>
-                            <li><a href="calender.html">My Calendar</a> </li>
-                            <li><a href="email.html"> My Inbox&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a> </li>
+                            <!--li><a href="calender.html">My Calendar</a> </li>
+                            <li><a href="email.html"> My Inbox&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a> </li-->
                             <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
+                            <li><a href="/account/logout"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
                         </ul>
                     </li>
                 </ul>
