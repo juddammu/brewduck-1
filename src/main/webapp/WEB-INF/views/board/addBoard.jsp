@@ -12,7 +12,7 @@
         <div class="span12">
             <div class="grid simple ">
                 <div class="grid-title">
-                    <form:form class="form-no-horizontal-spacing" id="boardMaster"  name="boardMaster" modelAttribute="paramHop">
+                    <form:form class="form-no-horizontal-spacing" commandName="boardMaster" id="boardMaster"  name="boardMaster">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="row form-row">
@@ -205,20 +205,6 @@
             }
         }
 
-        function goDetail(seq, titleInUrl){
-            location.href = "/hop/"+seq+"/"+titleInUrl;
-        }
-
-        function setOriginSearch(){
-            $("#origin").val(jQuery(this).val());
-            search();
-        }
-
-        function setAromaSearch(){
-            $("#aroma").val(jQuery(this).val());
-            search();
-        }
-
         function getLoadingTime(){
             if($("loading").is("visible")){return;}
             document.getElementById("loading").style.display="block";       //로딩 아이콘 노출
@@ -235,7 +221,7 @@
             document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
 
             $("#create").click(function(){
-                create();
+                fn_egov_regist_brdMstr();
             });
         });
     </script>
