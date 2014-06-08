@@ -11,7 +11,7 @@
 <%@ include file="/WEB-INF/views/common/include/main_header.jsp" %>
 
 <!-- BEGIN BODY -->
-<body class="">
+<body class="condense-menu">
     <!-- 상단메뉴 -->
     <%@ include file="/WEB-INF/views/common/include/home_top_menu.jsp" %>
     <!-- END HEADER -->
@@ -674,10 +674,7 @@
         location.href = "/hop/"+seq+"/"+titleInUrl;
     }
     $(document).ready(function () {
-
         $(".live-tile,.flip-list").liveTile();
-
-
     });
 </script>
 

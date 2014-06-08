@@ -306,6 +306,8 @@
 <script src="/resources/assets/plugins/boostrap-slider/js/bootstrap-slider.js" type="text/javascript"></script>
 <script src="/resources/assets/plugins/skycons/skycons.js"></script>
 
+<script src="/resources/assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+
 <!-- END PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN CORE TEMPLATE JS -->

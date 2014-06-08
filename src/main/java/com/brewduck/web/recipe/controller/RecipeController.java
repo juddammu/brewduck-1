@@ -27,6 +27,18 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
+    /**
+     * <pre>
+     * 맥주 레시피 목록 조회.
+     * </pre>
+     *
+     * @return 맥주 레시피 목록
+     */
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public String create() {
+        LOGGER.info("Recipe create");
+        return "recipe/create";
+    }
 
     /**
      * <pre>
