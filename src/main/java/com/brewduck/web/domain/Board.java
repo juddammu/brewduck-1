@@ -14,6 +14,25 @@ public class Board {
     private Integer nttId;
     //게시판 ID
     private String  bbsId;
+
+    private String  bbsTyCode;
+
+    private String  bbsAttrbCode;
+
+    private String  bbsIntrcn;
+
+    private String  replyPosblAt;
+
+    private String  fileAtchPosblAt;
+
+    private Integer  posblAtchFileNumber;
+
+    private Integer  posblAtchFileSize;
+
+    private String  tmplatId;
+
+    private String  frstRegisterId;
+
     //게시물 번호
     private Integer nttNo;
     //게시물 제목
@@ -64,6 +83,78 @@ public class Board {
     private String  bbsNm;
 
     private String searchVal;
+
+    public String getBbsTyCode() {
+        return bbsTyCode;
+    }
+
+    public void setBbsTyCode(String bbsTyCode) {
+        this.bbsTyCode = bbsTyCode;
+    }
+
+    public String getBbsAttrbCode() {
+        return bbsAttrbCode;
+    }
+
+    public void setBbsAttrbCode(String bbsAttrbCode) {
+        this.bbsAttrbCode = bbsAttrbCode;
+    }
+
+    public String getBbsIntrcn() {
+        return bbsIntrcn;
+    }
+
+    public void setBbsIntrcn(String bbsIntrcn) {
+        this.bbsIntrcn = bbsIntrcn;
+    }
+
+    public String getReplyPosblAt() {
+        return replyPosblAt;
+    }
+
+    public void setReplyPosblAt(String replyPosblAt) {
+        this.replyPosblAt = replyPosblAt;
+    }
+
+    public String getFileAtchPosblAt() {
+        return fileAtchPosblAt;
+    }
+
+    public void setFileAtchPosblAt(String fileAtchPosblAt) {
+        this.fileAtchPosblAt = fileAtchPosblAt;
+    }
+
+    public Integer getPosblAtchFileNumber() {
+        return posblAtchFileNumber;
+    }
+
+    public void setPosblAtchFileNumber(Integer posblAtchFileNumber) {
+        this.posblAtchFileNumber = posblAtchFileNumber;
+    }
+
+    public Integer getPosblAtchFileSize() {
+        return posblAtchFileSize;
+    }
+
+    public void setPosblAtchFileSize(Integer posblAtchFileSize) {
+        this.posblAtchFileSize = posblAtchFileSize;
+    }
+
+    public String getTmplatId() {
+        return tmplatId;
+    }
+
+    public void setTmplatId(String tmplatId) {
+        this.tmplatId = tmplatId;
+    }
+
+    public String getFrstRegisterId() {
+        return frstRegisterId;
+    }
+
+    public void setFrstRegisterId(String frstRegisterId) {
+        this.frstRegisterId = frstRegisterId;
+    }
 
     public int getAnswerNo() {
         return answerNo;

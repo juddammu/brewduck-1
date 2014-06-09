@@ -48,5 +48,8 @@ public class BoardDaoImpl implements BoardDao {
         return sqlSessionTemplate.selectList("Common.selectCommentList", board);
     }
 
-
+    @Override
+    public int insertBoardMaster(Board board) {
+        return sqlSessionTemplate.insert("Common.insertBoardMaster", board);
+    }
 }
