@@ -28,4 +28,6 @@ public interface BoardService {
 
     public List<Board> selectCommentList(Board board) throws RuntimeException;
 
+    public int insertBoardMaster(Board board);
+
 }

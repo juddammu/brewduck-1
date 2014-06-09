@@ -69,6 +69,8 @@ public class BoardController {
         SYSDATE()
          */
 
+        int insertCount = boardService.insertBoardMaster(board);
+
         logger.info("insert Board Master");
         logger.info(" @@@ " + board.getBbsNm());
 

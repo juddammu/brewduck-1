@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -45,6 +46,16 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public List<Board> selectCommentList(Board board) {
         return boardDao.selectCommentList(board);
+    }
+
+    @Transactional
+    @Override
+    public int insertBoardMaster(Board board) {
+        int insertCount = 0;
+
+        insertCount = boardDao.insertBoardMaster(board);
+
+        return insertCount;
     }
 
 }

@@ -28,4 +28,6 @@ public interface BoardDao {
 
     public List<Board> selectCommentList(Board board) throws DataAccessException;
 
+    public int insertBoardMaster(Board board);
+
 }
