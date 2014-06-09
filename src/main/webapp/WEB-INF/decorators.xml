@@ -46,8 +46,7 @@
     <decorator name="nonlayout-content" page="nonlayout-content.jsp">
         <pattern>/hop/list/</pattern>
         <pattern>/hop/list/*</pattern>
-        <pattern>/style/list/</pattern>
-        <pattern>/style/list/*</pattern>
+        <pattern>/style/list/</pattern>        <pattern>/style/list/*</pattern>
         <pattern>/yeast/list/</pattern>
         <pattern>/yeast/list/*</pattern>
         <pattern>/fermentable/list/</pattern>
