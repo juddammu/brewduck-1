@@ -65,12 +65,11 @@ public class BoardController {
         #posblAtchFileSize#,
         #tmplatId#,
         #useAt#,
-      #frstRegisterId#,
-      SYSDATE()
+        #frstRegisterId#,
+        SYSDATE()
          */
 
-        logger.info("insertBoardMaster");
-
+        logger.info("insert Board Master");
         logger.info(" @@@ " + board.getBbsNm());
 
         return "redirect:/board/addBoard";
