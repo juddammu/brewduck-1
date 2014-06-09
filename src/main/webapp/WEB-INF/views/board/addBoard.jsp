@@ -12,7 +12,7 @@
         <div class="span12">
             <div class="grid simple ">
                 <div class="grid-title">
-                    <form:form class="form-no-horizontal-spacing" commandName="board" id="board"  name="board">
+                    <form:form id="board" method="POST" action="/board/insertBoardMaster" modelAttribute="board">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="row form-row">
@@ -221,9 +221,7 @@
             $("#bbsNm").focus();              //제목칸 포커스
             document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
 
-            $("#create").click(function(){
-                fn_egov_regist_brdMstr();
-            });
+
         });
     </script>
 </content>

@@ -9,7 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -43,18 +46,20 @@ public class BoardController {
         return "board/addBoard";
     }
 
-    @ResponseBody
     @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
-    public Board insertBoardMaster(Model model,  @RequestBody Board board) {
+        public String insertBoardMaster(@ModelAttribute("board") Board board,
+                BindingResult result,
+                RedirectAttributes redirectAttributes) {
+
+        System.out.println("22222222222222 " );
+
         logger.info("insertBoardMaster");
 
         Account account = AuthenticationUtils.getUser();
 
         logger.info(" @@@ " + board.getBbsNm());
 
-        model.addAttribute("account", account);
-
-        return board;
+        return "redirect:/board/addBoard";
     }
 
 
