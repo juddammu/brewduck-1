@@ -138,7 +138,6 @@
         },500);
     }
 
-
     $(document).ready(function() {
 
         $('.slider-element').slider();  //슬라이더 초기화

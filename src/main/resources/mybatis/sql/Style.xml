@@ -47,7 +47,7 @@
             OR korean_name like CONCAT('%', #{name}, '%')
         </if>
         AND delete_id IS NULL
-    ORDER BY CATEGORY_NUMBER, STYLE_LETTER
+        ORDER BY CATEGORY_NUMBER, STYLE_LETTER
         </trim>
     </select>
 
