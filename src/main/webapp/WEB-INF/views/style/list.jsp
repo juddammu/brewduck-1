@@ -4,25 +4,26 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:forEach items="${list}" var="list">
-    <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
+    <tr>
         <td  class="small-cell v-align-middle">
             <div class="star">
                 <input id="checkbox9" type="checkbox" value="1" checked >
                 <label for="checkbox9"></label>
             </div>
         </td>
-        <td  class="clickable v-align-middle"> ${list.koreanName}</td>
-        <td  class="clickable v-align-middle"> ${list.name}</td>
-        <td  class="clickable v-align-middle">  </td>
-        <td  class="clickable v-align-middle">  </td>
+        <td  class=" v-align-middle"> ${list.koreanName}</td>
+        <td  class=" v-align-middle"> ${list.name}</td>
         <td class="v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small"> </button>
+            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.ogMax} </button>
         </td>
-        <td  class="clickable v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small"> </button>
+        <td  class=" v-align-middle">
+            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.fgMax} </button>
         </td>
-        <td  class="clickable v-align-middle">
-            <span class="label label-primary"> </span>
+        <td class="v-align-middle">
+            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.fgMax} </button>
+        </td>
+        <td  class=" v-align-middle">
+            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.colorMax} %</button>
         </td>
     </tr>
 </c:forEach>

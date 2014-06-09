@@ -12,19 +12,16 @@
 <div class="span12">
 <div class="grid simple ">
 <div class="grid-title">
-    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramHop">
+    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
         <input name="origin" type ="hidden" id="origin" type="text"  class="form-control" value=""> <%--국가별--%>
         <input name="aroma" type ="hidden" id="aroma" type="text"  class="form-control" value=""> <%--전체/ 향 /쓴맛--%>
 
         <div class="row column-seperation">
             <div class="col-md-6">
-                <h4>특성으로 찾기</h4>
+                <h4>이름으로 찾기</h4>
                 <div class="row form-row">
                     <div class="col-md-11">
-                        <input name="koreanName" id="koreanName" type="text"  class="form-control" placeholder="홉 한글 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                    </div>
-                    <div class="col-md-11">
-                        <input name="name" id="name" type="text"  class="form-control" placeholder="영문 홉 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                        <input name="name" id="name" type="text"  class="form-control" placeholder="스타일 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
                     </div>
                     <!--div class="col-md-1" id="loading">
                         <img style="float: left;" alt="" src="/resources/landing/images/supersized-progress.gif" />
@@ -97,11 +94,10 @@
             <th class="small-cell"> </th>
             <th>이름</th>
             <th>영문명</th>
-            <th>타입</th>
-            <th>원산지</th>
-            <th>ALPHA</th>
-            <th>BETA</th>
-            <th>HSI</th>
+            <th>초기비중(OG)</th>
+            <th>종료비중(FG)</th>
+            <th>쓴맛(IBU)</th>
+            <th>색상(ABV)</th>
         </tr>
         </thead>
         <tbody id="result" name="result">
@@ -130,7 +126,7 @@
     }
 
     function goDetail(seq, titleInUrl){
-        location.href = "/hop/"+seq+"/"+titleInUrl;
+        location.href = "/style/"+seq+"/"+titleInUrl;
     }
 
 
@@ -155,7 +151,7 @@
         });
 
         $("#fullSearch").click(function(){
-            $("#origin").val('');             //TODO : 초기화 함수로 뺄것
+            $("#name").val('');             //TODO : 초기화 함수로 뺄것
             search();
         });
     });

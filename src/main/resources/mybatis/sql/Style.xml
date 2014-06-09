@@ -41,23 +41,29 @@
     <select id="Style.selectStyleList" parameterType="Style" resultType="Style">
         <!-- 맥주 스타일 목록 조회 -->
         <include refid="Style.selectStyle" />
-        WHERE delete_id IS NULL
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+        <if test="name != null">
+            AND name like CONCAT('%', #{name}, '%')
+            OR korean_name like CONCAT('%', #{name}, '%')
+        </if>
+        AND delete_id IS NULL
     ORDER BY CATEGORY_NUMBER, STYLE_LETTER
+        </trim>
     </select>
 
     <select id="Style.selectStyleDetail" parameterType="Style" resultType="Style">
         <!-- 맥주 스타일 상세 조회 -->
         <include refid="Style.selectStyle" />
-        WHERE delete_id IS NULL
-        <if test="name != null">
-            AND name = #{name}
-        </if>
-        <if test="category != null">
-            AND category = #{category}
-        </if>
-        <if test="type != null">
-            AND type = #{type}
-        </if>
+            <if test="name != null">
+                AND name = #{name}
+            </if>
+            <if test="category != null">
+                AND category = #{category}
+            </if>
+            <if test="type != null">
+                AND type = #{type}
+            </if>
+                AND delete_id IS NULL
     </select>
 
     <insert id="Style.insertStyle" parameterType="Style">
