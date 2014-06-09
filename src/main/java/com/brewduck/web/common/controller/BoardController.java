@@ -51,10 +51,8 @@ public class BoardController {
                 BindingResult result,
                 RedirectAttributes redirectAttributes) {
 
-        System.out.println("22222222222222 " );
-
+        Account account = AuthenticationUtils.getUser();
         /*
-        #bbsId#,
         #bbsTyCode#,
         #bbsAttrbCode#,
         #bbsNm#,
@@ -68,6 +66,14 @@ public class BoardController {
         #frstRegisterId#,
         SYSDATE()
          */
+        board.setBbsTyCode("BBST01");
+        board.setBbsAttrbCode("BBSA01");
+        board.setReplyPosblAt("Y");
+        board.setPosblAtchFileNumber(1);
+        board.setPosblAtchFileSize(102400);
+        board.setTmplatId("TMPLAT_BOARD_DEFAULT");
+        board.setUseAt("Y");
+        board.setFrstRegisterId(account.getId()+"");
 
         int insertCount = boardService.insertBoardMaster(board);
 

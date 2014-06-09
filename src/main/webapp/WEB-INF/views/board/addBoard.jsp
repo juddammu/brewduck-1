@@ -32,7 +32,7 @@
                                     <div class="col-md-9">
                                             <%--<form:textarea path="bbsIntrcn" cols="75" rows="4" cssStyle="width:100%" />
                                             <br/><form:errors path="bbsIntrcn" />--%>
-                                        <textarea id="bbsIntrcn" placeholder="게시판소개 입력..." class="form-control" rows="10"></textarea>
+                                        <textarea id="bbsIntrcn" name="bbsIntrcn" placeholder="게시판소개 입력..." class="form-control" rows="10"></textarea>
                                     </div>
                                 </div>
                                 <div class="row form-row">

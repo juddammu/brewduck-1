@@ -173,7 +173,7 @@
 
     <insert id="Common.insertBoardMaster" parameterType="Board">
 		<![CDATA[
-			INSERT INTO COMTNBBSMASTER (
+			INSERT INTO BOARD_MASTER (
               BBS_TY_CODE,
               BBS_ATTRB_CODE,
               BBS_NM,
@@ -184,20 +184,20 @@
 			  ATCH_POSBL_FILE_SIZE,
 			  TMPLAT_ID,
 			  USE_AT,
-			  FRST_REGISTER_ID,
-			  FRST_REGIST_PNTTM
+			  insert_id,
+              insert_date
 		   ) VALUES (
-		      #bbsTyCode#,
-		      #bbsAttrbCode#,
-		      #bbsNm#,
-		      #bbsIntrcn#,
-			  #replyPosblAt#,
-			  #fileAtchPosblAt#,
-			  #posblAtchFileNumber#,
-			  #posblAtchFileSize#,
-			  #tmplatId#,
-			  #useAt#,
-			  #frstRegisterId#,
+		      #{bbsTyCode},
+		      #{bbsAttrbCode},
+		      #{bbsNm},
+		      #{bbsIntrcn},
+			  #{replyPosblAt},
+			  #{fileAtchPosblAt},
+			  #{posblAtchFileNumber},
+			  #{posblAtchFileSize},
+			  #{tmplatId},
+			  #{useAt},
+			  #{frstRegisterId},
 			  SYSDATE()
 			 )
 		]]>
