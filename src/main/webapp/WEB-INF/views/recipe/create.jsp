@@ -277,8 +277,26 @@
 <content tag="local_script">
     <script type="text/javascript">
         $(document).ready(function () {
-
             $("#source").select2();
+            getStyleList();
         });
+
+        function getStyleList(){
+
+            var styleHtml = "";
+
+            $.get("/style/list", function(data, status){
+                $.each(data, function(i){
+
+                    styleHtml = styleHtml +  "<input id='aromaCode"+ data[i].aromaCode +"' type='checkbox' value='"+ data[i].aromaCode +"'>";
+                    styleHtml = styleHtml +  "<label for='aromaCode"+ data[i].aromaCode +"'>"+data[i].aromaName+"</label>";
+
+                });
+
+                alert(styleHtml);
+               // $("#aromaArea").append(aromaHtml);
+
+            })
+        }
     </script>
 </content>

@@ -12,7 +12,7 @@
         <div class="span12">
             <div class="grid simple ">
                 <div class="grid-title">
-                    <form:form class="form-no-horizontal-spacing" commandName="boardMaster" id="boardMaster"  name="boardMaster">
+                    <form:form class="form-no-horizontal-spacing" commandName="board" id="board"  name="board">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="row form-row">
@@ -179,13 +179,14 @@
             }*/
 
         function fn_egov_regist_brdMstr(){  //등록 버튼 로직
+            alert();
             if (!validateBoardMaster(document.boardMaster)){
                 return;
             }
 
             if (confirm('<spring:message code="common.regist.msg" />')) {
-                form = document.boardMaster;
-                form.action = "<c:url value='/cop/bbs/insertBoardMaster.do'/>";
+                form = document.board;
+                form.action = "<c:url value='/board/insertBoardMaster'/>";
                 form.submit();
             }
         }

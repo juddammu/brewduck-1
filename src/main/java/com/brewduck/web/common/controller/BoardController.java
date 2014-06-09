@@ -22,64 +22,7 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
-    /**
-     * <pre>
-     * 자유게시판 메인
-     * </pre>
-     *
-     * @param model Model
-     * @return 자유게시판 메인
-     */
-    @RequestMapping(value = "/freeBoard", method = RequestMethod.GET)
-    public String freeMain(Model model) {
-        logger.info("Board index");
 
-        Account account = AuthenticationUtils.getUser();
-
-        model.addAttribute("account", account);
-
-        return "board/freeBoard";
-    }
-
-
-
-    /**
-     * <pre>
-     * 공지사항 메인
-     * </pre>
-     *
-     * @param model Model
-     * @return 공지사항 메인
-     */
-    @RequestMapping(value = "/noticeBoard", method = RequestMethod.GET)
-    public String noticeMain(Model model) {
-        logger.info("Board index");
-
-        Account account = AuthenticationUtils.getUser();
-
-        model.addAttribute("account", account);
-
-        return "board/noticeBoard";
-    }
-
-    /**
-     * <pre>
-     * 질문게시판 메인
-     * </pre>
-     *
-     * @param model Model
-     * @return 질문게시판 메인
-     */
-    @RequestMapping(value = "/questionBoard", method = RequestMethod.GET)
-    public String questionMain(Model model) {
-        logger.info("Board index");
-
-        Account account = AuthenticationUtils.getUser();
-
-        model.addAttribute("account", account);
-
-        return "board/questionBoard";
-    }
 
     /**
      * <pre>
@@ -98,6 +41,20 @@ public class BoardController {
         model.addAttribute("account", account);
 
         return "board/addBoard";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
+    public Board insertBoardMaster(Model model,  @RequestBody Board board) {
+        logger.info("insertBoardMaster");
+
+        Account account = AuthenticationUtils.getUser();
+
+        logger.info(" @@@ " + board.getBbsNm());
+
+        model.addAttribute("account", account);
+
+        return board;
     }
 
 

@@ -36,9 +36,8 @@
         <intercept-url pattern="/hop/**" access="permitAll" />
         <intercept-url pattern="/account/**"   access="permitAll" />
         <intercept-url pattern="/profile/**" access="hasRole('ROLE_SIGNIN')" />
-        <intercept-url pattern="/recipe/**"  access="permitAll" />
         <intercept-url pattern="/" access="permitAll" />
-
+        <intercept-url pattern="/recipe/create" access="hasRole('ROLE_SIGNIN')" />
         <logout logout-url="/logout" success-handler-ref="logoutHandler" />
 
         <remember-me key="myAppKey" token-validity-seconds="864000" user-service-ref="userDetailService"/>

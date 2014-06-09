@@ -71,7 +71,7 @@
                     } else {
                     %>
                     <li>
-                        <button type="submit" class="btn btn-small btn-primary btn-cons-md"> 새로운 레시피 만들기</button>
+                        <a href="/recipe/create"><button type="submit" class="btn btn-small btn-primary btn-cons-md"> 새로운 레시피 만들기</button></a>
                     </li>
                     <li class="quicklinks">
                         <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">

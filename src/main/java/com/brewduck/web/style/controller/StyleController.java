@@ -106,6 +106,21 @@ public class StyleController {
         return list;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getStyleList", method = RequestMethod.GET)
+    public List<Style> selectStyleList(Model model) {
 
+        Style style = new Style();
+
+        // 맥주 홉 목록 조회
+        List<Style> list = styleService.selectStyleList(style);
+
+        //logger.info(list.get(0).getTitleInUrl());
+        //List<Style> list = null;
+        //logger.info("Style List Size : {}", list.size());
+        model.addAttribute("list", list);
+
+        return list;
+    }
 }
 
