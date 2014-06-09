@@ -53,9 +53,23 @@ public class BoardController {
 
         System.out.println("22222222222222 " );
 
-        logger.info("insertBoardMaster");
+        /*
+        #bbsId#,
+        #bbsTyCode#,
+        #bbsAttrbCode#,
+        #bbsNm#,
+        #bbsIntrcn#,
+        #replyPosblAt#,
+        #fileAtchPosblAt#,
+        #posblAtchFileNumber#,
+        #posblAtchFileSize#,
+        #tmplatId#,
+        #useAt#,
+      #frstRegisterId#,
+      SYSDATE()
+         */
 
-        Account account = AuthenticationUtils.getUser();
+        logger.info("insertBoardMaster");
 
         logger.info(" @@@ " + board.getBbsNm());
 
