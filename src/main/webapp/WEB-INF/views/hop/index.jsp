@@ -13,18 +13,19 @@
 <div class="grid simple ">
 <div class="grid-title">
     <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramHop">
-        <input name="origin" type ="hidden" id="origin" type="text"  value=""> <%--국가별--%>
-        <input name="aroma" type ="hidden" id="aroma" type="text"  value=""> <%--전체/ 향 /쓴맛--%>
+        <input name="origin" type ="hidden" id="origin" value=""> <%--국가별--%>
+        <input name="aroma" type ="hidden" id="aroma" value=""> <%--전체/ 향 /쓴맛--%>
 
         <div class="row column-seperation">
             <div class="col-md-6">
                 <h4>특성으로 찾기</h4>
                 <div class="row form-row">
-                    <div class="col-md-11">
-                        <input name="koreanName" id="koreanName" type="text"  class="form-control" placeholder="홉 한글 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                    </div>
-                    <div class="col-md-11">
-                        <input name="name" id="name" type="text"  class="form-control" placeholder="영문 홉 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                    <div class="col-md-11 input-group">
+                        <input name="name" id="name" type="text"  class="form-control" placeholder="홉 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                       <span class="input-group-addon primary">
+                           <span class="arrow"></span>
+                            <i class="fa fa-align-justify"></i>
+                       </span>
                     </div>
                     <!--div class="col-md-1" id="loading">
                         <img style="float: left;" alt="" src="/resources/landing/images/supersized-progress.gif" />
@@ -214,6 +215,9 @@
 
         $("#fullSearch").click(function(){
             $("#origin").val('');             //TODO : 초기화 함수로 뺄것
+            $("#name").val('');
+            $("#aroma").val('');
+            $("#allRadio").attr('checked', true);
             search();
         });
         $("#allRadio").click(setAromaSearch);

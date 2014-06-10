@@ -73,9 +73,9 @@
         <!-- 맥주 홉 목록 조회 -->
         <include refid="Hop.selectHop" />
         <trim prefix="WHERE" prefixOverrides="AND | OR">
-            <if test="name != null">AND NAME like CONCAT('%', #{name}, '%') </if>
-            <if test="koreanName != null">
-                AND korean_name like CONCAT('%', #{koreanName}, '%')
+            <if test="name != ''">
+                AND (NAME like CONCAT('%', #{name}, '%')
+                OR korean_name like CONCAT('%', #{name}, '%'))
             </if>
             <if test="type != null and type != 0">AND type =  #{type} </if>
             <choose>
@@ -85,7 +85,7 @@
                 <when test="origin == ''">
 
                 </when>
-                <when test="origin != null">
+                <when test="origin != ''">
                     AND origin = #{origin}
                 </when>
                 <otherwise>

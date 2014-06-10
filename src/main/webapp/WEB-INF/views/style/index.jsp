@@ -20,8 +20,12 @@
             <div class="col-md-6">
                 <h4>이름으로 찾기</h4>
                 <div class="row form-row">
-                    <div class="col-md-11">
+                    <div class="col-md-11 input-group">
                         <input name="name" id="name" type="text"  class="form-control" placeholder="스타일 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                        <span class="input-group-addon primary">
+                            <span class="arrow"></span>
+                            <i class="fa fa-align-justify"></i>
+                       </span>
                     </div>
                     <!--div class="col-md-1" id="loading">
                         <img style="float: left;" alt="" src="/resources/landing/images/supersized-progress.gif" />
@@ -51,8 +55,8 @@
                 <h4>수치로 찾기 (기능 구현중)</h4>
                 <div class="row">
                     <div class="slider sucess col-md-4">
-                        <span class="semi-bold">ALPHA</span>
-                        <p>Alpha 산 (α acids) 은 맥주의 생산에 있어서 가장 중요한 ...(더보기) </p>
+                        <span class="semi-bold">비중 (Gravity)</span>
+                        <p>어떤 물질의 질량과 이것과 같은 부피를 ... (더보기) </p>
                     </div>
                     <div class="slider warning col-md-8">
                         <input type="text" class="slider-element form-control" value="" data-slider-min="1" data-slider-max="70" data-slider-step="1" data-slider-value="40" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
@@ -60,8 +64,8 @@
                 </div>
                 <div class="row form-row">
                     <div class="slider sucess col-md-4">
-                        <span class="semi-bold">BETA</span>
-                        <p>Beta 산은 ...(더보기) </p>
+                        <span class="semi-bold">쓴맛 (IBU)</span>
+                        <p>맥주에 쓴맛을 나타내는 방법의 하나로  ...(더보기) </p>
                     </div>
                     <div class="slider warning col-md-8">
                         <input type="text" class="slider-element form-control" value="" data-slider-min="1" data-slider-max="70" data-slider-step="1" data-slider-value="40" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
@@ -69,8 +73,8 @@
                 </div>
                 <div class="row form-row">
                     <div class="slider col-md-4">
-                        <span class="semi-bold">HSI</span>
-                        <p>HSI는...(더보기) </p>
+                        <span class="semi-bold">색상 (ABV)</span>
+                        <p>ABV 는...(더보기) </p>
                     </div>
                     <div class="slider info col-md-8">
                         <input type="text"  data-slider-value="[10,20]" data-slider-step="5" data-slider-max="100" data-slider-min="10" value="" class="slider-element form-control" data-slider-selection="after">
@@ -151,6 +155,8 @@
 
         $("#fullSearch").click(function(){
             $("#name").val('');             //TODO : 초기화 함수로 뺄것
+            $("#origin").val('');
+            $("#aroma").val('');
             search();
         });
     });

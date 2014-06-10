@@ -42,9 +42,9 @@
         <!-- 맥주 스타일 목록 조회 -->
         <include refid="Style.selectStyle" />
         <trim prefix="WHERE" prefixOverrides="AND | OR">
-        <if test="name != null">
-            AND name like CONCAT('%', #{name}, '%')
-            OR korean_name like CONCAT('%', #{name}, '%')
+        <if test="name != ''">
+            AND (name like CONCAT('%', #{name}, '%')
+            OR korean_name like CONCAT('%', #{name}, '%'))
         </if>
         AND delete_id IS NULL
         ORDER BY CATEGORY_NUMBER, STYLE_LETTER

@@ -20,11 +20,12 @@
                             <div class="col-md-6">
                                 <h4>이름으로 찾기</h4>
                                 <div class="row form-row">
-                                    <div class="col-md-11">
-                                        <input name="koreanName" id="koreanName" type="text"  class="form-control" placeholder="발효재료 한글 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                                    </div>
-                                    <div class="col-md-11">
-                                        <input name="name" id="name" type="text"  class="form-control" placeholder="영문 발효재료 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                                    <div class="col-md-11 input-group">
+                                        <input name="name" id="name" type="text"  class="form-control" placeholder="발효재료 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                                        <span class="input-group-addon primary">
+                                            <span class="arrow"></span>
+                                            <i class="fa fa-align-justify"></i>
+                                        </span>
                                     </div>
                                 </div>
                                 <h4>원산지로 찾기</h4>
@@ -127,7 +128,9 @@
             });
 
             $("#fullSearch").click(function(){
-                $("#origin").val('');             //TODO : 초기화 함수로 뺄것
+                $("#name").val('');             //TODO : 초기화 함수로 뺄것
+                $("#type").val('');
+                $("#origin").val('');
                 search();
             });
             $("#usButton").click(setOriginSearch);
