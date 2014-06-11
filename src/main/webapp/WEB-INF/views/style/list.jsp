@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:forEach items="${list}" var="list">
-    <tr>   
+    <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
         <td  class="small-cell v-align-middle">
             <div class="star">
                 <input id="checkbox9" type="checkbox" value="1" checked >
@@ -20,10 +20,13 @@
             <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.fgMax} </button>
         </td>
         <td class="v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.fgMax} </button>
+            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.ibuMax} </button>
         </td>
         <td  class=" v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.colorMax} %</button>
+            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.colorMax} °L</button>
+        </td>
+        <td  class=" v-align-middle">
+            <button type="button" class="btn btn-primary btn-sm btn-small">${list.abvMax} % </button>
         </td>
     </tr>
 </c:forEach>

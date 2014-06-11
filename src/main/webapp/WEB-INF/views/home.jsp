@@ -37,7 +37,7 @@
         <ul>
             <li class="start"> <a href="index.html"> <i class="fa fa-th"></i> <span class="title">데이터 베이스</span> <span class="selected"></span> <span class="arrow open"></span> </a>
                 <ul class="sub-menu">
-                    <li > <a href="/style"> 스타일 (BJCP STYLE)</a> </li>
+                    <li > <a href="/style/"> 스타일 (BJCP STYLE)</a> </li>
                     <li class="active"> <a href="/hop/">홉 (HOP) <span class=" label label-info pull-right m-r-30">HOT</span></a></li>
                     <li > <a href="/fermentable/"> 발효 (Fermentable)</a> </li>
                     <li > <a href="/yeast/"> 효모 (Yeas) </a> </li>

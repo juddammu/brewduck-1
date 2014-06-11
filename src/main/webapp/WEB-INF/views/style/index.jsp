@@ -101,7 +101,8 @@
             <th>초기비중(OG)</th>
             <th>종료비중(FG)</th>
             <th>쓴맛(IBU)</th>
-            <th>색상(ABV)</th>
+            <th>색상(COLOR)</th>
+            <th>도수(ABV)</th>
         </tr>
         </thead>
         <tbody id="result" name="result">

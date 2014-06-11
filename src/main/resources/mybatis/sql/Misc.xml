@@ -58,7 +58,7 @@
         <!-- 맥주 기타 재료 목록 조회 -->
         <include refid="Misc.selectMisc" />
         <trim prefix="WHERE" prefixOverrides="AND | OR">
-            <if test="name != ''">
+            <if test="name != null">
                 AND (NAME like CONCAT('%', #{name}, '%')
                 OR korean_name like CONCAT('%', #{name}, '%'))
             </if>
