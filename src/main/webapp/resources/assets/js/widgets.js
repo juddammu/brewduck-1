@@ -1,5 +1,7 @@
+/* Webarch Admin Dashboard 
+/* This JS is only for DEMO Purposes - Extract the code that you need
+-----------------------------------------------------------------*/	
 $(document).ready(function() {	
-/************************************** THIS FILE IS ONLY FOR DEMO PURPOSES **************************************/
 //One with the Map
 loadServerChart();
 //Real Time Red and grey graph
