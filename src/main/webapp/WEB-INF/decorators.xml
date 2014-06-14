@@ -32,7 +32,7 @@
         <pattern>/style/</pattern>
         <pattern>/style/*/*</pattern>
         <pattern>/yeast/</pattern>
-        <pattern>/yeast/detail/*</pattern>
+        <pattern>/yeast/*/*</pattern>
         <pattern>/fermentable/</pattern>
         <pattern>/fermentable/*/*</pattern>
         <pattern>/misc/</pattern>

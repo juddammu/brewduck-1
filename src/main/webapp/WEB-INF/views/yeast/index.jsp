@@ -96,8 +96,8 @@
         //getResult();
     }
 
-    function goDetail(seq){
-        location.href = "/yeast/detail/"+seq;
+    function goDetail(seq, titleInUrl){
+        location.href = "/yeast/"+seq+"/"+titleInUrl;
     }
 
     function setTypeSearch(){

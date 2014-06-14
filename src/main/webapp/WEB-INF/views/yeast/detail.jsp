@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: ChaJunYoung
+  Date: 14. 6. 11
+  Time: 오전 9:57
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -5,104 +12,146 @@
 
 
 <div class="content">
-<div class="page-title"> <a href="/yeast/"><i class="icon-custom-left"></i></a>
-    <h3>${YeastDetail.koreanName} - <span class="semi-bold">${YeastDetail.name}</span></h3>
-</div>
-<div class="row-fluid">
-<div class="span12">
-<div class="grid simple ">
-<div class="grid-title">
-
-<div class="row column-seperation">
-    <div class="col-md-6">
-        <div class="heading">
-            <div class="pull-right"> <span class="small-text muted">버튼을 클릭하시면 조회됩니다.</span> </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="heading">
-            <div class="pull-left">
-                <h4> <span class="semi-bold">타입</span></h4>
-                <div class="slider col-md-12">
-                        <button type="button" onclick="goDetail(' ${selectTypeList.type}');" class="btn btn-white btn-cons btn-mini">
-                                ${selectTypeList.typeName}
-                        </button>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+    <div class="page-title"> <a href="/yeast/"><i class="icon-custom-left"></i></a>
+        <h3>${YeastDetail.koreanName} - <span class="semi-bold">${YeastDetail.name}</span></h3>
     </div>
-    <div class="col-md-6">
-        <div class="heading">
-            <div class="pull-left">
-                <h4> <span class="semi-bold">대체 홉</span></h4>
-                <div class="slider col-md-12">
-                    <c:forEach items="${selectHopSubstitutesList}" var="substitutesName">
-                        <button type="button" onclick="goDetail(' ${substitutesName.substitutesSeq}');" class="btn btn-white btn-cons btn-mini">
-                                ${substitutesName.substitutesName}
-                        </button>
-                    </c:forEach>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-
-</div>
-
-</div>
-
-<br/>
-<div class="m-l-10 ">
-    <div class="tiles white ">
-        <div class="p-t-20 p-b-15 b-b b-grey">
-            <div class="post overlap-left-10">
-                <div class="user-profile-pic-wrapper">
-                    <div class="user-profile-pic-2x white-border">
-                        <img width="45" height="45" src="/resources/assets/img/profiles/avatar.jpg" data-src="/resources/assets/img/profiles/avatar.jpg" data-src-retina="/resources/assets/img/profiles/avatar2x.jpg" alt="">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="grid simple ">
+                <div class="grid-title">
+                    <div class="row column-seperation">
+                        <div class="col-md-6">
+                            <div class="grid-title no-border">
+                                <%--                                <h4>Style <span class="semi-bold">Overview</span></h4>--%>
+                                <h4>이스트<span class="bold"> 정보</span></h4 >
+                            </div>
+                            <div class="grid-body no-border">
+                                <div class="row-fluid">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3"><h5><span class="semi-bold">실험실</span></h5><span  class="label label-info">${YeastDetail.laboratory}</span></div>
+                                            <div class="col-md-3"><h5><span class="semi-bold">제품ID</span></h5><span  class="label label-info">${YeastDetail.productId}</span></div>
+                                            <div class="col-md-3"><h5><span class="semi-bold">타입(TYPE)</span></h5><span  class="label label-info">${YeastDetail.type}</span></div>
+                                            <div class="col-md-3"><h5><span class="semi-bold">형태(FORM)</span></h5><span  class="label label-info">${YeastDetail.form}</span></div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-3"><h5><span class="semi-bold">온도(TEMP)</span></h5><span  class="label label-info">${YeastDetail.minTemperature}℃ ~ ${YeastDetail.maxTemperature}℃</span></div>
+                                            <div class="col-md-3"><h5><span class="semi-bold">양(AMOUNT)</span></h5><span  class="label label-info">${YeastDetail.amount}</span></div>
+                                            <div class="col-md-3"><h5><span class="semi-bold">응집(FLOCCULATION)</span></h5><span  class="label label-info">${YeastDetail.flocculation}</span></div>
+                                            <div class="col-md-3"><h5><span class="semi-bold">재사용(REUSE)</span></h5><span  class="label label-info">${YeastDetail.maxReuse} 회</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="grid-body no-border">
+                                <div class="row-fluid">
+                                    <div class="col-md-12">
+                                                <h4>이스트<span class="bold"> 내용</span></h4 >
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <blockquote  class="margin-top-20">
+                                                        <p> ${YeastDetail.notes}</p>
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+                                                <h4>이스트<span class="bold"> 용도</span></h4 >
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <blockquote  class="margin-top-20">
+                                                        <p> ${YeastDetail.bestFor}</p>
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="info-wrapper small-width inline">
-                    <div class="info text-black ">
-                        <p>"페일에일의 전형적인 홉으로 가장 기본적인 베이스 홉이다.” </p>
-                        <p class="muted small-text"> 2 분전</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <!--div class="inline pull-right">
-                    <div class="tiles text-white p-t-5 p-l-5 p-b-5 p-r-5 inline"> <i class="fa fa-heart-o fa-lg"></i> </div>
-                    <div class="tiles white p-t-5 p-l-5 p-b-5 p-r-5 inline"> <i class="fa fa-comment-o fa-lg"></i> </div>
-                </div-->
-                <div class="clearfix"></div>
             </div>
         </div>
     </div>
-    <div class="tiles grey p-t-5 p-b-5 ">
-        <p class="text-center"> <a href="javascript:;" class="text-black semi-bold  small-text">전체 보기</a></p>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="grid simple ">
+                <div class="grid-title">
+                    <div class="row column-seperation">
+                        <div class="col-md-12">
+                            <div class="row  column-seperation">
+                                <div class="col-md-12">
+                                    <div class="tiles alert">
+                                        <textarea rows="3"  class="form-control user-status-box post-input"  placeholder="Whats on your mind?"></textarea>
+                                    </div>
+                                    <div class="tiles grey padding-10">
+                                        <div class="pull-left">
+                                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-camera"></i></button>
+                                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-map-marker"></i></button>
+                                        </div>
+                                        <div class="pull-right">
+                                            <button class="btn btn-primary btn-sm btn-small" type="button">POST</button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="m-l-10 ">
+                    <div class="tiles white ">
+                        <div class="p-t-20 p-b-15 b-b b-grey">
+                            <div class="post overlap-left-10">
+                                <div class="user-profile-pic-wrapper">
+                                    <div class="user-profile-pic-2x white-border">
+                                        <img width="45" height="45" src="/resources/assets/img/profiles/avatar.jpg" data-src="/resources/assets/img/profiles/avatar.jpg" data-src-retina="/resources/assets/img/profiles/avatar2x.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrapper small-width inline">
+                                    <div class="info text-black ">
+                                        <p>"페일에일의 전형적인 홉으로 가장 기본적인 베이스 홉이다.” </p>
+                                        <p class="muted small-text"> 2 분전</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--div class="inline pull-right">
+                                    <div class="tiles text-white p-t-5 p-l-5 p-b-5 p-r-5 inline"> <i class="fa fa-heart-o fa-lg"></i> </div>
+                                    <div class="tiles white p-t-5 p-l-5 p-b-5 p-r-5 inline"> <i class="fa fa-comment-o fa-lg"></i> </div>
+                                </div-->
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tiles grey p-t-5 p-b-5 ">
+                        <p class="text-center"> <a href="javascript:;" class="text-black semi-bold  small-text">전체 보기</a></p>
+                    </div>
+                </div>
+
+                <br/><br/>
+
+                <div class="grid-body ">
+                    <table class="table table-striped" id="example2" >
+                        <thead>
+                        <tr>
+                            <th class="small-cell"> </th>
+                            <th>이름</th>
+                            <th>영문명</th>
+                            <th>초기비중(OG)</th>
+                            <th>종료비중(FG)</th>
+                            <th>쓴맛(IBU)</th>
+                            <th>색상(ABV)</th>
+                        </tr>
+                        </thead>
+                        <tbody id="result" name="result">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-<br/><br/>
-
-<div class="grid-body ">
-    <table class="table table-striped" id="example2" >
-        <thead>
-        <tr>
-            <th class="small-cell"> </th>
-            <th>이름</th>
-            <th>영문명</th>
-            <th>타입</th>
-            <th>형태</th>
-            <th>최대온도</th>
-            <th>최소온도</th>
-        </tr>
-        </thead>
-        <tbody id="result" name="result">
-        </tbody>
-    </table>
-</div>
-</div>
-</div>
-</div>
 </div>
 
 
@@ -113,14 +162,8 @@
             icons.play();
         }
 
-        function goDetail(seq){
-            location.href = "/yeast/detail/"+seq;
-        }
-
-        function goIndex(origin){
-            $("#origin").val(origin);
-            search();
-            //location.href = "/hop/"+origin;
+        function goDetail(seq, titleInUrl){
+            location.href = "/style/"+seq+"/"+titleInUrl;
         }
 
         function search(){
