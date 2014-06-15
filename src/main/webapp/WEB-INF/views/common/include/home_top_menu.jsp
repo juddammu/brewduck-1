@@ -5,58 +5,285 @@
 <%@ page import="com.brewduck.web.domain.Account" %>
 
 
-<div class="header navbar navbar-inverse ">
-    <!-- BEGIN TOP NAVIGATION BAR -->
-    <div class="navbar-inner">
-        <div class="header-seperation">
-            <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
-                <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" >
-                    <div class="iconset top-menu-toggle-white"></div>
-                </a> </li>
-            </ul>
-            <!-- BEGIN LOGO -->
-            <a href="/"><img src="/resources/assets/img/logo.png" class="logo" alt=""  data-src="/resources/assets/img/logo.png" data-src-retina="/resources/assets/img/logo2x.png" width="106" height="21"/></a>
-            <!-- END LOGO -->
-            <ul class="nav pull-right notifcation-center">
-                <li class="dropdown" id="header_task_bar"> <a href="#" class="dropdown-toggle active" data-toggle="">
-                    <div class="iconset top-home"></div>
-                </a> </li>
-                <li class="dropdown" id="header_inbox_bar" > <a href="#" class="dropdown-toggle" >
-                    <div class="iconset top-messages"></div>
-                    <span class="badge" id="msgs-badge">3</span> </a></li>
-                <li class="dropdown" id="portrait-chat-toggler" style="display:none"> <a href="#sidr" class="chat-menu-toggle">
-                    <div class="iconset top-chat-white "></div>
-                </a> </li>
-            </ul>
-        </div>
-        <!-- END RESPONSIVE MENU TOGGLER -->
-        <div class="header-quick-nav" >
-            <!-- BEGIN TOP NAVIGATION MENU -->
-            <div class="pull-left">
-                <ul class="nav quick-section">
-                    <li class="quicklinks"> <a href="#" class="" id="layout-condensed-toggle" >
-                        <div class="iconset top-menu-toggle-dark"></div>
-                    </a> </li>
-                </ul>
-                <ul class="nav quick-section">
-                    <li class="quicklinks"> <a href="#" class="" >
-                        <div class="iconset top-tiles"></div>
-                    </a> </li>
-                    <li class="input-prepend inside search-form no-boarder"> <span class="add-on"> <span class="iconset top-search"></span></span>
-                        <input name="" type="text"  class="no-boarder " placeholder="검색어를 입력하세요" style="width:180px;">
-                    </li>
-                </ul>
+<div class="top-fixed-box">
+    <div class="container">
+        <div class="contact-box pull-left">
+            <div class="email pull-left">
+                <i class="fa fa-envelope"></i>
+                Email: frank.lim@brewduck.com
             </div>
-            <!-- END TOP NAVIGATION MENU -->
-            <!-- BEGIN CHAT TOGGLER -->
+        </div>
 
-            <div class="nav quick-section pull-right">
-                <!-- start -->
-                <ul class="login">
+        <div class="pull-right">
+            <div class="social">
+                <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="#"></a>
+                <a class="sbtnf sbtnf-rounded color color-hover icon-twitter" href="#"></a>
+                <a class="sbtnf sbtnf-rounded color color-hover icon-gplus" href="#"></a>
+                <a class="sbtnf sbtnf-rounded color color-hover icon-linkedin" href="#"></a>
+            </div>
+            <a href="#" class="btn btn-primary">레시피 만들기</a>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<!-- 헤더 메뉴 시작 -->
+<header class="header header-two">
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-md-2 col-lg-3 logo-box">
+    <div class="logo">
+        <a href="index.html">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/logo.svg" class="logo-img" alt="">
+        </a>
+    </div>
+</div><!-- .logo-box -->
+
+<div class="col-xs-6 col-md-10 col-lg-9 right-box">
+<div class="right-box-wrapper">
+<div class="header-icons">
+    <div class="search-header hidden-600">
+        <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                                              <path d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
+                                              s2.687,6,6,6c1.402,0,2.688-0.484,3.71-1.29l0.79,0.79l-0.5,0.5l4,4l2-2L12.001,10z M6,10c-2.206,0-4-1.794-4-4s1.794-4,4-4
+                                              s4,1.794,4,4S8.206,10,6,10z"></path>
+                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/search-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
+                                            </svg>
+        </a>
+    </div><!-- .search-header -->
+
+    <div class="phone-header hidden-600">
+        <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                                                  <path d="M11.001,0H5C3.896,0,3,0.896,3,2c0,0.273,0,11.727,0,12c0,1.104,0.896,2,2,2h6c1.104,0,2-0.896,2-2
+                                                  c0-0.273,0-11.727,0-12C13.001,0.896,12.105,0,11.001,0z M8,15c-0.552,0-1-0.447-1-1s0.448-1,1-1s1,0.447,1,1S8.553,15,8,15z
+                                                  M11.001,12H5V2h6V12z"></path>
+                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/phone-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
+            </svg>
+        </a>
+    </div><!-- .phone-header -->
+</div><!-- .header-icons -->
+
+<div class="primary">
+    <div class="navbar navbar-default" role="navigation">
+        <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target=".primary .navbar-collapse">
+            <span class="text">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <nav class="collapse collapsing navbar-collapse">
+            <ul class="nav navbar-nav navbar-center">
+                <li class="parent"> <a href="index.html">기초재료</a>
+                    <ul class="sub">
+                        <li><a href="index.html">스타일 (BJCP STYLE)</a></li>
+                        <li><a href="home-2.html">발효재료 (Fermentable) </a></li>
+                        <li><a href="home-2.html">홉 (Hop) <span class="item-new">Hot</span></a></li>
+                        <li><a href="home-3.html">효모 (Yeast)</a></li>
+                        <li><a href="home-4.html">기타재료</a></li>
+                    </ul>
+                </li>
+                <li class="parent megamenu promo">
+                    <a href="#">레시피 찾기</a>
+                    <ul class="sub">
+                        <li class="sub-wrapper">
+                            <div class="sub-list">
+                                <div class="box closed">
+                                    <h6 class="title">라거</h6>
+                                    <ul>
+                                        <li><a href="#">LIGHT LAGER</a></li>
+                                        <li><a href="#">BOCK</a></li>
+                                        <li><a href="#">필스너 <span class="item-new bg-warning">Wow</span></a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">에일</h6>
+                                    <ul>
+                                        <li><a href="#">미국식 에일</a></li>
+                                        <li><a href="#">영국식 브라운 에일</a></li>
+                                        <li><a href="#">세종</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">IPA/스트롱</h6>
+                                    <ul>
+                                        <li><a href="#">INDIA PALE ALE (IPA) <span class="item-new">HOT</span></a></li>
+                                        <li><a href="#">BELGIAN STRONG ALE</a></li>
+                                        <li><a href="#">STRONG ALE</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">밀맥주</h6>
+                                    <ul>
+                                        <li><a href="#">로겐비어 (독일식 호밀 맥주)</a></li>
+                                        <li><a href="#">윗비어</a></li>
+                                        <li><a href="#">바이젠복</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">포터/스타우트</h6>
+                                    <ul>
+                                        <li><a href="#">발틱 포터</a></li>
+                                        <li><a href="#">오트밀 스타우트</a></li>
+                                        <li><a href="#">러시안 임페리얼 스타우트</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">사우어 및 기타</h6>
+                                    <ul>
+                                        <li><a href="#">베를리너 바이세</a></li>
+                                        <li><a href="#">과일맥주</a></li>
+                                        <li><a href="#">과일 람빅</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+                            </div><!-- .sub-list -->
+
+                            <div class="promo-block">
+                                <a href="#">
+                                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/megamenu-big.png" width="253" height="457" alt="">
+                                </a>
+                            </div><!-- .promo-block -->
+                        </li>
+                    </ul><!-- .sub -->
+                </li>
+                <li>
+                    <a href="http://themeforest.net/item/progressive-multipurpose-responsive-template/7197521" target="_blank">레시피 만들기</a>
+                </li>
+                <li class="parent">
+                    <a href="shop.html">가이드</a>
+                    <ul class="sub">
+                        <li><a href="catalog-grid.html">Catalog (Grid)</a></li>
+                        <li><a href="catalog-list.html">Catalog (List)</a></li>
+                        <li><a href="product-view.html">Product View</a></li>
+                        <li><a href="product-view-variants.html">Product View (Variants)</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="checkout.html">Proceed to Checkout</a></li>
+                        <li><a href="confirmation.html">Confirmation Page</a></li>
+                        <li><a href="compare.html">Compare Products</a></li>
+                        <li class="parent">
+                            <a href="account.html">My Account</a>
+                            <ul class="sub">
+                                <li><a href="account.html">My Dashboard</a></li>
+                                <li><a href="account-information.html">Account Information</a></li>
+                                <li><a href="account-address.html">Address Book</a></li>
+                                <li><a href="account-orders.html">My Orders</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="login.html">Login / Register</a></li>
+                        <li><a href="forgot.html">Password Recovery</a></li>
+                    </ul>
+                </li>
+                <li class="parent megamenu promo">
+                    <a href="#">커뮤니티</a>
+                    <ul class="sub">
+                        <li class="sub-wrapper">
+                            <div class="sub-list">
+                                <div class="box closed">
+                                    <h6 class="title">Savant Apple Integration</h6>
+                                    <ul>
+                                        <li><a href="#">iPad, iPod touch, iPhone &amp; Mac Control</a></li>
+                                        <li><a href="#">iPod touch Remote Control</a></li>
+                                        <li><a href="#">Savant Host (Mac Mini) <span class="item-new bg-warning">Wow</span></a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">Savant Audio/Video Control</h6>
+                                    <ul>
+                                        <li><a href="#">Distributed Audio &amp; Video</a></li>
+                                        <li><a href="#">Matrix Switchers</a></li>
+                                        <li><a href="#">Audio/Video Processing</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">Savant Display Solutions</h6>
+                                    <ul>
+                                        <li><a href="#">Video Tiling <span class="item-new">New</span></a></li>
+                                        <li><a href="#">On-Screen Display</a></li>
+                                        <li><a href="#">Digital Messaging</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">Savant Sound</h6>
+                                    <ul>
+                                        <li><a href="#">Distributed Audio Controller</a></li>
+                                        <li><a href="#">Multi-channel Amplifiers <span class="item-new">New</span></a></li>
+                                        <li><a href="#">Architectural Speakers</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">Savant Display Solutions</h6>
+                                    <ul>
+                                        <li><a href="#">Video Tiling <span class="item-new bg-success">Coming Soon</span></a></li>
+                                        <li><a href="#">On-Screen Display</a></li>
+                                        <li><a href="#">Digital Messaging</a></li>
+                                    </ul>
+                                </div><!-- .box -->
+
+                                <div class="box closed">
+                                    <h6 class="title">Savant Sound</h6>
+                                    <ul>
+                                        <li><a href="#">Distributed Audio Controller</a></li>
+                                        <li><a href="#">Multi-channel Amplifiers</a></li>
+                                        <li><a href="#">Architectural Speakers <span class="item-new">New</span></a></li>
+                                    </ul>
+                                </div><!-- .box -->
+                            </div><!-- .sub-list -->
+
+                            <div class="promo-block">
+                                <a href="#">
+                                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/megamenu-big.png" width="253" height="457" alt="">
+                                </a>
+                            </div><!-- .promo-block -->
+                        </li>
+                    </ul><!-- .sub -->
+                </li>
+                <li>
+                    <a href="http://themeforest.net/item/progressive-multipurpose-responsive-template/7197521" target="_blank">링크</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div><!-- .primary -->
+</div>
+</div>
+
+<div class="phone-active col-sm-9 col-md-9">
+    <a href="#" class="close"><span>close</span>×</a>
+    <span class="title">Call Us</span> <strong>+1 (777) 123 45 67</strong>
+</div>
+<div class="search-active col-sm-9 col-md-9">
+    <a href="#" class="close"><span>close</span>×</a>
+    <form name="search-form">
+        <input class="search-string form-control" type="search" placeholder="Search here" name="search-string">
+        <button class="search-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+          <path fill="#231F20" d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
+          s2.687,6,6,6c1.402,0,2.688-0.484,3.71-1.29l0.79,0.79l-0.5,0.5l4,4l2-2L12.001,10z M6,10c-2.206,0-4-1.794-4-4s1.794-4,4-4
+          s4,1.794,4,4S8.206,10,6,10z"></path>
+                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/search-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
+        </svg>
+        </button>
+    </form>
+</div>
+</div><!--.row -->
+</div>
+</header><!-- .header -->
                 <%
                     if (AuthenticationUtils.isAuthenticated() == false) {
                 %>
-                    <form:form id="authentication" class="animated fadeIn" method="POST" action="/account/authentication" modelAttribute="account">
+                    <!--form:form id="authentication" class="animated fadeIn" method="POST" action="/account/authentication" modelAttribute="account">
                     <li>
                         <input type="text" id="email" name="email" class="form-control input-sm" style="width:120px;" placeholder="이메일" />      &nbsp;    &nbsp;
                     </li>
@@ -66,35 +293,10 @@
                     <li>
                         <button type="submit" class="btn btn-small btn-primary btn-cons-md"> 로그인</button>
                     </li>
-                    </form:form>
+                    <!--/form:form-->
                     <%
                     } else {
                     %>
-                    <li>
-                        <a href="/recipe/create"><button type="submit" class="btn btn-small btn-primary btn-cons-md"> 새로운 레시피 만들기</button></a>
-                    </li>
-                    <li class="quicklinks">
-                        <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
-                            <div class="iconset top-settings-dark "></div>
-                        </a>
                         <%
                             }
                         %>
-                        <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
-                            <li><a href="user-profile.html"> My Account </a> </li>
-                            <!--li><a href="calender.html">My Calendar</a> </li>
-                            <li><a href="email.html"> My Inbox&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a> </li-->
-                            <li class="divider"></li>
-                            <li><a href="/account/logout"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- end -->
-
-            </div>
-            <!-- END CHAT TOGGLER -->
-        </div>
-        <!-- END TOP NAVIGATION MENU -->
-    </div>
-    <!-- END TOP NAVIGATION BAR -->
-</div>
