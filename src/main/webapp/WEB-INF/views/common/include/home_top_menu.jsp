@@ -77,13 +77,13 @@
 
         <nav class="collapse collapsing navbar-collapse">
             <ul class="nav navbar-nav navbar-center">
-                <li class="parent"> <a href="index.html">기초재료</a>
+                <li class="parent"> <a>기초재료</a>
                     <ul class="sub">
-                        <li><a href="index.html">스타일 (BJCP STYLE)</a></li>
-                        <li><a href="home-2.html">발효재료 (Fermentable) </a></li>
-                        <li><a href="home-2.html">홉 (Hop) <span class="item-new">Hot</span></a></li>
-                        <li><a href="home-3.html">효모 (Yeast)</a></li>
-                        <li><a href="home-4.html">기타재료</a></li>
+                        <li><a href="/style/">스타일 (BJCP STYLE)</a></li>
+                        <li><a href="/fermentable/">발효재료 (Fermentable) </a></li>
+                        <li><a href="/hop/">홉 (Hop) <span class="item-new">Hot</span></a></li>
+                        <li><a href="/yeast/">효모 (Yeast)</a></li>
+                        <li><a href="/misc/">기타재료</a></li>
                     </ul>
                 </li>
                 <li class="parent megamenu promo">

@@ -3,7 +3,92 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
+<section id="main" class="page">
+    <header class="page-header">
+        <div class="container">
+            <h3>홉 데이터베이스 - <span class="semi-bold">HOP DATABASE</span></h3>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <article class="content col-sm-12 col-md-12">
+                <div class="bs-docs-section">
+                    <form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramHop">
+                        <input name="origin" type ="hidden" id="origin" value="">
+                        <input name="aroma" type ="hidden" id="aroma" value="">
+                        <div>
+                            <h5>이름으로 찾기</h5>
+                            <div class="input-group col-sm-6">
+                                <input name="name" id="name" type="text"  class="form-control" placeholder="홉 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                                   <span class="input-group-addon primary">
+                                       <span class="arrow"></span>
+                                        <i class="fa fa-align-justify"></i>
+                                   </span>
+                            </div>
+                            <br>
+                            <h5>특성으로 찾기</h5>
+                            <div class="radio-inline">
+                                <label>
+                                    <input id="allRadio" type="radio" name="type" value="" checked>
+                                    전체
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input id="aromaRadio" type="radio" name="type" value="1">
+                                    향
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input id="bittersRadio" type="radio" name="type" value="2">
+                                    쓴맛
+                                </label>
+                            </div>
+                            <div>
+                                <br>
+                                <div>
+                                    <button id="usButton" type="button" class="btn btn-xs btn-primary" value="US"> </button>
+                                    <button id="deButton" type="button" class="btn btn-xs btn-primary" value="DE"> </button>
+                                    <button id="ukButton" type="button" class="btn btn-xs btn-primary" value="UK"> </button>
+                                    <button id="nzButton" type="button" class="btn btn-xs btn-primary" value="NZ"> </button>
+                                    <button id="auButton" type="button" class="btn btn-xs btn-primary" value="AU"> </button>
+                                    <button id="siButton" type="button" class="btn btn-xs btn-primary" value="SI"> </button>
+                                    <button id="etcButton" type="button" class="btn btn-xs btn-primary" value=""> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="form-actions">
+                                <div class="pull-right">
+                                    <div id="search" class="btn btn-primary" ><i class="icon-ok"></i> 조회</div>
+                                    <div id="fullSearch" class="btn btn-default" ><i class="icon-ok"></i> 전체 조회</div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                    <table class="table table-striped">
+                        <tr>
+                            <th class="small-cell">NO.</th>
+                            <th>이름</th>
+                            <th>영문명</th>
+                            <th>타입</th>
+                            <th>원산지</th>
+                            <th>ALPHA</th>
+                            <th>BETA</th>
+                            <th>HSI</th>
+                        </tr>
+                        <tbody id="result" name="result">
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </div>
+    </div>
+</section><!-- #main -->
+<%--
 <div class="content">
 <div class="page-title"> <i class="icon-custom-left"></i>
     <h3>홉 데이터베이스 - <span class="semi-bold">HOP DATABASE</span></h3>
@@ -13,8 +98,8 @@
 <div class="grid simple ">
 <div class="grid-title">
     <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramHop">
-        <input name="origin" type ="hidden" id="origin" value=""> <%--국가별--%>
-        <input name="aroma" type ="hidden" id="aroma" value=""> <%--전체/ 향 /쓴맛--%>
+        <input name="origin" type ="hidden" id="origin" value=""> &lt;%&ndash;국가별&ndash;%&gt;
+        <input name="aroma" type ="hidden" id="aroma" value=""> &lt;%&ndash;전체/ 향 /쓴맛&ndash;%&gt;
 
         <div class="row column-seperation">
             <div class="col-md-6">
@@ -132,9 +217,7 @@
 </div>
 </div>
 </div>
-</div>
-
-
+</div>--%>
 <content tag="local_script">
 <script>
     function getNationCount(){
