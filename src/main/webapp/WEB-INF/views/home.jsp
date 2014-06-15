@@ -66,14 +66,9 @@
 <div class="top-fixed-box">
     <div class="container">
         <div class="contact-box pull-left">
-            <div class="phone pull-left">
-                <i class="fa fa-mobile"></i>
-                Call Us: +1 (877) 123-45-672
-            </div>
-
             <div class="email pull-left">
                 <i class="fa fa-envelope"></i>
-                Email: manager@example.com
+                Email: frank.lim@brewduck.com
             </div>
         </div>
 
@@ -125,7 +120,7 @@
                                                   c0-0.273,0-11.727,0-12C13.001,0.896,12.105,0,11.001,0z M8,15c-0.552,0-1-0.447-1-1s0.448-1,1-1s1,0.447,1,1S8.553,15,8,15z
                                                   M11.001,12H5V2h6V12z"></path>
                 <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/phone-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
-                                         </svg>
+            </svg>
         </a>
     </div><!-- .phone-header -->
 </div><!-- .header-icons -->
@@ -156,56 +151,56 @@
         <li class="sub-wrapper">
             <div class="sub-list">
                 <div class="box closed">
-                    <h6 class="title">Savant Apple Integration</h6>
+                    <h6 class="title">라거</h6>
                     <ul>
-                        <li><a href="#">iPad, iPod touch, iPhone &amp; Mac Control</a></li>
-                        <li><a href="#">iPod touch Remote Control</a></li>
-                        <li><a href="#">Savant Host (Mac Mini) <span class="item-new bg-warning">Wow</span></a></li>
+                        <li><a href="#">LIGHT LAGER</a></li>
+                        <li><a href="#">BOCK</a></li>
+                        <li><a href="#">필스너 <span class="item-new bg-warning">Wow</span></a></li>
                     </ul>
                 </div><!-- .box -->
 
                 <div class="box closed">
-                    <h6 class="title">Savant Audio/Video Control</h6>
+                    <h6 class="title">에일</h6>
                     <ul>
-                        <li><a href="#">Distributed Audio &amp; Video</a></li>
-                        <li><a href="#">Matrix Switchers</a></li>
-                        <li><a href="#">Audio/Video Processing</a></li>
+                        <li><a href="#">미국식 에일</a></li>
+                        <li><a href="#">영국식 브라운 에일</a></li>
+                        <li><a href="#">세종</a></li>
                     </ul>
                 </div><!-- .box -->
 
                 <div class="box closed">
-                    <h6 class="title">Savant Display Solutions</h6>
+                    <h6 class="title">IPA/스트롱</h6>
                     <ul>
-                        <li><a href="#">Video Tiling <span class="item-new">New</span></a></li>
-                        <li><a href="#">On-Screen Display</a></li>
-                        <li><a href="#">Digital Messaging</a></li>
+                        <li><a href="#">INDIA PALE ALE (IPA) <span class="item-new">HOT</span></a></li>
+                        <li><a href="#">BELGIAN STRONG ALE</a></li>
+                        <li><a href="#">STRONG ALE</a></li>
                     </ul>
                 </div><!-- .box -->
 
                 <div class="box closed">
-                    <h6 class="title">Savant Sound</h6>
+                    <h6 class="title">밀맥주</h6>
                     <ul>
-                        <li><a href="#">Distributed Audio Controller</a></li>
-                        <li><a href="#">Multi-channel Amplifiers <span class="item-new">New</span></a></li>
-                        <li><a href="#">Architectural Speakers</a></li>
+                        <li><a href="#">로겐비어 (독일식 호밀 맥주)</a></li>
+                        <li><a href="#">윗비어</a></li>
+                        <li><a href="#">바이젠복</a></li>
                     </ul>
                 </div><!-- .box -->
 
                 <div class="box closed">
-                    <h6 class="title">Savant Display Solutions</h6>
+                    <h6 class="title">포터/스타우트</h6>
                     <ul>
-                        <li><a href="#">Video Tiling <span class="item-new bg-success">Coming Soon</span></a></li>
-                        <li><a href="#">On-Screen Display</a></li>
-                        <li><a href="#">Digital Messaging</a></li>
+                        <li><a href="#">발틱 포터</a></li>
+                        <li><a href="#">오트밀 스타우트</a></li>
+                        <li><a href="#">러시안 임페리얼 스타우트</a></li>
                     </ul>
                 </div><!-- .box -->
 
                 <div class="box closed">
-                    <h6 class="title">Savant Sound</h6>
+                    <h6 class="title">사우어 및 기타</h6>
                     <ul>
-                        <li><a href="#">Distributed Audio Controller</a></li>
-                        <li><a href="#">Multi-channel Amplifiers</a></li>
-                        <li><a href="#">Architectural Speakers <span class="item-new">New</span></a></li>
+                        <li><a href="#">베를리너 바이세</a></li>
+                        <li><a href="#">과일맥주</a></li>
+                        <li><a href="#">과일 람빅</a></li>
                     </ul>
                 </div><!-- .box -->
             </div><!-- .sub-list -->
@@ -218,70 +213,8 @@
         </li>
     </ul><!-- .sub -->
 </li>
-<li class="parent">
-    <a href="#">레시피 만들기</a>
-    <ul class="sub">
-        <li><a href="sidebar-blocks.html">All sidebar blocks</a></li>
-        <li><a href="full-width.html">Full Width</a></li>
-        <li><a href="left-sidebar.html">Left Sidebar</a></li>
-        <li><a href="right-sidebar.html">Right Sidebar</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="blog-list.html">Blog List</a></li>
-        <li><a href="blog-view.html">Blog Post View</a></li>
-        <li><a href="search-results.html">Search Results</a></li>
-        <li class="parent">
-            <a href="404.html">Page 404</a>
-            <ul class="sub">
-                <li><a href="404.html">Page 404 (1)</a></li>
-                <li><a href="404-2.html">Page 404 (2)</a></li>
-                <li><a href="404-3.html">Page 404 (3) <span class="item-new">New</span></a></li>
-            </ul>
-        </li>
-        <li class="parent">
-            <a href="#">Portfolio</a>
-            <ul class="sub">
-                <li><a href="portfolio-1.html">Portfolio (1 column)</a></li>
-                <li><a href="portfolio-2.html">Portfolio (2 column)</a></li>
-                <li><a href="portfolio-3.html">Portfolio (3 column)</a></li>
-                <li><a href="portfolio-4.html">Portfolio (4 column)</a></li>
-                <li><a href="portfolio-slider.html">Portfolio (Slider)</a></li>
-                <li><a href="portfolio-single.html">Single Project</a></li>
-            </ul>
-        </li>
-        <li><a href="gallery-modern.html">Modern Gallery</a></li>
-        <li class="parent">
-            <a href="#">Gallery</a>
-            <ul class="sub">
-                <li><a href="gallery-1.html">Gallery (1 column)</a></li>
-                <li><a href="gallery-2.html">Gallery (2 column)</a></li>
-                <li><a href="gallery-3.html">Gallery (3 column)</a></li>
-                <li><a href="gallery-4.html">Gallery (4 column)</a></li>
-            </ul>
-        </li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="careers.html">Careers</a></li>
-        <li><a href="coming-soon.html">Coming Soon</a></li>
-        <li><a href="under-construction.html">Under Construction</a></li>
-        <li><a href="sitemap.html">Sitemap</a></li>
-        <li><a href="login-2.html">Login / Register <span class="item-new">New</span></a></li>
-        <li class="parent">
-            <a href="#">Newsletter</a>
-            <ul class="sub">
-                <li><a href="newsletter-big-intro.html">Newsletter Big Intro</a></li>
-                <li><a href="newsletter-big-portfolio.html">Newsletter Big Portfolio</a></li>
-                <li><a href="newsletter-columns.html">Newsletter Columns</a></li>
-                <li><a href="newsletter-info.html">Newsletter Info</a></li>
-                <li><a href="newsletter-plan.html">Newsletter Plan</a></li>
-                <li><a href="newsletter-portfolio.html">Newsletter Portfolio</a></li>
-                <li><a href="newsletter-product-list.html">Newsletter Product List</a></li>
-                <li><a href="newsletter-story.html">Newsletter Story</a></li>
-            </ul>
-        </li>
-    </ul>
+<li>
+    <a href="http://themeforest.net/item/progressive-multipurpose-responsive-template/7197521" target="_blank">레시피 만들기</a>
 </li>
 <li class="parent">
     <a href="shop.html">가이드</a>
@@ -419,10 +352,12 @@
         <div class="row">
             <div class="white text-center col-sm-12 col-md-12">
                 <div class="title-box text-center title-white">
-                    <h1 class="title">Video Background</h1>
+                    <h1 class="title">세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다.</h1>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quisquam aperiam necessitatibus id consequuntur quidem praesentium laboriosam repellendus modi fugiat aliquam quam minus mollitia eveniet sapiente perferendis voluptatibus ad rem? Id nesciunt alias neque non illum facilis nobis cupiditate ullam corrupti nisi esse cum tempore tempora praesentium soluta autem vitae!</p>
-                <a href="#" class="btn btn-default">Read more</a>
+                <p>알콜이 60도가 넘는 맥주부터, 오트통에서 숙성하는 사우어 에일, 훈연향이 가득한 맥주까지. </br>
+                    세상에는 맛보지 않은 맥주들이 너무나 많습니다.</br></br>
+                    광활한 맥주의 세계로 함께 떠나요!!</p>
+                <!--a href="#" class="btn btn-default">..더 보기</a-->
             </div>
         </div>
     </div>
@@ -451,34 +386,33 @@
 <div class="col-sm-3 col-md-3 product rotation">
     <div class="default">
         <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-11.png" alt="" title="" width="270" height="270">
+            <img src="/resources/recipe/1/recipe_1.jpg" alt="" title="" width="270" height="270">
         </a>
         <div class="product-description">
             <div class="vertical">
                 <h3 class="product-name">
-                    <a href="product-view.html">Sony Led TV KDL-46HX853</a>
+                    <a href="product-view.html">보스턴 라거</a>
                 </h3>
-                <div class="price">$1, 449.00</div>
+                <div class="price">라이트 미국식 라거</div>
             </div>
         </div>
     </div>
     <div class="product-hover">
         <h3 class="product-name">
-            <a href="product-view.html">Sony Led TV KDL-46HX853</a>
+            <a href="product-view.html">보스턴 라거</a>
         </h3>
-        <div class="price">$1, 449.00</div>
+        <div class="price">4.9% ABV</div>
         <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-11.png" alt="" title="" width="70" height="70">
+            <img src="/resources/recipe/1/recipe_small_1.jpg" alt="" title="" width="70" height="70">
         </a>
         <ul>
-            <li>117 cm / 46"LCD TV</li>
-            <li>Full HD 3D &amp; 2D</li>
-            <li>Sony Internet TV</li>
-            <li>Dynamic Edge LED</li>
-            <li>1X-Reality PRO</li>
+            <li>2SRM : 밝은 노랑</li>
+            <li>초기비중 : 1.070</li>
+            <li>최종비중 : 1.018</li>
+            <li>20IBU</li>
         </ul>
         <div class="actions">
-            <a href="product-view.html" class="add-cart">
+            <a href="/recipe/1/보스턴_라거_클론" class="add-cart">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
                   <g>
                       <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
