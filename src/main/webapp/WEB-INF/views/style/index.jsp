@@ -7,8 +7,8 @@
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">홈</a> </li>
-            <li><a href="/catalog-grid.html">레시피</a> </li>
-            <li class="active">보스턴 라거 클론</li>
+            <li><a href="/">기초재료</a> </li>
+            <li class="active">스타일 데이터베이스 - STYLE DATABASE</li>
         </ul>
     </div>
 </div><!-- .breadcrumb-box -->
