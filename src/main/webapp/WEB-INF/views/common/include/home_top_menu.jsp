@@ -54,13 +54,12 @@
                                             </svg>
         </a>
     </div><!-- .search-header -->
-
-    <div class="btn-group">
+    <div class="btn-group hidden-600">
         <a href="#" class="btn btn-info">회원 가입</a>
-    </div><!-- .cart-header -->
-    <div class="btn-group">
+    </div>
+    <div class="btn-group hidden-600">
         <a href="#" class="btn btn-success">로그인</a>
-    </div><!-- .cart-header -->
+    </div>
 </div><!-- .header-icons -->
 
 <div class="primary">
@@ -177,74 +176,6 @@
                         <li><a href="login.html">Login / Register</a></li>
                         <li><a href="forgot.html">Password Recovery</a></li>
                     </ul>
-                </li>
-                <li class="parent megamenu promo">
-                    <a href="#">커뮤니티</a>
-                    <ul class="sub">
-                        <li class="sub-wrapper">
-                            <div class="sub-list">
-                                <div class="box closed">
-                                    <h6 class="title">Savant Apple Integration</h6>
-                                    <ul>
-                                        <li><a href="#">iPad, iPod touch, iPhone &amp; Mac Control</a></li>
-                                        <li><a href="#">iPod touch Remote Control</a></li>
-                                        <li><a href="#">Savant Host (Mac Mini) <span class="item-new bg-warning">Wow</span></a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Audio/Video Control</h6>
-                                    <ul>
-                                        <li><a href="#">Distributed Audio &amp; Video</a></li>
-                                        <li><a href="#">Matrix Switchers</a></li>
-                                        <li><a href="#">Audio/Video Processing</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Display Solutions</h6>
-                                    <ul>
-                                        <li><a href="#">Video Tiling <span class="item-new">New</span></a></li>
-                                        <li><a href="#">On-Screen Display</a></li>
-                                        <li><a href="#">Digital Messaging</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Sound</h6>
-                                    <ul>
-                                        <li><a href="#">Distributed Audio Controller</a></li>
-                                        <li><a href="#">Multi-channel Amplifiers <span class="item-new">New</span></a></li>
-                                        <li><a href="#">Architectural Speakers</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Display Solutions</h6>
-                                    <ul>
-                                        <li><a href="#">Video Tiling <span class="item-new bg-success">Coming Soon</span></a></li>
-                                        <li><a href="#">On-Screen Display</a></li>
-                                        <li><a href="#">Digital Messaging</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Sound</h6>
-                                    <ul>
-                                        <li><a href="#">Distributed Audio Controller</a></li>
-                                        <li><a href="#">Multi-channel Amplifiers</a></li>
-                                        <li><a href="#">Architectural Speakers <span class="item-new">New</span></a></li>
-                                    </ul>
-                                </div><!-- .box -->
-                            </div><!-- .sub-list -->
-
-                            <div class="promo-block">
-                                <a href="#">
-                                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/megamenu-big.png" width="253" height="457" alt="">
-                                </a>
-                            </div><!-- .promo-block -->
-                        </li>
-                    </ul><!-- .sub -->
                 </li>
             </ul>
         </nav>
