@@ -52,12 +52,12 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
+                <th>스타일명</th>
+                <th>영문명</th>
+                <th>초기비중</th>
+                <th>최종비중</th>
+                <th>IBU</th>
+                <th>ABV</th>
             </tr>
             </thead>
             <tbody>
@@ -71,7 +71,7 @@
                 <td>Table cell</td>
             </tr>
             <tr>
-                <td>2</td>
+                <td>1</td>
                 <td>Table cell</td>
                 <td>Table cell</td>
                 <td>Table cell</td>
@@ -80,7 +80,7 @@
                 <td>Table cell</td>
             </tr>
             <tr>
-                <td>3</td>
+                <td>1</td>
                 <td>Table cell</td>
                 <td>Table cell</td>
                 <td>Table cell</td>
@@ -88,6 +88,16 @@
                 <td>Table cell</td>
                 <td>Table cell</td>
             </tr>
+            <tr>
+                <td>1</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+            </tr>
+
             </tbody>
         </table>
     </div>
