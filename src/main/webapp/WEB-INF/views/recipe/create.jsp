@@ -1,6 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<div class="breadcrumb-box">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">홈</a> </li>
+            <li><a href="/">레시피</a> </li>
+            <li class="active">레시피 만들기</li>
+        </ul>
+    </div>
+</div><!-- .breadcrumb-box -->
+
+<section id="main" class="page">
+    <div class="container">
+        <div class="row">
+            <div class="content search-result list col-sm-12 col-md-12">
+                <form class="search-form">
+                    <input class="search-string form-control" type="search" placeholder="레시피 이름" name="search-string">
+                    <br />
+
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td class="text-left">
+                                    <label class="checkbox-inline">
+                                        <input type="radio" id="inlineCheckbox1" value="1" checked> 완전곡물
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" id="inlineCheckbox1" value="2"> 부분곡물
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" id="inlineCheckbox1" value="3"> 캔
+                                    </label>
+                                </td>
+                                <td class="text-left">
+                                    <select class="selectpicker">
+                                        <optgroup label="Picnic">
+                                            <option>Mustard</option>
+                                            <option>Ketchup</option>
+                                            <option>Relish</option>
+                                        </optgroup>
+                                        <optgroup label="Camping">
+                                            <option>Tent</option>
+                                            <option>Flashlight</option>
+                                            <option>Toilet Paper</option>
+                                        </optgroup>
+                                    </select>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+
+            </div>
+        </div><!-- .container -->
+</section><!-- #main -->
 
 <div class="content">
     <div class="row">
