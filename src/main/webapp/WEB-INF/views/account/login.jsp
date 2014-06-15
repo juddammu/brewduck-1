@@ -28,7 +28,7 @@
                             </label>
                         </div>
                         <div class="buttons-box clearfix">
-                            <button type="button" class="btn btn-default">로그인</button>
+                            <button type="submit" class="btn btn-default">로그인</button>
                             <a href="#" class="switch-form forgot">로그인에 문제가 생기셨나요?  </a>
                         </div>
                     </form:form><!-- .form-box -->
@@ -61,7 +61,7 @@
                             <p>
                         </div>
                         <div class="buttons-box clearfix">
-                            <button type="button" class="btn btn-default">합류하기</button>
+                            <button type="submit" class="btn btn-submit">가입하기</button>
                         </div>
                     </form:form><!-- .form-box -->
                 </div>
