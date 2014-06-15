@@ -133,10 +133,6 @@
                                     <div class="col-md-1">
                                         <input class="form-control" id="tmplatNm" name="tmplatNm" type="text" readonly="readonly">
                                         <input id="tmplatId" type="hidden" value="" name="tmplatId">
-                                            <%--                                        <form:input path="tmplatNm" size="20" readonly="true"/>
-                                                                                    <form:hidden path="tmplatId"  />
-                                                                                    &nbsp;<a href="javascript:fn_egov_inqire_tmplatInqire()" style="selector-dummy: expression(this.hideFocus=false);"></a>
-                                                                                    <br/><form:errors path="tmplatId" />--%>
                                     </div>
                                     <div class="col-md-offset-0"><a href="../icon/search"><i class="fa fa-search"></i></a></div>
                                 </div>
@@ -179,7 +175,6 @@
             }*/
 
         function fn_egov_regist_brdMstr(){  //등록 버튼 로직
-            alert();
             if (!validateBoardMaster(document.boardMaster)){
                 return;
             }
@@ -192,19 +187,6 @@
         }
 
 
-        function fn_egov_inqire_tmplatInqire(){ //템플릿정보 찾기 버튼 로직
-            form = document.boardMaster;
-            var retVal;
-            var url = "<c:url value='/cop/com/openPopup.do?requestUrl=/cop/tpl/selectTemplateInfsPop.do&typeFlag=BBS&width=850&height=360'/>";
-            var openParam = "dialogWidth: 900px; dialogHeight: 360px; resizable: 0, scroll: 1, center: 1";
-
-            retVal = window.showModalDialog(url,"p_tmplatInqire", openParam);
-            if(retVal != null){
-                var tmp = retVal.split("|");
-                form.tmplatId.value = tmp[0];
-                form.tmplatNm.value = tmp[1];
-            }
-        }
 
         function getLoadingTime(){
             if($("loading").is("visible")){return;}

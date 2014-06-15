@@ -1,683 +1,1168 @@
-<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<%@ include file="/WEB-INF/views/common/include/main_header.jsp" %>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>BREWDUCK - 세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다.</title>
+    <meta name="Author" content="brewduck, http://www.brewduck.com, 맥주 대동여지도" />
+    <meta content="" name="description" />
+    <meta name="description" content="BRWEDUCK - 세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다." />
+    <meta name="keywords" content="ale, beer, brewduck, Home Brewing, lager, SOMA, 곡주, 공방, 과실주, 라거, 맥주, 문화, 바이젠, 발효, 배병우, 소마, 숙성, 양조, 에일, 옥수동, 옥토버페스트, 와인, 맥만동, 임세환, 제조, 주조, 증류주, 포도주, 프로젝트, 홈 브루잉, 효모" />
+    <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
 
-<!-- BEGIN BODY -->
-<body class="condense-menu">
-    <!-- 상단메뉴 -->
-    <%@ include file="/WEB-INF/views/common/include/home_top_menu.jsp" %>
-    <!-- END HEADER -->
-<!-- BEGIN CONTAINER -->
-<div class="page-container row-fluid">
-<!-- BEGIN SIDEBAR -->
-<div class="page-sidebar" id="main-menu">
-    <!-- BEGIN MINI-PROFILE -->
-    <div class="page-sidebar-wrapper" id="main-menu-wrapper">
-        <div class="user-info-wrapper">
-            <div class="profile-wrapper"> <img src="/resources/assets/img/profiles/avatar.jpg"  alt="" data-src="/resources/assets/img/profiles/avatar.jpg" data-src-retina="/resources/assets/img/profiles/avatar2x.jpg" width="69" height="69" /> </div>
-            <div class="user-info">
-                <div class="greeting">Welcome</div>
-                <div class="username">John <span class="semi-bold">Smith</span></div>
-                <div class="status">Status<a href="#">
-                    <div class="status-icon green"></div>
-                    Online</a></div>
+    <link rel="shortcut icon" href="http://template.progressive.itembridge.com/2.1.8/img/favicon.ico">
+
+    <link rel="stylesheet" href="/resources/asset/css/buttons/social-icons.css">
+    <link rel="stylesheet" href="/resources/asset/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resources/asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/asset/css/jslider.css">
+    <link rel="stylesheet" href="/resources/asset/css/settings.css">
+    <link rel="stylesheet" href="/resources/asset/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/resources/asset/css/animate.css">
+    <link rel="stylesheet" href="/resources/asset/css/video-js.min.css">
+    <link rel="stylesheet" href="/resources/asset/css/morris.css">
+    <link rel="stylesheet" href="/resources/asset/css/royalslider/royalslider.css">
+    <link rel="stylesheet" href="/resources/asset/css/royalslider/skins/minimal-white/rs-minimal-white.css">
+    <link rel="stylesheet" href="/resources/asset/css/layerslider/layerslider.css">
+    <link rel="stylesheet" href="/resources/asset/css/ladda.min.css">
+    <link rel="stylesheet" href="/resources/asset/css/style.css">
+    <link rel="stylesheet" href="/resources/asset/css/responsive.css">
+    <link rel="stylesheet" href="/resources/asset/css/customizer/pages.css">
+    <link rel="stylesheet" href="/resources/asset/css/customizer/pages-pages-customizer.css">
+
+    <!-- IE Styles-->
+    <link rel='stylesheet' href="/resources/asset/css/ie/ie.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <link rel='stylesheet' href="/resources/asset/css/ie/ie8.css">
+    <![endif]-->
+
+    <!-- 구글 애널리스틱 -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-46308310-1', 'brewduck.com');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+
+<body>
+
+<div class="page-box">
+<div class="page-box-content">
+
+<!-- 히든 탑 메뉴 시작 -->
+<div class="top-fixed-box">
+    <div class="container">
+        <div class="contact-box pull-left">
+            <div class="phone pull-left">
+                <i class="fa fa-mobile"></i>
+                Call Us: +1 (877) 123-45-672
+            </div>
+
+            <div class="email pull-left">
+                <i class="fa fa-envelope"></i>
+                Email: manager@example.com
             </div>
         </div>
-        <!-- END MINI-PROFILE -->
-        <!-- BEGIN SIDEBAR MENU -->
-        <p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
+
+        <div class="pull-right">
+            <div class="social">
+                <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="#"></a>
+                <a class="sbtnf sbtnf-rounded color color-hover icon-twitter" href="#"></a>
+                <a class="sbtnf sbtnf-rounded color color-hover icon-gplus" href="#"></a>
+                <a class="sbtnf sbtnf-rounded color color-hover icon-linkedin" href="#"></a>
+            </div>
+            <a href="#" class="btn btn-primary">레시피 만들기</a>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- 히든 탑 메뉴 끝 -->
+
+<!-- 헤더 메뉴 시작 -->
+<header class="header header-two">
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-md-2 col-lg-3 logo-box">
+    <div class="logo">
+        <a href="index.html">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/logo.svg" class="logo-img" alt="">
+        </a>
+    </div>
+</div><!-- .logo-box -->
+
+<div class="col-xs-6 col-md-10 col-lg-9 right-box">
+<div class="right-box-wrapper">
+<div class="header-icons">
+    <div class="search-header hidden-600">
+        <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                                              <path d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
+                                              s2.687,6,6,6c1.402,0,2.688-0.484,3.71-1.29l0.79,0.79l-0.5,0.5l4,4l2-2L12.001,10z M6,10c-2.206,0-4-1.794-4-4s1.794-4,4-4
+                                              s4,1.794,4,4S8.206,10,6,10z"></path>
+                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/search-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
+                                            </svg>
+        </a>
+    </div><!-- .search-header -->
+
+    <div class="phone-header hidden-600">
+        <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                                                  <path d="M11.001,0H5C3.896,0,3,0.896,3,2c0,0.273,0,11.727,0,12c0,1.104,0.896,2,2,2h6c1.104,0,2-0.896,2-2
+                                                  c0-0.273,0-11.727,0-12C13.001,0.896,12.105,0,11.001,0z M8,15c-0.552,0-1-0.447-1-1s0.448-1,1-1s1,0.447,1,1S8.553,15,8,15z
+                                                  M11.001,12H5V2h6V12z"></path>
+                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/phone-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
+                                         </svg>
+        </a>
+    </div><!-- .phone-header -->
+</div><!-- .header-icons -->
+
+<div class="primary">
+<div class="navbar navbar-default" role="navigation">
+<button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target=".primary .navbar-collapse">
+    <span class="text">Menu</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</button>
+
+<nav class="collapse collapsing navbar-collapse">
+<ul class="nav navbar-nav navbar-center">
+<li class="parent"> <a href="index.html">기초재료</a>
+    <ul class="sub">
+        <li><a href="index.html">스타일 (BJCP STYLE)</a></li>
+        <li><a href="home-2.html">발효재료 (Fermentable) </a></li>
+        <li><a href="home-2.html">홉 (Hop) <span class="item-new">Hot</span></a></li>
+        <li><a href="home-3.html">효모 (Yeast)</a></li>
+        <li><a href="home-4.html">기타재료</a></li>
+    </ul>
+</li>
+<li class="parent megamenu promo">
+    <a href="#">레시피 찾기</a>
+    <ul class="sub">
+        <li class="sub-wrapper">
+            <div class="sub-list">
+                <div class="box closed">
+                    <h6 class="title">Savant Apple Integration</h6>
+                    <ul>
+                        <li><a href="#">iPad, iPod touch, iPhone &amp; Mac Control</a></li>
+                        <li><a href="#">iPod touch Remote Control</a></li>
+                        <li><a href="#">Savant Host (Mac Mini) <span class="item-new bg-warning">Wow</span></a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Audio/Video Control</h6>
+                    <ul>
+                        <li><a href="#">Distributed Audio &amp; Video</a></li>
+                        <li><a href="#">Matrix Switchers</a></li>
+                        <li><a href="#">Audio/Video Processing</a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Display Solutions</h6>
+                    <ul>
+                        <li><a href="#">Video Tiling <span class="item-new">New</span></a></li>
+                        <li><a href="#">On-Screen Display</a></li>
+                        <li><a href="#">Digital Messaging</a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Sound</h6>
+                    <ul>
+                        <li><a href="#">Distributed Audio Controller</a></li>
+                        <li><a href="#">Multi-channel Amplifiers <span class="item-new">New</span></a></li>
+                        <li><a href="#">Architectural Speakers</a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Display Solutions</h6>
+                    <ul>
+                        <li><a href="#">Video Tiling <span class="item-new bg-success">Coming Soon</span></a></li>
+                        <li><a href="#">On-Screen Display</a></li>
+                        <li><a href="#">Digital Messaging</a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Sound</h6>
+                    <ul>
+                        <li><a href="#">Distributed Audio Controller</a></li>
+                        <li><a href="#">Multi-channel Amplifiers</a></li>
+                        <li><a href="#">Architectural Speakers <span class="item-new">New</span></a></li>
+                    </ul>
+                </div><!-- .box -->
+            </div><!-- .sub-list -->
+
+            <div class="promo-block">
+                <a href="#">
+                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/megamenu-big.png" width="253" height="457" alt="">
+                </a>
+            </div><!-- .promo-block -->
+        </li>
+    </ul><!-- .sub -->
+</li>
+<li class="parent">
+    <a href="#">레시피 만들기</a>
+    <ul class="sub">
+        <li><a href="sidebar-blocks.html">All sidebar blocks</a></li>
+        <li><a href="full-width.html">Full Width</a></li>
+        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="blog-list.html">Blog List</a></li>
+        <li><a href="blog-view.html">Blog Post View</a></li>
+        <li><a href="search-results.html">Search Results</a></li>
+        <li class="parent">
+            <a href="404.html">Page 404</a>
+            <ul class="sub">
+                <li><a href="404.html">Page 404 (1)</a></li>
+                <li><a href="404-2.html">Page 404 (2)</a></li>
+                <li><a href="404-3.html">Page 404 (3) <span class="item-new">New</span></a></li>
+            </ul>
+        </li>
+        <li class="parent">
+            <a href="#">Portfolio</a>
+            <ul class="sub">
+                <li><a href="portfolio-1.html">Portfolio (1 column)</a></li>
+                <li><a href="portfolio-2.html">Portfolio (2 column)</a></li>
+                <li><a href="portfolio-3.html">Portfolio (3 column)</a></li>
+                <li><a href="portfolio-4.html">Portfolio (4 column)</a></li>
+                <li><a href="portfolio-slider.html">Portfolio (Slider)</a></li>
+                <li><a href="portfolio-single.html">Single Project</a></li>
+            </ul>
+        </li>
+        <li><a href="gallery-modern.html">Modern Gallery</a></li>
+        <li class="parent">
+            <a href="#">Gallery</a>
+            <ul class="sub">
+                <li><a href="gallery-1.html">Gallery (1 column)</a></li>
+                <li><a href="gallery-2.html">Gallery (2 column)</a></li>
+                <li><a href="gallery-3.html">Gallery (3 column)</a></li>
+                <li><a href="gallery-4.html">Gallery (4 column)</a></li>
+            </ul>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="coming-soon.html">Coming Soon</a></li>
+        <li><a href="under-construction.html">Under Construction</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="login-2.html">Login / Register <span class="item-new">New</span></a></li>
+        <li class="parent">
+            <a href="#">Newsletter</a>
+            <ul class="sub">
+                <li><a href="newsletter-big-intro.html">Newsletter Big Intro</a></li>
+                <li><a href="newsletter-big-portfolio.html">Newsletter Big Portfolio</a></li>
+                <li><a href="newsletter-columns.html">Newsletter Columns</a></li>
+                <li><a href="newsletter-info.html">Newsletter Info</a></li>
+                <li><a href="newsletter-plan.html">Newsletter Plan</a></li>
+                <li><a href="newsletter-portfolio.html">Newsletter Portfolio</a></li>
+                <li><a href="newsletter-product-list.html">Newsletter Product List</a></li>
+                <li><a href="newsletter-story.html">Newsletter Story</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li class="parent">
+    <a href="shop.html">가이드</a>
+    <ul class="sub">
+        <li><a href="catalog-grid.html">Catalog (Grid)</a></li>
+        <li><a href="catalog-list.html">Catalog (List)</a></li>
+        <li><a href="product-view.html">Product View</a></li>
+        <li><a href="product-view-variants.html">Product View (Variants)</a></li>
+        <li><a href="cart.html">Shopping Cart</a></li>
+        <li><a href="checkout.html">Proceed to Checkout</a></li>
+        <li><a href="confirmation.html">Confirmation Page</a></li>
+        <li><a href="compare.html">Compare Products</a></li>
+        <li class="parent">
+            <a href="account.html">My Account</a>
+            <ul class="sub">
+                <li><a href="account.html">My Dashboard</a></li>
+                <li><a href="account-information.html">Account Information</a></li>
+                <li><a href="account-address.html">Address Book</a></li>
+                <li><a href="account-orders.html">My Orders</a></li>
+            </ul>
+        </li>
+        <li><a href="login.html">Login / Register</a></li>
+        <li><a href="forgot.html">Password Recovery</a></li>
+    </ul>
+</li>
+<li class="parent megamenu promo">
+    <a href="#">커뮤니티</a>
+    <ul class="sub">
+        <li class="sub-wrapper">
+            <div class="sub-list">
+                <div class="box closed">
+                    <h6 class="title">Savant Apple Integration</h6>
+                    <ul>
+                        <li><a href="#">iPad, iPod touch, iPhone &amp; Mac Control</a></li>
+                        <li><a href="#">iPod touch Remote Control</a></li>
+                        <li><a href="#">Savant Host (Mac Mini) <span class="item-new bg-warning">Wow</span></a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Audio/Video Control</h6>
+                    <ul>
+                        <li><a href="#">Distributed Audio &amp; Video</a></li>
+                        <li><a href="#">Matrix Switchers</a></li>
+                        <li><a href="#">Audio/Video Processing</a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Display Solutions</h6>
+                    <ul>
+                        <li><a href="#">Video Tiling <span class="item-new">New</span></a></li>
+                        <li><a href="#">On-Screen Display</a></li>
+                        <li><a href="#">Digital Messaging</a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Sound</h6>
+                    <ul>
+                        <li><a href="#">Distributed Audio Controller</a></li>
+                        <li><a href="#">Multi-channel Amplifiers <span class="item-new">New</span></a></li>
+                        <li><a href="#">Architectural Speakers</a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Display Solutions</h6>
+                    <ul>
+                        <li><a href="#">Video Tiling <span class="item-new bg-success">Coming Soon</span></a></li>
+                        <li><a href="#">On-Screen Display</a></li>
+                        <li><a href="#">Digital Messaging</a></li>
+                    </ul>
+                </div><!-- .box -->
+
+                <div class="box closed">
+                    <h6 class="title">Savant Sound</h6>
+                    <ul>
+                        <li><a href="#">Distributed Audio Controller</a></li>
+                        <li><a href="#">Multi-channel Amplifiers</a></li>
+                        <li><a href="#">Architectural Speakers <span class="item-new">New</span></a></li>
+                    </ul>
+                </div><!-- .box -->
+            </div><!-- .sub-list -->
+
+            <div class="promo-block">
+                <a href="#">
+                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/megamenu-big.png" width="253" height="457" alt="">
+                </a>
+            </div><!-- .promo-block -->
+        </li>
+    </ul><!-- .sub -->
+</li>
+<li>
+    <a href="http://themeforest.net/item/progressive-multipurpose-responsive-template/7197521" target="_blank">링크</a>
+</li>
+</ul>
+</nav>
+</div>
+</div><!-- .primary -->
+</div>
+</div>
+
+<div class="phone-active col-sm-9 col-md-9">
+    <a href="#" class="close"><span>close</span>×</a>
+    <span class="title">Call Us</span> <strong>+1 (777) 123 45 67</strong>
+</div>
+<div class="search-active col-sm-9 col-md-9">
+    <a href="#" class="close"><span>close</span>×</a>
+    <form name="search-form">
+        <input class="search-string form-control" type="search" placeholder="Search here" name="search-string">
+        <button class="search-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+          <path fill="#231F20" d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
+          s2.687,6,6,6c1.402,0,2.688-0.484,3.71-1.29l0.79,0.79l-0.5,0.5l4,4l2-2L12.001,10z M6,10c-2.206,0-4-1.794-4-4s1.794-4,4-4
+          s4,1.794,4,4S8.206,10,6,10z"></path>
+                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/search-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
+        </svg>
+        </button>
+    </form>
+</div>
+</div><!--.row -->
+</div>
+</header><!-- .header -->
+<div id="cm-video-bg" class="full-width-box bottom-padding">
+    <div class="fwb-bg fwb-video band-16">
+        <video autoplay="" muted="" loop="">
+            <source src="http://template.progressive.itembridge.com/2.1.8/video/video.mp4" type="video/mp4">
+            <source src="video/video.webm" type="video/webm">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="white text-center col-sm-12 col-md-12">
+                <div class="title-box text-center title-white">
+                    <h1 class="title">Video Background</h1>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quisquam aperiam necessitatibus id consequuntur quidem praesentium laboriosam repellendus modi fugiat aliquam quam minus mollitia eveniet sapiente perferendis voluptatibus ad rem? Id nesciunt alias neque non illum facilis nobis cupiditate ullam corrupti nisi esse cum tempore tempora praesentium soluta autem vitae!</p>
+                <a href="#" class="btn btn-default">Read more</a>
+            </div>
+        </div>
+    </div>
+</div><!-- .full-width-box -->
+
+<div class="container">
+<div class="carousel-box bottom-padding bottom-padding-mini load overflow">
+<div class="title-box no-margin">
+    <a class="next" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="16px" viewBox="0 0 9 16" enable-background="new 0 0 9 16" xml:space="preserve">
+          <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="1,0.001 0,1.001 7,8 0,14.999 1,15.999 9,8 "></polygon>
+        </svg>
+    </a>
+    <a class="prev" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="16px" viewBox="0 0 9 16" enable-background="new 0 0 9 16" xml:space="preserve">
+          <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="8,15.999 9,14.999 2,8 9,1.001 8,0.001 0,8 "></polygon>
+        </svg>
+    </a>
+    <h2 class="title">인기 레시피</h2>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+<div class="carousel products">
+<div class="col-sm-3 col-md-3 product rotation">
+    <div class="default">
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-11.png" alt="" title="" width="270" height="270">
+        </a>
+        <div class="product-description">
+            <div class="vertical">
+                <h3 class="product-name">
+                    <a href="product-view.html">Sony Led TV KDL-46HX853</a>
+                </h3>
+                <div class="price">$1, 449.00</div>
+            </div>
+        </div>
+    </div>
+    <div class="product-hover">
+        <h3 class="product-name">
+            <a href="product-view.html">Sony Led TV KDL-46HX853</a>
+        </h3>
+        <div class="price">$1, 449.00</div>
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-11.png" alt="" title="" width="70" height="70">
+        </a>
         <ul>
-            <li class="start"> <a href="index.html"> <i class="fa fa-th"></i> <span class="title">데이터 베이스</span> <span class="selected"></span> <span class="arrow open"></span> </a>
-                <ul class="sub-menu">
-                    <li > <a href="/style/"> 스타일 (BJCP STYLE)</a> </li>
-                    <li class="active"> <a href="/hop/">홉 (HOP) <span class=" label label-info pull-right m-r-30">HOT</span></a></li>
-                    <li > <a href="/fermentable/"> 발효 (Fermentable)</a> </li>
-                    <li > <a href="/yeast/"> 효모 (Yeas) </a> </li>
-                    <li > <a href="/misc/"> 첨가물 (Misc) </a> </li>
-                </ul>
-            </li>
-            <li class="start"> <a href="index.html"> <i class="fa fa-th"></i> <span class="title">게시판</span> <span class="selected"></span> <span class="arrow open"></span> </a>
-                <ul class="sub-menu">
-                    <li class="active"> <a href="/board/freeBoard">자유게시판(Free Board)</a> </li>
-                    <li > <a href="/board/notice">공지사항(Notice)<span class=" label label-info pull-right m-r-30"></span></a></li>
-                    <li > <a href="/board/questionBoard">질문게시판(Q&A)</a> </li>
-                    <li > <a href="/board/addBoard">게시판 생성</a> </li>
-                </ul>
-            </li>
-            <!--
-            <li class="hidden-lg hidden-md hidden-xs" id="more-widgets" > <a href="javascript:;"> <i class="fa fa-plus"></i></a>
-                <ul class="sub-menu">
-                    <li class="side-bar-widgets">
-                        <p class="menu-title">FOLDER <span class="pull-right"><a href="#" class="create-folder"><i class="icon-plus"></i></a></span></p>
-                        <ul class="folders" >
-                            <li><a href="#">
-                                <div class="status-icon green"></div>
-                                인디아 페일에일 </a> </li>
-                            <li><a href="#">
-                                <div class="status-icon red"></div>
-                                오트밀 스타우트 </a> </li>
-                            <li class="folder-input" style="display:none">
-                                <input type="text" placeholder="Name of folder" class="no-boarder folder-name" name="" id="folder-name">
-                            </li>
-                        </ul>
-                        <p class="menu-title">스케줄 </p>
-                        <div class="status-widget">
-                            <div class="status-widget-wrapper">
-                                <div class="title">오트밀 스타우트<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-                                <p>병입 2일 남았습니다.</p>
-                            </div>
-                        </div>
-                        <div class="status-widget">
-                            <div class="status-widget-wrapper">
-                                <div class="title">인디아 페일에일<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-                                <p>숙성된지 4일이 지났습니다.</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            -->
+            <li>117 cm / 46"LCD TV</li>
+            <li>Full HD 3D &amp; 2D</li>
+            <li>Sony Internet TV</li>
+            <li>Dynamic Edge LED</li>
+            <li>1X-Reality PRO</li>
         </ul>
-        <div class="side-bar-widgets">
-            <!--
-            <p class="menu-title">양조 스케줄 <span class="pull-right"><a href="#" class="create-folder"> <i class="fa fa-plus"></i></a></span></p>
-            <ul class="folders" >
-                <li><a href="#">
-                    <div class="status-icon green"></div>
-                    인디아 페일에일 </a> </li>
-                <li><a href="#">
-                    <div class="status-icon red"></div>
-                    오트밀 스타우트 </a> </li>
-                <li class="folder-input" style="display:none">
-                    <input type="text" placeholder="Name of folder" class="no-boarder folder-name" name="" >
+        <div class="actions">
+            <a href="product-view.html" class="add-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <g>
+                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
+                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
+                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
+                      M13.001,14H3V6h10V14z"></path>
+                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
+                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
+                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
+                  </g>
+                </svg>
+            </a>
+            <a href="#" class="add-wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
+                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
+                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
+                </svg>
+            </a>
+            <a href="#" class="add-compare">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
+                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
+                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
+                </svg>
+            </a>
+        </div><!-- .actions -->
+    </div><!-- .product-hover -->
+</div><!-- .product -->
+<div class="col-sm-3 col-md-3 product rotation">
+    <div class="default">
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-12.png" alt="" title="" width="270" height="270">
+        </a>
+        <div class="product-description">
+            <div class="vertical">
+                <h3 class="product-name">
+                    <a href="product-view.html">Sony 3D TV KD3-46H853</a>
+                </h3>
+                <div class="price">$1, 449.00</div>
+            </div>
+        </div>
+    </div>
+    <div class="product-hover">
+        <h3 class="product-name">
+            <a href="product-view.html">Sony 3D TV KD3-46H853</a>
+        </h3>
+        <div class="price">$1, 449.00</div>
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-12.png" alt="" title="" width="70" height="70">
+        </a>
+        <ul>
+            <li>117 cm / 46"LCD TV</li>
+            <li>Full HD 3D &amp; 2D</li>
+            <li>Sony Internet TV</li>
+            <li>Dynamic Edge LED</li>
+            <li>1X-Reality PRO</li>
+        </ul>
+        <div class="actions">
+            <a href="product-view.html" class="add-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <g>
+                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
+                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
+                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
+                      M13.001,14H3V6h10V14z"></path>
+                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
+                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
+                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
+                  </g>
+                </svg>
+            </a>
+            <a href="#" class="add-wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
+                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
+                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
+                </svg>
+            </a>
+            <a href="#" class="add-compare">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
+                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
+                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
+                </svg>
+            </a>
+        </div><!-- .actions -->
+    </div><!-- .product-hover -->
+</div><!-- .product -->
+<div class="col-sm-3 col-md-3 product rotation">
+    <div class="default">
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-13.png" alt="" title="" width="270" height="270">
+        </a>
+        <div class="product-description">
+            <div class="vertical">
+                <h3 class="product-name">
+                    <a href="product-view.html">Projector VPL-VW95ES</a>
+                </h3>
+                <div class="price">$1, 449.00</div>
+            </div>
+        </div>
+    </div>
+    <div class="product-hover">
+        <h3 class="product-name">
+            <a href="product-view.html">Projector VPL-VW95ES</a>
+        </h3>
+        <div class="price">$1, 449.00</div>
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-13.png" alt="" title="" width="70" height="70">
+        </a>
+        <ul>
+            <li>117 cm / 46"LCD TV</li>
+            <li>Full HD 3D &amp; 2D</li>
+            <li>Sony Internet TV</li>
+            <li>Dynamic Edge LED</li>
+            <li>1X-Reality PRO</li>
+        </ul>
+        <div class="actions">
+            <a href="product-view.html" class="add-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <g>
+                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
+                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
+                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
+                      M13.001,14H3V6h10V14z"></path>
+                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
+                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
+                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
+                  </g>
+                </svg>
+            </a>
+            <a href="#" class="add-wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
+                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
+                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
+                </svg>
+            </a>
+            <a href="#" class="add-compare">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
+                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
+                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
+                </svg>
+            </a>
+        </div><!-- .actions -->
+    </div><!-- .product-hover -->
+</div><!-- .product -->
+<div class="col-sm-3 col-md-3 product rotation">
+    <div class="default">
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-14.png" alt="" title="" width="270" height="270">
+        </a>
+        <div class="product-description">
+            <div class="vertical">
+                <h3 class="product-name">
+                    <a href="product-view.html">XA700 Wireless speaker</a>
+                </h3>
+                <div class="price">$1, 449.00</div>
+            </div>
+        </div>
+    </div>
+    <div class="product-hover">
+        <h3 class="product-name">
+            <a href="product-view.html">XA700 Wireless speaker</a>
+        </h3>
+        <div class="price">$1, 449.00</div>
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-14.png" alt="" title="" width="70" height="70">
+        </a>
+        <ul>
+            <li>117 cm / 46"LCD TV</li>
+            <li>Full HD 3D &amp; 2D</li>
+            <li>Sony Internet TV</li>
+            <li>Dynamic Edge LED</li>
+            <li>1X-Reality PRO</li>
+        </ul>
+        <div class="actions">
+            <a href="product-view.html" class="add-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <g>
+                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
+                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
+                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
+                      M13.001,14H3V6h10V14z"></path>
+                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
+                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
+                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
+                  </g>
+                </svg>
+            </a>
+            <a href="#" class="add-wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
+                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
+                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
+                </svg>
+            </a>
+            <a href="#" class="add-compare">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
+                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
+                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
+                </svg>
+            </a>
+        </div><!-- .actions -->
+    </div><!-- .product-hover -->
+</div><!-- .product -->
+<div class="col-sm-3 col-md-3 product rotation">
+    <div class="default">
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-5.png" alt="" title="" width="270" height="270">
+        </a>
+        <div class="product-description">
+            <div class="vertical">
+                <h3 class="product-name">
+                    <a href="product-view.html"> 800 Series Diamond</a>
+                </h3>
+                <div class="price">$1, 449.00</div>
+            </div>
+        </div>
+    </div>
+    <div class="product-hover">
+        <h3 class="product-name">
+            <a href="product-view.html"> 800 Series Diamond</a>
+        </h3>
+        <div class="price">$1, 449.00</div>
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-5.png" alt="" title="" width="70" height="70">
+        </a>
+        <ul>
+            <li>117 cm / 46"LCD TV</li>
+            <li>Full HD 3D &amp; 2D</li>
+            <li>Sony Internet TV</li>
+            <li>Dynamic Edge LED</li>
+            <li>1X-Reality PRO</li>
+        </ul>
+        <div class="actions">
+            <a href="product-view.html" class="add-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <g>
+                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
+                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
+                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
+                      M13.001,14H3V6h10V14z"></path>
+                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
+                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
+                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
+                  </g>
+                </svg>
+            </a>
+            <a href="#" class="add-wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
+                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
+                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
+                </svg>
+            </a>
+            <a href="#" class="add-compare">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
+                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
+                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
+                </svg>
+            </a>
+        </div><!-- .actions -->
+    </div><!-- .product-hover -->
+</div><!-- .product -->
+<div class="col-sm-3 col-md-3 product rotation">
+    <div class="default">
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-6.png" alt="" title="" width="270" height="270">
+        </a>
+        <div class="product-description">
+            <div class="vertical">
+                <h3 class="product-name">
+                    <a href="product-view.html">AirPlay Hi-Fi system</a>
+                </h3>
+                <div class="price">$1, 449.00</div>
+            </div>
+        </div>
+    </div>
+    <div class="product-hover">
+        <h3 class="product-name">
+            <a href="product-view.html">AirPlay Hi-Fi system</a>
+        </h3>
+        <div class="price">$1, 449.00</div>
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-6.png" alt="" title="" width="70" height="70">
+        </a>
+        <ul>
+            <li>117 cm / 46"LCD TV</li>
+            <li>Full HD 3D &amp; 2D</li>
+            <li>Sony Internet TV</li>
+            <li>Dynamic Edge LED</li>
+            <li>1X-Reality PRO</li>
+        </ul>
+        <div class="actions">
+            <a href="product-view.html" class="add-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <g>
+                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
+                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
+                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
+                      M13.001,14H3V6h10V14z"></path>
+                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
+                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
+                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
+                  </g>
+                </svg>
+            </a>
+            <a href="#" class="add-wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
+                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
+                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
+                </svg>
+            </a>
+            <a href="#" class="add-compare">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
+                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
+                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
+                </svg>
+            </a>
+        </div><!-- .actions -->
+    </div><!-- .product-hover -->
+</div><!-- .product -->
+<div class="col-sm-3 col-md-3 product rotation">
+    <div class="default">
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-7.png" alt="" title="" width="270" height="270">
+        </a>
+        <div class="product-description">
+            <div class="vertical">
+                <h3 class="product-name">
+                    <a href="product-view.html">Sony Xperia Z</a>
+                </h3>
+                <div class="price">$1, 449.00</div>
+            </div>
+        </div>
+    </div>
+    <div class="product-hover">
+        <h3 class="product-name">
+            <a href="product-view.html">Sony Xperia Z</a>
+        </h3>
+        <div class="price">$1, 449.00</div>
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-7.png" alt="" title="" width="70" height="70">
+        </a>
+        <ul>
+            <li>117 cm / 46"LCD TV</li>
+            <li>Full HD 3D &amp; 2D</li>
+            <li>Sony Internet TV</li>
+            <li>Dynamic Edge LED</li>
+            <li>1X-Reality PRO</li>
+        </ul>
+        <div class="actions">
+            <a href="product-view.html" class="add-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <g>
+                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
+                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
+                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
+                      M13.001,14H3V6h10V14z"></path>
+                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
+                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
+                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
+                  </g>
+                </svg>
+            </a>
+            <a href="#" class="add-wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
+                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
+                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
+                </svg>
+            </a>
+            <a href="#" class="add-compare">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
+                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
+                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
+                </svg>
+            </a>
+        </div><!-- .actions -->
+    </div><!-- .product-hover -->
+</div><!-- .product -->
+<div class="col-sm-3 col-md-3 product rotation">
+    <div class="default">
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-8.png" alt="" title="" width="270" height="270">
+        </a>
+        <div class="product-description">
+            <div class="vertical">
+                <h3 class="product-name">
+                    <a href="product-view.html">Xperia miro</a>
+                </h3>
+                <div class="price">$1, 449.00</div>
+            </div>
+        </div>
+    </div>
+    <div class="product-hover">
+        <h3 class="product-name">
+            <a href="product-view.html">Xperia miro</a>
+        </h3>
+        <div class="price">$1, 449.00</div>
+        <a href="product-view.html" class="product-image">
+            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-8.png" alt="" title="" width="70" height="70">
+        </a>
+        <ul>
+            <li>117 cm / 46"LCD TV</li>
+            <li>Full HD 3D &amp; 2D</li>
+            <li>Sony Internet TV</li>
+            <li>Dynamic Edge LED</li>
+            <li>1X-Reality PRO</li>
+        </ul>
+        <div class="actions">
+            <a href="product-view.html" class="add-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <g>
+                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
+                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
+                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
+                      M13.001,14H3V6h10V14z"></path>
+                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
+                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
+                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
+                  </g>
+                </svg>
+            </a>
+            <a href="#" class="add-wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
+                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
+                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
+                </svg>
+            </a>
+            <a href="#" class="add-compare">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
+                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
+                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
+                </svg>
+            </a>
+        </div><!-- .actions -->
+    </div><!-- .product-hover -->
+</div><!-- .product -->
+</div>
+</div>
+</div><!-- .carousel-box -->
+
+<div class="content-block frame text-center bottom-padding">
+    <p class="lead">Welcome to our site. There are many variations alteration in some form, by injected humour, or randomised words which don't look even slightly believable. Donec pharetra, lectus nec dignissim pharetra quis libero. </p>
+    <button class="btn btn-default" data-appear-animation="bounceIn">Read More</button>
+    <button class="btn btn-default" data-appear-animation="bounceIn">Join Now</button>
+</div><!-- .content-block -->
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 promo-partners bottom-padding">
+            <div class="title-box">
+                <h2 class="title">Our partners</h2>
+            </div>
+            <div class="row manufactures manufactures-list">
+                <div class="make-wrapper">
+                    <a href="#" class="make">
+                        <img src="http://template.progressive.itembridge.com/2.1.8/img/content/make-2.png" width="128" height="128" alt="">
+                    </a>
+                </div><!--
+
+        --><div class="make-wrapper">
+                <a href="#" class="make">
+                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/make-3.png" width="128" height="128" alt="">
+                </a>
+            </div><!--
+
+        --><div class="make-wrapper">
+                <a href="#" class="make">
+                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/make-4.png" width="128" height="128" alt="">
+                </a>
+            </div>
+            </div>
+            <p>Duis bibendum pulvinar laoreet. Ut eu arcu sit amet elit placerat pharetra sit amet a tortor. Fusce vestibulum auctor rhoncus. Nullam rhoncus, tellus a congue elementum, leo ipsum tincidunt justo, ut condimentum velit eros et lectus. Phasellus ultrices rhoncus vehicula.</p>
+            <p>Integer ultricies semper massa non condimentum. Phasellus eu ipsum justo. Nullam non pulvinar purus. Ut ante ipsum, venenatis at tristique quis, congue vitae felis. Aliquam cursus diam in massa dapibus auctor. In volutpat, risus non egestas luctus, justo tellus laoreet justo. </p>
+        </div><!-- .promo-partners -->
+
+        <div class="col-sm-12 col-md-6">
+            <div class="title-box">
+                <a href="#" class="btn btn-default">All posts <i class="icon-arrow-right icon-white"></i></a>
+                <h2 class="title">Latest Posts</h2>
+            </div>
+            <ul class="latest-posts">
+                <li>
+                    <img class="image img-circle" src="http://template.progressive.itembridge.com/2.1.8/img/content/product-1.png" alt="" title="" width="84" height="84" data-appear-animation="rotateIn">
+                    <div class="meta">
+                        <span>Mike Example</span>,
+                        <span class="time">03.11.2013, 10:45:</span>
+                    </div>
+                    <div class="description">
+                        <a href="#">
+                            Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus.
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img class="image img-circle" src="http://template.progressive.itembridge.com/2.1.8/img/content/product-2.png" alt="" title="" width="84" height="84" data-appear-animation="rotateIn">
+                    <div class="meta">
+                        <span>Mike Example</span>,
+                        <span class="time">03.11.2013, 10:45:</span>
+                    </div>
+                    <div class="description">
+                        <a href="#">
+                            Maecenas porttitor orci vitae turpis interdum sit amet dignissim dolor consequat. Aenean id erat lorem.
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img class="image img-circle" src="http://template.progressive.itembridge.com/2.1.8/img/content/product-3.png" alt="" title="" width="84" height="84" data-appear-animation="rotateIn">
+                    <div class="meta">
+                        <span>Mike Example</span>,
+                        <span class="time">03.11.2013, 10:45:</span>
+                    </div>
+                    <div class="description">
+                        <a href="#">
+                            Mauris vehicula fringilla nisl porttitor sollicitudin. Suspendisse facilisis metus id neque fermentum eget rutrum orci pulvinar.
+                        </a>
+                    </div>
                 </li>
             </ul>
-            <p class="menu-title">스케줄 </p>
-            <div class="status-widget">
-                <div class="status-widget-wrapper">
-                    <div class="title">오트밀 스타우트<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-                    <p>병입 2일 남았습니다.</p>
-                </div>
-            </div>
-            <div class="status-widget">
-                <div class="status-widget-wrapper">
-                    <div class="title">인디아 페일에일<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-                    <p>숙성된지 4일이 지났습니다.</p>
-                </div>
-            </div>
-            -->
         </div>
-        <div class="clearfix"></div>
-        <!-- END SIDEBAR MENU -->
     </div>
 </div>
-<div class="footer-widget">
-    <div class="progress transparent progress-small no-radius no-margin">
-        <div data-percentage="79%" class="progress-bar progress-bar-success animate-progress-bar" ></div>
-    </div>
-    <div class="pull-right">
-        <div class="details-status"> <span data-animation-duration="560" data-value="86" class="animate-number"></span>% </div>
-        <a href="#"><i class="fa fa-power-off"></i></a></div>
-</div>
-<!-- END SIDEBAR -->
-<!-- BEGIN PAGE CONTAINER-->
-<div class="page-content">
-<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-<div id="portlet-config" class="modal hide">
-    <div class="modal-header">
-        <button data-dismiss="modal" class="close" type="button"></button>
-        <h3>Widget Settings</h3>
-    </div>
-    <div class="modal-body"> Widget settings form goes here </div>
-</div>
-<div class="clearfix"></div>
-<div class="content">
-<div class="page-title">
-</div>
+</article>
 
+</div><!-- .page-box-content -->
+</div><!-- .page-box -->
 
-<div class="row" >
-<!-- BEGIN BLOG POST BIG IMAGE WIDGET -->
-<div class="row">
-<div class="col-md-4 col-sm-6">
-    <div class="row ">
-        <!-- 홉 설명 소개 -->
-        <div class="col-md-12 m-b-20">
-            <div class="widget-item narrow-margin">
-                <div class="controller overlay right"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-                <div class="tiles green " style="max-height:345px">
-                    <div class="tiles-body">
-                        <h3 class="text-white m-t-50 m-b-30 m-r-20"  onclick="goDetail('${hop.seq}', '${hop.titleInUrl}');"><span class="semi-bold">${hop.koreanName}</span></h3>
-                        <div class="overlayer bottom-right fullwidth">
-                            <div class="overlayer-wrapper">
-                                <div class=" p-l-20 p-r-20 p-b-20 p-t-20">
-                                    <div class="pull-right">
-                                        <c:forEach items="${hopAromaList}" var="list" varStatus="i">
-                                        <a href="#" class="hashtags transparent"> ${list.aromaName}</a>
-                                        </c:forEach>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row sidebar">
+                <aside class="col-xs-12 col-sm-6 col-md-3 widget social">
+                    <div class="title-block">
+                        <h3 class="title">Follow Us</h3>
                     </div>
-                </div>
-                <div class="tiles white ">
-                    <div class="tiles-body">
-                        <div class="row">
-                            <div class="user-comment-wrapper pull-left">
-                                <div class="profile-wrapper"> <img src="/resources/assets/img/brew/hop.jpg" alt="" data-src="/resources/assets/img/brew/hop.jpg" data-src-retina="/resources/assets/img/profiles/avatar_small2x.jpg" width="35" height="35"> </div>
-                                <div class="comment">
-                                    <div class="user-name text-black bold"> <span class="semi-bold"> ${hop.typeKorean}  </span> </div>
-                                    <div class="preview-wrapper">@ ${hop.originKorean} </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="pull-right m-r-20"> <span class="bold text-black small-text">${hop.alpha} %</span> </div>
-                            <div class="clearfix"></div>
-                            <div class="p-l-15 p-t-10 p-r-20">
-                                <p>${hop.koreanNotes}</p>
-                                <div class="post p-t-10 p-b-10">
-                                    <div class="profile-img-wrapper pull-left"> <img src="/resources/assets/img/profiles/avatar_small.jpg" alt="" data-src="/resources/assets/img/profiles/avatar_small.jpg" data-src-retina="/resources/assets/img/profiles/avatar_small2x.jpg" width="35" height="35"> </div>
-                                    <div class="inline pull-right" style="width:86%">
-                                        <div class="input-group transparent ">
-                                            <input type="text" class="form-control" placeholder="댓글을 입력하세요...">
-                                            <span class="input-group-addon"> <i class="fa fa-camera"></i> </span> </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END BLOG POST SIMPLE-->
-    </div>
+                    <p>Follow us in social media</p>
+                    <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="#"></a>
+                    <a class="sbtnf sbtnf-rounded color color-hover icon-twitter" href="#"></a>
+                    <a class="sbtnf sbtnf-rounded color color-hover icon-gplus" href="#"></a>
+                    <a class="sbtnf sbtnf-rounded color color-hover icon-linkedin" href="#"></a>
+                    <div class="clearfix"></div>
+                </aside>
 
-    <div class="row">
-        <!-- BEGIN BLOG POST WITH CAROUSEL IMAGE -->
-        <div class="col-md-12 m-b-20">
-            <div class="widget-item narrow-margin">
-                <div class="controller overlay right"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-                <div class="tiles white p-t-15">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="profile-img-wrapper pull-left m-l-10">
-                                <div class=" p-r-10">
-                                    <img src="/resources/assets/img/profiles/c.jpg" alt="" data-src="/resources/assets/img/profiles/c.jpg" data-src-retina="/resources/assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
-                            </div>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="user-name text-black bold large-text"> John <span class="semi-bold">Smith</span> </div>
-                            <div class="preview-wrapper">shared a picture with <span class="bold">Jane Smith</span>.</div>
-                        </div>
+                <aside class="col-xs-12 col-sm-6 col-md-3 widget newsletter">
+                    <div class="title-block">
+                        <h3 class="title">Newsletter Signup</h3>
                     </div>
-                    <div id="image-demo-carl" class="m-t-15 owl-carousel owl-theme">
-                        <div class="item"><img src="/resources/assets/img/others/1.jpg" alt=""></div>
-                        <div class="item"><img src="/resources/assets/img/others/2.jpg" alt=""></div>
+                    <div>
+                        <p>Sign up for newsletter</p>
+                        <div class="clearfix"></div>
+                        <form>
+                            <input class="form-control" type="email">
+                            <button class="submit"><span class="glyphicon glyphicon-arrow-right"></span></button>
+                        </form>
                     </div>
-                    <div class="post p-b-15 p-t-15 p-l-15 b-b b-grey">
-                        <ul class="action-bar no-margin ">
-                            <li><a href="#" class="muted"><i class="fa fa-comment m-r-5"></i> 24</a> </li>
-                            <li><a href="#" class="text-error bold"> <i class="fa fa-heart-o  m-r-5"></i> 5</a> </li>
+                </aside><!-- .newsletter -->
+
+                <aside class="col-xs-12 col-sm-6 col-md-3 widget links">
+                    <div class="title-block">
+                        <h3 class="title">Information</h3>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Condotions</a></li>
+                            <li><a href="#">Secure payment</a></li>
                         </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <p class="p-t-10 p-b-10 p-l-15 p-r-15"><span class="bold">Jane Smith, John Smith, David Jester, pepper</span> post and 214 others like this.</p>
-                    <div class="clearfix"></div>
-                    <div class="p-b-10 p-l-10 p-r-10">
-                        <div class="profile-img-wrapper pull-left"> <img src="/resources/assets/img/profiles/avatar_small.jpg" alt="" data-src="/resources/assets/img/profiles/avatar_small.jpg" data-src-retina="/resources/assets/img/profiles/avatar_small2x.jpg" width="35" height="35"> </div>
-                        <div class="inline pull-right" style="width:86%">
-                            <div class="input-group transparent ">
-                                <input type="text" class="form-control" placeholder="Write a comment">
-                                <span class="input-group-addon"> <i class="fa fa-camera"></i> </span> </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END BLOG POST WITH CAROUSEL IMAGE -->
-    </div>
-</div>
+                    </nav>
+                </aside>
 
-<div class="col-md-4 col-sm-6 hidden-sm">
-    <div class="row">
-        <!-- BEGIN BLOG POST WITH IMAGE -->
-        <div class="col-md-12 m-b-20">
-            <div class="widget-item narrow-margin">
-                <div class="controller overlay right"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-                <div class="tiles green  overflow-hidden full-height" style="max-height:214px">
-                    <div class="overlayer bottom-right fullwidth">
-                        <div class="overlayer-wrapper">
-                            <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
-                                <div class="pull-right"> <a href="#" class="hashtags transparent"> #라이트 미국식 라거 </a> </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
+                <aside class="col-xs-12 col-sm-6 col-md-3 widget links">
+                    <div class="title-block">
+                        <h3 class="title">My account</h3>
                     </div>
-                    <a href="/recipe/1/보스턴_라거_클론"><img src="/resources/assets/img/others/1.jpg" alt="" class="lazy hover-effect-img"> </a></div>
-                <div class="tiles white ">
-                    <div class="tiles-body">
-                        <div class="row">
-                            <div class="user-profile-pic text-left">
-                                <img width="69" height="69" data-src-retina="/resources/assets/img/profiles/avatar2x.jpg" data-src="/resources/assets/img/profiles/avatar.jpg" src="/resources/assets/img/profiles/avatar.jpg" alt="">
-                                <div class="pull-right m-r-20 m-t-35"> <span class="bold text-black small-text">4.9% ABV</span> </div>
-                            </div>
-                            <div class="col-md-5 no-padding">
-                                <div class="user-comment-wrapper">
-                                    <div class="comment">
-                                        <div class="user-name text-black bold"> 보스턴 라거 클론 <span class="semi-bold"></span> </div>
-                                        <div class="preview-wrapper">@ 제스퍼 </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-7 no-padding">
-
-                                <div class="clearfix"></div>
-                                <div class="p-l-15 p-t-10 p-r-20">
-                                    <p>사무엘 아담스 라거는 세션비어로 누구나 쉽게 먹을수 있게 디자인되어있다.</p>
-                                    <div class="post p-t-10 p-b-10">
-                                        <ul class="action-bar no-margin p-b-20 ">
-                                            <li><a href="#" class="muted bold"><i class="fa fa-comment  m-r-10"></i>15</a> </li>
-                                            <li><a href="#" class="text-error bold"><i class="fa fa-heart  m-r-10"></i>47</a> </li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END BLOG POST WITH IMAGE -->
-    </div>
-    <div class="row">
-        <!-- BEGIN BLOG POST SIMPLE -->
-        <div class="col-md-12 m-b-20">
-            <div class="widget-item narrow-margin">
-                <div class="controller overlay right"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-                <div class="tiles purple " style="max-height:345px">
-                    <div class="tiles-body">
-
-                        <h3 class="text-white m-t-50 m-b-30 m-r-20"> Webarch <span class="semi-bold">UI Bundle
-                        highly customizable UI
-                        elements</span> </h3>
-                        <div class="overlayer bottom-right fullwidth">
-                            <div class="overlayer-wrapper">
-                                <div class=" p-l-20 p-r-20 p-b-20 p-t-20">
-                                    <div class="pull-right"> <a href="#" class="hashtags transparent"> #Art Design </a> </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                </div>
-                <div class="tiles white ">
-                    <div class="tiles-body">
-                        <div class="row">
-                            <div class="user-comment-wrapper pull-left">
-                                <div class="profile-wrapper">
-                                    <img src="/resources/assets/img/profiles/d.jpg" alt="" data-src="/resources/assets/img/profiles/d.jpg" data-src-retina="/resources/assets/img/profiles/d2x.jpg" width="35" height="35">
-                                </div>
-                                <div class="comment">
-                                    <div class="user-name text-black bold"> Jane <span class="semi-bold">Smith</span> </div>
-                                    <div class="preview-wrapper">@ webarch </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="pull-right m-r-20"> <span class="bold text-black small-text">24m</span> </div>
-                            <div class="clearfix"></div>
-                            <div class="p-l-15 p-t-10 p-r-20">
-                                <p>The attention to detail and the end product is stellar!  I enjoyed the process </p>
-                                <div class="post p-t-10 p-b-10">
-                                    <ul class="action-bar no-margin p-b-20 ">
-                                        <li><a href="#" class="muted bold"><i class="fa fa-comment  m-r-10"></i>1584</a> </li>
-                                        <li><a href="#" class="text-error bold"><i class="fa fa-heart  m-r-10"></i>47k</a> </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END BLOG POST SIMPLE -->
-    </div>
-</div>
-
-<div class="col-md-4 col-sm-6">
-    <div class="row">
-        <!-- BEGIN BLOG POST WITH MAP -->
-        <div class="col-md-12 m-b-20">
-            <div class="widget-item narrow-margin">
-                <div class="controller overlay right"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-                <div class="tiles white p-t-15  m-b-20">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="profile-img-wrapper pull-left m-l-10">
-                                <div class=" p-r-10">
-                                    <img src="/resources/assets/img/profiles/h.jpg" alt="" data-src="/resources/assets/img/profiles/h.jpg" data-src-retina="/resources/assets/img/profiles/h2x.jpg" width="35" height="35">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="user-name text-black bold large-text"> David <span class="semi-bold">Jester</span> </div>
-                            <div class="preview-wrapper">was with <span class="bold">Jane Smith</span> and 4 others at <span class="bold">The Shore By O</span>.</div>
-                        </div>
-                    </div>
-                    <div id="location-map" class="m-t-15 " style="height: 200px"> </div>
-                    <div class="post p-b-15 p-t-15 p-l-15 b-b b-grey">
-                        <ul class="action-bar no-margin ">
-                            <li><a href="#" class="muted"><i class="fa fa-comment m-r-5"></i> 24</a> </li>
-                            <li><a href="#" class="text-error bold"> <i class="fa fa-heart-o  m-r-5"></i> 5</a> </li>
+                    <nav>
+                        <ul>
+                            <li><a href="#">My account</a></li>
+                            <li><a href="#">Order History</a></li>
+                            <li><a href="#">Wish List</a></li>
+                            <li><a href="#">Newsletter</a></li>
                         </ul>
-                        <div class="clearfix"></div>
+                    </nav>
+                </aside>
+            </div>
+        </div>
+    </div><!-- .footer-top -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="copyright col-xs-12 col-sm-3 col-md-3">
+                    Copyright © ItemBridge Inc., 2013
+                </div>
+
+                <div class="phone col-xs-6 col-sm-3 col-md-3">
+                    <div class="footer-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+			  <path fill="#c6c6c6" d="M11.001,0H5C3.896,0,3,0.896,3,2c0,0.273,0,11.727,0,12c0,1.104,0.896,2,2,2h6c1.104,0,2-0.896,2-2
+			   c0-0.273,0-11.727,0-12C13.001,0.896,12.105,0,11.001,0z M8,15c-0.552,0-1-0.447-1-1s0.448-1,1-1s1,0.447,1,1S8.553,15,8,15z
+				M11.001,12H5V2h6V12z"></path>
+			</svg>
                     </div>
-                    <p class="p-t-10 p-b-10 p-l-15 p-r-15"><span class="bold">Jane Smith, John Smith, David Jester, pepper</span> post and 214 others like this.</p>
-                    <div class="clearfix"></div>
-                    <div class="p-b-10 p-l-10 p-r-10">
-                        <div class="profile-img-wrapper pull-left">
-                            <img width="35" height="35" alt="" src="/resources/assets/img/profiles/e.jpg" data-src="/resources/assets/img/profiles/e.jpg" data-src-retina="/resources/assets/img/profiles/e2x.jpg"> </div>
-                        <div class="inline pull-right" style="width:86%">
-                            <div class="input-group transparent ">
-                                <input type="text" class="form-control" placeholder="Write a comment">
-                                <span class="input-group-addon"> <i class="fa fa-camera"></i> </span> </div>
-                        </div>
-                        <div class="clearfix"></div>
+                    <strong class="title">Call Us:</strong> +1 (877) 123-45-67 <br>
+                    <strong>or</strong> +1 (777) 123-45-67
+                </div>
+
+                <div class="address col-xs-6 col-sm-3 col-md-3">
+                    <div class="footer-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+			  <g>
+                  <g>
+                      <path fill="#c6c6c6" d="M8,16c-0.256,0-0.512-0.098-0.707-0.293C7.077,15.491,2,10.364,2,6c0-3.309,2.691-6,6-6
+					c3.309,0,6,2.691,6,6c0,4.364-5.077,9.491-5.293,9.707C8.512,15.902,8.256,16,8,16z M8,2C5.795,2,4,3.794,4,6
+					c0,2.496,2.459,5.799,4,7.536c1.541-1.737,4-5.04,4-7.536C12.001,3.794,10.206,2,8,2z"></path>
+                  </g>
+                  <g>
+                      <circle fill="#c6c6c6" cx="8.001" cy="6" r="2"></circle>
+                  </g>
+              </g>
+			</svg>
                     </div>
+                    49 Archdale, 2B Charleston 5655, Excel Tower<br> OPG Rpad, 4538FH
+                </div>
+
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <a href="#" class="up">
+                        <span class="glyphicon glyphicon-arrow-up"></span>
+                    </a>
                 </div>
             </div>
         </div>
-        <!-- END BLOG POST WITH MAP -->
-    </div>
-    <div class="row">
-        <!-- BEGIN BLOG POST WITH IMAGE -->
-        <div class="col-md-12 m-b-20">
-            <div class="widget-item narrow-margin">
-                <div class="controller overlay right"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
-                <div class="tiles green  overflow-hidden full-height" style="max-height:214px">
-                    <div class="overlayer bottom-right fullwidth">
-                        <div class="overlayer-wrapper">
-                            <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
-                                <div class="pull-right"> <a href="#" class="hashtags transparent"> #Art Design </a> </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="/resources/assets/img/others/10.png" alt="" class="lazy hover-effect-img"> </div>
-                <div class="tiles white ">
-                    <div class="tiles-body">
-                        <div class="row">
-                            <div class="user-profile-pic text-left">
-                                <img width="69" height="69" data-src-retina="/resources/assets/img/profiles/avatar2x.jpg" data-src="/resources/assets/img/profiles/avatar.jpg" src="/resources/assets/img/profiles/avatar.jpg" alt="">
-                                <div class="pull-right m-r-20 m-t-35"> <span class="bold text-black small-text">24m</span> </div>
-                            </div>
-                            <div class="col-md-5 no-padding">
-                                <div class="user-comment-wrapper">
-                                    <div class="comment">
-                                        <div class="user-name text-black bold"> David <span class="semi-bold">Jester</span> </div>
-                                        <div class="preview-wrapper">@ revox </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-7 no-padding">
+    </div><!-- .footer-bottom -->
+</footer>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/resources/asset/js/bootstrap.min.js"></script>
+<script src="/resources/asset/js/price-regulator/jshashtable-2.1_src.js"></script>
+<script src="/resources/asset/js/price-regulator/jquery.numberformatter-1.2.3.js"></script>
+<script src="/resources/asset/js/price-regulator/tmpl.js"></script>
+<script src="/resources/asset/js/price-regulator/jquery.dependClass-0.1.js"></script>
+<script src="/resources/asset/js/price-regulator/draggable-0.1.js"></script>
+<script src="/resources/asset/js/price-regulator/jquery.slider.js"></script>
+<script src="/resources/asset/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script src="/resources/asset/js/jquery.touchSwipe.min.js"></script>
+<script src="/resources/asset/js/jquery.elevateZoom-3.0.8.min.js"></script>
+<script src="/resources/asset/js/jquery.imagesloaded.min.js"></script>
+<script src="/resources/asset/js/jquery.appear.js"></script>
+<script src="/resources/asset/js/jquery.sparkline.min.js"></script>
+<script src="/resources/asset/js/jquery.easypiechart.min.js"></script>
+<script src="/resources/asset/js/jquery.easing.1.3.js"></script>
+<script src="/resources/asset/js/jquery.fancybox.pack.js"></script>
+<script src="/resources/asset/js/isotope.pkgd.min.js"></script>
+<script src="/resources/asset/js/jquery.knob.js"></script>
+<script src="/resources/asset/js/jquery.stellar.min.js"></script>
+<script src="/resources/asset/js/jquery.selectBox.min.js"></script>
+<script src="/resources/asset/js/jquery.royalslider.min.js"></script>
+<script src="/resources/asset/js/jquery.tubular.1.0.js"></script>
+<script src="/resources/asset/js/country.js"></script>
+<script src="/resources/asset/js/spin.min.js"></script>
+<script src="/resources/asset/js/ladda.min.js"></script>
+<script src="/resources/asset/js/masonry.pkgd.min.js"></script>
+<script src="/resources/asset/js/morris.min.js"></script>
+<script src="/resources/asset/js/raphael.min.js"></script>
+<script src="/resources/asset/js/video.js"></script>
+<script src="/resources/asset/js/pixastic.custom.js"></script>
+<script src="/resources/asset/js/livicons-1.3.min.js"></script>
+<script src="/resources/asset/js/layerslider/greensock.js"></script>
+<script src="/resources/asset/js/layerslider/layerslider.transitions.js"></script>
+<script src="/resources/asset/js/layerslider/layerslider.kreaturamedia.jquery.js"></script>
+<script src="/resources/asset/js/revolution/jquery.themepunch.plugins.min.js"></script>
+<script src="/resources/asset/js/revolution/jquery.themepunch.revolution.min.js"></script>
+<script src="/resources/asset/js/main.js"></script>
 
-                                <div class="clearfix"></div>
-                                <div class="m-r-20 m-t-20 m-b-10  m-l-10">
-                                    <p class="p-b-10">The attention to detail and the end product is stellar!  I enjoyed the process </p>
-                                    <a href="#" class="hashtags m-b-5"> #new york city </a> <a href="#" class="hashtags m-b-5"> #amazing </a> <a href="#" class="hashtags m-b-5"> #citymax </a> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- BEGIN BLOG POST WITH IMAGE -->
-    </div>
-</div>
-
-</div>
-
-
-</div>
-</div>
-
-</div>
-
-<!-- END CONTAINER -->
-<!-- BEGIN CHAT -->
-<div id="sidr" class="chat-window-wrapper">
-    <div id="main-chat-wrapper" >
-        <div class="chat-window-wrapper fadeIn" id="chat-users" >
-            <div class="chat-header">
-                <div class="pull-left">
-                    <input type="text" placeholder="search">
-                </div>
-                <div class="pull-right"> <a href="#" class="" >
-                    <div class="iconset top-settings-dark "></div>
-                </a> </div>
-            </div>
-            <div class="side-widget">
-                <div class="side-widget-title">group chats</div>
-                <div class="side-widget-content">
-                    <div id="groups-list">
-                        <ul class="groups" >
-                            <li><a href="#">
-                                <div class="status-icon green"></div>
-                                Office work</a></li>
-                            <li><a href="#">
-                                <div class="status-icon green"></div>
-                                Personal vibes</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="side-widget fadeIn">
-                <div class="side-widget-title">favourites</div>
-                <div id="favourites-list">
-                    <div class="side-widget-content" >
-                        <div class="user-details-wrapper active" data-chat-status="online" data-chat-user-pic="/resources/assets/img/profiles/d.jpg" data-chat-user-pic-retina="/resources/assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
-                            <div class="user-profile"> <img src="/resources/assets/img/profiles/d.jpg"  alt="" data-src="/resources/assets/img/profiles/d.jpg" data-src-retina="/resources/assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-                            <div class="user-details">
-                                <div class="user-name"> Jane Smith </div>
-                                <div class="user-more"> Hello you there? </div>
-                            </div>
-                            <div class="user-details-status-wrapper"> <span class="badge badge-important">3</span> </div>
-                            <div class="user-details-count-wrapper">
-                                <div class="status-icon green"></div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="/resources/assets/img/profiles/d.jpg" data-chat-user-pic-retina="/resources/assets/img/profiles/d2x.jpg" data-user-name="David Nester">
-                            <div class="user-profile"> <img src="/resources/assets/img/profiles/c.jpg"  alt="" data-src="/resources/assets/img/profiles/c.jpg" data-src-retina="/resources/assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
-                            <div class="user-details">
-                                <div class="user-name"> David Nester </div>
-                                <div class="user-more"> Busy, Do not disturb </div>
-                            </div>
-                            <div class="user-details-status-wrapper">
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="user-details-count-wrapper">
-                                <div class="status-icon red"></div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="side-widget">
-                <div class="side-widget-title">more friends</div>
-                <div class="side-widget-content" id="friends-list">
-                    <div class="user-details-wrapper" data-chat-status="online" data-chat-user-pic="/resources/assets/img/profiles/d.jpg" data-chat-user-pic-retina="/resources/assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
-                        <div class="user-profile"> <img src="/resources/assets/img/profiles/d.jpg"  alt="" data-src="/resources/assets/img/profiles/d.jpg" data-src-retina="/resources/assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-                        <div class="user-details">
-                            <div class="user-name"> Jane Smith </div>
-                            <div class="user-more"> Hello you there? </div>
-                        </div>
-                        <div class="user-details-status-wrapper"> </div>
-                        <div class="user-details-count-wrapper">
-                            <div class="status-icon green"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="/resources/assets/img/profiles/d.jpg" data-chat-user-pic-retina="/resources/assets/img/profiles/d2x.jpg" data-user-name="David Nester">
-                        <div class="user-profile"> <img src="/resources/assets/img/profiles/h.jpg"  alt="" data-src="/resources/assets/img/profiles/h.jpg" data-src-retina="/resources/assets/img/profiles/h2x.jpg" width="35" height="35"> </div>
-                        <div class="user-details">
-                            <div class="user-name"> David Nester </div>
-                            <div class="user-more"> Busy, Do not disturb </div>
-                        </div>
-                        <div class="user-details-status-wrapper">
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="user-details-count-wrapper">
-                            <div class="status-icon red"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="user-details-wrapper" data-chat-status="online" data-chat-user-pic="/resources/assets/img/profiles/d.jpg" data-chat-user-pic-retina="/resources/assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
-                        <div class="user-profile"> <img src="/resources/assets/img/profiles/c.jpg"  alt="" data-src="/resources/assets/img/profiles/c.jpg" data-src-retina="/resources/assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
-                        <div class="user-details">
-                            <div class="user-name"> Jane Smith </div>
-                            <div class="user-more"> Hello you there? </div>
-                        </div>
-                        <div class="user-details-status-wrapper"> </div>
-                        <div class="user-details-count-wrapper">
-                            <div class="status-icon green"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="/resources/assets/img/profiles/d.jpg" data-chat-user-pic-retina="/resources/assets/img/profiles/d2x.jpg" data-user-name="David Nester">
-                        <div class="user-profile"> <img src="/resources/assets/img/profiles/h.jpg"  alt="" data-src="/resources/assets/img/profiles/h.jpg" data-src-retina="/resources/assets/img/profiles/h2x.jpg" width="35" height="35"> </div>
-                        <div class="user-details">
-                            <div class="user-name"> David Nester </div>
-                            <div class="user-more"> Busy, Do not disturb </div>
-                        </div>
-                        <div class="user-details-status-wrapper">
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="user-details-count-wrapper">
-                            <div class="status-icon red"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="chat-window-wrapper fadeIn" id="messages-wrapper" style="display:none">
-            <div class="chat-header">
-                <div class="pull-left">
-                    <input type="text" placeholder="search">
-                </div>
-                <div class="pull-right"> <a href="#" class="" >
-                    <div class="iconset top-settings-dark "></div>
-                </a> </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="chat-messages-header">
-                <div class="status online"></div>
-                <span class="semi-bold">Jane Smith(Typing..)</span> <a href="#" class="chat-back"><i class="icon-custom-cross"></i></a> </div>
-            <div class="chat-messages">
-                <div class="sent_time">Yesterday 11:25pm</div>
-                <div class="user-details-wrapper " >
-                    <div class="user-profile"> <img src="/resources/assets/img/profiles/d.jpg"  alt="" data-src="/resources/assets/img/profiles/d.jpg" data-src-retina="/resources/assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-                    <div class="user-details">
-                        <div class="bubble"> Hello, You there? </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="sent_time off">Yesterday 11:25pm</div>
-                </div>
-                <div class="user-details-wrapper ">
-                    <div class="user-profile"> <img src="/resources/assets/img/profiles/d.jpg"  alt="" data-src="/resources/assets/img/profiles/d.jpg" data-src-retina="/resources/assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-                    <div class="user-details">
-                        <div class="bubble"> How was the meeting? </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="sent_time off">Yesterday 11:25pm</div>
-                </div>
-                <div class="user-details-wrapper ">
-                    <div class="user-profile"> <img src="/resources/assets/img/profiles/d.jpg"  alt="" data-src="/resources/assets/img/profiles/d.jpg" data-src-retina="/resources/assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-                    <div class="user-details">
-                        <div class="bubble"> Let me know when you free </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="sent_time off">Yesterday 11:25pm</div>
-                </div>
-                <div class="sent_time ">Today 11:25pm</div>
-                <div class="user-details-wrapper pull-right">
-                    <div class="user-details">
-                        <div class="bubble sender"> Let me know when you free </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="sent_time off">Sent On Tue, 2:45pm</div>
-                </div>
-            </div>
-        </div>
-        <div class="chat-input-wrapper" style="display:none">
-            <textarea id="chat-message-input" rows="1" placeholder="Type your message"></textarea>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!-- END CHAT -->
-<!-- END CONTAINER -->
-<!-- BEGIN CORE JS FRAMEWORK-->
-<script src="/resources/assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/breakpoints.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-lazyload/jquery.lazyload.min.js" type="text/javascript"></script>
-<!-- END CORE JS FRAMEWORK -->
-<!-- BEGIN PAGE LEVEL JS -->
-<script src="/resources/assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/pace/pace.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-ricksaw-chart/js/raphael-min.js"></script>
-<script src="/resources/assets/plugins/jquery-ricksaw-chart/js/d3.v2.js"></script>
-<script src="/resources/assets/plugins/jquery-ricksaw-chart/js/rickshaw.min.js"></script>
-<script src="/resources/assets/plugins/jquery-sparkline/jquery-sparkline.js"></script>
-<script src="/resources/assets/plugins/skycons/skycons.js"></script>
-<script src="/resources/assets/plugins/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-polymaps/polymaps.min.js" type="text/javascript"></script>
-
-
-<script src="/resources/assets/plugins/jquery-flot/jquery.flot.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-flot/jquery.flot.resize.min.js" type="text/javascript"></script>
-<script src="/resources/assets/plugins/jquery-metrojs/MetroJs.min.js" type="text/javascript" ></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN CORE TEMPLATE JS -->
-<script src="/resources/assets/js/core.js" type="text/javascript"></script>
-<script src="/resources/assets/js/chat.js" type="text/javascript"></script>
-<script src="/resources/assets/js/demo.js" type="text/javascript"></script>
-<script src="/resources/assets/js/dashboard_v2.js" type="text/javascript"></script>
-<script type="text/javascript">
-    function goDetail(seq, titleInUrl){
-        location.href = "/hop/"+seq+"/"+titleInUrl;
-    }
-    $(document).ready(function () {
-        $(".live-tile,.flip-list").liveTile();
-    });
-</script>
-
-<!-- END CORE TEMPLATE JS -->
 </body>
 </html>
