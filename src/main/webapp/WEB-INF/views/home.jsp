@@ -71,7 +71,7 @@
                 <h3 class="product-name">
                     <a href="product-view.html">보스턴 라거</a>
                 </h3>
-                <div class="price">라이트 미국식 라거</div>
+                <div class="price">American Lager | 4.9% ABV</div>
             </div>
         </div>
     </div>
@@ -79,7 +79,7 @@
         <h3 class="product-name">
             <a href="/recipe/1/보스턴_라거_클론">보스턴 라거</a>
         </h3>
-        <div class="price">4.9% ABV</div>
+        <div class="price">American Lager | 4.9% ABV</div>
         <a href="/recipe/1/보스턴_라거_클론" class="product-image">
             <img src="/resources/recipe/1/recipe_small_1.jpg" alt="" title="" width="70" height="70">
         </a>
@@ -123,14 +123,14 @@
 <div class="col-sm-3 col-md-3 product rotation">
     <div class="default">
         <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-12.png" alt="" title="" width="270" height="270">
+            <img src="/resources/recipe/2/recipe_2.jpg" alt="" title="" width="270" height="270">
         </a>
         <div class="product-description">
             <div class="vertical">
                 <h3 class="product-name">
-                    <a href="product-view.html">Sony 3D TV KD3-46H853</a>
+                    <a href="product-view.html">스컬핀 IPA</a>
                 </h3>
-                <div class="price">$1, 449.00</div>
+                <div class="price">American IPA | 7.00% ABV</div>
             </div>
         </div>
     </div>
@@ -183,14 +183,14 @@
 <div class="col-sm-3 col-md-3 product rotation">
     <div class="default">
         <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-13.png" alt="" title="" width="270" height="270">
+            <img src="/resources/recipe/3/recipe_3.jpg" alt="" title="" width="270" height="270">
         </a>
         <div class="product-description">
             <div class="vertical">
                 <h3 class="product-name">
-                    <a href="product-view.html">Projector VPL-VW95ES</a>
+                    <a href="product-view.html">Dark Sea</a>
                 </h3>
-                <div class="price">$1, 449.00</div>
+                <div class="price">Russian Imperial Stout |  9.80% ABV </div>
             </div>
         </div>
     </div>
@@ -243,14 +243,14 @@
 <div class="col-sm-3 col-md-3 product rotation">
     <div class="default">
         <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-14.png" alt="" title="" width="270" height="270">
+            <img src="/resources/recipe/4/recipe_4.jpg" alt="" title="" width="270" height="270">
         </a>
         <div class="product-description">
             <div class="vertical">
                 <h3 class="product-name">
-                    <a href="product-view.html">XA700 Wireless speaker</a>
+                    <a href="product-view.html">오트밀 스타우트</a>
                 </h3>
-                <div class="price">$1, 449.00</div>
+                <div class="price">Oatmeal Stout |  7.20% ABV</div>
             </div>
         </div>
     </div>
@@ -555,7 +555,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-6 promo-partners bottom-padding">
             <div class="title-box">
-                <h2 class="title">Our partners</h2>
+                <h2 class="title">파트너 - partners</h2>
             </div>
             <div class="row manufactures manufactures-list">
                 <div class="make-wrapper">
@@ -582,8 +582,8 @@
 
         <div class="col-sm-12 col-md-6">
             <div class="title-box">
-                <a href="#" class="btn btn-default">All posts <i class="icon-arrow-right icon-white"></i></a>
-                <h2 class="title">Latest Posts</h2>
+                <a href="#" class="btn btn-default">전체 읽기 <i class="icon-arrow-right icon-white"></i></a>
+                <h2 class="title">최신 글 목록</h2>
             </div>
             <ul class="latest-posts">
                 <li>

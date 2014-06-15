@@ -44,6 +44,7 @@
 <div class="right-box-wrapper">
 <div class="header-icons">
     <div class="search-header hidden-600">
+
         <a href="#">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
                                               <path d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
@@ -54,16 +55,12 @@
         </a>
     </div><!-- .search-header -->
 
-    <div class="phone-header hidden-600">
-        <a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                                                  <path d="M11.001,0H5C3.896,0,3,0.896,3,2c0,0.273,0,11.727,0,12c0,1.104,0.896,2,2,2h6c1.104,0,2-0.896,2-2
-                                                  c0-0.273,0-11.727,0-12C13.001,0.896,12.105,0,11.001,0z M8,15c-0.552,0-1-0.447-1-1s0.448-1,1-1s1,0.447,1,1S8.553,15,8,15z
-                                                  M11.001,12H5V2h6V12z"></path>
-                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/phone-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
-            </svg>
-        </a>
-    </div><!-- .phone-header -->
+    <div class="btn-group">
+        <a href="#" class="btn btn-info">회원 가입</a>
+    </div><!-- .cart-header -->
+    <div class="btn-group">
+        <a href="#" class="btn btn-success">로그인</a>
+    </div><!-- .cart-header -->
 </div><!-- .header-icons -->
 
 <div class="primary">
@@ -249,16 +246,12 @@
                         </li>
                     </ul><!-- .sub -->
                 </li>
-                <li>
-                    <a href="http://themeforest.net/item/progressive-multipurpose-responsive-template/7197521" target="_blank">링크</a>
-                </li>
             </ul>
         </nav>
     </div>
 </div><!-- .primary -->
 </div>
 </div>
-
 <div class="phone-active col-sm-9 col-md-9">
     <a href="#" class="close"><span>close</span>×</a>
     <span class="title">Call Us</span> <strong>+1 (777) 123 45 67</strong>
@@ -266,7 +259,7 @@
 <div class="search-active col-sm-9 col-md-9">
     <a href="#" class="close"><span>close</span>×</a>
     <form name="search-form">
-        <input class="search-string form-control" type="search" placeholder="Search here" name="search-string">
+        <input class="search-string form-control" type="search" placeholder="검색어를 입력하세요." name="search-string">
         <button class="search-submit">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
           <path fill="#231F20" d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6

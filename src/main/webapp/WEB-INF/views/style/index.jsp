@@ -3,6 +3,15 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<div class="breadcrumb-box">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">홈</a> </li>
+            <li><a href="/catalog-grid.html">레시피</a> </li>
+            <li class="active">보스턴 라거 클론</li>
+        </ul>
+    </div>
+</div><!-- .breadcrumb-box -->
 
 <section id="main" class="page">
     <header class="page-header">
