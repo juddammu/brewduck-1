@@ -80,10 +80,9 @@ public class YeastController {
      *
      *
      * @param model Model
-     * @param name 맥주 이스트 영문명
      * @return 맥주 이스트 상세.
      */
-    @RequestMapping(value = "/detail/{seq}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{seq}/*", method = RequestMethod.GET)
     public String detail(Model model, @PathVariable("seq") String seq) {
         logger.info("Yeast seq : {}", seq);
 

@@ -4,7 +4,9 @@
 
     <sql id="Yeast.selectYeast">
         SELECT
-               name                name
+               seq                 seq
+              ,name               name
+              ,name               titleInUrl
               ,korean_name         koreanName
               ,version             version
               ,(select B.attribute1desc
@@ -105,14 +107,14 @@
         <!-- 맥주 이스트 상세 조회 -->
         <include refid="Yeast.selectYeast" />
         WHERE delete_id IS NULL
+        <if test="seq != null">
+            AND seq = #{seq}
+        </if>
         <if test="name != null">
             AND name = #{name}
         </if>
         <if test="type != null">
             AND type = #{type}
-        </if>
-        <if test="seq != null">
-            AND seq = #{seq}
         </if>
     </select>
 

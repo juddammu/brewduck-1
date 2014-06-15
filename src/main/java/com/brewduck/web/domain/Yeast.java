@@ -14,6 +14,10 @@ import java.util.Date;
 public class Yeast implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    //효모 순번
+    public String seq;
+    //SEO를 위한 타이틀 URL
+    private String titleInUrl;
     // 효모 영문명
     private String name;
     // 효모 한글명
@@ -88,8 +92,8 @@ public class Yeast implements Serializable {
     private String champagneCntName;
     // 샴페인 타입 이스트 카운트
     private String champagneCnt;
-    // 이스트 순번
-    private String seq;
+
+
     /**
      * 효모 영문명
      *
@@ -676,5 +680,13 @@ public class Yeast implements Serializable {
 
     public void setSeq(String seq) {
         this.seq = seq;
+    }
+
+    public String getTitleInUrl() {
+        return titleInUrl;
+    }
+
+    public void setTitleInUrl(String titleInUrl) {
+        this.titleInUrl = titleInUrl;
     }
 }
