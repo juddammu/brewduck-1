@@ -14,7 +14,7 @@
         <div class="row">
             <article class="content col-sm-12 col-md-12">
                 <div class="bs-docs-section">
-                    <form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
                         <input name="origin" type ="hidden" id="origin" type="text"  class="form-control" value="">
                         <input name="aroma" type ="hidden" id="aroma" type="text"  class="form-control" value="">
                         <div>
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </form:form>
                     <br>
                     <table class="table table-striped">
                         <tr>

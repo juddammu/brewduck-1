@@ -13,7 +13,7 @@
         <div class="row">
             <article class="content col-sm-12 col-md-12">
                 <div class="bs-docs-section">
-                    <form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
+                    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
                         <input name="type" type ="hidden" id="type" type="text"  class="form-control" value="">
                         <div>
                             <h5>이름으로 찾기</h5>
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </form:form>
                     <br>
                     <table class="table table-striped">
                         <tr>

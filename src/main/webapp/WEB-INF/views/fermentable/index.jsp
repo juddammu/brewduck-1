@@ -13,7 +13,7 @@
         <div class="row">
             <article class="content col-sm-12 col-md-12">
                 <div class="bs-docs-section">
-                    <form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
+                    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
                         <input name="origin" type ="hidden" id="origin" value="">
                         <input name="aroma" type ="hidden" id="aroma" value="">
                         <div>
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </form:form>
                     <br>
                     <table class="table table-striped">
                         <tr>
