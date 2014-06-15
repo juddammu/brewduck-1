@@ -2,9 +2,75 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<section id="main">
+    <div class="container login-register">
+        <div class="row">
+            <div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                <div class="form-box" data-appear-animation="bounceInDown">
+                    <h3 class="title">브루덕 로그인<small> or <a href="#" class="switch-form sing-up">가입하기</a></small></h3>
+                    <p>페이스북, 다음, 네이버 회원이신가요?</p>
+                    <p>별도의 입력없이 회원이 될 수 있습니다.</p>
+                    <c:if test="${loginError eq 'false'}">
+                        <h4 class="rs title-box fc-orange">${errorMessage}</h4>
+                    </c:if>
+                    <form:form id="authentication" class="form-box login-form" method="POST" action="/account/authentication" modelAttribute="account">
+                        <div>
+                            <input class="form-control" type="email" placeholder="이메일 주소를 입력하세요." maxlength="40">
+                            <form:errors path="email" />
+                        </div>
+                        <div>
+                            <input class="form-control" type="password" placeholder="패스워드를 입력하세요." maxlength="100">
+                            <form:errors path="password" />
+                        </div>
+                        <div class="checkbox">
+                            <label class="">
+                                <input type="checkbox"> 로그인 상태 유지
+                            </label>
+                        </div>
+                        <div class="buttons-box clearfix">
+                            <button type="button" class="btn btn-default">로그인</button>
+                            <a href="#" class="switch-form forgot">로그인에 문제가 생기셨나요?  </a>
+                        </div>
+                    </form:form><!-- .form-box -->
+                    <form:form id="join" method="POST" action="/account/join" class="form-box register-form hidden" modelAttribute="account" style="display:none">
+                        <c:if test="${message != null}">
+                            <h4 class="rs title-box fc-orange">${message}</h4>
+                        </c:if>
+                        <h3 class="title">브루덕 가입하기<small> or <a href="#" class="switch-form sing-in">로그인</a></small></h3>
+                        <div>
+                            <input id="name" name="name" class="form-control" type="text" placeholder="성명을 입력하세요." maxlength="40">
+                            <form:errors path="name" />
+                        </div>
+                        <div>
+                            <input id="email" name="email" class="form-control" type="email" placeholder="이메일 주소를 입력하세요." maxlength="100">
+                            <form:errors path="email" />
+                        </div>
+                        <div>
+                            <input id="reEmail" name="reEmail" class="form-control" type="email" placeholder="이메일 주소를 다시 입력하세요." maxlength="100">
+                        </div>
+                        <div>
+                            <input id="password" name="password" class="form-control" type="password" placeholder="패스워드를 입력하세요." maxlength="20">
+                            <form:errors path="password" />
+                        </div>
+                        <div>
+                            <input id="rePassword" name="rePassword" class="form-control" type="password" placeholder="패스워드를 다시 입력하세요." maxlength="20">
+                        </div>
+                        <div>
+                            <p >가입하기을 클릭하시면 <a href="#" class="fc-orange">약관</a>에 동의하며 <a href="#" class="fc-orange">쿠키 사용</a>을
+                                포함한 </br><a href="#" class="fc-orange">데이터 사용 정책</a>을 숙지하신 것으로 간주됩니다.</p>
+                            <p>
+                        </div>
+                        <div class="buttons-box clearfix">
+                            <button type="button" class="btn btn-default">합류하기</button>
+                        </div>
+                    </form:form><!-- .form-box -->
+                </div>
+            </div>
+        </div>
+    </div><!-- .container -->
+</section><!-- #main -->
 
-
-<div class="row login-container animated fadeInUp">
+<%--<div class="row login-container animated fadeInUp">
     <div class="col-md-7 col-md-offset-2 tiles white no-padding">
         <div class="p-t-30 p-l-40 p-b-20 xs-p-t-10 xs-p-l-10 xs-p-b-10">
             <h2 class="normal">브루덕 합류하기</h2>
@@ -90,7 +156,7 @@
             </form:form>
         </div>
     </div>
-</div>
+</div>--%>
 
 <content tag="local_script">
     <script>
