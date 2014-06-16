@@ -16,25 +16,23 @@
                             <h5 class="rs title-box">브루덕에 처음이신가요?</h5>
                             <p>다양한 서비스를 자유롭게 사용해보세요!</p>
                             <div class="form-action">
-                                <div class="wrap-2col clearfix">
-                                    <div>
-                                        <input id="name" name="name" class="form-control" type="text" placeholder="성명을 입력하세요." maxlength="40">
-                                        <form:errors path="name" />
-                                    </div>
-                                    <div>
-                                        <input id="email" name="email" class="form-control" type="email" placeholder="이메일 주소를 입력하세요." maxlength="100">
-                                        <form:errors path="email" />
-                                    </div>
-                                    <div>
-                                        <input id="reEmail" name="reEmail" class="form-control" type="email" placeholder="이메일 주소를 다시 입력하세요." maxlength="100">
-                                    </div>
-                                    <div>
-                                        <input id="password" name="password" class="form-control" type="password" placeholder="패스워드를 입력하세요." maxlength="20">
-                                        <form:errors path="password" />
-                                    </div>
-                                    <div>
-                                        <input id="rePassword" name="rePassword" class="form-control" type="password" placeholder="패스워드를 다시 입력하세요." maxlength="20">
-                                    </div>
+                                <div>
+                                    <input id="name" name="name" class="form-control" type="text" placeholder="성명을 입력하세요." maxlength="40">
+                                    <form:errors path="name" />
+                                </div>
+                                <div>
+                                    <input id="email" name="email" class="form-control" type="email" placeholder="이메일 주소를 입력하세요." maxlength="100">
+                                    <form:errors path="email" />
+                                </div>
+                                <div>
+                                    <input id="reEmail" name="reEmail" class="form-control" type="email" placeholder="이메일 주소를 다시 입력하세요." maxlength="100">
+                                </div>
+                                <div>
+                                    <input id="password" name="password" class="form-control" type="password" placeholder="패스워드를 입력하세요." maxlength="20">
+                                    <form:errors path="password" />
+                                </div>
+                                <div>
+                                    <input id="rePassword" name="rePassword" class="form-control" type="password" placeholder="패스워드를 다시 입력하세요." maxlength="20">
                                 </div>
                                 <p>가입하기을 클릭하시면 <a href="#" class="fc-orange">약관</a>에 동의하며 <a href="#" class="fc-orange">쿠키 사용</a>을
                                     포함한 </br><a href="#" class="fc-orange">데이터 사용 정책</a>을 숙지하신 것으로 간주됩니다.</p>

@@ -7,14 +7,14 @@
         <div class="row">
             <div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
                 <div class="form-box" data-appear-animation="bounceInDown">
-                    <h3 class="title">브루덕 로그인<small> or <a href="#" class="switch-form sing-up">가입하기</a></small></h3>
-                    <p>페이스북, 다음, 네이버 회원이신가요?</p>
-                    <p>별도의 입력없이 회원이 될 수 있습니다.</p>
-                    <c:if test="${loginError eq 'false'}">
-                        <h4 class="rs title-box fc-orange">${errorMessage}</h4>
-                    </c:if>
-                    <form:form id="authentication" class="form-box login-form" method="POST" action="/account/authentication" modelAttribute="account">
-                        <div>
+                    <form:form id="authentication" class="form-content login-form" method="POST" action="/account/authentication" modelAttribute="account">
+                        <h3 class="title">브루덕 로그인<small> or <a href="#" class="switch-form sing-up">가입하기</a></small></h3>
+                        <p>페이스북, 다음, 네이버 회원이신가요?</p>
+                        <p>별도의 입력없이 회원이 될 수 있습니다.</p>
+                        <c:if test="${loginError eq 'false'}">
+                            <h4 class="rs title-box fc-orange">${errorMessage}</h4>
+                        </c:if>
+                        <div for="enail">
                             <input class="form-control" id="email" name="email" type="email" placeholder="이메일 주소를 입력하세요." maxlength="40">
                             <form:errors path="email" />
                         </div>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="checkbox">
                             <label class="">
-                                <input type="checkbox"> 로그인 상태 유지
+                                <input type="checkbox" id="checkbox1" value="1"> 로그인 상태 유지
                             </label>
                         </div>
                         <div class="buttons-box clearfix">
@@ -32,11 +32,13 @@
                             <a href="#" class="switch-form forgot">로그인에 문제가 생기셨나요?  </a>
                         </div>
                     </form:form><!-- .form-box -->
-                    <form:form id="join" method="POST" action="/account/join" class="form-box register-form hidden" modelAttribute="account" style="display:none">
+                    <form:form id="join" method="POST" action="/account/join" class="form-content register-form hidden" modelAttribute="account">
                         <c:if test="${message != null}">
                             <h4 class="rs title-box fc-orange">${message}</h4>
                         </c:if>
                         <h3 class="title">브루덕 가입하기<small> or <a href="#" class="switch-form sing-in">로그인</a></small></h3>
+                        <h5 class="rs title-box">브루덕에 처음이신가요?</h5>
+                        <p>다양한 서비스를 자유롭게 사용해보세요!</p>
                         <div>
                             <input id="name" name="name" class="form-control" type="text" placeholder="성명을 입력하세요." maxlength="40">
                             <form:errors path="name" />
