@@ -12,51 +12,317 @@
 </div><!-- .breadcrumb-box -->
 
 <section id="main" class="page">
+<header class="page-header">
+    <div class="container">
+        <h1 class="title">Checkout</h1>
+    </div>
+</header>
     <div class="container">
         <div class="row">
-            <div class="content search-result list col-sm-12 col-md-12">
-                <form class="search-form">
-                    <input class="search-string form-control" type="search" placeholder="레시피 이름" name="search-string">
-                    <br />
+        <article class="content col-sm-9 col-md-9">
+        <ul id="checkoutsteps" class="clearfix panel-group">
+        <li class="panel">
+            <a href="#step-1" class="step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                <div class="number">1</div>
+                <h6>Checkout Method</h6>
+            </a>
 
+            <div id="step-1" class="collapse in">
+                <div class="step-content">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 bottom-padding-mobile">
+                            <h3 class="title">Checkout as a Guest or Register</h3>
+                            <p>Register with us for future convenience:</p>
+                            <div class="register-radio">
+                                <label class="radio"><input type="radio" name="register"> Checkout as Guest</label>
+                                <label class="radio"><input type="radio" name="register"> Register</label>
+                            </div>
+                            <p>Register and save time!<br> Register with us for future convenience:</p>
+                            <ul>
+                                <li>Fast and easy check out</li>
+                                <li>Easy access to your order history and status</li>
+                            </ul>
+                            <div class="buttons-box clearfix">
+                                <button type="button" class="btn btn-continue btn-default">Continue</button>
+                            </div>
+                        </div>
 
+                        <div class="col-sm-6 col-md-6">
+                            <h3 class="title">Login</h3>
+                            <p>If you have an account with us, please log in.</p>
+                            <form class="checkout-login">
+                                <label>Email Adress: <span class="required">*</span></label>
+                                <input class="form-control" type="email">
+
+                                <label>Password: <span class="required">*</span></label>
+                                <input class="last form-control" type="password">
+
+                                <label class="checkbox">
+                                    <input type="checkbox"> Remember password
+                                </label>
+                            </form><!-- .checkout-login -->
+                            <div class="clearfix"></div>
+                            <div class="buttons-box clearfix">
+                                <button type="button" class="btn btn-default">Login</button>
+                                <a href="#" class="forgot">Forgot Your Password?</a>
+                                <span class="required"><b>*</b> Required Field</span>
+                            </div><!-- .buttons-box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li class="panel">
+            <a href="#step-2" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                <div class="number">2</div>
+                <h6>Billing Information</h6>
+            </a>
+
+            <div id="step-2" class="collapse">
+                <div class="step-content">
+                    <form class="row no-margin">
+                        <div class="col-sm-6 col-md-6">
+                            <label>First Name: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>Last Name: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <label>Company:</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>Email Address: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <label>Address: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>City</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <label>Telephone: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>Fax:</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <label>Password: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>Confirm Password: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-12 buttons-box text-right">
+                            <button type="button" class="btn btn-default">Continue</button>
+                            <span class="required"><b>*</b> Required Field</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+
+        <li class="panel">
+            <a href="#step-3" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                <div class="number">3</div>
+                <h6>Shipping Information</h6>
+            </a>
+
+            <div id="step-3" class="collapse">
+                <div class="step-content">
+                    <form class="row no-margin">
+                        <div class="col-sm-6 col-md-6">
+                            <label>First Name: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>Last Name: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <label>Company:</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>Telephone: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <label>Address: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>City</label>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <label>Zip/Postal Code: <span class="required">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label>Country</label>
+                            <select class="form-control">
+                                <option>Country 1</option>
+                                <option>Country 2</option>
+                                <option>Country 3</option>
+                                <option>Country 4</option>
+                                <option>Country 5</option>
+                            </select>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-sm-12 buttons-box text-right">
+                            <button type="button" class="btn btn-default">Continue</button>
+                            <span class="required"><b>*</b> Required Field</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+
+        <li class="panel">
+            <a href="#step-4" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                <div class="number">4</div>
+                <h6>Shipping Method</h6>
+            </a>
+
+            <div id="step-4" class="collapse">
+                <div class="step-content">
+                    <form class="no-margin">
+                        <h5>Flat Rate</h5>
+                        <p>Fixed <strong>$5.00</strong></p>
+                        <button type="button" class="btn">Continue</button>
+                    </form>
+                </div>
+            </div>
+        </li>
+
+        <li class="panel">
+            <a href="#step-5" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                <div class="number">5</div>
+                <h6>Payment Information</h6>
+            </a>
+
+            <div id="step-5" class="collapse">
+                <div class="step-content">
+                    <form>
+                        <div>
+                            <label class="radio"><input type="radio" name="register"> Checkout as Guest</label>
+                            <label class="radio"><input type="radio" name="register"> Register</label>
+                        </div>
+                    </form>
+
+                    <div class="buttons-box text-right">
+                        <button type="button" class="btn btn-default">Continue</button>
+                        <span class="required"><b>*</b> Required Field</span>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li class="panel">
+            <a href="#step-6" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                <div class="number">6</div>
+                <h6>Order Review</h6>
+            </a>
+
+            <div id="step-6" class="collapse">
+                <div class="step-content">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>Subtotal</th>
+                            </tr>
+                            </thead>
                             <tbody>
                             <tr>
-                                <td class="text-left">
-                                    <label class="checkbox-inline">
-                                        <input type="radio" id="inlineCheckbox1" value="1" checked> 완전곡물
-                                    </label>
-                                    <label class="checkbox-inline">
-                                        <input type="radio" id="inlineCheckbox1" value="2"> 부분곡물
-                                    </label>
-                                    <label class="checkbox-inline">
-                                        <input type="radio" id="inlineCheckbox1" value="3"> 캔
-                                    </label>
-                                </td>
-                                <td class="text-left">
-                                    <select class="selectpicker">
-                                        <optgroup label="Picnic">
-                                            <option>Mustard</option>
-                                            <option>Ketchup</option>
-                                            <option>Relish</option>
-                                        </optgroup>
-                                        <optgroup label="Camping">
-                                            <option>Tent</option>
-                                            <option>Flashlight</option>
-                                            <option>Toilet Paper</option>
-                                        </optgroup>
-                                    </select>
-                                </td>
+                                <td>Samsung Galaxy Note 2</td>
+                                <td>$499.00</td>
+                                <td>1</td>
+                                <td>$499.00</td>
+                            </tr>
+                            <tr>
+                                <td>Sony Led TV KDL-46HX853</td>
+                                <td>$1199.00</td>
+                                <td>1</td>
+                                <td>$1199.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Subtotal</td>
+                                <td>$1698.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Shipping & Handling (Flat Rate - Fixed)</td>
+                                <td>$5.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Grand Total</td>
+                                <td>$1703.00</td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
-                </form>
 
+                    <button type="button" class="btn btn-default">Place Order</button>
+                </div>
             </div>
-        </div><!-- .container -->
+        </li>
+        </ul><!-- #checkoutsteps -->
+        </article><!-- .content -->
+
+        <div id="sidebar" class="col-sm-3 col-md-3 sidebar checkout-progress">
+            <aside class="widget">
+                <header>
+                    <h3 class="title">Your Checkout Progress</h3>
+                </header>
+                <ul class="progress-list">
+                    <li class="active"><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Checkout Method</li>
+                    <li><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Billing Address</li>
+                    <li><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Shipping Address</li>
+                    <li><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Shipping Method</li>
+                    <li><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Payment Method</li>
+                </ul>
+            </aside>
+        </div><!-- .sidebar -->
+    </div>
 </section><!-- #main -->
 
 <div class="content">
