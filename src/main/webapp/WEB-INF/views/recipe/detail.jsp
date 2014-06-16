@@ -137,7 +137,10 @@
 </ul><!-- .nav-tabs -->
 <div class="tab-content">
 <div class="tab-pane active" id="description">
-    발효재료 19리터
+
+    <div class="title-box ">
+        <h4 class="title">발효재료 19리터</h4>
+    </div>
     <table class="table table-bordered table-striped">
         <thead>
         <tr>

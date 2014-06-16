@@ -15,11 +15,11 @@
                     </c:if>
                     <form:form id="authentication" class="form-box login-form" method="POST" action="/account/authentication" modelAttribute="account">
                         <div>
-                            <input class="form-control" type="email" placeholder="이메일 주소를 입력하세요." maxlength="40">
+                            <input class="form-control" id="email" name="email" type="email" placeholder="이메일 주소를 입력하세요." maxlength="40">
                             <form:errors path="email" />
                         </div>
                         <div>
-                            <input class="form-control" type="password" placeholder="패스워드를 입력하세요." maxlength="100">
+                            <input class="form-control" id="password" name="password" type="password" placeholder="패스워드를 입력하세요." maxlength="100">
                             <form:errors path="password" />
                         </div>
                         <div class="checkbox">
