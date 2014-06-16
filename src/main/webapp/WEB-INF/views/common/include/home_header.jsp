@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="/resources/asset/css/responsive.css">
 <link rel="stylesheet" href="/resources/asset/css/customizer/pages.css">
 <link rel="stylesheet" href="/resources/asset/css/customizer/pages-pages-customizer.css">
+<link rel="stylesheet" type="text/css" href="/resources/asset/css/bootstrap-select.css">
 
 <!-- IE Styles-->
 <link rel='stylesheet' href="/resources/asset/css/ie/ie.css">

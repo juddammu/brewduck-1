@@ -54,14 +54,14 @@
         <table class="table">
             <thead>
             <tr>
-                <th>#</th>
+                <th style="width:30px" >#</th>
                 <th>스타일명</th>
-                <th>영문명</th>
-                <th>초기비중</th>
-                <th>최종비중</th>
-                <th>IBU</th>
-                <th>SRM</th>
-                <th>ABV</th>
+                <th style="width:120px">영문명</th>
+                <th style="width:70px">초기비중</th>
+                <th style="width:70px">최종비중</th>
+                <th style="width:70px">IBU</th>
+                <th style="width:70px">SRM</th>
+                <th style="width:70px">ABV</th>
             </tr>
             </thead>
             <tbody id="result">
