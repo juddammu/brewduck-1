@@ -90,7 +90,7 @@ public class StyleController {
      * @param model Model
      * @return 맥주 홉 목록
      */
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = {RequestMethod.GET, RequestMethod.POST})
     public List<Style> StyleList(Model model, Style paramStyle) {
         logger.info("Style List searching.........");
         Style style = new Style();

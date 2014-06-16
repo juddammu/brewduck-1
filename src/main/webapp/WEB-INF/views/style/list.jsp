@@ -5,28 +5,24 @@
 
 <c:forEach items="${list}" var="list">
     <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
-        <td  class="small-cell v-align-middle">
-            <div class="star">
-                <input id="checkbox9" type="checkbox" value="1" checked >
-                <label for="checkbox9"></label>
-            </div>
+        <td>
         </td>
-        <td  class=" v-align-middle"> ${list.koreanName}</td>
-        <td  class=" v-align-middle"> ${list.name}</td>
-        <td class="v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.ogMax} </button>
+        <td > ${list.koreanName}</td>
+        <td> ${list.name}</td>
+        <td>
+             ${list.ogMax}
         </td>
-        <td  class=" v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.fgMax} </button>
+        <td>
+             ${list.fgMax}
         </td>
-        <td class="v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.ibuMax} </button>
+        <td>
+             ${list.ibuMax}
         </td>
-        <td  class=" v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small"> ${list.colorMax} °L</button>
+        <td>
+             ${list.colorMax} °L
         </td>
-        <td  class=" v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small">${list.abvMax} % </button>
+        <td>
+            ${list.abvMax} %
         </td>
     </tr>
 </c:forEach>

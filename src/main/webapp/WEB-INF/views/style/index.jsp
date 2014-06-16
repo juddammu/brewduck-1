@@ -24,7 +24,7 @@
     <div class="row">
     <div class="content search-result list col-sm-12 col-md-12">
     <form:form class="search-form" type="search" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
-        <input class="search-string form-control" type="search" placeholder="검색어를 입력하세요." name="search-string">
+        <input class="search-string form-control" placeholder="검색어를 입력하세요." name="name" id="name"   onkeypress="if(event.keyCode==13){return false;};"  >
         <button class="search-submit">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
 			  <path fill="#231F20" d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
@@ -32,7 +32,10 @@
 			  s4,1.794,4,4S8.206,10,6,10z"></path>
 			</svg>
         </button>
+
     </form:form>
+
+
 
     <div class="filter-box">
     <div class="row">
@@ -92,8 +95,7 @@
 
 
     function search(){
-        //getLoadingTime();                                                   //로딩 아이콘 호출
-
+        //getLoadingTime();
         $("#result").html("");
         $("#result").load("/style/list", $("#searchForm").serialize());
         //getResult();
