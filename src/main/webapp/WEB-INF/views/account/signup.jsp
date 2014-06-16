@@ -39,13 +39,13 @@
                                 <p>
                                     <button class="btn btn-red btn-submit" type="submit">가입하기</button>
                                 </p>
-                            </div>
+                            </div><%--form action--%>
                         </div>
                     </form:form>
-                </div>
+                </div><%--form box--%>
             </div>
-        </div>
-    </div>
+        </div><%--row--%>
+    </div><%--container--%>
 </section>
 
 <%--<div class="container_12 pop-content">

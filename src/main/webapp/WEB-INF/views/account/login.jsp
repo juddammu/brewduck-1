@@ -65,10 +65,10 @@
                         <div class="buttons-box clearfix">
                             <button type="submit" class="btn btn-submit">가입하기</button>
                         </div>
-                    </form:form><!-- .form-box -->
-                </div>
+                    </form:form>
+                </div><!-- .form-box -->
             </div>
-        </div>
+        </div><%--row--%>
     </div><!-- .container -->
 </section><!-- #main -->
 
