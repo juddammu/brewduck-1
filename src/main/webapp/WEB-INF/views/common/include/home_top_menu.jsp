@@ -35,7 +35,7 @@
 <div class="col-xs-6 col-md-2 col-lg-3 logo-box">
     <div class="logo">
         <a href="index.html">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/logo.svg" class="logo-img" alt="">
+            <img src="/resources/asset/img/logo.png" class="logo-img" alt="">
         </a>
     </div>
 </div><!-- .logo-box -->
