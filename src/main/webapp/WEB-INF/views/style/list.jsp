@@ -5,9 +5,8 @@
 
 <c:forEach items="${list}" var="list">
     <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
-        <td>
-        </td>
-        <td > ${list.koreanName}</td>
+        <td>${list.seq}</td>
+        <td> ${list.koreanName}</td>
         <td> ${list.name}</td>
         <td>
              ${list.ogMax}
