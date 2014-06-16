@@ -23,7 +23,7 @@
     <div class="container">
     <div class="row">
     <div class="content search-result list col-sm-12 col-md-12">
-    <form class="search-form">
+    <form:form class="search-form" type="search" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
         <input class="search-string form-control" type="search" placeholder="검색어를 입력하세요." name="search-string">
         <button class="search-submit">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
@@ -32,7 +32,7 @@
 			  s4,1.794,4,4S8.206,10,6,10z"></path>
 			</svg>
         </button>
-    </form>
+    </form:form>
 
     <div class="filter-box">
     <div class="row">
@@ -47,7 +47,7 @@
 
     <div class="clearfix"></div>
 
-    <div class="table-responsive">
+    <div class="table-responsive" >
         <table class="table">
             <thead>
             <tr>
@@ -57,46 +57,12 @@
                 <th>초기비중</th>
                 <th>최종비중</th>
                 <th>IBU</th>
+                <th>SRM</th>
                 <th>ABV</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-                <td>Table cell</td>
-            </tr>
+            <tbody id="result">
+
 
             </tbody>
         </table>
@@ -126,7 +92,7 @@
 
 
     function search(){
-        getLoadingTime();                                                   //로딩 아이콘 호출
+        //getLoadingTime();                                                   //로딩 아이콘 호출
 
         $("#result").html("");
         $("#result").load("/style/list", $("#searchForm").serialize());

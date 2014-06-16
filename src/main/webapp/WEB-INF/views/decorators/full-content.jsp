@@ -127,6 +127,9 @@
         </div>
     </div><!-- .footer-bottom -->
 </footer>
+
+
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/resources/asset/js/bootstrap.min.js"></script>
 <script src="/resources/asset/js/price-regulator/jshashtable-2.1_src.js"></script>
@@ -164,6 +167,8 @@
 <script src="/resources/asset/js/revolution/jquery.themepunch.plugins.min.js"></script>
 <script src="/resources/asset/js/revolution/jquery.themepunch.revolution.min.js"></script>
 <script src="/resources/asset/js/main.js"></script>
+
+<decorator:getProperty property="page.local_script"></decorator:getProperty>
 
 </body>
 </html>
