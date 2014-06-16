@@ -337,13 +337,25 @@
                 <header>
                     <h3 class="title">스타일 적합성 체크</h3>
                 </header>
-                <ul class="progress-list">
-                    <li class="active"><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Checkout Method</li>
-                    <li><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Billing Address</li>
-                    <li><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Shipping Address</li>
-                    <li><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Shipping Method</li>
-                    <li><a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>Payment Method</li>
-                </ul>
+                <div class="pricing">
+                    <div class="title"><a href="#">인디아 페일 에일</a></div>
+                    <ul class="options">
+                        <li class="active"><span><i class="fa fa-check"></i></span>OG - PASS</li>
+                        <li class="active"><span><i class="fa fa-check"></i></span>FG - PASS</li>
+                        <li class="active"><span><i class="fa fa-check"></i></span>SRM - PASS</li>
+                        <li class="active"><span><i class="fa fa-check"></i></span>IBU - PASS</li>
+                        <li class="active"><span><i class="fa fa-check"></i></span>ABV - FAIL</li>
+                    </ul>
+                    <div class="price-box">
+                        <div class="icon border bg-white circle pull-right">
+                            <span class="livicon" data-n="credit-card" data-s="62" data-c="#f89406" data-hc="0"></span>
+                        </div>
+                        <div class="price"><span>ABV - FAIL</span></div>
+                    </div>
+                    <div class="bottom-box">
+                        <button class="btn btn-default btn-lg">재계산</button>
+                    </div>
+                </div><!-- .pricing -->
             </aside>
         </div><!-- .sidebar -->
     </div>
