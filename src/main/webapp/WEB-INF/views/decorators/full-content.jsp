@@ -169,7 +169,6 @@
 <script src="/resources/asset/js/main.js"></script>
 
 <script src="/resources/asset/js/bootstrap-select.js"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap-select.css">
 
 <decorator:getProperty property="page.local_script"></decorator:getProperty>
 

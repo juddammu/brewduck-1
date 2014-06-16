@@ -67,9 +67,7 @@ function formStylization() {
 	$(checkbox + ':disabled').parent().addClass('disabled');
   });
   
-  if(typeof($.fn.selectBox) !== 'undefined') {
-	$('select:not(".without-styles")').selectBox();
-  }
+
 }
 
 //Full Width Box
