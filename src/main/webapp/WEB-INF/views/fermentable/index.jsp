@@ -3,6 +3,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<div class="breadcrumb-box">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">홈</a> </li>
+            <li><a href="/">기초재료</a> </li>
+            <li class="active">발효재료 데이터베이스 - FERMENTABLE DATABASE</li>
+        </ul>
+    </div>
+</div><!-- .breadcrumb-box -->
+
 <section id="main" class="page">
     <header class="page-header">
         <div class="container">
@@ -13,9 +23,11 @@
         <div class="row">
             <div class="content search-result list col-sm-12 col-md-12">
                 <form:form class="search-form" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
-                    <input name="origin" type ="hidden" id="origin" value="">
-                    <input name="aroma" type ="hidden" id="aroma" value="">
                     <div>
+                        <div class="input-group">
+                           <input name="origin" type ="text" id="origin" value="" placeholder="발효재료 이름">
+                            <input name="aroma" type ="hidden" id="aroma" value="">
+                        </div>
                         <h5>이름으로 찾기</h5>
                         <div class="input-group col-sm-6">
                             <input name="name" id="name" type="text"  class="form-control" placeholder="발효재료 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">

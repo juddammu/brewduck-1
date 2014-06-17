@@ -3,6 +3,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<div class="breadcrumb-box">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">홈</a> </li>
+            <li><a href="/">기초재료</a> </li>
+            <li class="active">홉 데이터베이스 - HOP DATABASE</li>
+        </ul>
+    </div>
+</div><!-- .breadcrumb-box -->
+
 <section id="main" class="page">
     <header class="page-header">
         <div class="container">
@@ -11,80 +21,105 @@
     </header>
     <div class="container">
         <div class="row">
-            <article class="content col-sm-12 col-md-12">
-                <div class="bs-docs-section">
-                    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramHop">
-                        <input name="origin" type ="hidden" id="origin" value="">
-                        <input name="aroma" type ="hidden" id="aroma" value="">
-                        <div>
-                            <h5>이름으로 찾기</h5>
-                            <div class="input-group col-sm-6">
-                                <input name="name" id="name" type="text"  class="form-control" placeholder="홉 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                                   <span class="input-group-addon primary">
-                                       <span class="arrow"></span>
-                                        <i class="fa fa-align-justify"></i>
-                                   </span>
-                            </div>
-                            <br>
-                            <h5>특성으로 찾기</h5>
-                            <div class="radio-inline">
-                                <label>
-                                    <input id="allRadio" type="radio" name="type" value="" checked>
-                                    전체
-                                </label>
-                            </div>
-                            <div class="radio-inline">
-                                <label>
-                                    <input id="aromaRadio" type="radio" name="type" value="1">
-                                    향
-                                </label>
-                            </div>
-                            <div class="radio-inline">
-                                <label>
-                                    <input id="bittersRadio" type="radio" name="type" value="2">
-                                    쓴맛
-                                </label>
-                            </div>
-                            <div>
-                                <br>
-                                <div>
-                                    <button id="usButton" type="button" class="btn btn-xs btn-primary" value="US"> </button>
-                                    <button id="deButton" type="button" class="btn btn-xs btn-primary" value="DE"> </button>
-                                    <button id="ukButton" type="button" class="btn btn-xs btn-primary" value="UK"> </button>
-                                    <button id="nzButton" type="button" class="btn btn-xs btn-primary" value="NZ"> </button>
-                                    <button id="auButton" type="button" class="btn btn-xs btn-primary" value="AU"> </button>
-                                    <button id="siButton" type="button" class="btn btn-xs btn-primary" value="SI"> </button>
-                                    <button id="etcButton" type="button" class="btn btn-xs btn-primary" value=""> </button>
-                                </div>
-                            </div>
+            <div class="content search-result list col-sm-12 col-md-12">
+                <form:form class="search-form" id="searchForm"  name="searchForm" modelAttribute="paramHop">
+                    <input name="origin" type ="hidden" id="origin" value="">
+                    <input name="aroma" type ="hidden" id="aroma" value="">
+                    <div>
+                        <h5>이름으로 찾기</h5>
+                        <div class="input-group col-sm-6">
+                            <input name="name" id="name" type="text"  class="form-control" placeholder="홉 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                           <span class="input-group-addon primary">
+                               <span class="arrow"></span>
+                                <i class="fa fa-search"></i>
+                           </span>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="form-actions">
-                                <div class="pull-right">
-                                    <div id="search" class="btn btn-primary" ><i class="icon-ok"></i> 조회</div>
-                                    <div id="fullSearch" class="btn btn-default" ><i class="icon-ok"></i> 전체 조회</div>
-                                </div>
+                        <h5>특성으로 찾기</h5>
+                        <div class="radio-inline">
+                            <label>
+                                <input id="allRadio" type="radio" name="type" value="" checked>
+                                전체
+                            </label>
+                        </div>
+                        <div class="radio-inline">
+                            <label>
+                                <input id="aromaRadio" type="radio" name="type" value="1">
+                                향
+                            </label>
+                        </div>
+                        <div class="radio-inline">
+                            <label>
+                                <input id="bittersRadio" type="radio" name="type" value="2">
+                                쓴맛
+                            </label>
+                        </div>
+                        <div>
+                            <br>
+                            <div>
+                                <button id="usButton" type="button" class="btn btn-xs btn-primary" value="US"> </button>
+                                <button id="deButton" type="button" class="btn btn-xs btn-primary" value="DE"> </button>
+                                <button id="ukButton" type="button" class="btn btn-xs btn-primary" value="UK"> </button>
+                                <button id="nzButton" type="button" class="btn btn-xs btn-primary" value="NZ"> </button>
+                                <button id="auButton" type="button" class="btn btn-xs btn-primary" value="AU"> </button>
+                                <button id="siButton" type="button" class="btn btn-xs btn-primary" value="SI"> </button>
+                                <button id="etcButton" type="button" class="btn btn-xs btn-primary" value=""> </button>
                             </div>
                         </div>
-                    </form:form>
+                    </div>
                     <br>
-                    <table class="table table-striped">
-                        <tr>
-                            <th class="small-cell">NO.</th>
-                            <th>이름</th>
-                            <th>영문명</th>
-                            <th>타입</th>
-                            <th>원산지</th>
-                            <th>ALPHA</th>
-                            <th>BETA</th>
-                            <th>HSI</th>
-                        </tr>
-                        <tbody id="result" name="result">
-                        </tbody>
-                    </table>
-                </div>
-            </article>
+                    <div class="row">
+                        <div class="form-actions">
+                            <div class="pull-right">
+                                <div id="search" class="btn btn-primary" ><i class="icon-ok"></i> 조회</div>
+                                <div id="fullSearch" class="btn btn-default" ><i class="icon-ok"></i> 전체 조회</div>
+                            </div>
+                        </div>
+                    </div>
+                </form:form>
+                <br>
+                <div class="filter-box">
+                    <div class="row">
+                        <div class="col-sm-7 col-md-7 btn-group filter-buttons filter-list">
+                            <div class="clearfix"></div>
+                        </div><!-- .filter-buttons -->
+                        <div class="text-results col-sm-5 col-md-5">
+                            <i>Results 1-10 of 100 for 'Sony'</i>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="table-responsive" >
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="width:30px" >#</th>
+                                <th style="width:150px">이스트명</th>
+                                <th style="width:150px">영문명</th>
+                                <th style="width:120px">타입</th>
+                                <th style="width:70px">원산지</th>
+                                <th style="width:70px">ALPHA</th>
+                                <th style="width:70px">BETA</th>
+                                <th style="width:70px">HSI</th>
+                            </tr>
+                            </thead>
+                            <tbody id="result">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination-box">
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                            <li class="active"><span>1</span></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="disabled"><a href="#">...</a></li>
+                            <li><a href="#">9</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                        <i class="pagination-text">Displaying 1 to 10 (of 100 posts)</i>
+                    </div><!-- .pagination-box -->
+                </div><%--filter-box--%>
+            </div>
         </div>
     </div>
 </section><!-- #main -->
@@ -222,7 +257,7 @@
 <script>
     function getNationCount(){
         $.get("/hop/countHopOrigin", function(data, status){
-            //alert("US 값은 : " + data.usCnt + "\n" + "de 값은 : " + data.deCnt + "\n");
+            //alert("US 값은 : " + data.usCnt + "\n" + "de 값은 : " + data.deCnt +
             $("#usButton").html("("+data.usCntName +data.usCnt+" 건)"); /*미국*/
             $("#deButton").html("("+data.deCntName +data.deCnt+" 건)"); /*독일*/
             $("#ukButton").html("("+data.ukCntName +data.ukCnt+" 건)"); /*영국*/
@@ -253,11 +288,11 @@
     }
 
     function search(){
-        getLoadingTime();                                                   //로딩 아이콘 호출
+
 
         $("#result").html("");
         $("#result").load("/hop/list", $("#searchForm").serialize());
-        //getResult();
+
     }
 
     function goDetail(seq, titleInUrl){
