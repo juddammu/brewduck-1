@@ -3,115 +3,106 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
-<div class="content">
-    <div class="page-title"> <a href="/misc/"><i class="icon-custom-left"></i></a>
-        <input name="type" type ="hidden" id="type" type="text"  class="form-control" value=""> <%--타입별--%>
-        <h3>${MiscDetail.koreanName} - <span class="semi-bold">${MiscDetail.name}</span></h3>
+<div class="breadcrumb-box">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">홈</a> </li>
+            <li><a href="/">기초재료</a> </li>
+            <li class="active">기타재료 데이터베이스 - MISC DATABASE</li>
+        </ul>
     </div>
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="grid simple ">
-                <div class="grid-title">
+</div><!-- .breadcrumb-box -->
 
-                    <div class="row column-seperation">
-                        <div class="col-md-12">
-                            <div class="heading">
-                                <div class="pull-right"> <span class="small-text muted">버튼을 클릭하시면 조회됩니다.</span> </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="heading">
-                                <div class="pull-left">
-                                    <h4><span class="semi-bold">타입</span></h4>
-                                    <div class="slider col-md-12">
-                                        <button type="button" class="btn btn-warning btn-cons btn-mini" onclick="goIndex('${MiscDetail.typeKorean}')">${MiscDetail.typeKorean}</button>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="row form-row">
-                                <div class="col-md-12">
-                                    <blockquote  class="margin-top-20">
-                                        <p> ${MiscDetail.notes}</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-
-                            <div class="row  column-seperation">
-                                <div class="col-md-12">
-                                    <div class="tiles alert">
-                                        <textarea rows="3"  class="form-control user-status-box post-input"  placeholder="Whats on your mind?"></textarea>
-                                    </div>
-                                    <div class="tiles grey padding-10">
-                                        <div class="pull-left">
-                                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-camera"></i></button>
-                                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-map-marker"></i></button>
-                                        </div>
-                                        <div class="pull-right">
-                                            <button class="btn btn-primary btn-sm btn-small" type="button">POST</button>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
+<section id="main" class="page">
+    <header class="page-header">
+        <div class="container">
+            <div class="page-title"> <%--<a href="/misc/"><i class="fa fa-arrow-circle-left"></i></a>--%>
+                <h3>${MiscDetail.koreanName} - <span class="semi-bold">${MiscDetail.name}</span></h3>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <div class="title-box">
+                    <h5>기타재료<span class="semi-bold"> 정보</span></h5 >
+                </div>
+                <div class="row-fluid">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <button type="button" class="btn btn-warning btn-sm" onclick="goIndex('${MiscDetail.typeKorean}')"> ${MiscDetail.typeKorean} </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="title-box">
+                    <h5>기타재료<span class="semi-bold"> 내용</span></h5 >
+                </div>
+                <div class="row-fluid">
+                    <div class="col-md-12">
+                        <div class="row-fluid">
+                            <div class="col-md-12">
+                                <p> ${MiscDetail.notes}</p>
                             </div>
                         </div>
                     </div>
-
-                </div>
-
-                <br/>
-                <div class="m-l-10 ">
-                    <div class="tiles white ">
-                        <div class="p-t-20 p-b-15 b-b b-grey">
-                            <div class="post overlap-left-10">
-                                <div class="user-profile-pic-wrapper">
-                                    <div class="user-profile-pic-2x white-border">
-                                        <img width="45" height="45" src="/resources/assets/img/profiles/avatar.jpg" data-src="/resources/assets/img/profiles/avatar.jpg" data-src-retina="/resources/assets/img/profiles/avatar2x.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="info-wrapper small-width inline">
-                                    <div class="info text-black ">
-                                        <p>"풍미를 위해 사용되는 기타 재료 이다.” </p>
-                                        <p class="muted small-text"> 2 분전</p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!--div class="inline pull-right">
-                                    <div class="tiles text-white p-t-5 p-l-5 p-b-5 p-r-5 inline"> <i class="fa fa-heart-o fa-lg"></i> </div>
-                                    <div class="tiles white p-t-5 p-l-5 p-b-5 p-r-5 inline"> <i class="fa fa-comment-o fa-lg"></i> </div>
-                                </div-->
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tiles grey p-t-5 p-b-5 ">
-                        <p class="text-center"> <a href="javascript:;" class="text-black semi-bold  small-text">전체 보기</a></p>
-                    </div>
-                </div>
-
-                <br/><br/>
-
-                <div class="grid-body ">
-                    <table class="table table-striped" id="example2" >
-                        <thead>
-                        <tr>
-                            <th class="small-cell"> </th>
-                            <th>이름</th>
-                            <th>영문명</th>
-                            <th>타입</th>
-                            <th>용도</th>
-                        </tr>
-                        </thead>
-                        <tbody id="result" name="result">
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <hr>
+        <div class="row">
+            <article class="content">
+                <div class="col-md-12 content-block bottom-padding text-center bg">
+                    <div>
+                        <textarea rows="3"  class="form-control user-status-box post-input"  placeholder="Whats on your mind?"></textarea>
+                    </div>
+                    <div>
+                        <div class="pull-left">
+                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-camera"></i></button>
+                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-map-marker"></i></button>
+                        </div>
+                        <div class="pull-right">
+                            <button class="btn btn-primary btn-sm btn-small" type="button">POST</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </article>
 
+            <div class="col-md-12 text-center">
+                <a href="javascript:;" class="semi-bold  small-text">전체 보기</a>
+            </div>
+            <div class="table-responsive" >
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th style="width:30px" >#</th>
+                        <th style="width:150px">기타재료명</th>
+                        <th style="width:150px">영문명</th>
+                        <th style="width:70px">타입</th>
+                        <th style="width:70px">용도</th>
+                    </tr>
+                    </thead>
+                    <tbody id="result">
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-box">
+                <ul class="pagination">
+                    <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li class="disabled"><a href="#">...</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+                <i class="pagination-text">Displaying 1 to 10 (of 100 posts)</i>
+            </div><!-- .pagination-box -->
+        </div>
+    </div>
+</section>
 
 <content tag="local_script">
     <script>

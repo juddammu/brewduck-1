@@ -152,30 +152,12 @@
                     </ul><!-- .sub -->
                 </li>
                 <li>
-                    <a href="http://themeforest.net/item/progressive-multipurpose-responsive-template/7197521" target="_blank">레시피 만들기</a>
+                    <a href="/recipe/create">레시피 만들기</a>
                 </li>
                 <li class="parent">
                     <a href="shop.html">가이드</a>
                     <ul class="sub">
-                        <li><a href="catalog-grid.html">Catalog (Grid)</a></li>
-                        <li><a href="catalog-list.html">Catalog (List)</a></li>
-                        <li><a href="product-view.html">Product View</a></li>
-                        <li><a href="product-view-variants.html">Product View (Variants)</a></li>
-                        <li><a href="cart.html">Shopping Cart</a></li>
-                        <li><a href="checkout.html">Proceed to Checkout</a></li>
-                        <li><a href="confirmation.html">Confirmation Page</a></li>
-                        <li><a href="compare.html">Compare Products</a></li>
-                        <li class="parent">
-                            <a href="account.html">My Account</a>
-                            <ul class="sub">
-                                <li><a href="account.html">My Dashboard</a></li>
-                                <li><a href="account-information.html">Account Information</a></li>
-                                <li><a href="account-address.html">Address Book</a></li>
-                                <li><a href="account-orders.html">My Orders</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="login.html">Login / Register</a></li>
-                        <li><a href="forgot.html">Password Recovery</a></li>
+                        <li><a href="#">Catalog (Grid)</a></li>
                     </ul>
                 </li>
                 <li class="parent megamenu promo">

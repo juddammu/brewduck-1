@@ -5,22 +5,13 @@
 
 <c:forEach items="${list}" var="list">
     <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
-        <td  class="small-cell v-align-middle">
-            <div class="star">
-                <input id="checkbox9" type="checkbox" value="1" checked >
-                <label for="checkbox9"></label>
-            </div>
-        </td>
-        <td  class="clickable v-align-middle"> ${list.koreanName}</td>
-        <td  class="clickable v-align-middle"> ${list.name}</td>
-        <td  class="clickable v-align-middle"> ${list.type}</td>
-        <td  class="clickable v-align-middle"> ${list.form}</td>
-        <td class="v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small">${list.minTemperature} C</button>
-        </td>
-        <td  class="clickable v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small">${list.maxTemperature} C</button>
-        </td>
+        <td>${list.seq}</td>
+        <td>${list.koreanName}</td>
+        <td>${list.name}</td>
+        <td>${list.type}</td>
+        <td>${list.form}</td>
+        <td>${list.minTemperature} C</td>
+        <td>${list.maxTemperature} C</td>
     </tr>
 </c:forEach>
 
@@ -29,9 +20,7 @@
         $(document).ready(function() {
             var selectedItems=0;
             //Table Row Click Event
-            $('.clickable').click( function() {
-                alert();
-            });
+
         });
     </script>
 </content>

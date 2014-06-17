@@ -5,16 +5,15 @@
 
 <c:forEach items="${list}" var="list">
     <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
-        <td  class="small-cell v-align-middle">
-            <div class="star">
-                <input id="checkbox9" type="checkbox" value="1" checked >
-                <label for="checkbox9"></label>
-            </div>
+        <td>${list.seq}</td>
+        <td> ${list.koreanName}</td>
+        <td> ${list.name}</td>
+        <td>
+            ${list.typeKorean}
         </td>
-        <td  class="clickable v-align-middle"> ${list.koreanName}</td>
-        <td  class="clickable v-align-middle"> ${list.name}</td>
-        <td  class="clickable v-align-middle"> ${list.typeKorean}</td>
-        <td  class="clickable v-align-middle"> ${list.useFor}</td>
+        <td>
+            ${list.useFor}
+        </td>
     </tr>
 </c:forEach>
 
