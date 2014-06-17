@@ -46,48 +46,64 @@
                 <div class="step-content">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 bottom-padding-mobile">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>발효재료</th>
-                                    <th colspan="2">Amount</th>
-                                    <th>Maltster</th>
-                                    <th>Use</th>
-                                    <th colspan="2">Type</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>2-Row (US)</td>
-                                    <td><input type="text"></td>
-                                    <td>
-                                        <select class="selectpicker">
-                                            <option>kg</option>
-                                            <option>g</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <select class="selectpicker">
-                                            <option>kg</option>
-                                            <option>g</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <select class="selectpicker">
-                                            <option value="">Choose...</option><option value="3">Boil</option><option value="4">Late Boil</option><option value="1">Mash</option><option value="2">Steep</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <select class="bootstrap-select">
-                                            <option value="5">Adjunct</option><option value="6">Base Malt</option><option value="7">Caramel/Crystal Malt</option><option value="4">Dry Extract</option><option value="1">Grain</option><option value="8">Kilned Malt</option><option value="3">Liquid Extract</option><option value="9">Roasted Malt</option><option value="2">Sugar</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-continue btn-info btn-sm">삭제</button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div class="bs-example">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>발효재료</th>
+                                        <th colspan="2">Amount</th>
+                                        <th>Maltster</th>
+                                        <th>Use</th>
+                                        <th style="width:70px" colspan="2">Type</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>2-Row (US)</td>
+                                        <td class="info">
+                                        </td>
+                                        <td>
+                                            <div class="toolbar clearfix">
+                                                <div class="grid-list">
+                                                    <a href="#" class="grid">
+                                                        <span class="glyphicon glyphicon-th-large"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <select class="selectpicker" data-width="50px">
+                                                <option>kg</option>
+                                                <option>g</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="selectpicker"  data-width="100px">
+                                                <option value="">Choose...</option><option value="3">Boil</option><option value="4">Late Boil</option><option value="1">Mash</option><option value="2">Steep</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="bootstrap-select" style="width:100px">
+                                                <option value="5">Adjunct</option><option value="6">Base Malt</option><option value="7">Caramel/Crystal Malt</option><option value="4">Dry Extract</option><option value="1">Grain</option><option value="8">Kilned Malt</option><option value="3">Liquid Extract</option><option value="9">Roasted Malt</option><option value="2">Sugar</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="product-remove">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                                              <g>
+                                                  <path fill="#7f7f7f" d="M6,13c0.553,0,1-0.447,1-1V7c0-0.553-0.447-1-1-1S5,6.447,5,7v5C5,12.553,5.447,13,6,13z"></path>
+                                                  <path fill="#7f7f7f" d="M10,13c0.553,0,1-0.447,1-1V7c0-0.553-0.447-1-1-1S9,6.447,9,7v5C9,12.553,9.447,13,10,13z"></path>
+                                                  <path fill="#7f7f7f" d="M14,3h-1V1c0-0.552-0.447-1-1-1H4C3.448,0,3,0.448,3,1v2H2C1.447,3,1,3.447,1,4s0.447,1,1,1
+                                                c0,0.273,0,8.727,0,9c0,1.104,0.896,2,2,2h8c1.104,0,2-0.896,2-2c0-0.273,0-8.727,0-9c0.553,0,1-0.447,1-1S14.553,3,14,3z M5,2h6v1
+                                                H5V2z M12,14H4V5h8V14z"></path>
+                                              </g>
+                                            </svg>
+                                            </a><!-- .product-remove -->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div><!-- /example -->
                             <div class="buttons-box clearfix alignright">
                                 <button type="button" class="btn btn-continue btn-info btn-sm">저장</button>
                             </div>
@@ -337,31 +353,49 @@
                 <header>
                     <h3 class="title">스타일 적합성 체크</h3>
                 </header>
-                <div class="pricing">
-                    <div class="title"><a href="#">인디아 페일 에일</a></div>
-                    <ul class="options">
-                        <li class="active"><span><i class="fa fa-check"></i></span>OG - PASS</li>
-                        <li class="active"><span><i class="fa fa-check"></i></span>FG - PASS</li>
-                        <li class="active"><span><i class="fa fa-check"></i></span>SRM - PASS</li>
-                        <li class="active"><span><i class="fa fa-check"></i></span>IBU - PASS</li>
-                        <li class="active"><span><i class="fa fa-check"></i></span>ABV - FAIL</li>
-                    </ul>
-                    <div class="price-box">
-                        <div class="icon border bg-white circle pull-right">
-                            <span class="livicon" data-n="credit-card" data-s="62" data-c="#f89406" data-hc="0"></span>
-                        </div>
-                        <div class="price"><span>ABV - FAIL</span></div>
-                    </div>
-                    <div class="bottom-box">
-                        <button class="btn btn-default btn-lg">재계산</button>
-                    </div>
-                </div><!-- .pricing -->
+                <ul class="progress-list">
+                    <li class="active">
+                        <div class="table-responsive">
+                        <table class="table table-striped table-bordered text-left my-orders-table">
+                            <tbody>
+                            <tr class="first last">
+                                <td>OG</td>
+                                <td>1.542</td>
+                                <td class="text-primary"><em>통과</em></td>
+                            </tr>
+                            <tr class="first last">
+                                <td>FG</td>
+                                <td>1.101</td>
+                                <td class="text-primary"><em>통과</em></td>
+                            </tr>
+                            <tr class="first last">
+                                <td>SRM</td>
+                                <td>14</td>
+                                <td class="text-primary"><em>통과</em></td>
+                            </tr>
+                            <tr class="first last">
+                                <td>IBU</td>
+                                <td>55</td>
+                                <td class="text-primary"><em>통과</em></td>
+                            </tr>
+                            <tr class="first last">
+                                <td>ABV</td>
+                                <td>4.5%</td>
+                                <td class="text-danger"><em>실패 (5.5%)</em></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                            </div>
+                    </li>
+                </ul>
             </aside>
         </div><!-- .sidebar -->
     </div>
 </section><!-- #main -->
 
 <content tag="local_script">
+    <script src="/resources/asset/js/bootstrap-select.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
         });

@@ -168,7 +168,7 @@
 <script src="/resources/asset/js/revolution/jquery.themepunch.revolution.min.js"></script>
 <script src="/resources/asset/js/main.js"></script>
 
-<script src="/resources/asset/js/bootstrap-select.js"></script>
+
 
 <decorator:getProperty property="page.local_script"></decorator:getProperty>
 
