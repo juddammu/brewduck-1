@@ -5,24 +5,19 @@
 
 <c:forEach items="${list}" var="list">
     <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
-        <td  class="small-cell v-align-middle">
-            <div class="star">
-                <input id="checkbox9" type="checkbox" value="1" checked >
-                <label for="checkbox9"></label>
-            </div>
+        <td>${list.seq}</td>
+        <td> ${list.koreanName}</td>
+        <td> ${list.name}</td>
+        <td> ${list.typeKorean}</td>
+        <td> ${list.originKorean}</td>
+        <td>
+            <button type="button" class="btn btn-primary btn-sm">${list.alpha} %</button>
         </td>
-        <td  class="clickable v-align-middle"> ${list.koreanName}</td>
-        <td  class="clickable v-align-middle"> ${list.name}</td>
-        <td  class="clickable v-align-middle"> ${list.typeKorean}</td>
-        <td  class="clickable v-align-middle"> ${list.originKorean}</td>
-        <td class="v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small">${list.alpha} %</button>
+        <td>
+            <button type="button" class="btn btn-primary btn-sm">${list.beta} %</button>
         </td>
-        <td  class="clickable v-align-middle">
-            <button type="button" class="btn btn-primary btn-sm btn-small">${list.beta} %</button>
-        </td>
-        <td  class="clickable v-align-middle">
-            <span class="label label-primary">${list.hsi} %</span>
+        <td>
+            <button type="button" class="btn btn-primary btn-sm">${list.hsi} %</button>
         </td>
     </tr>
 </c:forEach>
