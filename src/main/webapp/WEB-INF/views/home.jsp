@@ -637,7 +637,7 @@
             <div class="row sidebar">
                 <aside class="col-xs-12 col-sm-6 col-md-3 widget social">
                     <div class="title-block">
-                        <h3 class="title">Follow Us</h3>
+                        <h3 class="title">소식지</h3>
                     </div>
                     <p>Follow us in social media</p>
                     <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="#"></a>

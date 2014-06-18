@@ -21,11 +21,7 @@
                     <option>부분곡물</option>
                     <option>캔</option>
                 </select>
-                <select class="selectpicker" data-style="btn-primary">
-                    <option>도르트문트 엑스포트</option>
-                    <option>라이트 미국식 라거</option>
-                    <option>뮤닉 헬레스</option>
-                </select>
+                <select id="style_list" class="selectpicker" data-style="btn-primary" />
                 <br /><br />
                 <input type="text" class="form-control" id="name" name="name" placeholder="레시피 이름을 입력하세요. 예를들면 '유자 페일에일'" >
             </div>
@@ -398,6 +394,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            getStyleList();
         });
 
 
@@ -405,16 +402,14 @@
 
             var styleHtml = "";
 
-            $.get("/style/list", function(data, status){
+            $.get("/style/getStyleList", function(data, status){
                 $.each(data, function(i){
 
-                    styleHtml = styleHtml +  "<input id='aromaCode"+ data[i].aromaCode +"' type='checkbox' value='"+ data[i].aromaCode +"'>";
-                    styleHtml = styleHtml +  "<label for='aromaCode"+ data[i].aromaCode +"'>"+data[i].aromaName+"</label>";
+                    styleHtml = styleHtml +  "<option value="+ data[i].seq +">"+ data[i].koreanName + " - " + data[i].categoryNumber + data[i].styleLetter + "</option>";
 
                 });
 
-                alert(styleHtml);
-               // $("#aromaArea").append(aromaHtml);
+                $("#style_list").append(styleHtml);
 
             })
         }
