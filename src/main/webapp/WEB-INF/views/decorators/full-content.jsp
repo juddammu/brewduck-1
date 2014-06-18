@@ -167,6 +167,7 @@
 <script src="/resources/asset/js/revolution/jquery.themepunch.plugins.min.js"></script>
 <script src="/resources/asset/js/revolution/jquery.themepunch.revolution.min.js"></script>
 <script src="/resources/asset/js/main.js"></script>
+<script src="/resources/asset/plugins/bootstrap-select2/select2.js"></script>
 
 
 
