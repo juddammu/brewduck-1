@@ -3,21 +3,32 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
-<div class="content">
-    <div class="page-title"> <i class="icon-custom-left"></i>
-        <h3>게시판 - <span class="semi-bold">생성</span></h3>
+<div class="breadcrumb-box">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">홈</a> </li>
+            <li><a href="/">게시판</a> </li>
+            <li class="active">게시판 생성 - ADD BOARD</li>
+        </ul>
     </div>
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="grid simple ">
-                <div class="grid-title">
+</div><!-- .breadcrumb-box -->
+
+<section id="main" class="page">
+    <header class="page-header">
+        <div class="container">
+            <h3>게시판 - <span class="semi-bold">생성</span></h3>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="content search-result list col-sm-12 col-md-12">
+
                     <form:form id="board" method="POST" action="/board/insertBoardMaster" modelAttribute="board">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="row form-row">
                                     <div class="col-md-3 ">
-                                        <h4><span class="semi-bold">게시판명 *</span></h4>
+                                        <h6><span class="semi-bold">게시판명 <span class="required">*</span></span></h6>
                                     </div>
                                     <div class="col-md-9">
                                                 <%--                                        <form:input path="bbsNm" size="60" cssStyle="width:100%" />
@@ -27,7 +38,7 @@
                                 </div>
                                 <div class="row form-row">
                                     <div class="col-md-3">
-                                        <h4><span class="semi-bold">게시판소개 *</span></h4>
+                                        <h6><span class="semi-bold">게시판소개 <span class="required">*</span></span></h6>
                                     </div>
                                     <div class="col-md-9">
                                             <%--<form:textarea path="bbsIntrcn" cols="75" rows="4" cssStyle="width:100%" />
@@ -37,11 +48,11 @@
                                 </div>
                                 <div class="row form-row">
                                     <div class="col-md-3">
-                                        <h4><span class="semi-bold">게시판 유형 *</span></h4>
+                                        <h6><span class="semi-bold">게시판 유형 <span class="required">*</span></span></h6>
                                     </div>
                                     <div class="col-md-3">
                                         <select name = "bbsTyCode" id = "bbsTyCode" class="styled" >
-                                            <option value="0">--선택하세요--</option>
+                                            <option value="0">-- 선택하세요 --</option>
                                             <option value="1">일반게시판</option>
                                             <option value="2">익명게시판</option>
                                             <option value="3">공지게시판</option>
@@ -55,11 +66,11 @@
                                                                                     <br/><form:errors path="bbsTyCode" />--%>
 
                                     <div class="col-md-3">
-                                        <h4><span class="semi-bold">게시판 속성 *</span></h4>
+                                        <h6><span class="semi-bold">게시판 속성 <span class="required">*</span></span></h6>
                                     </div>
                                     <div class="col-md-3">
                                         <select name = "bbsAttrbCode" id = "selectAttr" class="styled" >
-                                            <option value="0">--선택하세요--</option>
+                                            <option value="0">-- 선택하세요 --</option>
                                             <option value="1">유효게시판</option>
                                             <option value="2">갤러리</option>
                                             <option value="3">일반게시판</option>
@@ -74,28 +85,40 @@
                                 </div>
                                 <div class="row form-row">
                                     <div class="col-md-3">
-                                        <h4><span class="semi-bold">답장가능여부 *</span></h4>
+                                        <h6><span class="semi-bold">답장가능여부 <span class="required">*</span></span></h6>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="radio">
-                                            <input id="replyPossible" type="radio" name="replyPosblAt" value="Y" checked="checked">
-                                            <label for="replyPossible">가능</label>
-                                            <input id="replyImpossible" type="radio" name="replyPosblAt" value="N">
-                                            <label for="replyImpossible">불가능</label>
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input id="replyPossible" type="radio" name="replyPosblAt" value="Y" checked="checked">
+                                                가능
+                                            </label>
+                                        </div>
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input id="replyImpossible" type="radio" name="replyPosblAt" value="N">
+                                                불가능
+                                            </label>
                                         </div>
                                             <%--                                        <spring:message code="button.possible" /> : <form:radiobutton path="replyPosblAt"  value="Y" />&nbsp;
                                                                                     <spring:message code="button.impossible" /> : <form:radiobutton path="replyPosblAt"  value="N"  />
                                                                                     <br/><form:errors path="replyPosblAt" />--%>
                                     </div>
                                     <div class="col-md-3">
-                                        <h4><span class="semi-bold">파일첨부가능여부 *</span></h4>
+                                        <h6><span class="semi-bold">파일첨부가능여부 <span class="required">*</span></span></h6>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="radio">
-                                            <input id="filePossible" type="radio" name="fileAtchPosblAt" value="Y" checked="checked">
-                                            <label for="filePossible">가능</label>
-                                            <input id="fileImpossible" type="radio" name="fileAtchPosblAt" value="N">
-                                            <label for="fileImpossible">불가능</label>
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input id="filePossible" type="radio" name="fileAtchPosblAt" value="Y" checked="checked">
+                                                가능
+                                            </label>
+                                        </div>
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input id="fileImpossible" type="radio" name="fileAtchPosblAt" value="N">
+                                                불가능
+                                            </label>
                                         </div>
                                             <%--                                        <spring:message code="button.possible" /> : <form:radiobutton path="fileAtchPosblAt"  value="Y" />&nbsp;
                                                                                     <spring:message code="button.impossible" /> : <form:radiobutton path="fileAtchPosblAt"  value="N"  />
@@ -104,12 +127,12 @@
                                 </div>
                                 <div class="row form-row">
                                     <div class="col-md-3">
-                                        <h4><span class="semi-bold">첨부가능파일 숫자 *</span></h4>
+                                        <h6><span class="semi-bold">첨부가능파일 숫자 <span class="required">*</span></span></h6>
                                     </div>
                                     <div class="col-md-9">
                                         <div>
                                             <select name = "posblAtchFileNumber" id = "select" class="styled" >
-                                                <option value="0">없음</option>
+                                                <option value="0">-- 없 음 --</option>
                                                 <option value="1">1개</option>
                                                 <option value="2">2개</option>
                                                 <option value="3">3개</option>
@@ -128,22 +151,22 @@
                                 </div>
                                 <div class="row form-row">
                                 <div class="col-md-3">
-                                    <h4><span class="semi-bold">템플릿 정보 *</span></h4>
+                                    <h6><span class="semi-bold">템플릿 정보 <span class="required">*</span></span></h6>
                                 </div>
                                     <div class="col-md-1">
                                         <input class="form-control" id="tmplatNm" name="tmplatNm" type="text" readonly="readonly">
                                         <input id="tmplatId" type="hidden" value="" name="tmplatId">
                                     </div>
-                                    <div class="col-md-offset-0"><a href="../icon/search"><i class="fa fa-search"></i></a></div>
+                                    <div class="icon icon-30"><a href="../icon/search"><i class="fa fa-search"></i></a></div>
                                 </div>
                                 <div class="row form-row">
                                     <div class="col-md-3">
-                                        <h4><span class="semi-bold">추가 선택사항</span></h4>
+                                        <h6><span class="semi-bold">추가 선택사항</span></h6>
                                     </div>
                                     <div class="col-md-9">
                                         <div>
                                             <select name = "posblAtchFileNumber" id = "select" class="styled" >
-                                                <option value="0">미선택</option>
+                                                <option value="0">-- 미선택 --</option>
                                                 <option value="1">댓글</option>
                                                 <option value="2">만족도조사</option>
                                             </select>
@@ -154,17 +177,15 @@
                         </div>
                         <div class="form-actions">
                             <div class="pull-right">
-                                <button type="submit" name ="create" class="btn btn-danger btn-cons"><i class="icon-ok"></i>등록</button>
-                                <button type="button" name = "list" class="btn btn-primary btn-cons">목록</button>
+                                <button type="submit" name ="create" class="btn btn-danger"><i class="icon-ok"></i> 등록 </button>
+                                <button type="button" name = "list" class="btn btn-primary"> 목록 </button>
                             </div>
                         </div>
                     </form:form>
-                </div>
             </div>
         </div>
     </div>
-</div>
-
+</section>
 
 <content tag="local_script">
     <script>
