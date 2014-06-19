@@ -46,6 +46,46 @@ public class BoardController {
         return "board/addBoard";
     }
 
+    /**
+     * <pre>
+     * 자유게시판 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 자유게시판 메인
+     */
+    @RequestMapping(value = "/freeBoard", method = RequestMethod.GET)
+    public String freeBoardMain(Model model) {
+        logger.info("freeBoard index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "board/freeBoard";
+    }
+
+    /**
+     * <pre>
+     * 자유게시판 리스트.
+     * </pre>
+     *
+     * @param model Model
+     * @return 자유게시판 리스트
+     */
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<Board> boardList(Model model, Board paramBoard) {
+        logger.info("Board List");
+        Board board = new Board();
+
+        // 맥주 맥아 목록 조회
+        List<Board> list = boardService.selectBoardList(paramBoard);
+        logger.info("Board List Size : {}", list.size());
+        model.addAttribute("list", list);
+
+        return list;
+    }
+
     @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
         public String insertBoardMaster(@ModelAttribute("board") Board board,
                 BindingResult result,
@@ -83,18 +123,6 @@ public class BoardController {
         return "redirect:/board/addBoard";
     }
 
-
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<Board> BoardList(Model model, Board paramBoard) {
-        logger.info("Board List");
-        Board board = new Board();
-
-        List<Board> list = boardService.selectBoardList(paramBoard);
-        logger.info("Board List Size : {}", list.size());
-        model.addAttribute("list", list);
-
-        return list;
-    }
 
     @ResponseBody
     @RequestMapping(value = "/list/{boardId}", method = RequestMethod.GET)

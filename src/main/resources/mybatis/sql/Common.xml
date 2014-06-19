@@ -146,29 +146,29 @@
             BOARD_MASTER B
        WHERE A.USE_AT = 'Y'
          AND A.BBS_ID = B.BBS_ID
-         AND A.BBS_ID = 'FREEBOARD01'
+         AND A.BBS_ID = '3'
     </sql>
 
 
     <select id="Common.selectBoardList"  parameterType="Board" resultType="Board">
         <include refid="Common.selectBoard" />
 
-        <choose>
-            <when test="select2 = 1">
+<!--        <choose>
+            <when test="select2 = 1 AND #{searchVal} != ''">
                 AND NTT_SJ like CONCAT('%', #{searchVal}, '%')
             </when>
-            <when test="select2 = 2">
+            <when test="select2 = 2 AND #{searchVal} != ''">
                 AND NTT_CN like CONCAT('%', #{searchVal}, '%')
             </when>
-            <when test="select2 = 3">
+            <when test="select2 = 3 AND #{searchVal} != ''">
                 AND INSERT_ID like CONCAT('%', #{searchVal}, '%')
             </when>
             <otherwise>
 
             </otherwise>
-        </choose>
+        </choose>-->
 
-        AND A.DELETE_ID IS NULL
+        AND A.DELETE_ID = ''
     </select>
 
     <insert id="Common.insertBoardMaster" parameterType="Board">

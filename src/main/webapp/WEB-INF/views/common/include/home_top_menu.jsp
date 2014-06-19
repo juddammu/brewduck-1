@@ -161,7 +161,7 @@
                     </ul>
                 </li>
                 <li class="parent megamenu promo">
-                    <a href="#">커뮤니티</a>
+                    <a href="/board/freeBoard">커뮤니티</a>
                     <ul class="sub">
                         <li class="sub-wrapper">
                             <div class="sub-list">
