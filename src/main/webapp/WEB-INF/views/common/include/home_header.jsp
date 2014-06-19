@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="utf-8">
 
-<link rel="shortcut icon" href="http://template.progressive.itembridge.com/2.1.8/img/favicon.ico">
+<link rel="shortcut icon" href="http://template.progressive.itembridge.com/2.1.8/img/fa vicon.ico">
 
 <link rel="stylesheet" href="/resources/asset/css/buttons/social-icons.css">
 <link rel="stylesheet" href="/resources/asset/css/font-awesome.min.css">
