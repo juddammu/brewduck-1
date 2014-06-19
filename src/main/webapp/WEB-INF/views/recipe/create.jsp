@@ -165,50 +165,63 @@
             <div id="step-1" class="collapse in">
                 <div class="step-content">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 bottom-padding-mobile">
-                            <div class="bs-example">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>발효재료</th>
-                                        <th colspan="2">Amount</th>
-                                        <th>Maltster</th>
-                                        <th>Use</th>
-                                        <th style="width:70px" colspan="2">Type</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>2-Row (US)</td>
-                                        <td class="info">
-                                        </td>
-                                        <td>
-                                            <div class="toolbar clearfix">
-                                                <div class="grid-list">
-                                                    <a href="#" class="grid">
-                                                        <span class="glyphicon glyphicon-th-large"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <select class="selectpicker" data-width="50px">
+                        <div class="table-responsive">
+                            <table class="table border">
+                                <colgroup>
+                                    <col />
+                                    <col width="250px" />
+                                    <col width="80px" />
+                                    <col width="140px" />
+                                    <col width="80px" />
+                                    <col width="160px" />
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>발효재료</th>
+                                    <th colspan="3">Amount</th>
+                                    <th>Maltster</th>
+                                    <th>Use</th>
+                                    <th style="width:70px" >Type</th>
+                                    <th style="width:70px" colspan="2">삭제</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="email" style="width:280px" class="form-control" id="exampleInputEmail1" placeholder="2-Row (US)">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group alignright">
+                                            <input type="text"  class="form-control border-error" style="width:45px">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <select style="width:100px"  class="form-control border-error">
                                                 <option>kg</option>
                                                 <option>g</option>
                                             </select>
-                                        </td>
-                                        <td>
-                                            <select class="selectpicker"  data-width="100px">
-                                                <option value="">Choose...</option><option value="3">Boil</option><option value="4">Late Boil</option><option value="1">Mash</option><option value="2">Steep</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select class="bootstrap-select" style="width:100px">
-                                                <option value="5">Adjunct</option><option value="6">Base Malt</option><option value="7">Caramel/Crystal Malt</option><option value="4">Dry Extract</option><option value="1">Grain</option><option value="8">Kilned Malt</option><option value="3">Liquid Extract</option><option value="9">Roasted Malt</option><option value="2">Sugar</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="product-remove">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="email" style="width:70px" class="form-control" id="exampleInputEmail1" placeholder="25%">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select class="form-control border-error">
+                                            <option value="">모름</option><option value="9">Bairds</option><option value="14">Boortmalt</option><option value="1">Briess</option><option value="5">Castle</option><option value="8">Crisp</option><option value="15">Dingemans</option><option value="13">Edwin Ticker &amp; Sons</option><option value="11">Gambrinus</option><option value="6">GlobalMalt</option><option value="10">Great Western</option><option value="12">Muntons</option><option value="7">Rahr</option><option value="4">Simpson's</option><option value="2">Thomas Fawcett &amp; Sons</option><option value="3">Weyermann®</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="form-control border-error">
+                                            <option value="">선택...</option><option value="3">Boil</option><option value="4">Late Boil</option><option value="1">Mash</option><option value="2">Steep</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+
+                                            <a href="#" class="form-control no-border product-remove">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
                                               <g>
                                                   <path fill="#7f7f7f" d="M6,13c0.553,0,1-0.447,1-1V7c0-0.553-0.447-1-1-1S5,6.447,5,7v5C5,12.553,5.447,13,6,13z"></path>
@@ -219,11 +232,11 @@
                                               </g>
                                             </svg>
                                             </a><!-- .product-remove -->
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div><!-- /example -->
+                                        </div>
+                                    </td>
+                                </tr>
+                                </thead>
+                            </table>
                             <div class="buttons-box clearfix alignright">
                                 <button type="button" class="btn btn-continue btn-info btn-sm">저장</button>
                             </div>
