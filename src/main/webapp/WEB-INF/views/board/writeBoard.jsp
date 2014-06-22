@@ -55,20 +55,6 @@
                                     <p class="help-block">Example block-level help text here.</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h6>게시판 유형 <span class="required">*</span></h6>
-                                </div>
-                                <div class="col-md-3">
-                                    <select name = "bbsTyCode" id = "bbsTyCode" class="styled" >
-                                        <option value="0">-- 선택하세요 --</option>
-                                        <option value="1">일반게시판</option>
-                                        <option value="2">익명게시판</option>
-                                        <option value="3">공지게시판</option>
-                                        <option value="4">방명록</option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="form-actions">
@@ -115,6 +101,7 @@
                 form.action = "<c:url value='/board/writeBoardArticle'/>";
                 form.submit();
             }
+            alert(($("#board").serialize()));
         }
 
         function goList(){
