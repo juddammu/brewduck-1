@@ -4,8 +4,10 @@ import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.domain.Recipe;
+import com.brewduck.web.domain.Style;
 import com.brewduck.web.fermentable.service.FermentableService;
 import com.brewduck.web.recipe.service.RecipeService;
+import com.brewduck.web.style.service.StyleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,9 @@ public class RecipeController {
 
     @Autowired
     private FermentableService fermentableService;
+
+    @Autowired
+    private StyleService styleService;
 
     /**
      * <pre>
@@ -101,17 +106,11 @@ public class RecipeController {
 
     @RequestMapping(value = "/insertRecipe", method = RequestMethod.POST)
     public String join(@ModelAttribute("recipe") Recipe paramRecipe,
+                       Model model,
                        BindingResult result,
                        RedirectAttributes redirectAttributes) {
 
-        LOGGER.info("recipe name : " + paramRecipe.getName());
-        LOGGER.info("recipe type : " + paramRecipe.getType());
-        LOGGER.info("recipe notes : " + paramRecipe.getNotes());
-        LOGGER.info("recipe seq  : " + paramRecipe.getSeq());
-
         Account account = AuthenticationUtils.getUser();
-        LOGGER.info("account : " + account.getId());
-
 
         paramRecipe.setVersion(0);
         paramRecipe.setBrewer(account.getId()+"");
@@ -124,7 +123,23 @@ public class RecipeController {
 
         LOGGER.info("recipe batch size : " + insertFlag);
 
-        return "recipe/create";
+        if(insertFlag == true){
+
+            Style style = new Style();
+            style.setSeq(paramRecipe.getSeq()+"");
+
+            Recipe resultRecipe = recipeService.selectRecipeDetail(paramRecipe);
+            Style  resultStyle = styleService.selectStyleDetail(style);
+
+            model.addAttribute("resultRecipe", resultRecipe);
+            model.addAttribute("resultStyle" , resultStyle);
+
+            return "recipe/update";
+        }else{
+            return "recipe/create";
+        }
+
+
 
     }
 
