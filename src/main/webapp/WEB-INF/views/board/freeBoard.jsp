@@ -23,7 +23,7 @@
 <section id="main" class="page">
     <header class="page-header">
         <div class="container">
-            <h3>자유 게시판 - <span class="semi-bold">FREE BOARD</span></h3>
+            <h3>자유 게시판 - FREE BOARD</h3>
         </div>
     </header>
     <div class="container">
@@ -32,39 +32,41 @@
                     <form:form class="search-form" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
                     <div class="col-md-12">
                         <input name="sort" id="sort" type="hidden"  class="form-control" value=""> <%--타입별--%>
-                        <div class="title-box">
-                            <h5>게시판<span class="semi-bold"> 검색</span></h5 >
-                        </div>
+                            <div class="title-box">
+                                <h5>게시판 검색</h5 >
+                            </div>
                             <div class="control-group">
                                 <div class ="controls">
                                     <div class ="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <select name = "select2" id = "select2">
                                                 <option id = "titleSort" value="1">제목</option>
                                                 <option id = "contentSort"value="2">내용</option>
                                                 <option id = "userIdSort" value="3">작성자</option>
                                             </select>
                                         </div>
-                                        <div class="input-group col-md-9">
-                                            <input id="searchVal" name ="searchVal" type="text" class="form-control" placeholder="검색어 입력" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                                                <span class="input-group-addon primary">
-                                              <span class="arrow"></span>
-                                                <i class="fa fa-search"></i>
-                                              </span>
+                                        <div class="col-md-8">
+                                            <div class="input-group">
+                                                <input id="searchVal" name ="searchVal" type="text" class="form-control" placeholder="검색어 입력" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                                                    <span class="input-group-addon primary">
+                                                  <span class="arrow"></span>
+                                                    <i class="fa fa-search"></i>
+                                                  </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-actions">
+                                                <div id="search" class="btn btn-danger" ><i class="icon-ok"></i>조회</div>
+                                                <div id="write"  class="btn btn-primary" ><i class="icon-ok"></i>작성</div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <hr>
                                 </div>
                             </div>
                             <br>
-                            <div class="row">
-                                <div class="form-actions">
-                                    <div class="pull-right">
-                                        <div id="search" class="btn btn-danger" ><i class="icon-ok"></i>조회</div>
-                                        <div id="write" class="btn btn-primary" ><i class="icon-ok"></i>작성</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
+                        <hr>
                     </form:form>
                     <br>
                     <div class="filter-box">
@@ -116,12 +118,17 @@
         function search(){
             $("#result").html("");
             $("#result").load("/board/list", $("#searchForm").serialize());
-            alert(($("#searchForm").serialize()));
+            /*alert(($("#searchForm").serialize()));*/
         }
 
         function goDetail(seq, titleInUrl){
             location.href = "/board/"+seq+"/"+titleInUrl;
         }
+
+        function goWriteBoard(){
+            location.href = "/board/writeBoard";
+        }
+
 
         function getLoadingTime(){
             if($("loading").is("visible")){return;}
@@ -145,8 +152,11 @@
 
             $("#search").click(function(){
                 search();
-         });
-            $("#select2").click(setSortSearch);
+            });
+        });
+
+        $("#write").click(function(){
+            goWriteBoard();
         });
     </script>
 </content>
