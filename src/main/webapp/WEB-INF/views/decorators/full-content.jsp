@@ -168,7 +168,9 @@
 <script src="/resources/asset/js/revolution/jquery.themepunch.revolution.min.js"></script>
 <script src="/resources/asset/js/main.js"></script>
 <script src="/resources/asset/plugins/bootstrap-select2/select2.js"></script>
-
+<script src="/resources/asset/plugins/typeahead/typeahead.bundle.js"></script>
+<script src="/resources/asset/plugins/typeahead/bloodhound.js"></script>
+<script src="/resources/asset/plugins/typeahead/handlebars.js"></script>
 
 
 <decorator:getProperty property="page.local_script"></decorator:getProperty>
