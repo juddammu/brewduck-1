@@ -157,7 +157,7 @@
 
                             <div class="promo-block">
                                 <a href="#">
-                                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/megamenu-big.png" width="253" height="457" alt="">
+                                    <img src="/resources/recipe/menu_banner.png" width="253" height="457" alt="">
                                 </a>
                             </div><!-- .promo-block -->
                         </li>

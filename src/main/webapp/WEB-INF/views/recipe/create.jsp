@@ -155,13 +155,14 @@
 </header>
     <div class="container">
         <div class="row">
-        <article class="content col-sm-9 col-md-9">
-        <ul id="checkoutsteps" class="clearfix panel-group">
-        <li class="panel">
-            <a href="#step-1" class="step-title" data-parent="#checkoutsteps" data-toggle="collapse">
-                <div class="number"><button type="button" class="btn btn-primary btn-sm">추가</button></div>
-                <h6>발효재료</h6>
-            </a>
+            <article class="content col-sm-9 col-md-9">
+
+                <ul id="checkoutsteps" class="clearfix panel-group">
+                    <li class="panel">
+                        <div class="step-title">
+                            <div class="number"><button type="button" class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#FermentableModal">추가</button></div>
+                            <h6>발효재료 (Fermentable)</h6>
+                        </div>
             <div id="step-1" class="collapse in">
                 <div class="step-content">
                     <div class="row">
@@ -524,6 +525,49 @@
         </div><!-- .sidebar -->
     </div>
 </section><!-- #main -->
+
+<!-- Modal 팝업 -->
+<div class="modal fade"id="FermentableModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title" id="myModalLabel">발효재료 (Fermentable)</h5>
+                <input type="text" class="form-control" id="name" name="name" placeholder="검색어를 입력하세요" >
+            </div>
+            <div class="modal-body" style="overflow: auto; max-height: 400px; "> <br/>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>이름</th>
+                        <th>타입</th>
+                        <th>수율</th>
+                        <th>원산지</th>
+                        <th>°L</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${fermentableList}" var="list">
+                    <tr>
+                        <td>${list.seq}</td>
+                        <td>${list.name}</td>
+                        <td>${list.typeKorean}</td>
+                        <td>${list.yield}</td>
+                        <td>${list.originKorean}</td>
+                        <td>${list.color}</td>
+                    </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <content tag="local_script">
     <script src="/resources/asset/js/bootstrap-select.js"></script>
