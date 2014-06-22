@@ -12,17 +12,37 @@
 </div><!-- .breadcrumb-box -->
 
 <section id="main" class="page">
-<header class="page-header">
+    <header class="page-header">
+        <div class="container">
+            <h1 class="title">레시피 만들기</h1>
+        </div>
+    </header>
+
     <div class="container">
-        <div class="form-group">
-            <div class="controls">
-                <select class="selectpicker" data-style="btn-primary">
-                    <option>완전 곡물</option>
-                    <option>부분곡물</option>
-                    <option>캔</option>
-                </select>
-                &nbsp;&nbsp;
-                <select id="style_list" style="width:50%">
+        <article class="col-sm-9 col-md-9 content">
+            <div class="my-account">
+
+                <div class="form-group">
+                    <label for="name">레시피의 이름을 입력해보세요.</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="레시피 이름을 입력하세요. 예를들면 '유자 페일에일'" >
+                </div>
+
+                <div class="form-group">
+                    <label for="method">양조 방법</label> <br/>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="method" value="1"> 완전 곡물 - All Grain
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="method" value="2"> 부분곡물 - Partial Mash
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="method" value="3"> 원액 캔 - Extract
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="style_list">스타일</label> <br/>
+                    <select id="style_list" name="style_list" style="width:50%">
                     <optgroup label="1. LIGHT LAGER">
                         <option value="14">라이트 미국식 라거</option>
                         <option value="53">스탠다드 미국식 라거</option>
@@ -144,387 +164,64 @@
                     <optgroup label="23. SPECIALTY BEER">
                         <option value="58">스페셜 맥주</option>
                     </optgroup>
-                 </select>
+                </select>
+                </div>
 
-                <br /><br />
-                <input type="text" class="form-control" id="name" name="name" placeholder="레시피 이름을 입력하세요. 예를들면 '유자 페일에일'" >
-            </div>
-        </div>
-    </div>
+                <div class="form-group">
+                    <label for="concept">레시피 요약</label> <br/>
+                    <textarea name="concept" class="form-control" rows="3"></textarea>
+                </div>
 
-</header>
-    <div class="container">
-        <div class="row">
-        <article class="content col-sm-9 col-md-9">
-        <ul id="checkoutsteps" class="clearfix panel-group">
-        <li class="panel">
-            <a href="#step-1" class="step-title" data-parent="#checkoutsteps" data-toggle="collapse">
-                <div class="number"><button type="button" class="btn btn-primary btn-sm">추가</button></div>
-                <h6>발효재료</h6>
-            </a>
-            <div id="step-1" class="collapse in">
-                <div class="step-content">
-                    <div class="row">
-                        <div class="table-responsive">
-                            <table class="table border">
-                                <colgroup>
-                                    <col />
-                                    <col width="250px" />
-                                    <col width="80px" />
-                                    <col width="140px" />
-                                    <col width="80px" />
-                                    <col width="160px" />
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th>발효재료</th>
-                                    <th colspan="3">Amount</th>
-                                    <th>Maltster</th>
-                                    <th>Use</th>
-                                    <th style="width:70px" >Type</th>
-                                    <th style="width:70px" colspan="2">삭제</th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="email" style="width:280px" class="form-control" id="exampleInputEmail1" placeholder="2-Row (US)">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group alignright">
-                                            <input type="text"  class="form-control border-error" style="width:45px">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <select style="width:100px"  class="form-control border-error">
-                                                <option>kg</option>
-                                                <option>g</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="email" style="width:70px" class="form-control" id="exampleInputEmail1" placeholder="25%">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <select class="form-control border-error">
-                                            <option value="">모름</option><option value="9">Bairds</option><option value="14">Boortmalt</option><option value="1">Briess</option><option value="5">Castle</option><option value="8">Crisp</option><option value="15">Dingemans</option><option value="13">Edwin Ticker &amp; Sons</option><option value="11">Gambrinus</option><option value="6">GlobalMalt</option><option value="10">Great Western</option><option value="12">Muntons</option><option value="7">Rahr</option><option value="4">Simpson's</option><option value="2">Thomas Fawcett &amp; Sons</option><option value="3">Weyermann®</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <select class="form-control border-error">
-                                            <option value="">선택...</option><option value="3">Boil</option><option value="4">Late Boil</option><option value="1">Mash</option><option value="2">Steep</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-
-                                            <a href="#" class="form-control no-border product-remove">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                                              <g>
-                                                  <path fill="#7f7f7f" d="M6,13c0.553,0,1-0.447,1-1V7c0-0.553-0.447-1-1-1S5,6.447,5,7v5C5,12.553,5.447,13,6,13z"></path>
-                                                  <path fill="#7f7f7f" d="M10,13c0.553,0,1-0.447,1-1V7c0-0.553-0.447-1-1-1S9,6.447,9,7v5C9,12.553,9.447,13,10,13z"></path>
-                                                  <path fill="#7f7f7f" d="M14,3h-1V1c0-0.552-0.447-1-1-1H4C3.448,0,3,0.448,3,1v2H2C1.447,3,1,3.447,1,4s0.447,1,1,1
-                                                c0,0.273,0,8.727,0,9c0,1.104,0.896,2,2,2h8c1.104,0,2-0.896,2-2c0-0.273,0-8.727,0-9c0.553,0,1-0.447,1-1S14.553,3,14,3z M5,2h6v1
-                                                H5V2z M12,14H4V5h8V14z"></path>
-                                              </g>
-                                            </svg>
-                                            </a><!-- .product-remove -->
-                                        </div>
-                                    </td>
-                                </tr>
-                                </thead>
-                            </table>
-                            <div class="buttons-box clearfix alignright">
-                                <button type="button" class="btn btn-continue btn-info btn-sm">저장</button>
-                            </div>
-                        </div>
+                <div class="form-group">
+                    <label for="concept">배치 사이즈</label>
+                    <div class="input-group">
+                        <input id="searchVal" name ="searchVal" type="text" class="form-control" placeholder="검색어 입력" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                            <span class="input-group-addon primary">
+                                <span class="arrow"></span>
+                                <i class="fa fa-search"></i>
+                            </span>
                     </div>
                 </div>
-            </div>
-        </li>
 
-        <li class="panel">
-            <a href="#step-2" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
-                <div class="number">2</div>
-                <h6>Billing Information</h6>
-            </a>
+                <div class="form-group">
+                    <label for="exampleInputFile">커버 이미지</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">이미지 사이즈는 270x270으로 올려주세요.</p>
+                </div>
 
-            <div id="step-2" class="collapse">
-                <div class="step-content">
-                    <form class="row no-margin">
-                        <div class="col-sm-6 col-md-6">
-                            <label>First Name: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>Last Name: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-6 col-md-6">
-                            <label>Company:</label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>Email Address: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-6 col-md-6">
-                            <label>Address: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>City</label>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-6 col-md-6">
-                            <label>Telephone: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>Fax:</label>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-6 col-md-6">
-                            <label>Password: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>Confirm Password: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-12 buttons-box text-right">
-                            <button type="button" class="btn btn-default">Continue</button>
-                            <span class="required"><b>*</b> Required Field</span>
-                        </div>
-                    </form>
+                <div class="buttons-box aligncenter">
+                    <br />
+                    <button class="btn btn-default">다음</button>
+                    <!--a href="login.html" class="btn btn-border btn-inverse"><i class="fa fa-long-arrow-left"></i> Back to Login</a-->
                 </div>
             </div>
-        </li>
+        </article>
 
-        <li class="panel">
-            <a href="#step-3" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
-                <div class="number">3</div>
-                <h6>Shipping Information</h6>
-            </a>
-
-            <div id="step-3" class="collapse">
-                <div class="step-content">
-                    <form class="row no-margin">
-                        <div class="col-sm-6 col-md-6">
-                            <label>First Name: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>Last Name: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-6 col-md-6">
-                            <label>Company:</label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>Telephone: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-6 col-md-6">
-                            <label>Address: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>City</label>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-6 col-md-6">
-                            <label>Zip/Postal Code: <span class="required">*</span></label>
-                            <input class="form-control" type="text">
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <label>Country</label>
-                            <select class="form-control">
-                                <option>Country 1</option>
-                                <option>Country 2</option>
-                                <option>Country 3</option>
-                                <option>Country 4</option>
-                                <option>Country 5</option>
-                            </select>
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-12 buttons-box text-right">
-                            <button type="button" class="btn btn-default">Continue</button>
-                            <span class="required"><b>*</b> Required Field</span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </li>
-
-        <li class="panel">
-            <a href="#step-4" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
-                <div class="number">4</div>
-                <h6>Shipping Method</h6>
-            </a>
-
-            <div id="step-4" class="collapse">
-                <div class="step-content">
-                    <form class="no-margin">
-                        <h5>Flat Rate</h5>
-                        <p>Fixed <strong>$5.00</strong></p>
-                        <button type="button" class="btn">Continue</button>
-                    </form>
-                </div>
-            </div>
-        </li>
-
-        <li class="panel">
-            <a href="#step-5" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
-                <div class="number">5</div>
-                <h6>Payment Information</h6>
-            </a>
-
-            <div id="step-5" class="collapse">
-                <div class="step-content">
-                    <form>
-                        <div>
-                            <label class="radio"><input type="radio" name="register"> Checkout as Guest</label>
-                            <label class="radio"><input type="radio" name="register"> Register</label>
-                        </div>
-                    </form>
-
-                    <div class="buttons-box text-right">
-                        <button type="button" class="btn btn-default">Continue</button>
-                        <span class="required"><b>*</b> Required Field</span>
-                    </div>
-                </div>
-            </div>
-        </li>
-
-        <li class="panel">
-            <a href="#step-6" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
-                <div class="number">6</div>
-                <h6>Order Review</h6>
-            </a>
-
-            <div id="step-6" class="collapse">
-                <div class="step-content">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Qty</th>
-                                <th>Subtotal</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Samsung Galaxy Note 2</td>
-                                <td>$499.00</td>
-                                <td>1</td>
-                                <td>$499.00</td>
-                            </tr>
-                            <tr>
-                                <td>Sony Led TV KDL-46HX853</td>
-                                <td>$1199.00</td>
-                                <td>1</td>
-                                <td>$1199.00</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">Subtotal</td>
-                                <td>$1698.00</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">Shipping & Handling (Flat Rate - Fixed)</td>
-                                <td>$5.00</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">Grand Total</td>
-                                <td>$1703.00</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <button type="button" class="btn btn-default">Place Order</button>
-                </div>
-            </div>
-        </li>
-        </ul><!-- #checkoutsteps -->
-        </article><!-- .content -->
-
-        <div id="sidebar" class="col-sm-3 col-md-3 sidebar checkout-progress">
-            <aside class="widget">
+        <div id="sidebar" class="sidebar col-sm-3 col-md-3">
+            <aside class="widget menu">
                 <header>
-                    <h3 class="title">스타일 적합성 체크</h3>
+                    <h3 class="title">생성 단계</h3>
                 </header>
-                <ul class="progress-list">
-                    <li class="active">
-                        <div class="table-responsive">
-                        <table class="table table-striped table-bordered text-left my-orders-table">
-                            <tbody>
-                            <tr class="first last">
-                                <td>OG</td>
-                                <td>1.542</td>
-                                <td class="text-primary"><em>통과</em></td>
-                            </tr>
-                            <tr class="first last">
-                                <td>FG</td>
-                                <td>1.101</td>
-                                <td class="text-primary"><em>통과</em></td>
-                            </tr>
-                            <tr class="first last">
-                                <td>SRM</td>
-                                <td>14</td>
-                                <td class="text-primary"><em>통과</em></td>
-                            </tr>
-                            <tr class="first last">
-                                <td>IBU</td>
-                                <td>55</td>
-                                <td class="text-primary"><em>통과</em></td>
-                            </tr>
-                            <tr class="first last">
-                                <td>ABV</td>
-                                <td>4.5%</td>
-                                <td class="text-danger"><em>실패 (5.5%)</em></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                            </div>
-                    </li>
-                </ul>
-            </aside>
-        </div><!-- .sidebar -->
+                <nav>
+                    <ul>
+                        <li class="active">
+                            <a href="account.html"><i class="fa fa-user item-icon"></i>1단계 : 레시피 컨셉</a>
+                        </li>
+                        <li>
+                            <a href="account-information.html"><i class="fa fa-flask item-icon"></i>2단계 : 재료 구성</a>
+                        </li>
+                        <li>
+                            <a href="account-address.html"><i class="fa fa-pencil-square-o item-icon"></i>3단계 : 공유여부</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside><!-- .menu-->
+        </div>
+
     </div>
 </section><!-- #main -->
+
+
 
 <content tag="local_script">
     <script src="/resources/asset/js/bootstrap-select.js"></script>
@@ -533,9 +230,7 @@
         $(document).ready(function () {
             //getStyleList();
             $("#style_list").select2();
-
         });
-
 
         function getStyleList(){
 
@@ -547,9 +242,7 @@
                     styleHtml = styleHtml +  "<option value="+ data[i].seq +">"+ data[i].koreanName + " - " + data[i].categoryNumber + data[i].styleLetter + "</option>";
 
                 });
-
                 $("#style_list").append(styleHtml);
-
             })
         }
     </script>

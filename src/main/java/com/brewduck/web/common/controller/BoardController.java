@@ -46,6 +46,65 @@ public class BoardController {
         return "board/addBoard";
     }
 
+    /**
+     * <pre>
+     * 자유게시판 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 자유게시판 메인
+     */
+    @RequestMapping(value = "/freeBoard", method = RequestMethod.GET)
+    public String freeBoardMain(Model model) {
+        logger.info("freeBoard index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "board/freeBoard";
+    }
+
+    /**
+     * <pre>
+     * 자유게시판 리스트.
+     * </pre>
+     *
+     * @param model Model
+     * @return 자유게시판 리스트
+     */
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<Board> boardList(Model model, Board paramBoard) {
+        logger.info("Board List");
+        Board board = new Board();
+
+        // 맥주 맥아 목록 조회
+        List<Board> list = boardService.selectBoardList(paramBoard);
+        logger.info("Board List Size : {}", list.size());
+        model.addAttribute("list", list);
+
+        return list;
+    }
+
+    /**
+     * <pre>
+     * 자유게시판 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 자유게시판 메인
+     */
+    @RequestMapping(value = "/writeBoard", method = RequestMethod.GET)
+    public String writeBoardMain(Model model) {
+        logger.info("writeBoard index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "board/writeBoard";
+    }
+
     @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
         public String insertBoardMaster(@ModelAttribute("board") Board board,
                 BindingResult result,
@@ -83,18 +142,35 @@ public class BoardController {
         return "redirect:/board/addBoard";
     }
 
+    @RequestMapping(value = "/writeBoardArticle", method = RequestMethod.POST)
+    public String writeBoardArticle(@ModelAttribute("board") Board board,
+                                    BindingResult result,
+                                    RedirectAttributes redirectAttributes) {
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<Board> BoardList(Model model, Board paramBoard) {
-        logger.info("Board List");
-        Board board = new Board();
+        Account account = AuthenticationUtils.getUser();
+        /*
+ 			#nttId#, #bbsId#, #nttSj#, #nttCn#, #nttNo#,
+			  #ntcrId#, #ntcrNm#, #password#, #inqireCo#,
+			  #ntceBgnde#, #ntceEndde#, #replyAt#,
+			  #parnts#, 1, #replyLc#, #atchFileId#,
+			  #frstRegisterId#, SYSDATE(), 'Y'
 
-        List<Board> list = boardService.selectBoardList(paramBoard);
-        logger.info("Board List Size : {}", list.size());
-        model.addAttribute("list", list);
+			  (MAX(SORT_ORDR),0)+1
+         */
+        board.setNttId(1);	// 답글에 대한 nttId 생성
+        board.setBbsId("3");
+        board.setUseAt("Y");
+        board.setUseAt("Y");
+        board.setInsertId(account.getId()+"");
 
-        return list;
+        int insertCount = boardService.writeBoardArticle(board);
+
+        logger.info("write Board Article");
+        logger.info(" @@@ " + board.getBbsNm());
+
+        return "redirect:/board/list";
     }
+
 
     @ResponseBody
     @RequestMapping(value = "/list/{boardId}", method = RequestMethod.GET)

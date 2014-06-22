@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-6">
                 <div class="title-box">
-                    <h5>기타재료<span class="semi-bold"> 정보</span></h5 >
+                    <h5 class="title">기타재료<span class="semi-bold"> 정보</span></h5 >
                 </div>
                 <div class="row-fluid">
                     <div class="col-md-12">

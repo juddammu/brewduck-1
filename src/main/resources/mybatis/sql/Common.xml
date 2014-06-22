@@ -133,6 +133,11 @@
         FROM MOVIES
     </select>
 
+<!--    <select id="Common.nextIntegerId" resultType="Board">
+        SELECT IFNULL(MAX(SORT_ORDR),0)+1 AS nextIntegerId  FROM BOARD
+            WHERE BBS_ID = '3'
+    </select>-->
+
     <sql id="Common.selectBoard">
         SELECT
             A.NTT_ID          nttId,
@@ -146,30 +151,64 @@
             BOARD_MASTER B
        WHERE A.USE_AT = 'Y'
          AND A.BBS_ID = B.BBS_ID
-         AND A.BBS_ID = 'FREEBOARD01'
+         AND A.BBS_ID = '3'
     </sql>
 
 
     <select id="Common.selectBoardList"  parameterType="Board" resultType="Board">
         <include refid="Common.selectBoard" />
 
-        <choose>
-            <when test="select2 = 1">
+<!--        <choose>
+            <when test="select2 = 1 AND #{searchVal} != ''">
                 AND NTT_SJ like CONCAT('%', #{searchVal}, '%')
             </when>
-            <when test="select2 = 2">
+            <when test="select2 = 2 AND #{searchVal} != ''">
                 AND NTT_CN like CONCAT('%', #{searchVal}, '%')
             </when>
-            <when test="select2 = 3">
+            <when test="select2 = 3 AND #{searchVal} != ''">
                 AND INSERT_ID like CONCAT('%', #{searchVal}, '%')
             </when>
             <otherwise>
 
             </otherwise>
-        </choose>
+        </choose>-->
 
-        AND A.DELETE_ID IS NULL
+        AND A.DELETE_ID = ''
     </select>
+
+    <insert id="Common.writeBoardArticle" parameterType="Board" >
+        <![CDATA[
+			INSERT INTO BOARD
+			(NTT_ID,
+			 BBS_ID,
+			 NTT_NO,
+			 NTT_SJ,
+			 NTT_CN,
+			 SORT_ORDR,
+			 USE_AT,
+			 ANSWER_AT,
+			 ATCH_FILE_ID,
+			 INSERT_ID,
+			 INSERT_DATE
+			 )
+			VALUES
+			(
+			#{nttId},
+			#{bbsId},
+			(SELECT IFNULL(MAX(SORT_ORDR),0)+1 AS nttNo  FROM BOARD
+            WHERE BBS_ID = '3'),
+			#{nttSj},
+			#{nttCn},
+			(SELECT IFNULL(MAX(SORT_ORDR),0)+1 AS sortOrder  FROM BOARD
+            WHERE BBS_ID = '3'),
+			'Y',
+			'Y',
+			#{atchFileId},
+			#{insertId},
+			SYSDATE()
+			)
+		]]>
+    </insert>
 
     <insert id="Common.insertBoardMaster" parameterType="Board">
 		<![CDATA[

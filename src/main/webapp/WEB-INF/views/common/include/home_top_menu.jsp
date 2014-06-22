@@ -54,13 +54,25 @@
                                             </svg>
         </a>
     </div><!-- .search-header -->
-
+    <%
+        if (AuthenticationUtils.isAuthenticated() == false) {
+    %>
     <div class="btn-group">
         <a href="/account/signup" class="btn btn-info">회원 가입</a>
     </div><!-- .cart-header -->
     <div class="btn-group">
         <a href="/account/login" class="btn btn-success">로그인</a>
     </div><!-- .cart-header -->
+    <%
+    } else {
+    %>
+    <div class="btn-group">
+        <a href="/account/logout" class="btn btn-success">로그아웃</a>
+    </div><!-- .cart-header -->
+    <%
+        }
+    %>
+
 </div><!-- .header-icons -->
 
 <div class="primary">
@@ -145,14 +157,14 @@
 
                             <div class="promo-block">
                                 <a href="#">
-                                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/megamenu-big.png" width="253" height="457" alt="">
+                                    <img src="/resources/recipe/menu_banner.png" width="253" height="457" alt="">
                                 </a>
                             </div><!-- .promo-block -->
                         </li>
                     </ul><!-- .sub -->
                 </li>
                 <li>
-                    <a href="/recipe/create">레시피 만들기</a>
+                    <a href="/recipe/create">레시피 만들기 </a>
                 </li>
                 <li class="parent">
                     <a href="shop.html">가이드</a>
@@ -161,7 +173,7 @@
                     </ul>
                 </li>
                 <li class="parent megamenu promo">
-                    <a href="#">커뮤니티</a>
+                    <a href="/board/freeBoard">커뮤니티</a>
                     <ul class="sub">
                         <li class="sub-wrapper">
                             <div class="sub-list">

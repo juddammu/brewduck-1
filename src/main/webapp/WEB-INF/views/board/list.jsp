@@ -12,13 +12,11 @@
 
 <c:forEach items="${list}" var="list">
         <tr onclick="goDetail('${list.nttId}');">
-            <td  class="small-cell v-align-middle">${list.nttId}</td>
-            <td  class="clickable v-align-middle">${list.nttSj}</td>
-            <td  class="clickable v-align-middle">${list.insertId}</td>
-            <td  class="clickable v-align-middle">${list.insertDate}</td>
-            <td class="small-cell v-align-middle">
-                <button type="button" class="btn btn-danger btn-sm btn-small">${list.rdcnt}</button>
-            </td>
+            <td>${list.nttId}</td>
+            <td>${list.nttSj}</td>
+            <td>${list.insertId}</td>
+            <td>${list.insertDate}</td>
+            <td>${list.rdcnt}</td>
         </tr>
 </c:forEach>
 
