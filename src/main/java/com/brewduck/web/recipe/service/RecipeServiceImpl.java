@@ -42,6 +42,15 @@ public class RecipeServiceImpl implements RecipeService {
         return recipeDao.selectRecipeList(recipe);
     }
 
+
+
+
+
+    @Override
+    public Recipe selectRecipeSeq(Recipe recipe) {
+        return recipeDao.selectRecipeSeq(recipe);
+    }
+
     @Override
     public Recipe selectRecipeDetail(Recipe recipe) {
         Account account = AuthenticationUtils.getUser();

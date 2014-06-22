@@ -27,7 +27,7 @@ public class Recipe implements Serializable {
     // 맥주 스타일 이름
     private String styleName;
     // 맥주 스타일
-    private Style style;
+    private Integer styleSeq;
     // 레시피 양조자
     private String brewer;
     // 레시피 보조 양조자
@@ -187,17 +187,12 @@ public class Recipe implements Serializable {
      *
      * @return 맥주 스타일
      */
-    public Style getStyle() {
-        return style;
+    public Integer getStyleSeq() {
+        return styleSeq;
     }
 
-    /**
-     * 맥주 스타일
-     *
-     * @param style 맥주 스타일
-     */
-    public void setStyle(Style style) {
-        this.style = style;
+    public void setStyleSeq(Integer styleSeq) {
+        this.styleSeq = styleSeq;
     }
 
     /**

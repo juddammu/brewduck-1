@@ -1,5 +1,7 @@
 package com.brewduck.web.recipe.controller;
 
+import com.brewduck.framework.security.AuthenticationUtils;
+import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.fermentable.service.FermentableService;
@@ -9,7 +11,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -93,6 +97,35 @@ public class RecipeController {
         model.addAttribute("recipeDetail", recipeDetail);
 
         return "recipe/detail";
+    }
+
+    @RequestMapping(value = "/insertRecipe", method = RequestMethod.POST)
+    public String join(@ModelAttribute("recipe") Recipe paramRecipe,
+                       BindingResult result,
+                       RedirectAttributes redirectAttributes) {
+
+        LOGGER.info("recipe name : " + paramRecipe.getName());
+        LOGGER.info("recipe type : " + paramRecipe.getType());
+        LOGGER.info("recipe notes : " + paramRecipe.getNotes());
+        LOGGER.info("recipe seq  : " + paramRecipe.getSeq());
+
+        Account account = AuthenticationUtils.getUser();
+        LOGGER.info("account : " + account.getId());
+
+
+        paramRecipe.setVersion(0);
+        paramRecipe.setBrewer(account.getId()+"");
+        paramRecipe.setBoilSize(19);
+        paramRecipe.setBoilTime(60);
+        paramRecipe.setInsertId(account.getId()+"");
+
+        paramRecipe.setSeq(recipeService.selectRecipeSeq(paramRecipe).getSeq());
+        Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
+
+        LOGGER.info("recipe batch size : " + insertFlag);
+
+        return "recipe/create";
+
     }
 
     /**

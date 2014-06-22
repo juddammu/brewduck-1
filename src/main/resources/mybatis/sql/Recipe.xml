@@ -8,7 +8,7 @@
               ,name                  name
               ,version               version
               ,type                  type
-              ,style_name            styleName
+              ,style_seq            styleSeq
               ,brewer                brewer
               ,asst_brewer           asstBrewer
               ,batch_size            batchSize
@@ -41,6 +41,12 @@
         WHERE delete_id IS NULL
     </select>
 
+    <select id="Recipe.selectRecipeSeq" parameterType="Recipe" resultType="Recipe">
+      SELECT MAX(seq) + 1 as seq
+        FROM RECIPE
+       WHERE brewer =  #{brewer}
+    </select>
+
     <select id="Recipe.selectRecipeDetail" parameterType="Recipe" resultType="Recipe">
         <!-- 맥주 레시피 상세 조회 -->
         <include refid="Recipe.selectRecipe" />
@@ -65,10 +71,12 @@
     <insert id="Recipe.insertRecipe" parameterType="Recipe">
         <!-- 맥주 레시피 저장 -->
         INSERT INTO brewduckdb.RECIPE (
-             name
+             seq
+            ,name
             ,version           
             ,type              
-            ,brewer            
+            ,brewer
+            ,style_seq
             ,asst_brewer       
             ,batch_size        
             ,boil_size         
@@ -87,10 +95,12 @@
             ,insert_id  
             ,insert_date
         ) VALUES (
-             #{name}
+             #{seq}
+            ,#{name}
             ,#{version}
             ,#{type}
             ,#{brewer}
+            ,#{styleSeq}
             ,#{asstBrewer}
             ,#{batchSize}
             ,#{boilSize}

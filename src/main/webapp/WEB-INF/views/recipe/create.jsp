@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="breadcrumb-box">
     <div class="container">
@@ -18,6 +19,7 @@
         </div>
     </header>
 
+    <form:form id="insert" name="insert" method="POST" action="/recipe/insertRecipe" modelAttribute="paramRecipe">
     <div class="container">
         <article class="col-sm-9 col-md-9 content">
             <div class="my-account">
@@ -28,22 +30,22 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="method">양조 방법</label> <br/>
+                    <label for="type">양조 방법</label> <br/>
                     <label class="checkbox-inline">
-                        <input type="radio" name="method" value="1"> 완전 곡물 - All Grain
+                        <input type="radio" id="type" name="type" value="1" checked> 완전 곡물 - All Grain
                     </label>
                     <label class="checkbox-inline">
-                        <input type="radio" name="method" value="2"> 부분곡물 - Partial Mash
+                        <input type="radio" id="type" name="type" value="2"> 부분곡물 - Partial Mash
                     </label>
                     <label class="checkbox-inline">
-                        <input type="radio" name="method" value="3"> 원액 캔 - Extract
+                        <input type="radio" id="type" name="type" value="3"> 원액 캔 - Extract
                     </label>
                 </div>
 
                 <div class="form-group">
-                    <label for="style_list">스타일</label> <br/>
-                    <select id="style_list" name="style_list" style="width:50%">
-                    <optgroup label="1. LIGHT LAGER">
+                    <label for="styleSeq">스타일</label> <br/>
+                    <select id="styleSeq" class="form-control border" name="styleSeq" style="width:50%">
+                    <optgroup  label="1. LIGHT LAGER">
                         <option value="14">라이트 미국식 라거</option>
                         <option value="53">스탠다드 미국식 라거</option>
                         <option value="21">뮤닉 헬레스</option>
@@ -168,14 +170,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="concept">레시피 요약</label> <br/>
-                    <textarea name="concept" class="form-control" rows="3"></textarea>
+                    <label for="notes">레시피 요약</label> <br/>
+                    <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="concept">배치 사이즈</label>
+                    <label for="batchSize">배치 사이즈</label>
                     <div class="input-group">
-                        <input id="searchVal" name ="searchVal" type="text" class="form-control" placeholder="검색어 입력" onkeypress="javascript:if(event.keyCode == 13){search();}">
+                        <input id="batchSize" name ="batchSize" type="text" class="form-control" placeholder="검색어 입력">
                             <span class="input-group-addon primary">
                                 <span class="arrow"></span>
                                 <i class="fa fa-search"></i>
@@ -191,9 +193,13 @@
 
                 <div class="buttons-box aligncenter">
                     <br />
-                    <button class="btn btn-default">다음</button>
+                    <button class="btn btn-default" id="insertRecipe" name="insertRecipe">다음</button>
                     <!--a href="login.html" class="btn btn-border btn-inverse"><i class="fa fa-long-arrow-left"></i> Back to Login</a-->
-                </div>
+
+
+                </form:form>
+
+    </div>
             </div>
         </article>
 
@@ -219,9 +225,6 @@
         </div>
 
     </div>
-</section><!-- #main -->
-
-
 
 <content tag="local_script">
     <script src="/resources/asset/js/bootstrap-select.js"></script>
@@ -229,21 +232,14 @@
     <script type="text/javascript">
         $(document).ready(function () {
             //getStyleList();
-            $("#style_list").select2();
+            $("#styleSeq").select2();
         });
 
-        function getStyleList(){
 
-            var styleHtml = "";
+        $("#insert").click(function(){
+            //action="/recipe/insertRecipe"
+            $("form[name=insertRecipe]").submit();
+        });
 
-            $.get("/style/getStyleList", function(data, status){
-                $.each(data, function(i){
-
-                    styleHtml = styleHtml +  "<option value="+ data[i].seq +">"+ data[i].koreanName + " - " + data[i].categoryNumber + data[i].styleLetter + "</option>";
-
-                });
-                $("#style_list").append(styleHtml);
-            })
-        }
     </script>
 </content>
