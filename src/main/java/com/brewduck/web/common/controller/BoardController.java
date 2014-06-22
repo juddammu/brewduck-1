@@ -86,6 +86,25 @@ public class BoardController {
         return list;
     }
 
+    /**
+     * <pre>
+     * 자유게시판 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 자유게시판 메인
+     */
+    @RequestMapping(value = "/writeBoard", method = RequestMethod.GET)
+    public String writeBoardMain(Model model) {
+        logger.info("writeBoard index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "board/writeBoard";
+    }
+
     @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
         public String insertBoardMaster(@ModelAttribute("board") Board board,
                 BindingResult result,
@@ -121,6 +140,35 @@ public class BoardController {
         logger.info(" @@@ " + board.getBbsNm());
 
         return "redirect:/board/addBoard";
+    }
+
+    @RequestMapping(value = "/writeBoardArticle", method = RequestMethod.POST)
+    public String writeBoardArticle(@ModelAttribute("board") Board board,
+                                    BindingResult result,
+                                    RedirectAttributes redirectAttributes) {
+
+        Account account = AuthenticationUtils.getUser();
+        /*
+ 			#nttId#, #bbsId#, #nttSj#, #nttCn#, #nttNo#,
+			  #ntcrId#, #ntcrNm#, #password#, #inqireCo#,
+			  #ntceBgnde#, #ntceEndde#, #replyAt#,
+			  #parnts#, 1, #replyLc#, #atchFileId#,
+			  #frstRegisterId#, SYSDATE(), 'Y'
+
+			  (MAX(SORT_ORDR),0)+1
+         */
+        board.setNttId(1);	// 답글에 대한 nttId 생성
+        board.setBbsId("3");
+        board.setUseAt("Y");
+        board.setUseAt("Y");
+        board.setInsertId(account.getId()+"");
+
+        int insertCount = boardService.writeBoardArticle(board);
+
+        logger.info("write Board Article");
+        logger.info(" @@@ " + board.getBbsNm());
+
+        return "redirect:/board/list";
     }
 
 

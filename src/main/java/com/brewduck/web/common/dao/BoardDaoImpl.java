@@ -52,4 +52,15 @@ public class BoardDaoImpl implements BoardDao {
     public int insertBoardMaster(Board board) {
         return sqlSessionTemplate.insert("Common.insertBoardMaster", board);
     }
+
+    @Override
+    public int writeBoardArticle(Board board) {
+        return sqlSessionTemplate.insert("Common.writeBoardArticle", board);
+    }
+/*
+    @Override
+    public int getNextIntegerId(){
+        return sqlSessionTemplate.select("Common.nextIntegerId");
+
+    }*/
 }

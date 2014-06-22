@@ -30,4 +30,8 @@ public interface BoardDao {
 
     public int insertBoardMaster(Board board);
 
+    public int writeBoardArticle(Board board);
+/*
+    public int getNextIntegerId();*/
+
 }
