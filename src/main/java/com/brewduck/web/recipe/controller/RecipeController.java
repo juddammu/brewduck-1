@@ -1,6 +1,8 @@
 package com.brewduck.web.recipe.controller;
 
+import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.domain.Recipe;
+import com.brewduck.web.fermentable.service.FermentableService;
 import com.brewduck.web.recipe.service.RecipeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,9 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
+    @Autowired
+    private FermentableService fermentableService;
+
     /**
      * <pre>
      * 맥주 레시피 목록 조회.
@@ -35,8 +40,13 @@ public class RecipeController {
      * @return 맥주 레시피 목록
      */
     @RequestMapping(value = "/create", method = RequestMethod.GET)
-    public String create() {
+    public String create(Model model) {
         LOGGER.info("Recipe create");
+        Fermentable fermentable = new Fermentable();
+
+        List<Fermentable> fermentableList = fermentableService.selectFermentableList(fermentable);
+        model.addAttribute("fermentableList", fermentableList);
+
         return "recipe/create";
     }
 
