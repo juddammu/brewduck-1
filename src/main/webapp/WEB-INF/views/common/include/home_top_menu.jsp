@@ -164,7 +164,7 @@
                     </ul><!-- .sub -->
                 </li>
                 <li>
-                    <a href="/recipe/create">레시피 만들기</a>
+                    <a href="/recipe/create">레시피 만들기 </a>
                 </li>
                 <li class="parent">
                     <a href="shop.html">가이드</a>
