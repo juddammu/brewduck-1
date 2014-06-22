@@ -126,7 +126,7 @@ public class RecipeController {
         if(insertFlag == true){
 
             Style style = new Style();
-            style.setSeq(paramRecipe.getSeq()+"");
+            style.setSeq(paramRecipe.getStyleSeq()+"");
 
             Recipe resultRecipe = recipeService.selectRecipeDetail(paramRecipe);
             Style  resultStyle = styleService.selectStyleDetail(style);

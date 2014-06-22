@@ -44,7 +44,7 @@
 
                 <div class="form-group">
                     <label for="styleSeq">스타일</label> <br/>
-                    <select id="styleSeq" class="form-control border" name="styleSeq" style="width:50%">
+                    <select id="styleSeq" name="styleSeq" style="width:50%">
                     <optgroup  label="1. LIGHT LAGER">
                         <option value="14">라이트 미국식 라거</option>
                         <option value="53">스탠다드 미국식 라거</option>
@@ -52,7 +52,7 @@
                         <option value="8">도르트문트 엑스포트</option>
                     </optgroup>
                     <optgroup label="2. PILSNER">
-                        <option value="10">독일식 필스너(필스)</option>
+                        <option value="10">독일식 필스너</option>
                         <option value="40">보헤미안 필스너</option>
                         <option value="75">클래식 미국식 필스너</option>
                     </optgroup>
