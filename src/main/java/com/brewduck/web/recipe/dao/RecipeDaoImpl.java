@@ -40,6 +40,12 @@ public class RecipeDaoImpl implements RecipeDao {
     }
 
     @Override
+    public Recipe selectRecipeSeq(Recipe recipe) {
+        return sqlSession.selectOne("Recipe.selectRecipeSeq", recipe);
+    }
+
+
+    @Override
     public Integer insertRecipe(Recipe recipe) {
         return sqlSession.update("Recipe.insertRecipe", recipe);
     }

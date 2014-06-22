@@ -36,6 +36,16 @@ public interface RecipeDao {
 
     /**
      * <pre>
+     * 맥주 레시피 ID 생성
+     * </pre>
+     *
+     * @param recipe 맥주 레시피
+     * @return 맥주 레시피
+     */
+    public Recipe selectRecipeSeq(Recipe recipe);
+
+    /**
+     * <pre>
      * 맥주 레시피 저장.
      * </pre>
      *

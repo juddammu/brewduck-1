@@ -34,6 +34,9 @@ public interface RecipeService {
      */
     public Recipe selectRecipeDetail(Recipe recipe);
 
+    public Recipe selectRecipeSeq(Recipe recipe);
+
+
     /**
      * <pre>
      * 맥주 레시피 저장.
