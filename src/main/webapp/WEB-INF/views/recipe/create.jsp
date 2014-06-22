@@ -169,10 +169,10 @@
                             <table class="table border">
                                 <colgroup>
                                     <col />
-                                    <col width="250px" />
-                                    <col width="80px" />
-                                    <col width="140px" />
-                                    <col width="80px" />
+                                    <col width="45px" />
+                                    <col width="50px" />
+                                    <col width="100px" />
+                                    <col width="90px" />
                                     <col width="160px" />
                                 </colgroup>
                                 <thead>
@@ -181,8 +181,7 @@
                                     <th colspan="3">Amount</th>
                                     <th>Maltster</th>
                                     <th>Use</th>
-                                    <th style="width:70px" >Type</th>
-                                    <th style="width:70px" colspan="2">삭제</th>
+                                    <th style="width:70px">삭제</th>
                                 </tr>
                                 <tr>
                                     <td>
@@ -248,8 +247,8 @@
 
         <li class="panel">
             <a href="#step-2" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
-                <div class="number">2</div>
-                <h6>Billing Information</h6>
+                <div class="number"><button type="button" class="btn btn-primary btn-sm">추가</button></div>
+                <h6>홉 - Hop</h6>
             </a>
 
             <div id="step-2" class="collapse">

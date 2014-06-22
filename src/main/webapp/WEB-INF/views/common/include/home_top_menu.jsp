@@ -54,13 +54,25 @@
                                             </svg>
         </a>
     </div><!-- .search-header -->
-
+    <%
+        if (AuthenticationUtils.isAuthenticated() == false) {
+    %>
     <div class="btn-group">
         <a href="/account/signup" class="btn btn-info">회원 가입</a>
     </div><!-- .cart-header -->
     <div class="btn-group">
         <a href="/account/login" class="btn btn-success">로그인</a>
     </div><!-- .cart-header -->
+    <%
+    } else {
+    %>
+    <div class="btn-group">
+        <a href="/account/logout" class="btn btn-success">로그아웃</a>
+    </div><!-- .cart-header -->
+    <%
+        }
+    %>
+
 </div><!-- .header-icons -->
 
 <div class="primary">
