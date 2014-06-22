@@ -1,5 +1,7 @@
 package com.brewduck.web.domain;
 
+import org.apache.ibatis.session.ResultHandler;
+
 /**
  * Created with IntelliJ IDEA.
  * User: hukoru
@@ -7,7 +9,7 @@ package com.brewduck.web.domain;
  * Time: 오후 11:53
  * To change this template use File | Settings | File Templates.
  */
-public class Board {
+public class Board{
 
     private static final long serialVersionUID = 1L;
     //게시물 ID
@@ -83,6 +85,8 @@ public class Board {
     private String  bbsNm;
 
     private String searchVal;
+
+    private Integer nextIntegerId;
 
     public String getBbsTyCode() {
         return bbsTyCode;
@@ -370,5 +374,13 @@ public class Board {
 
     public void setSearchVal(String searchVal) {
         this.searchVal = searchVal;
+    }
+
+    public Integer getNextIntegerId() {
+        return nextIntegerId;
+    }
+
+    public void setNextIntegerId(Integer nextIntegerId) {
+        this.nextIntegerId = nextIntegerId;
     }
 }

@@ -58,4 +58,23 @@ public class BoardServiceImpl implements BoardService {
         return insertCount;
     }
 
+    @Transactional
+    @Override
+    public int writeBoardArticle(Board board) {
+        int insertCount = 0;
+
+        insertCount = boardDao.writeBoardArticle(board);
+
+        return insertCount;
+    }
+/*
+
+    @Transactional
+    @Override
+    public int getNextIntegerId() {
+        return boardDao.getNextIntegerId();
+    }
+*/
+
+
 }
