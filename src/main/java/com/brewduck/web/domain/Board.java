@@ -48,7 +48,7 @@ public class Board{
     //답변 위치
     private Integer answerLc;
     //정렬순서
-    private Integer sortOrdr;
+    private Integer sortOrder;
     //조회수
     private Integer rdcnt;
     //게시시작일
@@ -288,12 +288,12 @@ public class Board{
         this.answerLc = answerLc;
     }
 
-    public Integer getSortOrdr() {
-        return sortOrdr;
+    public Integer getSortOrder() {
+        return sortOrder;
     }
 
-    public void setSortOrdr(Integer sortOrdr) {
-        this.sortOrdr = sortOrdr;
+    public void setSortOrder(Integer sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
     public Integer getRdcnt() {

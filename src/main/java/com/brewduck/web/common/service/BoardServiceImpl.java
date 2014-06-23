@@ -44,6 +44,16 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public Board selectBoardDetail(Board board) {
+        return boardDao.selectBoardDetail(board);
+    }
+
+    @Override
+    public Board editBoard(Board board) {
+        return boardDao.editBoard(board);
+    }
+
+    @Override
     public List<Board> selectCommentList(Board board) {
         return boardDao.selectCommentList(board);
     }
@@ -67,14 +77,5 @@ public class BoardServiceImpl implements BoardService {
 
         return insertCount;
     }
-/*
-
-    @Transactional
-    @Override
-    public int getNextIntegerId() {
-        return boardDao.getNextIntegerId();
-    }
-*/
-
 
 }

@@ -13,7 +13,7 @@
 <c:forEach items="${list}" var="list">
         <tr onclick="goDetail('${list.nttId}');">
             <td>${list.nttId}</td>
-            <td>${list.nttSj}</td>
+            <td class="text-left">${list.nttSj}</td>
             <td>${list.insertId}</td>
             <td>${list.insertDate}</td>
             <td>${list.rdcnt}</td>

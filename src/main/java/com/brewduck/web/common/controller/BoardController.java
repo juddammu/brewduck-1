@@ -78,7 +78,7 @@ public class BoardController {
         logger.info("Board List");
         Board board = new Board();
 
-        // 맥주 맥아 목록 조회
+        // 맥주 맥아 목록 조회z
         List<Board> list = boardService.selectBoardList(paramBoard);
         logger.info("Board List Size : {}", list.size());
         model.addAttribute("list", list);
@@ -86,13 +86,28 @@ public class BoardController {
         return list;
     }
 
+    @RequestMapping(value = "detail/{nttId}", method = RequestMethod.GET)
+    public String detail(Model model, @PathVariable("nttId") Integer nttId) {
+        logger.info("Board nttId : {}", nttId);
+
+        Board board = new Board();
+        board.setNttId(nttId);
+
+        // 맥주 이스트 상세 조회
+        Board boardDetail = boardService.selectBoardDetail(board);
+
+        model.addAttribute("BoardDetail", boardDetail);
+
+        return "board/detail";
+    }
+
     /**
      * <pre>
-     * 자유게시판 메인
+     * 게시물 작성
      * </pre>
      *
      * @param model Model
-     * @return 자유게시판 메인
+     * @return 게시물 작성
      */
     @RequestMapping(value = "/writeBoard", method = RequestMethod.GET)
     public String writeBoardMain(Model model) {
@@ -105,12 +120,39 @@ public class BoardController {
         return "board/writeBoard";
     }
 
+    /**
+     * <pre>
+     * 게시물 수정
+     * </pre>
+     *
+     * @param model Model
+     * @return 게시물 작성
+     */
+    @RequestMapping(value = "/editBoard/{nttId}", method = RequestMethod.GET)
+    public String editBoardMain(Model model, @PathVariable("nttId") Integer nttId) {
+        logger.info("editBoard index");
+
+        Board board = new Board();
+        board.setNttId(nttId);
+
+        // 맥주 이스트 상세 조회
+        Board editBoard = boardService.editBoard(board);
+
+        model.addAttribute("EditBoard", editBoard);
+
+        return "board/editBoard";
+    }
+
     @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
         public String insertBoardMaster(@ModelAttribute("board") Board board,
                 BindingResult result,
                 RedirectAttributes redirectAttributes) {
 
         Account account = AuthenticationUtils.getUser();
+
+        String name = account.getName();
+
+        System.out.println(name);
         /*
         #bbsTyCode#,
         #bbsAttrbCode#,
@@ -148,27 +190,21 @@ public class BoardController {
                                     RedirectAttributes redirectAttributes) {
 
         Account account = AuthenticationUtils.getUser();
-        /*
- 			#nttId#, #bbsId#, #nttSj#, #nttCn#, #nttNo#,
-			  #ntcrId#, #ntcrNm#, #password#, #inqireCo#,
-			  #ntceBgnde#, #ntceEndde#, #replyAt#,
-			  #parnts#, 1, #replyLc#, #atchFileId#,
-			  #frstRegisterId#, SYSDATE(), 'Y'
+        String name = account.getName();
 
-			  (MAX(SORT_ORDR),0)+1
-         */
-        board.setNttId(1);	// 답글에 대한 nttId 생성
         board.setBbsId("3");
+        board.setNttNo(1);
+        board.setSortOrder(1);
         board.setUseAt("Y");
-        board.setUseAt("Y");
-        board.setInsertId(account.getId()+"");
+        board.setAnswerAt("Y");
+        board.setInsertId(name);
 
         int insertCount = boardService.writeBoardArticle(board);
 
         logger.info("write Board Article");
         logger.info(" @@@ " + board.getBbsNm());
 
-        return "redirect:/board/list";
+        return "redirect:/board/freeBoard";
     }
 
 

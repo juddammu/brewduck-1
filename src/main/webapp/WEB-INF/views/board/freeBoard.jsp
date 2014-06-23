@@ -32,15 +32,12 @@
                     <form:form class="search-form" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
                     <div class="col-md-12">
                         <input name="sort" id="sort" type="hidden"  class="form-control" value=""> <%--타입별--%>
-                            <div class="title-box">
-                                <h5>게시판 검색</h5 >
-                            </div>
                             <div class="control-group">
                                 <div class ="controls">
                                     <div class ="row">
                                         <div class="col-md-2">
-                                            <select name = "select2" id = "select2">
-                                                <option id = "titleSort" value="1">제목</option>
+                                            <select class="checkbox-inline" name = "select2" id = "select2"  style="width:150px">
+                                                <option id = "titleSort " value="1">제목</option>
                                                 <option id = "contentSort"value="2">내용</option>
                                                 <option id = "userIdSort" value="3">작성자</option>
                                             </select>
@@ -75,7 +72,7 @@
                                 <div class="clearfix"></div>
                             </div><!-- .filter-buttons -->
                             <div class="text-results col-sm-5 col-md-5">
-                                <i>Results 1-10 of 100 for 'Sony'</i>
+                                <i>Results 1-10 of 100 for '${searchVal}'</i>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -84,10 +81,10 @@
                                 <thead>
                                 <tr>
                                     <th style="width:30px" >#</th>
-                                    <th style="width:150px">제목</th>
-                                    <th style="width:70px">작성자</th>
-                                    <th style="width:100px">작성일</th>
-                                    <th style="width:70px">조회</th>
+                                    <th style="width:300px">제목</th>
+                                    <th style="width:40px">작성자</th>
+                                    <th style="width:40px">작성일</th>
+                                    <th style="width:30px">조회</th>
                                 </tr>
                                 </thead>
                                 <tbody id="result">
@@ -121,8 +118,8 @@
             /*alert(($("#searchForm").serialize()));*/
         }
 
-        function goDetail(seq, titleInUrl){
-            location.href = "/board/"+seq+"/"+titleInUrl;
+        function goDetail(nttId){
+            location.href = "/board/detail/"+nttId;
         }
 
         function goWriteBoard(){

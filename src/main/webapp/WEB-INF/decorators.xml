@@ -42,6 +42,8 @@
         <pattern>/board/freeBoard</pattern>
         <pattern>/board/addBoard</pattern>
         <pattern>/board/writeBoard</pattern>
+        <pattern>/board/detail/*</pattern>
+        <pattern>/board/editBoard</pattern>
 
     </decorator>
 
