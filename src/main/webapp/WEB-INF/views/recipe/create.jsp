@@ -19,7 +19,7 @@
         </div>
     </header>
 
-    <form:form id="insert" name="insert" method="POST" action="/recipe/insertRecipe" modelAttribute="paramRecipe">
+    <form:form id="insert" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
     <div class="container">
         <article class="col-sm-9 col-md-9 content">
             <div class="my-account">
@@ -177,7 +177,7 @@
                 <div class="form-group">
                     <label for="batchSize">배치 사이즈</label>
                     <div class="input-group">
-                        <input id="batchSize" name ="batchSize" type="text" class="form-control" placeholder="검색어 입력">
+                        <input id="batchSize" name ="batchSize" type="text" class="form-control" value="19" placeholder="검색어 입력">
                             <span class="input-group-addon primary">
                                 <span class="arrow"></span>
                                 <i class="fa fa-search"></i>
@@ -185,9 +185,13 @@
                     </div>
                 </div>
 
+
                 <div class="form-group">
                     <label for="exampleInputFile">커버 이미지</label>
-                    <input type="file" id="exampleInputFile">
+
+                    <input name="file" type="file" multiple />
+
+
                     <p class="help-block">이미지 사이즈는 270x270으로 올려주세요.</p>
                 </div>
 
@@ -230,9 +234,16 @@
     <script src="/resources/asset/js/bootstrap-select.js"></script>
 
     <script type="text/javascript">
+        $(function() {
+            var myDropzone=$("div#dropzone");
+            myDropzone.dropzone({ url: "/file/post" });
+        });
+
+
         $(document).ready(function () {
             //getStyleList();
             $("#styleSeq").select2();
+
         });
 
 

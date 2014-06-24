@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -105,18 +106,21 @@ public class RecipeController {
     }
 
     @RequestMapping(value = "/insertRecipe", method = RequestMethod.POST)
-    public String join(@ModelAttribute("recipe") Recipe paramRecipe,
+    public String join(@RequestParam MultipartFile file, @ModelAttribute("recipe") Recipe paramRecipe,
                        Model model,
                        BindingResult result,
                        RedirectAttributes redirectAttributes) {
 
+        LOGGER.warn("File " + file.getOriginalFilename());
+        String fileName = file.getOriginalFilename();
+
         Account account = AuthenticationUtils.getUser();
 
         paramRecipe.setVersion(0);
-        paramRecipe.setBrewer(account.getId()+"");
+        paramRecipe.setBrewer(account.getId() + "");
         paramRecipe.setBoilSize(19);
         paramRecipe.setBoilTime(60);
-        paramRecipe.setInsertId(account.getId()+"");
+        paramRecipe.setInsertId(account.getId() + "");
 
         paramRecipe.setSeq(recipeService.selectRecipeSeq(paramRecipe).getSeq());
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);

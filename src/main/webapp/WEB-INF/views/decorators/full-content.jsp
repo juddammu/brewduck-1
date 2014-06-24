@@ -173,6 +173,8 @@
 <script src="/resources/asset/plugins/typeahead/handlebars.js"></script>
 
 
+
+
 <decorator:getProperty property="page.local_script"></decorator:getProperty>
 
 </body>
