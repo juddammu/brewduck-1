@@ -19,7 +19,7 @@
         </div>
     </header>
 
-    <form:form id="insert" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
+    <form:form id="insert" onsubmit="return false" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
     <div class="container">
         <article class="col-sm-9 col-md-9 content">
             <div class="my-account">
@@ -187,10 +187,9 @@
 
 
                 <div class="form-group">
-                    <label for="exampleInputFile">커버 이미지</label>
+                    <label for="file">커버 이미지</label>
 
                     <input name="file" type="file" multiple />
-
 
                     <p class="help-block">이미지 사이즈는 270x270으로 올려주세요.</p>
                 </div>
@@ -215,13 +214,13 @@
                 <nav>
                     <ul>
                         <li class="active">
-                            <a href="account.html"><i class="fa fa-user item-icon"></i>1단계 : 레시피 컨셉</a>
+                            <a href="#"><i class="fa fa-user item-icon"></i>1단계 : 레시피 컨셉</a>
                         </li>
                         <li>
-                            <a href="account-information.html"><i class="fa fa-flask item-icon"></i>2단계 : 재료 구성</a>
+                            <a href="#"><i class="fa fa-flask item-icon"></i>2단계 : 재료 구성</a>
                         </li>
                         <li>
-                            <a href="account-address.html"><i class="fa fa-pencil-square-o item-icon"></i>3단계 : 공유여부</a>
+                            <a href="#"><i class="fa fa-pencil-square-o item-icon"></i>3단계 : 공유여부</a>
                         </li>
                     </ul>
                 </nav>
@@ -234,11 +233,56 @@
     <script src="/resources/asset/js/bootstrap-select.js"></script>
 
     <script type="text/javascript">
-        $(function() {
-            var myDropzone=$("div#dropzone");
-            myDropzone.dropzone({ url: "/file/post" });
+
+
+
+        $('#insertRecipe').on('click', function () {
+            document.insert.submit();
+            /*
+            var form = new FormData(document.getElementById('insertRecipe'));
+            $.ajax({
+                url: "/fileupload/upload",
+                data: form,
+                dataType: 'text',
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function (response) {
+                    alert(response);
+                    alert(response.file_name);
+                    console.log('success');
+                    console.log(response);
+                },
+                error: function (jqXHR) {
+                    console.log('error');
+                }
+            });
+            */
         });
 
+        /*
+        $('#upload').on('click', function () {
+            console.log('btn-upload');
+            var form = new FormData(document.getElementById('insert'));
+            $.ajax({
+                url: "/fileupload/upload",
+                data: form,
+                dataType: 'text',
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function (response) {
+                    alert(response);
+                    alert(response.file_name);
+                    console.log('success');
+                    console.log(response);
+                },
+                error: function (jqXHR) {
+                    console.log('error');
+                }
+            });
+        });
+                   */
 
         $(document).ready(function () {
             //getStyleList();
