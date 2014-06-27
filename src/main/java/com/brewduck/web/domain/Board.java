@@ -12,6 +12,7 @@ import org.apache.ibatis.session.ResultHandler;
 public class Board{
 
     private static final long serialVersionUID = 1L;
+
     //게시물 ID
     private Integer nttId;
     //게시판 ID
@@ -87,6 +88,8 @@ public class Board{
     private String searchVal;
 
     private Integer nextIntegerId;
+
+    private String sort;
 
     public String getBbsTyCode() {
         return bbsTyCode;
@@ -382,5 +385,13 @@ public class Board{
 
     public void setNextIntegerId(Integer nextIntegerId) {
         this.nextIntegerId = nextIntegerId;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 }
