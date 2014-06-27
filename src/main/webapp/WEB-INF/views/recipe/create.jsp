@@ -188,8 +188,24 @@
 
                 <div class="form-group">
                     <label for="exampleInputFile">커버 이미지</label>
+                    <a href="portfolio-single.html" class="work">
+                        <img src="http://placehold.it/370x270" width="370" height="270" alt="">
+                        <span class="shadow"></span>
+                        <div class="bg-hover"></div>
+                        <div class="work-title">
+                            <h3 class="title">Morbi non lacus ac sapien molestie</h3>
+                            <div class="description">Web design</div>
+                        </div>
+                    </a>
 
-                    <input name="file" type="file" multiple />
+                    <form id="dropper">
+
+                        <input type="file" name="file" id="fileInput"  />
+
+                        <div id="dropPlace"></div>
+                        <button class="btn btn-default" type="submit">Start Upload</button>
+                        <div  id="imageHolder"></div>
+                    </form>
 
 
                     <p class="help-block">이미지 사이즈는 270x270으로 올려주세요.</p>
@@ -202,6 +218,8 @@
 
 
                 </form:form>
+
+
 
     </div>
             </div>
@@ -234,10 +252,79 @@
     <script src="/resources/asset/js/bootstrap-select.js"></script>
 
     <script type="text/javascript">
-        $(function() {
-            var myDropzone=$("div#dropzone");
-            myDropzone.dropzone({ url: "/file/post" });
-        });
+        var d = new tQEraUploader(
+                {
+                    drop: false, // to support drag&drop
+                    form: document.getElementById("dropper"), // the form element's id
+                    fileInput: document.getElementById("fileInput"), // the file type input's id
+                    imageHolder: document.getElementById("imageHolder"), // the div's id for listing of uploading files
+                    dropPlace: document.getElementById("dropPlace"), // the div's id that images gonna drop onto
+                    dragHoverClass: "drop_hover", // when the state of hover of the dropPlace div this class would approved
+                    // Thumbnail resolutions will being used in listing of uploads and thumbnails that would create if the setting is on
+                    image: {
+                        thumb: true, //active thumbnail
+                        thumb_width: 200, //thumbnail width
+                        thumb_height: 200, //thumbnail height
+                        resize_width: 0, //image resize width
+                        resize_height: 0, //image resize height
+                        keep_aspect_ratio: true //image resize aspect ratio
+                    },
+                    // File filter that which files do you want to uploaded with this plugin enter these like this png|jpg|rar|doc etc...
+                    // If this is empty (""), this means you allow all the file types
+                    file_filter: "",
+
+                    // Ajax settings
+                    // url : the url of the ajax request would send, clearAfterUpload : a boolean setting that for if you want to clear items after the upload process
+                    ajax: {
+                        url: '/Home/Receive/',
+                        clearAfterUpload: true
+                    },
+
+                    // Watermark settings, if you don't want to watermark images leave it, if you do see watermark settings	see downside
+                    watermark: {
+                        watermark: false
+                    },
+                    //Icon Properties for files
+                    icon: {
+                        icon : true, //active icons
+                        path: "/resources/asset/icons", //icons path
+                        _default: "/resources/asset/icons/_blank.png", //default icon for not supported files types
+                        width: 128, //Icon width
+                        height: 128 //Icon height
+                    },
+                    //Auto upload
+                    auto_upload:false,
+                    // HTML5Error event to handle when the browser doesn't support HTML5 like File API and Drag&Drop features that plugin needs let the user know by this
+                    // and will use simple uploading system instead of HTML5 one
+                    html5Error:
+                            function (uploader) {
+                                uploader.settings.imageHolder.style.display = "none";
+                                uploader.settings.dropPlace.style.display = "none";
+                                var error = document.createElement("p");
+                                error.className = "text-center";
+                                error.appendChild(document.createTextNode("Your browser doesn't support HTML5, we can offer you a new browser from here ! click!"));
+                                uploader.settings.form.appendChild(error);
+                            },
+
+                    // Progress event: this one retrieves the progress of each item that is being uploaded to show the progress
+                    progress:
+                            function (data) {
+                                var template = document.getElementById(data.template); // to access each individual item, required.
+                                if (template) {
+                                    var progress = document.getElementById("progress_" + data.template); // to access and manipulate the progress of each individual, required.
+                                    //from this state you can customize below to fit your needs
+                                    if (progress) {
+                                        progress.innerText = "%" + data.percent;
+                                    }
+                                    else {
+                                        var div = document.createElement("div");
+                                        div.id = "progress_" + data.template;
+                                        div.innerText = "%" + data.percent;
+                                        template.appendChild(div);
+                                    }
+                                }
+                            }
+                });
 
 
         $(document).ready(function () {

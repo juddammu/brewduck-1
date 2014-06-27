@@ -2,7 +2,9 @@ package com.brewduck.web.domain;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +18,8 @@ import java.util.List;
 public class Recipe implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    //커버 이미지
+    private MultipartFile coverImageFile;
     // 레시피 순번
     private Integer seq;
     // 레시피 한글명
@@ -91,6 +95,14 @@ public class Recipe implements Serializable {
     // 삭제 성공 여부
     private Boolean deleteFlag;
 
+
+    public MultipartFile getCoverImageFile() {
+        return coverImageFile;
+    }
+
+    public void setCoverImageFile(MultipartFile coverImageFile) {
+        this.coverImageFile = coverImageFile;
+    }
 
     /**
      * 레시피 순번

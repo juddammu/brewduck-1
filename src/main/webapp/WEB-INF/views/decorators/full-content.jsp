@@ -172,7 +172,7 @@
 <script src="/resources/asset/plugins/typeahead/bloodhound.js"></script>
 <script src="/resources/asset/plugins/typeahead/handlebars.js"></script>
 
-
+<script src="/resources/asset/js/Pure.Uploader.js"></script>
 
 
 <decorator:getProperty property="page.local_script"></decorator:getProperty>

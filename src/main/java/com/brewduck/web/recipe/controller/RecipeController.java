@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -121,11 +122,10 @@ public class RecipeController {
         paramRecipe.setBoilSize(19);
         paramRecipe.setBoilTime(60);
         paramRecipe.setInsertId(account.getId() + "");
+        paramRecipe.setCoverImageFile(file);
 
         paramRecipe.setSeq(recipeService.selectRecipeSeq(paramRecipe).getSeq());
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
-
-        LOGGER.info("recipe batch size : " + insertFlag);
 
         if(insertFlag == true){
 
@@ -137,6 +137,7 @@ public class RecipeController {
 
             model.addAttribute("resultRecipe", resultRecipe);
             model.addAttribute("resultStyle" , resultStyle);
+            model.addAttribute("paramRecipe" , paramRecipe);
 
             return "recipe/update";
         }else{

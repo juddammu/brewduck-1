@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="breadcrumb-box">
     <div class="container">
@@ -18,16 +19,19 @@
             <h1 class="title">${resultRecipe.name}</h1>
         </div>
     </header>
-
+    <form:form id="insert" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
     <div class="container">
         <div class="form-group">
             <div class="controls">
                 <h4 class="title">
                 ${resultStyle.categoryNumber}${resultStyle.styleLetter}. ${resultStyle.koreanName}
                 </h4>
+                <input type="file" name="file" id="fileInput" value="${paramRecipe.coverImageFile}" />
+                <button class="btn btn-default"  type="submit" id="insertRecipe" name="insertRecipe">저장</button>
             </div>
         </div>
     </div>
+    </form:form>
 
 </header>
     <div class="container">
@@ -115,7 +119,7 @@
                                             </thead>
                                         </table>
                                         <div class="buttons-box clearfix alignright">
-                                            <button type="button" class="btn btn-continue btn-info btn-sm">저장</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -363,6 +367,15 @@
                 <header>
                     <h3 class="title">${resultStyle.categoryNumber}${resultStyle.styleLetter}. ${resultStyle.koreanName}</h3>
                 </header>
+                <a href="portfolio-single.html" class="work">
+                    <img src="/resources/recipe/2/recipe_2.jpg" width="270" height="270" alt="">
+                    <span class="shadow"></span>
+                    <div class="bg-hover"></div>
+                    <div class="work-title">
+                        <h3 class="title">${resultRecipe.name}</h3>
+                        <div class="description">이 맥주는 시트러한 아로마로 시작해 Earth한 피니시로 마무리되며, 밝은 적갈색에 25IBU로 여름에 세션비어로 디자인되어 있다.</div>
+                    </div>
+                </a>
                 <ul class="progress-list">
                     <li class="active">
                         <div class="table-responsive">
@@ -460,6 +473,7 @@
             //getStyleList();
             $("#style_list").select2();
         });
+
         
         function getStyleList(){
 

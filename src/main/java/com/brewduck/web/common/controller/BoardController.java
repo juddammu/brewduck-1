@@ -151,7 +151,6 @@ public class BoardController {
         Account account = AuthenticationUtils.getUser();
 
         String name = account.getName();
-
         System.out.println(name);
         /*
         #bbsTyCode#,

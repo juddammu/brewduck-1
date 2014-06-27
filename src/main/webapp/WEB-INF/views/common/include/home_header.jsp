@@ -33,6 +33,8 @@
 <link rel="stylesheet" type="text/css" href="/resources/asset/css/bootstrap-select.css">
 <link rel="stylesheet" type="text/css" href="/resources/asset/plugins/bootstrap-select2/select2.css">
 
+<link rel="stylesheet" type="text/css" href="/resources/asset/css/Pure.Uploader.Basic.css">
+
 <!-- IE Styles-->
 <link rel='stylesheet' href="/resources/asset/css/ie/ie.css">
 
