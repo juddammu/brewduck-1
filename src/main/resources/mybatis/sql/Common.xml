@@ -158,28 +158,43 @@
     <select id="Common.selectBoardList"  parameterType="Board" resultType="Board">
         <include refid="Common.selectBoard" />
 
-<!--        <choose>
-            <when test="select2 = 1 AND #{searchVal} != ''">
-                AND NTT_SJ like CONCAT('%', #{searchVal}, '%')
-            </when>
-            <when test="select2 = 2 AND #{searchVal} != ''">
-                AND NTT_CN like CONCAT('%', #{searchVal}, '%')
-            </when>
-            <when test="select2 = 3 AND #{searchVal} != ''">
-                AND INSERT_ID like CONCAT('%', #{searchVal}, '%')
-            </when>
-            <otherwise>
+            <if test="sort != null and sort == 'subject'">
+              AND A.NTT_SJ like CONCAT('%', #{searchVal}, '%')
+            </if>
+            <if test="sort != null and sort == 'content'">
+                AND A.NTT_CN like CONCAT('%', #{searchVal}, '%')
+            </if>
+            <if test="sort != null and sort == 'userId'">
+                AND A.INSERT_ID like CONCAT('%', #{searchVal}, '%')
+            </if>
 
-            </otherwise>
-        </choose>-->
+        AND A.DELETE_ID IS NULL
 
-        AND A.DELETE_ID = ''
     </select>
+
+    <select id="Common.selectBoardDetail" parameterType="Board" resultType="Board">
+        <!-- 게시판 상세 조회 -->
+        <include refid="Common.selectBoard" />
+        AND A.DELETE_ID IS NULL
+        <if test="nttId != null">
+            AND A.NTT_ID = #{nttId}
+        </if>
+    </select>
+
+    <select id="Common.editBoard" parameterType="Board" resultType="Board">
+        <!-- 게시판 상세 조회 -->
+        <include refid="Common.selectBoard" />
+        AND A.DELETE_ID IS NULL
+        <if test="nttId != null">
+            AND A.NTT_ID = #{nttId}
+        </if>
+    </select>
+
 
     <insert id="Common.writeBoardArticle" parameterType="Board" >
         <![CDATA[
 			INSERT INTO BOARD
-			(NTT_ID,
+			(
 			 BBS_ID,
 			 NTT_NO,
 			 NTT_SJ,
@@ -193,16 +208,13 @@
 			 )
 			VALUES
 			(
-			#{nttId},
 			#{bbsId},
-			(SELECT IFNULL(MAX(SORT_ORDR),0)+1 AS nttNo  FROM BOARD
-            WHERE BBS_ID = '3'),
+			#{nttNo},
 			#{nttSj},
 			#{nttCn},
-			(SELECT IFNULL(MAX(SORT_ORDR),0)+1 AS sortOrder  FROM BOARD
-            WHERE BBS_ID = '3'),
-			'Y',
-			'Y',
+			#{sortOrder},
+            #{useAt},
+			#{answerAt},
 			#{atchFileId},
 			#{insertId},
 			SYSDATE()

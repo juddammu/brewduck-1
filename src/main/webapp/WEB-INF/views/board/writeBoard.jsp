@@ -52,6 +52,7 @@
                                 </div>
                                 <div class="form-group col-md-9">
                                     <input type="file" id="exampleInputFile">
+                                    <input name="file" type="file" multiple />
                                     <p class="help-block">Example block-level help text here.</p>
                                 </div>
                             </div>
@@ -71,23 +72,6 @@
 
 <content tag="local_script">
     <script>
-
-
-        /*        function create(){
-         getLoadingTime();                                                   //로딩 아이콘 호출
-         }*/
-
-/*        function fn_egov_regist_brdMstr(){  //등록 버튼 로직
-            if (!validateBoardMaster(document.boardMaster)){
-                return;
-            }
-
-            if (confirm('<spring:message code="common.regist.msg" />')) {
-                form = document.board;
-                form.action =
-                form.submit();
-            }
-        }*/
 
         function fn_egov_regist_notice() {
 
@@ -131,5 +115,6 @@
         $("#list").click(function(){
             goList();
         });
+
     </script>
 </content>
