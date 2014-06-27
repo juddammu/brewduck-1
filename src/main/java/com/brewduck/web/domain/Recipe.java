@@ -16,6 +16,7 @@ import java.util.List;
  * 신재근, 2014-02-27
  */
 public class Recipe implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     //커버 이미지
