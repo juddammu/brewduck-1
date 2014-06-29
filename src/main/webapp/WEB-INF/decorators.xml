@@ -22,11 +22,14 @@
         <pattern>/index</pattern>
     </decorator>
 
-    <decorator name="full-content" page="full-content.jsp">
+    <decorator name="recipe" page="recipe.jsp">
         <pattern>/recipe/</pattern>
         <pattern>/recipe/create</pattern>
         <pattern>/recipe/insertRecipe</pattern>
         <pattern>/recipe/*/*</pattern>
+    </decorator>
+
+    <decorator name="full-content" page="full-content.jsp">
         <pattern>/hop/</pattern>
         <pattern>/hop/*/*</pattern>
         <pattern>/style</pattern>
