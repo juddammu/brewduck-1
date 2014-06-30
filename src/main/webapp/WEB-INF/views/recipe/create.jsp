@@ -272,7 +272,7 @@
                 <th>#</th>
                 <th>재료명</th>
                 <th>수량</th>
-                <th>원산지</th>
+                <th>사용방법</th>
                 <th>색상</th>
                 <th style="width:90px">Actions</th>
             </tr>
@@ -282,8 +282,8 @@
                 <td>1</td>
                 <td>2-ROW BASEMALT</td>
                 <td>
-                    <div class="input-group" style="width:200px;">
-                        <input id="batchSize" name ="batchSize" type="text" class="form-control control-width-small" value="19" placeholder="검색어 입력">
+                    <div class="input-group" style="width:115px;">
+                        <input id="batchSize" name ="batchSize" type="text" class="form-control control-width-tiny" value="19">
                         <div class="input-group-btn">
                             <button type="button" class="btn btn-default" tabindex="-1">KG</button>
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
@@ -297,11 +297,13 @@
                     </div>
 
                 </td>
-
-                <td>미국</td>
+                <td>
+                    <select class="form-control">
+                        <option value="">Choose...</option><option value="3">Boil</option><option value="4">Late Boil</option><option value="1">Mash</option><option value="2">Steep</option>
+                    </select>
+                </td>
                 <td>20 °L</td>
                 <td>
-                    <button type="button" class="btn btn-xs btn-inverse btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="fa fa-pencil"></i></button>
                     <button type="button" class="btn btn-xs btn-inverse btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Copy row"><i class="fa fa-copy"></i></button>
                     <button type="button" class="btn btn-xs btn-danger btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="fa fa-trash-o"></i></button>
                 </td>
@@ -313,7 +315,6 @@
                 <td>미국</td>
                 <td>20 °L</td>
                 <td>
-                    <button type="button" class="btn btn-xs btn-inverse btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="fa fa-pencil"></i></button>
                     <button type="button" class="btn btn-xs btn-inverse btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Copy row"><i class="fa fa-copy"></i></button>
                     <button type="button" class="btn btn-xs btn-danger btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="fa fa-trash-o"></i></button>
                 </td>
