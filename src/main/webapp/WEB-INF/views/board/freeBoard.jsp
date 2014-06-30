@@ -42,6 +42,7 @@
                                                 <input name="sort" id="sort" type="hidden"  class="form-control" value="">
                                                 <div class="col-md-2">
                                                     <select name = "select2" id = "select2"  style="width:150px">
+                                                        <option value="">-- 전체 --</option>
                                                         <option value="subject">제목</option>
                                                         <option value="content">내용</option>
                                                         <option value="userId">작성자</option>
@@ -155,7 +156,7 @@
         $(document).ready(function() {
 
             search();                                                      //조회
-            $("#serchBar").focus();                                      //이름칸으로 포커스
+            $("#searchVal").focus();                                      //이름칸으로 포커스
             document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
         });
 

@@ -222,6 +222,21 @@
 		]]>
     </insert>
 
+    <update id="Common.updateBoardArticle" parameterType="Board">
+        <![CDATA[
+            UPDATE brewduckdb.BOARD
+            SET
+              NTT_SJ = #{nttSj}
+              ,NTT_CN = #{nttCn}
+              ,ATCH_FILE_ID = #{atchFileId}
+              ,UPDATE_ID = #{updateId}
+              ,UPDATE_DATE = SYSDATE()
+            WHERE NTT_ID = #{nttId}
+              AND BBS_ID = #{bbsId}
+              AND DELETE_ID is null
+		]]>
+    </update>
+
     <insert id="Common.insertBoardMaster" parameterType="Board">
 		<![CDATA[
 			INSERT INTO BOARD_MASTER (
@@ -306,5 +321,15 @@
           AND NTT_ID = #{nttId}
           AND BBS_ID = #{bbsId}
     </select>
+
+    <update id="deleteBoardArticle" parameterType="Board">
+        <![CDATA[
+        UPDATE brewduckdb.BOARD
+        SET delete_id = #{deleteId}
+        ,delete_date = SYSDATE()
+        WHERE NTT_ID = #{nttId}
+        AND BBS_ID = #{bbsId}
+         ]]>
+    </update>
 
 </mapper>

@@ -59,6 +59,11 @@ public class BoardDaoImpl implements BoardDao {
     }
 
     @Override
+    public int updateBoardArticle(Board board) {
+        return sqlSessionTemplate.update("Common.updateBoardArticle", board);
+    }
+
+    @Override
     public Board selectBoardDetail(Board board) {
         return sqlSessionTemplate.selectOne("Common.selectBoardDetail", board);
     }
@@ -66,6 +71,11 @@ public class BoardDaoImpl implements BoardDao {
     @Override
     public Board editBoard(Board board) {
         return sqlSessionTemplate.selectOne("Common.editBoard", board);
+    }
+
+    @Override
+    public int deleteBoardArticle(Board board) {
+        return sqlSessionTemplate.update("Common.deleteBoardArticle", board);
     }
 
 }
