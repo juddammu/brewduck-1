@@ -119,10 +119,6 @@
 		if (!$.isFunction($.fn.multiSelect)) {
 			return;
 		}
-		$('#optgroup').multiSelect({selectableOptgroup: true});
-        $('#optgroup2').multiSelect({selectableOptgroup: true});
-        $('#optgroup3').multiSelect({selectableOptgroup: true});
-        $('#optgroup4').multiSelect({selectableOptgroup: true});
 	};
 
 	// =========================================================================

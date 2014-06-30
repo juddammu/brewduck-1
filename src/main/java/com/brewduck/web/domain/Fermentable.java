@@ -28,6 +28,8 @@ public class Fermentable implements Serializable {
     private Integer version;
     // 발효재료 종류 ("Grain", "Sugar", "Extract", "Dry Extract" or "Adjunct")
     private String type;
+
+    private String titleYn;
     // 발효재료의 양 (발효재료, 추출 또는 설탕의 무게 : "Kg")
     private Double amount;
     // 발효재료 사용처
@@ -108,6 +110,24 @@ public class Fermentable implements Serializable {
     public String etcCntName;
     //발효재료 한글 타입
     public String typeKorean;
+
+    public String endTitleYn;
+
+    public String getEndTitleYn() {
+        return endTitleYn;
+    }
+
+    public void setEndTitleYn(String endTitleYn) {
+        this.endTitleYn = endTitleYn;
+    }
+
+    public String getTitleYn() {
+        return titleYn;
+    }
+
+    public void setTitleYn(String titleYn) {
+        this.titleYn = titleYn;
+    }
 
     /**
      * 발효재료 순번

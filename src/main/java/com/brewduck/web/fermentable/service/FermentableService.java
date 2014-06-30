@@ -24,6 +24,9 @@ public interface FermentableService {
      */
     public List<Fermentable> selectFermentableList(Fermentable fermentable);
 
+    public List<Fermentable> selectFermentableGroupList();
+
+
     /**
      * <pre>
      * 맥주 맥아 국가 별 갯수 조회.

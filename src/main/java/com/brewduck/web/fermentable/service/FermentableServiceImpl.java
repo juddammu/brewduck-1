@@ -35,6 +35,12 @@ public class FermentableServiceImpl implements FermentableService {
     }
 
     @Override
+    public List<Fermentable> selectFermentableGroupList() {
+        return fermentableDao.selectFermentableGroupList();
+    }
+
+
+    @Override
     public Fermentable selectFermentableDetail(Fermentable fermentable) {
         return fermentableDao.selectFermentableDetail(fermentable);
     }

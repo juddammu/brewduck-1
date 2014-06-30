@@ -24,6 +24,9 @@ public interface FermentableDao {
      */
     public List<Fermentable> selectFermentableList(Fermentable fermentable);
 
+    public List<Fermentable> selectFermentableGroupList();
+
+
     /**
      * <pre>
      * 맥주 레시피 맥아 목록 조회.

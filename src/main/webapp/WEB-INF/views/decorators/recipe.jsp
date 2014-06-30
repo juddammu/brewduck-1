@@ -353,5 +353,7 @@
 <script src="/resources/expert/js/core/demo/Demo.js"></script>
 <!-- END JAVASCRIPT -->
 
+<decorator:getProperty property="page.local_script"></decorator:getProperty>
+
 </body>
 </html>

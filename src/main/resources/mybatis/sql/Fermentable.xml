@@ -2,6 +2,207 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Fermentable">
 
+    <select id="Fermentable.selectFermentableGroupList" resultType="Fermentable">
+        SELECT
+            0 SEQ,
+            '곡물 - Grain' AS NAME,
+            '0' TYPE,
+            '곡물 - Grain' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'N' endTitleYn
+           FROM DUAL
+   UNION ALL
+        SELECT
+            A.SEQ,
+            A.NAME,
+            A.TYPE,
+            (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'fermentable_type'
+                   and A.type = B.common_code) as typeKorean,
+	       (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'nation_code'
+                   and A.origin = B.common_code) as originKorean,
+            A.color               color,
+           'N' AS titleYn,
+           'N' endTitleYn
+          FROM FERMENTABLE A
+         WHERE A.TYPE = 0
+   UNION ALL
+        SELECT
+            0 SEQ,
+            '' AS NAME,
+            '1' TYPE,
+            '' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'Y' endTitleYn
+          FROM DUAL
+   UNION ALL
+        SELECT
+            0 SEQ,
+            '추출물' AS NAME,
+            '1' TYPE,
+            '추출물' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'N' endTitleYn
+           FROM DUAL
+   UNION ALL
+        SELECT
+            A.SEQ,
+            A.NAME,
+            A.TYPE,
+            (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'fermentable_type'
+                   and A.type = B.common_code) as typeKorean,
+	       (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'nation_code'
+                   and A.origin = B.common_code) as originKorean,
+           A.color               color,
+           'N' AS titleYn,
+           'N' endTitleYn
+          FROM FERMENTABLE A
+         WHERE A.TYPE = 1
+   UNION ALL
+        SELECT
+            0 SEQ,
+            '' AS NAME,
+            '1' TYPE,
+            '' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'Y' endTitleYn
+          FROM DUAL
+   UNION ALL
+        SELECT
+            0 SEQ,
+            '당 - SUGAR' AS NAME,
+            '2' TYPE,
+            '당 - SUGAR' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+           'N' endTitleYn
+          FROM DUAL
+   UNION ALL
+        SELECT
+            A.SEQ,
+            A.NAME,
+            A.TYPE,
+            (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'fermentable_type'
+                   and A.type = B.common_code) as typeKorean,
+	       (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'nation_code'
+                   and A.origin = B.common_code) as originKorean,
+           A.color               color,
+           'N' AS titleYn,
+           'N' endTitleYn
+          FROM FERMENTABLE A
+         WHERE A.TYPE = 2
+   UNION ALL
+        SELECT
+            0 SEQ,
+            '' AS NAME,
+            '1' TYPE,
+            '' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'Y' endTitleYn
+          FROM DUAL
+   UNION ALL
+        SELECT
+            0 SEQ,
+            'ADJUST' AS NAME,
+            '3' TYPE,
+            'ADJUST' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'N' endTitleYn
+          FROM DUAL
+   UNION ALL
+        SELECT
+            A.SEQ,
+            A.NAME,
+            A.TYPE,
+            (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'fermentable_type'
+                   and A.type = B.common_code) as typeKorean,
+	       (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'nation_code'
+                   and A.origin = B.common_code) as originKorean,
+            A.color               color,
+           'N' AS titleYn,
+           'N' endTitleYn
+          FROM FERMENTABLE A
+         WHERE A.TYPE = 3
+   UNION ALL
+        SELECT
+            0 SEQ,
+            '' AS NAME,
+            '1' TYPE,
+            '' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'Y' endTitleYn
+   UNION ALL
+        SELECT
+            0 SEQ,
+            'DRY EXTRACT' AS NAME,
+            '4' TYPE,
+            'DRY EXTRACT' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'N' endTitleYn
+          FROM DUAL
+   UNION ALL
+        SELECT
+            A.SEQ,
+            A.NAME,
+            A.TYPE,
+            (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'fermentable_type'
+                   and A.type = B.common_code) as typeKorean,
+	       (select B.attribute1desc
+                  from common_code B
+                 where common_set = 'nation_code'
+                   and A.origin = B.common_code) as originKorean,
+            A.color               color,
+            'N' AS titleYn,
+            'N' endTitleYn
+          FROM FERMENTABLE A
+         WHERE A.TYPE = 4
+   UNION ALL
+        SELECT
+            0 SEQ,
+            '' AS NAME,
+            '4' TYPE,
+            '' typeKorean,
+            '' originKorean,
+            '' color,
+            'Y' titleYn,
+            'Y' endTitleYn
+          FROM DUAL
+    </select>
+
     <sql id="Fermentable.selectFermentable">
         SELECT
                A.name                name

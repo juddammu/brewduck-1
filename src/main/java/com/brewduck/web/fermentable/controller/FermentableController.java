@@ -70,6 +70,23 @@ public class FermentableController {
 
         return countFermentableOrigin;
     }
+
+    /**
+     * <pre>
+     * 발효재료 그룹핑 리스트
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 발효재료 국가 별 갯수.
+     */
+    @ResponseBody
+    @RequestMapping(value = "/selectFermentableGroupList", method = RequestMethod.GET)
+    public List selectFermentableGroupList(Model model) {
+        List<Fermentable> list = fermentableService.selectFermentableGroupList();
+        return list;
+    }
+
+
     /**
      * <pre>
      * 맥주 맥아 목록 조회.
