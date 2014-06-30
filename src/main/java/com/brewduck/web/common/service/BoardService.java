@@ -32,6 +32,10 @@ public interface BoardService {
 
     public int writeBoardArticle(Board board);
 
+    public int updateBoardArticle(Board board);
+
+    public int deleteBoardArticle(Board board);
+
     public Board selectBoardDetail(Board board);
 
     public Board editBoard(Board board);

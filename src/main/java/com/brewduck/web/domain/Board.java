@@ -2,6 +2,9 @@ package com.brewduck.web.domain;
 
 import org.apache.ibatis.session.ResultHandler;
 
+import java.util.Date;
+import java.util.PriorityQueue;
+
 /**
  * Created with IntelliJ IDEA.
  * User: hukoru
@@ -90,6 +93,10 @@ public class Board{
     private Integer nextIntegerId;
 
     private String sort;
+
+    private  String deleteId;
+
+    private String deletDate;
 
     public String getBbsTyCode() {
         return bbsTyCode;
@@ -393,5 +400,21 @@ public class Board{
 
     public void setSort(String sort) {
         this.sort = sort;
+    }
+
+    public String getDeleteId() {
+        return deleteId;
+    }
+
+    public void setDeleteId(String deleteId) {
+        this.deleteId = deleteId;
+    }
+
+    public String getDeletDate() {
+        return deletDate;
+    }
+
+    public void setDeletDate(String deletDate) {
+        this.deletDate = deletDate;
     }
 }

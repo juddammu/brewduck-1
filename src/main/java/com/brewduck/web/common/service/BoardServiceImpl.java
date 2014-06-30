@@ -78,4 +78,24 @@ public class BoardServiceImpl implements BoardService {
         return insertCount;
     }
 
+    @Transactional
+    @Override
+    public int updateBoardArticle(Board board) {
+        int updateCount = 0;
+
+        updateCount = boardDao.updateBoardArticle(board);
+
+        return updateCount;
+    }
+
+    @Transactional
+    @Override
+    public int deleteBoardArticle(Board board) {
+        int deleteCount = 0;
+
+        deleteCount = boardDao.deleteBoardArticle(board);
+
+        return deleteCount;
+    }
+
 }

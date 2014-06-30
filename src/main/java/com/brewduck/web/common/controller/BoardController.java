@@ -13,7 +13,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.util.List;
 
 @Controller
@@ -93,6 +92,10 @@ public class BoardController {
         Board board = new Board();
         board.setNttId(nttId);
 
+
+        Account account = AuthenticationUtils.getUser();
+        model.addAttribute("account", account);
+
         // 맥주 이스트 상세 조회
         Board boardDetail = boardService.selectBoardDetail(board);
 
@@ -142,6 +145,7 @@ public class BoardController {
 
         return "board/editBoard";
     }
+
 
     @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
         public String insertBoardMaster(@ModelAttribute("board") Board board,
@@ -206,6 +210,27 @@ public class BoardController {
         return "redirect:/board/freeBoard";
     }
 
+    @RequestMapping(value = "/updateBoardArticle", method = RequestMethod.POST)
+/*    public String updateBoardArticle(@ModelAttribute("board") Board board){*/
+    public String updateBoardArticle(@ModelAttribute("board") Board board,
+                                    BindingResult result,
+                                    RedirectAttributes redirectAttributes) {
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+        board.setBbsId("3");
+        board.setUpdateId(name);
+
+        int updateCount = boardService.updateBoardArticle(board);
+
+        logger.info("Update Board Article");
+        logger.info(" @@@ " + board.getBbsNm());
+
+        return "redirect:/board/freeBoard";
+    }
+
+
 
     @ResponseBody
     @RequestMapping(value = "/list/{boardId}", method = RequestMethod.GET)
@@ -221,6 +246,23 @@ public class BoardController {
         return selectCommentList;
     }
 
+    @RequestMapping(value = "/deleteBoardArticle/{nttId}", method = RequestMethod.GET)
+    public String deleteBoardArticle(@ModelAttribute("board") Board board, @PathVariable("nttId") Integer nttId){
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+        board.setBbsId("3");
+        board.setNttId(nttId);
+        board.setDeleteId(name);
+
+        int deleteCount = boardService.deleteBoardArticle(board);
+
+        logger.info("Delete Board Article");
+        logger.info(" @@@ " + board.getBbsNm());
+
+        return "redirect:/board/freeBoard";
+    }
 }
 
 

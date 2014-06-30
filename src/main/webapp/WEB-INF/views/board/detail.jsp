@@ -9,6 +9,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
+<%@ page import="com.brewduck.web.domain.Account" %>
+<%@ page import="com.brewduck.web.domain.Board" %>
 
 <div class="breadcrumb-box">
     <div class="container">
@@ -39,9 +42,7 @@
                                     <h6>제목 <span class="required">*</span></h6>
                                 </div>
                                 <div class="col-md-9">
-                                    <fieldset disabled>
-                                        <input id="nttSj" name ="nttSj" type="text" class="form-control" placeholder="${BoardDetail.nttSj}">
-                                    </fieldset>
+                                        <input id="nttSj" name ="nttSj" type="text" class="form-control" placeholder="${BoardDetail.nttSj}" >
                                 </div>
                             </div>
                             <div class="row">
@@ -49,9 +50,7 @@
                                     <h6>내용 <span class="required">*</span></h6>
                                 </div>
                                 <div class="col-md-9">
-                                    <fieldset disabled>
                                         <textarea id="nttCn" name="nttCn" class="form-control" rows="10">${BoardDetail.nttCn}</textarea>
-                                    </fieldset>
                                 </div>
                             </div>
                             <div class="row">
@@ -65,12 +64,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-actions">
-                        <div class="pull-right">
-                            <button type="button" id ="edit" class="btn btn-danger"> 수정 </button>
-                            <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
+                        <div class="form-actions">
+                            <div class="pull-right">
+                        <%
+                            Board board = new Board();
+                            String user = board.getInsertId();
+                            AuthenticationUtils.getCurrentUserId();
+                            System.out.println(AuthenticationUtils.getUser());
+                            System.out.println();
+/*                            int insertId = Integer.parseInt(user);*/
+                            if (user == null) {
+                        %>
+                                <button type="button" id ="edit" class="btn btn-danger"> 수정 </button>
+                    <%--</c:if>--%>
+                        <%
+                            }
+                        %>
+
+                                <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
+                            </div>
                         </div>
-                    </div>
                 </form:form>
             </div>
         </div>
@@ -85,6 +98,12 @@
         }
 
         function goEdit(nttId){
+/*
+
+            oEditors[0].exec("UPDATE_CONTENTS_FILD",[]);
+*/
+
+
             location.href = "/board/editBoard/"+nttId;
         }
 
@@ -105,16 +124,15 @@
             $('.slider-element').slider();  //슬라이더 초기화
             $("#bbsNm").focus();              //제목칸 포커스
             document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
-
-
         });
 
         $("#list").click(function(){
             goList();
+
         });
 
         $("#edit").click(function(){
-            goEdit(${EditBoard.nttId});
+            goEdit(${BoardDetail.nttId});
         });
     </script>
 </content>
