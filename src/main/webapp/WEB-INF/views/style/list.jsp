@@ -9,13 +9,13 @@
         <td> ${list.koreanName}</td>
         <td> ${list.name}</td>
         <td>
-             ${list.ogMax}
+             <span class="badge">${list.ogMax}</span>
         </td>
         <td>
-             ${list.fgMax}
+            <span class="badge">${list.fgMax}</span>
         </td>
         <td>
-             ${list.ibuMax}
+            <span class="badge">${list.ogMax}</span>
         </td>
         <td>
              ${list.colorMax} °L

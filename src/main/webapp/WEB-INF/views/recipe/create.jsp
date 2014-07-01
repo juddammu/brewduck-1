@@ -1,50 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<style type="text/css">
-    body {
-        font-size: 12px;
-        color: #6e6e6e;
-    }
-    a:link {
-        color: #6e6e6e;
-        text-decoration: none;
-    }
-    a:visited {
-        color: #6e6e6e;
-        text-decoration: none;
-    }
-    a:active {
-        color: #4e63ae;
-        text-decoration: none;
-    }
-    a:hover {
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-    #select {
-        position: relative;
-        text-align: left;
-    }
-    #select ul, #select li{
-        margin:0px;
-        padding:0px;
-        list-style:none;
-    }
-    #select ul li {
-        padding:3px 3px 3px 3px;
-    }
-    div.selectbox {
-        position: relative;
-        float: left;
-        border:1px solid #D3D3D3;
-        width: 200px;
-    }
-    div.selectbox ul.scroll {
-        height: 150px;
-        overflow-y:scroll;
-    }
-</style>
 <section>
 <ol class="breadcrumb">
     <li><a href="#">홈</a></li>
@@ -266,59 +222,17 @@
     <div class="col-md-10">
          <select class="form-control select2-list" name="fermentable" id="fermentable" data-placeholder="Select an item">
          </select>
-        <table class="table table-hover table-striped no-margin">
+        <table id="fermantableListTable" name="fermantableListTable" class="table table-hover table-striped no-margin">
             <thead>
             <tr>
                 <th>#</th>
                 <th>재료명</th>
                 <th>수량</th>
                 <th>사용방법</th>
-                <th>색상</th>
                 <th style="width:90px">Actions</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>2-ROW BASEMALT</td>
-                <td>
-                    <div class="input-group" style="width:115px;">
-                        <input id="batchSize" name ="batchSize" type="text" class="form-control control-width-tiny" value="19">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default" tabindex="-1">KG</button>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu pull-right" role="menu">
-                                <li><a href="#">KG</a></li>
-                                <li><a href="#">G</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </td>
-                <td>
-                    <select class="form-control">
-                        <option value="">Choose...</option><option value="3">Boil</option><option value="4">Late Boil</option><option value="1">Mash</option><option value="2">Steep</option>
-                    </select>
-                </td>
-                <td>20 °L</td>
-                <td>
-                    <button type="button" class="btn btn-xs btn-inverse btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Copy row"><i class="fa fa-copy"></i></button>
-                    <button type="button" class="btn btn-xs btn-danger btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="fa fa-trash-o"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>PAIL ALE MALT</td>
-                <td><input id="batchSize" name ="batchSize" type="text" class="form-control control-width-small" value="19" placeholder="검색어 입력"></td>
-                <td>미국</td>
-                <td>20 °L</td>
-                <td>
-                    <button type="button" class="btn btn-xs btn-inverse btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Copy row"><i class="fa fa-copy"></i></button>
-                    <button type="button" class="btn btn-xs btn-danger btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="fa fa-trash-o"></i></button>
-                </td>
-            </tr>
+            <tbody class="d_tbody">
             </tbody>
         </table>
 
@@ -329,6 +243,8 @@
         <label class="control-label">홉<small>Hops</small></label>
     </div>
     <div class="col-md-10">
+        <select class="form-control select2-list" name="hop" id="hop" data-placeholder="Select an item">
+        </select>
     </div>
 </div>
 <div class="form-group">
@@ -368,12 +284,8 @@
 <content tag="local_script">
     <script type="text/javascript">
         function getFermentableList(){
-
             var fermentableHtml = "";
-
             $.get("/fermentable/selectFermentableGroupList", function(data, status){
-                //alert("US 값은 : " + data.aromaName);
-
                 $.each(data, function(i){
                     //<optgroup  label="1. LIGHT LAGER">
                     if(data[i].titleYn == "Y"){
@@ -386,17 +298,75 @@
                         fermentableHtml = fermentableHtml +  "<option VALUE='"+data[i].seq+"'>" + data[i].name + " - " + " ( "+ data[i].color+ " °L) - " + data[i].originKorean + "</option>";
                     }
                 });
-
                 $("#fermentable").append(fermentableHtml);
-
             })
         }
 
+        function getHopList(){
+            var hopHtml = "";
+            $.get("/hop/getHopList", function(data, status){
+                $.each(data, function(i){
+                    hopHtml = hopHtml +  "<option VALUE='"+data[i].seq+"'>" + data[i].name + " - " + " ( "+ data[i].alpha+ " %) - " + data[i].originKorean + "</option>";
+                });
+                $("#hop").append(hopHtml);
+            })
+        }
+
+        $("#fermantableListTable").on('click', '.row_delete', function () {
+            row_delete($(this));
+        });
+        $("#fermantableListTable").on('click', '.row_copy', function () {
+            row_copy($(this));
+        });
+        //삭제함수
+        function row_delete(obj) {
+            $(obj).parent().parent().remove().fadeOut('slow');
+        }
+
+        function row_copy(obj) {
+            $add_html = $(obj).parent().parent().clone().fadeIn('slow');
+            $('.d_tbody').append($add_html);
+
+        }
+
+
 
         $(document).ready(function() {
+            var fermentableHtml = "";
             getFermentableList();
+            getHopList();
             $('#fermentable').change(function(){
-                alert( $("#fermentable option:selected").val() );
+                //$add_html = $('.d_tbody tr:last').clone().fadeIn('slow');
+                fermentableHtml = "";
+                fermentableHtml = fermentableHtml +"<tr>";
+                fermentableHtml = fermentableHtml +"<td>1</td>";
+                fermentableHtml = fermentableHtml +"<td>"+ $("#fermentable option:selected").text() +"</td> ";
+                fermentableHtml = fermentableHtml +"<td>";
+                fermentableHtml = fermentableHtml +"<div class='input-group' style='width:115px;'>";
+                fermentableHtml = fermentableHtml +"<input id='batchSize' name ='batchSize' type='text' class='form-control control-width-tiny' value='19'> ";
+                fermentableHtml = fermentableHtml +"<div class='input-group-btn'> ";
+                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-default' tabindex='-1'>KG</button> ";
+                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' tabindex='-1'> ";
+                fermentableHtml = fermentableHtml +"<span class='caret'></span> ";
+                fermentableHtml = fermentableHtml +"</button> ";
+                fermentableHtml = fermentableHtml +"<ul class='dropdown-menu pull-right' role='menu'> ";
+                fermentableHtml = fermentableHtml +"<li><a href='#'>KG</a></li> ";
+                fermentableHtml = fermentableHtml +"<li><a href='#'>G</a></li>";
+                fermentableHtml = fermentableHtml +"</ul> ";
+                fermentableHtml = fermentableHtml +"</div>";
+                fermentableHtml = fermentableHtml +"</div>";
+                fermentableHtml = fermentableHtml +"</td> ";
+                fermentableHtml = fermentableHtml +"<td>";
+                fermentableHtml = fermentableHtml +"<select class='form-control'> ";
+                fermentableHtml = fermentableHtml +"<option value=''>Choose...</option><option value='3'>Boil</option><option value='4'>Late Boil</option><option value='1'>Mash</option><option value='2'>Steep</option> ";
+                fermentableHtml = fermentableHtml +"</select> ";
+                fermentableHtml = fermentableHtml +"</td> ";
+                fermentableHtml = fermentableHtml +"<td>";
+                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-xs btn-inverse btn-equal row_copy' data-toggle='tooltip' data-placement='top' data-original-title='Copy row'><i class='fa fa-copy'></i></button>";
+                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-xs btn-danger btn-equal row_delete' data-toggle='tooltip' data-placement='top' data-original-title='Delete row'><i class='fa fa-trash-o'></i></button>";
+                fermentableHtml = fermentableHtml +"</td> ";
+                fermentableHtml = fermentableHtml +"</tr> ";
+                $("#fermantableListTable").append(fermentableHtml);
             });
         });
     </script>

@@ -42,8 +42,6 @@ public class HopController {
     @Autowired
     private HopService hopService;
 
-    @Autowired
-    private BoardService boardService;
 
 
     /**
@@ -56,12 +54,8 @@ public class HopController {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String main(Model model) {
-        logger.info("Hop index");
-
         Account account = AuthenticationUtils.getUser();
-
         model.addAttribute("account", account);
-
         return "hop/index";
     }
 
@@ -75,14 +69,8 @@ public class HopController {
      */
     @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
     public String detail(Model model, @PathVariable("seq") Integer seq) {
-
-        logger.info("Hop seq : {}", seq);
-
         Hop hop = new Hop();
         hop.setSeq(seq);
-
-
-
         // 맥주 홉 상세 조회
         Hop hopDetail = hopService.selectHopDetail(hop);
 
@@ -113,7 +101,6 @@ public class HopController {
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Hop> HopList(Model model, Hop paramHop) {
-        logger.info("Hop List searching.........");
         Hop hop = new Hop();
 
         // 맥주 홉 목록 조회
@@ -251,6 +238,15 @@ public class HopController {
         return returnHop;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getHopList", method = RequestMethod.GET)
+    public List<Hop> getHopList(Model model) {
+        Hop hop = new Hop();
+        // 맥주 홉 목록 조회
+        List<Hop> list = hopService.selectHopList(hop);
+        model.addAttribute("list", list);
 
+        return list;
+    }
 }
 

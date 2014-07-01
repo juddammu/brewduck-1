@@ -22,19 +22,19 @@
         <pattern>/index</pattern>
     </decorator>
 
-    <decorator name="recipe" page="recipe.jsp">
+    <decorator name="expert" page="recipe.jsp">
         <pattern>/recipe/</pattern>
         <pattern>/recipe/create</pattern>
         <pattern>/recipe/insertRecipe</pattern>
         <pattern>/recipe/*/*</pattern>
+        <pattern>/style</pattern>
+        <pattern>/style/</pattern>
+        <pattern>/style/*/*</pattern>
     </decorator>
 
     <decorator name="full-content" page="full-content.jsp">
         <pattern>/hop/</pattern>
         <pattern>/hop/*/*</pattern>
-        <pattern>/style</pattern>
-        <pattern>/style/</pattern>
-        <pattern>/style/*/*</pattern>
         <pattern>/yeast/</pattern>
         <pattern>/yeast/*/*</pattern>
         <pattern>/fermentable/</pattern>
