@@ -229,7 +229,8 @@
                 <th>재료명</th>
                 <th>수량</th>
                 <th>사용방법</th>
-                <th style="width:90px">Actions</th>
+                <th style="width:90px">복사</th>
+                <th style="width:90px">삭제</th>
             </tr>
             </thead>
             <tbody class="d_tbody">
@@ -252,6 +253,8 @@
         <label class="control-label">효모<small>Yeast</small></label>
     </div>
     <div class="col-md-10">
+        <select class="form-control select2-list" name="yeast" id="yeast" data-placeholder="Select an item">
+        </select>
     </div>
 </div>
 <div class="form-group">
@@ -259,11 +262,13 @@
         <label class="control-label">기타 재료<small>MISC</small></label>
     </div>
     <div class="col-md-10">
+        <select class="form-control select2-list" name="misc" id="misc" data-placeholder="Select an item">
+        </select>
     </div>
 </div>
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">Tagsinput for input</label>
+        <label class="control-label">태그</label>
     </div>
     <div class="col-md-10">
         <input type="text" value="에일,BJCP,RECIPE" data-role="tagsinput" />
@@ -312,6 +317,26 @@
             })
         }
 
+        function getYeastList(){
+            var yeastHtml = "";
+            $.get("/yeast/getYeastList", function(data, status){
+                $.each(data, function(i){
+                    yeastHtml = yeastHtml +  "<option VALUE='"+data[i].seq+"'>" + data[i].koreanName + " - " + " ( "+ data[i].form+ " ) </option>";
+                });
+                $("#yeast").append(yeastHtml);
+            })
+        }
+
+        function getMiscList(){
+            var miscHtml = "";
+            $.get("/misc/getMiscList", function(data, status){
+                $.each(data, function(i){
+                    miscHtml = miscHtml +  "<option VALUE='"+data[i].seq+"'>" + data[i].koreanName + " - " + " ( "+ data[i].typeKorean+ " )- " + data[i].useFor + " </option>";
+                });
+                $("#misc").append(miscHtml);
+            })
+        }
+
         $("#fermantableListTable").on('click', '.row_delete', function () {
             row_delete($(this));
         });
@@ -335,6 +360,8 @@
             var fermentableHtml = "";
             getFermentableList();
             getHopList();
+            getYeastList();
+            getMiscList();
             $('#fermentable').change(function(){
                 //$add_html = $('.d_tbody tr:last').clone().fadeIn('slow');
                 fermentableHtml = "";
@@ -362,8 +389,9 @@
                 fermentableHtml = fermentableHtml +"</select> ";
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
-                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-xs btn-inverse btn-equal row_copy' data-toggle='tooltip' data-placement='top' data-original-title='Copy row'><i class='fa fa-copy'></i></button>";
-                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-xs btn-danger btn-equal row_delete' data-toggle='tooltip' data-placement='top' data-original-title='Delete row'><i class='fa fa-trash-o'></i></button>";
+                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-primary btn-outline row_copy'><i class='fa fa-copy'></i>  복사</button>";
+                fermentableHtml = fermentableHtml +"</td>";
+                fermentableHtml = fermentableHtml +"<td><button type='button' class='btn btn-primary btn-outline row_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"</tr> ";
                 $("#fermantableListTable").append(fermentableHtml);

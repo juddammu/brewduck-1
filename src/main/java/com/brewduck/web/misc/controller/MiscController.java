@@ -100,6 +100,16 @@ public class MiscController {
         return list;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getMiscList", method = RequestMethod.GET)
+    public List<Misc> getHopList(Model model) {
+        Misc misc = new Misc();
+        // 맥주 홉 목록 조회
+        List<Misc> list = miscService.selectMiscList(misc);
+        model.addAttribute("list", list);
+        return list;
+    }
+
       /**
      * <pre>
      * 맥주 기타 재료 상세 조회.

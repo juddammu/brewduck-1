@@ -73,6 +73,16 @@ public class YeastController {
         return list;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getYeastList", method = RequestMethod.GET)
+    public List<Yeast> getHopList(Model model) {
+        Yeast yeast = new Yeast();
+        // 맥주 홉 목록 조회
+        List<Yeast> list = yeastService.selectYeastList(yeast);
+        model.addAttribute("list", list);
+        return list;
+    }
+
     /**
      * <pre>
      * 맥주 이스트 상세 조회.
