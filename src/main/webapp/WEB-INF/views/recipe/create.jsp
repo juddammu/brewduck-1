@@ -220,8 +220,8 @@
         <label class="control-label">발효 재료<small>Fermentables</small></label>
     </div>
     <div class="col-md-10">
-         <select class="form-control select2-list" name="fermentable" id="fermentable" data-placeholder="Select an item">
-         </select>
+        <select class="form-control select2-list" name="fermentable" id="fermentable" data-placeholder="Select an item">
+        </select>
         <table id="fermantableListTable" name="fermantableListTable" class="table table-hover table-striped no-margin">
             <thead>
             <tr>
@@ -236,7 +236,6 @@
             <tbody class="d_tbody">
             </tbody>
         </table>
-
     </div>
 </div>
 <div class="form-group">
@@ -331,9 +330,8 @@
             var miscHtml = "";
             $.get("/misc/getMiscList", function(data, status){
                 $.each(data, function(i){
-                    miscHtml = miscHtml +  "<option VALUE='"+data[i].seq+"'>" + data[i].koreanName + " - " + " ( "+ data[i].typeKorean+ " )- " + data[i].useFor + " </option>";
+                    ("#misc").append("<option VALUE='"+data[i].seq+"'>" + data[i].koreanName + " - " + " ( "+ data[i].typeKorean+ " )- " + data[i].useFor + " </option>");
                 });
-                $("#misc").append(miscHtml);
             })
         }
 
