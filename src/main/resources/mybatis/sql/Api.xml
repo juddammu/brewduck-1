@@ -3,9 +3,11 @@
 <mapper namespace="Api">
 
     <select id="Api.checkAccount" parameterType="Api" resultType="Api">
-        SELECT
-               '1'                   resultCode
-            FROM dual
+       SELECT count(*) resultCode,
+          email
+          FROM brewduckdb.account
+         WHERE email = #{email}
+           and password = #{password}
     </select>
 
 

@@ -3,6 +3,7 @@ package com.brewduck.web.api.controller;
 import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.api.service.ApiService;
 import com.brewduck.web.domain.Account;
+import com.brewduck.web.domain.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,13 +49,29 @@ public class ApiController {
      */
     @RequestMapping(value = "/account/{email}/{password}", method = RequestMethod.GET)
     @ResponseBody
-    public List checkAccount(@PathVariable("email") String email,
+    public Api checkAccount(@PathVariable("email") String email,
                              @PathVariable("password") String password) {
-        /*
-        List<Item> item_list = itemService.selectItemList(paramItem);
-        */
-        List resultList = null;
-        return resultList;
+
+        int resultCode = -1;
+        Api paramApi = new Api();
+        Api resultApi = new Api();
+
+        if(email.length() < 1){
+            resultCode = 0;
+            resultApi.setResultCode(resultCode);
+            return resultApi;
+        }
+
+        if(password.length() < 1){
+            resultCode = 0;
+            return resultApi;
+        }
+
+        paramApi.setEmail(email);
+        paramApi.setPassword(password);
+        resultApi = apiService.checkAccount(paramApi);
+        resultApi.setPassword("****");
+        return resultApi;
     }
 
     /**

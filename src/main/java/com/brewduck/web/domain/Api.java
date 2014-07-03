@@ -11,14 +11,36 @@ public class Api {
 
     private static final long serialVersionUID = 1L;
 
-    //코드
-    private String resultCode;
+    //연동 결과 코드
+    private Integer resultCode;
 
-    public String getResultCode() {
+    //이메일
+    private String email;
+
+    //패스워드
+    private String password;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getResultCode() {
         return resultCode;
     }
 
-    public void setResultCode(String resultCode) {
+    public void setResultCode(Integer resultCode) {
         this.resultCode = resultCode;
     }
 }
