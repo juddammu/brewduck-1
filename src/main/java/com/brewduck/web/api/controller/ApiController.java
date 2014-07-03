@@ -47,10 +47,11 @@ public class ApiController {
      * 성공시 : [{"RESULT":0}]
      * 실패시 : [{"RESULT":1}]
      */
-    @RequestMapping(value = "/account/{email}/{password}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{apiKey}/account/{email}/{password}", method = RequestMethod.GET)
     @ResponseBody
-    public Api checkAccount(@PathVariable("email") String email,
-                             @PathVariable("password") String password) {
+    public Api checkAccount(@PathVariable("apiKey") String apiKey,
+                            @PathVariable("email")  String email,
+                            @PathVariable("password") String password) {
 
         int resultCode = -1;
         Api paramApi = new Api();
