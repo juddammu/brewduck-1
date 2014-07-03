@@ -112,8 +112,11 @@ public class RecipeController {
                        BindingResult result,
                        RedirectAttributes redirectAttributes) {
 
-        LOGGER.warn("File " + file.getOriginalFilename());
-        String fileName = file.getOriginalFilename();
+        String fileName = "";
+        if(file.getSize() > 0){
+            fileName = file.getOriginalFilename();
+        }
+
 
         Account account = AuthenticationUtils.getUser();
 
@@ -123,6 +126,8 @@ public class RecipeController {
         paramRecipe.setBoilTime(60);
         paramRecipe.setInsertId(account.getId() + "");
         paramRecipe.setCoverImageFile(file);
+
+        LOGGER.info("getRecipeFermantableSeq length : {}", paramRecipe.getRecipeFermantableSeq().length);
 
         paramRecipe.setSeq(recipeService.selectRecipeSeq(paramRecipe).getSeq());
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
@@ -139,7 +144,7 @@ public class RecipeController {
             model.addAttribute("resultStyle" , resultStyle);
             model.addAttribute("paramRecipe" , paramRecipe);
 
-            return "recipe/update";
+            return "recipe/create";
         }else{
             return "recipe/create";
         }

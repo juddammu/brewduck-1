@@ -42,7 +42,7 @@
     </select>
 
     <select id="Recipe.selectRecipeSeq" parameterType="Recipe" resultType="Recipe">
-      SELECT MAX(seq) + 1 as seq
+      SELECT IFNULL(MAX(SEQ)+1,1) as seq
         FROM RECIPE
        WHERE brewer =  #{brewer}
     </select>
@@ -212,4 +212,24 @@
            AND name = #{name}
     </update>
 
+    <insert id="Recipe.insertRecipeFermentable" parameterType="Recipe">
+        <!-- 맥주 레시피 저장 -->
+        INSERT INTO brewduckdb.RECIPE_FERMENTABLE(
+        seq
+        ,fermentable_seq
+        ,amount
+        ,fermentable_use
+        ,type
+        ,insert_id
+        ,insert_date
+        ) VALUES (
+        NULL -- seq - IN int(11)
+        ,NULL -- fermentable_seq - IN int(11)
+        ,NULL -- amount - IN double
+        ,NULL -- fermentable_use - IN varchar(10)
+        ,NULL -- type - IN varchar(40)
+        ,#{insertId} -- insert_id - IN varchar(45)
+        ,now() -- insert_date - IN timestamp
+        )
+    </insert>
 </mapper>

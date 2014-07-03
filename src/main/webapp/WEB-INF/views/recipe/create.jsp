@@ -20,7 +20,7 @@
     <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i> 레시피 <strong>컨셉</strong></h4></header>
 </div>
 <div class="box-body no-padding">
-<form class="form-horizontal form-banded form-bordered" action="../../html/forms/components.html" accept-charset="utf-8" method="post">
+<form:form id="insert" class="form-horizontal form-banded form-bordered" onsubmit="return false" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
 <div class="form-group">
     <div class="col-md-2">
         <label class="control-label">이름</label>
@@ -52,7 +52,7 @@
         <label class="control-label">스타일</label>
     </div>
     <div class="col-md-10">
-        <select class="form-control select2-list" data-placeholder="Select an item">
+        <select class="form-control select2-list" id="styleSeq" name="styleSeq" data-placeholder="Select an item">
             <optgroup  label="1. LIGHT LAGER">
                 <option value="14">라이트 미국식 라거</option>
                 <option value="53">스탠다드 미국식 라거</option>
@@ -273,7 +273,10 @@
         <input type="text" value="에일,BJCP,RECIPE" data-role="tagsinput" />
     </div>
 </div>
-</form>
+<div class="box-footer">
+<button class="btn btn-default" id="insertRecipe" name="insertRecipe">다음</button>
+</div>
+</form:form>
 </div><!--end .box-body -->
 </div><!--end .box -->
 </div><!--end .col-lg-12 -->
@@ -287,6 +290,10 @@
 
 <content tag="local_script">
     <script type="text/javascript">
+        $('#insertRecipe').on('click', function () {
+            document.insert.submit();
+        });
+
         function getFermentableList(){
             var fermentableHtml = "";
             $.get("/fermentable/selectFermentableGroupList", function(data, status){
@@ -364,7 +371,7 @@
                 //$add_html = $('.d_tbody tr:last').clone().fadeIn('slow');
                 fermentableHtml = "";
                 fermentableHtml = fermentableHtml +"<tr>";
-                fermentableHtml = fermentableHtml +"<td>1</td>";
+                fermentableHtml = fermentableHtml +"<td>1<input id='recipeFermantableSeq' name ='recipeFermantableSeq' type='text' class='form-control control-width-tiny' value='"+$("#fermentable option:selected").val()+"'></td>";
                 fermentableHtml = fermentableHtml +"<td>"+ $("#fermentable option:selected").text() +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
                 fermentableHtml = fermentableHtml +"<div class='input-group' style='width:115px;'>";

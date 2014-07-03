@@ -49,6 +49,9 @@ public class Recipe implements Serializable {
     private List<Hop> hops;
     // 맥주 맥아(발효) 리스트
     private List<Fermentable> fermentables;
+
+    private String[] recipeFermantableSeq;
+
     // 맥주 레시피 기타 재료
     private List<Misc> miscs;
     // 맥주 효모 리스트
@@ -96,6 +99,13 @@ public class Recipe implements Serializable {
     // 삭제 성공 여부
     private Boolean deleteFlag;
 
+    public String[] getRecipeFermantableSeq() {
+        return recipeFermantableSeq;
+    }
+
+    public void setRecipeFermantableSeq(String[] recipeFermantableSeq) {
+        this.recipeFermantableSeq = recipeFermantableSeq;
+    }
 
     public MultipartFile getCoverImageFile() {
         return coverImageFile;

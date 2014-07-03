@@ -42,10 +42,6 @@ public class RecipeServiceImpl implements RecipeService {
         return recipeDao.selectRecipeList(recipe);
     }
 
-
-
-
-
     @Override
     public Recipe selectRecipeSeq(Recipe recipe) {
         return recipeDao.selectRecipeSeq(recipe);
