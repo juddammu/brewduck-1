@@ -99,21 +99,13 @@ public class ApiController {
 
     @ResponseBody
     @RequestMapping(value = "/account/recipe/{userId}", method = RequestMethod.GET)
-    public String choseRecipeList(Model model, @PathVariable("userId") String userId) throws IOException {
+    public List<Api>  choseRecipeList(Model model, @PathVariable("userId") String userId) throws IOException {
         logger.info("Choose Recipe List");
         Api api = new Api();
-        Account account = new Account();
-        ObjectMapper om = new ObjectMapper();
         api.setInsertId(userId);
-
-
-        // 맥주 레시피 목록 조회
         List<Api> list = apiService.chooseRecipeList(api);
-        String result = om.writeValueAsString(list);
-        logger.info("result: ", result);
-        logger.info("Choose Recipe List Size : {}", list.size());
 
-        return result;
+        return list;
     }
 
     /**
