@@ -31,4 +31,8 @@ public class ApiServiceImpl implements ApiService {
         return apiDao.checkAccount(api);
     }
 
+    @Override
+    public List<Api> chooseRecipeList(Api api) {
+        return apiDao.chooseRecipeList(api);
+    }
 }

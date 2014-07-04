@@ -32,5 +32,10 @@ public class ApiDaoImpl implements ApiDao {
         return sqlSessionTemplate.selectOne("Api.checkAccount", api);
     }
 
+    @Override
+    public List<Api> chooseRecipeList(Api api) {
+        return sqlSessionTemplate.selectList("Api.chooseRecipeList", api);
+    }
+
 
 }

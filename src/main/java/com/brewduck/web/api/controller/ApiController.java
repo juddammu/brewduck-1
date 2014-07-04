@@ -4,6 +4,10 @@ import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.api.service.ApiService;
 import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Api;
+import com.brewduck.web.domain.Recipe;
+import com.brewduck.web.recipe.service.RecipeService;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -34,6 +39,8 @@ public class ApiController {
     @Autowired
     private ApiService apiService;
 
+    @Autowired
+    private RecipeService recipeService;
 
     /**
      * <pre>
@@ -81,7 +88,7 @@ public class ApiController {
      * url : /api/account/recipe/{email}
      * </pre>
      *
-     * @param string email
+     * @param userId
      * @return
      * 성공시 :
      * [{"idx":1,"title":"호가든클론레시피","content":"풍부한 거품과 ....... 추천레시피"},
@@ -89,6 +96,25 @@ public class ApiController {
      * 실패시 :
      * []
      */
+
+    @ResponseBody
+    @RequestMapping(value = "/account/recipe/{userId}", method = RequestMethod.GET)
+    public String choseRecipeList(Model model, @PathVariable("userId") String userId) throws IOException {
+        logger.info("Choose Recipe List");
+        Api api = new Api();
+        Account account = new Account();
+        ObjectMapper om = new ObjectMapper();
+        api.setInsertId(userId);
+
+
+        // 맥주 레시피 목록 조회
+        List<Api> list = apiService.chooseRecipeList(api);
+        String result = om.writeValueAsString(list);
+        logger.info("result: ", result);
+        logger.info("Choose Recipe List Size : {}", list.size());
+
+        return result;
+    }
 
     /**
      * <pre>
