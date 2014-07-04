@@ -22,13 +22,13 @@
     <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i> 레시피 <strong>컨셉</strong></h4></header>
 </div>
 <div class="box-body no-padding">
-<form:form id="insert" class="form-horizontal form-banded form-bordered" onsubmit="return false" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
+<form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" onsubmit="return false" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
 <div class="form-group">
     <div class="col-md-2">
         <label class="control-label">이름</label>
     </div>
     <div class="col-md-10">
-        <input type="text" class="form-control" id="name" name="name" placeholder="레시피 이름을 입력하세요. 예를들면 '유자 페일에일'" >
+        <input type="text" class="form-control" id="name" name="name" placeholder="레시피 이름을 입력하세요. 예를들면 '유자 페일에일'" required>
     </div>
 </div>
 <div class="form-group">
@@ -277,6 +277,10 @@
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="yeast" id="yeast" data-placeholder="Select an item">
+            <option>=== 선택해주세요 ===</option>
+            <c:forEach items="${yeastList}" var="yeastList" varStatus="i">
+                <option value="${yeastList.seq }" title="${yeastList.koreanName }">${yeastList.koreanName } (${yeastList.form})</option>
+            </c:forEach>
         </select>
     </div>
 </div>
@@ -286,6 +290,10 @@
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="misc" id="misc" data-placeholder="Select an item">
+            <option>=== 선택해주세요 ===</option>
+            <c:forEach items="${miscList}" var="miscList" varStatus="i">
+                <option value="${miscList.seq }" title="${miscList.koreanName }">${miscList.koreanName } (${miscList.typeKorean}) - ${miscList.useFor}</option>
+            </c:forEach>
         </select>
     </div>
 </div>
@@ -297,8 +305,9 @@
         <input type="text" value="에일,BJCP,RECIPE" data-role="tagsinput" />
     </div>
 </div>
-<div class="box-footer">
-<button class="btn btn-default" id="insertRecipe" name="insertRecipe">다음</button>
+<div class="form-footer col-md-12 align">
+    <button type="button" class="btn btn-info" id="checkRecipe" name="checkRecipe">정합성 체크</button>
+    <button type="submit" class="btn btn-primary" id="insertRecipe" name="insertRecipe">완료</button>
 </div>
 </form:form>
 </div><!--end .box-body -->
@@ -314,8 +323,91 @@
 
 <content tag="local_script">
     <script type="text/javascript">
+    (function(namespace, $) {
+        "use strict";
+
+        var DemoUIMessages = function() {
+            // Create reference to this instance
+            var o = this;
+            // Initialize app when document is ready
+            $(document).ready(function() {
+                o.initialize();
+            });
+
+        };
+        var p = DemoUIMessages.prototype;
+
+        // =========================================================================
+        // INIT
+        // =========================================================================
+
+        p.initialize = function() {
+            this._enableEvents();
+            this._initToastr();
+        };
+
+        // =========================================================================
+        // EVENTS
+        // =========================================================================
+
+        // events
+        p._enableEvents = function() {
+            var o = this;
+
+            $('#checkRecipe').on('click', function(e) {
+                toastr.info(o.getToastrMessage("정합성 체크 PASS"), o.getToastrTitle("<BR/>스타일 : PASS <BR/> IBU : PASS<BR/> ABV : PASS<BR/> IBU : PASS<BR/> IBU : PASS"));
+            });
+        };
+
+        // handlers
+        p.getToastrMessage = function(e) {
+            return e;
+        };
+        p.getToastrTitle = function(e) {
+            return e;
+        };
+
+        // =========================================================================
+        // TOASTR
+        // =========================================================================
+
+        p._initToastr = function() {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "positionClass": "toast-top-right",
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+
+            $('#toast-info').trigger('click');
+        }
+
+        // =========================================================================
+        namespace.DemoUIMessages = new DemoUIMessages;
+    }(this.boostbox, jQuery)); // pass in (namespace, jQuery):
+
+
+
         $('#insertRecipe').on('click', function () {
-            document.insert.submit();
+            $('#insertRecipe').validate({
+                messages: {
+                    name: "Please enter your firstname"
+                },
+                submitHandler: function (frm) {
+                    document.insert.submit();
+                },
+                success: function (e) {
+                    //
+                }
+            });
         });
 
         function getFermentableList(){
@@ -409,7 +501,7 @@
                 fermentableHtml = fermentableHtml +"</div>";
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
-                fermentableHtml = fermentableHtml +"<select id='recipeFermantableUses' name ='recipeFermantableUses' class='form-control'> ";
+                fermentableHtml = fermentableHtml +"<select id='recipeFermantableUses' name ='recipeFermantableUses' class='form-control' required> ";
                 fermentableHtml = fermentableHtml +"<option value=''>Choose...</option><option value='3'>Boil</option><option value='4'>Late Boil</option><option value='1'>Mash</option><option value='2'>Steep</option> ";
                 fermentableHtml = fermentableHtml +"</select> ";
                 fermentableHtml = fermentableHtml +"</td> ";

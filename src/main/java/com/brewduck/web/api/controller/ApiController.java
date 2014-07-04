@@ -1,13 +1,8 @@
 package com.brewduck.web.api.controller;
 
-import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.api.service.ApiService;
-import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Api;
-import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.recipe.service.RecipeService;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -100,7 +96,7 @@ public class ApiController {
     @ResponseBody
     @RequestMapping(value = "/account/recipe/{userId}", method = RequestMethod.GET)
     public List<Api>  choseRecipeList(Model model, @PathVariable("userId") String userId) throws IOException {
-        logger.info("Choose Recipe List");
+
         Api api = new Api();
         api.setInsertId(userId);
         List<Api> list = apiService.chooseRecipeList(api);

@@ -38,11 +38,13 @@
 <script src="/resources/expert/js/libs/multi-select/jquery.multi-select.js"></script>
 <script src="/resources/expert/js/libs/inputmask/jquery.inputmask.bundle.min.js"></script>
 <script src="/resources/expert/js/libs/moment/moment.min.js"></script>
-<script src="/resources/expert/js/libs/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-<script src="/resources/expert/js/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
 <script src="/resources/expert/js/libs/typeahead/typeahead.min.js"></script>
 <script src="/resources/expert/js/libs/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/resources/expert/js/libs/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="/resources/expert/js/core/demo/DemoFormComponents.js"></script>
+<script src="/resources/expert/js/libs/toastr/toastr.min.js"></script>
+
+
 <script src="/resources/expert/js/core/App.js"></script>
 <script src="/resources/expert/js/core/demo/Demo.js"></script>
 <!-- END JAVASCRIPT -->

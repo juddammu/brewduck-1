@@ -22,6 +22,9 @@
     <link type="text/css" rel="stylesheet" href="/resources/expert/css/theme-default/libs/bootstrap-colorpicker/bootstrap-colorpicker.css?1401216371" />
     <link type="text/css" rel="stylesheet" href="/resources/expert/css/theme-default/libs/bootstrap-tagsinput/bootstrap-tagsinput.css?1401216372" />
     <link type="text/css" rel="stylesheet" href="/resources/expert/css/theme-default/libs/typeahead/typeahead.css?1401216372" />
+
+    <link type="text/css" rel="stylesheet" href="/resources/expert/css/theme-default/libs/toastr/toastr.css?1401216363" />
+
     <!-- END STYLESHEETS -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
