@@ -50,7 +50,23 @@ public class Recipe implements Serializable {
     // 맥주 맥아(발효) 리스트
     private List<Fermentable> fermentables;
 
-    private String[] recipeFermantableSeq;
+    private String[] recipeFermantableSize;
+    //레시피 몰트 구성 일련번호
+    private Integer recipeFermantableSeq;
+    //레시피 몰트 수량
+    private Integer recipeFermantableAmount;
+    //레시피 몰트 사용방법
+    private String recipeFermantableUse;
+
+    private String recipeFermantableType;
+
+    private Integer[] recipeFermantableSeqs;
+    //레시피 몰트 수량
+    private Integer[] recipeFermantableAmounts;
+    //레시피 몰트 사용방법
+    private String[] recipeFermantableUses;
+
+    private String[] recipeFermantableTypes;
 
     // 맥주 레시피 기타 재료
     private List<Misc> miscs;
@@ -99,12 +115,76 @@ public class Recipe implements Serializable {
     // 삭제 성공 여부
     private Boolean deleteFlag;
 
-    public String[] getRecipeFermantableSeq() {
+    public Integer[] getRecipeFermantableSeqs() {
+        return recipeFermantableSeqs;
+    }
+
+    public void setRecipeFermantableSeqs(Integer[] recipeFermantableSeqs) {
+        this.recipeFermantableSeqs = recipeFermantableSeqs;
+    }
+
+    public Integer[] getRecipeFermantableAmounts() {
+        return recipeFermantableAmounts;
+    }
+
+    public void setRecipeFermantableAmounts(Integer[] recipeFermantableAmounts) {
+        this.recipeFermantableAmounts = recipeFermantableAmounts;
+    }
+
+    public String[] getRecipeFermantableUses() {
+        return recipeFermantableUses;
+    }
+
+    public void setRecipeFermantableUses(String[] recipeFermantableUses) {
+        this.recipeFermantableUses = recipeFermantableUses;
+    }
+
+    public String[] getRecipeFermantableTypes() {
+        return recipeFermantableTypes;
+    }
+
+    public void setRecipeFermantableTypes(String[] recipeFermantableTypes) {
+        this.recipeFermantableTypes = recipeFermantableTypes;
+    }
+
+    public String[] getRecipeFermantableSize() {
+        return recipeFermantableSize;
+    }
+
+    public void setRecipeFermantableSize(String[] recipeFermantableSize) {
+        this.recipeFermantableSize = recipeFermantableSize;
+    }
+
+    public Integer getRecipeFermantableSeq() {
         return recipeFermantableSeq;
     }
 
-    public void setRecipeFermantableSeq(String[] recipeFermantableSeq) {
+    public void setRecipeFermantableSeq(Integer recipeFermantableSeq) {
         this.recipeFermantableSeq = recipeFermantableSeq;
+    }
+
+    public Integer getRecipeFermantableAmount() {
+        return recipeFermantableAmount;
+    }
+
+    public void setRecipeFermantableAmount(Integer recipeFermantableAmount) {
+        this.recipeFermantableAmount = recipeFermantableAmount;
+    }
+
+    public String getRecipeFermantableUse() {
+        return recipeFermantableUse;
+    }
+
+    public void setRecipeFermantableUse(String recipeFermantableUse) {
+        this.recipeFermantableUse = recipeFermantableUse;
+    }
+
+    public String getRecipeFermantableType() {
+        return recipeFermantableType;
+    }
+
+    public void setRecipeFermantableType(String recipeFermantableType) {
+        this.recipeFermantableType = recipeFermantableType;
     }
 
     public MultipartFile getCoverImageFile() {

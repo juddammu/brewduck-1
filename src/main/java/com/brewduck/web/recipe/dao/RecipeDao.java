@@ -74,4 +74,6 @@ public interface RecipeDao {
      */
     public Integer deleteRecipe(Recipe recipe);
 
+    public Integer insertRecipeFermentable(Recipe recipe);
+
 }

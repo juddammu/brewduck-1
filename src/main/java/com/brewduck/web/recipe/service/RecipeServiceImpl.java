@@ -94,4 +94,12 @@ public class RecipeServiceImpl implements RecipeService {
 
         return (deleteCount == 1);
     }
+
+    @Override
+    public Boolean insertRecipeFermentable(Recipe recipe) {
+        int insertCount = recipeDao.insertRecipeFermentable(recipe);
+
+        return (insertCount == 1);
+    }
+
 }

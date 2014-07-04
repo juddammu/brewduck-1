@@ -1,13 +1,13 @@
 package com.brewduck.web.recipe.controller;
 
 import com.brewduck.framework.security.AuthenticationUtils;
-import com.brewduck.web.domain.Account;
-import com.brewduck.web.domain.Fermentable;
-import com.brewduck.web.domain.Recipe;
-import com.brewduck.web.domain.Style;
+import com.brewduck.web.domain.*;
 import com.brewduck.web.fermentable.service.FermentableService;
+import com.brewduck.web.hop.service.HopService;
+import com.brewduck.web.misc.service.MiscService;
 import com.brewduck.web.recipe.service.RecipeService;
 import com.brewduck.web.style.service.StyleService;
+import com.brewduck.web.yeast.service.YeastService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +16,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <pre>
@@ -43,6 +47,15 @@ public class RecipeController {
     @Autowired
     private StyleService styleService;
 
+    @Autowired
+    private HopService hopService;
+
+    @Autowired
+    private YeastService yeastService;
+
+    @Autowired
+    private MiscService miscService;
+
     /**
      * <pre>
      * 맥주 레시피 목록 조회.
@@ -51,12 +64,16 @@ public class RecipeController {
      * @return 맥주 레시피 목록
      */
     @RequestMapping(value = "/create", method = RequestMethod.GET)
-    public String create(Model model) {
-        LOGGER.info("Recipe create");
-        Fermentable fermentable = new Fermentable();
+    public String create(Model model, ModelAndView modelAndView) {
+        List<Fermentable> fermentableList = fermentableService.selectFermentableGroupList();
+        List<Hop> hopList = hopService.selectHopList(new Hop());
+        List<Yeast> yeastList = yeastService.selectYeastList(new Yeast());
+        List<Misc> miscList = miscService.selectMiscList(new Misc());
 
-        List<Fermentable> fermentableList = fermentableService.selectFermentableList(fermentable);
         model.addAttribute("fermentableList", fermentableList);
+        model.addAttribute("hopList",   hopList);
+        model.addAttribute("yeastList", yeastList);
+        model.addAttribute("miscList",  miscList);
 
         return "recipe/create";
     }
@@ -127,9 +144,36 @@ public class RecipeController {
         paramRecipe.setInsertId(account.getId() + "");
         paramRecipe.setCoverImageFile(file);
 
-        LOGGER.info("getRecipeFermantableSeq length : {}", paramRecipe.getRecipeFermantableSeq().length);
+        Recipe paramRecipeFermantable = new Recipe();
 
-        paramRecipe.setSeq(recipeService.selectRecipeSeq(paramRecipe).getSeq());
+        LOGGER.info("getRecipeFermantableSeq length : {}", paramRecipe.getRecipeFermantableSeqs().length);
+
+        int fermentableSize = paramRecipe.getRecipeFermantableSeqs().length;
+
+
+        Integer recipeSeq = recipeService.selectRecipeSeq(paramRecipe).getSeq();
+
+        /*
+         #{seq} -- seq - IN int(11)
+        ,#{recipeFermantableSeq} -- fermentable_seq - IN int(11)
+        ,#{recipeFermantableAmount} -- amount - IN double
+        ,#{recipeFermantableUse}   -- fermentable_use - IN varchar(10)
+        ,#{insertId} -- insert_id - IN varchar(45)
+         */
+        if(fermentableSize > 0){
+
+            for(int i=0; i < fermentableSize; i++ ){
+                paramRecipeFermantable.setSeq(recipeSeq);
+                paramRecipeFermantable.setRecipeFermantableSeq(paramRecipe.getRecipeFermantableSeqs()[i]);
+                paramRecipeFermantable.setRecipeFermantableAmount(paramRecipe.getRecipeFermantableAmounts()[i]);
+                paramRecipeFermantable.setRecipeFermantableUse(paramRecipe.getRecipeFermantableUses()[i]);
+                paramRecipeFermantable.setRecipeFermantableType("1");
+                paramRecipeFermantable.setInsertId(account.getId() + "");
+                recipeService.insertRecipeFermentable(paramRecipeFermantable);
+            }
+        }
+
+        paramRecipe.setSeq(recipeSeq);
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
 
         if(insertFlag == true){

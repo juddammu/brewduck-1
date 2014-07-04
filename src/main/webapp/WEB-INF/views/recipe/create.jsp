@@ -6,6 +6,8 @@
     <li><a href="#">홈</a></li>
     <li><a href="#">레시피</a></li>
     <li class="active">레시피 만들기</li>
+
+
 </ol>
 <div class="section-header">
     <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 레시피 만들기</h3>
@@ -221,6 +223,24 @@
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="fermentable" id="fermentable" data-placeholder="Select an item">
+            <option>=== 선택해주세요 ===</option>
+            <c:forEach items="${fermentableList }" var="fermentableList" varStatus="i">
+                <c:choose>
+                    <c:when test="${fermentableList.titleYn == 'Y'}">
+                        <c:choose>
+                            <c:when test="${fermentableList.endTitleYn == 'Y'}">
+                                </optgroup>
+                            </c:when>
+                            <c:otherwise>
+                                <optgroup  label="${fermentableList.name }">
+                            </c:otherwise>
+                        </c:choose>
+                    </c:when>
+                    <c:otherwise>
+                        <option value="${fermentableList.seq }" title="${fermentableList.name }">${fermentableList.name } (${fermentableList.color} °L) - ${fermentableList.originKorean} </option>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
         </select>
         <table id="fermantableListTable" name="fermantableListTable" class="table table-hover table-striped no-margin">
             <thead>
@@ -244,6 +264,10 @@
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="hop" id="hop" data-placeholder="Select an item">
+            <option>=== 선택해주세요 ===</option>
+            <c:forEach items="${hopList}" var="hopList" varStatus="i">
+                <option value="${hopList.seq }" title="${hopList.name }">${hopList.name } (${hopList.alpha} %) - ${hopList.originKorean} </option>
+            </c:forEach>
         </select>
     </div>
 </div>
@@ -336,9 +360,11 @@
         function getMiscList(){
             var miscHtml = "";
             $.get("/misc/getMiscList", function(data, status){
+                /*
                 $.each(data, function(i){
                     ("#misc").append("<option VALUE='"+data[i].seq+"'>" + data[i].koreanName + " - " + " ( "+ data[i].typeKorean+ " )- " + data[i].useFor + " </option>");
                 });
+                */
             })
         }
 
@@ -356,26 +382,20 @@
         function row_copy(obj) {
             $add_html = $(obj).parent().parent().clone().fadeIn('slow');
             $('.d_tbody').append($add_html);
-
         }
-
-
 
         $(document).ready(function() {
             var fermentableHtml = "";
-            getFermentableList();
-            getHopList();
-            getYeastList();
-            getMiscList();
+            //getFermentableList();
             $('#fermentable').change(function(){
                 //$add_html = $('.d_tbody tr:last').clone().fadeIn('slow');
                 fermentableHtml = "";
                 fermentableHtml = fermentableHtml +"<tr>";
-                fermentableHtml = fermentableHtml +"<td>1<input id='recipeFermantableSeq' name ='recipeFermantableSeq' type='text' class='form-control control-width-tiny' value='"+$("#fermentable option:selected").val()+"'></td>";
+                fermentableHtml = fermentableHtml +"<td>1<input id='recipeFermantableSeqs' name ='recipeFermantableSeqs' type='hidden' value='"+$("#fermentable option:selected").val()+"'></td>";
                 fermentableHtml = fermentableHtml +"<td>"+ $("#fermentable option:selected").text() +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
                 fermentableHtml = fermentableHtml +"<div class='input-group' style='width:115px;'>";
-                fermentableHtml = fermentableHtml +"<input id='batchSize' name ='batchSize' type='text' class='form-control control-width-tiny' value='19'> ";
+                fermentableHtml = fermentableHtml +"<input id='recipeFermantableAmounts' name ='recipeFermantableAmounts'  type='text' class='form-control control-width-tiny' value='19'> ";
                 fermentableHtml = fermentableHtml +"<div class='input-group-btn'> ";
                 fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-default' tabindex='-1'>KG</button> ";
                 fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' tabindex='-1'> ";
@@ -389,7 +409,7 @@
                 fermentableHtml = fermentableHtml +"</div>";
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
-                fermentableHtml = fermentableHtml +"<select class='form-control'> ";
+                fermentableHtml = fermentableHtml +"<select id='recipeFermantableUses' name ='recipeFermantableUses' class='form-control'> ";
                 fermentableHtml = fermentableHtml +"<option value=''>Choose...</option><option value='3'>Boil</option><option value='4'>Late Boil</option><option value='1'>Mash</option><option value='2'>Steep</option> ";
                 fermentableHtml = fermentableHtml +"</select> ";
                 fermentableHtml = fermentableHtml +"</td> ";

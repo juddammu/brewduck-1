@@ -59,4 +59,10 @@ public class RecipeDaoImpl implements RecipeDao {
     public Integer deleteRecipe(Recipe recipe) {
         return sqlSession.update("Recipe.deleteRecipe", recipe);
     }
+
+    @Override
+    public Integer insertRecipeFermentable(Recipe recipe) {
+        return sqlSession.update("Recipe.insertRecipeFermentable", recipe);
+    }
+
 }

@@ -238,15 +238,5 @@ public class HopController {
         return returnHop;
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/getHopList", method = RequestMethod.GET)
-    public List<Hop> getHopList(Model model) {
-        Hop hop = new Hop();
-        // 맥주 홉 목록 조회
-        List<Hop> list = hopService.selectHopList(hop);
-        model.addAttribute("list", list);
-
-        return list;
-    }
 }
 
