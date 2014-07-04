@@ -10,5 +10,16 @@
            and password = #{password}
     </select>
 
+    <select id="Api.chooseRecipeList" parameterType="Api" resultType="Api">
+       SELECT
+          B.name      title,
+          B.notes     content
+          FROM RECIPE_READ_USER A,
+          RECIPE B
+         WHERE A.seq = B.seq
+           AND A.insert_id = #{insertId}
+    </select>
+
+
 
 </mapper>
