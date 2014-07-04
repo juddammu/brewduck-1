@@ -67,6 +67,5 @@ public interface RecipeService {
      */
     public Boolean deleteRecipe(Recipe recipe);
 
-    public Boolean insertRecipeFermentable(Recipe recipe);
 
 }

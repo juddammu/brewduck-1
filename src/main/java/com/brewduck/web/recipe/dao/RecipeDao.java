@@ -34,6 +34,7 @@ public interface RecipeDao {
      */
     public Recipe selectRecipeDetail(Recipe recipe);
 
+
     /**
      * <pre>
      * 맥주 레시피 ID 생성

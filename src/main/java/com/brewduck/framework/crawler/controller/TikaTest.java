@@ -1,3 +1,4 @@
+/*
 package com.brewduck.framework.crawler.controller;
 
 import java.io.FileNotFoundException;
@@ -14,10 +15,12 @@ import org.apache.tika.sax.TeeContentHandler;
 import org.apache.tika.sax.ToHTMLContentHandler;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
+*/
 /**
  *
  * @author revfactory
- */
+ *//*
+
 public class TikaTest {
     public static void main(String[] args) throws FileNotFoundException, SAXException, IOException, TikaException {
         URL url = new URL("http://www.naver.com/");
@@ -35,4 +38,4 @@ public class TikaTest {
         //System.out.println("text:\n" + textHandler.toString());
         //System.out.println("html:\n" + toHTMLHandler.toString());
     }
-}
+}*/

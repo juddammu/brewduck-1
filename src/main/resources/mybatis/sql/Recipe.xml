@@ -68,6 +68,7 @@
         </if>
     </select>
 
+
     <insert id="Recipe.insertRecipe" parameterType="Recipe">
         <!-- 맥주 레시피 저장 -->
         INSERT INTO brewduckdb.RECIPE (
