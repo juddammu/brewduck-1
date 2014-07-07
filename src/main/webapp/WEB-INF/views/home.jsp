@@ -582,19 +582,23 @@
 
         <div class="col-sm-12 col-md-6">
             <div class="title-box">
-                <a href="#" class="btn btn-default">전체 읽기 <i class="icon-arrow-right icon-white"></i></a>
+                <a href="/board/freeBoard" class="btn btn-default">전체 읽기 <i class="icon-arrow-right icon-white"></i></a>
                 <h2 class="title">최신 글 목록</h2>
             </div>
-            <ul class="latest-posts">
+            <table class="table">
+                <tbody id="result">
+                </tbody>
+            </table>
+            <%--<ul class="latest-posts">
                 <li>
                     <img class="image img-circle" src="http://template.progressive.itembridge.com/2.1.8/img/content/product-1.png" alt="" title="" width="84" height="84" data-appear-animation="rotateIn">
                     <div class="meta">
-                        <span>Mike Example</span>,
-                        <span class="time">03.11.2013, 10:45:</span>
+                        <span>${newPost.insertId}</span>,
+                        <span class="time">${newPost.insertDate}</span>
                     </div>
                     <div class="description">
                         <a href="#">
-                            Suspendisse at placerat turpis. Duis luctus erat vel magna pharetra aliquet. Maecenas tincidunt feugiat ultricies. Phasellus et dui risus.
+                            ${newPost.nttCn}
                         </a>
                     </div>
                 </li>
@@ -622,7 +626,7 @@
                         </a>
                     </div>
                 </li>
-            </ul>
+            </ul>--%>
         </div>
     </div>
 </div>
@@ -778,3 +782,19 @@
 
 </body>
 </html>
+
+<content tag="local_script">
+    <script>
+
+        function getNewPost(){
+            $("#result").load("/common/list");
+        }
+
+        $(document).ready(function() {
+
+            getNewPost();
+
+        });
+
+    </script>
+</content>

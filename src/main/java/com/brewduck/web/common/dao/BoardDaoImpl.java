@@ -78,4 +78,9 @@ public class BoardDaoImpl implements BoardDao {
         return sqlSessionTemplate.update("Common.deleteBoardArticle", board);
     }
 
+    @Override
+    public List<Board> getNewPost(Board board) {
+        return sqlSessionTemplate.selectList("Common.getNewPost", board);
+    }
+
 }

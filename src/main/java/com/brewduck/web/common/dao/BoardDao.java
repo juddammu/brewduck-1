@@ -40,4 +40,6 @@ public interface BoardDao {
 
     public Board editBoard(Board board);
 
+    public List<Board> getNewPost(Board board);
+
 }

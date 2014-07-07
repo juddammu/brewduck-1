@@ -332,4 +332,16 @@
          ]]>
     </update>
 
+    <select id="getNewPost" resultType="Board">
+        SELECT
+        NTT_ID      nttId,
+        NTT_CN      nttCn,
+        INSERT_ID   insertId,
+        INSERT_DATE insertDate
+        from BOARD
+        order by INSERT_DATE
+        DESC limit 4;
+
+    </select>
+
 </mapper>

@@ -2,8 +2,10 @@ package com.brewduck.web.home;
 
 import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.account.service.AccountService;
+import com.brewduck.web.common.service.BoardService;
 import com.brewduck.web.common.service.CommonService;
 import com.brewduck.web.domain.Account;
+import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.Hop;
 import com.brewduck.web.hop.service.HopService;
 import com.brewduck.web.user.service.UserService;
@@ -13,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -42,6 +45,9 @@ public class HomeController {
 
     @Autowired
     private MessageSource messageSource; //다국어
+
+    @Autowired
+    private BoardService boardService;
 
     /**
      * 회원 가입 페이지
@@ -104,5 +110,16 @@ public class HomeController {
         model.addAttribute("account", account);
 
         return "write";
+    }
+
+    @RequestMapping(value = "/common/list", method = RequestMethod.GET)
+    public List<Board> getNewPost(Model model, Board paramBoard) {
+        logger.info("New Post List");
+        Board board = new Board();
+        List<Board> list = boardService.getNewPost(board);
+        logger.info("New Post List Size:", list.size());
+        model.addAttribute("list", list);
+
+        return list;
     }
 }

@@ -62,6 +62,7 @@
         <pattern>/misc/list/</pattern>
         <pattern>/misc/list/*</pattern>
         <pattern>/board/freeBoard/list/</pattern>
+        <pattern>/common/list</pattern>
     </decorator>
     <!--
 <decorator name="default" page="default.jsp">

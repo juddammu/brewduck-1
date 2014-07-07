@@ -98,4 +98,9 @@ public class BoardServiceImpl implements BoardService {
         return deleteCount;
     }
 
+    @Override
+    public List<Board> getNewPost(Board board) {
+        return boardDao.getNewPost(board);
+    }
+
 }
