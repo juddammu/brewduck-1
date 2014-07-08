@@ -790,6 +790,7 @@
             $("#result").load("/common/list");
         }
 
+
         $(document).ready(function() {
 
             getNewPost();

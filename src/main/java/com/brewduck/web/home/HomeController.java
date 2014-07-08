@@ -120,6 +120,7 @@ public class HomeController {
         logger.info("New Post List Size:", list.size());
         model.addAttribute("list", list);
 
+
         return list;
     }
 }
