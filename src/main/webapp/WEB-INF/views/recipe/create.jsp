@@ -253,7 +253,7 @@
                 <th style="width:90px">삭제</th>
             </tr>
             </thead>
-            <tbody class="d_tbody">
+            <tbody class="d_fermentable_tbody">
             </tbody>
         </table>
     </div>
@@ -269,6 +269,22 @@
                 <option value="${hopList.seq }" title="${hopList.name }">${hopList.name } (${hopList.alpha} %) - ${hopList.originKorean} </option>
             </c:forEach>
         </select>
+        <table id="hopListTable" name="hopListTable" class="table table-hover table-striped no-margin">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>재료명</th>
+                <th>용량(g)</th>
+                <th>시간</th>
+                <th>용도</th>
+                <th>형태</th>
+                <th style="width:90px">복사</th>
+                <th style="width:90px">삭제</th>
+            </tr>
+            </thead>
+            <tbody class="d_hop_tbody">
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="form-group">
@@ -450,25 +466,77 @@
             })
         }
 
-        $("#fermantableListTable").on('click', '.row_delete', function () {
-            row_delete($(this));
+        $("#fermantableListTable").on('click', '.row_fermantable_delete', function () {
+            row_fermantable_delete($(this));
         });
-        $("#fermantableListTable").on('click', '.row_copy', function () {
-            row_copy($(this));
+        $("#fermantableListTable").on('click', '.row_fermantable_copy', function () {
+            row_fermantable_copy($(this));
+        });
+        $("#hopListTable").on('click', '.row_hop_delete', function () {
+            row_hop_delete($(this));
+        });
+        $("#hopListTable").on('click', '.row_hop_copy', function () {
+            row_hop_copy($(this));
         });
         //삭제함수
-        function row_delete(obj) {
+        function row_fermantable_delete(obj) {
             $(obj).parent().parent().remove().fadeOut('slow');
         }
 
-        function row_copy(obj) {
+        function row_fermantable_copy(obj) {
             $add_html = $(obj).parent().parent().clone().fadeIn('slow');
-            $('.d_tbody').append($add_html);
+            $('.d_fermentable_tbody').append($add_html);
+        }
+
+        function row_hop_copy(obj) {
+            $add_html2 = $(obj).parent().parent().clone().fadeIn('slow');
+            $('.d_hop_tbody').append($add_html2);
+        }
+
+        function row_hop_delete(obj) {
+            $(obj).parent().parent().remove().fadeOut('slow');
         }
 
         $(document).ready(function() {
             var fermentableHtml = "";
+            var hopHtml = "";
             //getFermentableList();
+            $('#hop').change(function(){
+                hopHtml = "";
+                hopHtml = hopHtml +"<tr>";
+                hopHtml = hopHtml +"<td>1<input id='recipeHopSeqs' name ='recipeHopSeqs' type='hidden' value='"+$("#hop option:selected").val()+"'></td>";
+                hopHtml = hopHtml +"<td>"+ $("#hop option:selected").text() +"</td> ";
+                hopHtml = hopHtml +"<td>";
+                hopHtml = hopHtml +"<div class='input-group' style='width:115px;'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control'>";
+                hopHtml = hopHtml +"<span class='input-group-addon'>g</span>";
+                hopHtml = hopHtml +"</div>";
+                hopHtml = hopHtml +"</td> ";
+                hopHtml = hopHtml +"<td>";
+                hopHtml = hopHtml +"<div class='input-group' style='width:115px;'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control'>";
+                hopHtml = hopHtml +"<span class='input-group-addon'>분</span>";
+                hopHtml = hopHtml +"</div>";
+                hopHtml = hopHtml +"</td> ";
+                hopHtml = hopHtml +"<td>";
+                hopHtml = hopHtml +"<select id='recipeHopUses' name ='recipeHopUses' class='form-control' required> ";
+                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>Boil</option><option value='5'>Dry Hop</option><option value='2'>First Wort</option><option value='1'>Mash</option><option value='6'>Whirlpool</option>";
+                hopHtml = hopHtml +"</select> ";
+                hopHtml = hopHtml +"</td> ";
+                hopHtml = hopHtml +"<td>";
+                hopHtml = hopHtml +"<select id='recipeFermantableUses' name ='recipeFermantableUses' class='form-control' required> ";
+                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>Leaf</option><option value='4'>Pellet</option><option value='1'>Plug</option>";
+                hopHtml = hopHtml +"</select> ";
+                hopHtml = hopHtml +"</td> ";
+                hopHtml = hopHtml +"<td>";
+                hopHtml = hopHtml +"<button type='button' class='btn btn-primary btn-outline row_hop_copy'><i class='fa fa-copy'></i>  복사</button>";
+                hopHtml = hopHtml +"</td>";
+                hopHtml = hopHtml +"<td><button type='button' class='btn btn-primary btn-outline row_hop_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+                hopHtml = hopHtml +"</td> ";
+                hopHtml = hopHtml +"</tr> ";
+                $("#hopListTable").append(hopHtml);
+            });
+
             $('#fermentable').change(function(){
                 //$add_html = $('.d_tbody tr:last').clone().fadeIn('slow');
                 fermentableHtml = "";
@@ -496,13 +564,16 @@
                 fermentableHtml = fermentableHtml +"</select> ";
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
-                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-primary btn-outline row_copy'><i class='fa fa-copy'></i>  복사</button>";
+                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-primary btn-outline row_fermantable_copy'><i class='fa fa-copy'></i>  복사</button>";
                 fermentableHtml = fermentableHtml +"</td>";
-                fermentableHtml = fermentableHtml +"<td><button type='button' class='btn btn-primary btn-outline row_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+                fermentableHtml = fermentableHtml +"<td><button type='button' class='btn btn-primary btn-outline row_fermantable_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"</tr> ";
                 $("#fermantableListTable").append(fermentableHtml);
             });
+
+
+
         });
     </script>
 </content>

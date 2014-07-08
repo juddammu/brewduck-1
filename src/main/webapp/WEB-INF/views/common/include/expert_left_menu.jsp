@@ -26,8 +26,8 @@
         <ul class="main-menu">
             <!-- Menu Dashboard -->
             <li>
-                <a href="../../html/dashboards/dashboard.html" >
-                    <i class="fa fa-home fa-fw"></i><span class="title">Dashboard</span>
+                <a href="#" >
+                    <i class="fa fa-home fa-fw"></i><span class="title">대쉬보드</span>
                 </a>
             </li><!--end /menu-item -->
             <!-- Menu UI -->
@@ -45,6 +45,26 @@
                 </ul><!--end /submenu -->
             </li><!--end /menu-item -->
             <!-- Menu Levels -->
+            <li>
+                <a href="/recipe/create" >
+                    <i class="fa fa-pencil fa-fw"></i><span class="title">레시피 만들기</span>
+                </a>
+            </li><!--end /menu-item -->
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="fa fa-puzzle-piece fa-fw"></i><span class="title">계산기</span> <span class="expand-sign">+</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="#" >Mash Water Calculator</a></li>
+                    <li><a href="#" >Mash Infusion Calculator</a></li>
+                    <li><a href="#" >Alcohol Calculator <span class="item-new">Hot</span></a></li>
+                    <li><a href="#" >Color Converter</a></li>
+                    <li><a href="#" >Malt Potential Extract Calculator</a></li>
+                    <li><a href="#" >Hydrometer Temperature Correction</a></li>
+                    <li><a href="#" >Pitch Rate Calculator</a></li>
+                </ul><!--end /submenu -->
+            </li><!--end /menu-item -->
         </ul><!--end .main-menu -->
         <!-- END MAIN MENU -->
 

@@ -163,16 +163,6 @@ public class RecipeController {
 
         if(hopSize > 0){
             for(int i=0; i < hopSize; i++ ){
-                /*
-                #{recipeSeq} -- seq - IN int(11)
-                ,#{recipeHopSeq} -- fermentable_seq - IN int(11)
-                ,#{recipeHopAmount} -- amount - IN double
-                ,#{recipeHopUse}   -- fermentable_use - IN varchar(10)
-                ,#{recipeHopTime}   -- fermentable_use - IN varchar(10)
-                ,#{recipeHopForm}   -- fermentable_use - IN varchar(10)
-                ,#{insertId} -- insert_id - IN varchar(45)
-                ,now() -- insert_date - IN timestamp
-                 */
                 paramRecipeHop.setRecipeSeq(recipeSeq);
                 paramRecipeHop.setRecipeHopSeq(paramRecipe.getRecipeHopSeqs()[i]);
                 paramRecipeHop.setRecipeHopAmount(paramRecipe.getRecipeHopAmounts()[i]);

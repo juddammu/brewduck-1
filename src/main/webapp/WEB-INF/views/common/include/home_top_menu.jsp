@@ -10,18 +10,15 @@
         <div class="contact-box pull-left">
             <div class="email pull-left">
                 <i class="fa fa-envelope"></i>
-                Email: frank.lim@brewduck.com
+                사이트를 만들고 있습니다. 가입하지 말아주세요.
             </div>
         </div>
 
         <div class="pull-right">
             <div class="social">
-                <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="#"></a>
-                <a class="sbtnf sbtnf-rounded color color-hover icon-twitter" href="#"></a>
-                <a class="sbtnf sbtnf-rounded color color-hover icon-gplus" href="#"></a>
-                <a class="sbtnf sbtnf-rounded color color-hover icon-linkedin" href="#"></a>
+                <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="https://www.facebook.com/brewduck"></a>
             </div>
-            <a href="#" class="btn btn-primary">레시피 만들기</a>
+            <a href="#" class="btn btn-primary">맥Duck 모드</a>
         </div>
 
         <div class="clearfix"></div>
@@ -166,79 +163,11 @@
                 <li>
                     <a href="/recipe/create">레시피 만들기 </a>
                 </li>
-                <li class="parent">
+                <li>
                     <a href="shop.html">가이드</a>
-                    <ul class="sub">
-                        <li><a href="#">Catalog (Grid)</a></li>
-                    </ul>
                 </li>
                 <li class="parent megamenu promo">
                     <a href="/board/freeBoard">커뮤니티</a>
-                    <ul class="sub">
-                        <li class="sub-wrapper">
-                            <div class="sub-list">
-                                <div class="box closed">
-                                    <h6 class="title">Savant Apple Integration</h6>
-                                    <ul>
-                                        <li><a href="#">iPad, iPod touch, iPhone &amp; Mac Control</a></li>
-                                        <li><a href="#">iPod touch Remote Control</a></li>
-                                        <li><a href="#">Savant Host (Mac Mini) <span class="item-new bg-warning">Wow</span></a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Audio/Video Control</h6>
-                                    <ul>
-                                        <li><a href="#">Distributed Audio &amp; Video</a></li>
-                                        <li><a href="#">Matrix Switchers</a></li>
-                                        <li><a href="#">Audio/Video Processing</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Display Solutions</h6>
-                                    <ul>
-                                        <li><a href="#">Video Tiling <span class="item-new">New</span></a></li>
-                                        <li><a href="#">On-Screen Display</a></li>
-                                        <li><a href="#">Digital Messaging</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Sound</h6>
-                                    <ul>
-                                        <li><a href="#">Distributed Audio Controller</a></li>
-                                        <li><a href="#">Multi-channel Amplifiers <span class="item-new">New</span></a></li>
-                                        <li><a href="#">Architectural Speakers</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Display Solutions</h6>
-                                    <ul>
-                                        <li><a href="#">Video Tiling <span class="item-new bg-success">Coming Soon</span></a></li>
-                                        <li><a href="#">On-Screen Display</a></li>
-                                        <li><a href="#">Digital Messaging</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">Savant Sound</h6>
-                                    <ul>
-                                        <li><a href="#">Distributed Audio Controller</a></li>
-                                        <li><a href="#">Multi-channel Amplifiers</a></li>
-                                        <li><a href="#">Architectural Speakers <span class="item-new">New</span></a></li>
-                                    </ul>
-                                </div><!-- .box -->
-                            </div><!-- .sub-list -->
-
-                            <div class="promo-block">
-                                <a href="#">
-                                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/megamenu-big.png" width="253" height="457" alt="">
-                                </a>
-                            </div><!-- .promo-block -->
-                        </li>
-                    </ul><!-- .sub -->
                 </li>
             </ul>
         </nav>
