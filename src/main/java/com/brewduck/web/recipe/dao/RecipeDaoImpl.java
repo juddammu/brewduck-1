@@ -62,7 +62,21 @@ public class RecipeDaoImpl implements RecipeDao {
 
     @Override
     public Integer insertRecipeFermentable(Recipe recipe) {
-        return sqlSession.update("Recipe.insertRecipeFermentable", recipe);
+        return sqlSession.insert("Recipe.insertRecipeFermentable", recipe);
     }
 
+    @Override
+    public Integer insertRecipeHop(Recipe recipe) {
+        return sqlSession.insert("Recipe.insertRecipeHop", recipe);
+    }
+
+    @Override
+    public Integer insertRecipeYeast(Recipe recipe) {
+        return sqlSession.insert("Recipe.insertRecipeYeast", recipe);
+    }
+
+    @Override
+    public Integer insertRecipeMisc(Recipe recipe) {
+        return sqlSession.insert("Recipe.insertRecipeMisc", recipe);
+    }
 }

@@ -77,4 +77,10 @@ public interface RecipeDao {
 
     public Integer insertRecipeFermentable(Recipe recipe);
 
+    public Integer insertRecipeHop(Recipe recipe);
+
+    public Integer insertRecipeYeast(Recipe recipe);
+
+    public Integer insertRecipeMisc(Recipe recipe);
+
 }

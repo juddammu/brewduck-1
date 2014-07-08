@@ -397,17 +397,7 @@
 
 
         $('#insertRecipe').on('click', function () {
-            $('#insertRecipe').validate({
-                messages: {
-                    name: "Please enter your firstname"
-                },
-                submitHandler: function (frm) {
-                    document.insert.submit();
-                },
-                success: function (e) {
-                    //
-                }
-            });
+            document.insert.submit();
         });
 
         function getFermentableList(){

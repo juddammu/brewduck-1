@@ -216,7 +216,69 @@
 
     <insert id="Recipe.insertRecipeFermentable" parameterType="Recipe">
         INSERT INTO brewduckdb.RECIPE_FERMENTABLE (
-            seq
+            recipe_seq
+            ,fermentable_seq
+            ,amount
+            ,fermentable_use
+            ,type
+            ,insert_id
+            ,insert_date
+        ) VALUES (
+             #{recipeSeq} -- seq - IN int(11)
+            ,#{recipeFermantableSeq} -- fermentable_seq - IN int(11)
+            ,#{recipeFermantableAmount} -- amount - IN double
+            ,#{recipeFermantableUse}   -- fermentable_use - IN varchar(10)
+            ,#{recipeFermantableType}   -- fermentable_use - IN varchar(10)
+            ,#{insertId} -- insert_id - IN varchar(45)
+            ,now() -- insert_date - IN timestamp
+        )
+    </insert>
+
+    <insert id="Recipe.insertRecipeHop" parameterType="Recipe">
+        INSERT INTO brewduckdb.RECIPE_HOP (
+             recipe_seq
+            ,hops_seq
+            ,amount
+            ,hops_use
+            ,time
+            ,form
+            ,insert_id
+            ,insert_date
+        ) VALUES (
+             #{recipeSeq} -- seq - IN int(11)
+            ,#{recipeHopSeq} -- fermentable_seq - IN int(11)
+            ,#{recipeHopAmount} -- amount - IN double
+            ,#{recipeHopUse}   -- fermentable_use - IN varchar(10)
+            ,#{recipeHopTime}   -- fermentable_use - IN varchar(10)
+            ,#{recipeHopForm}   -- fermentable_use - IN varchar(10)
+            ,#{insertId} -- insert_id - IN varchar(45)
+            ,now() -- insert_date - IN timestamp
+        )
+    </insert>
+
+    <insert id="Recipe.insertRecipeYeast" parameterType="Recipe">
+        INSERT INTO brewduckdb.RECIPE_FERMENTABLE (
+            recipe_seq
+            ,fermentable_seq
+            ,amount
+            ,fermentable_use
+            ,type
+            ,insert_id
+            ,insert_date
+        ) VALUES (
+             #{recipeSeq} -- seq - IN int(11)
+            ,#{recipeFermantableSeq} -- fermentable_seq - IN int(11)
+            ,#{recipeFermantableAmount} -- amount - IN double
+            ,#{recipeFermantableUse}   -- fermentable_use - IN varchar(10)
+            ,#{recipeFermantableType}   -- fermentable_use - IN varchar(10)
+            ,#{insertId} -- insert_id - IN varchar(45)
+            ,now() -- insert_date - IN timestamp
+        )
+    </insert>
+
+    <insert id="Recipe.insertRecipeMisc" parameterType="Recipe">
+        INSERT INTO brewduckdb.RECIPE_FERMENTABLE (
+             recipe_seq
             ,fermentable_seq
             ,amount
             ,fermentable_use

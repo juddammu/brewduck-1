@@ -129,11 +129,9 @@ public class RecipeController {
                        BindingResult result,
                        RedirectAttributes redirectAttributes) {
 
-        String fileName = "";
         if(file.getSize() > 0){
-            fileName = file.getOriginalFilename();
+            String fileName = file.getOriginalFilename();
         }
-
 
         Account account = AuthenticationUtils.getUser();
 
@@ -145,31 +143,44 @@ public class RecipeController {
         paramRecipe.setCoverImageFile(file);
 
         Recipe paramRecipeFermantable = new Recipe();
-
-        LOGGER.info("getRecipeFermantableSeq length : {}", paramRecipe.getRecipeFermantableSeqs().length);
-
+        Recipe paramRecipeHop = new Recipe();
         int fermentableSize = paramRecipe.getRecipeFermantableSeqs().length;
-
+        int hopSize = paramRecipe.getRecipeHopSeqs().length;
 
         Integer recipeSeq = recipeService.selectRecipeSeq(paramRecipe).getSeq();
 
-        /*
-         #{seq} -- seq - IN int(11)
-        ,#{recipeFermantableSeq} -- fermentable_seq - IN int(11)
-        ,#{recipeFermantableAmount} -- amount - IN double
-        ,#{recipeFermantableUse}   -- fermentable_use - IN varchar(10)
-        ,#{insertId} -- insert_id - IN varchar(45)
-         */
         if(fermentableSize > 0){
-
             for(int i=0; i < fermentableSize; i++ ){
-                paramRecipeFermantable.setSeq(recipeSeq);
+                paramRecipeFermantable.setRecipeSeq(recipeSeq);
                 paramRecipeFermantable.setRecipeFermantableSeq(paramRecipe.getRecipeFermantableSeqs()[i]);
                 paramRecipeFermantable.setRecipeFermantableAmount(paramRecipe.getRecipeFermantableAmounts()[i]);
                 paramRecipeFermantable.setRecipeFermantableUse(paramRecipe.getRecipeFermantableUses()[i]);
                 paramRecipeFermantable.setRecipeFermantableType("1");
                 paramRecipeFermantable.setInsertId(account.getId() + "");
                 recipeService.insertRecipeFermentable(paramRecipeFermantable);
+            }
+        }
+
+        if(hopSize > 0){
+            for(int i=0; i < hopSize; i++ ){
+                /*
+                #{recipeSeq} -- seq - IN int(11)
+                ,#{recipeHopSeq} -- fermentable_seq - IN int(11)
+                ,#{recipeHopAmount} -- amount - IN double
+                ,#{recipeHopUse}   -- fermentable_use - IN varchar(10)
+                ,#{recipeHopTime}   -- fermentable_use - IN varchar(10)
+                ,#{recipeHopForm}   -- fermentable_use - IN varchar(10)
+                ,#{insertId} -- insert_id - IN varchar(45)
+                ,now() -- insert_date - IN timestamp
+                 */
+                paramRecipeHop.setRecipeSeq(recipeSeq);
+                paramRecipeHop.setRecipeHopSeq(paramRecipe.getRecipeHopSeqs()[i]);
+                paramRecipeHop.setRecipeHopAmount(paramRecipe.getRecipeHopAmounts()[i]);
+                paramRecipeHop.setRecipeHopUse(paramRecipe.getRecipeHopUses()[i]);
+                paramRecipeHop.setRecipeHopTime(paramRecipe.getRecipeHopTimes()[i]);
+                paramRecipeHop.setRecipeHopForm(paramRecipe.getRecipeHopForms()[i]);
+                paramRecipeHop.setInsertId(account.getId() + "");
+                recipeService.insertRecipeHop(paramRecipeHop);
             }
         }
 

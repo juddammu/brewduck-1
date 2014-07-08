@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -95,11 +96,31 @@ public class RecipeServiceImpl implements RecipeService {
         return (deleteCount == 1);
     }
 
+    @Transactional
     @Override
-    public Boolean insertRecipeFermentable(Recipe recipe) {
-        int insertCount = recipeDao.insertRecipeFermentable(recipe);
-
-        return (insertCount == 1);
+    public int insertRecipeFermentable(Recipe recipe) {
+        return recipeDao.insertRecipeFermentable(recipe);
     }
+
+    @Transactional
+    @Override
+    public int insertRecipeHop(Recipe recipe) {
+        return recipeDao.insertRecipeHop(recipe);
+    }
+
+
+    @Transactional
+    @Override
+    public int insertRecipeYeast(Recipe recipe) {
+        return recipeDao.insertRecipeYeast(recipe);
+    }
+
+
+    @Transactional
+    @Override
+    public int insertRecipeMisc(Recipe recipe) {
+        return recipeDao.insertRecipeMisc(recipe);
+    }
+
 
 }

@@ -23,6 +23,8 @@ public class Recipe implements Serializable {
     private MultipartFile coverImageFile;
     // 레시피 순번
     private Integer seq;
+
+    private Integer recipeSeq;
     // 레시피 한글명
     private String name;
     // 레시피 버전
@@ -45,19 +47,15 @@ public class Recipe implements Serializable {
     private Integer boilTime;
     // 레시피 수율
     private Integer efficiency;
-    // 맥주 홉 리스트
-    private List<Hop> hops;
     // 맥주 맥아(발효) 리스트
     private List<Fermentable> fermentables;
-
-    private String[] recipeFermantableSize;
     //레시피 몰트 구성 일련번호
     private Integer recipeFermantableSeq;
     //레시피 몰트 수량
     private Integer recipeFermantableAmount;
     //레시피 몰트 사용방법
     private String recipeFermantableUse;
-
+    //발효재료 타입
     private String recipeFermantableType;
 
     private Integer[] recipeFermantableSeqs;
@@ -67,6 +65,29 @@ public class Recipe implements Serializable {
     private String[] recipeFermantableUses;
 
     private String[] recipeFermantableTypes;
+
+    //맥주 홉
+    private List<Hop> hops;
+    //홉 일련번호
+    private Integer recipeHopSeq;
+    //홉 수량
+    private Integer recipeHopAmount;
+    //홉 사용용도
+    private String recipeHopUse;
+    //
+    private Integer recipeHopTime;
+    //홉 형태
+    private String recipeHopForm;
+
+    private Integer[] recipeHopSeqs;
+    //홉 수량
+    private Integer[] recipeHopAmounts;
+    //홉 사용용도
+    private String[] recipeHopUses;
+    //
+    private Integer[] recipeHopTimes;
+    //홉 형태
+    private String[] recipeHopForms;
 
     // 맥주 레시피 기타 재료
     private List<Misc> miscs;
@@ -115,6 +136,94 @@ public class Recipe implements Serializable {
     // 삭제 성공 여부
     private Boolean deleteFlag;
 
+    public Integer getRecipeHopSeq() {
+        return recipeHopSeq;
+    }
+
+    public void setRecipeHopSeq(Integer recipeHopSeq) {
+        this.recipeHopSeq = recipeHopSeq;
+    }
+
+    public Integer getRecipeHopAmount() {
+        return recipeHopAmount;
+    }
+
+    public void setRecipeHopAmount(Integer recipeHopAmount) {
+        this.recipeHopAmount = recipeHopAmount;
+    }
+
+    public String getRecipeHopUse() {
+        return recipeHopUse;
+    }
+
+    public void setRecipeHopUse(String recipeHopUse) {
+        this.recipeHopUse = recipeHopUse;
+    }
+
+    public Integer getRecipeHopTime() {
+        return recipeHopTime;
+    }
+
+    public void setRecipeHopTime(Integer recipeHopTime) {
+        this.recipeHopTime = recipeHopTime;
+    }
+
+    public String getRecipeHopForm() {
+        return recipeHopForm;
+    }
+
+    public void setRecipeHopForm(String recipeHopForm) {
+        this.recipeHopForm = recipeHopForm;
+    }
+
+    public Integer[] getRecipeHopSeqs() {
+        return recipeHopSeqs;
+    }
+
+    public void setRecipeHopSeqs(Integer[] recipeHopSeqs) {
+        this.recipeHopSeqs = recipeHopSeqs;
+    }
+
+    public Integer[] getRecipeHopAmounts() {
+        return recipeHopAmounts;
+    }
+
+    public void setRecipeHopAmounts(Integer[] recipeHopAmounts) {
+        this.recipeHopAmounts = recipeHopAmounts;
+    }
+
+    public String[] getRecipeHopUses() {
+        return recipeHopUses;
+    }
+
+    public void setRecipeHopUses(String[] recipeHopUses) {
+        this.recipeHopUses = recipeHopUses;
+    }
+
+    public Integer[] getRecipeHopTimes() {
+        return recipeHopTimes;
+    }
+
+    public void setRecipeHopTimes(Integer[] recipeHopTimes) {
+        this.recipeHopTimes = recipeHopTimes;
+    }
+
+    public String[] getRecipeHopForms() {
+        return recipeHopForms;
+    }
+
+    public void setRecipeHopForms(String[] recipeHopForms) {
+        this.recipeHopForms = recipeHopForms;
+    }
+
+    public Integer getRecipeSeq() {
+        return recipeSeq;
+    }
+
+    public void setRecipeSeq(Integer recipeSeq) {
+        this.recipeSeq = recipeSeq;
+    }
+
     public Integer[] getRecipeFermantableSeqs() {
         return recipeFermantableSeqs;
     }
@@ -145,14 +254,6 @@ public class Recipe implements Serializable {
 
     public void setRecipeFermantableTypes(String[] recipeFermantableTypes) {
         this.recipeFermantableTypes = recipeFermantableTypes;
-    }
-
-    public String[] getRecipeFermantableSize() {
-        return recipeFermantableSize;
-    }
-
-    public void setRecipeFermantableSize(String[] recipeFermantableSize) {
-        this.recipeFermantableSize = recipeFermantableSize;
     }
 
     public Integer getRecipeFermantableSeq() {
