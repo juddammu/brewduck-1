@@ -63,13 +63,15 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="input-group">
-                                        <button id="usButton" type="button" class="btn btn-white btn-xs btn-mini" value="US"> </button>
-                                        <button id="deButton" type="button" class="btn btn-white btn-xs btn-mini" value="DE"> </button>
-                                        <button id="ukButton" type="button" class="btn btn-white btn-xs btn-mini" value="UK"> </button>
-                                        <button id="nzButton" type="button" class="btn btn-white btn-xs btn-mini" value="NZ"> </button>
-                                        <button id="auButton" type="button" class="btn btn-white btn-xs btn-mini" value="AU"> </button>
-                                        <button id="siButton" type="button" class="btn btn-white btn-xs btn-mini" value="SI"> </button>
-                                        <button id="etcButton" type="button" class="btn btn-white btn-xs btn-mini" value=""> </button>
+                                    <p>
+                                    <button id="usButton" type="button" class="btn btn-support1 btn-sm" value="US"> 미국</button>
+                                        <button id="deButton" type="button" class="btn btn-support1 btn-sm" value="DE"> </button>
+                                        <button id="ukButton" type="button" class="btn btn-support1 btn-sm" value="UK"> </button>
+                                        <button id="nzButton" type="button" class="btn btn-support1 btn-sm" value="NZ"> </button>
+                                        <button id="auButton" type="button" class="btn btn-support1 btn-sm" value="AU"> </button>
+                                        <button id="siButton" type="button" class="btn btn-support1 btn-sm" value="SI"> </button>
+                                        <button id="etcButton" type="button" class="btn btn-support1 btn-sm" value=""> </button>
+                                    </p>
                                     </div>
                                 </div>
                             </div>
@@ -90,14 +92,14 @@
                         <table class="table table-hover no-margin">
                             <thead>
                             <tr>
-                                <th style="width:30px" >#</th>
-                                <th style="width:150px">스타일명</th>
-                                <th style="width:150px">영문명</th>
-                                <th style="width:70px">초기비중</th>
-                                <th style="width:70px">최종비중</th>
-                                <th style="width:70px">IBU</th>
-                                <th style="width:70px">SRM</th>
-                                <th style="width:70px">ABV</th>
+                                <th class="small-cell"> </th>
+                                <th>이름</th>
+                                <th>영문명</th>
+                                <th>타입</th>
+                                <th>원산지</th>
+                                <th>ALPHA</th>
+                                <th>BETA</th>
+                                <th>HSI</th>
                             </tr>
                             </thead>
                             <tbody id="result">

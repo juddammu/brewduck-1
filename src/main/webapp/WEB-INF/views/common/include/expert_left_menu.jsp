@@ -39,7 +39,7 @@
                 <ul>
                     <li><a href="/style" >스타일 (BJCP STYLE)</a></li>
                     <li><a href="#" >발효재료 (Fermentable)</a></li>
-                    <li><a href="#" >홉 (Hop) <span class="item-new">Hot</span></a></li>
+                    <li><a href="/hop" >홉 (Hop) <span class="item-new">Hot</span></a></li>
                     <li><a href="#" >효모 (Yeast)</a></li>
                     <li><a href="#" >기타재료</a></li>
                 </ul><!--end /submenu -->
