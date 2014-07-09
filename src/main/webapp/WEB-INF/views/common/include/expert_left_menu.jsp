@@ -58,7 +58,7 @@
                 <ul>
                     <li><a href="#" >Mash Water Calculator</a></li>
                     <li><a href="#" >Mash Infusion Calculator</a></li>
-                    <li><a href="#" >Alcohol Calculator <span class="item-new">Hot</span></a></li>
+                    <li><a href="/calc/abv-calculator">알콜 함유랑 계산기</a></li>
                     <li><a href="#" >Color Converter</a></li>
                     <li><a href="#" >Malt Potential Extract Calculator</a></li>
                     <li><a href="#" >Hydrometer Temperature Correction</a></li>
