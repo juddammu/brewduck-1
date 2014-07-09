@@ -23,7 +23,10 @@
             <label class="control-label">이름</label>
         </div>
         <div class="col-md-10">
-                <input class="search-string form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
+            <div class="input-group">
+                <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
+                <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+            </div>
         </div>
     </div>
     </form:form>
@@ -35,7 +38,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <div class="box box-outlined">
+            <div class="box box-outlined" id="result_list">
                 <div class="box-body no-padding style-white">
                     <table class="table table-hover no-margin">
                         <thead>
@@ -71,9 +74,16 @@
 
         function search(){
             //getLoadingTime();
+            var box = $("#result_list");
+            boostbox.App.addBoxLoader(box);
+
             $("#result").html("");
-            $("#result").load("/style/list", $("#searchForm").serialize());
-            //getResult();
+            $( "#result" ).load("/style/list", $("#searchForm").serialize(), function( response, status, xhr ) {
+
+                if ( status == "success" ) {
+                    boostbox.App.removeBoxLoader(box);
+                }
+            });
         }
 
         function goDetail(seq, titleInUrl){
@@ -81,20 +91,10 @@
         }
 
 
-        function getLoadingTime(){
-            if($("loading").is("visible")){return;}
-            document.getElementById("loading").style.display="block";       //로딩 아이콘 노출
-            setTimeout(function(){
-                document.getElementById("loading").style.display="none";    //로딩 아이콘 숨김
-            },500);
-        }
+          $(document).ready(function() {
 
-        $(document).ready(function() {
-
-            $('.slider-element').slider();  //슬라이더 초기화
             search();                          //조회
             $("#name").focus();              //이름칸으로 포커스
-            document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
 
             $("#search").click(function(){
                 search();

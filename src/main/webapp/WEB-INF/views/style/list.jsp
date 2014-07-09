@@ -5,7 +5,7 @@
 
 <c:forEach items="${list}" var="list">
     <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
-        <td>${list.seq}</td>
+        <td>${list.categoryNumber}${list.styleLetter}</td>
         <td> ${list.koreanName}</td>
         <td> ${list.name}</td>
         <td>

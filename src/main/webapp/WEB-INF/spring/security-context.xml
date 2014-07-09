@@ -35,6 +35,7 @@
         <intercept-url pattern="/resources/**" access="permitAll" />
         <intercept-url pattern="/hop/**" access="permitAll" />
         <intercept-url pattern="/account/**"   access="permitAll" />
+        <intercept-url pattern="/recipe/**" access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/profile/**" access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/" access="permitAll" />
         <logout logout-url="/logout" success-handler-ref="logoutHandler" />

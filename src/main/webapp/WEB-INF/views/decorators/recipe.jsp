@@ -48,7 +48,21 @@
 <script src="/resources/expert/js/core/App.js"></script>
 <script src="/resources/expert/js/core/demo/Demo.js"></script>
 <!-- END JAVASCRIPT -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        var nowUrl = location.pathname;
 
+        $(".main-menu li a").each(function(){
+            if( nowUrl.indexOf($(this).attr("href")) >= 0 ){
+                if( $(this).parent("li").parent("ul").html() != "" ) {
+                    $(this).addClass("active");
+                    $(this).parent("li").parent("ul").parent("li").addClass("active expanded");
+                }
+            }
+        });
+
+    });
+</script>
 <decorator:getProperty property="page.local_script"></decorator:getProperty>
 
 </body>

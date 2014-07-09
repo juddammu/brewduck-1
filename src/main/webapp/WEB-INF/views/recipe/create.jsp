@@ -242,6 +242,7 @@
                 </c:choose>
             </c:forEach>
         </select>
+        <div class="table-responsive no-margin">
         <table id="fermantableListTable" name="fermantableListTable" class="table table-hover table-striped no-margin">
             <thead>
             <tr>
@@ -256,6 +257,7 @@
             <tbody class="d_fermentable_tbody">
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 <div class="form-group">
@@ -269,6 +271,7 @@
                 <option value="${hopList.seq }" title="${hopList.name }">${hopList.name } (${hopList.alpha} %) - ${hopList.originKorean} </option>
             </c:forEach>
         </select>
+        <div class="table-responsive no-margin">
         <table id="hopListTable" name="hopListTable" class="table table-hover table-striped no-margin">
             <thead>
             <tr>
@@ -285,6 +288,7 @@
             <tbody class="d_hop_tbody">
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 <div class="form-group">

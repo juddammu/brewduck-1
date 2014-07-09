@@ -10,126 +10,136 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<div class="breadcrumb-box">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="/">홈</a> </li>
-            <li><a href="/">기초재료</a> </li>
-            <li class="active">스타일 데이터베이스 - STYLE DATABASE</li>
-        </ul>
+<section>
+    <ol class="breadcrumb">
+        <li><a href="#">홈</a></li>
+        <li><a href="#">재료 데이터베이스</a></li>
+        <li class="active">스타일 데이터베이스 <small>STYLE DATABASE</small></li>
+    </ol>
+    <div class="section-header">
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${StyleDetail.koreanName} - <strong class="text-support3">${StyleDetail.name}</strong></h3>
     </div>
-</div><!-- .breadcrumb-box -->
-
-<section id="main" class="page">
-    <header class="page-header">
-        <div class="container">
-            <div class="page-title"> <a href="/style/"><i class="icon-custom-left"></i></a>
-                <h3>${StyleDetail.koreanName} - <span class="semi-bold">${StyleDetail.name}</span></h3>
-            </div>
-        </div>
-    </header>
-    <div class="container">
+    <div class="section-body">
         <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="title-box">
-                    <h5>스타일<span class="semi-bold"> 정보</span></h5 >
-                </div>
-                <div class="row-fluid">
-                    <div class="col-md-12">
+            <div class="col-lg-12">
+                <div class="box box-printable style-transparent">
+                    <div class="box-body style-white">
+                        <!-- START INVOICE HEADER -->
                         <div class="row">
-                            <div class="col-md-4"><h6><span class="semi-bold">타입(TYPE)</span></h6><span  class="label label-info">${StyleDetail.type}</span></div>
-                            <div class="col-md-4"><h6><span class="semi-bold">초기비중(OG)</span></h6><span  class="label label-info">${StyleDetail.ogMin} ~ ${StyleDetail.ogMax}</span></div>
-                            <div class="col-md-4"><h6><span class="semi-bold">종료비중(FG)</span></h6><span  class="label label-info">${StyleDetail.fgMin} ~ ${StyleDetail.fgMax}</span></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-4"><h6><span class="semi-bold">쓴맛(IBU)</span></h6><span  class="label label-info">${StyleDetail.ibuMin} ~ ${StyleDetail.ibuMax}</span></div>
-                            <div class="col-md-4"><h6><span class="semi-bold">색상(COLOR)</span></h6><span  class="label label-info">${StyleDetail.colorMin}°L  ~ ${StyleDetail.colorMax}°L</span></div>
-                            <div class="col-md-4"><h6><span class="semi-bold">도수(ABV)</span></h6><span  class="label label-info">${StyleDetail.abvMin}%  ~ ${StyleDetail.abvMax}%</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="title-box">
-                    <h5>스타일<span class="semi-bold"> 내용</span></h5 >
-                </div>
-                <div class="row-fluid">
-                    <div class="col-md-12">
-                        <div class="row-fluid">
-                            <div class="col-md-12">
-                                <p> ${StyleDetail.notes}</p>
+                            <div class="col-xs-8">
+                                <h1 class="text-light"><strong class="text-support3">${StyleDetail.categoryNumber}${StyleDetail.styleLetter}.${StyleDetail.koreanName}</strong></h1>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <h1 class="text-light text-gray-light">${StyleDetail.styleGuide}</h1>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <article class="content">
-                <div class="col-md-12 content-block bottom-padding text-center bg">
-                    <div>
-                        <textarea rows="3"  class="form-control user-status-box post-input"  placeholder="Whats on your mind?"></textarea>
-                    </div>
-                    <div>
-                        <div class="pull-left">
-                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-camera"></i></button>
-                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-map-marker"></i></button>
-                        </div>
-                        <div class="pull-right">
-                            <button class="btn btn-primary btn-sm btn-small" type="button">POST</button>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </article>
+                        <!-- END INVOICE HEADER -->
 
-            <div class="col-md-12 text-center">
-                <a href="javascript:;" class="semi-bold  small-text">전체 보기</a>
-            </div>
-            <div class="table-responsive" >
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th style="width:30px" >#</th>
-                            <th>스타일명</th>
-                            <th style="width:120px">영문명</th>
-                            <th style="width:70px">초기비중</th>
-                            <th style="width:70px">최종비중</th>
-                            <th style="width:70px">IBU</th>
-                            <th style="width:70px">SRM</th>
-                            <th style="width:70px">ABV</th>
-                        </tr>
-                    </thead>
-                    <tbody id="result">
-                    </tbody>
-                </table>
-            </div>
-            <div class="pagination-box">
-                <ul class="pagination">
-                    <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                    <li class="active"><span>1</span></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li class="disabled"><a href="#">...</a></li>
-                    <li><a href="#">9</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
-                <i class="pagination-text">Displaying 1 to 10 (of 100 posts)</i>
-            </div><!-- .pagination-box -->
-        </div>
-    </div>
+                        <br/>
+                        <!-- START INVOICE DESCRIPTION -->
+                        <div class="box box-tiles style-gray">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="box-body">
+                                        <h3 class="text-light">제원</h3>
+                                        <ul class="nav nav-pills nav-stacked nav-transparent">
+                                            <li><a href="#"><span class="badge pull-right">${StyleDetail.ogMin} ~ ${StyleDetail.ogMax}</span>초기비중(OG)</a></li>
+                                            <li><a href="#"><span class="badge pull-right">${StyleDetail.fgMin} ~ ${StyleDetail.fgMax}</span>종료비중(FG)</a></li>
+                                            <li><a href="#"><span class="badge pull-right">${StyleDetail.ibuMin} ~ ${StyleDetail.ibuMax}</span>쓴맛(IBU)</a></li>
+                                            <li><a href="#"><span class="badge pull-right">${StyleDetail.colorMin}°L ~ ${StyleDetail.colorMax}°L</span>색상(COLOR)</a></li>
+                                            <li><a href="#"><span class="badge pull-right">${StyleDetail.abvMin}% ~ ${StyleDetail.abvMax}%</span>도수(ABV)</a></li>
+                                        </ul>
+                                        <h3 class="text-light">사례</h3>
+                                        <div class="list-tags">
+                                            <a class="btn btn-xs btn-support1">${StyleDetail.examples}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <article class="style-white">
+                                        <div class="box-body">
+                                            <br/>
+                                            <p class="lead">설명</p>
+                                            <p>${StyleDetail.notes}</p>
+                                            <br/>
+                                            <div class="well clearfix">
+                                                <h4>STYLE GUIDE</h4>
+                                                <p>향: 몰트향(곡물 향, 달콤하거나 옥수수같은 향 일 수 있음)은 없음~거의없음. 없거나~낮은 홉 향은 스파이시 혹은 플로랄 향. 낮은 수준(풋사과, DMS, 과일향)의 효모특성은 허용됨. 디아세틸 없음 </p>
+                                                <p>외관: 매우 옅은 연노랑~옅은 노란색. 거의 지속되지 않는 희고 조밀한 상부거품. 매우 투명. </p>
+                                                <p>풍미: 곡물맛 혹은 옥수수 단맛이 살짝나는 크리스피하고 드라이한 풍미. 없거나 낮은 홉 풍미. 약한 홉의 쓴맛. 밸런스는 약간 몰티하거나 약간 쌉싸름한 편이나 상대적으로 균등에 가까움. 탄산화수준이 높을 수 있어서 약한 산미 혹은 드라이한 톡쏘는 맛. 디아세틸 없음. 과일맛 없음. </p>
+                                                <p>마우스필: 매우 가벼운 바디감(쌀이나 옥수수 같은 부재료의 높은 비율 때문). 혀에 가벼운 탄산 조임을 동반하는 매우 높은 탄산화. 물맛 같을수 있음 </p>
+                                                <p>총평: 매우 상쾌하고 갈증 해소용 </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- END BLOG POST TEXT -->
+                            </div><!--end .row -->
+                            <!-- END INVOICE DESCRIPTION -->
+                        </div>
+
+
+                        <!-- END COMMENTS -->
+
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box box-outlined">
+                    <div class="box-body no-padding">
+                        <form:form class="form-horizontal form-banded form-bordered" action="/style/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">이름</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
+                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form:form>
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+        <!-- END BASIC FORM INPUTS -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box box-outlined" id="result_list">
+                    <div class="box-body no-padding style-white">
+                        <table class="table table-hover no-margin">
+                            <thead>
+                            <tr>
+                                <th style="width:30px" >#</th>
+                                <th style="width:150px">스타일명</th>
+                                <th style="width:150px">영문명</th>
+                                <th style="width:70px">초기비중</th>
+                                <th style="width:70px">최종비중</th>
+                                <th style="width:70px">IBU</th>
+                                <th style="width:70px">SRM</th>
+                                <th style="width:70px">ABV</th>
+                            </tr>
+                            </thead>
+                            <tbody id="result">
+                            </tbody>
+                        </table>
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+
+    </div><!--end .section-body -->
 </section>
 
 
 <content tag="local_script">
     <script>
-        function loadAnimatedWidget_pure_white(){
-            var icons = new Skycons({"color": "white"});
-            icons.play();
-        }
-
         function goDetail(seq, titleInUrl){
             location.href = "/style/"+seq+"/"+titleInUrl;
         }
@@ -143,10 +153,6 @@
 
 
         $(document).ready(function() {
-            $('.slider-element').slider();  //슬라이더 초기화
-            $('#popover').popover();
-            $('.tip').tooltip();
-            loadAnimatedWidget_pure_white();
             search();                          //조회
         });
 

@@ -17,7 +17,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="header-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="../../html/dashboards/dashboard.html"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="#"><i class="fa fa-home fa-lg"></i></a></li>
             </ul><!--end .nav -->
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

@@ -65,8 +65,6 @@ public class StyleController {
     @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
     public String detail(Model model, @PathVariable("seq") String seq) {
 
-        logger.info("Style seq : {}", seq);
-
         Style style = new Style();
         //style.setName(name);
         style.setSeq(seq);
@@ -74,10 +72,12 @@ public class StyleController {
         // 맥주 홉 상세 조회
         Style styleDetail = styleService.selectStyleDetail(style);
 
+        String examples[] = styleDetail.getExamples().split(",");
         //Boolean updateFlag = styleService.updateViewCount(style);
 
 
         model.addAttribute("StyleDetail", styleDetail);
+        model.addAttribute("examples", examples);
 
         return "style/detail";
     }

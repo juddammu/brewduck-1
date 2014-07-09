@@ -3,8 +3,8 @@
     <div class="sidebar-back"></div>
     <div class="sidebar-content">
         <div class="nav-brand">
-            <a class="main-brand" href="../../html/dashboards/dashboard.html">
-                <h3 class="text-light text-white"><span>Boost<strong>Box</strong> </span><i class="fa fa-rocket fa-fw"></i></h3>
+            <a class="main-brand" href="/">
+                <h3 class="text-light text-white"><span>맥덕<strong> 모드</strong> </span><i class="fa fa-rocket fa-fw"></i></h3>
             </a>
         </div>
 
@@ -14,9 +14,9 @@
             <div class="form-group">
                 <div class="input-group">
                     <input type="text" class="form-control navbar-input" placeholder="Search...">
-								<span class="input-group-btn">
-									<button class="btn btn-equal" type="button"><i class="fa fa-search"></i></button>
-								</span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-equal" type="button"><i class="fa fa-search"></i></button>
+                    </span>
                 </div>
             </div>
         </form>
