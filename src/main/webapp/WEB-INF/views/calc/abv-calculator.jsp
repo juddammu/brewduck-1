@@ -53,13 +53,10 @@
                     <small>Alcohol affects the measured index of refraction, so we need to correct for that post-fermentation using the Original Brix measurement.</small>
                 </div>
             </div>
-            <div class="form-footer col-lg-offset-1 col-md-offset-2 col-sm-offset-3">
-                <div class="col-md-6">
-                    <h4 class="text-light"><strong class="text-support3">ABV(Alcohol By Volume) : <span id="abv">&ndash;</span></strong></h4>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="text-light text-gray-light">ABW(Alcohol by Weight) : <span id="abw">&ndash;</span></h4>
-                </div>
+            <div class="form-footer col-md-offset-2 col-sm-offset-3">
+                <h3 class="text-light"><strong class="text-support3">ABV(Alcohol By Volume) : <span id="abv">&ndash;</span></strong>
+                </h3>
+                <small>ABW(Alcohol by Weight) : <span id="abw">&ndash;</span></small>
             </div>
         </form>
         </div><!--end .box-body -->

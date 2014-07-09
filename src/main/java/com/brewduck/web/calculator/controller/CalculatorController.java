@@ -57,5 +57,16 @@ public class CalculatorController {
 
         return "calc/abv-calculator";
     }
+
+    @RequestMapping(value = "/color-converter", method = RequestMethod.GET)
+    public String colorConverter(Model model) {
+        logger.info("Fermentable index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "calc/color-converter";
+    }
 }
 
