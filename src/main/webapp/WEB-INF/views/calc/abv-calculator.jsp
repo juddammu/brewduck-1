@@ -25,7 +25,7 @@
                     <label class="control-label">초기 비중 <small>Original Gravity</small></label>
                 </div>
                 <div class="col-md-10">
-                    <input id="og" name="og" type="text" class="form-control">
+                    <input id="og" name="og" type="text" class="form-control" placeholder="예를들면 1.05">
                 </div>
             </div>
             <div class="form-group">
@@ -33,12 +33,12 @@
                     <label class="control-label">종료 비중<small>Final Gravity</small></label>
                 </div>
                 <div class="col-md-10">
-                    <input id="fg" name="fg" type="text" class="form-control">
+                    <input id="fg" name="fg" type="text" class="form-control" placeholder="예를들면 1.01">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-2">
-                    <label class="control-label">초기 브릭스<small>Final Gravity</small></label>
+                    <label class="control-label">초기 브릭스<small>Original Brix</small></label>
                 </div>
                 <div class="col-md-10">
                     <input id="oBrix" name="oBrix" type="text" class="form-control">
