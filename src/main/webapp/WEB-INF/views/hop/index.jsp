@@ -3,126 +3,119 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<div class="breadcrumb-box">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="/">홈</a> </li>
-            <li><a href="/">기초재료</a> </li>
-            <li class="active">홉 데이터베이스 - HOP DATABASE</li>
-        </ul>
+<section>
+    <ol class="breadcrumb">
+        <li><a href="#">홈</a></li>
+        <li class="active"><a href="#">재료 데이터베이스</a></li>
+    </ol>
+    <div class="section-header">
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 홉 데이터베이스 - HOP DATABASE</h3>
     </div>
-</div><!-- .breadcrumb-box -->
+    <div class="section-body">
 
-<section id="main" class="page">
-    <header class="page-header">
-        <div class="container">
-            <h3>홉 데이터베이스 - <span class="semi-bold">HOP DATABASE</span></h3>
-        </div>
-    </header>
-    <div class="container">
+        <!-- BEGIN BASIC FORM INPUTS -->
         <div class="row">
-            <div class="content search-result list col-sm-12 col-md-12">
-                <form:form class="search-form" id="searchForm"  name="searchForm" modelAttribute="paramHop">
-                    <input name="origin" type ="hidden" id="origin" value="">
-                    <input name="aroma" type ="hidden" id="aroma" value="">
-                    <div>
-                        <h5>이름으로 찾기</h5>
-                        <div class="input-group col-sm-6">
-                            <input name="name" id="name" type="text"  class="form-control" placeholder="홉 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                           <span class="input-group-addon primary">
-                               <span class="arrow"></span>
-                                <i class="fa fa-search"></i>
-                           </span>
-                        </div>
-                        <br>
-                        <h5>특성으로 찾기</h5>
-                        <div class="radio-inline">
-                            <label>
-                                <input id="allRadio" type="radio" name="type" value="" checked>
-                                전체
-                            </label>
-                        </div>
-                        <div class="radio-inline">
-                            <label>
-                                <input id="aromaRadio" type="radio" name="type" value="1">
-                                향
-                            </label>
-                        </div>
-                        <div class="radio-inline">
-                            <label>
-                                <input id="bittersRadio" type="radio" name="type" value="2">
-                                쓴맛
-                            </label>
-                        </div>
-                        <div>
-                            <br>
-                            <div>
-                                <button id="usButton" type="button" class="btn btn-xs btn-primary" value="US"> </button>
-                                <button id="deButton" type="button" class="btn btn-xs btn-primary" value="DE"> </button>
-                                <button id="ukButton" type="button" class="btn btn-xs btn-primary" value="UK"> </button>
-                                <button id="nzButton" type="button" class="btn btn-xs btn-primary" value="NZ"> </button>
-                                <button id="auButton" type="button" class="btn btn-xs btn-primary" value="AU"> </button>
-                                <button id="siButton" type="button" class="btn btn-xs btn-primary" value="SI"> </button>
-                                <button id="etcButton" type="button" class="btn btn-xs btn-primary" value=""> </button>
+            <div class="col-lg-12">
+                <div class="box box-outlined">
+                    <div class="box-body no-padding">
+                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  name="searchForm" modelAttribute="paramHop">
+                            <input name="origin" type ="hidden" id="origin" value="">
+                            <input name="aroma" type ="hidden" id="aroma" value="">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">이름</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
+                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="form-actions">
-                            <div class="pull-right">
-                                <div id="search" class="btn btn-primary" ><i class="icon-ok"></i> 조회</div>
-                                <div id="fullSearch" class="btn btn-default" ><i class="icon-ok"></i> 전체 조회</div>
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">특성</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="radio-inline">
+                                        <label>
+                                            <input id="allRadio" type="radio" name="type" value="" checked>
+                                            전체
+                                        </label>
+                                    </div>
+                                    <div class="radio-inline">
+                                        <label>
+                                            <input id="aromaRadio" type="radio" name="type" value="1">
+                                            향
+                                        </label>
+                                    </div>
+                                    <div class="radio-inline">
+                                        <label>
+                                            <input id="bittersRadio" type="radio" name="type" value="2">
+                                            쓴맛
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </form:form>
-                <br>
-                <div class="filter-box">
-                    <div class="row">
-                        <div class="col-sm-7 col-md-7 btn-group filter-buttons filter-list">
-                            <div class="clearfix"></div>
-                        </div><!-- .filter-buttons -->
-                        <div class="text-results col-sm-5 col-md-5">
-                            <i>Results 1-10 of 100 for 'Sony'</i>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="table-responsive" >
-                        <table class="table">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">국가</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <button id="usButton" type="button" class="btn btn-white btn-xs btn-mini" value="US"> </button>
+                                        <button id="deButton" type="button" class="btn btn-white btn-xs btn-mini" value="DE"> </button>
+                                        <button id="ukButton" type="button" class="btn btn-white btn-xs btn-mini" value="UK"> </button>
+                                        <button id="nzButton" type="button" class="btn btn-white btn-xs btn-mini" value="NZ"> </button>
+                                        <button id="auButton" type="button" class="btn btn-white btn-xs btn-mini" value="AU"> </button>
+                                        <button id="siButton" type="button" class="btn btn-white btn-xs btn-mini" value="SI"> </button>
+                                        <button id="etcButton" type="button" class="btn btn-white btn-xs btn-mini" value=""> </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            </form:form>
+
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+        <!-- END BASIC FORM INPUTS -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box box-outlined" id="result_list">
+                    <div class="box-body no-padding style-white">
+                        <table class="table table-hover no-margin">
                             <thead>
                             <tr>
                                 <th style="width:30px" >#</th>
-                                <th style="width:150px">이스트명</th>
+                                <th style="width:150px">스타일명</th>
                                 <th style="width:150px">영문명</th>
-                                <th style="width:120px">타입</th>
-                                <th style="width:70px">원산지</th>
-                                <th style="width:70px">ALPHA</th>
-                                <th style="width:70px">BETA</th>
-                                <th style="width:70px">HSI</th>
+                                <th style="width:70px">초기비중</th>
+                                <th style="width:70px">최종비중</th>
+                                <th style="width:70px">IBU</th>
+                                <th style="width:70px">SRM</th>
+                                <th style="width:70px">ABV</th>
                             </tr>
                             </thead>
                             <tbody id="result">
                             </tbody>
                         </table>
-                    </div>
-                    <div class="pagination-box">
-                        <ul class="pagination">
-                            <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="disabled"><a href="#">...</a></li>
-                            <li><a href="#">9</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                        <i class="pagination-text">Displaying 1 to 10 (of 100 posts)</i>
-                    </div><!-- .pagination-box -->
-                </div><%--filter-box--%>
-            </div>
-        </div>
-    </div>
-</section><!-- #main -->
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+        <!-- END FORM TOOLS -->
+
+    </div><!--end .section-body -->
+
+
+
+</section>
+
+
 <%--
 <div class="content">
 <div class="page-title"> <i class="icon-custom-left"></i>

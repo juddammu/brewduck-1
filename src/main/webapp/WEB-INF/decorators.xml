@@ -30,14 +30,15 @@
         <pattern>/style</pattern>
         <pattern>/style/</pattern>
         <pattern>/style/*/*</pattern>
+        <pattern>/hop</pattern>
+        <pattern>/hop/</pattern>
+        <pattern>/hop/*/*</pattern>
         <pattern>/calc</pattern>
         <pattern>/calc/*</pattern>
         <pattern>/calc/*/*</pattern>
     </decorator>
 
     <decorator name="full-content" page="full-content.jsp">
-        <pattern>/hop/</pattern>
-        <pattern>/hop/*/*</pattern>
         <pattern>/yeast/</pattern>
         <pattern>/yeast/*/*</pattern>
         <pattern>/fermentable/</pattern>

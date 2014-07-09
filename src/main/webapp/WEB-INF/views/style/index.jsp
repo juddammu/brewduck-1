@@ -70,8 +70,6 @@
 
 <content tag="local_script">
     <script>
-
-
         function search(){
             //getLoadingTime();
             var box = $("#result_list");
@@ -99,6 +97,14 @@
             $("#search").click(function(){
                 search();
             });
+
+            $('#name').on('keyup', function(){
+                if(($('#name').val()).length > 2){
+                    search();
+                }
+
+            });
+
 
             $("#fullSearch").click(function(){
                 $("#name").val('');             //TODO : 초기화 함수로 뺄것

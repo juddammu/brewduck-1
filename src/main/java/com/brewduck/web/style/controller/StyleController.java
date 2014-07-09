@@ -72,12 +72,12 @@ public class StyleController {
         // 맥주 홉 상세 조회
         Style styleDetail = styleService.selectStyleDetail(style);
 
-        String examples[] = styleDetail.getExamples().split(",");
+        //String examples[] = styleDetail.getExamples().split(",");
         //Boolean updateFlag = styleService.updateViewCount(style);
 
 
         model.addAttribute("StyleDetail", styleDetail);
-        model.addAttribute("examples", examples);
+        //model.addAttribute("examples", examples);
 
         return "style/detail";
     }
