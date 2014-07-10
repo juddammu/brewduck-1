@@ -4,12 +4,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <section>
 <ol class="breadcrumb">
-    <li><a href="http://localhost/CodeCovers/www.codecovers.com/boostbox">home</a></li>
-    <li><a href="../../../html/pages/blog/masonry.html">Blog masonry</a></li>
-    <li class="active">Post</li>
+    <li><a href="/">홈</a></li>
+    <li class="active">공지사항</li>
 </ol>
 <div class="section-header">
-    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> Blog post <small>The story behind the story</small></h3>
+    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 글쓰기 <small>공지사항 글을 작성합니다.</small></h3>
 </div>
 <div class="section-body">
 <div class="row">
@@ -19,7 +18,7 @@
             <div class="row box-body-darken style-support1">
                 <div class="col-sm-9">
                     <div class="box-body style-inverse">
-                        <h2>Blog post about a story</h2>
+                        <h2> <input id="nttSj" name="nttSj" type="text"  class="form-control" value=""></h2>
                         <div class="text-muted">Posted by <a href="#">Admin</a></div>
                     </div>
                 </div>
@@ -46,15 +45,8 @@
                 <!-- START BLOG POST TEXT -->
                 <div class="col-md-9">
                     <article class="style-white">
-                        <div>
-                            <img class="img-responsive" src="../../../assets/img/img1.jpg?1400333022" alt="" />
-                        </div>
                         <div class="box-body">
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
-                            <p>Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.</p>
-                            <p>Proin nonummy, lacus eget pulvinar lacinia, pede felis dignissim leo, vitae tristique magna lacus sit amet eros. Nullam ornare. Praesent odio ligula, dapibus sed, tincidunt eget, dictum ac, nibh. Nam quis lacus. Nunc eleifend molestie velit. Morbi lobortis quam eu velit. Donec euismod vestibulum massa. Donec non lectus. Aliquam commodo lacus sit amet nulla. Cras dignissim elit et augue. Nullam non diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst. Aenean vestibulum. Sed lobortis elit quis lectus. Nunc sed lacus at augue bibendum dapibus.</p>
-                            <p>Aliquam vehicula sem ut pede. Cras purus lectus, egestas eu, vehicula at, imperdiet sed, nibh. Morbi consectetuer luctus felis. Donec vitae nisi. Aliquam tincidunt feugiat elit. Duis sed elit ut turpis ullamcorper feugiat. Praesent pretium, mauris sed fermentum hendrerit, nulla lorem iaculis magna, pulvinar scelerisque urna tellus a justo. Suspendisse pulvinar massa in metus. Duis quis quam. Proin justo. Curabitur ac sapien. Nam erat. Praesent ut quam.</p>
+                            <textarea id="nttCn" name="nttCn"  placeholder="내용 입력..." class="form-control" rows="10" style="width:auto; height:400px;"></textarea>
                             <br/>
                             <div class="well clearfix">
                                 <h4>About the author: Daniel Johnson</h4>
@@ -98,77 +90,6 @@
     </div><!--end .col-lg-12 -->
 </div><!--end .row -->
 <!-- START COMMENTS -->
-<div class="row">
-    <div class="col-md-9">
-        <h4>5 Comments</h4>
-        <ul class="list-comments">
-            <li>
-                <div class="box style-white">
-                    <div class="comment-avatar"><i class="glyphicon glyphicon-user text-gray-lighter"></i></div>
-                    <div class="box-body">
-                        <h4 class="comment-title">Jim Peters <small>20/06/2013 at 4:02 pm</small></h4>
-                        <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-                        <p>Etiam dui libero, tempor quis congue in, interdum eget tortor. Vivamus aliquam dictum lacus quis tincidunt. Phasellus rhoncus ante sollicitudin nisl consectetur ultricies. Sed rhoncus ullamcorper mauris, ac condimentum metus egestas ut. Nam et urna ante, vitae pretium lacus.</p>
-                    </div>
-                </div><!--end .box -->
-            </li><!-- end comment -->
-            <li>
-                <div class="box style-white">
-                    <div class="comment-avatar"><span class="glyphicon glyphicon-user text-gray-lighter"></span></div>
-                    <div class="box-body">
-                        <h4 class="comment-title">CarolSharp <small>20/06/2013 at 4:14 pm</small></h4>
-                        <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-                        <p>Integer ac magna lacinia velit bibendum ornare. Morbi eget dui lectus, eget eleifend mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    </div>
-                </div><!--end .box -->
-                <ul>
-                    <li>
-                        <div class="box style-inverse">
-                            <div class="comment-avatar"><img class="img-circle" src="../../../assets/img/avatar1.jpg?1401297311" alt="" /></div>
-                            <div class="box-body">
-                                <h4 class="comment-title">Daniel Johnson <small>20/06/2013 at 4:38 pm</small></h4>
-                                <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-                                <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ac magna lacinia velit bibendum ornare. Morbi eget dui lectus, eget eleifend mi.</p>
-                            </div>
-                        </div><!--end .box -->
-                    </li><!-- end sub-comment -->
-                    <li>
-                        <div class="box style-white">
-                            <div class="comment-avatar"><span class="glyphicon glyphicon-user text-gray-lighter"></span></div>
-                            <div class="box-body">
-                                <h4 class="comment-title">Amber Page <small>20/06/2013 at 4:41 pm</small></h4>
-                                <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in tempus lorem. Vivamus ullamcorper leo risus, non vehicula odio.</p>
-                            </div>
-                        </div><!--end .box -->
-                        <ul>
-                            <li>
-                                <div class="box style-white">
-                                    <div class="comment-avatar"><img class="img-circle" src="../../../assets/img/avatar2.jpg?1400333014" alt="" /></div>
-                                    <div class="box-body">
-                                        <h4 class="comment-title">Janie Ward <small>20/06/2013 at 4:56 pm</small></h4>
-                                        <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in tempus lorem. Vivamus ullamcorper leo risus, non vehicula odio.</p>
-                                    </div>
-                                </div><!--end .box -->
-                            </li><!-- end sub-sub-comment -->
-                        </ul>
-                    </li><!-- end sub-comment -->
-                </ul>
-            </li><!-- end comment -->
-            <li>
-                <div class="box style-white">
-                    <div class="comment-avatar"><img class="img-circle" src="../../../assets/img/avatar3.jpg?1400333021" alt="" /></div>
-                    <div class="box-body">
-                        <h4 class="comment-title">Marshall Buchanan <small>21/06/2013 at 3:32 am</small></h4>
-                        <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-                        <p>Vestibulum in tempus lorem. Vivamus ullamcorper leo risus, non vehicula odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div><!--end .box -->
-            </li><!-- end comment -->
-        </ul>
-    </div><!--end .col-md-9 -->
-</div><!--end .row -->
 <!-- END COMMENTS -->
 
 <!-- START LEAVE COMMENT -->
@@ -245,7 +166,7 @@
                                     <h6>내용 <span class="required">*</span></h6>
                                 </div>
                                 <div class="col-md-9">
-                                    <textarea id="nttCn" name="nttCn"  placeholder="내용 입력..." class="form-control" rows="10" style="width:auto; height:400px;"></textarea>
+
                                 </div>
                             </div>
                             <div class="row">
