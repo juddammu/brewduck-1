@@ -49,37 +49,16 @@ public class FileUploadController {
         return "redirect:/profile/index";
     }
 
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    @RequestMapping(value = "/upload", headers = "content-type=multipart/*", method = RequestMethod.POST)
     @ResponseBody
-    public List uploadFile(MultipartHttpServletRequest request, Model model) {
-        Iterator<String> itr =  request.getFileNames();
+    public String uploadFile(@RequestParam MultipartFile file,  Model model) throws IOException {
+        logger.debug("### 파일업로드 페이지");
+        logger.debug("File " + file.getOriginalFilename());
+        String fileName = file.getOriginalFilename();
+        file.transferTo(new File("C:/upload/"+fileName));
 
-        List<String> fileList = new ArrayList<String>();
+        model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
 
-        if(itr.hasNext()) {
-            MultipartFile mpf = request.getFile(itr.next());
-            System.out.println(mpf.getOriginalFilename() +" uploaded!");
-            try {
-                //just temporary save file info into ufile
-                model.addAttribute("message", "File '" + mpf.getOriginalFilename() + "' uploaded successfully");
-                model.addAttribute("file_name", mpf.getOriginalFilename() );
-
-                fileList.add("true");
-                fileList.add(mpf.getOriginalFilename());
-                fileList.add(mpf.getBytes().length+"");
-
-
-
-                System.out.println("file length : " + mpf.getBytes().length);
-                System.out.println("file name : " + mpf.getOriginalFilename());
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-                e.printStackTrace();
-            }
-            return fileList;
-        } else {
-            fileList.add("false");
-            return fileList;
-        }
+        return "redirect:/profile/index";
     }
 }
