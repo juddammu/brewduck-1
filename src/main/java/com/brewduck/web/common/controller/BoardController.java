@@ -195,7 +195,7 @@ public class BoardController {
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        board.setBbsId("3");
+        board.setBbsId(3);
         board.setNttNo(1);
         board.setSortOrder(1);
         board.setUseAt("Y");
@@ -219,7 +219,7 @@ public class BoardController {
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        board.setBbsId("3");
+        board.setBbsId(3);
         board.setUpdateId(name);
 
         int updateCount = boardService.updateBoardArticle(board);
@@ -235,7 +235,7 @@ public class BoardController {
     @ResponseBody
     @RequestMapping(value = "/list/{boardId}", method = RequestMethod.GET)
     public List insertHop(Model model,
-                           @PathVariable("boardId") String boardId) {
+                           @PathVariable("boardId") Integer boardId) {
         // 맥주 홉 저장
         Board board = new Board();
         board.setNttId(1);
@@ -252,7 +252,7 @@ public class BoardController {
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        board.setBbsId("3");
+        board.setBbsId(3);
         board.setNttId(nttId);
         board.setDeleteId(name);
 

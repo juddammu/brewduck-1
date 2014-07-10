@@ -68,5 +68,60 @@ public class CalculatorController {
 
         return "calc/color-converter";
     }
+
+    @RequestMapping(value = "/mash-water-calculator", method = RequestMethod.GET)
+    public String mashWaterCalculator(Model model) {
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "calc/mash-water-calculator";
+    }
+
+    @RequestMapping(value = "/mash-infusion-calculator", method = RequestMethod.GET)
+    public String mashInfusionCalculator(Model model) {
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "calc/mash-infusion-calculator";
+    }
+
+    @RequestMapping(value = "/malt-potential-extract-calculator", method = RequestMethod.GET)
+    public String maltPotentialExtractCalculator(Model model) {
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "calc/malt-potential-extract-calculator";
+    }
+
+    @RequestMapping(value = "/hydrometer-temperature-correction", method = RequestMethod.GET)
+    public String hydrometerTemperatureCorrection(Model model) {
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "calc/hydrometer-temperature-correction";
+    }
+
+    @RequestMapping(value = "/pitch-rate-calculator", method = RequestMethod.GET)
+    public String pitchRateCalculator(Model model) {
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "calc/pitch-rate-calculator";
+    }
+
+
+
+
+
 }
 

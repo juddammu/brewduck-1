@@ -61,9 +61,11 @@ public class HomeController {
         // model.addAttribute("account", account);
         Hop hop = hopService.selectRandomHop();
 
+        /* 잠시 보류
         List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);
+        */
 
         return "home";
         //return "blank";

@@ -135,7 +135,7 @@ public class MailService {
         String password = "glasowk1225";
         String sendEmail = "help@brewduck.com";
         String sendPassword = "D90A6EF4755C4CF1C6BDFF70F15F61EC";
-        String domain = "http://localhost:8080";
+        String domain = "http://www.brewduck.com";
         String charset = "UTF-8";
 
         boolean result = false;

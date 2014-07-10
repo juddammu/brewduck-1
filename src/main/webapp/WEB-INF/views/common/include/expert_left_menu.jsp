@@ -30,6 +30,11 @@
                     <i class="fa fa-home fa-fw"></i><span class="title">대쉬보드</span>
                 </a>
             </li><!--end /menu-item -->
+            <li>
+                <a href="/community/1/list" >
+                    <i class="fa fa-home fa-fw"></i><span class="title">공지사항</span>
+                </a>
+            </li><!--end /menu-item -->
             <!-- Menu UI -->
             <li>
                 <a href="javascript:void(0);">
@@ -56,13 +61,13 @@
                 </a>
                 <!--start submenu -->
                 <ul>
-                    <li><a href="#" >Mash Water Calculator</a></li>
-                    <li><a href="#" >Mash Infusion Calculator</a></li>
+                    <li><a href="/calc/mash-water-calculator" >Mash Water Calculator</a></li>
+                    <li><a href="/calc/mash-infusion-calculator" >Mash Infusion Calculator</a></li>
                     <li><a href="/calc/abv-calculator">알콜 함유랑 계산기</a></li>
                     <li><a href="/calc/color-converter" >색상 변환</a></li>
-                    <li><a href="#" >Malt Potential Extract Calculator</a></li>
-                    <li><a href="#" >Hydrometer Temperature Correction</a></li>
-                    <li><a href="#" >Pitch Rate Calculator</a></li>
+                    <li><a href="/calc/malt-potential-extract-calculator" >Malt Potential Extract Calculator</a></li>
+                    <li><a href="/calc/hydrometer-temperature-correction" >Hydrometer Temperature Correction</a></li>
+                    <li><a href="/calc/pitch-rate-calculator" >Pitch Rate Calculator</a></li>
                 </ul><!--end /submenu -->
             </li><!--end /menu-item -->
         </ul><!--end .main-menu -->

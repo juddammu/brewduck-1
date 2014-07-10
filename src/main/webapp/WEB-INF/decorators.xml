@@ -36,6 +36,10 @@
         <pattern>/calc</pattern>
         <pattern>/calc/*</pattern>
         <pattern>/calc/*/*</pattern>
+        <pattern>/user/*</pattern>
+        <pattern>/community</pattern>
+        <pattern>/community/*</pattern>
+        <pattern>/community/*/*</pattern>
     </decorator>
 
     <decorator name="full-content" page="full-content.jsp">

@@ -145,13 +145,13 @@
             A.NTT_SJ          nttSj,
             A.NTT_CN          nttCn,
             A.INSERT_ID       insertId,
-            DATE_FORMAT(A.INSERT_DATE,'%y-%m-%d %p %h:%i')  insertDate,
+            substring(A.INSERT_DATE, 1, 10)  insertDate,
             A.RDCNT           rdcnt
             FROM BOARD A,
             BOARD_MASTER B
        WHERE A.USE_AT = 'Y'
          AND A.BBS_ID = B.BBS_ID
-         AND A.BBS_ID = '3'
+         AND A.BBS_ID = #{bbsId}
     </sql>
 
 

@@ -19,7 +19,7 @@ public class Board{
     //게시물 ID
     private Integer nttId;
     //게시판 ID
-    private String  bbsId;
+    private Integer  bbsId;
 
     private String  bbsTyCode;
 
@@ -242,11 +242,11 @@ public class Board{
         this.nttId = nttId;
     }
 
-    public String getBbsId() {
+    public Integer getBbsId() {
         return bbsId;
     }
 
-    public void setBbsId(String bbsId) {
+    public void setBbsId(Integer bbsId) {
         this.bbsId = bbsId;
     }
 
