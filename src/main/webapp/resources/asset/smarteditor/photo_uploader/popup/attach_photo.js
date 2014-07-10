@@ -333,7 +333,7 @@
     function html5Upload() {	
     	var tempFile,
     		sUploadURL;
-    	alert();
+
     	sUploadURL= '/fileupload/upload'; 	//upload URL
     	
     	//파일을 하나씩 보내고, 결과를 받음.

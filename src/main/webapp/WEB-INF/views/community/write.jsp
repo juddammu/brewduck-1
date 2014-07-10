@@ -50,7 +50,7 @@
                             <br/>
                             <div class="well clearfix">
                                 <h4>About the author: Daniel Johnson</h4>
-                                <img class="height-3 pull-right img-circle" src="../../../assets/img/avatar1.jpg?1401297311" alt="" />
+                                <img class="height-3 pull-right img-circle" src="/resources/expert/img/avatar1.jpg?1401297311" alt="" />
                                 <p>Aliquam vehicula sem ut pede. Cras purus lectus, egestas eu, vehicula at, imperdiet sed, nibh. Morbi consectetuer luctus felis. Donec vitae nisi. Aliquam tincidunt feugiat elit. Duis sed elit ut turpis ullamcorper feugiat. Praesent pretium, mauris sed fermentum hendrerit.</p>
                             </div>
                         </div>
@@ -217,19 +217,11 @@
             location.href = "/board/freeBoard";
         }
 
-        function getLoadingTime(){
-            if($("loading").is("visible")){return;}
-            document.getElementById("loading").style.display="block";       //로딩 아이콘 노출
-            setTimeout(function(){
-                document.getElementById("loading").style.display="none";    //로딩 아이콘 숨김
-            },500);
-        }
 
         $(document).ready(function() {
 
-            $('.slider-element').slider();  //슬라이더 초기화
             $("#nttSj").focus();              //제목칸 포커스
-            document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
+            //document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
 
         });
 

@@ -51,13 +51,13 @@ public class FileUploadController {
 
     @RequestMapping(value = "/upload", headers = "content-type=multipart/*", method = RequestMethod.POST)
     @ResponseBody
-    public String uploadFile(@RequestParam MultipartFile file,  Model model) throws IOException {
+    public String uploadFile(@RequestParam MultipartFile Filedata,  Model model) throws IOException {
         logger.debug("### 파일업로드 페이지");
-        logger.debug("File " + file.getOriginalFilename());
-        String fileName = file.getOriginalFilename();
-        file.transferTo(new File("C:/upload/"+fileName));
+        logger.debug("File " + Filedata.getOriginalFilename());
+        String fileName = Filedata.getOriginalFilename();
+        Filedata.transferTo(new File("C:/upload/"+fileName));
 
-        model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
+        model.addAttribute("message", "File '" + Filedata.getOriginalFilename() + "' uploaded successfully");
 
         return "redirect:/profile/index";
     }
