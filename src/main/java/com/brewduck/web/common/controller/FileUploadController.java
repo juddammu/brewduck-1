@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.MultipartRequest;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequest.*;
 import javax.servlet.http.HttpServletResponse;
@@ -57,11 +58,7 @@ public class FileUploadController {
         return "redirect:/profile/index";
     }
 
-    @RequestMapping(value = "/callback", method = RequestMethod.POST)
-    public String callback(HttpServletRequest request, Model model) {
 
-        return "/common/callback";
-    }
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public String uploadFile(HttpServletRequest request, Model model) throws IOException {
@@ -78,6 +75,7 @@ public class FileUploadController {
             FileCopyUtils.copy(file.getBytes(), out);
             convFilename = out.getName();
             logger.info("ConvertFilename : {}", convFilename);
+            logger.info("callBack : {}", callBack);
         }
 
         model.addAttribute("filename", convFilename);
@@ -87,7 +85,7 @@ public class FileUploadController {
     }
 
     @RequestMapping(value = "/upload2", method = RequestMethod.POST)
-    @ResponseBody public String makePhoto(HttpServletRequest req, HttpSession session){
+    @ResponseBody public String makePhoto(HttpServletRequest req, HttpSession session, HttpServletResponse resp){
 
 
 
@@ -102,14 +100,36 @@ public class FileUploadController {
 
 
         try{
+            /*
             System.out.print("available " + req.getInputStream().available() );
             System.out.print("ContentLength " + req.getContentLength() );
             System.out.print("ContentLength " + req.getInputStream() );
+            */
+            InputStream input = req.getInputStream();
 
+
+            File file = new File("C:/upload/" + fileName);
+            FileOutputStream outSource = new FileOutputStream(file);
+
+            byte[] data = new byte[1024];
+            int length = 0;
+
+            System.out.println("fuck : " + input.read(data));
+
+            while( (length = input.read(data)) != -1 ) {
+                outSource.write(data, 0, length);
+            }
+
+            BufferedInputStream is = new BufferedInputStream(req.getInputStream());
+            int available = is.available();
+            byte[] buf= new byte[8192];
+            int count = is.read(buf,0, available );
+            ServletOutputStream out = resp.getOutputStream();
+            System.out.println( available + " " + count);
 
             String rootPath = session.getServletContext().getRealPath("/");
             //File file = new File(rootPath + fileName);
-            File file = new File("C:/upload/" + fileName);
+
 
             //DataInputStream dis = new DataInputStream(req.getInputStream());
 
