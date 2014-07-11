@@ -140,6 +140,8 @@
 
     <sql id="Common.selectBoard">
         SELECT
+            B.BBS_NM          bbsNm,
+            B.BBS_EN_NM       bbsEnNm,
             A.NTT_ID          nttId,
             A.BBS_ID          bbsId,
             A.NTT_SJ          nttSj,
@@ -151,9 +153,17 @@
             BOARD_MASTER B
        WHERE A.USE_AT = 'Y'
          AND A.BBS_ID = B.BBS_ID
-         AND A.BBS_ID = #{bbsId}
     </sql>
 
+    <select id="Common.selectBoardName" parameterType="Board" resultType="Board">
+        SELECT
+            BBS_ID      bbsId,
+            BBS_NM      bbsNm,
+            BBS_EN_NM   bbsEnNm
+            FROM BOARD_MASTER
+        WHERE BBS_ID = #{bbsId}
+          AND DELETE_ID IS NULL
+    </select>
 
     <select id="Common.selectBoardList"  parameterType="Board" resultType="Board">
         <include refid="Common.selectBoard" />
@@ -167,6 +177,7 @@
             <if test="sort != null and sort == 'userId'">
                 AND A.INSERT_ID like CONCAT('%', #{searchVal}, '%')
             </if>
+        AND A.BBS_ID = #{bbsId}
 
         AND A.DELETE_ID IS NULL
 
@@ -192,7 +203,7 @@
 
 
     <insert id="Common.writeBoardArticle" parameterType="Board" >
-        <![CDATA[
+
 			INSERT INTO BOARD
 			(
 			 BBS_ID,
@@ -208,7 +219,7 @@
 			 )
 			VALUES
 			(
-			#{bbsId},
+			#{bbsType},
 			#{nttNo},
 			#{nttSj},
 			#{nttCn},
@@ -219,7 +230,7 @@
 			#{insertId},
 			SYSDATE()
 			)
-		]]>
+
     </insert>
 
     <update id="Common.updateBoardArticle" parameterType="Board">
