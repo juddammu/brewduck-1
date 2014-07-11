@@ -334,7 +334,7 @@
     	var tempFile,
     		sUploadURL;
 
-    	sUploadURL= '/fileupload/upload'; 	//upload URL
+    	sUploadURL= '/fileupload/upload2'; 	//upload URL
     	
     	//파일을 하나씩 보내고, 결과를 받음.
     	for(var j=0, k=0; j < nImageInfoCnt; j++) {
@@ -351,7 +351,6 @@
 	}
     
     function callAjaxForHTML5 (tempFile, sUploadURL){
-        alert(sUploadURL);
     	var oAjax = jindo.$Ajax(sUploadURL, {
 			type: 'xhr',
 			method : "POST",
@@ -374,7 +373,7 @@
 		oAjax.header("file-name",encodeURIComponent(tempFile.name));
 		oAjax.header("file-size",tempFile.size);
 		oAjax.header("file-Type",tempFile.type);
-		oAjax.request(tempFile);
+		oAjax.request(escape(tempFile));
     }
     
     function makeArrayFromString(sResString){
@@ -543,7 +542,7 @@
     
 	window.onload = function(){
   		checkDragAndDropAPI();
-  		
+
   		if(bSupportDragAndDropAPI){
   			$Element("pop_container2").hide();
   			$Element("pop_container").show();

@@ -52,6 +52,7 @@
                 json=application/json;charset=UTF-8
                 jsonp=application/javascript;charset=UTF-8
                 xml=application/xml;charset=UTF-8
+                jpg=application/x-www-form-urlencoded;charset=UTF-8
                 *=*/*;charset=UTF-8
             </beans:value>
         </beans:property>
@@ -75,7 +76,7 @@
 
     <!-- Only needed because we require fileupload in the org.springframework.samples.mvc.fileupload package -->
     <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <beans:property name="uploadTempDir" value="/WEB-INF/upload"/>
+        <beans:property name="uploadTempDir" value="/WEB-INF/logs"/>
         <beans:property name="maxUploadSize" value="100000000"/>
     </beans:bean>
 
