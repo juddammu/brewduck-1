@@ -103,4 +103,14 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.getNewPost(board);
     }
 
+    @Override
+    public Board selectBoardName(Board board) {
+        return boardDao.selectBoardName(board);
+    }
+
+    @Override
+    public List<Board> selectReplyList(Board board) {
+        return boardDao.selectReplyList(board);
+    }
+
 }

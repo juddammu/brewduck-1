@@ -88,6 +88,9 @@ public class Board{
     //게시판명
     private String  bbsNm;
 
+    //게시판 영문명
+    private String  bbsEnNm;
+
     private String searchVal;
 
     private Integer nextIntegerId;
@@ -97,6 +100,8 @@ public class Board{
     private  String deleteId;
 
     private String deletDate;
+
+    private Integer bbsType;
 
     public String getBbsTyCode() {
         return bbsTyCode;
@@ -416,5 +421,21 @@ public class Board{
 
     public void setDeletDate(String deletDate) {
         this.deletDate = deletDate;
+    }
+
+    public String getBbsEnNm() {
+        return bbsEnNm;
+    }
+
+    public void setBbsEnNm(String bbsEnNm) {
+        this.bbsEnNm = bbsEnNm;
+    }
+
+    public Integer getBbsType() {
+        return bbsType;
+    }
+
+    public void setBbsType(Integer bbsType) {
+        this.bbsType = bbsType;
     }
 }

@@ -83,4 +83,14 @@ public class BoardDaoImpl implements BoardDao {
         return sqlSessionTemplate.selectList("Common.getNewPost", board);
     }
 
+    @Override
+    public Board selectBoardName(Board board) {
+        return sqlSessionTemplate.selectOne("Common.selectBoardName", board);
+    }
+
+    @Override
+    public List<Board> selectReplyList(Board board) {
+        return sqlSessionTemplate.selectList("Common.selectReplyList", board);
+    }
+
 }

@@ -24,8 +24,22 @@
         <div class="row">
             <div class="content search-result list col-sm-12 col-md-12">
                 <form:form id="board" name="board"  method="POST" action="/board/writeBoardArticle" modelAttribute="board" >
-                    <div class="row">
+                    <div class="row frame border-radius">
                         <div class="col-md-12">
+                            <div class="row">
+                                <div class="bottom-padding-mini"></div>
+                                <input name="bbsType" id="bbsType" type="hidden"  class="form-control" value="">
+                                <div class="col-md-3">
+                                    <h6>게시판<span class="required">*</span></h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <select name = "select" id = "select"  style="width:150px">
+                                        <option value="">-- 선택 --</option>
+                                        <option value="3">자유게시판</option>
+                                        <option value="1">공지사항</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-3 ">
                                     <h6>제목 <span class="required">*</span></h6>
@@ -48,15 +62,18 @@
                                 </div>
                                 <div class="form-group col-md-9">
                                     <input name="file" type="file" multiple />
-                                    <p class="help-block">Example block-level help text here.</p>
+                                    <p class="help-block">이미지 사이즈는 270x270으로 올려주세요.</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-actions">
-                        <div class="pull-right">
-                            <button type="button" id ="create" class="btn btn-danger"  onclick="fn_egov_regist_notice()"><i class="icon-ok"></i> 등록 </button>
-                            <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
+                            <div class="row">
+                                <div class="col-md-12 form-actions">
+                                    <div class="pull-right">
+                                        <button type="button" id ="create" class="btn btn-danger"  onclick="fn_egov_regist_notice()"><i class="icon-ok"></i> 등록 </button>
+                                        <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-padding-mini"></div>
                         </div>
                     </div>
                 </form:form>
@@ -77,13 +94,14 @@
 
         function fn_egov_regist_notice() {
 
-            oEditors.getById["nttCn"].exec("UPDATE_CONTENTS_FIELD", []);
+                oEditors.getById["nttCn"].exec("UPDATE_CONTENTS_FIELD", []);
+                try {
+                    alert("게시물을 등록 하시겠습니까?");
 
-            try {
-                alert("게시물을 등록 하시겠습니까?");
-                document.board.action = "<c:url value='/board/writeBoardArticle'/>";
-                document.board.submit();
-            } catch(e) {}
+                        document.board.action = "<c:url value='/board/writeBoardArticle'/>";
+                        document.board.submit();
+
+                } catch(e) {}
         }
 
         function goList(){
@@ -98,6 +116,12 @@
             },500);
         }
 
+        function setBoardType(){
+
+            $("#bbsType").val(jQuery(this).val());
+            /*search();*/
+        }
+
         $(document).ready(function() {
 
             $('.slider-element').slider();  //슬라이더 초기화
@@ -109,5 +133,7 @@
         $("#list").click(function(){
             goList();
         });
+
+        $("#select").click(setBoardType);
     </script>
 </content>

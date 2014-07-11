@@ -468,44 +468,6 @@
                 <tbody id="result">
                 </tbody>
             </table>
-            <%--<ul class="latest-posts">
-                <li>
-                    <img class="image img-circle" src="http://template.progressive.itembridge.com/2.1.8/img/content/product-1.png" alt="" title="" width="84" height="84" data-appear-animation="rotateIn">
-                    <div class="meta">
-                        <span>${newPost.insertId}</span>,
-                        <span class="time">${newPost.insertDate}</span>
-                    </div>
-                    <div class="description">
-                        <a href="#">
-                            ${newPost.nttCn}
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <img class="image img-circle" src="http://template.progressive.itembridge.com/2.1.8/img/content/product-2.png" alt="" title="" width="84" height="84" data-appear-animation="rotateIn">
-                    <div class="meta">
-                        <span>Mike Example</span>,
-                        <span class="time">03.11.2013, 10:45:</span>
-                    </div>
-                    <div class="description">
-                        <a href="#">
-                            Maecenas porttitor orci vitae turpis interdum sit amet dignissim dolor consequat. Aenean id erat lorem.
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <img class="image img-circle" src="http://template.progressive.itembridge.com/2.1.8/img/content/product-3.png" alt="" title="" width="84" height="84" data-appear-animation="rotateIn">
-                    <div class="meta">
-                        <span>Mike Example</span>,
-                        <span class="time">03.11.2013, 10:45:</span>
-                    </div>
-                    <div class="description">
-                        <a href="#">
-                            Mauris vehicula fringilla nisl porttitor sollicitudin. Suspendisse facilisis metus id neque fermentum eget rutrum orci pulvinar.
-                        </a>
-                    </div>
-                </li>
-            </ul>--%>
         </div>
     </div>
 </div>

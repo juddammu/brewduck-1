@@ -42,4 +42,8 @@ public interface BoardDao {
 
     public List<Board> getNewPost(Board board);
 
+    public Board selectBoardName(Board board);
+
+    public List<Board> selectReplyList(Board board);
+
 }

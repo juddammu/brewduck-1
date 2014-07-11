@@ -18,7 +18,7 @@
         <ul class="breadcrumb">
             <li><a href="/">홈</a> </li>
             <li><a href="/">커뮤니티</a> </li>
-            <li><a href="/board/freeBoard">자유 게시판</a></li>
+            <li><a href="/board/freeBoard">${BoardDetail.bbsNm}</a></li>
             <li class="active">게시글 - POST </li>
         </ul>
     </div>
@@ -33,57 +33,97 @@
     <div class="container">
         <div class="row">
             <div class="content search-result list col-sm-12 col-md-12">
-
                 <form:form id="board" method="POST" action="/board/editBoard" modelAttribute="board">
-                    <div class="row">
+                    <div class="row frame border-radius">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-3 ">
-                                    <h6>제목 <span class="required">*</span></h6>
-                                </div>
-                                <div class="col-md-9">
-                                        <input id="nttSj" name ="nttSj" type="text" class="form-control" placeholder="${BoardDetail.nttSj}" >
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h6>내용 <span class="required">*</span></h6>
-                                </div>
-                                <div class="col-md-9">
-                                        <textarea id="nttCn" name="nttCn" class="form-control" rows="10">${BoardDetail.nttCn}</textarea>
+                                <div class="bottom-padding-mini"></div>
+                                <div class="col-md-11  text-right">
+                                    <h6>
+                                        <span>${BoardDetail.insertId}, </span>
+                                        <span class="time">${BoardDetail.insertDate}</span>
+                                    </h6>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-2  text-center">
+                                    <h6>제 목 <span class="required">*</span></h6>
+                                </div>
+                                <div class="col-md-9 content-block text-left frame border-radius">
+                                    ${BoardDetail.nttSj}
+                                </div>
+                            </div>
+                            <div class="bottom-padding-mini"></div>
+                            <div class="row">
+                                <div class="col-md-2  text-center">
+                                    <h6>내 용 <span class="required">*</span></h6>
+                                </div>
+                                <div class="col-md-9 content-block text-left bottom-padding frame border-radius">
+                                    <div class="con_text">
+                                        ${BoardDetail.nttCn}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-2  text-center">
                                     <h6>첨부파일</h6>
                                 </div>
-                                <div class="form-group col-md-9">
+                                <div class="form-group col-md-10">
                                     <input type="file" id="exampleInputFile">
                                     <p class="help-block">Example block-level help text here.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                        <div class="form-actions">
-                            <div class="pull-right">
-                        <%
-                            Board board = new Board();
-                            String user = board.getInsertId();
-                            AuthenticationUtils.getCurrentUserId();
-                            System.out.println(AuthenticationUtils.getUser());
-                            System.out.println();
-/*                            int insertId = Integer.parseInt(user);*/
-                            if (user == null) {
-                        %>
-                                <button type="button" id ="edit" class="btn btn-danger"> 수정 </button>
-                    <%--</c:if>--%>
-                        <%
-                            }
-                        %>
+                        <div class="row">
+                            <div class="col-md-11 form-actions">
+                                <div class="pull-right">
+                                    <%
+                                        Object id = request.getAttribute("account");
+                                        Object regiId = request.getAttribute("regiId");
+                                        Object loginId = request.getAttribute("loginId");
 
-                                <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
+                                        if(loginId.equals(regiId)){
+                                    %>
+                                    <button type="button" id ="edit" class="btn btn-danger"> 수정 </button>
+
+                                    <%
+                                        }
+                                    %>
+                                    <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
+                                </div>
                             </div>
                         </div>
+                        <div class="bottom-padding-mini"></div>
+                        <div class="row aligncenter">
+                            <div class="col-md-12">
+                                <div class="text-center bg border-radius">
+                                    <table class="table">
+                                        <tbody id="result">
+                                        </tbody>
+                                    </table>
+                                    <%
+                                        if (AuthenticationUtils.isAuthenticated() == true) {
+                                    %>
+                                    <div>
+                                        <textarea id="submit_details" name="comment_body" class="form-control" style=" width:98%; height: 75px; margin: 10px;"></textarea>
+                                    </div>
+                                    <div class="aligncenter">
+                                        <button type="button" id = "reply" class="btn btn-primary" style=" width:98%; height: 50px;"> 댓글입력 </button>
+                                    </div>
+                                    <%
+                                        }else {
+                                    %>
+                                    <div class="alert alert-danger fade in border-radius" style="margin: 8px;"><i class="fa fa-warning"></i> 로그인 후에 댓글을 작성 할 수 있습니다.
+                                        <button type="button" class="close" data-dismiss="alert">×</button>
+                                    </div>
+                                    <%
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form:form>
             </div>
         </div>
@@ -98,13 +138,24 @@
         }
 
         function goEdit(nttId){
-/*
-
-            oEditors[0].exec("UPDATE_CONTENTS_FILD",[]);
-*/
-
 
             location.href = "/board/editBoard/"+nttId;
+        }
+
+        function goReply(nttId){
+
+            if (confirm('<spring:message code="common.regist.msg" />')) {
+                form = document.board;
+                form.action = "<c:url value='/board/insertBoardMaster'/>";
+                form.submit();
+                form.redirect;
+            }
+            location.href = "/board/editBoard/"+nttId;
+        }
+
+        function getReplyList(bbsId,nttId){
+            $("#result").html("");
+            $("#result").load("/board/replyList/"+bbsId+"/"+nttId);
         }
 
 
@@ -122,17 +173,25 @@
         $(document).ready(function() {
 
             $('.slider-element').slider();  //슬라이더 초기화
-            $("#bbsNm").focus();              //제목칸 포커스
+            $("#submit_details").focus();              //제목칸 포커스
+            getReplyList(${BoardDetail.bbsId},${BoardDetail.nttId});
             document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
         });
 
         $("#list").click(function(){
-            goList();
+           /* goList();*/
+            getReplyList(${BoardDetail.bbsId},${BoardDetail.nttId});
 
         });
 
         $("#edit").click(function(){
             goEdit(${BoardDetail.nttId});
         });
+
+        $("#reply").click(function(){
+            goReply(${BoardDetail.nttId});
+        });
+
+
     </script>
 </content>
