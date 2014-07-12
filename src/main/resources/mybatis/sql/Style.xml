@@ -36,6 +36,12 @@
               ,update_date        updateDate
               ,delete_id          deleteId
               ,delete_date        deleteDate
+              ,look               look
+              ,smell              smell
+              ,taste              taste
+              ,mouthfeel          mouthfeel
+              ,overall            overall
+              ,comment            comment
           FROM brewduckdb.STYLE
     </sql>
 

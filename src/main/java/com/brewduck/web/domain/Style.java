@@ -89,6 +89,18 @@ public class Style implements Serializable {
     //SEO를 위한 타이틀 URL
     private String titleInUrl;
 
+    private String look;
+
+    private String smell;
+
+    private String taste;
+
+    private String mouthfeel;
+
+    private String overall;
+
+    private String comment;
+
     public String getTitleInUrl() {
         return titleInUrl;
     }
@@ -99,6 +111,56 @@ public class Style implements Serializable {
         titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
 
         this.titleInUrl = titleInUrl;
+    }
+
+    public void setMouthfeel(String mouthfeel) {
+        this.mouthfeel = mouthfeel;
+    }
+
+    public String getLook() {
+        return look;
+    }
+
+    public void setLook(String look) {
+        this.look = look;
+    }
+
+    public String getSmell() {
+        return smell;
+    }
+
+    public void setSmell(String smell) {
+        this.smell = smell;
+    }
+
+    public String getTaste() {
+        return taste;
+    }
+
+    public void setTaste(String taste) {
+        this.taste = taste;
+    }
+
+    public String getMouthfeel() {
+        return mouthfeel;
+    }
+
+
+
+    public String getOverall() {
+        return overall;
+    }
+
+    public void setOverall(String overall) {
+        this.overall = overall;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public String getSeq() {

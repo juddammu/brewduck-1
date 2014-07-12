@@ -51,7 +51,9 @@
                                         </ul>
                                         <h3 class="text-light">사례</h3>
                                         <div class="list-tags">
-                                            <a class="btn btn-xs btn-support1">${StyleDetail.examples}</a>
+                                            <c:forEach items="${examples}" var="examples">
+                                                <a class="btn btn-xs btn-support1">${examples}</a>
+                                            </c:forEach>
                                         </div>
                                     </div>
                                 </div>
@@ -64,10 +66,15 @@
                                             <br/>
                                             <div class="well clearfix">
                                                 <h4>STYLE GUIDE</h4>
-                                                <p>향: 몰트향(곡물 향, 달콤하거나 옥수수같은 향 일 수 있음)은 없음~거의없음. 없거나~낮은 홉 향은 스파이시 혹은 플로랄 향. 낮은 수준(풋사과, DMS, 과일향)의 효모특성은 허용됨. 디아세틸 없음 </p>
-                                                <p>외관: 매우 옅은 연노랑~옅은 노란색. 거의 지속되지 않는 희고 조밀한 상부거품. 매우 투명. </p>
-                                                <p>풍미: 곡물맛 혹은 옥수수 단맛이 살짝나는 크리스피하고 드라이한 풍미. 없거나 낮은 홉 풍미. 약한 홉의 쓴맛. 밸런스는 약간 몰티하거나 약간 쌉싸름한 편이나 상대적으로 균등에 가까움. 탄산화수준이 높을 수 있어서 약한 산미 혹은 드라이한 톡쏘는 맛. 디아세틸 없음. 과일맛 없음. </p>
-                                                <p>마우스필: 매우 가벼운 바디감(쌀이나 옥수수 같은 부재료의 높은 비율 때문). 혀에 가벼운 탄산 조임을 동반하는 매우 높은 탄산화. 물맛 같을수 있음 </p>
+                                                <h5><span class="badge">향 - AROMA</span> </h5>
+                                                <p>${StyleDetail.smell} </p>
+                                                <h5><span class="badge">외관 - LOOK</span></h5>
+                                                <p>${StyleDetail.look} </p>
+                                                <h5><span class="badge">풍미 - TASTE</span></h5>
+                                                <p>${StyleDetail.taste} </p>
+                                                <h5><span class="badge">총평 - OVERALL</span></h5>
+                                                <p>${StyleDetail.mouthfeel} </p>
+                                                <h5><span class="badge">코멘트 - COMMENT</span></h5>
                                                 <p>총평: 매우 상쾌하고 갈증 해소용 </p>
                                             </div>
                                         </div>
