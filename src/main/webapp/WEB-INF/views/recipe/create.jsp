@@ -299,9 +299,29 @@
         <select class="form-control select2-list" name="yeast" id="yeast" data-placeholder="Select an item">
             <option>=== 선택해주세요 ===</option>
             <c:forEach items="${yeastList}" var="yeastList" varStatus="i">
-                <option value="${yeastList.seq }" title="${yeastList.koreanName }">${yeastList.koreanName } (${yeastList.form})</option>
+                <option value="${yeastList.seq}"
+                        laboratory="${yeastList.laboratory}"
+                        productId="${yeastList.productId}"
+                        minTemperature="${yeastList.minTemperature}"
+                        maxTemperature="${yeastList.maxTemperature}"
+                        title="${yeastList.koreanName }">${yeastList.koreanName } (${yeastList.form})</option>
             </c:forEach>
         </select>
+        <table id="yeastListTable" name="yeastListTable" class="table table-hover table-striped no-margin">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이스트명</th>
+                <th>제조사</th>
+                <th>제품 ID</th>
+                <th>발효적온</th>
+                <th style="width:90px">복사</th>
+                <th style="width:90px">삭제</th>
+            </tr>
+            </thead>
+            <tbody class="d_yeast_tbody">
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="form-group">
@@ -315,6 +335,20 @@
                 <option value="${miscList.seq }" title="${miscList.koreanName }">${miscList.koreanName } (${miscList.typeKorean}) - ${miscList.useFor}</option>
             </c:forEach>
         </select>
+        <table id="miscListTable" name="miscListTable" class="table table-hover table-striped no-margin">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>재료명</th>
+                <th>용량</th>
+                <th>시간</th>
+                <th style="width:90px">복사</th>
+                <th style="width:90px">삭제</th>
+            </tr>
+            </thead>
+            <tbody class="d_misc_tbody">
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="form-group">
@@ -482,6 +516,18 @@
         $("#hopListTable").on('click', '.row_hop_copy', function () {
             row_hop_copy($(this));
         });
+        $("#yeastListTable").on('click', '.row_yeast_delete', function () {
+            row_yeast_delete($(this));
+        });
+        $("#yeastListTable").on('click', '.row_yeast_copy', function () {
+            row_yeast_copy($(this));
+        });
+        $("#miscListTable").on('click', '.row_misc_delete', function () {
+            row_misc_delete($(this));
+        });
+        $("#miscListTable").on('click', '.row_misc_copy', function () {
+            row_misc_copy($(this));
+        });
         //삭제함수
         function row_fermantable_delete(obj) {
             $(obj).parent().parent().remove().fadeOut('slow');
@@ -501,10 +547,92 @@
             $(obj).parent().parent().remove().fadeOut('slow');
         }
 
+        function row_yeast_copy(obj) {
+            $add_html3 = $(obj).parent().parent().clone().fadeIn('slow');
+            $('.d_yeast_tbody').append($add_html3);
+        }
+
+        function row_yeast_delete(obj) {
+            $(obj).parent().parent().remove().fadeOut('slow');
+        }
+
+        function row_misc_copy(obj) {
+            $add_html4 = $(obj).parent().parent().clone().fadeIn('slow');
+            $('.d_misc_tbody').append($add_html4);
+        }
+
+        function row_misc_delete(obj) {
+            $(obj).parent().parent().remove().fadeOut('slow');
+        }
+
         $(document).ready(function() {
             var fermentableHtml = "";
             var hopHtml = "";
+            var yeastHtml = "";
+            var miscHtml = "";
             //getFermentableList();
+
+            $('#misc').change(function(){
+                miscHtml = "";
+                miscHtml = miscHtml +"<tr>";
+                miscHtml = miscHtml +"<td>1<input id='recipeHopSeqs' name ='recipeHopSeqs' type='hidden' value='"+$("#misc option:selected").val()+"'></td>";
+                miscHtml = miscHtml +"<td>"+ $("#misc option:selected").text() +"</td> ";
+                miscHtml = miscHtml +"<td>";
+                miscHtml = miscHtml +"<div class='input-group' style='width:115px;'>";
+                miscHtml = miscHtml +"<input type='text' class='form-control'>";
+                miscHtml = miscHtml +"<span class='input-group-addon'>g</span>";
+                miscHtml = miscHtml +"</div>";
+                miscHtml = miscHtml +"</td> ";
+                miscHtml = miscHtml +"<td>";
+                miscHtml = miscHtml +"<div class='input-group' style='width:115px;'>";
+                miscHtml = miscHtml +"<input type='text' class='form-control'>";
+                miscHtml = miscHtml +"<span class='input-group-addon'>분</span>";
+                miscHtml = miscHtml +"</div>";
+                miscHtml = miscHtml +"</td> ";
+                miscHtml = miscHtml +"<td>";
+                miscHtml = miscHtml +"<button type='button' class='btn btn-primary btn-outline row_hop_copy'><i class='fa fa-copy'></i>  복사</button>";
+                miscHtml = miscHtml +"</td>";
+                miscHtml = miscHtml +"<td><button type='button' class='btn btn-primary btn-outline row_hop_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+                miscHtml = miscHtml +"</td> ";
+                miscHtml = miscHtml +"</tr> ";
+                $("#miscListTable").append(miscHtml);
+            });
+
+            $('#yeast').change(function(){
+                var laboratory = this.options[this.selectedIndex].getAttribute("laboratory");
+                var productId = this.options[this.selectedIndex].getAttribute("productId");
+                var minTemperature = this.options[this.selectedIndex].getAttribute("minTemperature");
+                var maxTemperature = this.options[this.selectedIndex].getAttribute("maxTemperature");
+
+                //alert(" laboratory : "+laboratory+" productId : "+productId+" minTemperature : "+minTemperature+" maxTemperature : "+maxTemperature);
+                yeastHtml = "";
+                yeastHtml = yeastHtml +"<tr>";
+                yeastHtml = yeastHtml +"<td>1<input id='recipeHopSeqs' name ='recipeHopSeqs' type='hidden' value='"+$("#yeast option:selected").val()+"'></td>";
+                yeastHtml = yeastHtml +"<td>"+ $("#yeast option:selected").text() +"</td> ";
+                yeastHtml = yeastHtml +"<td>";
+                yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
+                yeastHtml = yeastHtml +"<input type='text' class='form-control' value='"+laboratory+"'>";
+                yeastHtml = yeastHtml +"</div>";
+                yeastHtml = yeastHtml +"</td> ";
+                yeastHtml = yeastHtml +"<td>";
+                yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
+                yeastHtml = yeastHtml +"<input type='text' class='form-control' value='"+productId+"'>";
+                yeastHtml = yeastHtml +"</div>";
+                yeastHtml = yeastHtml +"</td> ";
+                yeastHtml = yeastHtml +"<td>";
+                yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
+                yeastHtml = yeastHtml + minTemperature+" ~ "+maxTemperature;
+                yeastHtml = yeastHtml +"</div>";
+                yeastHtml = yeastHtml +"</td> ";
+                yeastHtml = yeastHtml +"<td>";
+                yeastHtml = yeastHtml +"<button type='button' class='btn btn-primary btn-outline yeast_hop_copy'><i class='fa fa-copy'></i>  복사</button>";
+                yeastHtml = yeastHtml +"</td>";
+                yeastHtml = yeastHtml +"<td><button type='button' class='btn btn-primary btn-outline row_yeast_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+                yeastHtml = yeastHtml +"</td> ";
+                yeastHtml = yeastHtml +"</tr> ";
+                $("#yeastListTable").append(yeastHtml);
+            });
+
             $('#hop').change(function(){
                 hopHtml = "";
                 hopHtml = hopHtml +"<tr>";

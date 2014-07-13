@@ -283,8 +283,6 @@
     }
 
     function search(){
-
-
         $("#result").html("");
         $("#result").load("/hop/list", $("#searchForm").serialize());
 
