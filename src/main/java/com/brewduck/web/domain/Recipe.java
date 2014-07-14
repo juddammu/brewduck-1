@@ -89,10 +89,36 @@ public class Recipe implements Serializable {
     //홉 형태
     private String[] recipeHopForms;
 
-    // 맥주 레시피 기타 재료
-    private List<Misc> miscs;
     // 맥주 효모 리스트
     private List<Yeast> yeasts;
+
+    private Integer recipeYeastSeq;
+    // 효모 최소 온도
+    private Integer recipeYeastMinTemperature;
+    // 효모 최고 온도
+    private Integer recipeYeastMaxTemperature;
+
+    private Integer[] recipeYeastSeqs;
+    // 효모 최소 온도
+    private Integer[] recipeYeastMinTemperatures;
+    // 효모 최고 온도
+    private Integer[] recipeYeastMaxTemperatures;
+
+    // 맥주 레시피 기타 재료
+    private List<Misc> miscs;
+
+    private Integer recipeMiscSeq;
+
+    private Integer recipeMiscTime;
+
+    private Integer recipeMiscAmount;
+
+    private Integer[] recipeMiscSeqs;
+
+    private Integer[] recipeMiscTimes;
+
+    private Integer[] recipeMiscAmounts;
+
     // 맥주 매쉬(당화) 리스트
     private List<Mash> mashs;
     // 레시피 메모
@@ -135,6 +161,104 @@ public class Recipe implements Serializable {
     private Boolean updateFlag;
     // 삭제 성공 여부
     private Boolean deleteFlag;
+
+    public Integer getRecipeMiscSeq() {
+        return recipeMiscSeq;
+    }
+
+    public void setRecipeMiscSeq(Integer recipeMiscSeq) {
+        this.recipeMiscSeq = recipeMiscSeq;
+    }
+
+    public Integer getRecipeMiscTime() {
+        return recipeMiscTime;
+    }
+
+    public void setRecipeMiscTime(Integer recipeMiscTime) {
+        this.recipeMiscTime = recipeMiscTime;
+    }
+
+    public Integer getRecipeMiscAmount() {
+        return recipeMiscAmount;
+    }
+
+    public void setRecipeMiscAmount(Integer recipeMiscAmount) {
+        this.recipeMiscAmount = recipeMiscAmount;
+    }
+
+    public Integer[] getRecipeMiscSeqs() {
+        return recipeMiscSeqs;
+    }
+
+    public void setRecipeMiscSeqs(Integer[] recipeMiscSeqs) {
+        this.recipeMiscSeqs = recipeMiscSeqs;
+    }
+
+    public Integer[] getRecipeMiscTimes() {
+        return recipeMiscTimes;
+    }
+
+    public void setRecipeMiscTimes(Integer[] recipeMiscTimes) {
+        this.recipeMiscTimes = recipeMiscTimes;
+    }
+
+    public Integer[] getRecipeMiscAmounts() {
+        return recipeMiscAmounts;
+    }
+
+    public void setRecipeMiscAmounts(Integer[] recipeMiscAmounts) {
+        this.recipeMiscAmounts = recipeMiscAmounts;
+    }
+
+    public Integer[] getRecipeYeastSeqs() {
+        return recipeYeastSeqs;
+    }
+
+    public void setRecipeYeastSeqs(Integer[] recipeYeastSeqs) {
+        this.recipeYeastSeqs = recipeYeastSeqs;
+    }
+
+
+
+    public Integer getRecipeYeastSeq() {
+        return recipeYeastSeq;
+    }
+
+    public void setRecipeYeastSeq(Integer recipeYeastSeq) {
+        this.recipeYeastSeq = recipeYeastSeq;
+    }
+
+    public Integer getRecipeYeastMinTemperature() {
+        return recipeYeastMinTemperature;
+    }
+
+    public void setRecipeYeastMinTemperature(Integer recipeYeastMinTemperature) {
+        this.recipeYeastMinTemperature = recipeYeastMinTemperature;
+    }
+
+    public Integer getRecipeYeastMaxTemperature() {
+        return recipeYeastMaxTemperature;
+    }
+
+    public void setRecipeYeastMaxTemperature(Integer recipeYeastMaxTemperature) {
+        this.recipeYeastMaxTemperature = recipeYeastMaxTemperature;
+    }
+
+    public Integer[] getRecipeYeastMinTemperatures() {
+        return recipeYeastMinTemperatures;
+    }
+
+    public void setRecipeYeastMinTemperatures(Integer[] recipeYeastMinTemperatures) {
+        this.recipeYeastMinTemperatures = recipeYeastMinTemperatures;
+    }
+
+    public Integer[] getRecipeYeastMaxTemperatures() {
+        return recipeYeastMaxTemperatures;
+    }
+
+    public void setRecipeYeastMaxTemperatures(Integer[] recipeYeastMaxTemperatures) {
+        this.recipeYeastMaxTemperatures = recipeYeastMaxTemperatures;
+    }
 
     public Integer getRecipeHopSeq() {
         return recipeHopSeq;

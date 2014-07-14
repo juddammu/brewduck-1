@@ -30,6 +30,9 @@
         <pattern>/style</pattern>
         <pattern>/style/</pattern>
         <pattern>/style/*/*</pattern>
+        <pattern>/homebrew</pattern>
+        <pattern>/homebrew/*</pattern>
+        <pattern>/homebrew/*/*</pattern>
         <pattern>/hop</pattern>
         <pattern>/hop/</pattern>
         <pattern>/hop/*/*</pattern>

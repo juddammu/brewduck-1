@@ -314,7 +314,8 @@
                 <th>이스트명</th>
                 <th>제조사</th>
                 <th>제품 ID</th>
-                <th>발효적온</th>
+                <th>발효최저적온</th>
+                <th>발효최고적온</th>
                 <th style="width:90px">복사</th>
                 <th style="width:90px">삭제</th>
             </tr>
@@ -607,25 +608,30 @@
                 //alert(" laboratory : "+laboratory+" productId : "+productId+" minTemperature : "+minTemperature+" maxTemperature : "+maxTemperature);
                 yeastHtml = "";
                 yeastHtml = yeastHtml +"<tr>";
-                yeastHtml = yeastHtml +"<td>1<input id='recipeHopSeqs' name ='recipeHopSeqs' type='hidden' value='"+$("#yeast option:selected").val()+"'></td>";
+                yeastHtml = yeastHtml +"<td>1<input id='recipeYeastSeqs' name ='recipeYeastSeqs' type='hidden' value='"+$("#yeast option:selected").val()+"'></td>";
                 yeastHtml = yeastHtml +"<td>"+ $("#yeast option:selected").text() +"</td> ";
                 yeastHtml = yeastHtml +"<td>";
                 yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
-                yeastHtml = yeastHtml +"<input type='text' class='form-control' value='"+laboratory+"'>";
+                yeastHtml = yeastHtml +"<input type='text' class='form-control'  id='laboratory' name='laboratory' value='"+laboratory+"'>";
                 yeastHtml = yeastHtml +"</div>";
                 yeastHtml = yeastHtml +"</td> ";
                 yeastHtml = yeastHtml +"<td>";
                 yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
-                yeastHtml = yeastHtml +"<input type='text' class='form-control' value='"+productId+"'>";
+                yeastHtml = yeastHtml +"<input type='text' class='form-control'  id='productId' name='productId' value='"+productId+"'>";
                 yeastHtml = yeastHtml +"</div>";
                 yeastHtml = yeastHtml +"</td> ";
                 yeastHtml = yeastHtml +"<td>";
                 yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
-                yeastHtml = yeastHtml + minTemperature+" ~ "+maxTemperature;
+                yeastHtml = yeastHtml + minTemperature;
                 yeastHtml = yeastHtml +"</div>";
                 yeastHtml = yeastHtml +"</td> ";
                 yeastHtml = yeastHtml +"<td>";
-                yeastHtml = yeastHtml +"<button type='button' class='btn btn-primary btn-outline yeast_hop_copy'><i class='fa fa-copy'></i>  복사</button>";
+                yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
+                yeastHtml = yeastHtml + maxTemperature;
+                yeastHtml = yeastHtml +"</div>";
+                yeastHtml = yeastHtml +"</td> ";
+                yeastHtml = yeastHtml +"<td>";
+                yeastHtml = yeastHtml +"<button type='button' class='btn btn-primary btn-outline row_yeast_copy'><i class='fa fa-copy'></i>  복사</button>";
                 yeastHtml = yeastHtml +"</td>";
                 yeastHtml = yeastHtml +"<td><button type='button' class='btn btn-primary btn-outline row_yeast_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
                 yeastHtml = yeastHtml +"</td> ";
@@ -640,30 +646,30 @@
                 hopHtml = hopHtml +"<td>"+ $("#hop option:selected").text() +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<div class='input-group' style='width:115px;'>";
-                hopHtml = hopHtml +"<input type='text' class='form-control'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAmounts' name='recipeHopAmounts'>";
                 hopHtml = hopHtml +"<span class='input-group-addon'>g</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<div class='input-group' style='width:115px;'>";
-                hopHtml = hopHtml +"<input type='text' class='form-control'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopTimes' name='recipeHopTimes'>";
                 hopHtml = hopHtml +"<span class='input-group-addon'>분</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<select id='recipeHopUses' name ='recipeHopUses' class='form-control' required> ";
-                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>Boil</option><option value='5'>Dry Hop</option><option value='2'>First Wort</option><option value='1'>Mash</option><option value='6'>Whirlpool</option>";
+                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='2'>맥즙 호핑 - First Wort</option><option value='1'>당화 - Mash</option><option value='6'>월풀 - Whirlpool</option>";
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
-                hopHtml = hopHtml +"<select id='recipeFermantableUses' name ='recipeFermantableUses' class='form-control' required> ";
+                hopHtml = hopHtml +"<select id='recipeHopForms' name ='recipeHopForms' class='form-control' required> ";
                 hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>Leaf</option><option value='4'>Pellet</option><option value='1'>Plug</option>";
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
-                hopHtml = hopHtml +"<button type='button' class='btn btn-primary btn-outline row_hop_copy'><i class='fa fa-copy'></i>  복사</button>";
+                hopHtml = hopHtml +"<button type='button' class='btn btn-primary btn-outline row_misc_copy'><i class='fa fa-copy'></i>  복사</button>";
                 hopHtml = hopHtml +"</td>";
-                hopHtml = hopHtml +"<td><button type='button' class='btn btn-primary btn-outline row_hop_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+                hopHtml = hopHtml +"<td><button type='button' class='btn btn-primary btn-outline row_misc_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"</tr> ";
                 $("#hopListTable").append(hopHtml);
@@ -692,7 +698,7 @@
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
                 fermentableHtml = fermentableHtml +"<select id='recipeFermantableUses' name ='recipeFermantableUses' class='form-control' required> ";
-                fermentableHtml = fermentableHtml +"<option value=''>Choose...</option><option value='3'>Boil</option><option value='4'>Late Boil</option><option value='1'>Mash</option><option value='2'>Steep</option> ";
+                fermentableHtml = fermentableHtml +"<option value=''>Choose...</option><option value='3'>끊임 - Boil</option><option value='4'>후반 끓임 - Late Boil</option><option value='1'>당화 - Mash</option><option value='2'>우려내기 - Steep</option> ";
                 fermentableHtml = fermentableHtml +"</select> ";
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";

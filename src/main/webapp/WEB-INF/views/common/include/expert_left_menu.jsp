@@ -24,12 +24,6 @@
 
         <!-- BEGIN MAIN MENU -->
         <ul class="main-menu">
-            <!-- Menu Dashboard -->
-            <li>
-                <a href="#" >
-                    <i class="fa fa-home fa-fw"></i><span class="title">대쉬보드</span>
-                </a>
-            </li><!--end /menu-item -->
             <li>
                 <a href="/community/1/list" >
                     <i class="fa fa-home fa-fw"></i><span class="title">공지사항</span>
@@ -54,6 +48,16 @@
                 <a href="/recipe/create" >
                     <i class="fa fa-pencil fa-fw"></i><span class="title">레시피 만들기</span>
                 </a>
+            </li><!--end /menu-item -->
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="fa fa-puzzle-piece fa-fw"></i><span class="title">맥덕의 길</span> <span class="expand-sign">+</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="/homebrew/index" >대쉬보드</a></li>
+                    <li><a href="/homebrew/myrecipes" >내 레시피들</a></li>
+                </ul><!--end /submenu -->
             </li><!--end /menu-item -->
             <li>
                 <a href="javascript:void(0);">

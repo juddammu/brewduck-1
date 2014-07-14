@@ -75,7 +75,7 @@
                                                 <h5><span class="badge">총평 - OVERALL</span></h5>
                                                 <p>${StyleDetail.mouthfeel} </p>
                                                 <h5><span class="badge">코멘트 - COMMENT</span></h5>
-                                                <p>총평: 매우 상쾌하고 갈증 해소용 </p>
+                                                <p>${StyleDetail.comment} </p>
                                             </div>
                                         </div>
                                     </article>

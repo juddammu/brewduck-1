@@ -73,7 +73,7 @@ public class StyleController {
         Style styleDetail = styleService.selectStyleDetail(style);
         String examples[] = null;
 
-        if(styleDetail.getExamples().length() > 0){
+        if(styleDetail.getExamples() != null){
             examples = styleDetail.getExamples().split(",");
         }
 

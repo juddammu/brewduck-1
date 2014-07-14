@@ -46,7 +46,10 @@
                 <div class="col-md-9">
                     <article class="style-white">
                         <div class="box-body">
-                            <textarea id="nttCn" name="nttCn"  placeholder="내용 입력..." class="form-control" rows="10" style="width:auto; height:400px;"></textarea>
+                            <textarea id="ckeditor" name="nttCn" class="form-control control-12-rows" placeholder="Enter text ..." >
+                                ${noticeView.contents}
+                            </textarea>
+
                             <br/>
                             <div class="well clearfix">
                                 <h4>About the author: Daniel Johnson</h4>
@@ -92,141 +95,18 @@
 <!-- START COMMENTS -->
 <!-- END COMMENTS -->
 
-<!-- START LEAVE COMMENT -->
-<div class="row">
-    <div class="col-md-9">
-        <h4>Leave a comment</h4>
-        <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <div class="col-md-2">
-                    <label for="name" class="control-label">Name</label>
-                </div>
-                <div class="col-md-10">
-                    <input type="email" id="name" class="form-control control-width-normal" placeholder="Name">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-2">
-                    <label for="email" class="control-label">Email</label>
-                </div>
-                <div class="col-md-10">
-                    <input type="text" id="email" class="form-control control-width-normal" placeholder="Email">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-2">
-                    <label for="website" class="control-label">Website</label>
-                </div>
-                <div class="col-md-10">
-                    <input type="text" id="website" class="form-control control-width-normal" placeholder="Website">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-2">
-                    <label for="textarea1" class="control-label">Comment</label>
-                </div>
-                <div class="col-md-10">
-                    <textarea name="textarea1" id="textarea1" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
-                </div>
-            </div>
-            <div class="form-footer col-md-offset-2">
-                <button type="submit" class="btn btn-primary">Post comment</button>
-            </div>
-        </form>
-    </div><!--end .col-md-9 -->
-</div><!--end .row -->
-<!-- END LEAVE COMMENT -->
 
 </div><!--end .section-body -->
 </section>
 
-<section id="main" class="page">
-    <header class="page-header">
-        <div class="container">
-            <h3>게시글 작성 - POST ON</h3>
-        </div>
-    </header>
-    <div class="container">
-        <script type="text/javascript" src="/resources/asset/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
-        <div class="row">
-            <div class="content search-result list col-sm-12 col-md-12">
-                <form:form id="board" name="board"  method="POST" action="/board/writeBoardArticle" modelAttribute="board" >
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-3 ">
-                                    <h6>제목 <span class="required">*</span></h6>
-                                </div>
-                                <div class="col-md-9">
-                                    <input id="nttSj" name="nttSj" type="text"  class="form-control" value="">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h6>내용 <span class="required">*</span></h6>
-                                </div>
-                                <div class="col-md-9">
-
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h6>첨부파일</h6>
-                                </div>
-                                <div class="form-group col-md-9">
-                                    <input name="file" type="file" multiple />
-                                    <p class="help-block">Example block-level help text here.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-actions">
-                        <div class="pull-right">
-                            <button type="button" id ="create" class="btn btn-danger"  onclick="fn_egov_regist_notice()"><i class="icon-ok"></i> 등록 </button>
-                            <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
-                        </div>
-                    </div>
-                </form:form>
-            </div>
-        </div>
-    </div>
-</section>
 
 <content tag="local_script">
+    <script src="/resources/expert/js/core/BootstrapFixed.js"></script>
+    <script src="/resources/expert/js/libs/ckeditor/ckeditor.js"></script>
+    <script src="/resources/expert/js/libs/ckeditor/adapters/jquery.js"></script>
+    <script src="/resources/expert/js/core/demo/DemoFormEditors.js"></script>
+
     <script type = "text/javascript">
-        var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-        oAppRef: oEditors,
-        elPlaceHolder: "nttCn",
-        sSkinURI: "/resources/asset/smarteditor/SmartEditor2Skin.html",
-        fCreator: "createSEditor2"
-        });
 
-        function fn_egov_regist_notice() {
-
-            oEditors.getById["nttCn"].exec("UPDATE_CONTENTS_FIELD", []);
-
-            try {
-                alert("게시물을 등록 하시겠습니까?");
-                document.board.action = "<c:url value='/board/writeBoardArticle'/>";
-                document.board.submit();
-            } catch(e) {}
-        }
-
-        function goList(){
-            location.href = "/board/freeBoard";
-        }
-
-
-        $(document).ready(function() {
-
-            $("#nttSj").focus();              //제목칸 포커스
-            //document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
-
-        });
-
-        $("#list").click(function(){
-            goList();
-        });
     </script>
 </content>

@@ -86,13 +86,14 @@ public class RecipeController {
      * @param model Model
      * @return 맥주 레시피 목록
      */
-    @ResponseBody
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Recipe> selectRecipeList(Model model) {
         LOGGER.info("Recipe List");
         Recipe recipe = new Recipe();
+        Account account = AuthenticationUtils.getUser();
 
         // 맥주 레시피 목록 조회
+        recipe.setBrewer(account.getId()+"");
         List<Recipe> list = recipeService.selectRecipeList(recipe);
         LOGGER.info("Recipe List Size : {}", list.size());
 
@@ -144,8 +145,25 @@ public class RecipeController {
 
         Recipe paramRecipeFermantable = new Recipe();
         Recipe paramRecipeHop = new Recipe();
-        int fermentableSize = paramRecipe.getRecipeFermantableSeqs().length;
-        int hopSize = paramRecipe.getRecipeHopSeqs().length;
+        Recipe paramRecipeYeast = new Recipe();
+        Recipe paramRecipeMisc = new Recipe();
+        int fermentableSize = 0;
+        int hopSize = 0;
+        int yeastSize = 0;
+        int miscSize = 0;
+
+        if(paramRecipe.getRecipeFermantableSeqs() != null){
+            fermentableSize = paramRecipe.getRecipeFermantableSeqs().length;
+        }
+        if(paramRecipe.getRecipeHopSeqs() != null){
+            hopSize = paramRecipe.getRecipeHopSeqs().length;
+        }
+        if(paramRecipe.getRecipeYeastSeqs() != null){
+            yeastSize = paramRecipe.getRecipeYeastSeqs().length;
+        }
+        if(paramRecipe.getRecipeMiscSeqs() != null){
+            miscSize = paramRecipe.getRecipeMiscSeqs().length;
+        }
 
         Integer recipeSeq = recipeService.selectRecipeSeq(paramRecipe).getSeq();
 
@@ -161,6 +179,7 @@ public class RecipeController {
             }
         }
 
+
         if(hopSize > 0){
             for(int i=0; i < hopSize; i++ ){
                 paramRecipeHop.setRecipeSeq(recipeSeq);
@@ -171,6 +190,17 @@ public class RecipeController {
                 paramRecipeHop.setRecipeHopForm(paramRecipe.getRecipeHopForms()[i]);
                 paramRecipeHop.setInsertId(account.getId() + "");
                 recipeService.insertRecipeHop(paramRecipeHop);
+            }
+        }
+
+        if(yeastSize > 0){
+            for(int i=0; i < yeastSize; i++ ){
+                paramRecipeYeast.setRecipeSeq(recipeSeq);
+                paramRecipeYeast.setRecipeYeastSeq(paramRecipe.getRecipeYeastSeqs()[i]);
+                //paramRecipeYeast.setRecipeYeastMinTemperature(paramRecipe.getRecipeYeastMinTemperatures()[i]);
+                //paramRecipeYeast.setRecipeYeastMaxTemperature(paramRecipe.getRecipeYeastMaxTemperatures()[i]);
+                paramRecipeYeast.setInsertId(account.getId() + "");
+                recipeService.insertRecipeYeast(paramRecipeYeast);
             }
         }
 

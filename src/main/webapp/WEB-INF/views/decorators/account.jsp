@@ -27,49 +27,9 @@
     <![endif]-->
 </head>
 <body class="body-dark">
-<!-- START LOGIN BOX -->
+<!-- START LOGIN BOX -
 <div class="box-type-login">
-    <div class="box text-center">
-        <div class="box-head">
-            <h2 class="text-light text-white"> <strong>맥덕</strong> 모드 인증 시스템<i class="fa fa-rocket fa-fw"></i></h2>
-            <h4 class="text-light text-inverse-alt">맥Duck Mode</h4>
-        </div>
-        <div class="box-body box-centered style-inverse">
-            <h2 class="text-light">계정을 입력하세요.</h2>
-            <br/>
-            <form:form id="authentication" class="form-content login-form" method="POST" action="/account/authentication" modelAttribute="account">
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input class="form-control" id="email" name="email" type="text" placeholder="아이디를 입력하세요." value="hukoru@naver.com" maxlength="40">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input class="form-control" id="password" name="password" type="password" placeholder="패스워드를 입력하세요." value="123456" maxlength="100">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6 text-left">
-                        <div data-toggle="buttons">
-                            <label class="btn checkbox-inline btn-checkbox-primary-inverse">
-                                <input type="checkbox" value="default-inverse1"> 아이디 저장
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-key"></i> 로그인</button>
-                    </div>
-                </div>
-            </form:form>
-        </div><!--end .box-body -->
-        <div class="box-footer force-padding text-white">
-            <c:if test="${loginError eq 'false'}">
-                <h4 class="rs title-box fc-orange">${errorMessage}</h4>
-            </c:if>
-        </div>
-    </div>
+    <decorator:body />
 </div>
 <!-- END LOGIN BOX -->
 
@@ -83,10 +43,6 @@
 <script src="/resources/expert/js/core/App.js"></script>
 <script src="/resources/expert/js/core/demo/Demo.js"></script>
 <!-- END JAVASCRIPT -->
-<script>
-    $(document).ready(function() {
-        $("#email").focus();
-    });
-</script>
+
 </body>
 </html>

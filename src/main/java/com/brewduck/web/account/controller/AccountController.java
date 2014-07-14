@@ -93,17 +93,20 @@ public class AccountController {
             return "account/signup";
         }
 
+        /*
         if (account.getEmail().equals(account.getReEmail()) == false) {
             redirectAttributes.addFlashAttribute("message", "이메일 주소가 동일하지 않습니다.");
             LOGGER.error("이메일 주소가 동일하지 않습니다.");
 
             return "redirect:/account/login";
         }
+        */
+
         if (account.getPassword().equals(account.getRePassword()) == false) {
             redirectAttributes.addFlashAttribute("message", "비빌번호가 동일하지 않습니다.");
             LOGGER.error("비빌번호가 동일하지 않습니다.");
 
-            return "redirect:/account/login";
+            return "redirect:/account/signup";
         }
 
         int insertCount = accountService.insertAccount(account);
@@ -113,14 +116,14 @@ public class AccountController {
             redirectAttributes.addFlashAttribute("message", "동일한 이메일이 존재합니다.");
             LOGGER.error("동일한 이메일이 존재합니다.");
 
-            return "redirect:/account/login";
+            return "redirect:/account/signup";
         }
 
         if (insertCount == 0) {
             redirectAttributes.addFlashAttribute("message", "회원 가입 중 저장이 실패하였습니다.");
             LOGGER.error("회원 가입 중 저장이 실패하였습니다.");
 
-            return "redirect:/account/login";
+            return "redirect:/account/signup";
         }
 
         return "redirect:/account/confirm";
