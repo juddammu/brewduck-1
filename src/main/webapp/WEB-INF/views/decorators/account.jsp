@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,97 +12,81 @@
     <meta name="description" content="BRWEDUCK - 세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다." />
     <meta name="keywords" content="ale, beer, brewduck, Home Brewing, lager, SOMA, 곡주, 공방, 과실주, 라거, 맥주, 문화, 바이젠, 발효, 배병우, 소마, 숙성, 양조, 에일, 옥수동, 옥토버페스트, 와인, 맥만동, 임세환, 제조, 주조, 증류주, 포도주, 프로젝트, 홈 브루잉, 효모" />
 
-    <link rel="shortcut icon" href="/resources/asset/img/favicon.ico">
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800' rel='stylesheet' type='text/css'/>
+    <link type="text/css" rel="stylesheet" href="/resources/expert/css/theme-default/bootstrap.css?1400695306" />
+    <link type="text/css" rel="stylesheet" href="/resources/expert/css/theme-default/boostbox.css?1401297311" />
+    <link type="text/css" rel="stylesheet" href="/resources/expert/css/theme-default/boostbox_responsive.css?1400695309" />
+    <link type="text/css" rel="stylesheet" href="/resources/expert/css/theme-default/font-awesome.min.css?1400333030" />
+    <!-- END STYLESHEETS -->
 
-    <link rel="stylesheet" href="/resources/asset/css/buttons/social-icons.css">
-    <link rel="stylesheet" href="/resources/asset/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/resources/asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/resources/asset/css/jslider.css">
-    <link rel="stylesheet" href="/resources/asset/css/settings.css">
-    <link rel="stylesheet" href="/resources/asset/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="/resources/asset/css/animate.css">
-    <link rel="stylesheet" href="/resources/asset/css/video-js.min.css">
-    <link rel="stylesheet" href="/resources/asset/css/morris.css">
-    <link rel="stylesheet" href="/resources/asset/css/royalslider/royalslider.css">
-    <link rel="stylesheet" href="/resources/asset/css/royalslider/skins/minimal-white/rs-minimal-white.css">
-    <link rel="stylesheet" href="/resources/asset/css/layerslider/layerslider.css">
-    <link rel="stylesheet" href="/resources/asset/css/ladda.min.css">
-    <link rel="stylesheet" href="/resources/asset/css/style.css">
-    <link rel="stylesheet" href="/resources/asset/css/responsive.css">
-    <link rel="stylesheet" href="/resources/asset/css/customizer/pages.css">
-
-    <!-- IE Styles-->
-    <link rel='stylesheet' href="/resources/asset/css/ie/ie.css">
-
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <link rel='stylesheet' href="/resources/asset/css/ie/ie8.css">
+    <script type="text/javascript" src="/resources/expert/js/libs/utils/html5shiv.js?1400333019"></script>
+    <script type="text/javascript" src="/resources/expert/js/libs/utils/respond.min.js?1400333017"></script>
     <![endif]-->
 </head>
-<body class="page-login-promo blur-page" data-blur-image="/resources/asset/img/content/bg-login.jpg" data-blur-amount="1">
-
-<div class="page-box">
-
-    <header class="header header-three">
-        <div class="container">
-            <div class="row">
-                <div class="logo-box col-sm-12 col-md-12">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="/resources/asset/img/logo.svg" class="logo-img" alt="">
-                        </a>
+<body class="body-dark">
+<!-- START LOGIN BOX -->
+<div class="box-type-login">
+    <div class="box text-center">
+        <div class="box-head">
+            <h2 class="text-light text-white"> <strong>맥덕</strong> 모드 인증 시스템<i class="fa fa-rocket fa-fw"></i></h2>
+            <h4 class="text-light text-inverse-alt">맥Duck Mode</h4>
+        </div>
+        <div class="box-body box-centered style-inverse">
+            <h2 class="text-light">계정을 입력하세요.</h2>
+            <br/>
+            <form:form id="authentication" class="form-content login-form" method="POST" action="/account/authentication" modelAttribute="account">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input class="form-control" id="email" name="email" type="text" placeholder="아이디를 입력하세요." value="hukoru@naver.com" maxlength="40">
                     </div>
                 </div>
-            </div><!--.row -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input class="form-control" id="password" name="password" type="password" placeholder="패스워드를 입력하세요." value="123456" maxlength="100">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-left">
+                        <div data-toggle="buttons">
+                            <label class="btn checkbox-inline btn-checkbox-primary-inverse">
+                                <input type="checkbox" value="default-inverse1"> 아이디 저장
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-key"></i> 로그인</button>
+                    </div>
+                </div>
+            </form:form>
+        </div><!--end .box-body -->
+        <div class="box-footer force-padding text-white">
+            <c:if test="${loginError eq 'false'}">
+                <h4 class="rs title-box fc-orange">${errorMessage}</h4>
+            </c:if>
         </div>
-    </header><!-- .header -->
+    </div>
+</div>
+<!-- END LOGIN BOX -->
 
-    <decorator:body />
-
-</div><!-- .page-box -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="/resources/asset/js/bootstrap.min.js"></script>
-<script src="/resources/asset/js/price-regulator/jshashtable-2.1_src.js"></script>
-<script src="/resources/asset/js/price-regulator/jquery.numberformatter-1.2.3.js"></script>
-<script src="/resources/asset/js/price-regulator/tmpl.js"></script>
-<script src="/resources/asset/js/price-regulator/jquery.dependClass-0.1.js"></script>
-<script src="/resources/asset/js/price-regulator/draggable-0.1.js"></script>
-<script src="/resources/asset/js/price-regulator/jquery.slider.js"></script>
-<script src="/resources/asset/js/jquery.carouFredSel-6.2.1-packed.js"></script>
-<script src="/resources/asset/js/jquery.touchSwipe.min.js"></script>
-<script src="/resources/asset/js/jquery.elevateZoom-3.0.8.min.js"></script>
-<script src="/resources/asset/js/jquery.imagesloaded.min.js"></script>
-<script src="/resources/asset/js/jquery.appear.js"></script>
-<script src="/resources/asset/js/jquery.sparkline.min.js"></script>
-<script src="/resources/asset/js/jquery.easypiechart.min.js"></script>
-<script src="/resources/asset/js/jquery.easing.1.3.js"></script>
-<script src="/resources/asset/js/jquery.fancybox.pack.js"></script>
-<script src="/resources/asset/js/isotope.pkgd.min.js"></script>
-<script src="/resources/asset/js/jquery.knob.js"></script>
-<script src="/resources/asset/js/jquery.stellar.min.js"></script>
-<script src="/resources/asset/js/jquery.selectBox.min.js"></script>
-<script src="/resources/asset/js/jquery.royalslider.min.js"></script>
-<script src="/resources/asset/js/jquery.tubular.1.0.js"></script>
-<script src="/resources/asset/js/country.js"></script>
-<script src="/resources/asset/js/spin.min.js"></script>
-<script src="/resources/asset/js/ladda.min.js"></script>
-<script src="/resources/asset/js/masonry.pkgd.min.js"></script>
-<script src="/resources/asset/js/morris.min.js"></script>
-<script src="/resources/asset/js/raphael.min.js"></script>
-<script src="/resources/asset/js/video.js"></script>
-<script src="/resources/asset/js/pixastic.custom.js"></script>
-<script src="/resources/asset/js/livicons-1.3.min.js"></script>
-<script src="/resources/asset/js/layerslider/greensock.js"></script>
-<script src="/resources/asset/js/layerslider/layerslider.transitions.js"></script>
-<script src="/resources/asset/js/layerslider/layerslider.kreaturamedia.jquery.js"></script>
-<script src="/resources/asset/js/revolution/jquery.themepunch.plugins.min.js"></script>
-<script src="/resources/asset/js/revolution/jquery.themepunch.revolution.min.js"></script>
-<script src="/resources/asset/js/main.js"></script>
-
+<!-- BEGIN JAVASCRIPT -->
+<script src="/resources/expert/js/libs/jquery/jquery-1.11.0.min.js"></script>
+<script src="/resources/expert/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script src="/resources/expert/js/core/BootstrapFixed.js"></script>
+<script src="/resources/expert/js/libs/bootstrap/bootstrap.min.js"></script>
+<script src="/resources/expert/js/libs/spin.js/spin.min.js"></script>
+<script src="/resources/expert/js/libs/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/resources/expert/js/core/App.js"></script>
+<script src="/resources/expert/js/core/demo/Demo.js"></script>
+<!-- END JAVASCRIPT -->
+<script>
+    $(document).ready(function() {
+        $("#email").focus();
+    });
+</script>
 </body>
-</html>
-
-
-
 </html>

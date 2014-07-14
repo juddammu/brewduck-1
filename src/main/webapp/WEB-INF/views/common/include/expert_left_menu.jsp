@@ -70,6 +70,11 @@
                     <li><a href="/calc/pitch-rate-calculator" >Pitch Rate Calculator</a></li>
                 </ul><!--end /submenu -->
             </li><!--end /menu-item -->
+            <li>
+                <a href="#" >
+                    <i class="fa fa-home fa-fw"></i><span class="title">버그제보 및 기능제안</span>
+                </a>
+            </li><!--end /menu-item -->
         </ul><!--end .main-menu -->
         <!-- END MAIN MENU -->
 

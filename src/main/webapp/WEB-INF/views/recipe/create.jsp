@@ -703,9 +703,6 @@
                 fermentableHtml = fermentableHtml +"</tr> ";
                 $("#fermantableListTable").append(fermentableHtml);
             });
-
-
-
         });
     </script>
 </content>
