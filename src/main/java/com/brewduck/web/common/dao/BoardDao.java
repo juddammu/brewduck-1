@@ -46,4 +46,8 @@ public interface BoardDao {
 
     public List<Board> selectReplyList(Board board);
 
+    public int writeReply(Board board);
+
+    public int deleteReply(Board board);
+
 }

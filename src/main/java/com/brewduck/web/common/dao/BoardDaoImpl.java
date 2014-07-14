@@ -93,4 +93,14 @@ public class BoardDaoImpl implements BoardDao {
         return sqlSessionTemplate.selectList("Common.selectReplyList", board);
     }
 
+    @Override
+    public int writeReply(Board board) {
+        return sqlSessionTemplate.insert("Common.writeReply", board);
+    }
+
+    @Override
+    public int deleteReply(Board board) {
+        return sqlSessionTemplate.update("Common.deleteReply", board);
+    }
+
 }

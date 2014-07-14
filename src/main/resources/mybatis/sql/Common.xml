@@ -352,8 +352,79 @@
         from BOARD
         order by INSERT_DATE
         DESC limit 4;
-
-
     </select>
+
+    <select id="selectReplyList" parameterType="Board" resultType="Board">
+        SELECT
+          ANSWER_NO     answerNo,
+          BBS_ID        bbsId,
+          NTT_ID        nttId,
+          INSERT_ID     insertId,
+          INSERT_DATE   insertDate,
+          ANSWER        answer,
+          WRTER_NM      wrterNm,
+          WRTER_ID      wrterId
+        FROM BOARD_COMMENT
+        WHERE USE_AT = 'Y'
+        AND BBS_ID = #{bbsId}
+        AND NTT_ID =#{nttId}
+    </select>
+
+
+    <insert id="Common.writeReply" parameterType="Board">
+		<![CDATA[
+            INSERT INTO BOARD_COMMENT(
+               NTT_ID
+              ,BBS_ID
+              ,ANSWER_NO
+              ,WRTER_ID
+              ,WRTER_NM
+              ,ANSWER
+              ,USE_AT
+              ,INSERT_DATE
+              ,INSERT_ID
+            ) VALUES (
+               #{nttId}
+              ,#{bbsId}
+              ,(SELECT * FROM (SELECT CASE COUNT(*) WHEN 0 THEN 1 ELSE MAX(ANSWER_NO)+1 END
+              FROM BOARD_COMMENT WHERE BOARD_COMMENT.NTT_ID =#{nttId}
+              AND BOARD_COMMENT.BBS_ID =#{bbsId})NEXT)
+              ,#{wrterId}
+              ,#{wrterNm}
+              ,#{amswer}
+              ,#{useAt}
+              ,SYSDATE()
+              ,#{insertId}
+            )
+		]]>
+    </insert>
+
+    <insert id="Common.deleteReply" parameterType="Board">
+		<![CDATA[
+             INTO BOARD_COMMENT(
+               NTT_ID
+              ,BBS_ID
+              ,ANSWER_NO
+              ,WRTER_ID
+              ,WRTER_NM
+              ,ANSWER
+              ,USE_AT
+              ,INSERT_DATE
+              ,INSERT_ID
+            ) VALUES (
+               #{nttId}
+              ,#{bbsId}
+              ,(SELECT * FROM (SELECT CASE COUNT(*) WHEN 0 THEN 1 ELSE MAX(ANSWER_NO)+1 END
+              FROM BOARD_COMMENT WHERE BOARD_COMMENT.NTT_ID =#{nttId}
+              AND BOARD_COMMENT.BBS_ID =#{bbsId})NEXT)
+              ,#{wrterId}
+              ,#{wrterNm}
+              ,#{amswer}
+              ,#{useAt}
+              ,SYSDATE()
+              ,#{insertId}
+            )
+		]]>
+    </insert>
 
 </mapper>

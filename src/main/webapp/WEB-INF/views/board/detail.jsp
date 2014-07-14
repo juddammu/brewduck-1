@@ -33,7 +33,9 @@
     <div class="container">
         <div class="row">
             <div class="content search-result list col-sm-12 col-md-12">
-                <form:form id="board" method="POST" action="/board/editBoard" modelAttribute="board">
+                <form:form id="boardForm" name="boardForm" method="GET" action="/board/writeReply" modelAttribute="paramBoard">
+                    <input name="bbsId"  id="bbsId" type="text"  class="form-control" value="${BoardDetail.bbsId}">
+                    <input name="nttId"  id="nttId" type="text"  class="form-control" value="${BoardDetail.nttId}">
                     <div class="row frame border-radius">
                         <div class="col-md-12">
                             <div class="row">
@@ -106,10 +108,10 @@
                                         if (AuthenticationUtils.isAuthenticated() == true) {
                                     %>
                                     <div>
-                                        <textarea id="submit_details" name="comment_body" class="form-control" style=" width:98%; height: 75px; margin: 10px;"></textarea>
+                                        <textarea id="amswer" name="amswer" class="form-control" style=" width:98%; height: 75px; margin: 10px;"></textarea>
                                     </div>
                                     <div class="aligncenter">
-                                        <button type="button" id = "reply" class="btn btn-primary" style=" width:98%; height: 50px;"> 댓글입력 </button>
+                                        <button type="submit" id = "reply" name="reply" class="btn btn-primary" style=" width:98%; height: 50px;"> 댓글입력 </button>
                                     </div>
                                     <%
                                         }else {
@@ -133,8 +135,15 @@
 <content tag="local_script">
     <script>
 
-        function goList(){
-            location.href = "/board/freeBoard";
+        function goList(bbsId){
+            if(bbsId==3)
+            {
+                location.href = "/board/freeBoard";
+            }
+            if(bbsId==1)
+            {
+                location.href = "/board/noticeBoard";
+            }
         }
 
         function goEdit(nttId){
@@ -142,20 +151,90 @@
             location.href = "/board/editBoard/"+nttId;
         }
 
-        function goReply(nttId){
-
-            if (confirm('<spring:message code="common.regist.msg" />')) {
-                form = document.board;
-                form.action = "<c:url value='/board/insertBoardMaster'/>";
-                form.submit();
-                form.redirect;
+        function goReply(){
+            var $insertId = AuthenticationUtils.getUser();
+            var $answer = $("#answer");
+            var $nttId = $("#nttId");
+            var $bbsId = $("#bbsId");
+            if($txtComments.val().length <3)
+            {
+                alert('내용이 너무 짧습니다.');
+                return;
             }
-            location.href = "/board/editBoard/"+nttId;
+            var param = {answer: answer.val(), nttId: $nttId.val(), bbsId: $bbsId.val(), insertId: $insertId.val()};
+            $.post("cmtWriteProc.jsp",param,refresh);
+            $txtComments.val("");
+
+/*
+                form = document.board;
+                form.action = "<c:url value='/board/writeReply'/>";
+                $("#amswer").action = "<c:url value='/board/writeReply'/>";
+
+                form.submit();
+*/
+
         }
 
-        function getReplyList(bbsId,nttId){
+        function refresh(){
+            $.get("replyList.jsp",null,refresh_list);
+        }
+
+        function refresh_list(data){
+            $("#result").html(data);
+        }
+
+/*
+        function getReplyList(){
+
             $("#result").html("");
-            $("#result").load("/board/replyList/"+bbsId+"/"+nttId);
+            $("#result").load("/board/replyList",$("#boardForm").serialize());
+        }
+*/
+
+        function getReplyList(){
+            var commentHtml ="";
+            var nttId = $("nttId").val;
+            var bbsId = $("#bbsId").val;
+            alert ("value is :"+ nttId);
+
+            $.ajax({
+                type: 'POST',
+                dataType : "json",
+                url : '/board/replyList',
+                data: {bbsId:bbsId, nttId:nttId},
+                contentType: "application/json",
+                success:function(result){
+                    //월 세팅 selectbox 초기화
+                    //$("#userBirthMonth").find("option").remove().end().append("<option value=''>- 선택 -</option>");
+
+
+                    //결과 갯수 만큼 날짜 세팅
+                    $.each(result, function(i){
+                        //$("#userBirthMonth").append("<option value='"+result[i].code+"'>"+result[i].codeName+"</option>")
+
+                        commentHtml = commentHtml + "<tr>";
+                        commentHtml = commentHtml + "    <ul class='latest-posts'>";
+                        commentHtml = commentHtml + "        <li class='text-left text'>";
+                        commentHtml = commentHtml + "            <img class='image img-circle' src='http://template.progressive.itembridge.com/2.1.8/img/content/product-1.png' alt='' title='' width='84' height='84'data-appear-animation='rotateIn'>";
+                        commentHtml = commentHtml + "            <div class='meta'>";
+                        commentHtml = commentHtml + "                <span>${replyList.insertId}</span>";
+                        commentHtml = commentHtml + "                <span class='time'>, ${replyList.insertDate}</span>";
+                        commentHtml = commentHtml + "            </div>";
+                        commentHtml = commentHtml + "            <div class='description' style='height: auto;'>";
+                        commentHtml = commentHtml + "                <h8>${replyList.answer}</h8>";
+                        commentHtml = commentHtml + "            </div>";
+                        commentHtml = commentHtml + "        </li>";
+                        commentHtml = commentHtml + "    </ul>";
+                        commentHtml = commentHtml + "<tr>";
+
+                    });
+
+                    $("#result").append(commentHtml);
+                },
+                error:function(xhr,statue,error){
+                    alert(error);
+                }
+            });
         }
 
 
@@ -174,14 +253,12 @@
 
             $('.slider-element').slider();  //슬라이더 초기화
             $("#submit_details").focus();              //제목칸 포커스
-            getReplyList(${BoardDetail.bbsId},${BoardDetail.nttId});
+            getReplyList();
             document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
         });
 
         $("#list").click(function(){
-           /* goList();*/
-            getReplyList(${BoardDetail.bbsId},${BoardDetail.nttId});
-
+            goList(${BoardDetail.bbsId});
         });
 
         $("#edit").click(function(){
@@ -189,7 +266,7 @@
         });
 
         $("#reply").click(function(){
-            goReply(${BoardDetail.nttId});
+            goReply();
         });
 
 

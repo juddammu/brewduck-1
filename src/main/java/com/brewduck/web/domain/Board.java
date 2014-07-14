@@ -103,6 +103,8 @@ public class Board{
 
     private Integer bbsType;
 
+    private String amswer;
+
     public String getBbsTyCode() {
         return bbsTyCode;
     }
@@ -437,5 +439,13 @@ public class Board{
 
     public void setBbsType(Integer bbsType) {
         this.bbsType = bbsType;
+    }
+
+    public String getAmswer() {
+        return amswer;
+    }
+
+    public void setAmswer(String amswer) {
+        this.amswer = amswer;
     }
 }

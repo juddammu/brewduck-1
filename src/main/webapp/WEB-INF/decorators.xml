@@ -72,7 +72,7 @@
         <pattern>/misc/list/*</pattern>
         <pattern>/board/freeBoard/list/</pattern>
         <pattern>/board/noticeBoard/noticeList/</pattern>
-        <pattern>/board/replyList/*/*</pattern>
+        <pattern>/board/replyList</pattern>
         <pattern>/common/list</pattern>
     </decorator>
     <!--

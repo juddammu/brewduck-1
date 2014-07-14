@@ -113,4 +113,13 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.selectReplyList(board);
     }
 
+    @Override
+    public int writeReply(Board board) {
+        return boardDao.writeReply(board);
+    }
+
+    @Override
+    public int deleteReply(Board board) {
+        return boardDao.deleteReply(board);
+    }
 }

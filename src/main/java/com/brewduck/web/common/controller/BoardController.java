@@ -54,11 +54,35 @@ public class BoardController {
      * @return 자유게시판 메인
      */
     @RequestMapping(value = "/freeBoard", method = RequestMethod.GET)
-    public String freeBoardMain(Model model) {
-        logger.info("freeBoard index");
+    public String freeBoardMain(Model model, Board board) {
+        logger.info("Free Board Main");
 
+        board.setBbsId(3);
         Account account = AuthenticationUtils.getUser();
+        Board boardList = boardService.selectBoardName(board);
+        model.addAttribute("boardList", boardList);
+        model.addAttribute("account", account);
 
+        return "board/freeBoard";
+    }
+
+    /**
+     * <pre>
+     * 공지사항 메인
+     * </pre>
+     *
+     *
+     * @param model Model
+     * @return 공지사항 메인
+     */
+    @RequestMapping(value = "/noticeBoard", method = RequestMethod.GET)
+    public String noticeBoardMain(Model model, Board board) {
+        logger.info("Notice Board Main");
+
+        board.setBbsId(1);
+        Account account = AuthenticationUtils.getUser();
+        Board boardList = boardService.selectBoardName(board);
+        model.addAttribute("boardList", boardList);
         model.addAttribute("account", account);
 
         return "board/freeBoard";
@@ -73,32 +97,133 @@ public class BoardController {
      * @return 자유게시판 리스트
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<Board> boardList(Model model, Board paramBoard) {
-        logger.info("Board List");
-        Board board = new Board();
+    public List<Board> boardList(Model model, Board board) {
+        logger.info("Free Board List");
 
-        // 맥주 맥아 목록 조회z
-        List<Board> list = boardService.selectBoardList(paramBoard);
-        logger.info("Board List Size : {}", list.size());
+        board.setBbsId(3);
+        List<Board> list = boardService.selectBoardList(board);
+        logger.info("Free Board List Size : {}", list.size());
         model.addAttribute("list", list);
 
         return list;
     }
 
+    /**
+     * <pre>
+     * 댓글 리스트.
+     * </pre>
+     *
+     * @param model Model
+     * @return 댓글 리스트
+     */
+
+    @RequestMapping(value = "/replyList", method = RequestMethod.POST)
+    public List<Board> replyList (Model model, Board paramBoard) {
+        logger.info("Free Board List");
+
+        List<Board> replyList = boardService.selectReplyList(paramBoard);
+        logger.info("Reply List Size : {}", replyList.size());
+        model.addAttribute("replyList", replyList);
+
+        return replyList;
+    }
+
+
+    /**
+     * <pre>
+     * 댓글 작성.
+     * </pre>
+     *
+     * @param model Model
+     * @return 댓글 작성
+     */
+
+    @RequestMapping(value = "/writeReply", method = RequestMethod.GET)
+    public String writeReply (Model model, Board board) {
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+        board.setWrterId(name);
+        board.setWrterNm(name);
+        board.setUseAt("Y");
+        board.setInsertId(name);
+        int writeReply =  boardService.writeReply(board);
+
+        logger.info("Write Reply");
+        logger.info(" @@@ " + board.getAnswer());
+        return "board/detail";
+    }
+
+    /**
+     * <pre>
+     * 댓글 삭제.
+     * </pre>
+     *
+     * @param model Model
+     * @return 댓글 삭제
+     */
+
+    @RequestMapping(value = "/deleteReply", method = {RequestMethod.GET, RequestMethod.POST})
+    public void deleteReply (Model model, Board board) {
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+        board.setWrterId(name);
+        board.setWrterNm(name);
+        board.setUseAt("Y");
+        board.setInsertId(name);
+        int writeReply =  boardService.deleteReply(board);
+
+        logger.info("Write Reply");
+        logger.info(" @@@ " + board.getAnswer());
+    }
+
+    /**
+     * <pre>
+     * 공지사항 리스트.
+     * </pre>
+     *
+     * @param model Model
+     * @return 공지사항 리스트
+     */
+    @RequestMapping(value = "/noticeList", method = RequestMethod.GET)
+    public List<Board> noticeList(Model model, Board board) {
+        logger.info("Notice Board List");
+        board.setBbsId(1);
+
+        // 맥주 맥아 목록 조회
+        List<Board> noticeList = boardService.selectBoardList(board);
+        logger.info("Notice Board List Size : {}", noticeList.size());
+        model.addAttribute("noticeList", noticeList);
+
+        return noticeList;
+    }
+
+    /**
+     * <pre>
+     * 게시물 상세.
+     * </pre>
+     *
+     * @param model Model
+     * @return 게시물 상세
+     */
     @RequestMapping(value = "detail/{nttId}", method = RequestMethod.GET)
     public String detail(Model model, @PathVariable("nttId") Integer nttId) {
         logger.info("Board nttId : {}", nttId);
 
         Board board = new Board();
         board.setNttId(nttId);
-
-
         Account account = AuthenticationUtils.getUser();
-        model.addAttribute("account", account);
-
-        // 맥주 이스트 상세 조회
         Board boardDetail = boardService.selectBoardDetail(board);
 
+        String loginId = account.getName();
+        String regiID = boardDetail.getInsertId();
+
+        model.addAttribute("loginId",loginId);
+        model.addAttribute("regiId",regiID);
+        model.addAttribute("account", account);
         model.addAttribute("BoardDetail", boardDetail);
 
         return "board/detail";
@@ -117,7 +242,7 @@ public class BoardController {
         logger.info("writeBoard index");
 
         Account account = AuthenticationUtils.getUser();
-
+        Board board = new Board();
         model.addAttribute("account", account);
 
         return "board/writeBoard";
@@ -146,7 +271,14 @@ public class BoardController {
         return "board/editBoard";
     }
 
-
+    /**
+     * <pre>
+     * 게시판 생성.
+     * </pre>
+     *
+     * @param board Board
+     * @return 게시판 생성
+     */
     @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
         public String insertBoardMaster(@ModelAttribute("board") Board board,
                 BindingResult result,
@@ -187,6 +319,14 @@ public class BoardController {
         return "redirect:/board/addBoard";
     }
 
+    /**
+     * <pre>
+     *  게시물 작성.
+     * </pre>
+     *
+     * @param board Board
+     * @return 게시물 작성
+     */
     @RequestMapping(value = "/writeBoardArticle", method = RequestMethod.POST)
     public String writeBoardArticle(@ModelAttribute("board") Board board,
                                     BindingResult result,
@@ -195,7 +335,6 @@ public class BoardController {
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        board.setBbsId(3);
         board.setNttNo(1);
         board.setSortOrder(1);
         board.setUseAt("Y");
@@ -204,7 +343,7 @@ public class BoardController {
 
         int insertCount = boardService.writeBoardArticle(board);
 
-        logger.info("write Board Article");
+        logger.info("Write Board Article");
         logger.info(" @@@ " + board.getBbsNm());
 
         return "redirect:/board/freeBoard";
@@ -219,7 +358,6 @@ public class BoardController {
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        board.setBbsId(3);
         board.setUpdateId(name);
 
         int updateCount = boardService.updateBoardArticle(board);
