@@ -25,6 +25,7 @@
     <decorator name="expert" page="recipe.jsp">
         <pattern>/recipe/</pattern>
         <pattern>/recipe/create</pattern>
+        <pattern>/recipe/create2</pattern>
         <pattern>/recipe/insertRecipe</pattern>
         <pattern>/recipe/*/*</pattern>
         <pattern>/style</pattern>

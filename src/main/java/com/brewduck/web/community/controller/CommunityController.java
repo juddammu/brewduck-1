@@ -55,6 +55,41 @@ public class CommunityController {
 
         return "community/write";
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/writeReply", method = RequestMethod.POST)
+    public Board writeReply(Model model, @RequestBody Board board) {
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+        board.setWrterId(name);
+        board.setWrterNm(name);
+        board.setUseAt("Y");
+        board.setInsertId(name);
+        int insertFlag = boardService.writeReply(board);
+
+        // 맥주 레시피 저장했는지 성공 세팅
+        Board returnBoard = new Board();
+        returnBoard.setInsertFlag(insertFlag);
+
+        return returnBoard;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/replyList/{nttId}/{bbsId}", method = RequestMethod.GET)
+    public List<Board> replyList (Model model, @PathVariable("nttId") Integer nttId, @PathVariable("bbsId") Integer bbsId) {
+        logger.info("Free Board List");
+        Board paramBoard = new Board();
+        paramBoard.setNttId(nttId);
+        paramBoard.setBbsId(bbsId);
+
+        List<Board> replyList = boardService.selectReplyList(paramBoard);
+        logger.info("Reply List Size : {}", replyList.size());
+        model.addAttribute("replyList", replyList);
+
+        return replyList;
+    }
 }
 
 

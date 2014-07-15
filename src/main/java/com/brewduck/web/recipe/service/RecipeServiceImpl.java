@@ -75,6 +75,7 @@ public class RecipeServiceImpl implements RecipeService {
         return newRecipe;
     }
 
+    @Transactional
     @Override
     public Boolean insertRecipe(Recipe recipe) {
         int insertCount = recipeDao.insertRecipe(recipe);

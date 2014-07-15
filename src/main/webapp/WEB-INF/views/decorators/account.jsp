@@ -27,7 +27,7 @@
     <![endif]-->
 </head>
 <body class="body-dark">
-<!-- START LOGIN BOX -
+<!-- START LOGIN BOX -->
 <div class="box-type-login">
     <decorator:body />
 </div>

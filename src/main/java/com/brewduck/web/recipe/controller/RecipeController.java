@@ -11,6 +11,7 @@ import com.brewduck.web.yeast.service.YeastService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +19,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.core.env.Environment;
 
+
+import javax.annotation.Resource;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,6 +39,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "/recipe")
+@PropertySource("classpath:properties/jdbc/jdbc.properties")
 public class RecipeController {
     private static final Logger LOGGER = LoggerFactory.getLogger(RecipeController.class);
 
@@ -56,6 +61,10 @@ public class RecipeController {
     @Autowired
     private MiscService miscService;
 
+    @Resource
+    private Environment environment;
+
+
     /**
      * <pre>
      * 맥주 레시피 목록 조회.
@@ -65,6 +74,9 @@ public class RecipeController {
      */
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String create(Model model, ModelAndView modelAndView) {
+
+        LOGGER.info("Recipe List Size : {}", environment.getProperty("jdbc.url"));
+
         List<Fermentable> fermentableList = fermentableService.selectFermentableGroupList();
         List<Hop> hopList = hopService.selectHopList(new Hop());
         List<Yeast> yeastList = yeastService.selectYeastList(new Yeast());
@@ -122,6 +134,26 @@ public class RecipeController {
         model.addAttribute("recipeDetail", recipeDetail);
 
         return "recipe/detail";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public Recipe insertRecipe2(Model model, @RequestBody Recipe paramRecipe) {
+        LOGGER.info("Insert Recipe : {}", paramRecipe);
+        // 맥주 레시피 저장
+        Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
+
+        // 맥주 레시피 저장했는지 성공 세팅
+        Recipe returnRecipe = new Recipe();
+        returnRecipe.setInsertFlag(insertFlag);
+
+        return returnRecipe;
+    }
+
+    @RequestMapping(value = "/create2", method = RequestMethod.GET)
+    public String create2(Model model, ModelAndView modelAndView) {
+
+        return "recipe/create2";
     }
 
     @RequestMapping(value = "/insertRecipe", method = RequestMethod.POST)
