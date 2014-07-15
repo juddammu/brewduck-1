@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
@@ -47,45 +46,23 @@ public class BoardController {
 
     /**
      * <pre>
-     * 자유게시판 메인
+     * 게시판 메인
      * </pre>
      *
      * @param model Model
-     * @return 자유게시판 메인
+     * @return 게시판 메인
      */
-    @RequestMapping(value = "/freeBoard", method = RequestMethod.GET)
-    public String freeBoardMain(Model model, Board board) {
+    @RequestMapping(value = "/main/{bbsId}", method = RequestMethod.GET)
+    public String freeBoardMain(Model model, Board board, @PathVariable("bbsId") Integer bbsId) {
         logger.info("Free Board Main");
 
-        board.setBbsId(3);
+        board.setBbsId(bbsId);
         Account account = AuthenticationUtils.getUser();
         Board boardList = boardService.selectBoardName(board);
         model.addAttribute("boardList", boardList);
         model.addAttribute("account", account);
 
-        return "board/freeBoard";
-    }
-
-    /**
-     * <pre>
-     * 공지사항 메인
-     * </pre>
-     *
-     *
-     * @param model Model
-     * @return 공지사항 메인
-     */
-    @RequestMapping(value = "/noticeBoard", method = RequestMethod.GET)
-    public String noticeBoardMain(Model model, Board board) {
-        logger.info("Notice Board Main");
-
-        board.setBbsId(1);
-        Account account = AuthenticationUtils.getUser();
-        Board boardList = boardService.selectBoardName(board);
-        model.addAttribute("boardList", boardList);
-        model.addAttribute("account", account);
-
-        return "board/freeBoard";
+        return "board/main";
     }
 
     /**
@@ -100,7 +77,6 @@ public class BoardController {
     public List<Board> boardList(Model model, Board board) {
         logger.info("Free Board List");
 
-        board.setBbsId(3);
         List<Board> list = boardService.selectBoardList(board);
         logger.info("Free Board List Size : {}", list.size());
         model.addAttribute("list", list);
@@ -113,19 +89,22 @@ public class BoardController {
      * 댓글 리스트.
      * </pre>
      *
-     * @param model Model
      * @return 댓글 리스트
      */
+    @ResponseBody
+    @RequestMapping(value = "/replyList/{nttId}/{bbsId}", method = RequestMethod.GET)
+    public List<Board> replyList (Model model, @PathVariable("nttId") Integer nttId, @PathVariable("bbsId") Integer bbsId) {
 
-    @RequestMapping(value = "/replyList", method = RequestMethod.POST)
-    public List<Board> replyList (Model model, Board paramBoard) {
-        logger.info("Free Board List");
+            Account account = AuthenticationUtils.getUser();
+            String name = account.getName();
+            Board board = new Board();
+            board.setBbsId(bbsId);
+            board.setNttId(nttId);
+            List<Board> replyList  = boardService.selectReplyList(board);
 
-        List<Board> replyList = boardService.selectReplyList(paramBoard);
-        logger.info("Reply List Size : {}", replyList.size());
-        model.addAttribute("replyList", replyList);
-
-        return replyList;
+            logger.info("Reply List Size : {}", replyList.size());
+            model.addAttribute("replyList", replyList);
+            return replyList;
     }
 
 
@@ -133,26 +112,24 @@ public class BoardController {
      * <pre>
      * 댓글 작성.
      * </pre>
-     *
-     * @param model Model
-     * @return 댓글 작성
      */
+    @ResponseBody
+    @RequestMapping(value = "/writeReply", method = RequestMethod.POST)
+    public Board writeReply (Model model, @RequestBody Board board) {
 
-    @RequestMapping(value = "/writeReply", method = RequestMethod.GET)
-    public String writeReply (Model model, Board board) {
+            Account account = AuthenticationUtils.getUser();
+            String name = account.getName();
+            board.setInsertId(name);
+            board.setWrterNm(name);
+            board.setWrterId(name);
+            board.setUseAt("Y");
+            int writeReply =  boardService.writeReply(board);
+            logger.info("Write Reply");
+            logger.info(" @@@ " + board.getAnswer());
+            Board returnBoard = new Board();
+            returnBoard.setInsertFlag(writeReply);
 
-        Account account = AuthenticationUtils.getUser();
-        String name = account.getName();
-
-        board.setWrterId(name);
-        board.setWrterNm(name);
-        board.setUseAt("Y");
-        board.setInsertId(name);
-        int writeReply =  boardService.writeReply(board);
-
-        logger.info("Write Reply");
-        logger.info(" @@@ " + board.getAnswer());
-        return "board/detail";
+        return returnBoard;
     }
 
     /**
@@ -178,27 +155,6 @@ public class BoardController {
 
         logger.info("Write Reply");
         logger.info(" @@@ " + board.getAnswer());
-    }
-
-    /**
-     * <pre>
-     * 공지사항 리스트.
-     * </pre>
-     *
-     * @param model Model
-     * @return 공지사항 리스트
-     */
-    @RequestMapping(value = "/noticeList", method = RequestMethod.GET)
-    public List<Board> noticeList(Model model, Board board) {
-        logger.info("Notice Board List");
-        board.setBbsId(1);
-
-        // 맥주 맥아 목록 조회
-        List<Board> noticeList = boardService.selectBoardList(board);
-        logger.info("Notice Board List Size : {}", noticeList.size());
-        model.addAttribute("noticeList", noticeList);
-
-        return noticeList;
     }
 
     /**

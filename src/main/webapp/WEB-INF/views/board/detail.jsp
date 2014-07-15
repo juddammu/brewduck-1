@@ -34,8 +34,8 @@
         <div class="row">
             <div class="content search-result list col-sm-12 col-md-12">
                 <form:form id="boardForm" name="boardForm" method="GET" action="/board/writeReply" modelAttribute="paramBoard">
-                    <input name="bbsId"  id="bbsId" type="text"  class="form-control" value="${BoardDetail.bbsId}">
-                    <input name="nttId"  id="nttId" type="text"  class="form-control" value="${BoardDetail.nttId}">
+                    <input name="bbs"  id="bbs" type="text"  class="form-control" value="${BoardDetail.bbsId}">
+                    <input name="ntt"  id="ntt" type="text"  class="form-control" value="${BoardDetail.nttId}">
                     <div class="row frame border-radius">
                         <div class="col-md-12">
                             <div class="row">
@@ -100,15 +100,14 @@
                         <div class="row aligncenter">
                             <div class="col-md-12">
                                 <div class="text-center bg border-radius">
-                                    <table class="table">
-                                        <tbody id="result">
-                                        </tbody>
-                                    </table>
+                                    <div class="box style-white" id="reply_list">
+
+                                    </div>
                                     <%
                                         if (AuthenticationUtils.isAuthenticated() == true) {
                                     %>
                                     <div>
-                                        <textarea id="amswer" name="amswer" class="form-control" style=" width:98%; height: 75px; margin: 10px;"></textarea>
+                                        <textarea id="answer" name="answer" class="form-control" placeholder="Leave a comment" style=" width:98%; height: 75px; margin: 10px;"></textarea>
                                     </div>
                                     <div class="aligncenter">
                                         <button type="submit" id = "reply" name="reply" class="btn btn-primary" style=" width:98%; height: 50px;"> 댓글입력 </button>
@@ -134,15 +133,59 @@
 
 <content tag="local_script">
     <script>
+        $('#reply').click(function () {
+            var $answer = $("#answer");
+            var $nttId = $("#ntt");
+            var $bbsId = $("#bbs");
+            var json = { "bbsId" : $bbsId.val(), "nttId" : $nttId.val(), "amswer" : $answer.val()};
+            $.ajax({
+                type: "POST",
+                url: "/board/writeReply",
+                contentType: "application/json; charset=utf-8",
+                dataType:"json",
+                data:  JSON.stringify(json),
+                success:function( data ) {
+                    if(data.writeReply == 1){
+                        refresh();
+                    }
+                }
+            });
+        });
+
+        function refresh(){
+            var $nttId = $("#ntt");
+            var $bbsId = $("#bbs");
+            $("#reply_list").html("");
+            var replyListHtml = "";
+
+            $.get("/board/replyList/"+$nttId.val()+"/"+$bbsId.val(), function(data, status){
+                $.each(data, function(i){
+                    //<optgroup  label="1. LIGHT LAGER">
+                    replyListHtml = replyListHtml + "    <ul class='latest-posts'>";
+                    replyListHtml = replyListHtml + "        <li class='text-left text'>";
+                    replyListHtml = replyListHtml + "            <img class='image img-circle' src='http://template.progressive.itembridge.com/2.1.8/img/content/product-1.png' alt='' title='' width='84' height='84' data-appear-animation='rotateIn'>";
+                    replyListHtml = replyListHtml + "            <div class='meta'>";
+                    replyListHtml = replyListHtml + "           <h6 class='comment-title'>"+data[i].insertId+" / <small>"+data[i].insertDate+"</small></h6>";
+                    replyListHtml = replyListHtml + "            </div>";
+                    replyListHtml = replyListHtml + "            <div class='description' style='height: auto;'>";
+                    replyListHtml = replyListHtml + "                <h8>"+data[i].answer+"</h8>";
+                    replyListHtml = replyListHtml + "            </div>";
+                    replyListHtml = replyListHtml + "        </li>";
+                    replyListHtml = replyListHtml + "    </ul>";
+
+                });
+                $("#reply_list").append(replyListHtml);
+            })
+        }
 
         function goList(bbsId){
             if(bbsId==3)
             {
-                location.href = "/board/freeBoard";
+                location.href = "/board/main/"+bbsId;
             }
             if(bbsId==1)
             {
-                location.href = "/board/noticeBoard";
+                location.href = "/board/main/"+bbsId;
             }
         }
 
@@ -150,95 +193,6 @@
 
             location.href = "/board/editBoard/"+nttId;
         }
-
-        function goReply(){
-            var $insertId = AuthenticationUtils.getUser();
-            var $answer = $("#answer");
-            var $nttId = $("#nttId");
-            var $bbsId = $("#bbsId");
-            if($txtComments.val().length <3)
-            {
-                alert('내용이 너무 짧습니다.');
-                return;
-            }
-            var param = {answer: answer.val(), nttId: $nttId.val(), bbsId: $bbsId.val(), insertId: $insertId.val()};
-            $.post("cmtWriteProc.jsp",param,refresh);
-            $txtComments.val("");
-
-/*
-                form = document.board;
-                form.action = "<c:url value='/board/writeReply'/>";
-                $("#amswer").action = "<c:url value='/board/writeReply'/>";
-
-                form.submit();
-*/
-
-        }
-
-        function refresh(){
-            $.get("replyList.jsp",null,refresh_list);
-        }
-
-        function refresh_list(data){
-            $("#result").html(data);
-        }
-
-/*
-        function getReplyList(){
-
-            $("#result").html("");
-            $("#result").load("/board/replyList",$("#boardForm").serialize());
-        }
-*/
-
-        function getReplyList(){
-            var commentHtml ="";
-            var nttId = $("nttId").val;
-            var bbsId = $("#bbsId").val;
-            alert ("value is :"+ nttId);
-
-            $.ajax({
-                type: 'POST',
-                dataType : "json",
-                url : '/board/replyList',
-                data: {bbsId:bbsId, nttId:nttId},
-                contentType: "application/json",
-                success:function(result){
-                    //월 세팅 selectbox 초기화
-                    //$("#userBirthMonth").find("option").remove().end().append("<option value=''>- 선택 -</option>");
-
-
-                    //결과 갯수 만큼 날짜 세팅
-                    $.each(result, function(i){
-                        //$("#userBirthMonth").append("<option value='"+result[i].code+"'>"+result[i].codeName+"</option>")
-
-                        commentHtml = commentHtml + "<tr>";
-                        commentHtml = commentHtml + "    <ul class='latest-posts'>";
-                        commentHtml = commentHtml + "        <li class='text-left text'>";
-                        commentHtml = commentHtml + "            <img class='image img-circle' src='http://template.progressive.itembridge.com/2.1.8/img/content/product-1.png' alt='' title='' width='84' height='84'data-appear-animation='rotateIn'>";
-                        commentHtml = commentHtml + "            <div class='meta'>";
-                        commentHtml = commentHtml + "                <span>${replyList.insertId}</span>";
-                        commentHtml = commentHtml + "                <span class='time'>, ${replyList.insertDate}</span>";
-                        commentHtml = commentHtml + "            </div>";
-                        commentHtml = commentHtml + "            <div class='description' style='height: auto;'>";
-                        commentHtml = commentHtml + "                <h8>${replyList.answer}</h8>";
-                        commentHtml = commentHtml + "            </div>";
-                        commentHtml = commentHtml + "        </li>";
-                        commentHtml = commentHtml + "    </ul>";
-                        commentHtml = commentHtml + "<tr>";
-
-                    });
-
-                    $("#result").append(commentHtml);
-                },
-                error:function(xhr,statue,error){
-                    alert(error);
-                }
-            });
-        }
-
-
-
 
         function getLoadingTime(){
             if($("loading").is("visible")){return;}
@@ -248,13 +202,13 @@
             },500);
         }
 
-
         $(document).ready(function() {
 
+            refresh();
             $('.slider-element').slider();  //슬라이더 초기화
             $("#submit_details").focus();              //제목칸 포커스
-            getReplyList();
             document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
+
         });
 
         $("#list").click(function(){
@@ -264,11 +218,6 @@
         $("#edit").click(function(){
             goEdit(${BoardDetail.nttId});
         });
-
-        $("#reply").click(function(){
-            goReply();
-        });
-
 
     </script>
 </content>
