@@ -183,7 +183,7 @@
 
 <content tag="local_script">
     <script>
-        var bbsId = '4';
+        var bbsId = ${StyleDetail.categoryNumber};
         var nttId = '1';
 
         $('#insertReply').on('click', function () {
