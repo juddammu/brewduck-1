@@ -105,6 +105,16 @@ public class Board{
 
     private String amswer;
 
+    private Integer insertFlag;
+
+    public Integer getInsertFlag() {
+        return insertFlag;
+    }
+
+    public void setInsertFlag(Integer insertFlag) {
+        this.insertFlag = insertFlag;
+    }
+
     public String getBbsTyCode() {
         return bbsTyCode;
     }
