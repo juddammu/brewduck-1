@@ -3,6 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
-<c:forEach items="${friendsList}" var="list">
-    ${list.picture}
-</c:forEach>
+
+https://graph.facebook.com/${profile.id}/picture
+
+${pageContext.request.contextPath}/facebook/getFriendInfo
+
+${profile.email}
+${profile.name}
