@@ -10,3 +10,4 @@ ${pageContext.request.contextPath}/facebook/getFriendInfo
 
 ${profile.email}
 ${profile.name}
+123
