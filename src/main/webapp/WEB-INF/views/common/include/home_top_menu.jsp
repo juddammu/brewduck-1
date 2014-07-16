@@ -169,8 +169,8 @@
                 <li class="parent">
                     <a href="#">커뮤니티</a>
                         <ul class="sub">
-                            <li><a href="/board/freeBoard">자유게시판 (Free Board)</a></li>
-                            <li><a href="/board/noticeBoard">공지사항 (Notice) </a></li>
+                            <li><a href="/board/main/3">자유게시판 (Free Board)</a></li>
+                            <li><a href="/board/main/1">공지사항 (Notice) </a></li>
                         </ul>
                 </li>
             </ul>

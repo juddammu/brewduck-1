@@ -37,6 +37,7 @@
                             <div class ="controls">
                                 <div class="steps">
                                     <div class="row step border-info">
+                                        <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
                                         <div class="step-wrapper">
                                             <div class="title-box text-left">
                                                 <h5>게시판 <strong>검색</strong></h5>
@@ -131,16 +132,9 @@
     <script>
 
         function search(){
-            if((${board.bbsId})=='3')
-            {
-                $("#result").html("");
-                $("#result").load("/board/list", $("#searchForm").serialize());
-            }
-            else if((${board.bbsId})=='1')
-            {
-                $("#result").html("");
-                $("#result").load("/board/noticeList", $("#searchForm").serialize());
-            }
+
+            $("#result").html("");
+            $("#result").load("/board/list", $("#searchForm").serialize());
         }
 
         function goDetail(nttId){
