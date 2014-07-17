@@ -10,135 +10,191 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<div class="breadcrumb-box">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="/">홈</a> </li>
-            <li><a href="/">기초재료</a> </li>
-            <li class="active">이스트 데이터베이스 - YEAST DATABASE</li>
-        </ul>
+<section>
+    <ol class="breadcrumb">
+        <li><a href="#">홈</a></li>
+        <li><a href="#">재료 데이터베이스</a></li>
+        <li class="active"><a href="/style">스타일 데이터베이스 <small>STYLE DATABASE</small></a></li>
+    </ol>
+    <div class="section-header">
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${YeastDetail.koreanName} - <strong class="text-support3">${YeastDetail.name}</strong></h3>
     </div>
-</div><!-- .breadcrumb-box -->
-
-<section id="main" class="page">
-    <header class="page-header">
-        <div class="container">
-            <div class="page-title"> <a href="/yeast/"><i class="icon-custom-left"></i></a>
-                <h3>${YeastDetail.koreanName} - <span class="semi-bold">${YeastDetail.name}</span></h3>
-            </div>
-        </div>
-    </header>
-    <div class="container">
+    <div class="section-body">
         <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="title-box">
-                    <h5>이스트<span class="bold"> 정보</span></h5 >
-                </div>
-                <div class="row-fluid">
-                    <div class="col-md-12">
+            <div class="col-lg-12">
+                <div class="box box-printable style-transparent">
+                    <div class="box-body style-white">
+                        <!-- START INVOICE HEADER -->
                         <div class="row">
-                            <div class="col-md-3"><h6><span class="semi-bold">실험실</span></h6><span  class="label label-warning"> ${YeastDetail.laboratory} </span></div>
-                            <div class="col-md-3"><h6><span class="semi-bold">제품ID</span></h6><span  class="label label-warning"> ${YeastDetail.productId} </span></div>
-                            <div class="col-md-3"><h6><span class="semi-bold">타입</span></h6><span  class="label label-warning"> ${YeastDetail.type} </span></div>
-                            <div class="col-md-3"><h6><span class="semi-bold">형태</span></h6><span  class="label label-warning"> ${YeastDetail.form} </span></div>
+                            <div class="col-xs-8">
+                                <h1 class="text-light"><strong class="text-support3">${YeastDetail.koreanName}</strong></h1>
+                            </div>
                         </div>
-                        <br>
+                        <!-- END INVOICE HEADER -->
+                        <br/>
+                        <!-- START INVOICE DESCRIPTION -->
+                        <div class="box box-tiles style-white">
+                            <div class="row">
+                                <div class="col-md-3 style-gray">
+                                    <div class="box-body">
+                                        <h3 class="text-light">정보</h3>
+                                        <ul class="nav nav-pills nav-stacked nav-transparent">
+                                            <li><a href="#"><span class="badge pull-right badge-info">${YeastDetail.laboratory} </span>실험실</a></li>
+                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.productId} </span>제품ID</a></li>
+                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.type}      </span>타입</a></li>
+                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.form}      </span>형태</a></li>
+                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.minTemperature} ℃ ~ ${YeastDetail.maxTemperature} ℃</span>온도</span></a></li>
+                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.amount}    </span>양</a></li>
+                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.flocculation}</span>응집</a></li>
+                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.maxReuse} 회</span>재사용</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <article class="style-white">
+                                        <div class="box-body">
+                                        <h3 class="text-light">내용</h3 >
+                                            <p> ${YeastDetail.notes}</p>
+                                            <div class="well clearfix">
+                                                <h3 class="text-light">용도</h3 >
+                                                <p> ${YeastDetail.bestFor}</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
-                            <div class="col-md-3"><h6><span class="semi-bold">온도</span></h6><span  class="label label-info">${YeastDetail.minTemperature} ℃ ~ ${YeastDetail.maxTemperature} ℃</span></div>
-                            <div class="col-md-3"><h6><span class="semi-bold">양</span></h6><span  class="label label-info"> ${YeastDetail.amount} </span></div>
-                            <div class="col-md-3"><h6><span class="semi-bold">응집</span></h6><span  class="label label-info"> ${YeastDetail.flocculation} </span></div>
-                            <div class="col-md-3"><h6><span class="semi-bold">재사용</span></h6><span  class="label label-info"> ${YeastDetail.maxReuse} 회 </span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="title-box">
-                    <h5>이스트<span class="bold"> 내용</span></h5 >
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                            <p> ${YeastDetail.notes}</p>
-                    </div>
-                </div>
-                <br>
-                <div class="title-box">
-                    <h5>이스트<span class="bold"> 용도</span></h5 >
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                            <p> ${YeastDetail.bestFor}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <article class="content">
-                <div class="col-md-12 content-block bottom-padding text-center bg">
-                    <div>
-                        <textarea rows="3"  class="form-control user-status-box post-input"  placeholder="Whats on your mind?"></textarea>
-                    </div>
-                    <div>
-                        <div class="pull-left">
-                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-camera"></i></button>
-                            <button class="btn btn-default btn-sm btn-small" type="button"><i class="fa fa-map-marker"></i></button>
-                        </div>
-                        <div class="pull-right">
-                            <button class="btn btn-primary btn-sm btn-small" type="button">POST</button>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </article>
+                            <div class="col-md-12">
+                                <h4>5 Comments</h4>
+                                <ul class="list-comments">
+                                    <li>
+                                        <div class="box style-white" id="reply_list">
 
-            <div class="col-md-12 text-center">
-                <a href="javascript:;" class="semi-bold  small-text">전체 보기</a>
-            </div>
-            <div class="table-responsive" >
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th style="width:30px" >#</th>
-                        <th style="width:150px">스타일명</th>
-                        <th style="width:150px">영문명</th>
-                        <th style="width:70px">초기비중(OG)</th>
-                        <th style="width:70px">종료비중(FG)</th>
-                        <th style="width:70px">쓴맛(IBU)</th>
-                        <th style="width:70px">색상(ABV)</th>
-                    </tr>
-                    </thead>
-                    <tbody id="result">
-                    </tbody>
-                </table>
-            </div>
-            <div class="pagination-box">
-                <ul class="pagination">
-                    <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                    <li class="active"><span>1</span></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li class="disabled"><a href="#">...</a></li>
-                    <li><a href="#">9</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
-                <i class="pagination-text">Displaying 1 to 10 (of 100 posts)</i>
-            </div><!-- .pagination-box -->
-        </div>
-    </div>
+                                        </div><!--end .box -->
+                                    </li><!-- end comment -->
+                                </ul>
+                            </div><!--end .col-md-9 -->
+                        </div><!--end .row -->
+                        <!-- END COMMENTS -->
+                        <div class="box box-tiles style-white">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <article class="style-white">
+                                        <form:form  class="form-horizontal" role="form" onsubmit="return false">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-footer">
+                                                <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
+                                            </div>
+                                        </form:form>
+                                    </article>
+                                </div>
+                                <!-- END BLOG POST TEXT -->
+                            </div><!--end .row -->
+                        </div>
+                        <!-- END COMMENTS -->
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box box-outlined">
+                    <div class="box-body no-padding">
+                        <form:form class="form-horizontal form-banded form-bordered" action="/style/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">이름</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
+                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form:form>
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+        <!-- END BASIC FORM INPUTS -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box box-outlined" id="result_list">
+                    <div class="box-body no-padding style-white">
+                        <table class="table table-hover no-margin">
+                            <thead>
+                            <tr>
+                                <th style="width:30px" >#</th>
+                                <th style="width:150px">스타일명</th>
+                                <th style="width:150px">영문명</th>
+                                <th style="width:70px">초기비중(OG)</th>
+                                <th style="width:70px">종료비중(FG)</th>
+                                <th style="width:70px">쓴맛(IBU)</th>
+                                <th style="width:70px">색상(ABV)</th>
+                            </tr>
+                            </thead>
+                            <tbody id="result">
+                            </tbody>
+                        </table>
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+    </div><!--end .section-body -->
 </section>
-
-
 
 <content tag="local_script">
     <script>
-        function loadAnimatedWidget_pure_white(){
-            var icons = new Skycons({"color": "white"});
-            icons.play();
+        var bbsId = '3';
+        var nttId = '74';
+
+        $('#insertReply').on('click', function () {
+            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
+            $.ajax({
+                type: "POST",
+                url: "/community/writeReply",
+                contentType: "application/json; charset=utf-8",
+                dataType:"json",
+                data:  JSON.stringify(json),
+                success:function( data ) {
+                    if(data.insertFlag == 1){
+                        replyList();
+                    }
+
+                }
+            });
+        });
+
+        function replyList(){
+            //getLoadingTime();
+            var box = $("#reply_list");
+            boostbox.App.addBoxLoader(box);
+
+            $("#reply_list").html("");
+            var replyListHtml = "";
+
+            $.get("/community/replyList/"+nttId+"/"+bbsId, function(data, status){
+                $.each(data, function(i){
+                    replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
+                    replyListHtml = replyListHtml + "<div class='box-body'>";
+                    replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
+                    replyListHtml = replyListHtml + "<a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a>";
+                    replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
+                    replyListHtml = replyListHtml + "</div>";
+                });
+                $("#reply_list").append(replyListHtml);
+                boostbox.App.removeBoxLoader(box);
+            })
         }
 
         function goDetail(seq, titleInUrl){
-            location.href = "/style/"+seq+"/"+titleInUrl;
+            location.href = "/yeast/"+seq+"/"+titleInUrl;
         }
 
         function search(){
@@ -150,10 +206,7 @@
 
 
         $(document).ready(function() {
-            $('.slider-element').slider();  //슬라이더 초기화
-            $('#popover').popover();
-            $('.tip').tooltip();
-            loadAnimatedWidget_pure_white();
+
             search();                          //조회
         });
 

@@ -36,11 +36,11 @@ public class MiscController {
 
     /**
      * <pre>
-     * 맥주 기타 재료 메인
+     * 맥주 기타 재료 맥덕 모드 메인
      * </pre>
      *
      * @param model Model
-     * @return 맥주 기타 재료 메인
+     * @return 맥주 기타 재료 맥덕 모드 메인
      */
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -53,6 +53,28 @@ public class MiscController {
 
         return "misc/index";
     }
+
+    /**
+     * <pre>
+     * 맥주 기타 재료 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 기타 재료 메인
+     */
+
+    @RequestMapping(value = "/miscIndex", method = RequestMethod.GET)
+    public String miscMain(Model model) {
+        logger.info("Misc index");
+
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "misc/miscIndex";
+    }
+
+
 
     /**
      * <pre>
@@ -112,11 +134,11 @@ public class MiscController {
 
       /**
      * <pre>
-     * 맥주 기타 재료 상세 조회.
+     * 맥주 기타 재료 맥덕 모드 상세 조회.
      * </pre>
      *
      * @param model Model
-     * @return 맥주 기타 재료 상세.
+     * @return 맥주 기타 맥덕 모드 재료 상세.
      */
     @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
     public String detail(Model model, @PathVariable("seq") Integer seq) {
@@ -134,6 +156,32 @@ public class MiscController {
         model.addAttribute("MiscDetail", miscDetail);
 
         return "misc/detail";
+    }
+
+    /**
+     * <pre>
+     * 맥주 기타 재료 상세 조회.
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 기타 재료 상세.
+     */
+    @RequestMapping(value="/miscDetail/{seq}/*", method=RequestMethod.GET)
+    public String miscDetail(Model model, @PathVariable("seq") Integer seq) {
+
+        logger.info("Misc seq : {}", seq);
+
+        Misc misc = new Misc();
+        misc.setSeq(seq);
+        //misc.setName(name);
+        //misc.setSeq(seq);
+
+        // 맥주 기타 재료 상세 조회
+        Misc miscDetail = miscService.selectMiscDetail(misc);
+
+        model.addAttribute("MiscDetail", miscDetail);
+
+        return "misc/miscDetail";
     }
 }
 

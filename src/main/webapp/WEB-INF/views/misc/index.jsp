@@ -3,176 +3,87 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<div class="breadcrumb-box">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="/">홈</a> </li>
-            <li><a href="/">기초재료</a> </li>
-            <li class="active">기타재료 데이터베이스 - MISC DATABASE</li>
-        </ul>
+<section>
+    <ol class="breadcrumb">
+        <li><a href="#">홈</a></li>
+        <li class="active"><a href="#">재료 데이터베이스</a></li>
+    </ol>
+    <div class="section-header">
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 기타재료 데이터베이스 - MISC DATABASE</h3>
     </div>
-</div><!-- .breadcrumb-box -->
-
-<section id="main" class="page">
-    <header class="page-header">
-        <div class="container">
-            <h3 class="title">기타재료 데이터베이스 - <span class="semi-bold">MISC DATABASE</span></h3>
-        </div>
-    </header>
-    <div class="container">
+    <div class="section-body">
+        <!-- BEGIN BASIC FORM INPUTS -->
         <div class="row">
-            <div class="content search-result list col-sm-12 col-md-12">
-                <form:form class="search-form" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
-                    <input name="type" type ="hidden" id="type" type="text"  class="form-control" value="">
-                    <div>
-                        <h5>이름으로 찾기</h5>
-                        <div class="input-group col-sm-6">
-                            <input name="name" id="name" class="form-control" placeholder="기타 재료 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                               <span class="input-group-addon primary">
-                                   <span class="arrow"></span>
-                                    <i class="fa fa-search"></i>
-                               </span>
-                        </div>
-                        <br>
-                        <h5>타입으로 찾기</h5>
-                        <div>
-                            <button id="spiceButton" type="button" class="btn btn-xs btn-primary" value="2"> </button>
-                            <button id="flavorButton" type="button" class="btn btn-xs btn-primary" value="3"> </button>
-                            <button id="waterAgentButton" type="button" class="btn btn-xs btn-primary" value="4"> </button>
-                            <button id="finingButton" type="button" class="btn btn-xs btn-primary" value="5"> </button>
-                            <button id="herbButton" type="button" class="btn btn-xs btn-primary" value="6"> </button>
-                            <button id="otherButton" type="button" class="btn btn-xs btn-primary" value="1"> </button>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="form-actions">
-                            <div class="pull-right">
-                                <div id="search" class="btn btn-primary" ><i class="icon-ok"></i> 조회</div>
-                                <div id="fullSearch" class="btn btn-default" ><i class="icon-ok"></i> 전체 조회</div>
+            <div class="col-lg-12">
+                <div class="box box-outlined">
+                    <div class="box-body no-padding">
+                        <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                            <input name="type"  id="type" type="hidden"  class="form-control" value="">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">이름</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
+                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </form:form>
-                <div class="filter-box">
-                    <div class="row">
-                        <div class="col-sm-7 col-md-7 btn-group filter-buttons filter-list">
-                            <div class="clearfix"></div>
-                        </div><!-- .filter-buttons -->
-                        <div class="text-results col-sm-5 col-md-5">
-                            <i>Results 1-10 of 100 for 'Sony'</i>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="table-responsive" >
-                        <table class="table">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">타입</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <div>
+                                            <button id="spiceButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(2)" value="2"> </button>
+                                            <button id="flavorButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(3)" value="3"> </button>
+                                            <button id="waterAgentButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(4)" value="4"> </button>
+                                            <button id="finingButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(5)" value="5"> </button>
+                                            <button id="herbButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(6)" value="6"> </button>
+                                            <button id="otherButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(1)" value="1"> </button>
+                                            <button id="allButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch()">  전체  </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form:form>
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+        <!-- END BASIC FORM INPUTS -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box box-outlined" id="result_list">
+                    <div class="box-body no-padding style-white">
+                        <table class="table table-hover no-margin">
                             <thead>
-                            <tr>
-                                <th style="width:30px" >#</th>
-                                <th style="width:150px">재료명</th>
-                                <th style="width:150px">영문명</th>
-                                <th style="width:70px">타입</th>
-                                <th style="width:70px">용도</th>
-                            </tr>
+                                <tr>
+                                    <th class="small-cell"> </th>
+                                    <th>재료명</th>
+                                    <th>영문명</th>
+                                    <th>타입</th>
+                                    <th>용도</th>
+                                </tr>
                             </thead>
                             <tbody id="result">
                             </tbody>
                         </table>
-                    </div>
-                    <div class="pagination-box">
-                        <ul class="pagination">
-                            <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="disabled"><a href="#">...</a></li>
-                            <li><a href="#">9</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                        <i class="pagination-text">Displaying 1 to 10 (of 100 posts)</i>
-                    </div><!-- .pagination-box -->
-                </div>
-            </div>
-        </div>
-    </div>
+                    </div><!--end .box-body -->
+                </div><!--end .box -->
+            </div><!--end .col-lg-12 -->
+        </div><!--end .row -->
+            <!-- END FORM TOOLS -->
+    </div><!--end .section-body -->
 </section><!-- #main -->
-<%--
-<div class="content">
-<div class="page-title"> <i class="icon-custom-left"></i>
-    <h3>기타 재료 데이터베이스 - <span class="semi-bold">MISC DATABASE</span></h3>
-</div>
-<div class="row-fluid">
-<div class="span12">
-<div class="grid simple ">
-<div class="grid-title">
-    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
-        <input name="type" type ="hidden" id="type" type="text"  class="form-control" value=""> &lt;%&ndash;타입별&ndash;%&gt;
-
-        <div class="row column-seperation">
-            <div class="col-md-6">
-                <h4>이름으로 찾기</h4>
-                <div class="row form-row">
-                    <div class="col-md-11 input-group">
-                        <input name="name" id="name" type="text"  class="form-control" placeholder="기타 재료 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                            <span class="input-group-addon primary">
-                            <span class="arrow"></span>
-                        <i class="fa fa-align-justify"></i>
-                       </span>
-                    </div>
-                </div>
-                <h4>타입으로 찾기</h4>
-                <div class="row form-row">
-                    <br>
-                    <div class="col-md-12">
-                        <button id="spiceButton" type="button" class="btn btn-white btn-xs btn-mini" value="2"> </button>
-                        <button id="flavorButton" type="button" class="btn btn-white btn-xs btn-mini" value="3"> </button>
-                        <button id="waterAgentButton" type="button" class="btn btn-white btn-xs btn-mini" value="4"> </button>
-                        <button id="finingButton" type="button" class="btn btn-white btn-xs btn-mini" value="5"> </button>
-                        <button id="herbButton" type="button" class="btn btn-white btn-xs btn-mini" value="6"> </button>
-                        <button id="otherButton" type="button" class="btn btn-white btn-xs btn-mini" value="1"> </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-actions">
-            <div class="pull-right">
-                <div id="search" class="btn btn-danger btn-cons" ><i class="icon-ok"></i> 조회</div>
-                <div id="fullSearch" class="btn btn-primary btn-cons" ><i class="icon-ok"></i> 전체 조회</div>
-            </div>
-        </div>
-    </form:form>
-</div>
-<div class="grid-body ">
-    <table class="table table-bordered no-more-tables">
-
-    <thead>
-        <tr>
-            <th class="small-cell"> </th>
-            <th>이름</th>
-            <th>영문명</th>
-            <th>타입</th>
-            <th>용도</th>
-        </tr>
-        </thead>
-        <tbody id="result" name="result">
-            <div class="progress progress-striped active progress-large" id="loading">
-                <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-success"></div>
-            </div>
-        </tbody>
-    </table>
-</div>
-</div>
-</div>
-</div>
-</div>
---%>
 
 
 <content tag="local_script">
 <script>
     function getTypeCount(){
         $.get("/misc/countMiscType", function(data, status){
-            /*alert("에일 값은 : " + data.aleCntName + "\n" + "de 값은 : " + data.aleCnt + "\n");*/
             $("#spiceButton").html("("+data.spiceCntName +data.spiceCnt+" 건)"); /*향신료*/
             $("#flavorButton").html("("+data.flavorCntName +data.flavorCnt+" 건)"); /*풍미*/
             $("#waterAgentButton").html("("+data.waterAgentCntName +data.waterAgentCnt+" 건)"); /*첨가물*/
@@ -183,51 +94,46 @@
     }
 
     function search(){
+
+        var box = $("#result_list");
+        boostbox.App.addBoxLoader(box);
+
         $("#result").html("");
-        $("#result").load("/misc/list", $("#searchForm").serialize());
+        $("#result").load("/misc/list", $("#searchForm").serialize(), function( response, status, xhr ) {
+
+            if ( status == "success" ) {
+                boostbox.App.removeBoxLoader(box);
+            }
+        });
     }
 
     function goDetail(seq, titleInUrl){
         location.href = "/misc/"+seq+"/"+titleInUrl;
     }
 
-    function setTypeSearch(){
-        $("#type").val(jQuery(this).val());
+    function setTypeSearch(data){
+        $("#type").val(data);
         search();
     }
-
-    function getLoadingTime(){
-        if($("loading").is("visible")){return;}
-        document.getElementById("loading").style.display="block";       //로딩 아이콘 노출
-        setTimeout(function(){
-            document.getElementById("loading").style.display="none";    //로딩 아이콘 숨김
-        },500);
-    }
-
 
     $(document).ready(function() {
 
-        getTypeCount();                  //타입별 카운트 (조회영역)
-        search();                          //조회
+        $("#type").val("");
+        $("#name").val("");
         $("#name").focus();              //이름칸으로 포커스
-        document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
+        getTypeCount();                  //타입별 카운트 (조회영역)
+        search();                        //조회
 
-        $("#search").click(function(){
+        $("#search").onClick(function(){
         search();
         });
 
-        $("#fullSearch").click(function(){
-            $("#type").val('');             //TODO : 초기화 함수로 뺄것
-            $("#name").val('');
-            search();
-        });
+        $('#name').on('keyup', function(){
+            if(($('#name').val()).length > 2){
+                search();
+            }
 
-        $("#spiceButton").click(setTypeSearch);
-        $("#flavorButton").click(setTypeSearch);
-        $("#waterAgentButton").click(setTypeSearch);
-        $("#finingButton").click(setTypeSearch);
-        $("#herbButton").click(setTypeSearch);
-        $("#otherButton").click(setTypeSearch);
+        });
     });
 </script>
 </content>

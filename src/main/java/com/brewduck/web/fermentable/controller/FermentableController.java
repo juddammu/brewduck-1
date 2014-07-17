@@ -34,22 +34,40 @@ public class FermentableController {
 
     /**
      * <pre>
-     * 맥주 발효재료 메인
+     * 맥주 발효재료 맥덕 모드 메인
      * </pre>
      *
      * @param model Model
-     * @return 맥주 발효재료 메인
+     * @return 맥주 맥덕 모드 메인
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String main(Model model) {
         logger.info("Fermentable index");
-
         Account account = AuthenticationUtils.getUser();
 
         model.addAttribute("account", account);
 
         return "fermentable/index";
     }
+
+    /**
+     * <pre>
+     * 맥주 발효재료 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 발효재료 메인
+     */
+    @RequestMapping(value = "/fermentIndex", method = RequestMethod.GET)
+    public String fermentMain(Model model) {
+        logger.info("Fermentable index");
+        Account account = AuthenticationUtils.getUser();
+
+        model.addAttribute("account", account);
+
+        return "fermentable/fermentIndex";
+    }
+
     /**
      * <pre>
      * 맥주 발효재료 국가 별 갯수 조회.
@@ -110,11 +128,11 @@ public class FermentableController {
 
     /**
      * <pre>
-     * 맥주 맥아 상세 조회.
+     * 맥주 발효재료 맥덕 모드 상세 조회.
      * </pre>
      *
      * @param model Model
-     * @return 맥주 맥아 상세.
+     * @return 맥주 발효재료 맥덕 모드 상세.
      */
     @RequestMapping(value = "{seq}/*", method = RequestMethod.GET)
     public String detail(Model model, @PathVariable("seq") Integer seq) {
@@ -136,6 +154,37 @@ public class FermentableController {
 
         model.addAttribute("FermentableDetail", fermentableDetail);
         return "fermentable/detail";
+    }
+
+
+    /**
+     * <pre>
+     * 맥주 발효재료 상세 조회.
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 발효재료 상세.
+     */
+    @RequestMapping(value = "/fermentDetail/{seq}/*", method = RequestMethod.GET)
+    public String fermentDetail(Model model, @PathVariable("seq") Integer seq) {
+
+/*        Fermentable fermentable = new Fermentable();
+        fermentable.setName(name);
+
+        // 맥주 맥아 상세 조회
+        Fermentable fermentableDetail = fermentableService.selectFermentableDetail(fermentable);
+
+        return fermentableDetail;*/
+        logger.info("Fermentable seq : {}", seq);
+
+        Fermentable fermentable = new Fermentable();
+        fermentable.setSeq(seq);
+
+        // 맥주 발효재료 상세 조회
+        Fermentable fermentableDetail = fermentableService.selectFermentableDetail(fermentable);
+
+        model.addAttribute("FermentableDetail", fermentableDetail);
+        return "fermentable/fermentDetail";
     }
 
     /**

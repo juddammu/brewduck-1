@@ -6,14 +6,10 @@
 <c:forEach items="${list}" var="list">
     <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
         <td>${list.seq}</td>
-        <td> ${list.koreanName}</td>
-        <td> ${list.name}</td>
-        <td>
-            ${list.typeKorean}
-        </td>
-        <td>
-            ${list.useFor}
-        </td>
+        <td>${list.koreanName}</td>
+        <td>${list.name}</td>
+        <td>${list.typeKorean}</td>
+        <td>${list.useFor}</td>
     </tr>
 </c:forEach>
 
