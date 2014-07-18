@@ -46,13 +46,12 @@
         <pattern>/community/*</pattern>
         <pattern>/community/*/*</pattern>
         <pattern>/yeast/</pattern>
-        <pattern>/yeast/*</pattern>
+        <pattern>/yeast/*/</pattern>
         <pattern>/yeast/*/*</pattern>
-        <pattern>/fermentable</pattern>
         <pattern>/fermentable/</pattern>
         <pattern>/fermentable/*/*</pattern>
         <pattern>/misc/</pattern>
-        <pattern>/misc/*</pattern>
+        <pattern>/misc/*/</pattern>
         <pattern>/misc/*/*</pattern>
     </decorator>
 
