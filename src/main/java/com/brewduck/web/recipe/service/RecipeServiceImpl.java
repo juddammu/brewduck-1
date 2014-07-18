@@ -6,6 +6,7 @@ import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.domain.Style;
 import com.brewduck.web.fermentable.dao.FermentableDao;
 import com.brewduck.web.hop.dao.HopDao;
+import com.brewduck.web.misc.dao.MiscDao;
 import com.brewduck.web.recipe.dao.RecipeDao;
 import com.brewduck.web.style.dao.StyleDao;
 import com.brewduck.web.yeast.dao.YeastDao;
@@ -37,6 +38,9 @@ public class RecipeServiceImpl implements RecipeService {
     @Autowired
     private YeastDao yeastDao;
 
+    @Autowired
+    private MiscDao miscDao;
+
 
     @Override
     public List<Recipe> selectRecipeList(Recipe recipe) {
@@ -51,22 +55,25 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public Recipe selectRecipeDetail(Recipe recipe) {
         Account account = AuthenticationUtils.getUser();
-
         // 레시피 조회
         Recipe newRecipe = recipeDao.selectRecipeDetail(recipe);
 
+        Integer recipeSeq = newRecipe.getSeq();
+
         // 레시피 제조시 입력한 스타일 맥주 이름
         Style paramStyle = new Style();
-        paramStyle.setName(newRecipe.getStyleName());
+//        paramStyle.setName(newRecipe.getStyleName());
 
         // 레시피 작성시 선택한 스타일 맥주
         //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
         // 레시피에 포함되는 맥아 리스트
-        newRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(newRecipe.getSeq()));
+        newRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(recipeSeq));
         // 레시피에 포함되는 홉 리스트
-        newRecipe.setHops(hopDao.selectRecipeHopList(newRecipe.getSeq()));
+        newRecipe.setHops(hopDao.selectRecipeHopList(recipeSeq));
         // 레시피에 포함되는 이스트 리스트
-        //newRecipe.setYeasts(yeastDao.selectRecipeYeastList(newRecipe.getSeq()));
+        newRecipe.setYeasts(yeastDao.selectRecipeYeastList(recipeSeq));
+        // 레시피에 포함되는 첨가물 리스트
+        newRecipe.setMiscs(miscDao.selectRecipeMiscList(recipeSeq));
 
         // 조회수 업데이트
         newRecipe.setUpdateId(Integer.toString(account.getId()));

@@ -3,6 +3,7 @@ package com.brewduck.web.homebrew.controller;
 import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Fermentable;
+import com.brewduck.web.domain.Hop;
 import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.recipe.service.RecipeService;
 import org.slf4j.Logger;
@@ -55,7 +56,6 @@ public class HomebrewController {
     @RequestMapping(value = "/myrecipes", method = RequestMethod.GET)
     public String abv(Model model) {
 
-
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
 
@@ -90,39 +90,6 @@ public class HomebrewController {
 
         Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
-        Double batchSize = 0.0;
-        Double lovibond = 0.0;
-        Double weight = 0.0;
-        Double srm = 0.0;
-        batchSize = Double.valueOf(recipeDetail.getBatchSize());
-        batchSize = batchSize/3.78534;
-        Double sumSrm = 0.0;
-
-        List Fermentables = recipeDetail.getFermentables();
-
-        logger.warn("galon = " + batchSize/3.78534  );
-
-        for(int i=0; i<Fermentables.size();i++){
-            srm = 0.0;
-            lovibond = 0.0;
-            weight = 0.0;
-            lovibond = ((Fermentable)(Fermentables.get(i))).getColor();
-            weight = ((Fermentable)(Fermentables.get(i))).getAmount();
-            weight = weight * 2.2046;
-
-            srm = 0.3*weight*lovibond;
-            srm = srm / batchSize;
-            //srm = srm + 4.7;
-
-            logger.warn("lovibond = " + lovibond );
-            logger.warn("weight = " + weight );
-            logger.warn("batchSize = " +  batchSize );
-            sumSrm = sumSrm + srm;
-        }
-        sumSrm = sumSrm + 4.7;
-        double resultSrm = Math.round(sumSrm);
-        logger.warn("sumSrm = " + sumSrm + 4.7);
-        model.addAttribute("srm", resultSrm);
         model.addAttribute("recipeDetail", recipeDetail);
 
         return "homebrew/view";

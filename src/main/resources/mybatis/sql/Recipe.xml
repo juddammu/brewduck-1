@@ -280,7 +280,7 @@
             ,misc_seq
             ,amount
             ,time
-            ,use
+            ,misc_use
             ,insert_id
             ,insert_date
         ) VALUES (

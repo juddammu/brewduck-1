@@ -35,6 +35,11 @@ public class MiscDaoImpl implements MiscDao {
     }
 
     @Override
+    public List<Misc> selectRecipeMiscList(Integer seq){
+        return sqlSession.selectList("Misc.selectRecipeMiscList", seq);
+    }
+
+    @Override
     public Misc selectMiscDetail(Misc misc) {
         return sqlSession.selectOne("Misc.selectMiscDetail", misc);
     }

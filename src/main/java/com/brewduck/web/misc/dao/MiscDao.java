@@ -26,6 +26,8 @@ public interface MiscDao {
      */
     public List<Misc> selectMiscList(Misc misc);
 
+    public List<Misc> selectRecipeMiscList(Integer seq);
+
     /**
      * <pre>
      * 맥주 스타일 상세 조회.

@@ -211,7 +211,7 @@
         <label class="control-label">수율</label>
     </div>
     <div class="col-md-4">
-        <input id="efficiency" name ="efficiency" type="text" class="form-control control-width-small" value="19" placeholder="검색어 입력">
+        <input id="efficiency" name ="efficiency" type="text" class="form-control control-width-small" value="65" placeholder="검색어 입력">
     </div>
 </div>
 <div class="box-head">
@@ -343,6 +343,7 @@
                 <th>재료명</th>
                 <th>용량</th>
                 <th>시간</th>
+                <th>용도</th>
                 <th style="width:90px">복사</th>
                 <th style="width:90px">삭제</th>
             </tr>
@@ -576,24 +577,29 @@
             $('#misc').change(function(){
                 miscHtml = "";
                 miscHtml = miscHtml +"<tr>";
-                miscHtml = miscHtml +"<td>1<input id='recipeHopSeqs' name ='recipeHopSeqs' type='hidden' value='"+$("#misc option:selected").val()+"'></td>";
+                miscHtml = miscHtml +"<td>1<input id='recipeMiscSeqs' name ='recipeMiscSeqs' type='hidden' value='"+$("#misc option:selected").val()+"'></td>";
                 miscHtml = miscHtml +"<td>"+ $("#misc option:selected").text() +"</td> ";
                 miscHtml = miscHtml +"<td>";
                 miscHtml = miscHtml +"<div class='input-group' style='width:115px;'>";
-                miscHtml = miscHtml +"<input type='text' class='form-control'>";
+                miscHtml = miscHtml +"<input type='text' id='recipeMiscAmounts' name='recipeMiscAmounts' class='form-control'>";
                 miscHtml = miscHtml +"<span class='input-group-addon'>g</span>";
                 miscHtml = miscHtml +"</div>";
                 miscHtml = miscHtml +"</td> ";
                 miscHtml = miscHtml +"<td>";
                 miscHtml = miscHtml +"<div class='input-group' style='width:115px;'>";
-                miscHtml = miscHtml +"<input type='text' class='form-control'>";
+                miscHtml = miscHtml +"<input type='text' id='recipeMiscTimes' name='recipeMiscTimes' class='form-control'>";
                 miscHtml = miscHtml +"<span class='input-group-addon'>분</span>";
                 miscHtml = miscHtml +"</div>";
                 miscHtml = miscHtml +"</td> ";
                 miscHtml = miscHtml +"<td>";
-                miscHtml = miscHtml +"<button type='button' class='btn btn-primary btn-outline row_hop_copy'><i class='fa fa-copy'></i>  복사</button>";
+                miscHtml = miscHtml +"<select id='recipeMiscUses' name ='recipeMiscUses' class='form-control' required> ";
+                miscHtml = miscHtml +"<option value=''>None</option><option value='2'>Boil</option><option value='5'>Bottle</option><option value='6'>Keg</option><option value='1'>Mash</option><option value='3'>Primary</option><option value='4'>Secondary</option>";
+                miscHtml = miscHtml +"</select> ";
+                miscHtml = miscHtml +"</td> ";
+                miscHtml = miscHtml +"<td>";
+                miscHtml = miscHtml +"<button type='button' class='btn btn-primary btn-outline row_misc_copy'><i class='fa fa-copy'></i>  복사</button>";
                 miscHtml = miscHtml +"</td>";
-                miscHtml = miscHtml +"<td><button type='button' class='btn btn-primary btn-outline row_hop_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+                miscHtml = miscHtml +"<td><button type='button' class='btn btn-primary btn-outline row_misc_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
                 miscHtml = miscHtml +"</td> ";
                 miscHtml = miscHtml +"</tr> ";
                 $("#miscListTable").append(miscHtml);
@@ -645,25 +651,25 @@
                 hopHtml = hopHtml +"<td>1<input id='recipeHopSeqs' name ='recipeHopSeqs' type='hidden' value='"+$("#hop option:selected").val()+"'></td>";
                 hopHtml = hopHtml +"<td>"+ $("#hop option:selected").text() +"</td> ";
                 hopHtml = hopHtml +"<td>";
-                hopHtml = hopHtml +"<div class='input-group' style='width:115px;'>";
-                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAmounts' name='recipeHopAmounts'>";
+                hopHtml = hopHtml +"<div class='input-group' style='width:75px;'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAmounts' name='recipeHopAmounts' value='28'>";
                 hopHtml = hopHtml +"<span class='input-group-addon'>g</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
-                hopHtml = hopHtml +"<div class='input-group' style='width:115px;'>";
-                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopTimes' name='recipeHopTimes'>";
+                hopHtml = hopHtml +"<div class='input-group' style='width:85px;'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopTimes' name='recipeHopTimes' value='60'>";
                 hopHtml = hopHtml +"<span class='input-group-addon'>분</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<select id='recipeHopUses' name ='recipeHopUses' class='form-control' required> ";
-                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='2'>맥즙 호핑 - First Wort</option><option value='1'>당화 - Mash</option><option value='6'>월풀 - Whirlpool</option>";
+                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3' selected>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='2'>맥즙 호핑 - First Wort</option><option value='1'>당화 - Mash</option><option value='6'>월풀 - Whirlpool</option>";
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
-                hopHtml = hopHtml +"<select id='recipeHopForms' name ='recipeHopForms' class='form-control' required> ";
-                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>Leaf</option><option value='4'>Pellet</option><option value='1'>Plug</option>";
+                hopHtml = hopHtml +"<select id='recipeHopForms' name ='recipeHopForms' style='width:95px;' class='form-control' required> ";
+                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>Leaf</option><option value='4' selected>Pellet</option><option value='1'>Plug</option>";
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
@@ -683,7 +689,7 @@
                 fermentableHtml = fermentableHtml +"<td>"+ $("#fermentable option:selected").text() +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
                 fermentableHtml = fermentableHtml +"<div class='input-group' style='width:115px;'>";
-                fermentableHtml = fermentableHtml +"<input id='recipeFermantableAmounts' name ='recipeFermantableAmounts'  type='text' class='form-control control-width-tiny' value='19'> ";
+                fermentableHtml = fermentableHtml +"<input id='recipeFermantableAmounts' name ='recipeFermantableAmounts'  type='text' class='form-control control-width-tiny' value='2'> ";
                 fermentableHtml = fermentableHtml +"<div class='input-group-btn'> ";
                 fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-default' tabindex='-1'>KG</button> ";
                 fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' tabindex='-1'> ";
