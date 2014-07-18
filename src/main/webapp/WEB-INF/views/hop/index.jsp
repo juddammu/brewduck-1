@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<title>홉 데이터베이스 - HOP DATABASE</title>
+
 <section>
     <ol class="breadcrumb">
         <li><a href="#">홈</a></li>
