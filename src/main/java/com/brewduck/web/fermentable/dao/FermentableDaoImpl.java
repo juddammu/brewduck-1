@@ -41,8 +41,8 @@ public class FermentableDaoImpl implements FermentableDao {
 
 
     @Override
-    public List<Fermentable> selectRecipeFermentableList(String name) {
-        return sqlSession.selectList("Fermentable.selectRecipeFermentableList", name);
+    public List<Fermentable> selectRecipeFermentableList(Integer seq) {
+        return sqlSession.selectList("Fermentable.selectRecipeFermentableList", seq);
     }
 
     @Override

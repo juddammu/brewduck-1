@@ -30,10 +30,10 @@ public interface HopDao {
      * 맥주 레시피 홉 목록 조회.
      * </pre>
      *
-     * @param name 맥주 레시피 이름
+     * @param seq 맥주 레시피 이름
      * @return 맥주 홉 목록
      */
-    public List<Hop> selectRecipeHopList(String name);
+    public List<Hop> selectRecipeHopList(Integer seq);
 
 
     /**
