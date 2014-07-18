@@ -113,6 +113,10 @@ public class Recipe implements Serializable {
 
     private Integer recipeMiscAmount;
 
+    private String recipeMiscUse;
+
+    private String[] recipeMiscUses;
+
     private Integer[] recipeMiscSeqs;
 
     private Integer[] recipeMiscTimes;
@@ -161,6 +165,22 @@ public class Recipe implements Serializable {
     private Boolean updateFlag;
     // 삭제 성공 여부
     private Boolean deleteFlag;
+
+    public String getRecipeMiscUse() {
+        return recipeMiscUse;
+    }
+
+    public void setRecipeMiscUse(String recipeMiscUse) {
+        this.recipeMiscUse = recipeMiscUse;
+    }
+
+    public String[] getRecipeMiscUses() {
+        return recipeMiscUses;
+    }
+
+    public void setRecipeMiscUses(String[] recipeMiscUses) {
+        this.recipeMiscUses = recipeMiscUses;
+    }
 
     public Integer getRecipeMiscSeq() {
         return recipeMiscSeq;

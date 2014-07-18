@@ -236,6 +236,18 @@ public class RecipeController {
             }
         }
 
+        if(miscSize > 0){
+            for(int i=0; i < miscSize; i++ ){
+                paramRecipeMisc.setRecipeSeq(recipeSeq);
+                paramRecipeMisc.setRecipeMiscSeq(paramRecipe.getRecipeMiscSeqs()[i]);
+                paramRecipeMisc.setRecipeMiscAmount(paramRecipe.getRecipeMiscAmounts()[i]);
+                paramRecipeMisc.setRecipeMiscTime(paramRecipe.getRecipeMiscTimes()[i]);
+                paramRecipeMisc.setRecipeMiscUse(paramRecipe.getRecipeMiscUses()[i]);
+                paramRecipeMisc.setInsertId(account.getId() + "");
+                recipeService.insertRecipeMisc(paramRecipeMisc);
+            }
+        }
+
         paramRecipe.setSeq(recipeSeq);
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
 

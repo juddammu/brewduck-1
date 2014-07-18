@@ -31,6 +31,10 @@
         <pattern>/style</pattern>
         <pattern>/style/</pattern>
         <pattern>/style/*/*</pattern>
+        <pattern>/homebrew</pattern>
+        <pattern>/homebrew/</pattern>
+        <pattern>/homebrew/*</pattern>
+        <pattern>/homebrew/*/*</pattern>
         <pattern>/hop</pattern>
         <pattern>/hop/</pattern>
         <pattern>/hop/*/*</pattern>
@@ -41,21 +45,19 @@
         <pattern>/community</pattern>
         <pattern>/community/*</pattern>
         <pattern>/community/*/*</pattern>
-        <pattern>/misc/</pattern>
-        <pattern>/misc/*/*</pattern>
+        <pattern>/yeast/</pattern>
+        <pattern>/yeast/*</pattern>
+        <pattern>/yeast/*/*</pattern>
+        <pattern>/fermentable</pattern>
         <pattern>/fermentable/</pattern>
         <pattern>/fermentable/*/*</pattern>
-        <pattern>/yeast/</pattern>
-        <pattern>/yeast/*/*</pattern>
+        <pattern>/misc/</pattern>
+        <pattern>/misc/*</pattern>
+        <pattern>/misc/*/*</pattern>
     </decorator>
 
     <decorator name="full-content" page="full-content.jsp">
-        <pattern>/yeast/yeastIndex</pattern>
-        <pattern>/yeast/yeastDetail/*/*</pattern>
-        <pattern>/misc/miscIndex</pattern>
-        <pattern>/misc/miscDetail/*/*</pattern>
-        <pattern>/fermentable/fermentIndex</pattern>
-        <pattern>/fermentable/fermentDetail/*/*</pattern>
+
         <pattern>/board/</pattern>
         <pattern>/board/main/*</pattern>
         <pattern>/board/addBoard</pattern>
@@ -70,7 +72,6 @@
     <decorator name="nonlayout-content" page="nonlayout-content.jsp">
         <pattern>/hop/list/</pattern>
         <pattern>/hop/list/*</pattern>
-        <pattern>/misc/list/</pattern>
         <pattern>/style/list/</pattern>
         <pattern>/style/list/*</pattern>
         <pattern>/yeast/list/</pattern>

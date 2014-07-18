@@ -7,20 +7,20 @@
     <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
         <td>${list.categoryNumber}${list.styleLetter}</td>
         <td> ${list.koreanName}</td>
-        <td> ${list.name}</td>
-        <td>
+        <td class="hidden"> ${list.name}</td>
+        <td class="hidden">
              <span class="badge">${list.ogMax}</span>
         </td>
-        <td>
+        <td class="hidden">
             <span class="badge">${list.fgMax}</span>
         </td>
-        <td>
+        <td class="hidden">
             <span class="badge">${list.ogMax}</span>
         </td>
         <td>
              ${list.colorMax} °L
         </td>
-        <td>
+        <td class="hidden">
             ${list.abvMax} %
         </td>
     </tr>

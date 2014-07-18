@@ -2,7 +2,10 @@
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <!DOCTYPE html>
 <html lang="en">
-<%@ include file="/WEB-INF/views/common/include/expert_header.jsp" %>
+<head>
+    <title><decorator:title /> | BREWDUCK - 맥주의 모든것</title>
+    <%@ include file="/WEB-INF/views/common/include/expert_header.jsp" %>
+</head>
 
 <body >
 

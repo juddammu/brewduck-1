@@ -275,20 +275,20 @@
     </insert>
 
     <insert id="Recipe.insertRecipeMisc" parameterType="Recipe">
-        INSERT INTO brewduckdb.RECIPE_FERMENTABLE (
+        INSERT INTO brewduckdb.RECIPE_MISC (
              recipe_seq
-            ,fermentable_seq
+            ,misc_seq
             ,amount
-            ,fermentable_use
-            ,type
+            ,time
+            ,use
             ,insert_id
             ,insert_date
         ) VALUES (
              #{recipeSeq} -- seq - IN int(11)
-            ,#{recipeFermantableSeq} -- fermentable_seq - IN int(11)
-            ,#{recipeFermantableAmount} -- amount - IN double
-            ,#{recipeFermantableUse}   -- fermentable_use - IN varchar(10)
-            ,#{recipeFermantableType}   -- fermentable_use - IN varchar(10)
+            ,#{recipeMiscSeq} -- fermentable_seq - IN int(11)
+            ,#{recipeMiscAmount} -- amount - IN double
+            ,#{recipeMiscTime}   -- fermentable_use - IN varchar(10)
+            ,#{recipeMiscUse}   -- fermentable_use - IN varchar(10)
             ,#{insertId} -- insert_id - IN varchar(45)
             ,now() -- insert_date - IN timestamp
         )

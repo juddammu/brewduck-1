@@ -2,6 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<title>스타일 데이터베이스 - STYLE DATABASE(BJCP 2008)</title>
+
 <section>
 <ol class="breadcrumb">
     <li><a href="#">홈</a></li>
@@ -43,14 +46,14 @@
                     <table class="table table-hover no-margin">
                         <thead>
                         <tr>
-                            <th style="width:30px" >#</th>
-                            <th style="width:150px">스타일명</th>
-                            <th style="width:150px">영문명</th>
-                            <th style="width:70px">초기비중</th>
-                            <th style="width:70px">최종비중</th>
-                            <th style="width:70px">IBU</th>
-                            <th style="width:70px">SRM</th>
-                            <th style="width:70px">ABV</th>
+                            <th style="width:30px"  class="mobile-device">#</th>
+                            <th style="width:150px" class="mobile-device">스타일명</th>
+                            <th style="width:150px" class="mobile-device hidden">영문명</th>
+                            <th style="width:70px"  class="mobile-device hidden">초기비중</th>
+                            <th style="width:70px"  class="mobile-device hidden">최종비중</th>
+                            <th style="width:70px"  class="mobile-device hidden">IBU</th>
+                            <th style="width:70px"  class="mobile-device hidden-600">SRM</th>
+                            <th style="width:70px"  class="mobile-device hidden">ABV</th>
                         </tr>
                         </thead>
                         <tbody id="result">

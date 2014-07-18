@@ -1,3 +1,4 @@
+<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%--
   Created by IntelliJ IDEA.
   User: ChaJunYoung
@@ -9,6 +10,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<title>${StyleDetail.koreanName} - ${StyleDetail.name}</title>
 
 <section>
     <ol class="breadcrumb">
@@ -108,6 +111,18 @@
                                 <div class="col-md-12">
                                     <article class="style-white">
                                         <form:form  class="form-horizontal" role="form" onsubmit="return false">
+                                        <%
+                                            if (AuthenticationUtils.isAuthenticated() == false) {
+                                        %>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="로그인 후 등록할 수 있습니다." disabled></textarea>
+                                                </div>
+                                            </div>
+                                        <%
+                                        } else {
+                                        %>
+
                                             <div class="form-group">
                                                 <div class="col-md-12">
                                                     <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
@@ -116,6 +131,9 @@
                                             <div class="form-footer">
                                                 <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
                                             </div>
+                                        <%
+                                            }
+                                        %>
                                         </form:form>
                                     </article>
                                 </div>
@@ -159,14 +177,14 @@
                         <table class="table table-hover no-margin">
                             <thead>
                             <tr>
-                                <th style="width:30px" >#</th>
-                                <th style="width:150px">스타일명</th>
-                                <th style="width:150px">영문명</th>
-                                <th style="width:70px">초기비중</th>
-                                <th style="width:70px">최종비중</th>
-                                <th style="width:70px">IBU</th>
-                                <th style="width:70px">SRM</th>
-                                <th style="width:70px">ABV</th>
+                                <th style="width:30px"  class="mobile-device">#</th>
+                                <th style="width:150px" class="mobile-device">스타일명</th>
+                                <th style="width:150px" class="mobile-device hidden">영문명</th>
+                                <th style="width:70px"  class="mobile-device hidden">초기비중</th>
+                                <th style="width:70px"  class="mobile-device hidden">최종비중</th>
+                                <th style="width:70px"  class="mobile-device hidden">IBU</th>
+                                <th style="width:70px"  class="mobile-device hidden-600">SRM</th>
+                                <th style="width:70px"  class="mobile-device hidden">ABV</th>
                             </tr>
                             </thead>
                             <tbody id="result">
@@ -217,7 +235,7 @@
                     replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
                     replyListHtml = replyListHtml + "<div class='box-body'>";
                     replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
-                    replyListHtml = replyListHtml + "<a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a>";
+                    replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
                     replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
                     replyListHtml = replyListHtml + "</div>";
                 });
