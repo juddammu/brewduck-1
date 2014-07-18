@@ -34,8 +34,8 @@
         <div class="row">
             <div class="content search-result list col-sm-12 col-md-12">
                 <form:form id="boardForm" name="boardForm" method="GET" action="/board/writeReply" modelAttribute="paramBoard">
-                    <input name="bbs"  id="bbs" type="text"  class="form-control" value="${BoardDetail.bbsId}">
-                    <input name="ntt"  id="ntt" type="text"  class="form-control" value="${BoardDetail.nttId}">
+                    <input name="bbs"  id="bbs" type="hidden"  class="form-control" value="${BoardDetail.bbsId}">
+                    <input name="ntt"  id="ntt" type="hidden"  class="form-control" value="${BoardDetail.nttId}">
                     <div class="row frame border-radius">
                         <div class="col-md-12">
                             <div class="row">
@@ -133,11 +133,11 @@
 
 <content tag="local_script">
     <script>
+        var $nttId = $("#ntt").val();
+        var $bbsId = $("#bbs").val();
+        var $answer = $("#answer").val();
         $('#reply').click(function () {
-            var $answer = $("#answer");
-            var $nttId = $("#ntt");
-            var $bbsId = $("#bbs");
-            var json = { "bbsId" : $bbsId.val(), "nttId" : $nttId.val(), "amswer" : $answer.val()};
+            var json = { "bbsId" : $bbsId, "nttId" : $nttId, "amswer" : $answer};
             $.ajax({
                 type: "POST",
                 url: "/board/writeReply",
@@ -153,14 +153,11 @@
         });
 
         function refresh(){
-            var $nttId = $("#ntt");
-            var $bbsId = $("#bbs");
             $("#reply_list").html("");
             var replyListHtml = "";
 
-            $.get("/board/replyList/"+$nttId.val()+"/"+$bbsId.val(), function(data, status){
+            $.get("/board/replyList/"+$nttId+"/"+$bbsId, function(data, status){
                 $.each(data, function(i){
-                    //<optgroup  label="1. LIGHT LAGER">
                     replyListHtml = replyListHtml + "    <ul class='latest-posts'>";
                     replyListHtml = replyListHtml + "        <li class='text-left text'>";
                     replyListHtml = replyListHtml + "            <img class='image img-circle' src='http://template.progressive.itembridge.com/2.1.8/img/content/product-1.png' alt='' title='' width='84' height='84' data-appear-animation='rotateIn'>";
@@ -175,6 +172,7 @@
 
                 });
                 $("#reply_list").append(replyListHtml);
+                $("#answer").val("");
             })
         }
 

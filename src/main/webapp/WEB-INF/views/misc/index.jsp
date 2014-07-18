@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<title>기타재료 데이터베이스 - MISC DATABASE</title>
+
 <section>
     <ol class="breadcrumb">
         <li><a href="#">홈</a></li>

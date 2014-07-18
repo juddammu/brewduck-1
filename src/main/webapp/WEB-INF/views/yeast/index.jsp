@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<title>효모 데이터베이스 - YEAST DATABASE</title>
 
 <section>
     <ol class="breadcrumb">
@@ -10,7 +11,7 @@
         <li class="active"><a href="#">효모 데이터베이스</a></li>
     </ol>
     <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 효모 데이터베이스 - YESAT DATABASE</h3>
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 효모 데이터베이스 - YEAST DATABASE</h3>
     </div>
     <div class="section-body">
         <!-- BEGIN BASIC FORM INPUTS -->
@@ -18,9 +19,9 @@
             <div class="col-lg-12">
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/yeast/list" id="searchForm"  name="searchForm" modelAttribute="paramYeast">
-                        <input name="type" type ="hidden" id="type" value="">
+                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm" name="searchForm" modelAttribute="paramYeast">
                         <div class="form-group">
+                            <input name="type" id="type" type ="text" value="">
                             <div class="col-md-2">
                                 <label class="control-label">이름</label>
                             </div>
@@ -39,7 +40,7 @@
                                 <div class="input-group">
                                     <div>
                                         <div>
-                                            <button id="aleButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(1)" value="1"> </button>
+                                            <button id="aleButton" type="button" class="btn btn-xs btn-primary" value="1"> </button>
                                             <button id="lagerButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(3)" value="3"> </button>
                                             <button id="wheatButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(4)" value="4"> </button>
                                             <button id="wineButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(5)" value="5"> </button>
@@ -108,26 +109,20 @@
         location.href = "/yeast/"+seq+"/"+titleInUrl;
     }
 
-    function setTypeSearch(data){
-        $("#type").val(data);
+    function setTypeSearch(){
+        alert("value:"+ jQuery(this).val);
+
+        $("#type").val(this.val());
+
         search();
-    }
 
-    function getLoadingTime(){
-        if($("loading").is("visible")){return;}
-        document.getElementById("loading").style.display="block";       //로딩 아이콘 노출
-        setTimeout(function(){
-            document.getElementById("loading").style.display="none";    //로딩 아이콘 숨김
-        },500);
     }
-
 
     $(document).ready(function() {
 
         getTypeCount();                  //타입별 카운트 (조회영역)
         search();                        //조회
         $("#name").focus();              //이름칸으로 포커스
-        document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
 
         $("#search").click(function(){
         search();
@@ -138,6 +133,8 @@
             $("#name").val('');
             search();
         });
+
+        $("#aleButton").click(setTypeSearch);
     });
 </script>
 </content>

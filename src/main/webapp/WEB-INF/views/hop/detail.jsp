@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<title>${HopDetail.koreanName} - ${HopDetail.name}</title>
 
 <div class="content">
 <div class="page-title"> <a href="/hop/"><i class="icon-custom-left"></i></a>

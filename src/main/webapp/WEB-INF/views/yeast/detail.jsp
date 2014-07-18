@@ -10,11 +10,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<title>${YeastDetail.koreanName} - ${YeastDetail.name}</title>
+
 <section>
     <ol class="breadcrumb">
         <li><a href="#">홈</a></li>
         <li><a href="#">재료 데이터베이스</a></li>
-        <li class="active"><a href="/style">스타일 데이터베이스 <small>STYLE DATABASE</small></a></li>
+        <li class="active"><a href="/style">효모 데이터베이스 <small>YEAST DATABASE</small></a></li>
     </ol>
     <div class="section-header">
         <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${YeastDetail.koreanName} - <strong class="text-support3">${YeastDetail.name}</strong></h3>
@@ -43,7 +45,7 @@
                                             <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.productId} </span>제품ID</a></li>
                                             <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.type}      </span>타입</a></li>
                                             <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.form}      </span>형태</a></li>
-                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.minTemperature} ℃ ~ ${YeastDetail.maxTemperature} ℃</span>온도</span></a></li>
+                                            <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.minTemperature} ℃ ~ ${YeastDetail.maxTemperature} ℃</span>온도</a></li>
                                             <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.amount}    </span>양</a></li>
                                             <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.flocculation}</span>응집</a></li>
                                             <li><a href="#"><span class="badge pull-right badge-info"> ${YeastDetail.maxReuse} 회</span>재사용</a></li>
