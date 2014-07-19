@@ -219,7 +219,7 @@
 </div>
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">발효 재료<small>Fermentables</small><br/><small id="ogText" name="ogText"></small></label>
+        <label class="control-label">발효 재료<small>Fermentables</small><br/><small id="ogText" name="ogText"></small><br/><small id="srmText" name="srmText"></small></label>
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="fermentable" id="fermentable" data-placeholder="Select an item">
@@ -237,7 +237,7 @@
                         </c:choose>
                     </c:when>
                     <c:otherwise>
-                        <option value="${fermentableList.seq }" ppg="${fermentableList.ppg}" specificGravity="${fermentableList.specificGravity}" title="${fermentableList.name }">${fermentableList.name } (${fermentableList.color} °L) - ${fermentableList.originKorean} </option>
+                        <option value="${fermentableList.seq }" ppg="${fermentableList.ppg}" lovibond="${fermentableList.color}" specificGravity="${fermentableList.specificGravity}" title="${fermentableList.name }">${fermentableList.name } (${fermentableList.color} °L) - ${fermentableList.originKorean} </option>
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
@@ -404,7 +404,29 @@
     }
 
     function calcSrm(){
-        ///recipe/srm/{seq}/{batchSize}
+        var batchSize = parseFloat($('#batchSize').val());
+        var srm = 0;
+        var lovibond = 0;
+        var weight = 0;
+        var sumSrm = 0;
+
+        batchSize = literToGalon(batchSize);
+        for (var i=0; i < $("input[name='lovibond']").length; i++) {
+            lovibond = parseFloat($("input[name='lovibond']").eq(i).val());
+            recipeFermantableAmounts = parseFloat($("input[name='recipeFermantableAmounts']").eq(i).val());
+
+            recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
+            srm = 0.3*recipeFermantableAmounts*lovibond;
+            srm = srm / batchSize;
+            sumSrm = sumSrm + srm;
+        }
+        if($("input[name='lovibond']").length == 0){
+            $('#srmText').html('');
+        }else{
+            sumSrm = sumSrm + 4.7;
+            sumSrm = sumSrm.toFixed(1);
+            $('#srmText').html('Color : '+sumSrm+'° SRM');
+        }
 
     }
 
@@ -600,6 +622,7 @@
 
         $("#fermantableListTable").on('click', '.row_fermantable_delete', function () {
             row_fermantable_delete($(this));
+            calcSrm();
         });
         $("#fermantableListTable").on('click', '.row_fermantable_copy', function () {
             row_fermantable_copy($(this));
@@ -778,10 +801,12 @@
                 //specificGravity
                 var specificGravity = this.options[this.selectedIndex].getAttribute("specificGravity");
                 var ppg = this.options[this.selectedIndex].getAttribute("ppg");
+                var lovibond = this.options[this.selectedIndex].getAttribute("lovibond");
+
 
                 fermentableHtml = "";
                 fermentableHtml = fermentableHtml +"<tr>";
-                fermentableHtml = fermentableHtml +"<td>1<input id='ppg' name ='ppg' type='hidden' value='"+ppg+"'><input id='recipeSpecificGravity' name ='recipeSpecificGravity' type='hidden' value='"+specificGravity+"'><input id='recipeFermantableSeqs' name ='recipeFermantableSeqs' type='hidden' value='"+$("#fermentable option:selected").val()+"'></td>";
+                fermentableHtml = fermentableHtml +"<td>1<input id='lovibond' name ='lovibond' type='hidden' value='"+lovibond+"'><input id='ppg' name ='ppg' type='hidden' value='"+ppg+"'><input id='recipeSpecificGravity' name ='recipeSpecificGravity' type='hidden' value='"+specificGravity+"'><input id='recipeFermantableSeqs' name ='recipeFermantableSeqs' type='hidden' value='"+$("#fermentable option:selected").val()+"'></td>";
                 fermentableHtml = fermentableHtml +"<td>"+ $("#fermentable option:selected").text() +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
 
@@ -804,7 +829,7 @@
                 fermentableHtml = fermentableHtml +"</tr> ";
                 $("#fermantableListTable").append(fermentableHtml);
                 calcOg();
-                getSrm();
+                calcSrm();
             });
         });
     </script>
