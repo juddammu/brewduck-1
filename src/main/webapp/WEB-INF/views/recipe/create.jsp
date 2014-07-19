@@ -379,6 +379,38 @@
 
 <content tag="local_script">
     <script type="text/javascript">
+    function brixToGravity(brix){
+        brix = parseFloat(brix);
+        if(isNaN(brix)) {
+            return;
+        }
+        return (brix/(258.6-(brix/258.2*227.1))) + 1;
+    }
+
+    function calcOg() {
+        var batchSize = parseFloat($('#batchSize').val());
+        //var fg = parseFloat($('#fg').val());
+
+        if(isNaN(og) || isNaN(fg)) {
+            $('#abv').html('&ndash;');
+            return;
+        }
+        //Original Gravity = Amount of Extract * PPG / Batch Size
+        /*
+        var og = parseFloat($('#og').val());
+        var fg = parseFloat($('#fg').val());
+        if(isNaN(og) || isNaN(fg)) {
+            $('#abv').html('&ndash;');
+            return;
+        }
+
+        var abv = (og - fg) * 131;
+
+        $('#abv').html(abv.toFixed(1) + '%');
+        */
+        //calcAbw(abv);
+    }
+
     (function(namespace, $) {
         "use strict";
 

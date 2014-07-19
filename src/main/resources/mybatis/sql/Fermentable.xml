@@ -11,6 +11,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'N' endTitleYn
            FROM DUAL
    UNION ALL
@@ -28,6 +29,7 @@
                    and A.origin = B.common_code) as originKorean,
             A.color               color,
            'N' AS titleYn,
+            A.specific_gravity AS specificGravity,
            'N' endTitleYn
           FROM FERMENTABLE A
          WHERE A.TYPE = 0
@@ -40,6 +42,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'Y' endTitleYn
           FROM DUAL
    UNION ALL
@@ -51,6 +54,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'N' endTitleYn
            FROM DUAL
    UNION ALL
@@ -68,6 +72,7 @@
                    and A.origin = B.common_code) as originKorean,
            A.color               color,
            'N' AS titleYn,
+            A.specific_gravity AS specificGravity,
            'N' endTitleYn
           FROM FERMENTABLE A
          WHERE A.TYPE = 1
@@ -80,6 +85,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'Y' endTitleYn
           FROM DUAL
    UNION ALL
@@ -91,6 +97,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
            'N' endTitleYn
           FROM DUAL
    UNION ALL
@@ -108,6 +115,7 @@
                    and A.origin = B.common_code) as originKorean,
            A.color               color,
            'N' AS titleYn,
+            A.specific_gravity AS specificGravity,
            'N' endTitleYn
           FROM FERMENTABLE A
          WHERE A.TYPE = 2
@@ -120,6 +128,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'Y' endTitleYn
           FROM DUAL
    UNION ALL
@@ -131,6 +140,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'N' endTitleYn
           FROM DUAL
    UNION ALL
@@ -148,6 +158,7 @@
                    and A.origin = B.common_code) as originKorean,
             A.color               color,
            'N' AS titleYn,
+            A.specific_gravity AS specificGravity,
            'N' endTitleYn
           FROM FERMENTABLE A
          WHERE A.TYPE = 3
@@ -160,6 +171,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'Y' endTitleYn
    UNION ALL
         SELECT
@@ -170,6 +182,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'N' endTitleYn
           FROM DUAL
    UNION ALL
@@ -187,6 +200,7 @@
                    and A.origin = B.common_code) as originKorean,
             A.color               color,
             'N' AS titleYn,
+             A.specific_gravity AS specificGravity,
             'N' endTitleYn
           FROM FERMENTABLE A
          WHERE A.TYPE = 4
@@ -199,6 +213,7 @@
             '' originKorean,
             '' color,
             'Y' titleYn,
+            '0' specificGravity,
             'Y' endTitleYn
           FROM DUAL
     </select>

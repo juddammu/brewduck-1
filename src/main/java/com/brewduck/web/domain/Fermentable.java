@@ -34,6 +34,8 @@ public class Fermentable implements Serializable {
     private Double amount;
     // 발효재료 사용처
     private String fermentableUse;
+    //SG
+    private Double specificGravity;
     // 발효재료 수율 (중량 원료의 수율 : "%")
     private Double yield;
     // 맥주의 색상 (SRM)
@@ -112,6 +114,14 @@ public class Fermentable implements Serializable {
     public String typeKorean;
 
     public String endTitleYn;
+
+    public Double getSpecificGravity() {
+        return specificGravity;
+    }
+
+    public void setSpecificGravity(Double specificGravity) {
+        this.specificGravity = specificGravity;
+    }
 
     public String getEndTitleYn() {
         return endTitleYn;
