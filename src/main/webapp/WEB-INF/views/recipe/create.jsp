@@ -219,12 +219,12 @@
 </div>
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">발효 재료<small>Fermentables</small></label>
+        <label class="control-label">발효 재료<small>Fermentables</small><br/><small id="ogText" name="ogText"></small></label>
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="fermentable" id="fermentable" data-placeholder="Select an item">
             <option>=== 선택해주세요 ===</option>
-            <c:forEach items="${fermentableList }" var="fermentableList" varStatus="i">
+            <c:forEach items="${fermentableList }"  var="fermentableList" varStatus="i">
                 <c:choose>
                     <c:when test="${fermentableList.titleYn == 'Y'}">
                         <c:choose>
@@ -237,7 +237,7 @@
                         </c:choose>
                     </c:when>
                     <c:otherwise>
-                        <option value="${fermentableList.seq }" title="${fermentableList.name }">${fermentableList.name } (${fermentableList.color} °L) - ${fermentableList.originKorean} </option>
+                        <option value="${fermentableList.seq }" ppg="${fermentableList.ppg}" specificGravity="${fermentableList.specificGravity}" title="${fermentableList.name }">${fermentableList.name } (${fermentableList.color} °L) - ${fermentableList.originKorean} </option>
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
@@ -387,15 +387,76 @@
         return (brix/(258.6-(brix/258.2*227.1))) + 1;
     }
 
+    function gramToPound(weight){
+        weight = parseFloat(weight);
+        if(isNaN(weight)) {
+            return;
+        }
+        return weight*2.204623;
+    }
+
+    function literToGalon(liter){
+        liter = parseFloat(liter);
+        if(isNaN(liter)) {
+            return;
+        }
+        return liter/3.78534;
+    }
+
+    function calcSrm(){
+        ///recipe/srm/{seq}/{batchSize}
+
+    }
+
+
     function calcOg() {
         var batchSize = parseFloat($('#batchSize').val());
-        //var fg = parseFloat($('#fg').val());
+        var efficiency = parseFloat($('#efficiency').val());
+        var ppg = 0 ;
+        var recipeFermantableAmounts = 0 ;
+        var og = 0;
 
+        //alert(batchSize);
+
+        if(isNaN(batchSize)) {
+            //$('#abv').html('&ndash;');
+            return;
+        }
+        if(isNaN(batchSize)) {
+            //$('#abv').html('&ndash;');
+            return;
+        }else{
+            efficiency = efficiency / 100;
+        }
+
+        for (var i=0; i < $("input[name='ppg']").length; i++) {
+            ppg = parseFloat($("input[name='ppg']").eq(i).val());
+        }
+
+        for (var i=0; i < $("input[name='recipeFermantableAmounts']").length; i++) {
+            recipeFermantableAmounts = parseFloat($("input[name='recipeFermantableAmounts']").eq(i).val());
+        }
+
+        if(ppg == 0){
+            return;
+        }
+
+        //1 : 2.204623 = 2 : x
+        recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
+        batchSize = literToGalon(batchSize);
+
+        og = (recipeFermantableAmounts * ppg * efficiency) / batchSize;
+        og = (og / 1000) + 1;
+        og = og.toFixed(3)
+        $('#ogText').html('OG : '+og);
+        //Original Gravity = Amount of Extract * PPG / Batch Size
+
+        /*
         if(isNaN(og) || isNaN(fg)) {
             $('#abv').html('&ndash;');
             return;
         }
-        //Original Gravity = Amount of Extract * PPG / Batch Size
+
         /*
         var og = parseFloat($('#og').val());
         var fg = parseFloat($('#fg').val());
@@ -482,8 +543,6 @@
         namespace.DemoUIMessages = new DemoUIMessages;
     }(this.boostbox, jQuery)); // pass in (namespace, jQuery):
 
-
-
         $('#insertRecipe').on('click', function () {
             document.insert.submit();
         });
@@ -504,6 +563,7 @@
                     }
                 });
                 $("#fermentable").append(fermentableHtml);
+
             })
         }
 
@@ -715,28 +775,25 @@
 
             $('#fermentable').change(function(){
                 //$add_html = $('.d_tbody tr:last').clone().fadeIn('slow');
+                //specificGravity
+                var specificGravity = this.options[this.selectedIndex].getAttribute("specificGravity");
+                var ppg = this.options[this.selectedIndex].getAttribute("ppg");
+
                 fermentableHtml = "";
                 fermentableHtml = fermentableHtml +"<tr>";
-                fermentableHtml = fermentableHtml +"<td>1<input id='recipeFermantableSeqs' name ='recipeFermantableSeqs' type='hidden' value='"+$("#fermentable option:selected").val()+"'></td>";
+                fermentableHtml = fermentableHtml +"<td>1<input id='ppg' name ='ppg' type='hidden' value='"+ppg+"'><input id='recipeSpecificGravity' name ='recipeSpecificGravity' type='hidden' value='"+specificGravity+"'><input id='recipeFermantableSeqs' name ='recipeFermantableSeqs' type='hidden' value='"+$("#fermentable option:selected").val()+"'></td>";
                 fermentableHtml = fermentableHtml +"<td>"+ $("#fermentable option:selected").text() +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
-                fermentableHtml = fermentableHtml +"<div class='input-group' style='width:115px;'>";
-                fermentableHtml = fermentableHtml +"<input id='recipeFermantableAmounts' name ='recipeFermantableAmounts'  type='text' class='form-control control-width-tiny' value='2'> ";
-                fermentableHtml = fermentableHtml +"<div class='input-group-btn'> ";
-                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-default' tabindex='-1'>KG</button> ";
-                fermentableHtml = fermentableHtml +"<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' tabindex='-1'> ";
-                fermentableHtml = fermentableHtml +"<span class='caret'></span> ";
-                fermentableHtml = fermentableHtml +"</button> ";
-                fermentableHtml = fermentableHtml +"<ul class='dropdown-menu pull-right' role='menu'> ";
-                fermentableHtml = fermentableHtml +"<li><a href='#'>KG</a></li> ";
-                fermentableHtml = fermentableHtml +"<li><a href='#'>G</a></li>";
-                fermentableHtml = fermentableHtml +"</ul> ";
+
+                fermentableHtml = fermentableHtml +"<div class='input-group' style='width:85px;'>";
+                fermentableHtml = fermentableHtml +"<input type='text' class='form-control' id='recipeFermantableAmounts' name='recipeFermantableAmounts' value='2'>";
+                fermentableHtml = fermentableHtml +"<span class='input-group-addon'>kg</span>";
                 fermentableHtml = fermentableHtml +"</div>";
-                fermentableHtml = fermentableHtml +"</div>";
+
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
                 fermentableHtml = fermentableHtml +"<select id='recipeFermantableUses' name ='recipeFermantableUses' class='form-control' required> ";
-                fermentableHtml = fermentableHtml +"<option value=''>Choose...</option><option value='3'>끊임 - Boil</option><option value='4'>후반 끓임 - Late Boil</option><option value='1'>당화 - Mash</option><option value='2'>우려내기 - Steep</option> ";
+                fermentableHtml = fermentableHtml +"<option value=''>Choose...</option><option value='3'>끊임 - Boil</option><option value='4'>후반 끓임 - Late Boil</option><option value='1' selected>당화 - Mash</option><option value='2'>우려내기 - Steep</option> ";
                 fermentableHtml = fermentableHtml +"</select> ";
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"<td>";
@@ -746,6 +803,8 @@
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"</tr> ";
                 $("#fermantableListTable").append(fermentableHtml);
+                calcOg();
+                getSrm();
             });
         });
     </script>

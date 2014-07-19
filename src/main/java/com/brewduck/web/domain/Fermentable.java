@@ -14,9 +14,7 @@ import java.util.Date;
 public class Fermentable implements Serializable {
     private static final long serialVersionUID = 1L;
 
-
     private String titleInUrl;
-
 
     //발효재료 순번
     public Integer seq;
@@ -36,6 +34,7 @@ public class Fermentable implements Serializable {
     private String fermentableUse;
     //SG
     private Double specificGravity;
+    private Integer ppg;
     // 발효재료 수율 (중량 원료의 수율 : "%")
     private Double yield;
     // 맥주의 색상 (SRM)
@@ -114,6 +113,14 @@ public class Fermentable implements Serializable {
     public String typeKorean;
 
     public String endTitleYn;
+
+    public Integer getPpg() {
+        return ppg;
+    }
+
+    public void setPpg(Integer ppg) {
+        this.ppg = ppg;
+    }
 
     public Double getSpecificGravity() {
         return specificGravity;
