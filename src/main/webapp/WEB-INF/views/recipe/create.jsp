@@ -620,9 +620,14 @@
             })
         }
 
+        function calc(){
+            calcSrm();
+            calcOg();
+        }
+
         $("#fermantableListTable").on('click', '.row_fermantable_delete', function () {
             row_fermantable_delete($(this));
-            calcSrm();
+            calc();
         });
         $("#fermantableListTable").on('click', '.row_fermantable_copy', function () {
             row_fermantable_copy($(this));
@@ -811,7 +816,7 @@
                 fermentableHtml = fermentableHtml +"<td>";
 
                 fermentableHtml = fermentableHtml +"<div class='input-group' style='width:85px;'>";
-                fermentableHtml = fermentableHtml +"<input type='text' class='form-control' id='recipeFermantableAmounts' name='recipeFermantableAmounts' value='2'>";
+                fermentableHtml = fermentableHtml +"<input type='text' class='form-control' id='recipeFermantableAmounts' name='recipeFermantableAmounts' onkeyup='javascript:calc(this);' value='2'>";
                 fermentableHtml = fermentableHtml +"<span class='input-group-addon'>kg</span>";
                 fermentableHtml = fermentableHtml +"</div>";
 
@@ -828,9 +833,10 @@
                 fermentableHtml = fermentableHtml +"</td> ";
                 fermentableHtml = fermentableHtml +"</tr> ";
                 $("#fermantableListTable").append(fermentableHtml);
-                calcOg();
-                calcSrm();
+                calc();
             });
+
+
         });
     </script>
 </content>
