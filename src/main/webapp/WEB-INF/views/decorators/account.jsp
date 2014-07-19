@@ -43,6 +43,6 @@
 <script src="/resources/expert/js/core/App.js"></script>
 <script src="/resources/expert/js/core/demo/Demo.js"></script>
 <!-- END JAVASCRIPT -->
-
+<decorator:getProperty property="page.local_script"></decorator:getProperty>
 </body>
 </html>

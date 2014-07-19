@@ -43,6 +43,7 @@
         <if test="brewer != null">
             AND brewer = #{brewer}
         </if>
+        ORDER BY  seq desc
     </select>
 
     <select id="Recipe.selectRecipeSeq" parameterType="Recipe" resultType="Recipe">

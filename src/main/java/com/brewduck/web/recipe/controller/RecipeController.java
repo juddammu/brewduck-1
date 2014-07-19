@@ -349,14 +349,20 @@ public class RecipeController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/srm/{seq}", method = RequestMethod.POST)
-    public Recipe getSrm(Model model, @RequestBody Recipe paramRecipe) {
-        /*
-        Double batchSize = 0.0;
+    @RequestMapping(value = "/srm/{seq}/{batchSize}", method = RequestMethod.GET)
+    public String getSrm(Model model, @PathVariable("seq") Integer seq, @PathVariable("batchSize") Double batchSize) {
+
+        Recipe recipe = new Recipe();
+        Account account = AuthenticationUtils.getUser();
+        recipe.setSeq(seq);
+        recipe.setBrewer(account.getId() + "");
+        Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
+
+        //Double batchSize = 0.0;
         Double lovibond = 0.0;
         Double weight = 0.0;
         Double srm = 0.0;
-        batchSize = Double.valueOf(recipeDetail.getBatchSize());
+        //batchSize = Double.valueOf(recipeDetail.getBatchSize());
         batchSize = batchSize/3.78534;
         Double sumSrm = 0.0;
         Double resultSrm = 0.0;
@@ -365,7 +371,7 @@ public class RecipeController {
         Double aau = 0.0;
 
         List Fermentables = recipeDetail.getFermentables();
-        List Hops = recipeDetail.getHops();
+        //List Hops = recipeDetail.getHops();
 
         if(Fermentables != null){
             for(int i=0; i<Fermentables.size();i++){
@@ -379,9 +385,9 @@ public class RecipeController {
                 srm = 0.3*weight*lovibond;
                 srm = srm / batchSize;
 
-                logger.warn("lovibond = " + lovibond );
-                logger.warn("weight = " + weight );
-                logger.warn("batchSize = " +  batchSize );
+                LOGGER.warn("lovibond = " + lovibond );
+                LOGGER.warn("weight = " + weight );
+                LOGGER.warn("batchSize = " +  batchSize );
                 sumSrm = sumSrm + srm;
             }
             sumSrm = sumSrm + 4.7;
@@ -389,18 +395,18 @@ public class RecipeController {
         }
 
         //1 : 28
-        if(Hops != null){
+   /*     if(Hops != null){
             for(int i=0; i<Hops.size();i++){
                 oz = 0.0;
                 oz = ((Hop)(Hops.get(i))).getAmount();
                 oz = oz / 28;
                 aau = oz * ((Hop)(Hops.get(i))).getAlpha();
             }
-        }
+        }*/
 
-        model.addAttribute("srm", resultSrm);
-        */
-        return paramRecipe;
+        //model.addAttribute("srm", resultSrm);
+
+        return resultSrm+"";
     }
 }
 

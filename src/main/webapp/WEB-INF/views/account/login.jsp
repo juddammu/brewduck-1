@@ -135,10 +135,11 @@
 <content tag="local_script">
     <script>
 $(document).ready(function() {
+
     $("#email").focus();              //이름칸으로 포커스("#email").focus();              //이름칸으로 포커스
 
     if ($.cookie("myAppKey") != null) {
-        alert();
+        //alert();
        // $("#j_username").val($.cookie("saveUserId"));
         //$("#checkSaveId").attr("checked", "checked");
     }

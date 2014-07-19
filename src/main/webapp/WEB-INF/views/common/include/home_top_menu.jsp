@@ -10,7 +10,7 @@
         <div class="contact-box pull-left">
             <div class="email pull-left">
                 <i class="fa fa-envelope"></i>
-                사이트를 만들고 있습니다. 가입하지 말아주세요.
+                클로즈 베타테스터 진행중입니다.
             </div>
         </div>
 
@@ -18,7 +18,7 @@
             <div class="social">
                 <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="https://www.facebook.com/brewduck"></a>
             </div>
-            <a href="#" class="btn btn-primary">맥Duck 모드</a>
+            <a href="/homebrew/myrecipes" class="btn btn-primary">맥Duck 모드</a>
         </div>
 
         <div class="clearfix"></div>
@@ -54,7 +54,7 @@
     <%
         if (AuthenticationUtils.isAuthenticated() == false) {
     %>
-    <div class="btn-group">
+    <!--div class="btn-group">
         <a href="/account/signup" class="btn btn-info">회원 가입</a>
     </div><!-- .cart-header -->
     <div class="btn-group">
@@ -166,13 +166,13 @@
                 <li>
                     <a href="shop.html">가이드</a>
                 </li>
-                <li class="parent">
+                <!--li class="parent">
                     <a href="#">커뮤니티</a>
                         <ul class="sub">
                             <li><a href="/board/main/3">자유게시판 (Free Board)</a></li>
                             <li><a href="/board/main/1">공지사항 (Notice) </a></li>
                         </ul>
-                </li>
+                </li-->
             </ul>
         </nav>
     </div>
