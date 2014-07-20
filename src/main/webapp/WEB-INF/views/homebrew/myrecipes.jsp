@@ -57,7 +57,7 @@
                             <c:forEach items="${recipeList}" var="list">
                             <tr>
                                 <td><span class="label label-success">공개</span></td>
-                                <td><a href="${list.seq}/${list.name}">${list.name}</a></td>
+                                <td><a href="${list.seq}/${list.titleInUrl}">${list.name}</a></td>
                                 <td>${list.styleName}</td>
                                 <td>${list.batchSize}리터</td>
                                 <td>7.0%</td>

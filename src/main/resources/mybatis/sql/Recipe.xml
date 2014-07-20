@@ -6,6 +6,7 @@
         SELECT
                seq                   seq
               ,name                  name
+              ,name                titleInUrl
               ,version               version
               ,type                  type
               ,style_seq             styleSeq

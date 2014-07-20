@@ -165,6 +165,8 @@ public class Recipe implements Serializable {
     private Boolean updateFlag;
     // 삭제 성공 여부
     private Boolean deleteFlag;
+    //SEO TITLE
+    private String titleInUrl;
 
     public String getRecipeMiscUse() {
         return recipeMiscUse;
@@ -1104,5 +1106,25 @@ public class Recipe implements Serializable {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    public String getTitleInUrl() {
+        return titleInUrl;
+    }
+
+    public void setTitleInUrl(String titleInUrl) {
+
+        titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9\\-\\s\\.]", "");
+        titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
+
+        /*
+        if(titleInUrl.length() > 200){
+            titleInUrl.setTitleInUrl(titleInUrl.substring(0, 100));
+        } else {
+            titleInUrl.setTitleInUrl(titleInUrl);
+        }
+        */
+
+        this.titleInUrl = titleInUrl;
     }
 }
