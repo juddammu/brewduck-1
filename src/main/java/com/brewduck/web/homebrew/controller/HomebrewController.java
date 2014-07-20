@@ -77,6 +77,8 @@ public class HomebrewController {
         recipe.setSeq(seq);
         recipe.setBrewer(account.getId() + "");
 
+        logger.warn("brewer : " + account.getId() );
+
         // W = weight of malt (in lbs.)
         // L = color of malt (in °L)
         // V = volume of wort (in gal.)

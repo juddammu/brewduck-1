@@ -206,6 +206,7 @@ public class RecipeController {
                 paramRecipeFermantable.setRecipeFermantableAmount(paramRecipe.getRecipeFermantableAmounts()[i]);
                 paramRecipeFermantable.setRecipeFermantableUse(paramRecipe.getRecipeFermantableUses()[i]);
                 paramRecipeFermantable.setRecipeFermantableType("1");
+                paramRecipeFermantable.setBrewer(account.getId() + "");
                 paramRecipeFermantable.setInsertId(account.getId() + "");
                 recipeService.insertRecipeFermentable(paramRecipeFermantable);
             }

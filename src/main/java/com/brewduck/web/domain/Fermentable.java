@@ -114,6 +114,8 @@ public class Fermentable implements Serializable {
 
     public String endTitleYn;
 
+    public String brewer;
+
     public Integer getPpg() {
         return ppg;
     }
@@ -144,6 +146,14 @@ public class Fermentable implements Serializable {
 
     public void setTitleYn(String titleYn) {
         this.titleYn = titleYn;
+    }
+
+    public String getBrewer() {
+        return brewer;
+    }
+
+    public void setBrewer(String brewer) {
+        this.brewer = brewer;
     }
 
     /**

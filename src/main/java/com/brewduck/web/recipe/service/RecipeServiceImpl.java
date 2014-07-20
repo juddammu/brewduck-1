@@ -2,6 +2,7 @@ package com.brewduck.web.recipe.service;
 
 import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.domain.Account;
+import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.domain.Style;
 import com.brewduck.web.fermentable.dao.FermentableDao;
@@ -59,15 +60,18 @@ public class RecipeServiceImpl implements RecipeService {
         Recipe newRecipe = recipeDao.selectRecipeDetail(recipe);
 
         Integer recipeSeq = newRecipe.getSeq();
+        String brewer = newRecipe.getBrewer();
 
         // 레시피 제조시 입력한 스타일 맥주 이름
         Style paramStyle = new Style();
-//        paramStyle.setName(newRecipe.getStyleName());
+        Fermentable paramFermentable = new Fermentable();
+        paramFermentable.setSeq(newRecipe.getSeq());
+        paramFermentable.setBrewer(account.getId()+"");
 
         // 레시피 작성시 선택한 스타일 맥주
         //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
         // 레시피에 포함되는 맥아 리스트
-        newRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(recipeSeq));
+        newRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(paramFermentable));
         // 레시피에 포함되는 홉 리스트
         newRecipe.setHops(hopDao.selectRecipeHopList(recipeSeq));
         // 레시피에 포함되는 이스트 리스트

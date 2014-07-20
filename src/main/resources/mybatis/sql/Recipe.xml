@@ -226,6 +226,7 @@
             ,amount
             ,fermentable_use
             ,type
+            ,brewer
             ,insert_id
             ,insert_date
         ) VALUES (
@@ -234,6 +235,7 @@
             ,#{recipeFermantableAmount} -- amount - IN double
             ,#{recipeFermantableUse}   -- fermentable_use - IN varchar(10)
             ,#{recipeFermantableType}   -- fermentable_use - IN varchar(10)
+            ,#{brewer}   -- fermentable_use - IN varchar(10)
             ,#{insertId} -- insert_id - IN varchar(45)
             ,now() -- insert_date - IN timestamp
         )

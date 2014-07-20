@@ -23,6 +23,8 @@
 </div>
 <div class="box-body no-padding">
 <form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" onsubmit="return false" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
+<input id="resultOg" name ="resultOg" type="hidden" class="form-control control-width-small">
+<input id="resultFg" name ="resultFg" type="hidden" class="form-control control-width-small">
 <div class="form-group">
     <div class="col-md-2">
         <label class="control-label">이름</label>
@@ -293,7 +295,7 @@
 </div>
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">효모<small>Yeast</small><br/><small id="fgText" name="fgText"></small></label>
+        <label class="control-label">효모<small>Yeast</small><br/><small id="fgText" name="fgText"></small><br/><small id="abvText" name="abvText"></small></label>
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="yeast" id="yeast" data-placeholder="Select an item">
@@ -429,41 +431,48 @@
     function calcFg() {
         var batchSize = parseFloat($('#batchSize').val());
         var efficiency = parseFloat($('#efficiency').val());
+
+        var og = parseFloat($('#resultOg').val());
+        var fg = 0;
+        var tg = 0;
+        og = (og -1)*1000;
+
         var minAttenuation = 0;
         var maxAttenuation = 0;
         var attenuation = 0;
-        var ppg = 0;
-        var tg = 0;
 
         for (var i=0; i < $("input[name='minAttenuation']").length; i++) {
             minAttenuation = parseFloat($("input[name='minAttenuation']").eq(i).val());
             maxAttenuation = parseFloat($("input[name='maxAttenuation']").eq(i).val());
         }
         attenuation = (minAttenuation + maxAttenuation ) / 2;
-
-        for (var i=0; i < $("input[name='ppg']").length; i++) {
-            ppg = parseFloat($("input[name='ppg']").eq(i).val());
-        }
-
-        for (var i=0; i < $("input[name='recipeFermantableAmounts']").length; i++) {
-            recipeFermantableAmounts = parseFloat($("input[name='recipeFermantableAmounts']").eq(i).val());
-        }
-
-        if(ppg == 0){
-            return;
-        }
-
-        recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
         attenuation = attenuation / 100;
-        tg = ppg*recipeFermantableAmounts;
-        fg = 1 + ((tg * (1 - attenuation)) / 1000);
 
-
-        //Final Gravity = 1 + ((Total Gravity Points * (1 - Attenuation Percent)) / 1000)
+        tg = og*attenuation;
+        fg =og-tg;
+        fg = (fg / 1000) + 1;
         fg = fg.toFixed(3);
 
         $('#fgText').html('FG : '+fg);
+        $('#resultFg').val(fg);
 
+    }
+
+    function calcIbu(){
+
+    }
+
+    function calcAbv(){
+        var og = parseFloat($('#resultOg').val());
+        var fg = parseFloat($('#resultFg').val());
+        if(isNaN(og) || isNaN(fg)) {
+            $('#abv').html('&ndash;');
+            return;
+        }
+
+        var abv = (og - fg) * 131;
+        abv = abv.toFixed(1);
+        $('#abvText').html('abv : '+abv+'%');
     }
 
     function calcOg() {
@@ -506,6 +515,9 @@
         og = (og / 1000) + 1;
         og = og.toFixed(3);
         $('#ogText').html('OG : '+og);
+        $('#resultOg').val(og);
+
+
         //Original Gravity = Amount of Extract * PPG / Batch Size
 
         /*
@@ -660,6 +672,7 @@
             calcOg();
             calcFg();
             calcIbu();
+            calcAbv();
         }
 
         $("#fermantableListTable").on('click', '.row_fermantable_delete', function () {
