@@ -36,6 +36,8 @@
               ,update_date         updateDate
               ,delete_id           deleteId
               ,delete_date         deleteDate
+              ,max_attenuation     maxAttenuation
+              ,min_attenuation     minAttenuation
           FROM brewduckdb.YEAST A
     </sql>
 

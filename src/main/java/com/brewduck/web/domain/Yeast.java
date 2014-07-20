@@ -40,6 +40,11 @@ public class Yeast implements Serializable {
     private Double minTemperature;
     // 효모 최고 온도
     private Double maxTemperature;
+
+    private Double maxAttenuation;
+
+    private Double minAttenuation;
+
     // 효모 응집
     private String flocculation;
     // 효모 희석
@@ -93,6 +98,22 @@ public class Yeast implements Serializable {
     // 샴페인 타입 이스트 카운트
     private String champagneCnt;
 
+
+    public Double getMaxAttenuation() {
+        return maxAttenuation;
+    }
+
+    public void setMaxAttenuation(Double maxAttenuation) {
+        this.maxAttenuation = maxAttenuation;
+    }
+
+    public Double getMinAttenuation() {
+        return minAttenuation;
+    }
+
+    public void setMinAttenuation(Double minAttenuation) {
+        this.minAttenuation = minAttenuation;
+    }
 
     /**
      * 효모 영문명

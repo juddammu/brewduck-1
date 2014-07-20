@@ -262,7 +262,7 @@
 </div>
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">홉<small>Hops</small></label>
+        <label class="control-label">홉<small>Hops</small><br/><small id="ibuText" name="ibuText"></small></label>
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="hop" id="hop" data-placeholder="Select an item">
@@ -293,7 +293,7 @@
 </div>
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">효모<small>Yeast</small></label>
+        <label class="control-label">효모<small>Yeast</small><br/><small id="fgText" name="fgText"></small></label>
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" name="yeast" id="yeast" data-placeholder="Select an item">
@@ -304,6 +304,8 @@
                         productId="${yeastList.productId}"
                         minTemperature="${yeastList.minTemperature}"
                         maxTemperature="${yeastList.maxTemperature}"
+                        maxAttenuation="${yeastList.maxAttenuation}"
+                        minAttenuation="${yeastList.minAttenuation}"
                         title="${yeastList.koreanName }">${yeastList.koreanName } (${yeastList.form})</option>
             </c:forEach>
         </select>
@@ -379,13 +381,6 @@
 
 <content tag="local_script">
     <script type="text/javascript">
-    function brixToGravity(brix){
-        brix = parseFloat(brix);
-        if(isNaN(brix)) {
-            return;
-        }
-        return (brix/(258.6-(brix/258.2*227.1))) + 1;
-    }
 
     function gramToPound(weight){
         weight = parseFloat(weight);
@@ -431,6 +426,46 @@
     }
 
 
+    function calcFg() {
+        var batchSize = parseFloat($('#batchSize').val());
+        var efficiency = parseFloat($('#efficiency').val());
+        var minAttenuation = 0;
+        var maxAttenuation = 0;
+        var attenuation = 0;
+        var ppg = 0;
+        var tg = 0;
+
+        for (var i=0; i < $("input[name='minAttenuation']").length; i++) {
+            minAttenuation = parseFloat($("input[name='minAttenuation']").eq(i).val());
+            maxAttenuation = parseFloat($("input[name='maxAttenuation']").eq(i).val());
+        }
+        attenuation = (minAttenuation + maxAttenuation ) / 2;
+
+        for (var i=0; i < $("input[name='ppg']").length; i++) {
+            ppg = parseFloat($("input[name='ppg']").eq(i).val());
+        }
+
+        for (var i=0; i < $("input[name='recipeFermantableAmounts']").length; i++) {
+            recipeFermantableAmounts = parseFloat($("input[name='recipeFermantableAmounts']").eq(i).val());
+        }
+
+        if(ppg == 0){
+            return;
+        }
+
+        recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
+        attenuation = attenuation / 100;
+        tg = ppg*recipeFermantableAmounts;
+        fg = 1 + ((tg * (1 - attenuation)) / 1000);
+
+
+        //Final Gravity = 1 + ((Total Gravity Points * (1 - Attenuation Percent)) / 1000)
+        fg = fg.toFixed(3);
+
+        $('#fgText').html('FG : '+fg);
+
+    }
+
     function calcOg() {
         var batchSize = parseFloat($('#batchSize').val());
         var efficiency = parseFloat($('#efficiency').val());
@@ -469,7 +504,7 @@
 
         og = (recipeFermantableAmounts * ppg * efficiency) / batchSize;
         og = (og / 1000) + 1;
-        og = og.toFixed(3)
+        og = og.toFixed(3);
         $('#ogText').html('OG : '+og);
         //Original Gravity = Amount of Extract * PPG / Batch Size
 
@@ -623,6 +658,8 @@
         function calc(){
             calcSrm();
             calcOg();
+            calcFg();
+            calcIbu();
         }
 
         $("#fermantableListTable").on('click', '.row_fermantable_delete', function () {
@@ -730,11 +767,13 @@
                 var productId = this.options[this.selectedIndex].getAttribute("productId");
                 var minTemperature = this.options[this.selectedIndex].getAttribute("minTemperature");
                 var maxTemperature = this.options[this.selectedIndex].getAttribute("maxTemperature");
+                var maxAttenuation = this.options[this.selectedIndex].getAttribute("maxAttenuation");
+                var minAttenuation = this.options[this.selectedIndex].getAttribute("minAttenuation");
 
                 //alert(" laboratory : "+laboratory+" productId : "+productId+" minTemperature : "+minTemperature+" maxTemperature : "+maxTemperature);
                 yeastHtml = "";
                 yeastHtml = yeastHtml +"<tr>";
-                yeastHtml = yeastHtml +"<td>1<input id='recipeYeastSeqs' name ='recipeYeastSeqs' type='hidden' value='"+$("#yeast option:selected").val()+"'></td>";
+                yeastHtml = yeastHtml +"<td>1<input id='minAttenuation' name ='minAttenuation' type='hidden' value='"+minAttenuation+"'><input id='maxAttenuation' name ='maxAttenuation' type='hidden' value='"+maxAttenuation+"'><input id='recipeYeastSeqs' name ='recipeYeastSeqs' type='hidden' value='"+$("#yeast option:selected").val()+"'></td>";
                 yeastHtml = yeastHtml +"<td>"+ $("#yeast option:selected").text() +"</td> ";
                 yeastHtml = yeastHtml +"<td>";
                 yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
@@ -763,6 +802,7 @@
                 yeastHtml = yeastHtml +"</td> ";
                 yeastHtml = yeastHtml +"</tr> ";
                 $("#yeastListTable").append(yeastHtml);
+                calc();
             });
 
             $('#hop').change(function(){
