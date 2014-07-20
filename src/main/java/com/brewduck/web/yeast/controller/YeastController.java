@@ -1,7 +1,9 @@
 package com.brewduck.web.yeast.controller;
 
 import com.brewduck.framework.security.AuthenticationUtils;
+import com.brewduck.web.common.service.CommonService;
 import com.brewduck.web.domain.Account;
+import com.brewduck.web.domain.Common;
 import com.brewduck.web.domain.Yeast;
 import com.brewduck.web.yeast.service.YeastService;
 import org.slf4j.Logger;
@@ -31,6 +33,9 @@ public class YeastController {
      */
     @Autowired
     private YeastService yeastService;
+
+    @Autowired
+    private CommonService commonService;
 
 
     /**
@@ -93,7 +98,7 @@ public class YeastController {
      * @return 맥주 이스트 상세.
      */
     @RequestMapping(value = "/{seq}/*", method = RequestMethod.GET)
-    public String detail(Model model, @PathVariable("seq") String seq) {
+    public String detail(Model model, @PathVariable("seq") Integer seq) {
         logger.info("Yeast seq : {}", seq);
 
         Yeast yeast = new Yeast();
@@ -128,6 +133,28 @@ public class YeastController {
 
         return countYeastType;
     }
+
+    /**
+     * <pre>
+     * 맥주 이스트 타입 별 갯수 조회.
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 이스트 타입 별 갯수.
+     */
+    @ResponseBody
+    @RequestMapping(value = "/countComment", method = RequestMethod.GET)
+    public Common countComment(Model model) {
+
+        // 맥주 이스트 타입 별 갯수 조회.
+        Common countComment = commonService.countComment();
+
+        // model.addAttribute("Hop", Hop);
+        // return "/Hop/HopView";
+
+        return countComment;
+    }
+
     /**
      * <pre>
      * 맥주 이스트 저장.
