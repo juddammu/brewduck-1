@@ -65,7 +65,7 @@
               ,b.delete_id        deleteId
               ,b.delete_date      deleteDate
           FROM brewduckdb.RECIPE_HOPS a
-              LEFT OUTER join brewduckdb.HOPS b on a.seq = b.seq
+              LEFT OUTER join brewduckdb.HOPS b on a.hops_seq = b.seq
          WHERE a.seq = b.seq
     </sql>
 

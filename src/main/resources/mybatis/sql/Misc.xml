@@ -50,7 +50,7 @@
               ,b.delete_id        deleteId
               ,b.delete_date      deleteDate
           FROM brewduckdb.RECIPE_MISC a
-             LEFT OUTER join brewduckdb.MISC b on a.seq = b.seq
+             LEFT OUTER join brewduckdb.MISC b on a.misc_seq = b.seq
          WHERE a.seq = b.seq
     </sql>
 

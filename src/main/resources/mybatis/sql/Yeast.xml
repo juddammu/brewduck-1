@@ -9,6 +9,9 @@
               ,name               titleInUrl
               ,korean_name         koreanName
               ,version             version
+              ,(select B.BBS_ID
+                  from BOARD_MASTER B
+                where B.BBS_EN_NM = 'Yeast Board') as cmtBbsId
               ,(select B.attribute1desc
                   from common_code B
                  where common_set = 'yeast_type'
@@ -68,7 +71,7 @@
               ,b.delete_id           deleteId
               ,b.delete_date         deleteDate
           FROM brewduckdb.RECIPE_YEAST a
-              LEFT OUTER join brewduckdb.YEAST b on a.seq = b.seq
+              LEFT OUTER join brewduckdb.YEAST b on a.yeast_seq = b.seq
          WHERE a.seq = b.seq
     </sql>
 

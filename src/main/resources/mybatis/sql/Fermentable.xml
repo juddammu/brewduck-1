@@ -300,7 +300,7 @@
               ,b.delete_id           deleteId
               ,b.delete_date         deleteDate
           FROM brewduckdb.RECIPE_FERMENTABLE a
-              LEFT OUTER join brewduckdb.FERMENTABLE b on a.seq = b.seq
+              LEFT OUTER join brewduckdb.FERMENTABLE b on a.fermentable_seq = b.seq
          WHERE a.seq = b.seq
     </sql>
 
