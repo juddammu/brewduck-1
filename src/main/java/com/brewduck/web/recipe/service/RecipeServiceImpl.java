@@ -1,10 +1,7 @@
 package com.brewduck.web.recipe.service;
 
 import com.brewduck.framework.security.AuthenticationUtils;
-import com.brewduck.web.domain.Account;
-import com.brewduck.web.domain.Fermentable;
-import com.brewduck.web.domain.Recipe;
-import com.brewduck.web.domain.Style;
+import com.brewduck.web.domain.*;
 import com.brewduck.web.fermentable.dao.FermentableDao;
 import com.brewduck.web.hop.dao.HopDao;
 import com.brewduck.web.misc.dao.MiscDao;
@@ -68,16 +65,31 @@ public class RecipeServiceImpl implements RecipeService {
         paramFermentable.setSeq(newRecipe.getSeq());
         paramFermentable.setBrewer(account.getId()+"");
 
+        Hop paramHop = new Hop();
+        paramHop.setSeq(newRecipe.getSeq());
+        paramHop.setBrewer(account.getId()+"");
+
+        Yeast paramYeast = new Yeast();
+        paramYeast.setSeq(newRecipe.getSeq());
+        paramYeast.setBrewer(account.getId()+"");
+
+        Misc paramMisc = new Misc();
+        paramMisc.setSeq(newRecipe.getSeq());
+        paramMisc.setBrewer(account.getId()+"");
+
         // 레시피 작성시 선택한 스타일 맥주
         //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
         // 레시피에 포함되는 맥아 리스트
         newRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(paramFermentable));
         // 레시피에 포함되는 홉 리스트
-        newRecipe.setHops(hopDao.selectRecipeHopList(recipeSeq));
+        /*newRecipe.setHops(hopDao.selectRecipeHopList(recipeSeq));*/
+        newRecipe.setHops(hopDao.selectRecipeHopList(paramHop));
         // 레시피에 포함되는 이스트 리스트
-        newRecipe.setYeasts(yeastDao.selectRecipeYeastList(recipeSeq));
+        /*newRecipe.setYeasts(yeastDao.selectRecipeYeastList(recipeSeq));*/
+        newRecipe.setYeasts(yeastDao.selectRecipeYeastList(paramYeast));
         // 레시피에 포함되는 첨가물 리스트
-        newRecipe.setMiscs(miscDao.selectRecipeMiscList(recipeSeq));
+        /*newRecipe.setMiscs(miscDao.selectRecipeMiscList(recipeSeq));*/
+        newRecipe.setMiscs(miscDao.selectRecipeMiscList(paramMisc));
 
         // 조회수 업데이트
         newRecipe.setUpdateId(Integer.toString(account.getId()));

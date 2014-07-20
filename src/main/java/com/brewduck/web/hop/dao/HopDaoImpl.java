@@ -35,8 +35,8 @@ public class HopDaoImpl implements HopDao {
     }
 
     @Override
-    public List<Hop> selectRecipeHopList(Integer seq) {
-        return sqlSession.selectList("Hop.selectRecipeHopList", seq);
+    public List<Hop> selectRecipeHopList(Hop hop) {
+        return sqlSession.selectList("Hop.selectRecipeHopList", hop);
     }
 
     @Override

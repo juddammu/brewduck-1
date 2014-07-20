@@ -33,7 +33,7 @@ public interface HopDao {
      * @param seq 맥주 레시피 이름
      * @return 맥주 홉 목록
      */
-    public List<Hop> selectRecipeHopList(Integer seq);
+    public List<Hop> selectRecipeHopList(Hop hop);
 
 
     /**

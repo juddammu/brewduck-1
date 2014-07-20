@@ -32,7 +32,7 @@ public interface YeastDao {
      * @param seq 레시피 이름
      * @return 맥주 이스트 목록
      */
-    public List<Yeast> selectRecipeYeastList(Integer seq);
+    public List<Yeast> selectRecipeYeastList(Yeast yeast);
 
     /**
      * <pre>

@@ -26,7 +26,7 @@ public interface MiscDao {
      */
     public List<Misc> selectMiscList(Misc misc);
 
-    public List<Misc> selectRecipeMiscList(Integer seq);
+    public List<Misc> selectRecipeMiscList(Misc misc);
 
     /**
      * <pre>

@@ -221,6 +221,7 @@ public class RecipeController {
                 paramRecipeHop.setRecipeHopUse(paramRecipe.getRecipeHopUses()[i]);
                 paramRecipeHop.setRecipeHopTime(paramRecipe.getRecipeHopTimes()[i]);
                 paramRecipeHop.setRecipeHopForm(paramRecipe.getRecipeHopForms()[i]);
+                paramRecipeHop.setBrewer(account.getId() + "");
                 paramRecipeHop.setInsertId(account.getId() + "");
                 recipeService.insertRecipeHop(paramRecipeHop);
             }
@@ -232,6 +233,7 @@ public class RecipeController {
                 paramRecipeYeast.setRecipeYeastSeq(paramRecipe.getRecipeYeastSeqs()[i]);
                 //paramRecipeYeast.setRecipeYeastMinTemperature(paramRecipe.getRecipeYeastMinTemperatures()[i]);
                 //paramRecipeYeast.setRecipeYeastMaxTemperature(paramRecipe.getRecipeYeastMaxTemperatures()[i]);
+                paramRecipeYeast.setBrewer(account.getId() + "");
                 paramRecipeYeast.setInsertId(account.getId() + "");
                 recipeService.insertRecipeYeast(paramRecipeYeast);
             }
@@ -244,6 +246,7 @@ public class RecipeController {
                 paramRecipeMisc.setRecipeMiscAmount(paramRecipe.getRecipeMiscAmounts()[i]);
                 paramRecipeMisc.setRecipeMiscTime(paramRecipe.getRecipeMiscTimes()[i]);
                 paramRecipeMisc.setRecipeMiscUse(paramRecipe.getRecipeMiscUses()[i]);
+                paramRecipeMisc.setBrewer(account.getId() + "");
                 paramRecipeMisc.setInsertId(account.getId() + "");
                 recipeService.insertRecipeMisc(paramRecipeMisc);
             }

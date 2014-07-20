@@ -83,6 +83,7 @@ public class Misc implements Serializable {
     //기타 재료 타입 한글 타입
     public String typeKorean;
 
+    public String brewer;
     /**
      * 기타 재료 영문명
      *
@@ -552,5 +553,13 @@ public class Misc implements Serializable {
         titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
 
         this.titleInUrl = titleInUrl;
+    }
+
+    public String getBrewer() {
+        return brewer;
+    }
+
+    public void setBrewer(String brewer) {
+        this.brewer = brewer;
     }
 }

@@ -34,8 +34,8 @@ public class YeastDaoImpl implements YeastDao {
     }
 
     @Override
-    public List<Yeast> selectRecipeYeastList(Integer seq) {
-        return sqlSession.selectList("Yeast.selectRecipeYeastList", seq);
+    public List<Yeast> selectRecipeYeastList(Yeast yeast) {
+        return sqlSession.selectList("Yeast.selectRecipeYeastList", yeast);
     }
 
     @Override

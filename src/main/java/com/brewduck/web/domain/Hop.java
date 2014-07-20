@@ -126,6 +126,8 @@ public class Hop implements Serializable {
     //홉 설명 줄임
     public String shortKoreanNotes;
 
+    public String brewer;
+
     public String getShortKoreanNotes() {
         return shortKoreanNotes;
     }
@@ -366,6 +368,13 @@ public class Hop implements Serializable {
         this.myrcene = myrcene;
     }
 
+    public String getBrewer() {
+        return brewer;
+    }
+
+    public void setBrewer(String brewer) {
+        this.brewer = brewer;
+    }
 
     /**
      * 작성자 아이디

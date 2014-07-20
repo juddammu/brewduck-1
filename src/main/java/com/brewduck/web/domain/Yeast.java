@@ -15,7 +15,7 @@ public class Yeast implements Serializable {
     private static final long serialVersionUID = 1L;
 
     //효모 순번
-    public String seq;
+    public Integer seq;
     //SEO를 위한 타이틀 URL
     private String titleInUrl;
     // 효모 영문명
@@ -98,6 +98,9 @@ public class Yeast implements Serializable {
     // 샴페인 타입 이스트 카운트
     private String champagneCnt;
 
+    public int cmtBbsId;
+
+    private  String brewer;
 
     public Double getMaxAttenuation() {
         return maxAttenuation;
@@ -695,11 +698,11 @@ public class Yeast implements Serializable {
         this.champagneCnt = champagneCnt;
     }
 
-    public String getSeq() {
+    public Integer getSeq() {
         return seq;
     }
 
-    public void setSeq(String seq) {
+    public void setSeq(Integer seq) {
         this.seq = seq;
     }
 
@@ -709,5 +712,21 @@ public class Yeast implements Serializable {
 
     public void setTitleInUrl(String titleInUrl) {
         this.titleInUrl = titleInUrl;
+    }
+
+    public int getCmtBbsId() {
+        return cmtBbsId;
+    }
+
+    public void setCmtBbsId(int cmtBbsId) {
+        this.cmtBbsId = cmtBbsId;
+    }
+
+    public String getBrewer() {
+        return brewer;
+    }
+
+    public void setBrewer(String brewer) {
+        this.brewer = brewer;
     }
 }
