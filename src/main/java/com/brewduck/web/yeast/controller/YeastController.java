@@ -146,8 +146,9 @@ public class YeastController {
     @RequestMapping(value = "/countComment", method = RequestMethod.GET)
     public Common countComment(Model model) {
 
+        Common countComment = null;
         // 맥주 이스트 타입 별 갯수 조회.
-        Common countComment = commonService.countComment();
+        //Common countComment = commonService.countComment();
 
         // model.addAttribute("Hop", Hop);
         // return "/Hop/HopView";

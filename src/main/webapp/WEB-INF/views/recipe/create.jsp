@@ -22,7 +22,7 @@
     <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i> 레시피 <strong>컨셉</strong></h4></header>
 </div>
 <div class="box-body no-padding">
-<form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" onsubmit="return false" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
+<form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
 <input id="resultOg" name ="resultOg" type="hidden" class="form-control control-width-small">
 <input id="resultFg" name ="resultFg" type="hidden" class="form-control control-width-small">
 <div class="form-group">
@@ -270,7 +270,7 @@
         <select class="form-control select2-list" name="hop" id="hop" data-placeholder="Select an item">
             <option>=== 선택해주세요 ===</option>
             <c:forEach items="${hopList}" var="hopList" varStatus="i">
-                <option value="${hopList.seq }" title="${hopList.name }">${hopList.name } (${hopList.alpha} %) - ${hopList.originKorean} </option>
+                <option value="${hopList.seq }" alpha="${hopList.alpha}" title="${hopList.name }">${hopList.name } - ${hopList.originKorean} </option>
             </c:forEach>
         </select>
         <div class="table-responsive no-margin">
@@ -282,6 +282,7 @@
                 <th>용량(g)</th>
                 <th>시간</th>
                 <th>용도</th>
+                <th>Alpha</th>
                 <th>형태</th>
                 <th style="width:90px">복사</th>
                 <th style="width:90px">삭제</th>
@@ -308,7 +309,7 @@
                         maxTemperature="${yeastList.maxTemperature}"
                         maxAttenuation="${yeastList.maxAttenuation}"
                         minAttenuation="${yeastList.minAttenuation}"
-                        title="${yeastList.koreanName }">${yeastList.koreanName } (${yeastList.form})</option>
+                        title="${yeastList.koreanName }">(${yeastList.form}) ${yeastList.koreanName } - (${yeastList.name })</option>
             </c:forEach>
         </select>
         <table id="yeastListTable" name="yeastListTable" class="table table-hover table-striped no-margin">
@@ -318,8 +319,6 @@
                 <th>이스트명</th>
                 <th>제조사</th>
                 <th>제품 ID</th>
-                <th>발효최저적온</th>
-                <th>발효최고적온</th>
                 <th style="width:90px">복사</th>
                 <th style="width:90px">삭제</th>
             </tr>
@@ -366,8 +365,8 @@
     </div>
 </div>
 <div class="form-footer col-md-12 align">
-    <button type="button" class="btn btn-info" id="checkRecipe" name="checkRecipe">정합성 체크</button>
     <button type="submit" class="btn btn-primary" id="insertRecipe" name="insertRecipe">완료</button>
+    <button type="button" class="btn btn-info" id="checkRecipe" name="checkRecipe">정합성 체크</button>
 </div>
 </form:form>
 </div><!--end .box-body -->
@@ -429,6 +428,7 @@
 
 
     function calcFg() {
+
         var batchSize = parseFloat($('#batchSize').val());
         var efficiency = parseFloat($('#efficiency').val());
 
@@ -445,16 +445,22 @@
             minAttenuation = parseFloat($("input[name='minAttenuation']").eq(i).val());
             maxAttenuation = parseFloat($("input[name='maxAttenuation']").eq(i).val());
         }
-        attenuation = (minAttenuation + maxAttenuation ) / 2;
-        attenuation = attenuation / 100;
 
-        tg = og*attenuation;
-        fg =og-tg;
-        fg = (fg / 1000) + 1;
-        fg = fg.toFixed(3);
+        if($("input[name='minAttenuation']").length == 0){
+            $('#fgText').html('');
+            $('#resultFg').val('');
+            $('#abvText').html('');
+        }else{
+            attenuation = (minAttenuation + maxAttenuation ) / 2;
+            attenuation = attenuation / 100;
 
-        $('#fgText').html('FG : '+fg);
-        $('#resultFg').val(fg);
+            tg = og*attenuation;
+            fg =og-tg;
+            fg = (fg / 1000) + 1;
+            fg = fg.toFixed(3);
+            $('#fgText').html('FG : '+fg);
+            $('#resultFg').val(fg);
+        }
 
     }
 
@@ -465,6 +471,7 @@
     function calcAbv(){
         var og = parseFloat($('#resultOg').val());
         var fg = parseFloat($('#resultFg').val());
+
         if(isNaN(og) || isNaN(fg)) {
             $('#abv').html('&ndash;');
             return;
@@ -481,8 +488,6 @@
         var ppg = 0 ;
         var recipeFermantableAmounts = 0 ;
         var og = 0;
-
-        //alert(batchSize);
 
         if(isNaN(batchSize)) {
             //$('#abv').html('&ndash;');
@@ -503,42 +508,21 @@
             recipeFermantableAmounts = parseFloat($("input[name='recipeFermantableAmounts']").eq(i).val());
         }
 
-        if(ppg == 0){
-            return;
+        if($("input[name='ppg']").length == 0){
+            $('#ogText').html('');
+            $('#resultOg').val('');
+        }else{
+            recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
+            batchSize = literToGalon(batchSize);
+
+            og = (recipeFermantableAmounts * ppg * efficiency) / batchSize;
+            og = (og / 1000) + 1;
+            og = og.toFixed(3);
+
+            $('#ogText').html('OG : '+og);
+            $('#resultOg').val(og);
         }
 
-        //1 : 2.204623 = 2 : x
-        recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
-        batchSize = literToGalon(batchSize);
-
-        og = (recipeFermantableAmounts * ppg * efficiency) / batchSize;
-        og = (og / 1000) + 1;
-        og = og.toFixed(3);
-        $('#ogText').html('OG : '+og);
-        $('#resultOg').val(og);
-
-
-        //Original Gravity = Amount of Extract * PPG / Batch Size
-
-        /*
-        if(isNaN(og) || isNaN(fg)) {
-            $('#abv').html('&ndash;');
-            return;
-        }
-
-        /*
-        var og = parseFloat($('#og').val());
-        var fg = parseFloat($('#fg').val());
-        if(isNaN(og) || isNaN(fg)) {
-            $('#abv').html('&ndash;');
-            return;
-        }
-
-        var abv = (og - fg) * 131;
-
-        $('#abv').html(abv.toFixed(1) + '%');
-        */
-        //calcAbw(abv);
     }
 
     (function(namespace, $) {
@@ -612,10 +596,6 @@
         namespace.DemoUIMessages = new DemoUIMessages;
     }(this.boostbox, jQuery)); // pass in (namespace, jQuery):
 
-        $('#insertRecipe').on('click', function () {
-            document.insert.submit();
-        });
-
         function getFermentableList(){
             var fermentableHtml = "";
             $.get("/fermentable/selectFermentableGroupList", function(data, status){
@@ -636,37 +616,6 @@
             })
         }
 
-        function getHopList(){
-            var hopHtml = "";
-            $.get("/hop/getHopList", function(data, status){
-                $.each(data, function(i){
-                    hopHtml = hopHtml +  "<option VALUE='"+data[i].seq+"'>" + data[i].name + " - " + " ( "+ data[i].alpha+ " %) - " + data[i].originKorean + "</option>";
-                });
-                $("#hop").append(hopHtml);
-            })
-        }
-
-        function getYeastList(){
-            var yeastHtml = "";
-            $.get("/yeast/getYeastList", function(data, status){
-                $.each(data, function(i){
-                    yeastHtml = yeastHtml +  "<option VALUE='"+data[i].seq+"'>" + data[i].koreanName + " - " + " ( "+ data[i].form+ " ) </option>";
-                });
-                $("#yeast").append(yeastHtml);
-            })
-        }
-
-        function getMiscList(){
-            var miscHtml = "";
-            $.get("/misc/getMiscList", function(data, status){
-                /*
-                $.each(data, function(i){
-                    ("#misc").append("<option VALUE='"+data[i].seq+"'>" + data[i].koreanName + " - " + " ( "+ data[i].typeKorean+ " )- " + data[i].useFor + " </option>");
-                });
-                */
-            })
-        }
-
         function calc(){
             calcSrm();
             calcOg();
@@ -684,17 +633,20 @@
         });
         $("#hopListTable").on('click', '.row_hop_delete', function () {
             row_hop_delete($(this));
+            calc();
         });
         $("#hopListTable").on('click', '.row_hop_copy', function () {
             row_hop_copy($(this));
         });
         $("#yeastListTable").on('click', '.row_yeast_delete', function () {
             row_yeast_delete($(this));
+            calc();
         });
         $("#yeastListTable").on('click', '.row_yeast_copy', function () {
             row_yeast_copy($(this));
         });
         $("#miscListTable").on('click', '.row_misc_delete', function () {
+            calc();
             row_misc_delete($(this));
         });
         $("#miscListTable").on('click', '.row_misc_copy', function () {
@@ -799,16 +751,6 @@
                 yeastHtml = yeastHtml +"</div>";
                 yeastHtml = yeastHtml +"</td> ";
                 yeastHtml = yeastHtml +"<td>";
-                yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
-                yeastHtml = yeastHtml + minTemperature;
-                yeastHtml = yeastHtml +"</div>";
-                yeastHtml = yeastHtml +"</td> ";
-                yeastHtml = yeastHtml +"<td>";
-                yeastHtml = yeastHtml +"<div class='input-group' style='width:115px;'>";
-                yeastHtml = yeastHtml + maxTemperature;
-                yeastHtml = yeastHtml +"</div>";
-                yeastHtml = yeastHtml +"</td> ";
-                yeastHtml = yeastHtml +"<td>";
                 yeastHtml = yeastHtml +"<button type='button' class='btn btn-primary btn-outline row_yeast_copy'><i class='fa fa-copy'></i>  복사</button>";
                 yeastHtml = yeastHtml +"</td>";
                 yeastHtml = yeastHtml +"<td><button type='button' class='btn btn-primary btn-outline row_yeast_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
@@ -819,6 +761,7 @@
             });
 
             $('#hop').change(function(){
+                var alpha = this.options[this.selectedIndex].getAttribute("alpha");
                 hopHtml = "";
                 hopHtml = hopHtml +"<tr>";
                 hopHtml = hopHtml +"<td>1<input id='recipeHopSeqs' name ='recipeHopSeqs' type='hidden' value='"+$("#hop option:selected").val()+"'></td>";
@@ -841,7 +784,13 @@
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
-                hopHtml = hopHtml +"<select id='recipeHopForms' name ='recipeHopForms' style='width:95px;' class='form-control' required> ";
+                hopHtml = hopHtml +"<div class='input-group' style='width:90px;'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAlphas' name='recipeHopAlphas' value='"+alpha+"'>";
+                hopHtml = hopHtml +"<span class='input-group-addon'>A</span>";
+                hopHtml = hopHtml +"</div>";
+                hopHtml = hopHtml +"</td> ";
+                hopHtml = hopHtml +"<td>";
+                hopHtml = hopHtml +"<select id='recipeHopForms' name ='recipeHopForms' style='width:90px;' class='form-control' required> ";
                 hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3'>Leaf</option><option value='4' selected>Pellet</option><option value='1'>Plug</option>";
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";

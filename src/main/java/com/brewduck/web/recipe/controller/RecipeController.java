@@ -261,13 +261,17 @@ public class RecipeController {
             style.setSeq(paramRecipe.getStyleSeq()+"");
 
             Recipe resultRecipe = recipeService.selectRecipeDetail(paramRecipe);
-            Style  resultStyle = styleService.selectStyleDetail(style);
 
+            /*
             model.addAttribute("resultRecipe", resultRecipe);
             model.addAttribute("resultStyle" , resultStyle);
             model.addAttribute("paramRecipe" , paramRecipe);
 
-            return "recipe/create";
+            Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
+            */
+            model.addAttribute("recipeDetail", resultRecipe);
+
+            return "homebrew/view";
         }else{
             return "recipe/create";
         }
