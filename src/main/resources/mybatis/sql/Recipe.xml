@@ -246,6 +246,7 @@
         INSERT INTO brewduckdb.RECIPE_HOPS (
              recipe_seq
             ,hops_seq
+            ,brewer
             ,amount
             ,hops_use
             ,time
@@ -255,6 +256,7 @@
         ) VALUES (
              #{recipeSeq} -- seq - IN int(11)
             ,#{recipeHopSeq} -- fermentable_seq - IN int(11)
+            ,#{brewer}
             ,#{recipeHopAmount} -- amount - IN double
             ,#{recipeHopUse}   -- fermentable_use - IN varchar(10)
             ,#{recipeHopTime}   -- fermentable_use - IN varchar(10)
@@ -268,11 +270,13 @@
         INSERT INTO brewduckdb.RECIPE_YEAST (
             recipe_seq
             ,yeast_seq
+            ,brewer
             ,insert_id
             ,insert_date
         ) VALUES (
              #{recipeSeq} -- seq - IN int(11)
             ,#{recipeYeastSeq} -- fermentable_seq - IN int(11)
+            ,#{brewer}
             ,#{insertId} -- insert_id - IN varchar(45)
             ,now() -- insert_date - IN timestamp
         )
@@ -282,6 +286,7 @@
         INSERT INTO brewduckdb.RECIPE_MISC (
              recipe_seq
             ,misc_seq
+            ,brewer
             ,amount
             ,time
             ,misc_use
@@ -290,6 +295,7 @@
         ) VALUES (
              #{recipeSeq} -- seq - IN int(11)
             ,#{recipeMiscSeq} -- fermentable_seq - IN int(11)
+            ,#{brewer}
             ,#{recipeMiscAmount} -- amount - IN double
             ,#{recipeMiscTime}   -- fermentable_use - IN varchar(10)
             ,#{recipeMiscUse}   -- fermentable_use - IN varchar(10)
