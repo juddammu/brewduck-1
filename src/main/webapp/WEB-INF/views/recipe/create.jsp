@@ -23,9 +23,20 @@
 </div>
 <div class="box-body no-padding">
 
+<input id="styleOgMin" name ="styleOgMin" type="text" >
+<input id="styleOgMax" name ="styleOgMax" type="text" >
 
-<input id="resultOg" name ="text" type="hidden" class="form-control control-width-small">
-<input id="resultFg" name ="text" type="hidden" class="form-control control-width-small">
+<input id="styleIbuMin" name ="styleIbuMin" type="text" >
+<input id="styleIbuMax" name ="styleIbuMax" type="text" >
+
+<input id="styleIbuMin" name ="styleAbvMin" type="text" >
+<input id="styleIbuMax" name ="styleAbvMax" type="text" >
+
+<input id="styleIbuMin" name ="styleColorMin" type="text" >
+<input id="styleIbuMax" name ="styleColorMax" type="text" >
+
+<input id="resultOg" name ="resultOg" type="hidden">
+<input id="resultFg" name ="resultFg" type="hidden">
 <form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
 <div class="form-group">
     <div class="col-md-2">
@@ -59,7 +70,7 @@
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" id="styleSeq" name="styleSeq" data-placeholder="Select an item">
-            <optgroup  label="1. LIGHT LAGER">
+            <optgroup label="1. LIGHT LAGER">
                 <option value="14">라이트 미국식 라거</option>
                 <option value="53">스탠다드 미국식 라거</option>
                 <option value="21">뮤닉 헬레스</option>
@@ -421,6 +432,7 @@
 
             recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
             srm = 0.3*recipeFermantableAmounts*lovibond;
+
             srm = srm / batchSize;
             sumSrm = sumSrm + srm;
         }
@@ -494,6 +506,28 @@
         var og = parseFloat($('#resultOg').val());
         var time = 0;
         var ibu = 0;
+
+        if(isNaN(og)) {
+            $('#ibuText').html('');
+            return;
+        }
+        if(isNaN(batchSize)) {
+            $('#ibuText').html('');
+            return;
+        }
+        if($("input[name='recipeHopTimes']").length == 0){
+            $('#ibuText').html('');
+            return;
+        }
+        if($("input[name='recipeHopAlphas']").length == 0){
+            $('#ibuText').html('');
+            return;
+        }
+        if($("input[name='recipeHopAmounts']").length == 0){
+            $('#ibuText').html('');
+            return;
+        }
+
 
         for (var i=0; i < $("input[name='recipeHopTimes']").length; i++) {
             time = parseFloat($("input[name='recipeHopTimes']").eq(i).val());
@@ -727,6 +761,13 @@
             var yeastHtml = "";
             var miscHtml = "";
             //getFermentableList();
+            $('#styleSeq').change(function(){
+                var seq = $("#styleSeq option:selected").val();
+
+                $.get("/style/getDetail/"+seq, function(data, status){
+                    alert(data.ogMin);
+                })
+            });
 
             $('#misc').change(function(){
                 miscHtml = "";
@@ -760,12 +801,17 @@
             });
 
             $('#yeast').change(function(){
+
                 var laboratory = this.options[this.selectedIndex].getAttribute("laboratory");
                 var productId = this.options[this.selectedIndex].getAttribute("productId");
                 var minTemperature = this.options[this.selectedIndex].getAttribute("minTemperature");
                 var maxTemperature = this.options[this.selectedIndex].getAttribute("maxTemperature");
                 var maxAttenuation = this.options[this.selectedIndex].getAttribute("maxAttenuation");
                 var minAttenuation = this.options[this.selectedIndex].getAttribute("minAttenuation");
+
+                if(productId == null) {
+                    return;
+                }
 
                 //alert(" laboratory : "+laboratory+" productId : "+productId+" minTemperature : "+minTemperature+" maxTemperature : "+maxTemperature);
                 yeastHtml = "";
@@ -794,6 +840,11 @@
 
             $('#hop').change(function(){
                 var alpha = this.options[this.selectedIndex].getAttribute("alpha");
+
+                if(alpha == null) {
+                    return;
+                }
+
                 hopHtml = "";
                 hopHtml = hopHtml +"<tr>";
                 hopHtml = hopHtml +"<td>1<input id='recipeHopSeqs' name ='recipeHopSeqs' type='hidden' value='"+$("#hop option:selected").val()+"'></td>";
@@ -839,10 +890,14 @@
             $('#fermentable').change(function(){
                 //$add_html = $('.d_tbody tr:last').clone().fadeIn('slow');
                 //specificGravity
+
                 var specificGravity = this.options[this.selectedIndex].getAttribute("specificGravity");
                 var ppg = this.options[this.selectedIndex].getAttribute("ppg");
                 var lovibond = this.options[this.selectedIndex].getAttribute("lovibond");
 
+                if(lovibond == null) {
+                    return;
+                }
 
                 fermentableHtml = "";
                 fermentableHtml = fermentableHtml +"<tr>";

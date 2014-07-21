@@ -128,5 +128,20 @@ public class StyleController {
 
         return list;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/getDetail/{seq}", method = RequestMethod.GET)
+    public Style getDetail(Model model, @PathVariable("seq") Integer seq) {
+
+        // 맥주 레시피 저장했는지 성공 세팅
+        Style style = new Style();
+        //style.setName(name);
+        style.setSeq(seq+"");
+
+        // 맥주 홉 상세 조회
+        Style styleDetail = styleService.selectStyleDetail(style);
+
+        return styleDetail;
+    }
 }
 

@@ -360,7 +360,7 @@
     </dependencies>
 
     <build>
-        <finalName>brewduck</finalName>
+        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
