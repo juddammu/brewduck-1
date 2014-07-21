@@ -136,8 +136,8 @@
 
 <content tag="local_script">
     <script>
-        var bbsId = '3';
-        var nttId = '74';
+        var bbsId = '8';
+        var nttId = ${MiscDetail.seq};
 
         $('#insertReply').on('click', function () {
             var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};

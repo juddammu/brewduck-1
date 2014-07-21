@@ -78,7 +78,7 @@
                                                 <h5><span class="badge">총평 - OVERALL</span></h5>
                                                 <p>${StyleDetail.mouthfeel} </p>
                                                 <h5><span class="badge">코멘트 - COMMENT</span></h5>
-                                                <p>${StyleDetail.comment} </p>
+                                                <p>총평: 매우 상쾌하고 갈증 해소용 </p>
                                             </div>
                                         </div>
                                     </article>
@@ -201,8 +201,8 @@
 
 <content tag="local_script">
     <script>
-        var bbsId = ${StyleDetail.categoryNumber};
-        var nttId = '1';
+        var bbsId = '4';
+        var nttId = ${StyleDetail.seq};
 
         $('#insertReply').on('click', function () {
             var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};

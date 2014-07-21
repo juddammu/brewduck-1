@@ -68,7 +68,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>5 Comments</h4>
+                                <button id="lagerButton" type="button" class="btn btn-xs btn-" onclick="setTypeSearch(3)" value="3"> </button>
                                 <ul class="list-comments">
                                     <li>
                                         <div class="box style-white" id="reply_list">
@@ -107,7 +107,9 @@
             <div class="col-lg-12">
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/style/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                            <input name="bbsId" id="bbsId" type ="text" value="">
+                            <input name="nttId" id="nttId" type ="text" value="">
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
@@ -153,8 +155,8 @@
 
 <content tag="local_script">
     <script>
-        var bbsId = '3';
-        var nttId = '74';
+        var bbsId = '6';
+        var nttId = ${YeastDetail.seq};
 
         $('#insertReply').on('click', function () {
             var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
@@ -195,6 +197,19 @@
             })
         }
 
+        function setBbsId(){
+            $("#nttId").val(${YeastDetail.seq});
+            $("#bbsId").val(${YeastDetail.cmtBbsId});
+
+            getCommentCount();
+        }
+
+        function getCommentCount(){
+            $.get("/common/countComment", function(data, status){
+                $("#aleButton").html("("+data.aleCntName +data.aleCnt+" 건)"); /*에일*/
+            })
+        }
+
         function goDetail(seq, titleInUrl){
             location.href = "/yeast/"+seq+"/"+titleInUrl;
         }
@@ -210,6 +225,7 @@
         $(document).ready(function() {
 
             search();                          //조회
+            setBbsId();
         });
 
     </script>

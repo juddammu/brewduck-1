@@ -137,8 +137,8 @@
 
 <content tag="local_script">
     <script>
-        var bbsId = '3';
-        var nttId = '74';
+        var bbsId = '5';
+        var nttId = ${FermentableDetail.seq};
 
         $('#insertReply').on('click', function () {
             var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
