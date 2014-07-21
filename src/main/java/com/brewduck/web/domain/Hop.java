@@ -31,6 +31,7 @@ public class Hop implements Serializable {
     private Double alpha;
     // 홉 량
     private Double amount;
+    private Double gravity;
     // 홉 사용 용도
     private String hopsUse;
     // 홉 사용 용도의 시간(단위:분)
@@ -59,6 +60,8 @@ public class Hop implements Serializable {
     private Double humulene;
     // Caryophyllene 함량 (단위 : %)
     private Double caryophyllene;
+
+    private Double utilization;
     // Cohumulone 함량 (단위 :%)
     private Double cohumulone;
     // Myrcene 함량 (단위 : %) 항기의 주성분
@@ -127,6 +130,22 @@ public class Hop implements Serializable {
     public String shortKoreanNotes;
 
     public String brewer;
+
+    public Double getGravity() {
+        return gravity;
+    }
+
+    public Double getUtilization() {
+        return utilization;
+    }
+
+    public void setUtilization(Double utilization) {
+        this.utilization = utilization;
+    }
+
+    public void setGravity(Double gravity) {
+        this.gravity = gravity;
+    }
 
     public String getShortKoreanNotes() {
         return shortKoreanNotes;

@@ -22,9 +22,11 @@
     <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i> 레시피 <strong>컨셉</strong></h4></header>
 </div>
 <div class="box-body no-padding">
+
+
+<input id="resultOg" name ="text" type="hidden" class="form-control control-width-small">
+<input id="resultFg" name ="text" type="hidden" class="form-control control-width-small">
 <form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
-<input id="resultOg" name ="resultOg" type="hidden" class="form-control control-width-small">
-<input id="resultFg" name ="resultFg" type="hidden" class="form-control control-width-small">
 <div class="form-group">
     <div class="col-md-2">
         <label class="control-label">이름</label>
@@ -207,13 +209,19 @@
         <label class="control-label">용량</label>
     </div>
     <div class="col-md-4">
-        <input id="batchSize" name ="batchSize" type="text" class="form-control control-width-small" value="19" placeholder="검색어 입력">
+        <div class='input-group' style='width:140px;'>
+            <input id="batchSize" name ="batchSize" type="text" class="form-control control-width-small" value="19">
+            <span class='input-group-addon'>리터(ℓ)</span>
+        </div>
     </div>
     <div class="col-md-2"  style="background: #f2f2f2;">
         <label class="control-label">수율</label>
     </div>
     <div class="col-md-4">
-        <input id="efficiency" name ="efficiency" type="text" class="form-control control-width-small" value="65" placeholder="검색어 입력">
+        <div class='input-group' style='width:135px;'>
+            <input id="efficiency" name ="efficiency" type="text" class="form-control control-width-small" value="65">
+            <span class='input-group-addon'>%</span>
+        </div>
     </div>
 </div>
 <div class="box-head">
@@ -309,7 +317,7 @@
                         maxTemperature="${yeastList.maxTemperature}"
                         maxAttenuation="${yeastList.maxAttenuation}"
                         minAttenuation="${yeastList.minAttenuation}"
-                        title="${yeastList.koreanName }">(${yeastList.form}) ${yeastList.koreanName } - (${yeastList.name })</option>
+                        title="${yeastList.koreanName }">(${yeastList.form}) ${yeastList.koreanName } - (${yeastList.name }) - ${yeastList.laboratory} - ${yeastList.productId}</option>
             </c:forEach>
         </select>
         <table id="yeastListTable" name="yeastListTable" class="table table-hover table-striped no-margin">
@@ -464,9 +472,6 @@
 
     }
 
-    function calcIbu(){
-
-    }
 
     function calcAbv(){
         var og = parseFloat($('#resultOg').val());
@@ -480,6 +485,33 @@
         var abv = (og - fg) * 131;
         abv = abv.toFixed(1);
         $('#abvText').html('abv : '+abv+'%');
+    }
+
+    function calcIbu(){
+        var batchSize = parseFloat($('#batchSize').val());
+        var alpha = 0;
+        var amount = 0;
+        var og = parseFloat($('#resultOg').val());
+        var time = 0;
+        var ibu = 0;
+
+        for (var i=0; i < $("input[name='recipeHopTimes']").length; i++) {
+            time = parseFloat($("input[name='recipeHopTimes']").eq(i).val());
+        }
+        for (var i=0; i < $("input[name='recipeHopAlphas']").length; i++) {
+            alpha = parseFloat($("input[name='recipeHopAlphas']").eq(i).val());
+        }
+        for (var i=0; i < $("input[name='recipeHopAmounts']").length; i++) {
+            amount = parseFloat($("input[name='recipeHopAmounts']").eq(i).val());
+        }
+
+        $.get("/hop/utilization/"+og+"/"+time+"/"+batchSize+"/"+amount+"/"+alpha, function(data, status){
+            var ibu = parseFloat(data);
+            ibu = ibu*10000;
+            ibu = ibu.toFixed(1);
+            $('#ibuText').html('IBU : '+ibu);
+        })
+
     }
 
     function calcOg() {
@@ -774,19 +806,19 @@
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<div class='input-group' style='width:85px;'>";
-                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopTimes' name='recipeHopTimes' value='60'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopTimes' name='recipeHopTimes' value='5'>";
                 hopHtml = hopHtml +"<span class='input-group-addon'>분</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<select id='recipeHopUses' name ='recipeHopUses' class='form-control' required> ";
-                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3' selected>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='2'>맥즙 호핑 - First Wort</option><option value='1'>당화 - Mash</option><option value='6'>월풀 - Whirlpool</option>";
+                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3' selected>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='1'>당화 - Mash</option><option value='6'>월풀 - Whirlpool</option>";
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<div class='input-group' style='width:90px;'>";
                 hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAlphas' name='recipeHopAlphas' value='"+alpha+"'>";
-                hopHtml = hopHtml +"<span class='input-group-addon'>A</span>";
+                hopHtml = hopHtml +"<span class='input-group-addon'>%</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
@@ -795,12 +827,13 @@
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
-                hopHtml = hopHtml +"<button type='button' class='btn btn-primary btn-outline row_misc_copy'><i class='fa fa-copy'></i>  복사</button>";
+                hopHtml = hopHtml +"<button type='button' class='btn btn-primary btn-outline row_hop_copy'><i class='fa fa-copy'></i>  복사</button>";
                 hopHtml = hopHtml +"</td>";
-                hopHtml = hopHtml +"<td><button type='button' class='btn btn-primary btn-outline row_misc_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+                hopHtml = hopHtml +"<td><button type='button' class='btn btn-primary btn-outline row_hop_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"</tr> ";
                 $("#hopListTable").append(hopHtml);
+                calc();
             });
 
             $('#fermentable').change(function(){

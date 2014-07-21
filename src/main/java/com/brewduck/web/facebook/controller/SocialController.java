@@ -4,7 +4,6 @@ import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.common.service.BoardService;
 import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Board;
-import com.sun.javafx.collections.MappingChange;
 import org.apache.commons.collections.map.HashedMap;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;

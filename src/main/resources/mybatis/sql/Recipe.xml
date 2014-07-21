@@ -251,6 +251,7 @@
             ,hops_use
             ,time
             ,form
+            ,alpha
             ,insert_id
             ,insert_date
         ) VALUES (
@@ -261,6 +262,7 @@
             ,#{recipeHopUse}   -- fermentable_use - IN varchar(10)
             ,#{recipeHopTime}   -- fermentable_use - IN varchar(10)
             ,#{recipeHopForm}   -- fermentable_use - IN varchar(10)
+            ,#{recipeHopAlpha}   -- fermentable_use - IN varchar(10)
             ,#{insertId} -- insert_id - IN varchar(45)
             ,now() -- insert_date - IN timestamp
         )

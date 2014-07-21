@@ -71,6 +71,12 @@ public class HopDaoImpl implements HopDao {
     }
 
     @Override
+    public Hop selectUtilization(Hop hop) {
+        return sqlSession.selectOne("Hop.selectUtilization", hop);
+    }
+
+
+    @Override
     public Hop countHopOrigin() {
         return sqlSession.selectOne("Hop.countHopOrigin");
     }

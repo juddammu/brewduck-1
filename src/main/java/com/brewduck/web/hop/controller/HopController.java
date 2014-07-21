@@ -238,5 +238,60 @@ public class HopController {
         return returnHop;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/utilization/{gravity}/{time}/{batchSize}/{amount}/{alpha}", method = RequestMethod.GET)
+    public String caluIbu(Model model,
+                              @PathVariable("gravity") Double gravity,
+                              @PathVariable("time") Double time,
+                              @PathVariable("batchSize") Double batchSize,
+                              @PathVariable("amount") Double amount,
+                              @PathVariable("alpha") Double alpha
+                              ) {
+
+        Double fg = 0.0;
+        Double ft = 0.0;
+        Double gb = 0.0;
+        Double utilization = 0.0;
+        Double e = 2.718282;
+        Double weight = 0.0;
+        Double aau = 0.0;
+        Double ibu = 0.0;
+
+      /*  Utilization = f(G) x f(T)
+        f(G) = 1.65 x 0.000125^(Gb - 1)
+        f(T) = [1 - e^(-0.04 x T)] / 4.15
+
+        AAU = Weight (oz) x % Alpha Acids (whole number)
+        OZ = 입력받은 홉의 그람 / 28
+        IBU = AAU x U x 75 / 배치사이즈
+*/
+
+        weight = amount / 28;
+        aau = weight * alpha;
+        batchSize = batchSize / 3.78534;
+        gb = Math.pow(0.000125, gravity);
+        fg = 1.65 * gb;
+
+        time = -0.04* time;
+        logger.info("time = " + time);
+        gravity = gravity - 1.0;
+
+        e= Math.pow(e, time);
+
+        logger.info("e = " + e);
+
+        ft = (1 -e) / 4.15;
+        utilization = fg*ft;
+
+        ibu = aau * utilization * 75 / batchSize;
+
+        logger.info("batchSize = " + batchSize);
+        logger.info("utilization = " + utilization);
+        logger.info("ibu = " + ibu);
+        // model.addAttribute("Hop", Hop);
+        // return "/Hop/HopView";
+
+        return ibu+"";
+    }
 }
 

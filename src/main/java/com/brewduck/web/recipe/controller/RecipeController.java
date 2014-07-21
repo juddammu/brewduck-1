@@ -221,6 +221,7 @@ public class RecipeController {
                 paramRecipeHop.setRecipeHopUse(paramRecipe.getRecipeHopUses()[i]);
                 paramRecipeHop.setRecipeHopTime(paramRecipe.getRecipeHopTimes()[i]);
                 paramRecipeHop.setRecipeHopForm(paramRecipe.getRecipeHopForms()[i]);
+                paramRecipeHop.setRecipeHopAlpha(paramRecipe.getRecipeHopAlphas()[i]);
                 paramRecipeHop.setBrewer(account.getId() + "");
                 paramRecipeHop.setInsertId(account.getId() + "");
                 recipeService.insertRecipeHop(paramRecipeHop);

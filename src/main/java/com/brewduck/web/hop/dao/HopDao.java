@@ -85,6 +85,8 @@ public interface HopDao {
      */
     public Hop selectHopDetail(Hop hop);
 
+    public Hop selectUtilization(Hop hop);
+
     /**
      * <pre>
      * 맥주 홉 랜덤 조회.

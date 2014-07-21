@@ -62,6 +62,11 @@ public class HopServiceImpl implements HopService {
     }
 
     @Override
+    public Hop selectUtilization(Hop hop) {
+        return hopDao.selectUtilization(hop);
+    }
+
+    @Override
     public Hop selectRandomHop() {
         return hopDao.selectRandomHop();
     }

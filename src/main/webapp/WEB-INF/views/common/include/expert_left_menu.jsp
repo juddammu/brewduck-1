@@ -76,7 +76,7 @@
                 </ul><!--end /submenu -->
             </li><!--end /menu-item -->
             <li>
-                <a href="#" >
+                <a href="http://cafe.daum.net/microbrewery/OS1j/13"  target="_blank">
                     <i class="fa fa-home fa-fw"></i><span class="title">버그제보 및 기능제안</span>
                 </a>
             </li><!--end /menu-item -->

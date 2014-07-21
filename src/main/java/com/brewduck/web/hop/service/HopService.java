@@ -71,6 +71,8 @@ public interface HopService {
 
     public Hop selectRandomHop();
 
+    public Hop selectUtilization(Hop hop);
+
 
     /**
      * <pre>

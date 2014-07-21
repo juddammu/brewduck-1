@@ -74,8 +74,10 @@ public class Recipe implements Serializable {
     private Integer recipeHopAmount;
     //홉 사용용도
     private String recipeHopUse;
-    //
+    //홉사용시간
     private Integer recipeHopTime;
+    //홉 알파값
+    private Double recipeHopAlpha;
     //홉 형태
     private String recipeHopForm;
 
@@ -84,6 +86,8 @@ public class Recipe implements Serializable {
     private Integer[] recipeHopAmounts;
     //홉 사용용도
     private String[] recipeHopUses;
+
+    private Double[] recipeHopAlphas;
     //
     private Integer[] recipeHopTimes;
     //홉 형태
@@ -167,6 +171,23 @@ public class Recipe implements Serializable {
     private Boolean deleteFlag;
     //SEO TITLE
     private String titleInUrl;
+
+
+    public Double getRecipeHopAlpha() {
+        return recipeHopAlpha;
+    }
+
+    public void setRecipeHopAlpha(Double recipeHopAlpha) {
+        this.recipeHopAlpha = recipeHopAlpha;
+    }
+
+    public Double[] getRecipeHopAlphas() {
+        return recipeHopAlphas;
+    }
+
+    public void setRecipeHopAlphas(Double[] recipeHopAlphas) {
+        this.recipeHopAlphas = recipeHopAlphas;
+    }
 
     public String getRecipeMiscUse() {
         return recipeMiscUse;
@@ -1114,6 +1135,7 @@ public class Recipe implements Serializable {
 
     public void setTitleInUrl(String titleInUrl) {
 
+        //titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9ㄱ-ㅎ가-힣\\-\\s\\.]", "");
         titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9\\-\\s\\.]", "");
         titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
 
