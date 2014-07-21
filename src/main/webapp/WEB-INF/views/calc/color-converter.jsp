@@ -16,7 +16,9 @@
     <div class="col-lg-12">
     <div class="box box-outlined">
     <div class="box-head">
-        <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i>Enter a number in any of the three inputs, and the other two will be calculated <strong>automatically.</strong></h4></header>
+        <!--header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i>Enter a number in any of the three inputs, and the other two will be calculated <strong>automatically.</strong></h4></header-->
+        <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i>세 곳 중 한곳에 수치를 입력하면 나머지 두 곳은  <strong>자동</strong>으로 계산됩니다</h4></header>
+
     </div>
     <div class="box-body no-padding">
         <form class="form-horizontal form-banded form-bordered" accept-charset="utf-8" method="post">
@@ -45,7 +47,8 @@
                 </div>
             </div>
             <div class="form-footer col-md-offset-2 col-sm-offset-3">
-                This tool allows you to easily convert between the three most common methods used to measure color in brewing: SRM, EBC, and Degrees Lovibond. The processes used to measure EBC and SRM are largely similar with EBC being, very roughly 2 × SRM. EBC and SRM are typically used to measure wort color. Lovibond is a much older method and is most often used to measure the color of malt.
+                <!--This tool allows you to easily convert between the three most common methods used to measure color in brewing: SRM, EBC, and Degrees Lovibond. The processes used to measure EBC and SRM are largely similar with EBC being, very roughly 2 × SRM. EBC and SRM are typically used to measure wort color. Lovibond is a much older method and is most often used to measure the color of malt.-->
+                이 툴은 양조 시 색을 측정할 때 가장 많이 사용되는 세가지 방식인 SRM, EBC, Lovibond 간의 변환을 쉽게 할 수 있도록 해줍니다. EBC와 SRM을 측정하는 과정은 매우 유사하며 EBC 수치가 SRM의 약 두 배라고 볼 수 있습니다. EBC와 SRM은 일반적으로 맥아즙의 색을 측정할 때 쓰이며 로비본드는 훨씬 오래된 방식으로 몰트의 색을 측정할 때 가장 많이 쓰입니다.
             </div>
         </form>
         </div><!--end .box-body -->

@@ -16,7 +16,8 @@
     <div class="col-lg-12">
     <div class="box box-outlined">
     <div class="box-head">
-        <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i>Remember to calibrate your equipment and adjust for <strong> temperature.</strong></h4></header>
+        <!--header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i>Remember to calibrate your equipment and adjust for <strong> temperature.</strong></h4></header-->
+        <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i>장비에 눈금을 맞춰놓고 <strong> 온도</strong>를 조절해야 한다는 것을 기억하세요. </h4></header>
     </div>
     <div class="box-body no-padding">
         <form class="form-horizontal form-banded form-bordered" accept-charset="utf-8" method="post">
@@ -50,7 +51,9 @@
                 </div>
                 <div class="col-md-10">
                     <input id="mBrix" name="mBrix" type="text" class="form-control">
-                    <small>Alcohol affects the measured index of refraction, so we need to correct for that post-fermentation using the Original Brix measurement.</small>
+                    <!--small>Alcohol affects the measured index of refraction, so we need to correct for that post-fermentation using the Original Brix measurement.</small-->
+                    <small>알코올은 측정된 굴절률에 영향을 미치므로 당도 측정기를 이용하여 발효 후의 브릭스를 다시 재야합니다.</small>      <br/>
+                    <small>Brix값은 당용굴절계를 사용하여 자당의 중량 백분율에 상당하는 굴절률로부터 당도를 측정합니다.</small>
                 </div>
             </div>
             <div class="form-footer col-md-offset-2 col-sm-offset-3">

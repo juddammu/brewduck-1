@@ -23,17 +23,14 @@
 </div>
 <div class="box-body no-padding">
 
-<input id="styleOgMin" name ="styleOgMin" type="text" >
-<input id="styleOgMax" name ="styleOgMax" type="text" >
+<input id="styleOgMin" name ="styleOgMin" type="hidden" >
+<input id="styleOgMax" name ="styleOgMax" type="hidden" >
 
-<input id="styleIbuMin" name ="styleIbuMin" type="text" >
-<input id="styleIbuMax" name ="styleIbuMax" type="text" >
+<input id="styleIbuMin" name ="styleIbuMin" type="hidden" >
+<input id="styleIbuMax" name ="styleIbuMax" type="hidden" >
 
-<input id="styleIbuMin" name ="styleAbvMin" type="text" >
-<input id="styleIbuMax" name ="styleAbvMax" type="text" >
-
-<input id="styleIbuMin" name ="styleColorMin" type="text" >
-<input id="styleIbuMax" name ="styleColorMax" type="text" >
+<input id="styleAbvMin" name ="styleAbvMin" type="hidden" >
+<input id="styleAbvMax" name ="styleAbvMax" type="hidden" >
 
 <input id="resultOg" name ="resultOg" type="hidden">
 <input id="resultFg" name ="resultFg" type="hidden">
@@ -765,7 +762,12 @@
                 var seq = $("#styleSeq option:selected").val();
 
                 $.get("/style/getDetail/"+seq, function(data, status){
-                    alert(data.ogMin);
+                    $("#styleOgMin").val(data.ogMin);
+                    $("#styleOgMax").val(data.ogMax);
+                    $("#styleIbuMin").val(data.ibuMin);
+                    $("#styleIbuMax").val(data.ibuMax);
+                    $("#styleAbvMin").val(data.abvMin);
+                    $("#styleAbvMax").val(data.abvMin);
                 })
             });
 
