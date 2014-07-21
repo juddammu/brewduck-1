@@ -21,7 +21,6 @@
                     <div class="box-body no-padding">
                         <form:form class="form-horizontal form-banded form-bordered" id="searchForm" name="searchForm" modelAttribute="paramYeast">
                         <div class="form-group">
-                            <input name="type" id="type" type ="text" value="">
                             <div class="col-md-2">
                                 <label class="control-label">이름</label>
                             </div>
