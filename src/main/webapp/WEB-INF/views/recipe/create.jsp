@@ -23,17 +23,23 @@
 </div>
 <div class="box-body no-padding">
 
-<input id="styleOgMin" name ="styleOgMin" type="hidden" >
-<input id="styleOgMax" name ="styleOgMax" type="hidden" >
+<input id="styleOgMin" name ="styleOgMin" type="text" value="1.028">
+<input id="styleOgMax" name ="styleOgMax" type="text" value="1.04">
 
-<input id="styleIbuMin" name ="styleIbuMin" type="hidden" >
-<input id="styleIbuMax" name ="styleIbuMax" type="hidden" >
+<input id="styleFgMin" name ="styleFgMin" type="text" value="0.998">
+<input id="styleFgMax" name ="styleFgMax" type="text" value="1.008">
 
-<input id="styleAbvMin" name ="styleAbvMin" type="hidden" >
-<input id="styleAbvMax" name ="styleAbvMax" type="hidden" >
+<input id="styleIbuMin" name ="styleIbuMin" type="text" value="8">
+<input id="styleIbuMax" name ="styleIbuMax" type="text" value="12">
 
-<input id="resultOg" name ="resultOg" type="hidden">
-<input id="resultFg" name ="resultFg" type="hidden">
+<input id="styleAbvMin" name ="styleAbvMin" type="text" value="2.8">
+<input id="styleAbvMax" name ="styleAbvMax" type="text" value="4.2">
+
+<input id="styleSrmMin" name ="styleSrmMin" type="hidden" value="2">
+<input id="styleSrmMax" name ="styleSrmMax" type="hidden" value="3">
+
+<input id="resultOg" name ="resultOg" type="hidden" value="8">
+<input id="resultFg" name ="resultFg" type="hidden"  value="12">
 <form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
 <div class="form-group">
     <div class="col-md-2">
@@ -415,6 +421,25 @@
         return liter/3.78534;
     }
 
+    function checkStyle(){
+        /*
+         var og = parseFloat($('#resultOg').val());
+         var fg = parseFloat($('#resultFg').val());
+         */
+        var ogMin = parseFloat($('#styleOgMin').val());
+        var ogMax = parseFloat($('#styleOgMax').val());
+        var fgMin = parseFloat($('#styleFgMin').val());
+        var FgMax = parseFloat($('#styleFgMax').val());
+        var ibuMin = parseFloat($('#styleIbuMin').val());
+        var ibuMax = parseFloat($('#styleIbuMax').val());
+        var abvMin = parseFloat($('#styleAbvMin').val());
+        var abvMax = parseFloat($('#styleAbvMax').val());
+        var srmMin = parseFloat($('#styleSrmMin').val());
+        var srmMax = parseFloat($('#styleSrmMax').val());
+
+        toastr.success('Are you the six fingered man?', 'Inigo Montoya');
+    }
+
     function calcSrm(){
         var batchSize = parseFloat($('#batchSize').val());
         var srm = 0;
@@ -685,6 +710,7 @@
             calcFg();
             calcIbu();
             calcAbv();
+            checkStyle();
         }
 
         $("#fermantableListTable").on('click', '.row_fermantable_delete', function () {
@@ -768,6 +794,8 @@
                     $("#styleIbuMax").val(data.ibuMax);
                     $("#styleAbvMin").val(data.abvMin);
                     $("#styleAbvMax").val(data.abvMin);
+                    $("#styleSrmMin").val(data.srmMin);
+                    $("#styleSrmMax").val(data.srmMax);
                 })
             });
 
@@ -853,13 +881,13 @@
                 hopHtml = hopHtml +"<td>"+ $("#hop option:selected").text() +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<div class='input-group' style='width:75px;'>";
-                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAmounts' name='recipeHopAmounts' value='28'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAmounts' name='recipeHopAmounts' onkeyup='javascript:calc(this);' value='28'>";
                 hopHtml = hopHtml +"<span class='input-group-addon'>g</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<div class='input-group' style='width:85px;'>";
-                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopTimes' name='recipeHopTimes' value='5'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopTimes' name='recipeHopTimes' onkeyup='javascript:calc(this);' value='5'>";
                 hopHtml = hopHtml +"<span class='input-group-addon'>분</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";
@@ -870,7 +898,7 @@
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<div class='input-group' style='width:90px;'>";
-                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAlphas' name='recipeHopAlphas' value='"+alpha+"'>";
+                hopHtml = hopHtml +"<input type='text' class='form-control' id='recipeHopAlphas' onkeyup='javascript:calc(this);' name='recipeHopAlphas' value='"+alpha+"'>";
                 hopHtml = hopHtml +"<span class='input-group-addon'>%</span>";
                 hopHtml = hopHtml +"</div>";
                 hopHtml = hopHtml +"</td> ";

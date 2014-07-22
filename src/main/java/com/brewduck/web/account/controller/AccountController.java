@@ -196,8 +196,6 @@ public class AccountController {
         String email    = account.getEmail();
         String password = account.getPassword();
 
-        LOGGER.info("email    : {}", email   );
-        LOGGER.info("password : {}", password);
 
         // 계정과 암호로 토큰 생성
         UsernamePasswordAuthenticationToken authRequest

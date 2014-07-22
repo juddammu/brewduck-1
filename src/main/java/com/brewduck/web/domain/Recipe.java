@@ -151,6 +151,8 @@ public class Recipe implements Serializable {
     private String primingSugarName;
     // 조회수
     private Integer readCount;
+    // 레시피 완성도
+    private Integer completeness;
     // 작성자 아이디
     private String insertId;
     // 작성자 날짜
@@ -172,6 +174,13 @@ public class Recipe implements Serializable {
     //SEO TITLE
     private String titleInUrl;
 
+    public Integer getCompleteness() {
+        return completeness;
+    }
+
+    public void setCompleteness(Integer completeness) {
+        this.completeness = completeness;
+    }
 
     public Double getRecipeHopAlpha() {
         return recipeHopAlpha;

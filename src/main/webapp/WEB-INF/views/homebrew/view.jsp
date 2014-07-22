@@ -43,12 +43,8 @@
                             <div class="col-xs-12">
                                 <div class="well">
                                     <div class="clearfix">
-                                        <div class="pull-left"> INVOICE NO : </div>
-                                        <div class="pull-right"> 98653624 </div>
-                                    </div>
-                                    <div class="clearfix">
-                                        <div class="pull-left"> INVOICE DATE : </div>
-                                        <div class="pull-right"> 10/02/14 </div>
+                                        <div class="pull-left"> 컨셉 : </div>
+                                        <div class="pull-right"> ${recipeDetail.notes} </div>
                                     </div>
                                 </div>
                             </div><!--end .col-md-4 -->
