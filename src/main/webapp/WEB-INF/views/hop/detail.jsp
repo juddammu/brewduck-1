@@ -4,7 +4,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <title>${HopDetail.koreanName} - ${HopDetail.name}</title>
-
 <section>
     <ol class="breadcrumb">
         <li><a href="#">홈</a></li>
