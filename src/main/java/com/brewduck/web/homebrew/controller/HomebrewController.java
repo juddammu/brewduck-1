@@ -69,8 +69,8 @@ public class HomebrewController {
         return "homebrew/myrecipes";
     }
 
-    @RequestMapping(value = "/{seq}/*", method = RequestMethod.GET)
-    public String abv(Model model,@PathVariable("seq") Integer seq ,@PathVariable("name") String name) {
+    @RequestMapping(value = "/{seq}", method = RequestMethod.GET)
+    public String abv(Model model,@PathVariable("seq") Integer seq) {
 
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();

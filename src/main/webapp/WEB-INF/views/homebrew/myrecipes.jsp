@@ -47,9 +47,7 @@
                                 <th>레시피명</th>
                                 <th>스타일</th>
                                 <th>배치용량</th>
-                                <th>ABV</th>
-                                <th>IBU</th>
-                                <th>Color</th>
+                                <th>레시피 완성도</th>
                                 <th class="text-right1" style="width:90px">액션</th>
                             </tr>
                             </thead>
@@ -57,12 +55,29 @@
                             <c:forEach items="${recipeList}" var="list">
                             <tr>
                                 <td><span class="label label-success">공개</span></td>
-                                <td><a href="${list.seq}/${list.titleInUrl}">${list.name}</a></td>
+                                <td><a href="/homebrew/${list.seq}">${list.name}</a></td>
                                 <td>${list.styleName}</td>
                                 <td>${list.batchSize}리터</td>
-                                <td>7.0%</td>
-                                <td>40 IBU</td>
-                                <td>7 SRM</td>
+                                <td>
+                                    <c:choose>
+                                        <c:when test="${list.completeness=='0'}">
+                                            <div class="progress no-margin"><div class="progress-bar progress-bar-danger" style="width: 25%"></div></div>
+                                        </c:when>
+                                        <c:when test="${list.completeness=='1'}">
+                                            <div class="progress no-margin"><div class="progress-bar progress-bar-warning" style="width: 50%"></div></div>
+                                        </c:when>
+                                        <c:when test="${list.completeness=='2'}">
+                                            <div class="progress no-margin"><div class="progress-bar progress-bar-success" style="width: 75%"></div></div>
+                                        </c:when>
+                                        <c:when test="${list.completeness=='3'}">
+                                            <div class="progress no-margin"><div class="progress-bar progress-bar-info" style="width: 100%"></div></div>
+                                        </c:when>
+                                        <c:otherwise>
+                                            -
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                </td>
                                 <td class="text-right">
                                     <button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="fa fa-pencil"></i></button>
                                     <button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Copy row"><i class="fa fa-copy"></i></button>
