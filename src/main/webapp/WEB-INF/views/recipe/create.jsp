@@ -38,8 +38,13 @@
 <input id="styleSrmMin" name ="styleSrmMin" type="hidden" value="2">
 <input id="styleSrmMax" name ="styleSrmMax" type="hidden" value="3">
 
-<input id="resultOg" name ="resultOg" type="hidden" value="8">
-<input id="resultFg" name ="resultFg" type="hidden"  value="12">
+<input id="resultOg" name ="resultOg" type="hidden" >
+<input id="resultFg" name ="resultFg" type="hidden" >
+
+<input id="resultIbu" name ="resultIbu" type="hidden" >
+<input id="resultAbv" name ="resultAbv" type="hidden" >
+<input id="resultSrm" name ="resultSrm" type="hidden" >
+
 <form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
 <div class="form-group">
     <div class="col-md-2">
@@ -429,7 +434,7 @@
         var ogMin = parseFloat($('#styleOgMin').val());
         var ogMax = parseFloat($('#styleOgMax').val());
         var fgMin = parseFloat($('#styleFgMin').val());
-        var FgMax = parseFloat($('#styleFgMax').val());
+        var fgMax = parseFloat($('#styleFgMax').val());
         var ibuMin = parseFloat($('#styleIbuMin').val());
         var ibuMax = parseFloat($('#styleIbuMax').val());
         var abvMin = parseFloat($('#styleAbvMin').val());
@@ -437,7 +442,52 @@
         var srmMin = parseFloat($('#styleSrmMin').val());
         var srmMax = parseFloat($('#styleSrmMax').val());
 
-        toastr.success('Are you the six fingered man?', 'Inigo Montoya');
+        var status = "";        //체크 상태
+        var ogStatus = false;
+        var fgStatus = false;
+        var ibuStatus = false;
+        var abvStatus = false;
+        var srmStatus = false;
+
+        var og = parseFloat($('#resultOg').val());
+        var fg = parseFloat($('#resultFg').val());
+
+        var ibu = parseFloat($('#resultIbu').val());
+        var abv = parseFloat($('#resultAbv').val());
+        var srm = parseFloat($('#resultSrm').val());
+
+        ogStatus  = validtionStyle(ogMin, ogMax, og);
+        fgStatus  = validtionStyle(fgMin, fgMax, fg);
+        ibuStatus = validtionStyle(ibuMin, ibuMax, ibu);
+        abvStatus = validtionStyle(abvMin, abvMax, abv);
+        srmStatus = validtionStyle(srmMin, srmMax, srm);
+
+        var resultHtml = "";
+        var checkCount = 0;
+
+
+        if(ogStatus = true){
+            checkCount++;
+        }
+
+        alert(checkCount);
+
+
+
+
+
+    }
+
+    function validtionStyle(min, max, value){
+        if(isNaN(value)) {
+            return false;
+        }
+
+        if(min <= value && value <= max){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     function calcSrm(){

@@ -27,18 +27,18 @@
             <!-- Menu Dashboard -->
             <li>
                 <a href="#" >
-                    <i class="fa fa-home fa-fw"></i><span class="title">대쉬보드</span>
+                    <i class="fa fa-bar-chart-o fa-fw"></i><span class="title">대쉬보드</span>
                 </a>
             </li><!--end /menu-item -->
             <li>
                 <a href="/community/1/list" >
-                    <i class="fa fa-home fa-fw"></i><span class="title">공지사항</span>
+                    <i class="fa fa-bullhorn fa-fw"></i><span class="title">공지사항</span>
                 </a>
             </li><!--end /menu-item -->
             <!-- Menu UI -->
             <li>
                 <a href="javascript:void(0);">
-                    <i class="fa fa-puzzle-piece fa-fw"></i><span class="title">재료 데이터베이스</span> <span class="expand-sign">+</span>
+                    <i class="fa fa-flask fa-fw"></i><span class="title">재료 데이터베이스</span> <span class="expand-sign">+</span>
                 </a>
                 <!--start submenu -->
                 <ul>
@@ -57,12 +57,12 @@
             </li><!--end /menu-item -->
             <li>
                 <a href="/homebrew/myrecipes" >
-                    <i class="fa fa-home fa-fw"></i><span class="title">내 레시피들</span>
+                    <i class="fa fa-file fa-fw"></i><span class="title">내 레시피들</span>
                 </a>
             </li><!--end /menu-item -->
             <li>
                 <a href="javascript:void(0);">
-                    <i class="fa fa-puzzle-piece fa-fw"></i><span class="title">계산기</span> <span class="expand-sign">+</span>
+                    <i class="fa fa-compass fa-fw"></i><span class="title">계산기</span> <span class="expand-sign">+</span>
                 </a>
                 <!--start submenu -->
                 <ul>
@@ -77,7 +77,7 @@
             </li><!--end /menu-item -->
             <li>
                 <a href="http://cafe.daum.net/microbrewery/OS1j/13"  target="_blank">
-                    <i class="fa fa-home fa-fw"></i><span class="title">버그제보 및 기능제안</span>
+                    <i class="fa fa-bug fa-fw"></i><span class="title">버그제보 및 기능제안</span>
                 </a>
             </li><!--end /menu-item -->
         </ul><!--end .main-menu -->
