@@ -221,9 +221,44 @@
            SET delete_id = #{deleteId}
               ,delete_date = now()
          WHERE seq  = #{seq}
-           AND name = #{name}
+           AND brewer = #{brewer}
     </update>
 
+    <update id="deleteRecipeFermentable" parameterType="Recipe">
+        <!-- 맥주 레시피 삭제 -->
+        UPDATE brewduckdb.RECIPE_FERMENTABLE
+           SET delete_id = #{deleteId}
+              ,delete_date = now()
+        WHERE recipe_seq  = #{seq}
+          AND brewer = #{brewer}
+    </update>
+
+    <update id="deleteRecipeYeast" parameterType="Recipe">
+        <!-- 맥주 레시피 삭제 -->
+        UPDATE brewduckdb.RECIPE_YEAST
+        SET delete_id = #{deleteId}
+        ,delete_date = now()
+        WHERE recipe_seq  = #{seq}
+        AND brewer = #{brewer}
+    </update>
+
+    <update id="deleteRecipeHops" parameterType="Recipe">
+        <!-- 맥주 레시피 삭제 -->
+        UPDATE brewduckdb.RECIPE_HOPS
+        SET delete_id = #{deleteId}
+        ,delete_date = now()
+        WHERE recipe_seq  = #{seq}
+        AND brewer = #{brewer}
+    </update>
+
+    <update id="deleteRecipeMisc" parameterType="Recipe">
+        <!-- 맥주 레시피 삭제 -->
+        UPDATE brewduckdb.RECIPE_MISC
+        SET delete_id = #{deleteId}
+        ,delete_date = now()
+        WHERE recipe_seq  = #{seq}
+        AND brewer = #{brewer}
+    </update>
 
     <insert id="Recipe.insertRecipeFermentable" parameterType="Recipe">
         INSERT INTO brewduckdb.RECIPE_FERMENTABLE (

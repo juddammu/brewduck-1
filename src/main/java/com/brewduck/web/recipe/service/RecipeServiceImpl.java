@@ -115,10 +115,16 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Boolean deleteRecipe(Recipe recipe) {
-        int deleteCount = recipeDao.deleteRecipe(recipe);
+        int deleteRecipeCount = recipeDao.deleteRecipe(recipe);
+        int deleteRecipeFermentableCount = recipeDao.deleteRecipeFermentable(recipe);
+        int deleteRecipeHopsCount = recipeDao.deleteRecipeHops(recipe);
+        int deleteRecipeYeastCount = recipeDao.deleteRecipeYeast(recipe);
+        int deleteRecipeMiscCount = recipeDao.deleteRecipeMisc(recipe);
 
-        return (deleteCount == 1);
+        return (deleteRecipeCount+deleteRecipeFermentableCount+deleteRecipeHopsCount+deleteRecipeYeastCount+deleteRecipeMiscCount < 1);
     }
+
+
 
     @Transactional
     @Override

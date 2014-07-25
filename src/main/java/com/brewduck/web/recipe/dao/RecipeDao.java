@@ -73,6 +73,14 @@ public interface RecipeDao {
      * @param recipe 맥주 레시피
      * @return 삭제 성공 횟수
      */
+    public Integer deleteRecipeFermentable(Recipe recipe);
+
+    public Integer deleteRecipeYeast(Recipe recipe);
+
+    public Integer deleteRecipeHops(Recipe recipe);
+
+    public Integer deleteRecipeMisc(Recipe recipe);
+
     public Integer deleteRecipe(Recipe recipe);
 
     public Integer insertRecipeFermentable(Recipe recipe);

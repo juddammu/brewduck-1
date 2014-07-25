@@ -61,6 +61,26 @@ public class RecipeDaoImpl implements RecipeDao {
     }
 
     @Override
+    public Integer deleteRecipeFermentable(Recipe recipe) {
+        return sqlSession.update("Recipe.deleteRecipeFermentable", recipe);
+    }
+
+    @Override
+    public Integer deleteRecipeYeast(Recipe recipe) {
+        return sqlSession.update("Recipe.deleteRecipeYeast", recipe);
+    }
+
+    @Override
+    public Integer deleteRecipeHops(Recipe recipe) {
+        return sqlSession.update("Recipe.deleteRecipeHops", recipe);
+    }
+
+    @Override
+    public Integer deleteRecipeMisc(Recipe recipe) {
+        return sqlSession.update("Recipe.deleteRecipeMisc", recipe);
+    }
+
+    @Override
     public Integer insertRecipeFermentable(Recipe recipe) {
         return sqlSession.insert("Recipe.insertRecipeFermentable", recipe);
     }

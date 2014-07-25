@@ -331,31 +331,7 @@ public class RecipeController {
         return returnRecipe;
     }
 
-    /**
-     * <pre>
-     * 맥주 레시피 삭제.
-     * </pre>
-     *
-     * @param model Model
-     * @param name 맥주 레시피 영문명
-     * @param paramRecipe 맥주 레시피 VO
-     * @return 맥주 레시피 삭제 여부
-     */
-    @ResponseBody
-    @RequestMapping(value = "/delete/{name}", method = RequestMethod.POST)
-    public Recipe deleteRecipe(Model model, @PathVariable("name") String name, @RequestBody Recipe paramRecipe) {
-        LOGGER.info("Delete Recipe : {}", paramRecipe);
 
-        // 맥주 레시피 삭제
-        Boolean deleteFlag = recipeService.deleteRecipe(paramRecipe);
-
-        // 맥주 레시피 삭제했는지 성공 세팅
-        Recipe returnRecipe = new Recipe();
-        returnRecipe.setName(name);
-        returnRecipe.setDeleteFlag(deleteFlag);
-
-        return returnRecipe;
-    }
 
     @ResponseBody
     @RequestMapping(value = "/srm/{seq}/{batchSize}", method = RequestMethod.GET)

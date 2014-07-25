@@ -70,31 +70,47 @@ public class HomebrewController {
     }
 
     @RequestMapping(value = "/{seq}", method = RequestMethod.GET)
-    public String abv(Model model,@PathVariable("seq") Integer seq) {
+    public String abv(Model model, @PathVariable("seq") Integer seq) {
 
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
         recipe.setSeq(seq);
         recipe.setBrewer(account.getId() + "");
 
-        logger.warn("brewer : " + account.getId() );
-
-        // W = weight of malt (in lbs.)
-        // L = color of malt (in °L)
-        // V = volume of wort (in gal.)
-        //(.3 * W * L / V) + 4.7
-
-        //1갤런 3.78543 리터
-        //1 : 3.78543 = x : 19
-        //3.78543x = 19;
-        //x = 19 /3.78534
-
-
         Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
         model.addAttribute("recipeDetail", recipeDetail);
 
         return "homebrew/view";
+    }
+
+    /**
+     * <pre>
+     * 맥주 레시피 삭제.
+     * </pre>
+     *
+     * @param model Model
+     * @param seq 맥주 레시피 영문명
+     * @return 맥주 레시피 삭제 여부
+     */
+    @RequestMapping(value = "/delete/{seq}", method = RequestMethod.GET)
+    public String deleteRecipe(Model model, @PathVariable("seq") Integer seq) {
+
+        Recipe recipe = new Recipe();
+        Account account = AuthenticationUtils.getUser();
+        recipe.setSeq(seq);
+        recipe.setBrewer(account.getId() + "");
+        recipe.setDeleteId(account.getId() + "");
+
+        // 맥주 레시피 삭제
+        Boolean deleteFlag = recipeService.deleteRecipe(recipe);
+
+        List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
+
+        model.addAttribute("account", account);
+        model.addAttribute("recipeList", recipeList);
+
+        return "homebrew/myrecipes";
     }
 
 }

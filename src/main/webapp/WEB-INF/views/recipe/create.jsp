@@ -472,10 +472,6 @@
 
         alert(checkCount);
 
-
-
-
-
     }
 
     function validtionStyle(min, max, value){
