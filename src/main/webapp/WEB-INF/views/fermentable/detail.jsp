@@ -52,7 +52,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>5 Comments</h4>
+                                <label class="medium_text_shadow" id = "replyCount" type ="text"></label>
                                 <ul class="list-comments">
                                     <li>
                                         <div class="box style-white" id="reply_list">
@@ -179,6 +179,13 @@
             })
         }
 
+        function getReplyCount(){
+
+            $.get("/community/countReply/"+nttId+"/"+bbsId, function(data, status){
+                $("#replyCount").html(data.countNum+" Comments"); /*미국*/
+            })
+        }
+
         function goDetail(seq, titleInUrl){
             location.href = "/fermentable/"+seq+"/"+titleInUrl;
         }
@@ -198,6 +205,8 @@
         $(document).ready(function() {
             $("#name").val('');             //TODO : 초기화 함수로 뺄것
             search();                       //조회
+            getReplyCount();
+            replyList();
         });
 
     </script>

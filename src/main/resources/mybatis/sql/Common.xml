@@ -427,4 +427,13 @@
 		]]>
     </insert>
 
+
+    <select id="Common.countReply" parameterType="Board" resultType="Board">
+
+        select COUNT(ANSWER_NO) as countNum FROM BOARD_COMMENT WHERE BBS_ID = #{bbsId} AND NTT_ID = #{nttId};
+
+    </select>
+
+
+
 </mapper>

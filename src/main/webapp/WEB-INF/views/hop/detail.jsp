@@ -219,7 +219,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <h4>5 Comments</h4>
+                            <label class="medium_text_shadow" id = "replyCount" type ="text"></label>
                             <ul class="list-comments">
                                 <li>
                                     <div class="box style-white" id="reply_list">
@@ -305,6 +305,73 @@
 
 <content tag="local_script">
 <script>
+    var bbsId = '6';
+    var nttId = ${HopDetail.seq};
+
+    $('#insertReply').on('click', function () {
+        var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
+        $.ajax({
+            type: "POST",
+            url: "/community/writeReply",
+            contentType: "application/json; charset=utf-8",
+            dataType:"json",
+            data:  JSON.stringify(json),
+            success:function( data ) {
+                if(data.insertFlag == 1){
+                    replyList();
+                }
+
+            }
+        });
+    });
+
+    function replyList(){
+        //getLoadingTime();
+        var box = $("#reply_list");
+        boostbox.App.addBoxLoader(box);
+
+        $("#reply_list").html("");
+        var replyListHtml = "";
+
+        $.get("/community/replyList/"+nttId+"/"+bbsId, function(data, status){
+            $.each(data, function(i){
+                //<optgroup  label="1. LIGHT LAGER">
+                replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
+                replyListHtml = replyListHtml + "<div class='box-body'>";
+                replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
+                replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
+                replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
+                replyListHtml = replyListHtml + "<p>"+data[i].countReply+"</p>";
+                replyListHtml = replyListHtml + "</div>";
+            });
+            $("#reply_list").append(replyListHtml);
+            boostbox.App.removeBoxLoader(box);
+        })
+
+        /*
+         <div class="comment-avatar"><i class="glyphicon glyphicon-user text-gray-lighter"></i></div>
+         <div class="box-body">
+         <h4 class="comment-title">Jim Peters <small>20/06/2013 at 4:02 pm</small></h4>
+         <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
+         <p>Etiam dui libero, tempor quis congue in, interdum eget tortor. Vivamus aliquam dictum lacus quis tincidunt. Phasellus rhoncus ante sollicitudin nisl consectetur ultricies. Sed rhoncus ullamcorper mauris, ac condimentum metus egestas ut. Nam et urna ante, vitae pretium lacus.</p>
+         </div>
+
+         $("#result").html("");
+         $( "#result" ).load("/style/list", $("#searchForm").serialize(), function( response, status, xhr ) {
+
+         if ( status == "success" ) {
+         boostbox.App.removeBoxLoader(box);
+         }
+         });*/
+    }
+
+    function getReplyCount(){
+
+        $.get("/community/countReply/"+nttId+"/"+bbsId, function(data, status){
+            $("#replyCount").html(data.countNum+" Comments"); /*미국*/
+        })
+    }
+
     function loadAnimatedWidget_pure_white(){
         var icons = new Skycons({"color": "white"});
         icons.play();
@@ -327,7 +394,7 @@
         //getResult();
     }
 
-    function getCommnetList(){
+   /* function getCommnetList(){
         var commentHtml ="";
 
         $.ajax({
@@ -375,12 +442,13 @@
                 alert(error);
             }
         });
-    }
-
+    }*/
 
     $(document).ready(function() {
-        getCommnetList();
         search();                          //조회
+        getReplyCount();
+        replyList();
+
     });
 
 </script>

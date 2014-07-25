@@ -50,5 +50,8 @@ public interface BoardService {
 
     public int deleteReply(Board board);
 
+    public Board countReply(Board board);
+
+
 
 }

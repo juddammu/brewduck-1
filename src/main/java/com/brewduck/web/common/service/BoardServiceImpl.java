@@ -122,4 +122,9 @@ public class BoardServiceImpl implements BoardService {
     public int deleteReply(Board board) {
         return boardDao.deleteReply(board);
     }
+
+    @Override
+    public Board countReply(Board board) {
+        return boardDao.countReply(board);
+    }
 }

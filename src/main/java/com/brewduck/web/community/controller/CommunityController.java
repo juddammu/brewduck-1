@@ -90,6 +90,22 @@ public class CommunityController {
 
         return replyList;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/countReply/{nttId}/{bbsId}", method = RequestMethod.GET)
+    public Board countReply(Model model, @PathVariable("nttId") Integer nttId, @PathVariable("bbsId") Integer bbsId) {
+        Board paramBoard = new Board();
+        paramBoard.setNttId(nttId);
+        paramBoard.setBbsId(bbsId);
+
+        // 맥주 발효재료 국가 별 갯수 조회.
+        Board countReply = boardService.countReply(paramBoard);
+
+        // model.addAttribute("Hop", Hop);
+        // return "/Hop/HopView";
+
+        return countReply;
+    }
 }
 
 

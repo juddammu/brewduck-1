@@ -68,7 +68,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <button id="lagerButton" type="button" class="btn btn-xs btn-" onclick="setTypeSearch(3)" value="3"> </button>
+                                <label class="medium_text_shadow" id = "replyCount" type ="text"></label>
                                 <ul class="list-comments">
                                     <li>
                                         <div class="box style-white" id="reply_list">
@@ -169,6 +169,7 @@
                 success:function( data ) {
                     if(data.insertFlag == 1){
                         replyList();
+
                     }
 
                 }
@@ -194,6 +195,13 @@
                 });
                 $("#reply_list").append(replyListHtml);
                 boostbox.App.removeBoxLoader(box);
+            })
+        }
+
+        function getReplyCount(){
+
+            $.get("/community/countReply/"+nttId+"/"+bbsId, function(data, status){
+                $("#replyCount").html(data.countNum+" Comments"); /*미국*/
             })
         }
 
@@ -226,6 +234,8 @@
 
             search();                          //조회
             setBbsId();
+            replyList();    //댓글 조회
+            getReplyCount();
         });
 
     </script>

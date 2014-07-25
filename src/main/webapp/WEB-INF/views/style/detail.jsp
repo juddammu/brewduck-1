@@ -93,19 +93,19 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>5 Comments</h4>
-                                <ul class="list-comments">
-                                    <li>
-                                        <div class="box style-white" id="reply_list">
+                                <label class="medium_text_shadow" id = "replyCount" type ="text"></label>
+                                <div class="box style-white" id="reply_count">
+                                    <ul class="list-comments">
+                                        <li>
+                                            <div class="box style-white" id="reply_list">
 
-                                        </div><!--end .box -->
-                                    </li><!-- end comment -->
-                                </ul>
-                            </div><!--end .col-md-9 -->
-                        </div><!--end .row -->
-                        <!-- END COMMENTS -->
-
-
+                                            </div><!--end .box -->
+                                        </li><!-- end comment -->
+                                    </ul>
+                                </div><!--end .col-md-9 -->
+                            </div><!--end .row -->
+                            <!-- END COMMENTS -->
+                        </div>
                         <div class="box box-tiles style-white">
                             <div class="row">
                                 <div class="col-md-12">
@@ -141,7 +141,6 @@
                             </div><!--end .row -->
                         </div>
                         <!-- END COMMENTS -->
-
                     </div><!--end .box-body -->
                 </div><!--end .box -->
             </div><!--end .col-lg-12 -->
@@ -194,7 +193,6 @@
                 </div><!--end .box -->
             </div><!--end .col-lg-12 -->
         </div><!--end .row -->
-
     </div><!--end .section-body -->
 </section>
 
@@ -237,6 +235,7 @@
                     replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
                     replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
                     replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
+                    replyListHtml = replyListHtml + "<p>"+data[i].countReply+"</p>";
                     replyListHtml = replyListHtml + "</div>";
                 });
                 $("#reply_list").append(replyListHtml);
@@ -260,6 +259,13 @@
             });*/
         }
 
+        function getReplyCount(){
+
+            $.get("/community/countReply/"+nttId+"/"+bbsId, function(data, status){
+                $("#replyCount").html(data.countNum+" Comments"); /*미국*/
+            })
+        }
+
         function goDetail(seq, titleInUrl){
             location.href = "/style/"+seq+"/"+titleInUrl;
         }
@@ -274,6 +280,7 @@
 
         $(document).ready(function() {
             search();                          //조회
+            getReplyCount();
             replyList();    //댓글 조회
         });
 

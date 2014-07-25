@@ -107,6 +107,8 @@ public class Board{
 
     private Integer insertFlag;
 
+    private String countNum;
+
     public Integer getInsertFlag() {
         return insertFlag;
     }
@@ -457,5 +459,13 @@ public class Board{
 
     public void setAmswer(String amswer) {
         this.amswer = amswer;
+    }
+
+    public String getCountNum() {
+        return countNum;
+    }
+
+    public void setCountNum(String countNum) {
+        this.countNum = countNum;
     }
 }
