@@ -164,7 +164,7 @@
                     <a href="/recipe/create">레시피 만들기 </a>
                 </li>
                 <li>
-                    <a href="shop.html">가이드</a>
+                    <a href="#">가이드</a>
                 </li>
                 <!--li class="parent">
                     <a href="#">커뮤니티</a>
@@ -181,7 +181,7 @@
 </div>
 <div class="phone-active col-sm-9 col-md-9">
     <a href="#" class="close"><span>close</span>×</a>
-    <span class="title">Call Us</span> <strong>+1 (777) 123 45 67</strong>
+    <span class="title"> </span> <strong> </strong>
 </div>
 <div class="search-active col-sm-9 col-md-9">
     <a href="#" class="close"><span>close</span>×</a>
@@ -214,9 +214,11 @@
                         <button type="submit" class="btn btn-small btn-primary btn-cons-md"> 로그인</button>
                     </li>
                     <!--/form:form-->
-                    <%
-                    } else {
-                    %>
-                        <%
-                            }
-                        %>
+                <%
+                } else {
+                %>
+
+
+                <%
+                    }
+                %>

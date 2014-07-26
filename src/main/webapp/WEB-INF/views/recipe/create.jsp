@@ -23,17 +23,17 @@
 </div>
 <div class="box-body no-padding">
 
-<input id="styleOgMin" name ="styleOgMin" type="text" value="1.028">
-<input id="styleOgMax" name ="styleOgMax" type="text" value="1.04">
+<input id="styleOgMin" name ="styleOgMin" type="hidden" value="1.028">
+<input id="styleOgMax" name ="styleOgMax" type="hidden" value="1.04">
 
-<input id="styleFgMin" name ="styleFgMin" type="text" value="0.998">
-<input id="styleFgMax" name ="styleFgMax" type="text" value="1.008">
+<input id="styleFgMin" name ="styleFgMin" type="hidden" value="0.998">
+<input id="styleFgMax" name ="styleFgMax" type="hidden" value="1.008">
 
-<input id="styleIbuMin" name ="styleIbuMin" type="text" value="8">
-<input id="styleIbuMax" name ="styleIbuMax" type="text" value="12">
+<input id="styleIbuMin" name ="styleIbuMin" type="hidden" value="8">
+<input id="styleIbuMax" name ="styleIbuMax" type="hidden" value="12">
 
-<input id="styleAbvMin" name ="styleAbvMin" type="text" value="2.8">
-<input id="styleAbvMax" name ="styleAbvMax" type="text" value="4.2">
+<input id="styleAbvMin" name ="styleAbvMin" type="hidden" value="2.8">
+<input id="styleAbvMax" name ="styleAbvMax" type="hidden" value="4.2">
 
 <input id="styleSrmMin" name ="styleSrmMin" type="hidden" value="2">
 <input id="styleSrmMax" name ="styleSrmMax" type="hidden" value="3">
@@ -41,7 +41,7 @@
 <input id="resultOg" name ="resultOg" type="hidden" >
 <input id="resultFg" name ="resultFg" type="hidden" >
 
-<input id="resultIbu" name ="resultIbu" type="hidden" >
+<input id="resultIbu" name ="resultIbu" type="text" >
 <input id="resultAbv" name ="resultAbv" type="hidden" >
 <input id="resultSrm" name ="resultSrm" type="hidden" >
 
@@ -443,7 +443,7 @@
         var srmMax = parseFloat($('#styleSrmMax').val());
 
         var status = "";        //체크 상태
-        var ogStatus = false;
+        var ogStatus = "";
         var fgStatus = false;
         var ibuStatus = false;
         var abvStatus = false;
@@ -456,21 +456,112 @@
         var abv = parseFloat($('#resultAbv').val());
         var srm = parseFloat($('#resultSrm').val());
 
+        /*
         ogStatus  = validtionStyle(ogMin, ogMax, og);
         fgStatus  = validtionStyle(fgMin, fgMax, fg);
         ibuStatus = validtionStyle(ibuMin, ibuMax, ibu);
         abvStatus = validtionStyle(abvMin, abvMax, abv);
         srmStatus = validtionStyle(srmMin, srmMax, srm);
+         */
+        var resultHtmlHeader = "";
+        var resultHtmlBody = "";
+        var failCount = 0;
 
-        var resultHtml = "";
-        var checkCount = 0;
+        /*
 
+        if(ogStatus = false){ failCount++; }
+        if(fgStatus = false){ failCount++; }
+        if(ibuStatus = false){ failCount++; }
+        if(abvStatus = false){ failCount++; }
+        if(srmStatus = false){ failCount++; }
+            */
 
-        if(ogStatus = true){
-            checkCount++;
+        resultHtml = "";
+        resultHtmlBody = "";
+
+        failCount = 0;
+
+        if(isNaN(og)) {
+            failCount++;
+            ogStatus = "발효재료 없음";
+        }else {
+            if(ogMin <= og && og <= ogMax){
+                ogStatus = "성공";
+            }else {
+                failCount++;
+                ogStatus = "실패";
+            }
         }
 
-        alert(checkCount);
+
+        if(isNaN(fg)) {
+            failCount++;
+            fgStatus = "효모없음";
+        }else {
+            if(fgMin <= fg && fg <= fgMax){
+                fgStatus = "성공";
+            }else {
+                failCount++;
+                fgStatus = "실패";
+            }
+        }
+
+        if(isNaN(ibu)) {
+            failCount++;
+            ibuStatus = "홉 없음";
+        }else {
+            if(ibuMin <= parseFloat(ibu) && parseFloat(ibu) <= ibuMax){
+                ibuStatus = "성공";
+            }else {
+                failCount++;
+                ibuStatus = "실패";
+            }
+        }
+
+        toastr.success("IBU", failCount+"ibuMin : " + ibuMin + "ibuMax : "+ibuMax + "ibu : " + ibu);
+
+        if(isNaN(srm)) {
+            failCount++;
+            srmStatus = "발효재료 없음";
+        }else {
+            if(srmMin <= srm && srm <= srmMax){
+                srmStatus = "성공";
+            }else {
+                failCount++;
+                srmStatus = "실패";
+            }
+        }
+        if(isNaN(abv)) {
+            failCount++;
+            abvStatus = "효모없음";
+        }else {
+            if(abvMin <= abv && abv <= abvMax){
+                abvStatus = "성공";
+            }else {
+                failCount++;
+                abvStatus = "실패";
+            }
+        }
+
+
+        resultHtml = resultHtml + "OG : " + ogMin + "~ " + ogMax + " - <B>" + ogStatus + "</B><br/>";
+        resultHtml = resultHtml + "FG : " + fgMin + "~ " + fgMax + " - " + fgStatus + "<br/>";
+        resultHtml = resultHtml + "IBU : " + ibuMin + "~ " + ibuMax + " - " + ibuStatus + "<br/>";
+        resultHtml = resultHtml + "SRM : " + srmMin + "~ " + srmMax + " - " + srmStatus + "<br/>";
+        resultHtml = resultHtml + "ABV : " + abvMin + "~ " + abvMax + " - " + abvStatus + "<br/>";
+
+//        alert(failCount);
+
+        if(failCount = 0){
+            toastr.success(resultHtml, '적합한 스타일입니다.' + failCount);
+        }else if(failCount = 4){   //
+            toastr.warning(resultHtml, '스타일을 확인해보세요' + failCount);
+        }else if(failCount = 5){
+            toastr.error(resultHtml, '스타일이 하나도 안맞아요.' + failCount);
+        }
+
+
+
 
     }
 
@@ -478,6 +569,8 @@
         if(isNaN(value)) {
             return false;
         }
+
+        value = parseFloat(value);
 
         if(min <= value && value <= max){
             return true;
@@ -612,6 +705,7 @@
             ibu = ibu*10000;
             ibu = ibu.toFixed(1);
             $('#ibuText').html('IBU : '+ibu);
+            $('#resultIbu').val(ibu);
         })
 
     }
