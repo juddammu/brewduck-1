@@ -38,9 +38,9 @@ public class MailService {
         html.append("<td>");
         html.append("<table border='0' cellspacing='0' cellpadding='10' width='600' align='center'>");
         html.append("<tbody>");
-/*        html.append("<tr>");
-        html.append("<td height='80' align='center'><a href='#' target='_blank'><img src='#' border='0' alt='brewduck' width='187' height='72'></a></td>");
-        html.append("</tr>");*/
+        html.append("<tr>");
+        html.append("<td height='80' align='center'><a href='#' target='_blank'><img src='/resources/asset/img/logo.png' border='0' alt='brewduck' width='187' height='72'></a></td>");
+        html.append("</tr>");
         html.append("<tr>");
         html.append("<td bgcolor='#FFFFFF'>");
         html.append("<!-- 가입환영&이메일인증 메일 -->");
