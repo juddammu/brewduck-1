@@ -13,7 +13,7 @@
             <a href="javascript:void(0);"><i class="fa fa-search fa-fw search-icon"></i><i class="fa fa-angle-left fa-fw close-icon"></i></a>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="text" class="form-control navbar-input" placeholder="Search...">
+                    <input type="text" class="form-control navbar-input" placeholder="검색기능 (작업중)">
                     <span class="input-group-btn">
                         <button class="btn btn-equal" type="button"><i class="fa fa-search"></i></button>
                     </span>
@@ -25,16 +25,6 @@
         <!-- BEGIN MAIN MENU -->
         <ul class="main-menu">
             <!-- Menu Dashboard -->
-            <li>
-                <a href="#" >
-                    <i class="fa fa-bar-chart-o fa-fw"></i><span class="title">대쉬보드</span>
-                </a>
-            </li><!--end /menu-item -->
-            <li>
-                <a href="/community/1/list" >
-                    <i class="fa fa-bullhorn fa-fw"></i><span class="title">공지사항</span>
-                </a>
-            </li><!--end /menu-item -->
             <!-- Menu UI -->
             <li>
                 <a href="javascript:void(0);">

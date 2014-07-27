@@ -101,7 +101,7 @@
                                     <tr>
                                         <td class="text-right hidden-border"><strong></strong></td>
                                         <td class="text-right hidden-border" colspan="4">
-                                            <strong class="text-lg text-support3">SRM : </strong>
+                                            <strong class="text-lg text-support3">  </strong>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -153,13 +153,13 @@
                                                     </c:otherwise>
                                                 </c:choose>
                                             </td>
-                                            <td class="text-right">${hops.alpha} %</td>
+                                            <td class="text-right"> </td>
                                         </tr>
                                     </c:forEach>
                                     <tr>
                                         <td class="text-right hidden-border"><strong></strong></td>
                                         <td class="text-right hidden-border" colspan="4">
-                                            <strong class="text-lg text-support3">IBU : </strong>
+                                            <strong class="text-lg text-support3">  </strong>
                                         </td>
                                     </tr>
                                     </tbody>
