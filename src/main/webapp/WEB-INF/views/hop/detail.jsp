@@ -33,14 +33,14 @@
                                     <div class="box-body">
                                         <h3 class="text-light">원산지 / 타입</h3>
                                         <div>
-                                            <button type="button" class="btn btn-warning btn-cons btn-mini" onclick="goIndex()">${HopDetail.originKorean} ( ${HopDetail.origin} )</button>
-                                            <button type="button" class="btn btn-primary btn-cons btn-mini">${HopDetail.typeKorean}</button>
+                                            <button type="button" class="btn btn-warning btn-xs" onclick="goOrigin('${HopDetail.origin}')">${HopDetail.originKorean} ( ${HopDetail.origin} )</button>
+                                            <button type="button" class="btn btn-primary btn-xs" onclick="goType('${HopDetail.type}')">${HopDetail.typeKorean}</button>
                                         </div>
                                         <div class="pull-left"> <span class="small-text muted">버튼을 클릭하시면 조회됩니다.</span> </div>
                                         <br>
                                         <h3 class="text-light">사용 용도</h3>
                                         <c:forEach items="${hopUsedForList}" var="usedFor">
-                                            <button type="button" class="btn btn-white btn-cons btn-mini">
+                                            <button type="button" class="btn btn-xs btn-support1">
                                                 ${usedFor.usedFor}
                                             </button>
                                         </c:forEach>
@@ -49,7 +49,7 @@
                                         <p>${HopDetail.koreanNotes}</p>
                                         <h3 class="text-light">풍미</h3>
                                         <c:forEach items="${hopAromaList}" var="aromaName">
-                                            <button type="button" class="btn btn-white btn-cons btn-mini">
+                                            <button type="button" class="btn btn-xs btn-support1">
                                                     ${aromaName.aromaName}
                                             </button>
                                         </c:forEach>
@@ -60,13 +60,14 @@
                                         <div class="box-body">
                                             <h3 class="text-light">대체 홉</h3>
                                             <c:forEach items="${selectHopSubstitutesList}" var="substitutesName">
-                                                <button type="button" onclick="goDetail(' ${substitutesName.substitutesSeq}');" class="btn btn-primary btn-cons btn-mini">
+                                                <button type="button" onclick="goDetail(' ${substitutesName.substitutesSeq}');" class="btn btn-primary btn-xs">
                                                         ${substitutesName.substitutesName}
                                                 </button>
                                             </c:forEach>
-                                            <div class="well clearfix">
+                                            <br>
+                                            <div>
                                                 <h3 class="text-light">수치</h3>
-                                                <div class="row tiles-container">
+                                                <div class="row well clearfix">
                                                     <div class="heading">
                                                         <div class="pull-left">
                                                             <!--h4>Hop  <span class="semi-bold">chemistry</span></h4-->
@@ -79,7 +80,7 @@
                                                         <div class="content-box green">
                                                             <h4 class="text-gray"><span class="semi-bold">${HopDetail.alpha} %</span> - <span class="semi-bold">Alpha</span></h4>
                                                             <p> 브루어들이 자신이 양조할 맥주의 쓴 맛을 계산하게 해주기 위해 알파산 퍼센티지가 기재되어있습니다.</p>
-                                                            <button class="btn btn-lg" data-toggle="modal" data-target="#myModal"> 자세히 보기 </button>
+                                                            <button class="btn btn-white btn-xs" data-toggle="modal" data-target="#myModal"> 자세히 보기 </button>
 
                                                             <!--div class="pull-left" class="col-md-12">
                                                             <input type="text"  data-slider-value="[${HopDetail.alpha}]" data-slider-step="0.5" data-slider-max="25" data-slider-min="0" value=""
@@ -95,7 +96,7 @@
                                                         <div class="content-wrapper red">
                                                             <h4 class="text-gray"><span class="semi-bold">${HopDetail.beta} %</span> - <span class="semi-bold">BETA</span></h4>
                                                             <p>발효와 저장과정에서 알파산이 내는 쓴 맛이 점차 사라질 때 베타산은 천천히 산화를 통하여 쓴맛을 만들어냅니다.</p>
-                                                            <button class="btn btn-lg" data-toggle="modal" data-target="#myModal2"> 자세히 보기 </button>
+                                                            <button class="btn btn-white btn-xs" data-toggle="modal" data-target="#myModal2"> 자세히 보기 </button>
                                                             <!--div class="pull-left">
                                                     <input type="text"  data-slider-value="[${HopDetail.beta}]" data-slider-step="0.5" data-slider-max="25" data-slider-min="0" value="" class="slider-element form-control" data-slider-selection="after">
                                                 </div>
@@ -235,6 +236,8 @@
                             <div class="col-md-12">
                                 <article class="style-white">
                                     <form:form  class="form-horizontal" role="form" onsubmit="return false">
+
+
                                         <div class="form-group">
                                             <div class="col-md-12">
                                                 <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
@@ -257,7 +260,9 @@
             <div class="col-lg-12">
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                        <form:form class="form-horizontal form-banded form-bordered" action="/hop/list" id="searchForm"  name="searchForm">
+                            <input id = "origin" name ="origin" type ="hidden" value="">
+                            <input id = "type" name ="type" type ="hidden" value="">
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
@@ -347,22 +352,6 @@
             $("#reply_list").append(replyListHtml);
             boostbox.App.removeBoxLoader(box);
         })
-
-        /*
-         <div class="comment-avatar"><i class="glyphicon glyphicon-user text-gray-lighter"></i></div>
-         <div class="box-body">
-         <h4 class="comment-title">Jim Peters <small>20/06/2013 at 4:02 pm</small></h4>
-         <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-         <p>Etiam dui libero, tempor quis congue in, interdum eget tortor. Vivamus aliquam dictum lacus quis tincidunt. Phasellus rhoncus ante sollicitudin nisl consectetur ultricies. Sed rhoncus ullamcorper mauris, ac condimentum metus egestas ut. Nam et urna ante, vitae pretium lacus.</p>
-         </div>
-
-         $("#result").html("");
-         $( "#result" ).load("/style/list", $("#searchForm").serialize(), function( response, status, xhr ) {
-
-         if ( status == "success" ) {
-         boostbox.App.removeBoxLoader(box);
-         }
-         });*/
     }
 
     function getReplyCount(){
@@ -381,13 +370,17 @@
         location.href = "/hop/"+seq+"/"+titleInUrl;
     }
 
-    function goIndex(origin){
-        alert("value:"+origin);
-        $("#origin").val(origin);
-
+    function goOrigin(data){
+        $("#origin").val(data);
         search();
-        //location.href = "/hop/"+origin;
     }
+
+    function goType(data){
+
+        $("#type").val(data);
+        search();
+    }
+
 
     function search(){
      //   getLoadingTime();                                                   //로딩 아이콘 호출
@@ -396,60 +389,12 @@
         //getResult();
     }
 
-   /* function getCommnetList(){
-        var commentHtml ="";
-
-        $.ajax({
-            type: 'get',
-            dataType : "json",
-            url : '/board/list/HOPBOARD01',
-            contentType: "application/json",
-            success:function(result){
-                //월 세팅 selectbox 초기화
-                //$("#userBirthMonth").find("option").remove().end().append("<option value=''>- 선택 -</option>");
-
-
-                //결과 갯수 만큼 날짜 세팅
-                $.each(result, function(i){
-                    //$("#userBirthMonth").append("<option value='"+result[i].code+"'>"+result[i].codeName+"</option>")
-
-                    commentHtml = commentHtml + "<div class='tiles white '>";
-                    commentHtml = commentHtml + "    <div class='p-t-20 p-b-15 b-b b-grey'>";
-                    commentHtml = commentHtml + "        <div class='post overlap-left-10'>";
-                    commentHtml = commentHtml + "            <div class='user-profile-pic-wrapper'>";
-                    commentHtml = commentHtml + "                <div class='user-profile-pic-2x white-border'>";
-                    commentHtml = commentHtml + "                    <img width='45' height='45' src='/resources/assets/img/profiles/avatar.jpg' data-src='/resources/assets/img/profiles/avatar.jpg' data-src-retina='/resources/assets/img/profiles/avatar2x.jpg' alt=''>";
-                    commentHtml = commentHtml + "                </div>";
-                    commentHtml = commentHtml + "            </div>";
-                    commentHtml = commentHtml + "            <div class='info-wrapper small-width inline'>";
-                    commentHtml = commentHtml + "                <div class='info text-black '>";
-                    commentHtml = commentHtml + "                    <p>"+ result[i].answer +"</p>";
-                    commentHtml = commentHtml + "                    <p class='muted small-text'>"+ result[i].insertDate +"</p>";
-                    commentHtml = commentHtml + "                </div>";
-                    commentHtml = commentHtml + "                <div class='clearfix'></div>";
-                    commentHtml = commentHtml + "            </div>";
-                    commentHtml = commentHtml + "            <div class='clearfix'></div>";
-                    commentHtml = commentHtml + "        </div>";
-                    commentHtml = commentHtml + "    </div>";
-                    commentHtml = commentHtml + "</div>";
-                });
-
-                commentHtml = commentHtml + "<div class='tiles grey p-t-5 p-b-5 '>";
-                commentHtml = commentHtml + "    <p class='text-center'> <a href='javascript:;' class='text-black semi-bold  small-text'>전체 보기</a></p>";
-                commentHtml = commentHtml + "</div>";
-
-                $("#commnet_list").append(commentHtml);
-            },
-            error:function(xhr,statue,error){
-                alert(error);
-            }
-        });
-    }*/
-
     $(document).ready(function() {
         search();                          //조회
         getReplyCount();
         replyList();
+        $("#origin").val('');
+        $("#type").val('');
 
     });
 
