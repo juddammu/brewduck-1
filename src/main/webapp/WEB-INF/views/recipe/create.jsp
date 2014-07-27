@@ -23,20 +23,20 @@
 </div>
 <div class="box-body no-padding">
 
-<input id="styleOgMin" name ="styleOgMin" type="text" value="1.028">
-<input id="styleOgMax" name ="styleOgMax" type="text" value="1.04">
+<input id="styleOgMin" name ="styleOgMin" type="hidden" value="1.028">
+<input id="styleOgMax" name ="styleOgMax" type="hidden" value="1.04">
 
-<input id="styleFgMin" name ="styleFgMin" type="text" value="0.998">
-<input id="styleFgMax" name ="styleFgMax" type="text" value="1.008">
+<input id="styleFgMin" name ="styleFgMin" type="hidden" value="0.998">
+<input id="styleFgMax" name ="styleFgMax" type="hidden" value="1.008">
 
-<input id="styleIbuMin" name ="styleIbuMin" type="text" value="8">
-<input id="styleIbuMax" name ="styleIbuMax" type="text" value="12">
+<input id="styleIbuMin" name ="styleIbuMin" type="hidden" value="8">
+<input id="styleIbuMax" name ="styleIbuMax" type="hidden" value="12">
 
-<input id="styleAbvMin" name ="styleAbvMin" type="text" value="2.8">
-<input id="styleAbvMax" name ="styleAbvMax" type="text" value="4.2">
+<input id="styleAbvMin" name ="styleAbvMin" type="hidden" value="2.8">
+<input id="styleAbvMax" name ="styleAbvMax" type="hidden" value="4.2">
 
-<input id="styleSrmMin" name ="styleSrmMin" type="text" value="2">
-<input id="styleSrmMax" name ="styleSrmMax" type="text" value="3">
+<input id="styleSrmMin" name ="styleSrmMin" type="hidden" value="2">
+<input id="styleSrmMax" name ="styleSrmMax" type="hidden" value="3">
 
 <input id="resultOg" name ="resultOg" type="hidden" >
 <input id="resultFg" name ="resultFg" type="hidden" >
@@ -245,7 +245,11 @@
 </div>
 <div class="box-head">
     <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i> <strong>재료</strong> 구성</h4></header>
-    목표 스펙 - <small id="ogSpec" name="ogSpec"></small> <small id="srmSpec" name="srmSpec"></small>
+    목표 스펙 - <small id="ogSpec" name="ogSpec"></small>
+    <small id="fgSpec" name="fgSpec"></small>
+    <small id="srmSpec" name="srmSpec"></small>
+    <small id="ibuSpec" name="ibuSpec"></small>
+    <small id="advSpec" name="advSpec"></small>
 </div>
 <div class="form-group">
     <div class="col-md-2">
@@ -465,29 +469,30 @@
         resultFermentablesHtml = "";
         resultHtmlBody = "";
 
-        failCount = 0;
+        ogSrmFailCount = 0;
 
         if(isNaN(og)) {
-            failCount++;
+            ogSrmFailCount++;
             ogStatus = "발효재료 없음";
         }else {
             if(ogMin <= og && og <= ogMax){
                 ogStatus = "성공";
             }else {
-                failCount++;
+                ogSrmFailCount++;
                 ogStatus = "실패";
             }
         }
 
-        if(isNaN(fg)) {
-            failCount++;
-            fgStatus = "효모없음";
+
+        if(isNaN(srm)) {
+            ogSrmFailCount++;
+            srmStatus = "발효재료 없음";
         }else {
-            if(fgMin <= fg && fg <= fgMax){
-                fgStatus = "성공";
+            if(srmMin <= srm && srm <= srmMax){
+                srmStatus = "성공";
             }else {
-                failCount++;
-                fgStatus = "실패";
+                ogSrmFailCount++;
+                srmStatus = "실패";
             }
         }
 
@@ -503,32 +508,31 @@
             }
         }
 
-
-        if(isNaN(srm)) {
-            failCount++;
-            srmStatus = "발효재료 없음";
-        }else {
-            if(srmMin <= srm && srm <= srmMax){
-                srmStatus = "성공";
-            }else {
-                failCount++;
-                srmStatus = "실패";
-            }
-        }
-
         resultHtml = resultHtml + "OG : " + ogMin + "~ " + ogMax + " - <B>" + ogStatus + "</B><br/>";
         resultHtml = resultHtml + "SRM : " + srmMin + "~ " + srmMax + " - " + srmStatus + "<br/>";
-
-//        alert(failCount);
-
-        if(failCount = 0){
-            toastr.success(resultHtml, '적합한 스타일입니다.' + failCount);
-        }else if(failCount = 4){   //
-            toastr.warning(resultHtml, '스타일을 확인해보세요' + failCount);
-        }else if(failCount = 5){
-            toastr.error(resultHtml, '스타일이 하나도 안맞아요.' + failCount);
+/*
+        if(ogSrmFailCount < 1){
+            toastr.success("", '적합한 스타일입니다.');
+        }else if(ogSrmFailCount > 0){   //
+            toastr.warning(resultHtml, '스타일을 확인해보세요');
         }
 
+
+/*
+
+
+
+        if(isNaN(fg)) {
+            failCount++;
+            fgStatus = "효모없음";
+        }else {
+            if(fgMin <= fg && fg <= fgMax){
+                fgStatus = "성공";
+            }else {
+                failCount++;
+                fgStatus = "실패";
+            }
+        }
         //toastr.success("SRM", failCount+"srmMin : " + srmMin + "srmMax : "+srmMin + "srm : " + srm);
 
 
@@ -554,14 +558,14 @@
 //        alert(failCount);
 
         if(failCount = 0){
-            toastr.success(resultHtml, '적합한 스타일입니다.' + failCount);
+            //toastr.success(resultHtml, '적합한 스타일입니다.' + failCount);
         }else if(failCount = 4){   //
-            toastr.warning(resultHtml, '스타일을 확인해보세요' + failCount);
+           // toastr.warning(resultHtml, '스타일을 확인해보세요' + failCount);
         }else if(failCount = 5){
-            toastr.error(resultHtml, '스타일이 하나도 안맞아요.' + failCount);
+           // toastr.error(resultHtml, '스타일이 하나도 안맞아요.' + failCount);
         }
 
-
+*/
 
 
     }
@@ -939,12 +943,18 @@
                     $("#styleIbuMin").val(data.ibuMin);
                     $("#styleIbuMax").val(data.ibuMax);
                     $("#styleAbvMin").val(data.abvMin);
-                    $("#styleAbvMax").val(data.abvMin);
+                    $("#styleAbvMax").val(data.abvMax);
                     $("#styleSrmMin").val(data.colorMin);
                     $("#styleSrmMax").val(data.colorMax);
 
-                    $('#ogSpec').html('OG : '+data.ogMin + ' ~ ' + data.ogMax);
-                    $('#srmSpec').html('SRM : '+data.colorMin + ' ~ ' + data.colorMax);
+
+
+                    $('#ogSpec').html("<span class='tag label label-info'>OG  </span>"+data.ogMin + ' ~ ' + data.ogMax);
+                    $('#fgSpec').html("<span class='tag label label-info'>FG  </span>"+data.ogMin + ' ~ ' + data.ogMax);
+                    $('#srmSpec').html("<span class='tag label label-info'>SRM  </span>"+data.colorMin + ' ~ ' + data.colorMax);
+                    $('#ibuSpec').html("<span class='tag label label-info'>IBU  </span>"+data.ibuMin + ' ~ ' + data.ibuMax);
+                    $('#abvSpec').html("<span class='tag label label-info'>ADV  </span>"+data.abvMin + ' ~ ' + data.abvMax);
+
                 })
 
 
