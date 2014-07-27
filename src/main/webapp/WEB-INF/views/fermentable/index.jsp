@@ -40,12 +40,12 @@
                                     <div class="input-group">
                                         <div>
                                             <div>
-                                                <button id="usButton" type="button" class="btn btn-xs btn-primary" value="US" > </button>
-                                                <button id="deButton" type="button" class="btn btn-xs btn-primary" value="DE"> </button>
-                                                <button id="ukButton" type="button" class="btn btn-xs btn-primary" value="UK"> </button>
-                                                <button id="beButton" type="button" class="btn btn-xs btn-primary" value="BE"> </button>
-                                                <button id="caButton" type="button" class="btn btn-xs btn-primary" value="CA"> </button>
-                                                <button id="etcButton" type="button" class="btn btn-xs btn-primary" value="ETC"> </button>
+                                                <button id="usButton" type="button" class="btn btn-support1 btn-sm" value="US" onclick="setOriginSearch('US')" > </button>
+                                                <button id="deButton" type="button" class="btn btn-support1 btn-sm" value="DE" onclick="setOriginSearch('DE')"> </button>
+                                                <button id="ukButton" type="button" class="btn btn-support1 btn-sm" value="UK" onclick="setOriginSearch('UK')"> </button>
+                                                <button id="beButton" type="button" class="btn btn-support1 btn-sm" value="BE" onclick="setOriginSearch('BE')"> </button>
+                                                <button id="caButton" type="button" class="btn btn-support1 btn-sm" value="CA" onclick="setOriginSearch('CA')"> </button>
+                                                <button id="etcButton" type="button" class="btn btn-support1 btn-sm" value="ETC" onclick="setOriginSearch('ETC')"> </button>
                                             </div>
                                         </div>
                                     </div>
@@ -108,9 +108,10 @@
             location.href = "/fermentable/"+seq+"/"+titleInUrl;
         }
 
-        function setOriginSearch(){
+        function setOriginSearch(data){
 
-            $("#origin").val(jQuery(this).val);
+            $("#origin").val(data);
+/*            $("#origin").val(jQuery(this).attr('value'));*/
 
             search();
         }

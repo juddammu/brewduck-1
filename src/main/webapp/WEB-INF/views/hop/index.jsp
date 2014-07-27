@@ -66,13 +66,13 @@
                                 <div class="col-md-10">
                                     <div class="input-group">
                                     <p>
-                                    <button id="usButton" type="button" class="btn btn-support1 btn-sm" value="US"> 미국</button>
-                                        <button id="deButton" type="button" class="btn btn-support1 btn-sm" value="DE"> </button>
-                                        <button id="ukButton" type="button" class="btn btn-support1 btn-sm" value="UK"> </button>
-                                        <button id="nzButton" type="button" class="btn btn-support1 btn-sm" value="NZ"> </button>
-                                        <button id="auButton" type="button" class="btn btn-support1 btn-sm" value="AU"> </button>
-                                        <button id="siButton" type="button" class="btn btn-support1 btn-sm" value="SI"> </button>
-                                        <button id="etcButton" type="button" class="btn btn-support1 btn-sm" value=""> </button>
+                                    <button id="usButton" type="button" class="btn btn-support1 btn-sm" value="US" onclick="setOriginSearch('US')"> 미국</button>
+                                        <button id="deButton" type="button" class="btn btn-support1 btn-sm" value="DE" onclick="setOriginSearch('DE')"> </button>
+                                        <button id="ukButton" type="button" class="btn btn-support1 btn-sm" value="UK" onclick="setOriginSearch('UK')"> </button>
+                                        <button id="nzButton" type="button" class="btn btn-support1 btn-sm" value="NZ" onclick="setOriginSearch('NZ')"> </button>
+                                        <button id="auButton" type="button" class="btn btn-support1 btn-sm" value="AU" onclick="setOriginSearch('AU')"> </button>
+                                        <button id="siButton" type="button" class="btn btn-support1 btn-sm" value="SI" onclick="setOriginSearch('SI')"> </button>
+                                        <button id="etcButton" type="button" class="btn btn-support1 btn-sm" value="" onclick="setOriginSearch('ETC')"> </button>
                                     </p>
                                     </div>
                                 </div>
@@ -294,8 +294,8 @@
         location.href = "/hop/"+seq+"/"+titleInUrl;
     }
 
-    function setOriginSearch(){
-        $("#origin").val(jQuery(this).val());
+    function setOriginSearch(data){
+        $("#origin").val(data);
         search();
     }
 
@@ -336,13 +336,6 @@
         $("#allRadio").click(setAromaSearch);
         $("#aromaRadio").click(setAromaSearch);
         $("#bittersRadio").click(setAromaSearch);
-        $("#usButton").click(setOriginSearch);
-        $("#deButton").click(setOriginSearch);
-        $("#ukButton").click(setOriginSearch);
-        $("#nzButton").click(setOriginSearch);
-        $("#auButton").click(setOriginSearch);
-        $("#siButton").click(setOriginSearch);
-        $("#etcButton").click(setOriginSearch);
     });
 </script>
 </content>

@@ -55,7 +55,7 @@
                                         <h3 class="text-light">사례</h3>
                                         <div class="list-tags">
                                             <c:forEach items="${examples}" var="examples">
-                                                <a class="btn btn-xs btn-support1">${examples}</a>
+                                                <a class="btn btn-xs btn-support1 " onclick="goWarning()">${examples}</a>
                                             </c:forEach>
                                         </div>
                                     </div>
@@ -235,7 +235,6 @@
                     replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
                     replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
                     replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
-                    replyListHtml = replyListHtml + "<p>"+data[i].countReply+"</p>";
                     replyListHtml = replyListHtml + "</div>";
                 });
                 $("#reply_list").append(replyListHtml);
@@ -264,6 +263,10 @@
             $.get("/community/countReply/"+nttId+"/"+bbsId, function(data, status){
                 $("#replyCount").html(data.countNum+" Comments"); /*미국*/
             })
+        }
+
+        function goWarning(){
+            alert("사례 바로가기는 준비중 입니다!");
         }
 
         function goDetail(seq, titleInUrl){

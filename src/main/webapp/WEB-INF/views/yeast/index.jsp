@@ -20,6 +20,7 @@
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
                         <form:form class="form-horizontal form-banded form-bordered" id="searchForm" name="searchForm" modelAttribute="paramYeast">
+                            <input id ="type" name="type" type="hidden">
                         <div class="form-group">
                             <div class="col-md-2">
                                 <label class="control-label">이름</label>
@@ -108,10 +109,9 @@
         location.href = "/yeast/"+seq+"/"+titleInUrl;
     }
 
-    function setTypeSearch(){
-        alert("value:"+ jQuery(this).val);
+    function setTypeSearch(data){
 
-        $("#type").val(this.val());
+        $("#type").val(data);
 
         search();
 

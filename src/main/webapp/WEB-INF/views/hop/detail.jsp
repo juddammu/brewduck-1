@@ -33,7 +33,7 @@
                                     <div class="box-body">
                                         <h3 class="text-light">원산지 / 타입</h3>
                                         <div>
-                                            <button type="button" class="btn btn-warning btn-cons btn-mini" onclick="goIndex('${HopDetail.origin}')">${HopDetail.originKorean} ( ${HopDetail.origin} )</button>
+                                            <button type="button" class="btn btn-warning btn-cons btn-mini" onclick="goIndex()">${HopDetail.originKorean} ( ${HopDetail.origin} )</button>
                                             <button type="button" class="btn btn-primary btn-cons btn-mini">${HopDetail.typeKorean}</button>
                                         </div>
                                         <div class="pull-left"> <span class="small-text muted">버튼을 클릭하시면 조회됩니다.</span> </div>
@@ -77,7 +77,7 @@
                                                     </div>
                                                     <div class="col-md-4 single-colored-widget">
                                                         <div class="content-box green">
-                                                            <h4 class="text-white"><span class="semi-bold">${HopDetail.alpha} %</span> - <span class="semi-bold">Alpha</span></h4>
+                                                            <h4 class="text-gray"><span class="semi-bold">${HopDetail.alpha} %</span> - <span class="semi-bold">Alpha</span></h4>
                                                             <p> 브루어들이 자신이 양조할 맥주의 쓴 맛을 계산하게 해주기 위해 알파산 퍼센티지가 기재되어있습니다.</p>
                                                             <button class="btn btn-lg" data-toggle="modal" data-target="#myModal"> 자세히 보기 </button>
 
@@ -93,7 +93,7 @@
 
                                                     <div class="col-md-4 single-colored-widget">
                                                         <div class="content-wrapper red">
-                                                            <h4 class="text-white"><span class="semi-bold">${HopDetail.beta} %</span> - <span class="semi-bold">BETA</span></h4>
+                                                            <h4 class="text-gray"><span class="semi-bold">${HopDetail.beta} %</span> - <span class="semi-bold">BETA</span></h4>
                                                             <p>발효와 저장과정에서 알파산이 내는 쓴 맛이 점차 사라질 때 베타산은 천천히 산화를 통하여 쓴맛을 만들어냅니다.</p>
                                                             <button class="btn btn-lg" data-toggle="modal" data-target="#myModal2"> 자세히 보기 </button>
                                                             <!--div class="pull-left">
@@ -106,7 +106,7 @@
 
                                                     <div class="col-md-4 single-colored-widget">
                                                         <div class="content-wrapper blue">
-                                                            <h4 class="text-white"><span class="semi-bold">${HopDetail.hsi} %</span> - <span class="semi-bold">HSI</span></h4>
+                                                            <h4 class="text-gray"><span class="semi-bold">${HopDetail.hsi} %</span> - <span class="semi-bold">HSI</span></h4>
                                                             <p>개월 동안 소멸되는 알파산의 퍼센티지를 나타내는 저장성 수치. 오래된 홉의 알파산을 계산할 때 이용된다.</p>
                                                                     <!--div class="pull-left">
                                                             <input type="text"  data-slider-value="[${HopDetail.hsi}]" data-slider-step="0.5" data-slider-max="100" data-slider-min="0" value="" class="slider-element form-control" data-slider-selection="after">
@@ -382,7 +382,9 @@
     }
 
     function goIndex(origin){
+        alert("value:"+origin);
         $("#origin").val(origin);
+
         search();
         //location.href = "/hop/"+origin;
     }

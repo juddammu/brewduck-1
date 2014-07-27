@@ -90,7 +90,8 @@
             <div class="col-lg-12">
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                        <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
+                            <input id ="typeKorean" name="typeKorean" type="hidden">
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
