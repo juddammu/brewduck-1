@@ -108,8 +108,8 @@
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
                         <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
-                            <input name="bbsId" id="bbsId" type ="text" value="">
-                            <input name="nttId" id="nttId" type ="text" value="">
+                            <input name="bbsId" id="bbsId" type ="hidden" value="">
+                            <input name="nttId" id="nttId" type ="hidden" value="">
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
