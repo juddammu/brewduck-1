@@ -40,7 +40,7 @@
                                 <div class="input-group">
                                     <div>
                                         <div>
-                                            <button id="aleButton" type="button" class="btn btn-xs btn-primary" value="1"> </button>
+                                            <button id="aleButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(1)" value="1"> </button>
                                             <button id="lagerButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(3)" value="3"> </button>
                                             <button id="wheatButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(4)" value="4"> </button>
                                             <button id="wineButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(5)" value="5"> </button>
