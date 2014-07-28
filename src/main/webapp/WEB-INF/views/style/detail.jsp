@@ -199,11 +199,12 @@
 
 <content tag="local_script">
     <script>
+
         var bbsId = '4';
         var nttId = ${StyleDetail.seq};
 
         $('#insertReply').on('click', function () {
-            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
+            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
             $.ajax({
                 type: "POST",
                 url: "/community/writeReply",
@@ -213,8 +214,9 @@
                 success:function( data ) {
                     if(data.insertFlag == 1){
                         replyList();
+                        getReplyCount();
+                        $('#answer').val('');
                     }
-
                 }
             });
         });
@@ -274,17 +276,16 @@
         }
 
         function search(){
-
             $("#result").html("");
             $("#result").load("/style/list", $("#searchForm").serialize());
-
         }
 
 
         $(document).ready(function() {
             search();                          //조회
             getReplyCount();
-            replyList();    //댓글 조회
+            replyList();                       //댓글 조회
+            $("#name").val('');
         });
 
     </script>

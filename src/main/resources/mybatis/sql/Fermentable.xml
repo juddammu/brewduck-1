@@ -312,6 +312,7 @@
                 AND (NAME like CONCAT('%', #{name}, '%')
                 OR korean_name like CONCAT('%', #{name}, '%'))
             </if>
+            <if test="type != null and type != 0">AND type =  #{type} </if>
             <choose>
                 <when test="origin == 'ETC'">
                     AND ORIGIN != 'US' AND ORIGIN != 'DE' AND ORIGIN != 'UK' AND ORIGIN != 'BE' AND ORIGIN != 'CA'

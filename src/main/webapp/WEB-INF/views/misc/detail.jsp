@@ -141,7 +141,7 @@
         var nttId = ${MiscDetail.seq};
 
         $('#insertReply').on('click', function () {
-            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
+            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
             $.ajax({
                 type: "POST",
                 url: "/community/writeReply",
@@ -151,8 +151,9 @@
                 success:function( data ) {
                     if(data.insertFlag == 1){
                         replyList();
+                        getReplyCount();
+                        $('#answer').val('');
                     }
-
                 }
             });
         });
@@ -198,16 +199,16 @@
         }
 
         function search(){
-
             $("#result").html("");
             $("#result").load("/misc/list", $("#searchForm").serialize());
-            //getResult();
         }
 
         $(document).ready(function() {
             search();                          //조회
             getReplyCount();
             replyList();
+            $("#name").val('');
+            $("#typeKorean").val('');
         });
 
     </script>

@@ -34,8 +34,8 @@
                                     <div class="box-body">
                                         <h3 class="text-light">원산지 / 타입</h3 >
                                         <div>
-                                            <button type="button" class="btn btn-warning btn-sm" onclick="goIndex('${FermentableDetail.origin}')">${FermentableDetail.originKorean} ( ${FermentableDetail.origin} )</button>
-                                            <button type="button" class="btn btn-primary btn-sm">${FermentableDetail.typeKorean}</button>
+                                            <button type="button" class="btn btn-warning btn-sm" onclick="goOrigin('${FermentableDetail.origin}')">${FermentableDetail.originKorean} ( ${FermentableDetail.origin} )</button>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="goType('${FermentableDetail.type}')">${FermentableDetail.typeKorean}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,8 @@
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
                         <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
-                            <input name="origin" type ="hidden" id="origin" value="">
+                            <input id ="origin" name="origin" type ="hidden" value="">
+                            <input id = "type" name ="type" type ="hidden" value="">
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
@@ -141,7 +142,7 @@
         var nttId = ${FermentableDetail.seq};
 
         $('#insertReply').on('click', function () {
-            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
+            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
             $.ajax({
                 type: "POST",
                 url: "/community/writeReply",
@@ -151,8 +152,9 @@
                 success:function( data ) {
                     if(data.insertFlag == 1){
                         replyList();
+                        getReplyCount();
+                        $('#answer').val('');
                     }
-
                 }
             });
         });
@@ -190,23 +192,28 @@
             location.href = "/fermentable/"+seq+"/"+titleInUrl;
         }
 
-        function goIndex(origin){
+        function goOrigin(origin){
             $("#origin").val(origin);
             search();
         }
 
+        function goType(data){
+            $("#type").val(data);
+            search();
+        }
+
         function search(){
-            //   getLoadingTime();                                                   //로딩 아이콘 호출
             $("#result").html("");
             $("#result").load("/fermentable/list", $("#searchForm").serialize());
-            //getResult();
         }
 
         $(document).ready(function() {
-            $("#name").val('');             //TODO : 초기화 함수로 뺄것
             search();                       //조회
             getReplyCount();
             replyList();
+            $("#name").val('');
+            $("#origin").val('');
+            $("#type").val('');
         });
 
     </script>

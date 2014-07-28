@@ -155,11 +155,11 @@
 
 <content tag="local_script">
     <script>
-        var bbsId = '6';
+        var bbsId = '7';
         var nttId = ${YeastDetail.seq};
 
         $('#insertReply').on('click', function () {
-            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
+            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
             $.ajax({
                 type: "POST",
                 url: "/community/writeReply",
@@ -169,7 +169,8 @@
                 success:function( data ) {
                     if(data.insertFlag == 1){
                         replyList();
-
+                        getReplyCount();
+                        $('#answer').val('');
                     }
 
                 }
@@ -223,10 +224,8 @@
         }
 
         function search(){
-            //   getLoadingTime();                                                   //로딩 아이콘 호출
             $("#result").html("");
             $("#result").load("/yeast/list", $("#searchForm").serialize());
-            //getResult();
         }
 
 
@@ -234,8 +233,9 @@
 
             search();                          //조회
             setBbsId();
-            replyList();    //댓글 조회
+            replyList();                        //댓글 조회
             getReplyCount();
+            $("#name").val('');
         });
 
     </script>

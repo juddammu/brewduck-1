@@ -927,6 +927,7 @@
         }
 
         $(document).ready(function() {
+
             var fermentableHtml = "";
             var hopHtml = "";
             var yeastHtml = "";

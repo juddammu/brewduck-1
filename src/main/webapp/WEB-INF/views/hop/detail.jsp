@@ -236,8 +236,6 @@
                             <div class="col-md-12">
                                 <article class="style-white">
                                     <form:form  class="form-horizontal" role="form" onsubmit="return false">
-
-
                                         <div class="form-group">
                                             <div class="col-md-12">
                                                 <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
@@ -314,7 +312,7 @@
     var nttId = ${HopDetail.seq};
 
     $('#insertReply').on('click', function () {
-        var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val()};
+        var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
         $.ajax({
             type: "POST",
             url: "/community/writeReply",
@@ -324,6 +322,8 @@
             success:function( data ) {
                 if(data.insertFlag == 1){
                     replyList();
+                    getReplyCount();
+                    $('#answer').val('');
                 }
 
             }
@@ -346,7 +346,6 @@
                 replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
                 replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
                 replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
-                replyListHtml = replyListHtml + "<p>"+data[i].countReply+"</p>";
                 replyListHtml = replyListHtml + "</div>";
             });
             $("#reply_list").append(replyListHtml);
@@ -357,7 +356,7 @@
     function getReplyCount(){
 
         $.get("/community/countReply/"+nttId+"/"+bbsId, function(data, status){
-            $("#replyCount").html(data.countNum+" Comments"); /*미국*/
+            $("#replyCount").html(data.countNum+" Comments");
         })
     }
 
@@ -376,17 +375,14 @@
     }
 
     function goType(data){
-
         $("#type").val(data);
         search();
     }
 
 
     function search(){
-     //   getLoadingTime();                                                   //로딩 아이콘 호출
         $("#result").html("");
         $("#result").load("/hop/list", $("#searchForm").serialize());
-        //getResult();
     }
 
     $(document).ready(function() {
@@ -395,6 +391,7 @@
         replyList();
         $("#origin").val('');
         $("#type").val('');
+        $("#name").val('');
 
     });
 
