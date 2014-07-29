@@ -10,6 +10,7 @@
 package com.brewduck.web.common.dao;
 
 import com.brewduck.web.domain.Board;
+import com.brewduck.web.domain.FileInfo;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +30,40 @@ import java.util.List;
 @Repository("fileDao")
 public class FileDaoImpl implements FileDao {
     private static final Logger logger = LoggerFactory.getLogger(FileDaoImpl.class);
+
+    @Autowired
+    private SqlSessionTemplate sqlSessionTemplate;
+
+
+    @Override
+    public  int selectFileSeq() {
+        return sqlSessionTemplate.selectOne("Common.selectFileSeq");
+    }
+
+    @Override
+    public  int selectFileNo(Integer seq) {
+        return sqlSessionTemplate.selectOne("Common.selectFileNo",seq);
+    }
+
+    @Override
+    public  int selectFileCount(Integer seq) {
+        return sqlSessionTemplate.selectOne("Common.selectFileCount", seq);
+    }
+
+    @Override
+    public  int insertNoticeFile(FileInfo fileInfo) {
+        return sqlSessionTemplate.insert("Common.insertNoticeFile", fileInfo);
+    }
+
+    @Override
+    public  int updateNoticeFile(FileInfo fileInfo) {
+        return sqlSessionTemplate.update("Common.updateNoticeFile", fileInfo);
+    }
+
+    @Override
+    public  int deleteNoticeFile(FileInfo fileInfo) {
+        return sqlSessionTemplate.update("Common.deleteNoticeFile", fileInfo);
+    }
 
 
 

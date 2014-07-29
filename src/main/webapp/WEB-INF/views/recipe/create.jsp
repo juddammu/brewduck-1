@@ -48,7 +48,7 @@
 <form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">이름</label>
+        <label class="control-label">이름<small>Recipe Name</small></label>
     </div>
     <div class="col-md-10">
         <input type="text" class="form-control" id="name" name="name" placeholder="레시피 이름을 입력하세요. 예를들면 '유자 페일에일'" required>
@@ -74,7 +74,7 @@
 </div>
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">스타일</label>
+        <label class="control-label">스타일<small>Style</small></label>
     </div>
     <div class="col-md-10">
         <select class="form-control select2-list" id="styleSeq" name="styleSeq" data-placeholder="Select an item">
@@ -229,7 +229,7 @@
     </div>
     <div class="col-md-4">
         <div class='input-group' style='width:140px;'>
-            <input id="batchSize" name ="batchSize" type="text" class="form-control control-width-small" value="19">
+            <input id="batchSize" name ="batchSize" type="text" class="form-control control-width-small" value="19" required>
             <span class='input-group-addon'>리터(ℓ)</span>
         </div>
     </div>
@@ -238,18 +238,18 @@
     </div>
     <div class="col-md-4">
         <div class='input-group' style='width:135px;'>
-            <input id="efficiency" name ="efficiency" type="text" class="form-control control-width-small" value="65">
+            <input id="efficiency" name ="efficiency" type="text" class="form-control control-width-small" value="65" required>
             <span class='input-group-addon'>%</span>
         </div>
     </div>
 </div>
 <div class="box-head">
     <header><h4 class="text-light"><i class="fa fa-pencil fa-fw"></i> <strong>재료</strong> 구성</h4></header>
-    목표 스펙 - <small id="ogSpec" name="ogSpec"></small>
-    <small id="fgSpec" name="fgSpec"></small>
-    <small id="srmSpec" name="srmSpec"></small>
-    <small id="ibuSpec" name="ibuSpec"></small>
-    <small id="advSpec" name="advSpec"></small>
+    목표 스펙 - <small id="ogSpec" name="ogSpec"><span class='tag label label-info'>OG  </span> 1.028 ~ 1.04</small>
+    <small id="fgSpec" name="fgSpec"><span class='tag label label-info'>FG  </span> 0.998 ~ 1.008</small>
+    <small id="srmSpec" name="srmSpec"><span class='tag label label-info'>SRM  </span> 2 ~ 3</small>
+    <small id="ibuSpec" name="ibuSpec"><span class='tag label label-info'>IBU  </span> 8 ~ 12</small>
+    <small id="advSpec" name="advSpec"><span class='tag label label-info'>ADV  </span> 2.8 ~ 4.2</small>
 </div>
 <div class="form-group">
     <div class="col-md-2">
@@ -368,7 +368,7 @@
         <select class="form-control select2-list" name="misc" id="misc" data-placeholder="Select an item">
             <option>=== 선택해주세요 ===</option>
             <c:forEach items="${miscList}" var="miscList" varStatus="i">
-                <option value="${miscList.seq }" title="${miscList.koreanName }">${miscList.koreanName } (${miscList.typeKorean}) - ${miscList.useFor}</option>
+                <option value="${miscList.seq }" title="${miscList.koreanName }">${miscList.name } - ${miscList.koreanName } (${miscList.typeKorean}) - ${miscList.useFor}</option>
             </c:forEach>
         </select>
         <table id="miscListTable" name="miscListTable" class="table table-hover table-striped no-margin">

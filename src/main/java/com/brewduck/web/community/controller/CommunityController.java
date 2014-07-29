@@ -42,7 +42,7 @@ public class CommunityController {
 
         board.setBbsId(bbsId);
 
-        // 맥주 맥아 목록 조회z
+        // 맥주 맥아 목록 조회
         List<Board> list = boardService.selectBoardList(board);
         logger.info("Board List Size : {}", list.size());
         model.addAttribute("list", list);

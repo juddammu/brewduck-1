@@ -55,6 +55,7 @@
                         <!-- START INVOICE PRODUCTS -->
                         <div class="row">
                             <div class="col-md-12">
+                                <div class="table-responsive no-margin">
                                 <table class="table table-hover table-striped no-margin">
                                     <thead>
                                     <tr>
@@ -106,12 +107,14 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div><!--end .row -->
                         <!-- END INVOICE PRODUCTS -->
                         <div class="row">
                             <div class="col-md-12">
-                                <table class="table table-hover table-striped no-margin">
+                                <div class="table-responsive no-margin">
+                                    <table class="table table-hover table-striped no-margin">
                                     <thead>
 
                                     <tr>
@@ -123,8 +126,9 @@
                                     <tr>
                                         <th class="text-left">재료명</th>
                                         <th style="width:140px" class="text-right">수량</th>
-                                        <th style="width:140px" class="text-right">시간</th>
-                                        <th style="width:150px" class="text-right">형태</th>
+                                        <th style="width:120px" class="text-right">용도</th>
+                                        <th style="width:100px" class="text-right">시간</th>
+                                        <th style="width:110px" class="text-right">형태</th>
                                         <th style="width:90px" class="text-right">Alpha</th>
                                     </tr>
                                     </thead>
@@ -133,6 +137,25 @@
                                         <tr>
                                             <td>${hops.koreanName }</td>
                                             <td class="text-right">${hops.amount} g</td>
+                                            <td class="text-right">
+                                                <c:choose>
+                                                    <c:when test="${hops.hopsUse=='1'}">
+                                                        당화 - Mash
+                                                    </c:when>
+                                                    <c:when test="${hops.hopsUse=='3'}">
+                                                        끓임 - Boil
+                                                    </c:when>
+                                                    <c:when test="${hops.hopsUse=='5'}">
+                                                        드라이 홉 - Dry Hop
+                                                    </c:when>
+                                                    <c:when test="${hops.hopsUse=='6'}">
+                                                        월풀 - Whirlpool
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        -
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </td>
                                             <td class="text-right">${hops.time} min</td>
                                             <td class="text-right">
                                                 <c:choose>
@@ -153,7 +176,7 @@
                                                     </c:otherwise>
                                                 </c:choose>
                                             </td>
-                                            <td class="text-right"> </td>
+                                            <td class="text-right">${hops.alpha} %</td>
                                         </tr>
                                     </c:forEach>
                                     <tr>
@@ -164,11 +187,13 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                </div>
                             </div><!--end .col-md-12 -->
                         </div><!--end .row -->
 
                         <div class="row">
                             <div class="col-md-12">
+                                <div class="table-responsive no-margin">
                                 <table class="table table-hover border table-striped no-margin">
                                     <thead>
 
@@ -195,11 +220,13 @@
                                     </c:forEach>
                                     </tbody>
                                 </table>
+                                </div>
                             </div><!--end .col-md-12 -->
                         </div><!--end .row -->
 
                         <div class="row">
                             <div class="col-md-12">
+                                <div class="table-responsive no-margin">
                                 <table class="table table-hover border table-striped no-margin">
                                     <thead>
 
@@ -250,6 +277,7 @@
                                     </c:forEach>
                                     </tbody>
                                 </table>
+                                </div>
                             </div><!--end .col-md-12 -->
                         </div><!--end .row -->
                     </div><!--end .box-body -->

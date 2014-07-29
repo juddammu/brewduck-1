@@ -435,5 +435,56 @@
     </select>
 
 
+    <insert id="Common.insertNoticeFile" parameterType="FileInfo">
+        <!-- 글등록 -->
+        INSERT INTO FILEINFO (
+        seq
+        ,filename
+        ,file_no
+        ,filesize
+        ,real_filename
+        ,filemime
+        ) values (
+        #{seq}
+        ,#{filename}
+        ,#{fileNo}
+        ,#{filesize}
+        ,#{realFilename}
+        ,#{filemime}
+        )
+    </insert>
 
+    <update id="Common.updateNoticeFile" parameterType="FileInfo">
+        <!-- 글등록 -->
+        UPDATE FILEINFO SET
+        filename = #{filename}
+        , filesize = #{filesize}
+        WHERE seq = #{seq} AND file_no = #{fileNo}
+    </update>
+
+    <select id="Common.selectFileSeq" resultType="int">
+        SELECT
+        IFNULL(MAX(SEQ)+1,1) AS seq
+        FROM FILEINFO
+    </select>
+
+    <select id="Common.selectFileNo" parameterType="int" resultType="int">
+        SELECT
+        IFNULL(MAX(FILE_NO)+1,1) AS fileNo
+        FROM FILEINFO
+        WHERE seq = #{seq}
+    </select>
+
+    <select id="Common.selectFileCount" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+        FROM FILEINFO
+        WHERE seq = #{seq} AND del_yn='N'
+    </select>
+
+    <update id="Common.deleteNoticeFile" parameterType="FileInfo">
+        <!-- 파일삭제 -->
+        UPDATE FILEINFO SET
+        del_yn = 'Y'
+        WHERE seq = #{seq} AND file_no = #{fileNo}
+    </update>
 </mapper>

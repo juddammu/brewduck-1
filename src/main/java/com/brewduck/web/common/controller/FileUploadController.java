@@ -9,8 +9,11 @@ package com.brewduck.web.common.controller;
  */
 
 
+import com.brewduck.web.common.service.CommonService;
+import com.brewduck.web.domain.FileInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -29,10 +32,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.tools.Tool;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 @Controller
@@ -41,47 +42,63 @@ public class FileUploadController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
 
+    @Autowired
+    private CommonService commonService;
 
-
-    @RequestMapping(method=RequestMethod.GET)
-    public void fileUploadForm() {
+    @RequestMapping(value =  {"/upload/index", "/upload"}, method = RequestMethod.GET)
+    public String index(Model model) {
+        return "upload/index";
     }
 
-    @RequestMapping(method=RequestMethod.POST)
-    public String processUpload(@RequestParam MultipartFile file, Model model) throws IOException {
-        logger.warn("### 파일업로드 페이지");
-        logger.warn("File " + file.getOriginalFilename());
-        String fileName = file.getOriginalFilename();
-        file.transferTo(new File("C:/upload/"+fileName));
+    @RequestMapping(value =  "/upload/imageIndex", method = RequestMethod.GET)
+    public String imageIndex(Model model) {
 
-        model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
-        return "redirect:/profile/index";
+        return "upload/imageIndex";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/upload/insertFile", method = { RequestMethod.GET, RequestMethod.POST })
+    public FileInfo processUploadFile(@RequestParam MultipartFile file, HttpServletRequest request, Model model) throws IOException{
 
 
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public String uploadFile(HttpServletRequest request, Model model) throws IOException {
+        HttpSession session = request.getSession();
 
-        MultipartHttpServletRequest multipart = (MultipartHttpServletRequest) request;
-        MultipartFile file = multipart.getFile("Filedata");
-        String callBack = multipart.getParameter("callback_func");
-        String fileName = file.getOriginalFilename();
-        //file.transferTo(new File("C:/upload/" + fileName));
-        String convFilename = "";
+        logger.warn("### 파일업로드 페이지"+session.getServletContext().getRealPath("/"));
 
-        if(file.getSize() > 0){
-            File out = new File("C:/upload/" + fileName);
-            FileCopyUtils.copy(file.getBytes(), out);
-            convFilename = out.getName();
-            logger.info("ConvertFilename : {}", convFilename);
-            logger.info("callBack : {}", callBack);
+        FileInfo fileInfo = new FileInfo();
+
+        String fileName = file.getOriginalFilename();   //파일명
+        String filemime = file.getContentType();        //마임 타입
+        String filePath = session.getServletContext().getRealPath("/")+"/resources/upload/";   //파일 path
+        file.transferTo(new File(filePath+fileName));
+        Long fileSze = file.getSize();
+        int fileseq = 0;
+
+        fileseq = commonService.selectFileSeq();
+        fileInfo.setFileNo(fileseq);
+
+        GregorianCalendar gc = new GregorianCalendar();
+        SimpleDateFormat simDate = new SimpleDateFormat("yyyyMMddHHmmss");
+        Date nowTime = gc.getTime();
+        String[] ArrFileName = null;
+
+        if( fileName.indexOf(".") >= 0 ) {
+            ArrFileName = fileName.split("\\.");
         }
+        fileInfo.setSeq(fileseq);
+        fileInfo.setFilename(fileName);
+        fileInfo.setRealFilename(ArrFileName[0] + "_" + simDate.format(nowTime)+"."+ArrFileName[1]);
+        fileInfo.setFilesize(file.getSize());
+        fileInfo.setFileNo(1);
+        fileInfo.setFilemime(filemime);
 
-        model.addAttribute("filename", convFilename);
-        model.addAttribute("callback_func", callBack);
+        int fileInsertCount = commonService.insertNoticeFile(fileInfo);
 
-        return "/common/callback";
+//        model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
+
+
+        return fileInfo;
+
     }
 
     @RequestMapping(value = "/upload2", method = RequestMethod.POST)
