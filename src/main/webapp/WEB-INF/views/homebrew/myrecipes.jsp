@@ -76,7 +76,6 @@
                                             -
                                         </c:otherwise>
                                     </c:choose>
-
                                 </td>
                                 <td class="text-right">
                                     <a href="/homebrew/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="fa fa-pencil"></i></button></a>
