@@ -25,11 +25,11 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-6 text-left">
-                        <div data-toggle="buttons">
+                        <!--div data-toggle="buttons">
                             <label class="btn checkbox-inline btn-checkbox-primary-inverse">
-                                <!--input type="checkbox" value="default-inverse1"> 아이디 저장 -->
+                                <input type="checkbox" value="default-inverse1"> 아이디 저장
                             </label>
-                        </div>
+                        </div-->
                     </div>
                     <div class="col-xs-6 text-right">
                         <button class="btn btn-primary" type="submit"><i class="fa fa-key"></i> 로그인</button>

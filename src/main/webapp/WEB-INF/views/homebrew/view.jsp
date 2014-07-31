@@ -67,8 +67,11 @@
                                 <table class="table table-hover table-striped no-margin">
                                     <thead>
                                     <tr>
-                                        <td colspan="5">
+                                        <td colspan="2">
                                             <h3 class="text-light opacity-70">발효 재료 <small>Fermentables</small></h3>
+                                        </td>
+                                        <td style="text-align: right;" colspan="3">
+                                            <h3 class="text-light opacity-70"><small>수율: ${recipeDetail.efficiency} % &nbsp; 배치용량: ${recipeDetail.batchSize} L</small></h3>
                                         </td>
                                     </tr>
                                     <tr>
@@ -110,7 +113,7 @@
                                     <tr>
                                         <td class="text-right hidden-border"><strong></strong></td>
                                         <td class="text-right hidden-border" colspan="4">
-                                            <strong class="text-lg text-support3">  </strong>
+                                            <strong id="srmText" name="srmText" class="text-lg text-support3"> </strong>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -126,10 +129,12 @@
                                     <thead>
 
                                     <tr>
-                                        <td colspan="4">
+                                        <td colspan="2">
                                             <h3 class="text-light opacity-70">홉 <small>Hops</small></h3>
                                         </td>
-
+                                        <td style="text-align: right;" colspan="6">
+                                            <h3 class="text-light opacity-70"><small>수율: ${recipeDetail.boilTime} 분</small></h3>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th class="text-left">재료명</th>

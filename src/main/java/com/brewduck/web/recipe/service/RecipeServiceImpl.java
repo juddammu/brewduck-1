@@ -93,7 +93,7 @@ public class RecipeServiceImpl implements RecipeService {
 
         // 조회수 업데이트
         newRecipe.setUpdateId(Integer.toString(account.getId()));
-        recipeDao.updateRecipe(newRecipe);
+        //recipeDao.updateRecipe(newRecipe);
 
         return newRecipe;
     }

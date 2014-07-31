@@ -36,7 +36,7 @@
         <intercept-url pattern="/hop/**" access="permitAll" />
         <intercept-url pattern="/account/**"   access="permitAll" />
         <intercept-url pattern="/recipe/**" access="hasRole('ROLE_SIGNIN')" />
-        <intercept-url pattern="/homebrew/myrecipes" access="hasRole('ROLE_SIGNIN')" />
+        <intercept-url pattern="/homebrew/**" access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/profile/**" access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/user/profile" access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/" access="permitAll" />
