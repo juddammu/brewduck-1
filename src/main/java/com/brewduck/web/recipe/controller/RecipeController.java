@@ -257,28 +257,10 @@ public class RecipeController {
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
 
         if(insertFlag == true){
-
-            Style style = new Style();
-            style.setSeq(paramRecipe.getStyleSeq()+"");
-
-            Recipe resultRecipe = recipeService.selectRecipeDetail(paramRecipe);
-
-            /*
-            model.addAttribute("resultRecipe", resultRecipe);
-            model.addAttribute("resultStyle" , resultStyle);
-            model.addAttribute("paramRecipe" , paramRecipe);
-
-            Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
-            */
-            model.addAttribute("recipeDetail", resultRecipe);
-
-            return "homebrew/view";
+            return "redirect:/homebrew/"+recipeSeq;
         }else{
-            return "recipe/create";
+            return "redirect:/recipe/create";
         }
-
-
-
     }
 
     /**

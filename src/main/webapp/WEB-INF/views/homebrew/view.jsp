@@ -29,9 +29,17 @@
                             </div>
                             <div class="col-xs-4 text-right">
                                 <h1 class="text-light text-gray-light">
-                                <c:if test="${recipeDetail.type=='1'}">
-                                    <small>완전 곡물 All Grain</small>
-                                </c:if>
+                                <c:choose>
+                                    <c:when test="${recipeDetail.type=='1'}">
+                                        <small>완전 곡물 - All Grain</small>
+                                    </c:when>
+                                    <c:when test="${recipeDetail.type=='2'}">
+                                        <small>부분곡물 - Partial Mash</small>
+                                    </c:when>
+                                    <c:when test="${recipeDetail.type=='3'}">
+                                        <small>원액 캔 - Extract</small>
+                                    </c:when>
+                                </c:choose>
                                 </h1>
                             </div>
                         </div>
