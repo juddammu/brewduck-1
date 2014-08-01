@@ -219,7 +219,7 @@
 			 )
 			VALUES
 			(
-			#{bbsType},
+			#{bbsId},
 			#{nttNo},
 			#{nttSj},
 			#{nttCn},

@@ -24,8 +24,8 @@
 <div class="col-lg-12">
 <div class="box">
 <div class="box-body">
-<form class="form-horizontal" role="form" id="notice" method="POST" action="/admin/notice/insertNotice" enctype="multipart/form-data">
-<input type="hidden" name="seq" id="seq" value="${noticeView.seq}"/>
+<form:form id="notice" class="form-horizontal" role="form" method="POST" enctype="multipart/form-data"  action="/community/write" modelAttribute="board">
+<input type="text" name="bbsId" id="bbsId" value="${bbsId}"/>
 <input type="hidden" name="fileSeq" id="fileSeq" value="${noticeView.fileSeq}"/>
 <input type="hidden" name="fileNo" id="fileNo" value="${noticeView.fileNo}"/>
 <input type="hidden" name="delfile" id="delfile" />
@@ -34,21 +34,7 @@
         <label for="title" class="control-label">제목</label>
     </div>
     <div class="col-lg-11 col-md-10 col-sm-9">
-        <input type="text" name="title" id="title" class="form-control" placeholder="제목" value="${noticeView.title}">
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-lg-1 col-md-2 col-sm-3">
-        <label class="control-label">
-            공지여부
-        </label>
-    </div>
-    <div class="col-lg-11 col-md-10 col-sm-9">
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" id="topYn" name="topYn" value="Y" ${noticeView.topYn}> 공지
-            </label>
-        </div>
+        <input type="text" name="nttSj" id="nttSj" class="form-control" placeholder="제목" value="${noticeView.title}">
     </div>
 </div>
 <div class="form-group">
@@ -148,22 +134,22 @@
 <ul class="tx-bar tx-bar-left tx-group-font">
 
     <li class="tx-list">
-        <div unselectable="on" class="		 tx-btn-lbg 	tx-bold" id="tx_bold">
+        <div unselectable="on" class="tx-btn-lbg 	tx-bold" id="tx_bold">
             <a href="javascript:;" class="tx-icon" title="굵게 (Ctrl+B)">굵게</a>
         </div>
     </li>
     <li class="tx-list">
-        <div unselectable="on" class="		 tx-btn-bg 	tx-underline" id="tx_underline">
+        <div unselectable="on" class="tx-btn-bg 	tx-underline" id="tx_underline">
             <a href="javascript:;" class="tx-icon" title="밑줄 (Ctrl+U)">밑줄</a>
         </div>
     </li>
     <li class="tx-list">
-        <div unselectable="on" class="		 tx-btn-bg 	tx-italic" id="tx_italic">
+        <div unselectable="on" class="tx-btn-bg 	tx-italic" id="tx_italic">
             <a href="javascript:;" class="tx-icon" title="기울임 (Ctrl+I)">기울임</a>
         </div>
     </li>
     <li class="tx-list">
-        <div unselectable="on" class="		 tx-btn-bg 	tx-strike" id="tx_strike">
+        <div unselectable="on" class="tx-btn-bg 	tx-strike" id="tx_strike">
             <a href="javascript:;" class="tx-icon" title="취소선 (Ctrl+D)">취소선</a>
         </div>
     </li>
@@ -488,7 +474,7 @@
     <button type="button" onclick='saveContent();' class="btn btn-primary">등록</button>
     <button type="button" onclick='loadContent();' class="btn btn-default">Reset</button>
 </div>
-</form>
+</form:form>
 </div><!--end .box-body -->
 </div><!--end .box -->
 </div><!--end .col-lg-12 -->
@@ -612,7 +598,7 @@
 
             // 본문 내용을 필드를 생성하여 값을 할당하는 부분
             var textarea = document.createElement('textarea');
-            textarea.name = 'contents';
+            textarea.name = 'nttCn';
             textarea.value = content;
             form.createField(textarea);
 

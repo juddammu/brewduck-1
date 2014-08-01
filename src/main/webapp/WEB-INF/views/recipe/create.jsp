@@ -398,7 +398,7 @@
 </div>
 <div class="form-footer col-md-12 align">
     <button type="submit" class="btn btn-primary" id="insertRecipe" name="insertRecipe">완료</button>
-    <button type="button" class="btn btn-info" id="checkRecipe" name="checkRecipe">정합성 체크</button>
+    <!--button type="button" class="btn btn-info" id="checkRecipe" name="checkRecipe">정합성 체크</button-->
 </div>
 </form:form>
 </div><!--end .box-body -->

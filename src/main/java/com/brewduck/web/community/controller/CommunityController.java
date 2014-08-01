@@ -51,10 +51,50 @@ public class CommunityController {
     }
 
     @RequestMapping(value = "/{bbsId}/write", method = RequestMethod.GET)
-    public String writeBoardMain(@PathVariable("bbsId") Integer bbsId, Model model) {
+    public String writeBoardIndex(@PathVariable("bbsId") Integer bbsId, Model model) {
+
+        model.addAttribute("bbsId", bbsId);
 
         return "community/write";
     }
+
+    @RequestMapping(value = "/write", method = RequestMethod.POST)
+    public String writeBoardMain(@ModelAttribute("board") Board board,
+                                 BindingResult result,
+                                 RedirectAttributes redirectAttributes) {
+
+        logger.info("Write getBbsId  "+ board.getBbsId());
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+        board.setBbsId(board.getBbsId());
+        board.setNttNo(1);
+        board.setSortOrder(1);
+        board.setUseAt("Y");
+        board.setAnswerAt("Y");
+        board.setInsertId(name);
+
+        int insertCount = boardService.writeBoardArticle(board);
+
+
+        logger.info(" @@@ " + board.getBbsNm());
+
+        /*
+            #{bbsType},
+			#{nttNo},
+			#{nttSj},
+			#{nttCn},
+			#{sortOrder},
+            #{useAt},
+			#{answerAt},
+			#{atchFileId},
+			#{insertId},
+         */
+
+        return "community/write";
+    }
+
 
     @ResponseBody
     @RequestMapping(value = "/writeReply", method = RequestMethod.POST)
