@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!doctype html >
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -556,11 +560,12 @@
     <!-- start:col -->
     <div class="col-sm-4">
 
+        <c:forEach items="${new_post}" var="new_post">
         <article class="linkbox cat-sports">
             <a href="#">
                 <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
                 <div class="overlay">
-                    <h3>Levy wins first European Tour title in China</h3>
+                    <h3>${new_post.nttSj}</h3>
                 </div>
             </a>
             <a href="#" class="theme">
@@ -568,29 +573,7 @@
             </a>
         </article>
 
-        <article class="linkbox cat-sports">
-            <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
-                <div class="overlay">
-                    <h3>Barkley and Shaq speak on on Donald Sterling</h3>
-                </div>
-            </a>
-            <a href="#" class="theme">
-                Sport
-            </a>
-        </article>
-
-        <article class="linkbox cat-sports">
-            <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
-                <div class="overlay">
-                    <h3>Ranking the top 100 prospects in the NFL draft</h3>
-                </div>
-            </a>
-            <a href="#" class="theme">
-                Sport
-            </a>
-        </article>
+        </c:forEach>
 
     </div>
     <!-- end:col -->
@@ -934,7 +917,7 @@
         <div class="col-xs-4">
             <!-- start:article.linkbox -->
             <article>
-                <h3><a href="#">Maecenas in egestas ligula, eu feugiat lectus</a></h3>
+                <h3><a href="#">홉</a></h3>
                 <span class="published">March 18, 2014</span>
                 <span class="text">Aliquam sollicitudin, enim sit amet hendrerit consequat, velit orci posuere elit, eu facilisis lacus odio ac nunc.</span>
             </article>
@@ -1291,24 +1274,26 @@
     <section class="section-news news-layout">
         <!-- start:header -->
         <header>
-            <h2><a href="#">Latest news</a></h2>
+            <h2><a href="#">최근 뉴스</a></h2>
             <span class="borderline"></span>
         </header>
         <!-- end:header -->
 
         <!-- start:row -->
         <div class="row">
+            <c:forEach items="${new_post}" var="new_post">
             <!-- start:col -->
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                    <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
+                    <h3><a href="#">${new_post.nttSj}</a></h3>
+                    <span class="text">${new_post.nttSj}</span>
                     <span class="published">February 18, 2014</span>
                 </article>
                 <!-- end:article -->
             </div>
             <!-- end:col -->
+            </c:forEach>
 
             <!-- start:col -->
             <div class="col-xs-4 col-sm-12">
@@ -1558,15 +1543,19 @@
 <section class="module-quote">
     <!-- start:header -->
     <header>
-        <h2>Weekly quote</h2>
+        <h2>${hop.koreanName} - ${hop.alpha}%</h2>
         <span class="borderline"></span>
     </header>
     <!-- end:header -->
 
     <!-- start:blockquote-quote -->
     <blockquote>
-        <p>Resentment and complaint are appropriate neither for oneself nor others.</p>
-        <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        <p>${hop.notes}</p>
+        <footer>
+            <c:forEach items="${hopAromaList}" var="hopAromaList">
+                <cite title="Source Title">${hopAromaList.aromaName} /</cite>
+            </c:forEach>
+        </footer>
     </blockquote>
     <!-- end:blockquote-quote -->
 </section>
@@ -1667,7 +1656,7 @@
 <section class="module-photos">
     <!-- start:header -->
     <header>
-        <h2>Weekly photos</h2>
+        <h2>랜덤 홉</h2>
         <span class="borderline"></span>
     </header>
     <!-- end:header -->
