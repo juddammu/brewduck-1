@@ -202,7 +202,7 @@
         </select>
     </div>
 </div>
-<div class="form-group">
+<!--div class="form-group">
     <div class="col-md-2">
         <label class="control-label">커버 이미지</label>
     </div>
@@ -210,7 +210,7 @@
         <input name="file" type="file" multiple />
         <p class="help-block">이미지 사이즈는 270x270으로 올려주세요.</p>
     </div>
-</div>
+</div-->
 <div class="form-group">
     <div class="col-md-2">
         <label class="control-label">레시피 컨셉 설명</label>

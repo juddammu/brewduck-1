@@ -43,7 +43,7 @@
                b.name             name
               ,b.korean_name      koreanName
               ,b.version          version
-              ,b.alpha            alpha
+              ,a.alpha            alpha
               ,a.amount           amount
               ,a.hops_use         hopsUse
               ,a.time             time

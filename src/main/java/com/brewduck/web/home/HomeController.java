@@ -71,14 +71,25 @@ public class HomeController {
         //return "blank";
     }
 
-    @RequestMapping(value = "/sample", method = RequestMethod.GET)
+    @RequestMapping(value = "/new_home", method = RequestMethod.GET)
     public String sample(Model model,
                        HttpServletRequest request) {
         Account account = AuthenticationUtils.getUser();
 
-        model.addAttribute("account", account);
+        Board board = new Board();
 
-        return "sample";
+        Hop hop = hopService.selectRandomHop();
+        List<Board> list = boardService.getNewPost(board);
+        List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
+
+        logger.info("New Post List Size:", list.size());
+
+        model.addAttribute("account", account);
+        model.addAttribute("new_post", list);
+        model.addAttribute("hop", hop);
+        model.addAttribute("hopAromaList", hopAromaList);
+
+        return "new_home";
     }
 
     @RequestMapping(value = "/default", method = RequestMethod.GET)

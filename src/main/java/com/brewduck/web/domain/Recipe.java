@@ -40,7 +40,7 @@ public class Recipe implements Serializable {
     // 레시피 보조 양조자
     private String asstBrewer;
     // 레시피 배치 완성 사이즈
-    private Integer batchSize;
+    private Double batchSize;
     // 레시피 워트 보일링시 사이즈
     private Integer boilSize;
     // 레시피 워트 보일링 시간 (분)
@@ -52,7 +52,7 @@ public class Recipe implements Serializable {
     //레시피 몰트 구성 일련번호
     private Integer recipeFermantableSeq;
     //레시피 몰트 수량
-    private Integer recipeFermantableAmount;
+    private Double recipeFermantableAmount;
     //레시피 몰트 사용방법
     private String recipeFermantableUse;
     //발효재료 타입
@@ -60,7 +60,7 @@ public class Recipe implements Serializable {
 
     private Integer[] recipeFermantableSeqs;
     //레시피 몰트 수량
-    private Integer[] recipeFermantableAmounts;
+    private Double[] recipeFermantableAmounts;
     //레시피 몰트 사용방법
     private String[] recipeFermantableUses;
 
@@ -71,7 +71,7 @@ public class Recipe implements Serializable {
     //홉 일련번호
     private Integer recipeHopSeq;
     //홉 수량
-    private Integer recipeHopAmount;
+    private Double recipeHopAmount;
     //홉 사용용도
     private String recipeHopUse;
     //홉사용시간
@@ -83,7 +83,7 @@ public class Recipe implements Serializable {
 
     private Integer[] recipeHopSeqs;
     //홉 수량
-    private Integer[] recipeHopAmounts;
+    private Double[] recipeHopAmounts;
     //홉 사용용도
     private String[] recipeHopUses;
 
@@ -320,12 +320,8 @@ public class Recipe implements Serializable {
         this.recipeHopSeq = recipeHopSeq;
     }
 
-    public Integer getRecipeHopAmount() {
+    public Double getRecipeHopAmount() {
         return recipeHopAmount;
-    }
-
-    public void setRecipeHopAmount(Integer recipeHopAmount) {
-        this.recipeHopAmount = recipeHopAmount;
     }
 
     public String getRecipeHopUse() {
@@ -336,8 +332,16 @@ public class Recipe implements Serializable {
         this.recipeHopUse = recipeHopUse;
     }
 
+    public void setRecipeHopAmount(Double recipeHopAmount) {
+        this.recipeHopAmount = recipeHopAmount;
+    }
+
     public Integer getRecipeHopTime() {
         return recipeHopTime;
+    }
+
+    public void setRecipeHopAmounts(Double[] recipeHopAmounts) {
+        this.recipeHopAmounts = recipeHopAmounts;
     }
 
     public void setRecipeHopTime(Integer recipeHopTime) {
@@ -360,13 +364,11 @@ public class Recipe implements Serializable {
         this.recipeHopSeqs = recipeHopSeqs;
     }
 
-    public Integer[] getRecipeHopAmounts() {
+    public Double[] getRecipeHopAmounts() {
         return recipeHopAmounts;
     }
 
-    public void setRecipeHopAmounts(Integer[] recipeHopAmounts) {
-        this.recipeHopAmounts = recipeHopAmounts;
-    }
+
 
     public String[] getRecipeHopUses() {
         return recipeHopUses;
@@ -408,11 +410,11 @@ public class Recipe implements Serializable {
         this.recipeFermantableSeqs = recipeFermantableSeqs;
     }
 
-    public Integer[] getRecipeFermantableAmounts() {
+    public Double[] getRecipeFermantableAmounts() {
         return recipeFermantableAmounts;
     }
 
-    public void setRecipeFermantableAmounts(Integer[] recipeFermantableAmounts) {
+    public void setRecipeFermantableAmounts(Double[] recipeFermantableAmounts) {
         this.recipeFermantableAmounts = recipeFermantableAmounts;
     }
 
@@ -440,11 +442,11 @@ public class Recipe implements Serializable {
         this.recipeFermantableSeq = recipeFermantableSeq;
     }
 
-    public Integer getRecipeFermantableAmount() {
+    public Double getRecipeFermantableAmount() {
         return recipeFermantableAmount;
     }
 
-    public void setRecipeFermantableAmount(Integer recipeFermantableAmount) {
+    public void setRecipeFermantableAmount(Double recipeFermantableAmount) {
         this.recipeFermantableAmount = recipeFermantableAmount;
     }
 
@@ -616,7 +618,8 @@ public class Recipe implements Serializable {
      *
      * @return 레시피 배치 완성 사이즈
      */
-    public Integer getBatchSize() {
+
+    public Double getBatchSize() {
         return batchSize;
     }
 
@@ -625,7 +628,8 @@ public class Recipe implements Serializable {
      *
      * @param batchSize 레시피 배치 완성 사이즈
      */
-    public void setBatchSize(Integer batchSize) {
+
+    public void setBatchSize(Double batchSize) {
         this.batchSize = batchSize;
     }
 

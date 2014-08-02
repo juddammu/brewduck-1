@@ -157,14 +157,17 @@ public class RecipeController {
     }
 
     @RequestMapping(value = "/insertRecipe", method = RequestMethod.POST)
-    public String join(@RequestParam MultipartFile file, @ModelAttribute("recipe") Recipe paramRecipe,
+    public String join(@ModelAttribute("recipe") Recipe paramRecipe,
                        Model model,
                        BindingResult result,
                        RedirectAttributes redirectAttributes) {
-
+/*
         if(file.getSize() > 0){
             String fileName = file.getOriginalFilename();
         }
+*/
+        LOGGER.info("111 ", paramRecipe.getRecipeFermantableAmounts());
+
 
         Account account = AuthenticationUtils.getUser();
 
@@ -173,7 +176,7 @@ public class RecipeController {
         paramRecipe.setBoilSize(19);
         paramRecipe.setBoilTime(60);
         paramRecipe.setInsertId(account.getId() + "");
-        paramRecipe.setCoverImageFile(file);
+        //paramRecipe.setCoverImageFile(file);
 
         Recipe paramRecipeFermantable = new Recipe();
         Recipe paramRecipeHop = new Recipe();

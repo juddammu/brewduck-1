@@ -25,7 +25,7 @@
 <div class="box">
 <div class="box-body">
 <form:form id="notice" class="form-horizontal" role="form" method="POST" enctype="multipart/form-data"  action="/community/write" modelAttribute="board">
-<input type="text" name="bbsId" id="bbsId" value="${bbsId}"/>
+<input type="hidden" name="bbsId" id="bbsId" value="${bbsId}"/>
 <input type="hidden" name="fileSeq" id="fileSeq" value="${noticeView.fileSeq}"/>
 <input type="hidden" name="fileNo" id="fileNo" value="${noticeView.fileNo}"/>
 <input type="hidden" name="delfile" id="delfile" />

@@ -88,13 +88,13 @@
 /* ==========================================================================
    Global
    ========================================================================== */
-
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /**
  * Body
  */
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
     color: #5c5c5c;
     background: #fff;
     padding: 0 0 20px 0;
@@ -204,7 +204,7 @@ article {
     position: absolute;
     top: 10px;
     left: 0;
-    font: 700 13px/25px 'Roboto Condensed', sans-serif;
+    font: 700 13px/25px 'Nanum Gothic', sans-serif;
     color: #fff;
     text-transform: uppercase;
     background: #444;
@@ -927,7 +927,7 @@ body.nav-expanded #page-header-mobile nav {
 }
 
 #header-navigation-sub nav ul li a {
-    font: 700 14px/50px 'Roboto Condensed', sans-serif;
+    font: 700 14px/50px 'Nanum Gothic', sans-serif;
     text-transform: uppercase;
     color: #fff;
 }
@@ -1143,7 +1143,7 @@ body.nav-expanded #page-header-mobile nav {
 }
 
 #page-content header h2 {
-    font: 400 17px/17px 'Roboto Condensed', sans-serif;
+    font: 400 17px/17px 'Nanum Gothic', sans-serif;
     color: #444;
     text-transform: uppercase;
     margin: 0 0 15px 0;
@@ -1166,15 +1166,15 @@ body.nav-expanded #page-header-mobile nav {
  */
 
 article.linkbox h2 {
-    font: 400 24px/30px 'Roboto Condensed', sans-serif;
+    font: 400 24px/30px 'Nanum Gothic', sans-serif;
 }
 
 article.linkbox h3 {
-    font: 700 15px/18px 'Roboto Condensed', sans-serif;
+    font: 700 15px/18px 'Nanum Gothic', sans-serif;
 }
 
 article.thumb h3 {
-    font: 700 16px/20px 'Roboto Condensed', sans-serif;
+    font: 700 16px/20px 'Nanum Gothic', sans-serif;
     margin: 0 0 10px 0;
 }
 
@@ -1210,7 +1210,7 @@ article span.published-time {
 @media (min-width: 992px) {
 
     article.linkbox h2 {
-        font: 400 30px/36px 'Roboto Condensed', sans-serif;
+        font: 400 30px/36px 'Nanum Gothic', sans-serif;
     }
 
 }
@@ -1422,13 +1422,13 @@ article.review img {
 }
 
 #article-post header h1 {
-    font: 400 30px/36px 'Roboto Condensed', sans-serif;
+    font: 400 30px/36px 'Nanum Gothic', sans-serif;
     color: #222;
     margin: 0;
 }
 
 #article-post h2 {
-    font: 400 24px/30px 'Roboto Condensed', sans-serif;
+    font: 400 24px/30px 'Nanum Gothic', sans-serif;
     color: #222;
     margin: 25px 0 15px 0;
 }
@@ -1539,7 +1539,7 @@ article.review img {
 }
 
 #article-post .highlights h4 {
-    font: 400 17px/17px 'Roboto Condensed', sans-serif;
+    font: 400 17px/17px 'Nanum Gothic', sans-serif;
     color: #444;
     text-transform: uppercase;
     margin: 0 0 15px 0;
@@ -1645,7 +1645,7 @@ article.review img {
 
 #article-post footer h3 {
     display: inline-block;
-    font: 400 20px/24px 'Roboto Condensed', sans-serif;
+    font: 400 20px/24px 'Nanum Gothic', sans-serif;
     color: #222;
     margin: 0 30px 0 0;
 }
@@ -1709,7 +1709,7 @@ article.review img {
 }
 
 #comments-list li .comment-text header {
-    font: 400 14px/24px 'Roboto Condensed', sans-serif;
+    font: 400 14px/24px 'Nanum Gothic', sans-serif;
     color: #999;
     margin: 0 0 10px 0;
 }
@@ -2123,7 +2123,7 @@ a:hover .zoomix {
 }
 
 .module-timeline article h3 {
-    font: 700 15px/18px 'Roboto Condensed', sans-serif;
+    font: 700 15px/18px 'Nanum Gothic', sans-serif;
     margin: 0;
 }
 
@@ -2249,7 +2249,7 @@ a:hover .zoomix {
 }
 
 #sidebar .module-news article h3 {
-    font: 700 15px/18px 'Roboto Condensed', sans-serif;
+    font: 700 15px/18px 'Nanum Gothic', sans-serif;
     margin: 0;
     max-height: 54px;
     overflow: hidden;

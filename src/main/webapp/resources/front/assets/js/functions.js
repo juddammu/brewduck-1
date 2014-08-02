@@ -54,7 +54,7 @@
     });
     
     //Contact form
-    var contactForm = $('#contactForm');
+/*    var contactForm = $('#contactForm');
     var successForm = $('.alert-success', contactForm);
     var errorForm = $('.alert-danger', contactForm);
     
@@ -64,5 +64,5 @@
             errorForm.hide();            
         }
     });
-    
+    */
 })(jQuery);
