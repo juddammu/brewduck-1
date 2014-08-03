@@ -46,6 +46,7 @@
 <input id="resultSrm" name ="resultSrm" type="hidden" >
 
 <form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" name="insert" method="POST" enctype="multipart/form-data"  action="/recipe/insertRecipe" modelAttribute="paramRecipe">
+<input id ="notes" name ="notes" type="hidden">
 <div class="form-group">
     <div class="col-md-2">
         <label class="control-label">이름<small>Recipe Name</small></label>
@@ -216,7 +217,7 @@
         <label class="control-label">레시피 컨셉 설명</label>
     </div>
     <div class="col-md-10">
-        <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
+        <textarea id="note" name="note" class="form-control" onchange="getLineFeed()" rows="3"></textarea>
     </div>
 </div>
 
@@ -1056,7 +1057,7 @@
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<select id='recipeHopUses' name ='recipeHopUses' class='form-control' required> ";
-                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3' selected>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='1'>당화 - Mash</option><option value='6'>월풀 - Whirlpool</option>";
+                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3' selected>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='1'>당화 - First Wort Hopping</option><option value='6'>월풀 - Whirlpool</option>";
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
@@ -1121,5 +1122,10 @@
 
 
         });
+
+    function getLineFeed(){
+        var note = $("#note").val().replace(/\n/g, '<br>');
+        $("#notes").val(note);
+    }
     </script>
 </content>

@@ -52,7 +52,7 @@
                                 <div class="well">
                                     <div class="clearfix">
                                         <div class="pull-left"> 컨셉 : </div>
-                                        <div class="pull-right"> ${recipeDetail.notes} </div>
+                                        <div class="pull-right text-left"> ${recipeDetail.notes} </div>
                                     </div>
                                 </div>
                             </div><!--end .col-md-4 -->
@@ -133,7 +133,7 @@
                                             <h3 class="text-light opacity-70">홉 <small>Hops</small></h3>
                                         </td>
                                         <td style="text-align: right;" colspan="6">
-                                            <h3 class="text-light opacity-70"><small>수율: ${recipeDetail.boilTime} 분</small></h3>
+                                            <h3 class="text-light opacity-70"><small>끓임시간: ${recipeDetail.boilTime} 분</small></h3>
                                         </td>
                                     </tr>
                                     <tr>
