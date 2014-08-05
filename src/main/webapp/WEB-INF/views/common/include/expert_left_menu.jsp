@@ -71,10 +71,16 @@
                     <i class="fa fa-bug fa-fw"></i><span class="title">버그제보 및 기능제안</span>
                 </a>
             </li><!--end /menu-item -->
-            <li>
-                <a href="/board/main/9">
-                    <i class="fa fa-bug fa-fw"></i><span class="title">Q&A게시판</span>
+            <li class="menu">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-book fa-fw"></i><span class="title">커뮤니티</span> <span class="expand-sign">+</span>
                 </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="/board/main/1" >공지사항</a></li>
+                    <li><a href="/board/main/3" >자유게시판</a></li>
+                    <li><a href="/board/main/9" >Q&A게시판</a></li>
+                </ul><!--end /submenu -->
             </li><!--end /menu-item -->
         </ul><!--end .main-menu -->
         <!-- END MAIN MENU -->

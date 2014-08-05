@@ -127,8 +127,10 @@
                                                 <%
                                                     if (AuthenticationUtils.isAuthenticated() == true) {
                                                 %>
-                                                <div class="form-footer">
-                                                    <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
+                                                    </div>
                                                 </div>
                                                 <%
                                                 }else {
