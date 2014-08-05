@@ -1,3 +1,4 @@
+<%@ page import="java.awt.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="sidebar">
     <div class="sidebar-back"></div>
@@ -26,7 +27,7 @@
         <ul class="main-menu">
             <!-- Menu Dashboard -->
             <!-- Menu UI -->
-            <li>
+            <li class="menu">
                 <a href="javascript:void(0);">
                     <i class="fa fa-flask fa-fw"></i><span class="title">재료 데이터베이스</span> <span class="expand-sign">+</span>
                 </a>
@@ -70,8 +71,16 @@
                     <i class="fa fa-bug fa-fw"></i><span class="title">버그제보 및 기능제안</span>
                 </a>
             </li><!--end /menu-item -->
+            <li>
+                <a href="/board/main/9">
+                    <i class="fa fa-bug fa-fw"></i><span class="title">Q&A게시판</span>
+                </a>
+            </li><!--end /menu-item -->
         </ul><!--end .main-menu -->
         <!-- END MAIN MENU -->
 
     </div>
 </div><!--end #sidebar-->
+<%
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+%>

@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -203,6 +205,55 @@ public class BoardController {
 
         return "board/writeBoard";
     }
+
+    @RequestMapping(value = "/write", method = RequestMethod.POST)
+    public String writeBoardIndex(HttpServletRequest request, Model model,Board board) {
+        logger.info("write board!!!!!!!!!!!!!!!!!!");
+        Integer bbsId = Integer.parseInt(request.getParameter("bbsId"));
+        board.setBbsId(bbsId);
+        Board writeBoard = boardService.selectBoardName(board);
+        model.addAttribute("writeBoard", writeBoard);
+
+        return "board/write";
+    }
+
+    @RequestMapping(value = "/writeArticle", method = RequestMethod.POST)
+    public String writeBoardMain(@ModelAttribute("board") Board board,
+                                 BindingResult result,
+                                 RedirectAttributes redirectAttributes) {
+
+        logger.info("Write getBbsId  "+ board.getBbsId());
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+        Integer bbsId = board.getBbsId();
+        board.setBbsId(bbsId);
+        board.setNttNo(1);
+        board.setSortOrder(1);
+        board.setUseAt("Y");
+        board.setAnswerAt("Y");
+        board.setInsertId(name);
+
+        int insertCount = boardService.writeBoardArticle(board);
+
+
+        logger.info(" @@@ " + board.getBbsNm());
+
+        /*
+            #{bbsType},
+			#{nttNo},
+			#{nttSj},
+			#{nttCn},
+			#{sortOrder},
+            #{useAt},
+			#{answerAt},
+			#{atchFileId},
+			#{insertId},
+         */
+
+        return "redirect:/board/main/"+bbsId;
+    }
+
 
     /**
      * <pre>

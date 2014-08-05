@@ -53,15 +53,17 @@
         <pattern>/misc/</pattern>
         <pattern>/misc/*/</pattern>
         <pattern>/misc/*/*</pattern>
+        <pattern>/board/main/*</pattern>
+        <pattern>/board/detail/*</pattern>
+        <pattern>/board/write</pattern>
+        <pattern>/board/*/*</pattern>
     </decorator>
 
     <decorator name="full-content" page="full-content.jsp">
 
         <pattern>/board/</pattern>
-        <pattern>/board/main/*</pattern>
         <pattern>/board/addBoard</pattern>
         <pattern>/board/writeBoard</pattern>
-        <pattern>/board/detail/*</pattern>
         <pattern>/board/editBoard/*</pattern>
         <pattern>/board/writeReply*</pattern>
 
