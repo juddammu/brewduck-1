@@ -563,7 +563,7 @@
         <c:forEach items="${new_post}" var="new_post">
         <article class="linkbox cat-sports">
             <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/upload/${new_post.atchFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
                 <div class="overlay">
                     <h3>${new_post.nttSj}</h3>
                 </div>
@@ -1053,7 +1053,7 @@
 <section class="section-full top-padding cat-reviews news-layout news-lay-2">
 
     <header>
-        <h2>Check out our latest reviews</h2>
+        <h2>레시피 리뷰</h2>
         <span class="borderline"></span>
     </header>
 

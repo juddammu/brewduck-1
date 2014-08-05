@@ -74,6 +74,7 @@ public class HomeController {
     @RequestMapping(value = "/new_home", method = RequestMethod.GET)
     public String sample(Model model,
                        HttpServletRequest request) {
+
         Account account = AuthenticationUtils.getUser();
 
         Board board = new Board();
