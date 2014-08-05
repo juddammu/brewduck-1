@@ -345,17 +345,19 @@
 
     <select id="getNewPost" resultType="Board">
         SELECT
-        NTT_ID      nttId,
-        NTT_SJ      nttSj,
-        NTT_CN      nttCn,
-        INSERT_ID   insertId,
-        INSERT_DATE insertDate
-        from BOARD
+        A.NTT_ID      nttId,
+        A.NTT_SJ      nttSj,
+        A.NTT_CN      nttCn,
+        A.ATCH_FILE_ID atchFileId,
+        (SELECT B.FILENAME FROM FILEINFO B WHERE A.ATCH_FILE_ID = B.SEQ) atchFileName,
+        A.INSERT_ID   insertId,
+        A.INSERT_DATE insertDate
+        from BOARD A
        WHERE 1 = 1
         <if test="bbsId != null">
-            AND BBS_ID = #{bbsId}
+            AND A.BBS_ID = #{bbsId}
         </if>
-        order by INSERT_DATE
+        order by A.INSERT_DATE
         DESC limit 3;
     </select>
 

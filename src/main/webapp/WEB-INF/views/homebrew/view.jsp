@@ -2,10 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<section>
+<section id="main_data" >
     <ol class="breadcrumb">
-        <li><a href="../../html/.html">home</a></li>
-        <li class="active">Invoice</li>
+        <li><a href="#">홈</a></li>
+        <li class="active">레시피 상세</li>
     </ol>
     <div class="section-header">
         <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> ${recipeDetail.name} <small>${recipeDetail.styleName}</small></h3>
@@ -17,9 +17,18 @@
                     <div class="box-head">
                         <div class="tools">
                             <div class="btn-group">
+                                <a class="btn btn-warning" id="clipboard-btn" href="javascript:;"><i class="fa fa-copy"></i> 클립보드</a>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn btn-warning" id="kakao-link-btn" href="javascript:;"><i class="fa fa-link"></i> 카톡으로</a>
+                            </div>
+                            <div class="btn-group">
                                 <a class="btn btn-primary" href="javascript:void(0);" onclick="javascript:window.print();"><i class="fa fa-print"></i> 출력</a>
                             </div>
                         </div>
+                        <div class="clip_button">Copy To Clipboard</div>
+                        <div class="clip_button">Copy This Too!</div>
+
                     </div>
                     <div class="box-body style-white">
                         <!-- START INVOICE HEADER -->
@@ -300,7 +309,48 @@
     </div><!--end .section-body -->
 </section>
 <content tag="local_script">
+    <script src="/resources/expert/js/kakao/kakao-1.0.11.min.js"></script>
+    <script src="/resources/expert/js/clipboard/ZeroClipboard.js"></script>
     <script>
+
+        var client = new ZeroClipboard( $('.clip_button') );
+
+        client.on( 'ready', function(event) {
+            // console.log( 'movie is loaded' );
+
+            client.on( 'copy', function(event) {
+                alert();
+                event.clipboardData.setData('text/plain', $("#main_data").html());
+            } );
+
+            client.on( 'aftercopy', function(event) {
+                console.log('Copied text to clipboard: ' + event.data['text/plain']);
+            } );
+        } );
+
+        client.on( 'error', function(event) {
+            // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+            ZeroClipboard.destroy();
+        } );
+
+
+        Kakao.init('10b327030a57e1ca3b46585655ac5dd2');
+
+        // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+        Kakao.Link.createTalkLinkButton({
+            container: '#kakao-link-btn',
+            label: '카톡 테스트중요',
+            image: {
+                src: 'http://dn.api1.kage.kakao.co.kr/14/dn/btqaWmFftyx/tBbQPH764Maw2R6IBhXd6K/o.jpg',
+                width: '300',
+                height: '200'
+            },
+            webButton: {
+                text: '${recipeDetail.name}',
+                url: 'http://www.brewduck.com/homebrew/${recipeDetail.seq}' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+            }
+        });
+
         $(document).ready(function() {
           //  alert(${recipeDetail.batchSize});
         });

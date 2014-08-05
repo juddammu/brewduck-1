@@ -65,6 +65,9 @@ public class Board{
     private String  ntcrNm;
     //게시물 첨부파일 아이디
     private String  atchFileId;
+
+    private String  atchFileName;
+
     //원글 게시판 번호
     private int answerNo;
     //작성자 ID
@@ -108,6 +111,14 @@ public class Board{
     private Integer insertFlag;
 
     private String countNum;
+
+    public String getAtchFileName() {
+        return atchFileName;
+    }
+
+    public void setAtchFileName(String atchFileName) {
+        this.atchFileName = atchFileName;
+    }
 
     public Integer getInsertFlag() {
         return insertFlag;
