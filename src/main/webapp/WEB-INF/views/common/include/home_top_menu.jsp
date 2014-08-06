@@ -100,54 +100,54 @@
                                 <div class="box closed">
                                     <h6 class="title">라거</h6>
                                     <ul>
-                                        <li><a href="#">LIGHT LAGER</a></li>
-                                        <li><a href="#">BOCK</a></li>
-                                        <li><a href="#">필스너 <span class="item-new bg-warning">Wow</span></a></li>
+                                        <li><a href="/recipe/main/1">LIGHT LAGER</a></li>
+                                        <li><a href="/recipe/main/5">BOCK</a></li>
+                                        <li><a href="/recipe/main/2">필스너 <span class="item-new bg-warning">Wow</span></a></li>
                                     </ul>
                                 </div><!-- .box -->
 
                                 <div class="box closed">
                                     <h6 class="title">에일</h6>
                                     <ul>
-                                        <li><a href="#">미국식 에일</a></li>
-                                        <li><a href="#">영국식 브라운 에일</a></li>
-                                        <li><a href="#">세종</a></li>
+                                        <li><a href="/recipe/main/10">미국식 에일</a></li>
+                                        <li><a href="/recipe/main/11">영국식 브라운 에일</a></li>
+                                        <li><a href="/recipe/main/16">세종</a></li>
                                     </ul>
                                 </div><!-- .box -->
 
                                 <div class="box closed">
                                     <h6 class="title">IPA/스트롱</h6>
                                     <ul>
-                                        <li><a href="#">INDIA PALE ALE (IPA) <span class="item-new">HOT</span></a></li>
-                                        <li><a href="#">BELGIAN STRONG ALE</a></li>
-                                        <li><a href="#">STRONG ALE</a></li>
+                                        <li><a href="/recipe/main/14">INDIA PALE ALE (IPA) <span class="item-new">HOT</span></a></li>
+                                        <li><a href="/recipe/main/16">BELGIAN STRONG ALE</a></li>
+                                        <li><a href="/recipe/main/19">STRONG ALE</a></li>
                                     </ul>
                                 </div><!-- .box -->
 
                                 <div class="box closed">
                                     <h6 class="title">밀맥주</h6>
                                     <ul>
-                                        <li><a href="#">로겐비어 (독일식 호밀 맥주)</a></li>
-                                        <li><a href="#">윗비어</a></li>
-                                        <li><a href="#">바이젠복</a></li>
+                                        <li><a href="/recipe/main/15">로겐비어 (독일식 호밀 맥주)</a></li>
+                                        <li><a href="/recipe/main/16">윗비어</a></li>
+                                        <li><a href="/recipe/main/15">바이젠복</a></li>
                                     </ul>
                                 </div><!-- .box -->
 
                                 <div class="box closed">
                                     <h6 class="title">포터/스타우트</h6>
                                     <ul>
-                                        <li><a href="#">발틱 포터</a></li>
-                                        <li><a href="#">오트밀 스타우트</a></li>
-                                        <li><a href="#">러시안 임페리얼 스타우트</a></li>
+                                        <li><a href="/recipe/main/12">발틱 포터</a></li>
+                                        <li><a href="/recipe/main/13">오트밀 스타우트</a></li>
+                                        <li><a href="/recipe/main/13">러시안 임페리얼 스타우트</a></li>
                                     </ul>
                                 </div><!-- .box -->
 
                                 <div class="box closed">
                                     <h6 class="title">사우어 및 기타</h6>
                                     <ul>
-                                        <li><a href="#">베를리너 바이세</a></li>
-                                        <li><a href="#">과일맥주</a></li>
-                                        <li><a href="#">과일 람빅</a></li>
+                                        <li><a href="/recipe/main/17">베를리너 바이세</a></li>
+                                        <li><a href="/recipe/main/20">과일맥주</a></li>
+                                        <li><a href="/recipe/main/17">과일 람빅</a></li>
                                     </ul>
                                 </div><!-- .box -->
                             </div><!-- .sub-list -->
@@ -166,13 +166,14 @@
                 <li>
                     <a href="#">가이드</a>
                 </li>
-                <!--li class="parent">
+                <li class="parent">
                     <a href="#">커뮤니티</a>
                         <ul class="sub">
-                            <li><a href="/board/main/3">자유게시판 (Free Board)</a></li>
                             <li><a href="/board/main/1">공지사항 (Notice) </a></li>
+                            <li><a href="/board/main/3">자유게시판 (Free Board)</a></li>
+                            <li><a href="/board/main/9">Q&A게시판 (Notice) </a></li>
                         </ul>
-                </li-->
+                </li>
             </ul>
         </nav>
     </div>

@@ -35,6 +35,12 @@ public class Recipe implements Serializable {
     private String styleName;
     // 맥주 스타일
     private Integer styleSeq;
+    // 맥주 스타일 카테고리
+    private Integer styleCategory;
+    // 맥주 스타일 명
+    private String category;
+    // 맥주 스타일 번호
+    private Integer categoryNumber;
     // 레시피 양조자
     private String brewer;
     // 레시피 보조 양조자
@@ -628,6 +634,45 @@ public class Recipe implements Serializable {
 
     public void setStyleSeq(Integer styleSeq) {
         this.styleSeq = styleSeq;
+    }
+
+    /**
+     * 맥주 스타일 카테고리
+     *
+     * @return 맥주 스타일 카테고리
+     */
+    public Integer getStyleCategory() {
+        return styleCategory;
+    }
+
+    public void setStyleCategory(Integer styleCategory) {
+        this.styleCategory = styleCategory;
+    }
+
+    /**
+     * 맥주 스타일 카테고리 명
+     *
+     * @return 맥주 스타일 카테고리 명
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * 맥주 스타일 카테고리 번호
+     *
+     * @return 맥주 스타일 카테고리 번호
+     */
+    public Integer getCategoryNumber() {
+        return categoryNumber;
+    }
+
+    public void setCategoryNumber(Integer categoryNumber) {
+        this.categoryNumber = categoryNumber;
     }
 
     /**

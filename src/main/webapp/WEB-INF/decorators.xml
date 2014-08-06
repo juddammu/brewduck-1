@@ -24,6 +24,8 @@
 
     <decorator name="expert" page="recipe.jsp">
         <pattern>/recipe/</pattern>
+        <pattern>/recipe/detail/*</pattern>
+        <pattern>/recipe/main/*</pattern>
         <pattern>/recipe/create</pattern>
         <pattern>/recipe/create2</pattern>
         <pattern>/recipe/insertRecipe</pattern>
@@ -56,6 +58,7 @@
         <pattern>/board/main/*</pattern>
         <pattern>/board/detail/*</pattern>
         <pattern>/board/write</pattern>
+        <pattern>/board/editBoard/*</pattern>
         <pattern>/board/*/*</pattern>
     </decorator>
 
@@ -64,7 +67,6 @@
         <pattern>/board/</pattern>
         <pattern>/board/addBoard</pattern>
         <pattern>/board/writeBoard</pattern>
-        <pattern>/board/editBoard/*</pattern>
         <pattern>/board/writeReply*</pattern>
 
 

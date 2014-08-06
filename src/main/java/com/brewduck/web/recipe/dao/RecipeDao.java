@@ -34,6 +34,35 @@ public interface RecipeDao {
      */
     public Recipe selectRecipeDetail(Recipe recipe);
 
+    /**
+     * <pre>
+     * 맥주 레시피 스타일 조회.
+     * </pre>
+     *
+     * @param recipe 맥주 레시피 스타일 조회.
+     * @return 맥주 레시피 스타일 조회.
+     */
+    public Recipe selectCategoryMain(Recipe recipe);
+
+    /**
+     * <pre>
+     * 맥주 레시피 스타일 리스트.
+     * </pre>
+     *
+     * @param recipe 맥주 레시피 스타일 리스트.
+     * @return 맥주 레시피 스타일 리스트.
+     */
+    public List<Recipe> selectCategoryList(Recipe recipe);
+
+    /**
+     * <pre>
+     * 맥주 레시피 스타일 상세.
+     * </pre>
+     *
+     * @param recipe 맥주 레시피 스타일 상세.
+     * @return 맥주 레시피 스타일 상세.
+     */
+    public Recipe selectCategoryDetail(Recipe recipe);
 
     /**
      * <pre>

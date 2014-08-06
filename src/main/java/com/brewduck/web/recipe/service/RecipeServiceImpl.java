@@ -98,6 +98,22 @@ public class RecipeServiceImpl implements RecipeService {
         return newRecipe;
     }
 
+    @Override
+    public Recipe selectCategoryMain(Recipe recipe) {
+        return recipeDao.selectCategoryMain(recipe);
+    }
+
+    @Override
+    public List<Recipe> selectCategoryList(Recipe recipe) {
+
+        return recipeDao.selectCategoryList(recipe);
+    }
+
+    @Override
+    public Recipe selectCategoryDetail(Recipe recipe) {
+        return recipeDao.selectCategoryDetail(recipe);
+    }
+
     @Transactional
     @Override
     public Boolean insertRecipe(Recipe recipe) {

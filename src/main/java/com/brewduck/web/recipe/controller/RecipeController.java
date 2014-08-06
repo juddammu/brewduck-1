@@ -24,6 +24,7 @@ import org.springframework.core.env.Environment;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -89,6 +90,60 @@ public class RecipeController {
 
         return "recipe/create";
     }
+
+    /**
+     * <pre>
+     * 맥주 레시피 메인
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 레시피 메인
+     */
+    @RequestMapping(value = "/main/{seq}", method = RequestMethod.GET)
+    public String recipeMain(Model model, Recipe recipe, @PathVariable("seq") Integer seq) {
+
+
+        recipe.setStyleSeq(seq);
+        Account account = AuthenticationUtils.getUser();
+        Recipe recipeMain = recipeService.selectCategoryMain(recipe);
+        model.addAttribute("recipeMain", recipeMain);
+        model.addAttribute("account", account);
+
+        return "recipe/main";
+    }
+
+    /**
+     * <pre>
+     * 맥주 레시피 메인 리스트
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 레시피 메인 리스트
+     */
+    @RequestMapping(value = "/categoryList", method = RequestMethod.GET)
+    public List<Recipe> selectRecipeCategoryList(Model model, Recipe recipe) {
+
+
+        List<Recipe> categoryList = recipeService.selectCategoryList(recipe);
+        model.addAttribute("categoryList", categoryList);
+
+        return categoryList;
+    }
+
+    @RequestMapping(value = "/detail/{seq}/{name}", method = RequestMethod.GET)
+    public String abv(Model model, @PathVariable("seq") Integer seq, @PathVariable("name") String name) {
+
+        Recipe recipe = new Recipe();
+        recipe.setSeq(seq);
+        recipe.setName(name);
+
+        Recipe recipeDetail = recipeService.selectCategoryDetail(recipe);
+
+        model.addAttribute("recipeDetail", recipeDetail);
+
+        return "homebrew/view";
+    }
+
 
     /**
      * <pre>
