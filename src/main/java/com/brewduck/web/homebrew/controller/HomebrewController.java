@@ -106,7 +106,7 @@ public class HomebrewController {
     }
 
     @RequestMapping(value = "/write", method = RequestMethod.POST)
-    public String writeBoardMain(@ModelAttribute("board") Board board,
+    public String writeBoardMain(@ModelAttribute("paramRecipe") Recipe recipe,
                                  @RequestParam MultipartFile file,
                                  @RequestParam MultipartFile coverFile,
                                  HttpServletRequest request,
@@ -182,20 +182,13 @@ public class HomebrewController {
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        board.setAtchFileId(fileseq+"");
-        board.setBbsId(board.getBbsId());
-        board.setAtchCoverFileId(coverFileseq+"");
-        board.setNttNo(1);
-        board.setSortOrder(1);
-        board.setUseAt("Y");
-        board.setAnswerAt("Y");
-        board.setInsertId(name);
+        recipe.setAtchFileId(fileseq+"");
+        recipe.setAtchCoverFileId(coverFileseq+"");
 
-       // int insertCount = boardService.writeBoardArticle(board);
+        int insertCount = recipeService.updateRecipe(recipe);
+        //TODO : 레시피 상태와 이미지 update 처리
 
-        logger.info(" @@@ " + board.getBbsNm());
-
-        return "community/write";
+        return "homebrew/myrecipes";
     }
 
     /**

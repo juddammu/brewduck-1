@@ -174,6 +174,57 @@ public class Recipe implements Serializable {
     //SEO TITLE
     private String titleInUrl;
 
+    //레시피 상태 (1: 비공개, 2: 공개)
+    private String status;
+
+    private String  atchFileId;
+
+    private String  atchFileName;
+
+    private String atchCoverFileId;
+
+    private String atchCoverFileName;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getAtchFileId() {
+        return atchFileId;
+    }
+
+    public void setAtchFileId(String atchFileId) {
+        this.atchFileId = atchFileId;
+    }
+
+    public String getAtchFileName() {
+        return atchFileName;
+    }
+
+    public void setAtchFileName(String atchFileName) {
+        this.atchFileName = atchFileName;
+    }
+
+    public String getAtchCoverFileId() {
+        return atchCoverFileId;
+    }
+
+    public void setAtchCoverFileId(String atchCoverFileId) {
+        this.atchCoverFileId = atchCoverFileId;
+    }
+
+    public String getAtchCoverFileName() {
+        return atchCoverFileName;
+    }
+
+    public void setAtchCoverFileName(String atchCoverFileName) {
+        this.atchCoverFileName = atchCoverFileName;
+    }
+
     public Integer getCompleteness() {
         return completeness;
     }
@@ -473,6 +524,8 @@ public class Recipe implements Serializable {
     public void setCoverImageFile(MultipartFile coverImageFile) {
         this.coverImageFile = coverImageFile;
     }
+
+
 
     /**
      * 레시피 순번
