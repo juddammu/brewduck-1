@@ -90,6 +90,14 @@ public class HomebrewController {
         return "homebrew/view";
     }
 
+    /**
+     * <pre>
+     * 레시피 출판
+     * </pre>
+     *
+     * @param model Model
+     * @return 맥주 발효재료 메인
+     */
     @RequestMapping(value = "/publish/{seq}", method = RequestMethod.GET)
     public String publish(Model model, @PathVariable("seq") Integer seq) {
 
@@ -105,6 +113,14 @@ public class HomebrewController {
         return "homebrew/publish";
     }
 
+    /**
+     * <pre>
+     * 레시피 출판 저장
+     * </pre>
+     *
+     * @param recipe
+     * @return 레시피 출판 저장
+     */
     @RequestMapping(value = "/write", method = RequestMethod.POST)
     public String writeBoardMain(@ModelAttribute("paramRecipe") Recipe recipe,
                                  @RequestParam MultipartFile file,
@@ -185,7 +201,7 @@ public class HomebrewController {
         recipe.setAtchFileId(fileseq+"");
         recipe.setAtchCoverFileId(coverFileseq+"");
 
-        int insertCount = recipeService.updateRecipe(recipe);
+        recipeService.updateRecipe(recipe);
         //TODO : 레시피 상태와 이미지 update 처리
 
         return "homebrew/myrecipes";
