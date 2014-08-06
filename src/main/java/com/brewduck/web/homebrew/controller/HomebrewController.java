@@ -1,6 +1,7 @@
 package com.brewduck.web.homebrew.controller;
 
 import com.brewduck.framework.security.AuthenticationUtils;
+import com.brewduck.web.common.service.CommonService;
 import com.brewduck.web.domain.*;
 import com.brewduck.web.recipe.service.RecipeService;
 import org.slf4j.Logger;
@@ -37,9 +38,9 @@ public class HomebrewController {
 
     @Autowired
     private RecipeService recipeService;
-    /**
-     * FermentableService Dependency Injection.
-     */
+
+    @Autowired
+    private CommonService commonService;
 
     /**
      * <pre>
@@ -190,7 +191,7 @@ public class HomebrewController {
         board.setAnswerAt("Y");
         board.setInsertId(name);
 
-        int insertCount = boardService.writeBoardArticle(board);
+       // int insertCount = boardService.writeBoardArticle(board);
 
         logger.info(" @@@ " + board.getBbsNm());
 
