@@ -212,7 +212,7 @@
             </if>
         </trim>
         WHERE seq  = #{seq}
-          AND name = #{name}
+          AND brewer = #{brewer}
     </update>
 
     <update id="deleteRecipe" parameterType="Recipe">

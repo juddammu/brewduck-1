@@ -84,6 +84,21 @@ public class HomebrewController {
         return "homebrew/view";
     }
 
+    @RequestMapping(value = "/publish/{seq}", method = RequestMethod.GET)
+    public String publish(Model model, @PathVariable("seq") Integer seq) {
+
+        Recipe recipe = new Recipe();
+        Account account = AuthenticationUtils.getUser();
+        recipe.setSeq(seq);
+        recipe.setBrewer(account.getId() + "");
+
+        Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
+
+        model.addAttribute("recipeDetail", recipeDetail);
+
+        return "homebrew/publish";
+    }
+
     /**
      * <pre>
      * 맥주 레시피 삭제.

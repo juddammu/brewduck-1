@@ -43,7 +43,7 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>일련번호</th>
+                                <th></th>
                                 <th>레시피명</th>
                                 <th>스타일</th>
                                 <th>배치용량</th>
@@ -54,7 +54,9 @@
                             <tbody>
                             <c:forEach items="${recipeList}" var="list">
                             <tr>
-                                <td>${list.seq}<!--span class="label label-success">공개</span--></td>
+                                <td>
+                                    <a href="/homebrew/publish/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="공개 설정"><i class="fa fa-lock"></i></button></a>
+                                </td>
                                 <td><a href="/homebrew/${list.seq}">${list.name}</a></td>
                                 <td>${list.styleName}</td>
                                 <td>${list.batchSize}리터</td>
@@ -78,8 +80,8 @@
                                     </c:choose>
                                 </td>
                                 <td class="text-right">
-                                    <a href="/homebrew/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="fa fa-pencil"></i></button></a>
-                                    <a href="/homebrew/delete/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="fa fa-trash-o"></i></button></a>
+                                    <a href="/homebrew/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="자세히 보기"><i class="fa fa-pencil"></i></button></a>
+                                    <a href="/homebrew/delete/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="삭제"><i class="fa fa-trash-o"></i></button></a>
                                 </td>
                             </tr>
                             </c:forEach>

@@ -537,47 +537,45 @@
 
 <!-- start:row -->
 <div class="row">
-
+    <c:forEach items="${new_post}" var="new_post" varStatus="status">
     <!-- start:col -->
-    <div class="col-sm-8">
+        <c:choose>
+        <c:when test="${status.count eq 1}" >
+            <div class="col-sm-8">
+                <article class="linkbox large cat-sports">
+                    <a href="#">
+                        <img src="/resources/upload/${new_post.atchCoverFileName}" width="819" height="452" alt="Responsive image" class="img-responsive" />
+                        <div class="overlay">
+                            <h2>${new_post.nttSj}</h2>
+                            <p>${new_post.nttCn}</p>
+                        </div>
+                    </a>
+                    <a href="#" class="theme">
+                        뉘우스
+                    </a>
+                </article>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="col-sm-4">
 
-        <article class="linkbox large cat-sports">
-            <a href="#">
-                <img src="/resources/front/images/dummy/819x452.jpg" width="819" height="452" alt="Responsive image" class="img-responsive" />
-                <div class="overlay">
-                    <h2>브루덕 클로즈 베타 서비스 시작</h2>
-                    <p>The concern within the Baltimore Orioles’ organization, as the negotiations with Ubaldo Jimenez began percolating over the last 48 hours, was that the Boston Red Sox or Toronto Blue Jays would snag...</p>
-                </div>
-            </a>
-            <a href="#" class="theme">
-                Sport
-            </a>
-        </article>
+                <article class="linkbox cat-sports">
+                    <a href="#">
+                        <img src="/resources/upload/${new_post.atchFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                        <div class="overlay">
+                            <h3>${new_post.nttSj}</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="theme">
+                        뉘우스
+                    </a>
+                </article>
 
-    </div>
-    <!-- end:col -->
-
-    <!-- start:col -->
-    <div class="col-sm-4">
-
-        <c:forEach items="${new_post}" var="new_post">
-        <article class="linkbox cat-sports">
-            <a href="#">
-                <img src="/resources/upload/${new_post.atchFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
-                <div class="overlay">
-                    <h3>${new_post.nttSj}</h3>
-                </div>
-            </a>
-            <a href="#" class="theme">
-                Sport
-            </a>
-        </article>
-
-        </c:forEach>
-
-    </div>
-    <!-- end:col -->
-
+            </div>
+        <!-- end:col -->
+        </c:otherwise>
+        </c:choose>
+    </c:forEach>
 </div>
 <!-- end:row -->
 
@@ -1281,19 +1279,17 @@
 
         <!-- start:row -->
         <div class="row">
-            <c:forEach items="${new_post}" var="new_post">
             <!-- start:col -->
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">${new_post.nttSj}</a></h3>
-                    <span class="text">${new_post.nttSj}</span>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
                 <!-- end:article -->
             </div>
             <!-- end:col -->
-            </c:forEach>
 
             <!-- start:col -->
             <div class="col-xs-4 col-sm-12">
@@ -1543,18 +1539,16 @@
 <section class="module-quote">
     <!-- start:header -->
     <header>
-        <h2>${hop.koreanName} - ${hop.alpha}%</h2>
+        <h2>${hop.koreanName} - ${hop.alpha}% / ${hop.typeKorean}</h2>
         <span class="borderline"></span>
     </header>
     <!-- end:header -->
 
     <!-- start:blockquote-quote -->
     <blockquote>
-        <p>${hop.notes}</p>
+        <p>${hop.shortKoreanNotes}</p>
         <footer>
-            <c:forEach items="${hopAromaList}" var="hopAromaList">
-                <cite title="Source Title">${hopAromaList.aromaName} /</cite>
-            </c:forEach>
+                <cite title="Source Title">${hop.originKorean}</cite>
         </footer>
     </blockquote>
     <!-- end:blockquote-quote -->
@@ -1565,7 +1559,7 @@
 <section class="module-singles">
     <!-- start:header -->
     <header>
-        <h2>Top singles</h2>
+        <h2>Top Brewer</h2>
         <span class="borderline"></span>
     </header>
     <!-- end:header -->
@@ -1752,14 +1746,15 @@
 
             <!-- start:col -->
             <div class="col-sm-6 col-md-5">
-                <h4>About Weekly News</h4>
-                <p>Aliquam erat volutpat. Aliquam porta nibh id odio ornare ullamcorper. Etiam sit amet consectetur arcu. Suspendisse dolor nisl, eleifend quis metus a, sollicitudin semper orci.</p>
-                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                <a href="#"><i class="fa fa-facebook-square fa-lg"></i></a>
-                <a href="#"><i class="fa fa-linkedin-square fa-lg"></i></a>
+                <h4>브루덕 프로젝트</h4>
+                <p>단순히 맥주를 좋아하다가 시작한 브루덕 프로젝트. </br>
+                맥주에 관련된 소박한 일상을 담고 싶습니다.
+                </p>
+                <a href="https://www.facebook.com/brewduck"><i class="fa fa-facebook-square fa-lg"></i></a>
+                <!--a href="#"><i class="fa fa-linkedin-square fa-lg"></i></a>
                 <a href="#"><i class="fa fa-google-plus-square fa-lg"></i></a>
                 <a href="#"><i class="fa fa-vimeo-square fa-lg"></i></a>
-                <a href="#"><i class="fa fa-youtube fa-lg"></i></a>
+                <a href="#"><i class="fa fa-youtube fa-lg"></i></a-->
             </div>
             <!-- end:col -->
 
@@ -1787,13 +1782,13 @@
 
             <!-- start:col -->
             <div class="col-sm-6">
-                &copy; <a href="#">Weekly News</a> 2014. All rights reserved.
+                &copy; <a href="#">BREWDUCK</a> 2014. All rights reserved.
             </div>
             <!-- end:col -->
 
             <!-- start:col -->
             <div class="col-sm-6 text-right">
-                Produced by <a href="http://themes.mipdesign.com">Mip Themes</a>.
+                대표메일 <a href="#">frank.lim@brewduck.com</a>.
             </div>
             <!-- end:col -->
 

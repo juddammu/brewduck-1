@@ -68,6 +68,10 @@ public class Board{
 
     private String  atchFileName;
 
+    private String atchCoverFileId;
+
+    private String atchCoverFileName;
+
     //원글 게시판 번호
     private int answerNo;
     //작성자 ID
@@ -114,6 +118,22 @@ public class Board{
 
     public String getAtchFileName() {
         return atchFileName;
+    }
+
+    public String getAtchCoverFileId() {
+        return atchCoverFileId;
+    }
+
+    public void setAtchCoverFileId(String atchCoverFileId) {
+        this.atchCoverFileId = atchCoverFileId;
+    }
+
+    public String getAtchCoverFileName() {
+        return atchCoverFileName;
+    }
+
+    public void setAtchCoverFileName(String atchCoverFileName) {
+        this.atchCoverFileName = atchCoverFileName;
     }
 
     public void setAtchFileName(String atchFileName) {

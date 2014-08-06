@@ -79,6 +79,8 @@ public class CommunityController {
                                  RedirectAttributes redirectAttributes) throws IOException {
 
         int fileseq = 0;
+        int coverFileseq = 0;
+
         HttpSession session = request.getSession();
 
         if(coverFile.getSize() > 0){
@@ -88,10 +90,10 @@ public class CommunityController {
             String coverFilemime = coverFile.getContentType();        //마임 타입
             String coverFilePath = session.getServletContext().getRealPath("/")+"/resources/upload/";   //파일 path
             coverFile.transferTo(new File(coverFilePath+coverFileName));
-            Long fileSze = coverFile.getSize();
+            Long coverFileSze = coverFile.getSize();
 
-            fileseq = commonService.selectFileSeq();
-            coverFileInfo.setFileNo(fileseq);
+            coverFileseq = commonService.selectFileSeq();
+            coverFileInfo.setFileNo(coverFileseq);
 
             GregorianCalendar gc = new GregorianCalendar();
             SimpleDateFormat simDate = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -101,10 +103,10 @@ public class CommunityController {
             if( coverFileName.indexOf(".") >= 0 ) {
                 ArrFileName = coverFileName.split("\\.");
             }
-            coverFileInfo.setSeq(fileseq);
+            coverFileInfo.setSeq(coverFileseq);
             coverFileInfo.setFilename(coverFileName);
             coverFileInfo.setRealFilename(ArrFileName[0] + "_" + simDate.format(nowTime)+"."+ArrFileName[1]);
-            coverFileInfo.setFilesize(file.getSize());
+            coverFileInfo.setFilesize(coverFile.getSize());
             coverFileInfo.setFileNo(1);
             coverFileInfo.setFilemime(coverFileName);
 
@@ -142,13 +144,12 @@ public class CommunityController {
             int fileInsertCount = commonService.insertNoticeFile(fileInfo);
         }
 
-        logger.info("fileseq : " + fileseq);
-
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
         board.setAtchFileId(fileseq+"");
         board.setBbsId(board.getBbsId());
+        board.setAtchCoverFileId(coverFileseq+"");
         board.setNttNo(1);
         board.setSortOrder(1);
         board.setUseAt("Y");

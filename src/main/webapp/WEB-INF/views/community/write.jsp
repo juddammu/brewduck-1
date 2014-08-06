@@ -39,7 +39,16 @@
 </div>
 <div class="form-group">
     <div class="col-lg-1 col-md-2 col-sm-3">
-        <label class="control-label">커버 이미지</label>
+        <label class="control-label">커버 이미지<small>큰사이즈</small></label>
+    </div>
+    <div class="col-lg-11 col-md-10 col-sm-9">
+        <input name="coverFile" id="coverFile" type="file" multiple />
+        <p class="help-block">이미지 사이즈는 819x452으로 올려주세요.</p>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-lg-1 col-md-2 col-sm-3">
+        <label class="control-label">이미지</label>
     </div>
     <div class="col-lg-11 col-md-10 col-sm-9">
         <input name="file" id="file" type="file" multiple />

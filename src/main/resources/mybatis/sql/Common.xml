@@ -214,6 +214,7 @@
 			 USE_AT,
 			 ANSWER_AT,
 			 ATCH_FILE_ID,
+			 ATCH_COVER_FILE_ID,
 			 INSERT_ID,
 			 INSERT_DATE
 			 )
@@ -227,6 +228,7 @@
             #{useAt},
 			#{answerAt},
 			#{atchFileId},
+			#{atchCoverFileId},
 			#{insertId},
 			SYSDATE()
 			)
@@ -350,6 +352,7 @@
         A.NTT_CN      nttCn,
         A.ATCH_FILE_ID atchFileId,
         (SELECT B.FILENAME FROM FILEINFO B WHERE A.ATCH_FILE_ID = B.SEQ) atchFileName,
+        (SELECT C.FILENAME FROM FILEINFO C WHERE A.ATCH_COVER_FILE_ID = C.SEQ) atchCoverFileName,
         A.INSERT_ID   insertId,
         A.INSERT_DATE insertDate
         from BOARD A
@@ -358,7 +361,7 @@
             AND A.BBS_ID = #{bbsId}
         </if>
         order by A.INSERT_DATE
-        DESC limit 3;
+        DESC limit 4;
     </select>
 
     <select id="selectReplyList" parameterType="Board" resultType="Board">

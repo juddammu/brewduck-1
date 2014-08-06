@@ -44,6 +44,7 @@ public class Common {
     //생성일자
     private String createDate;
 
+
     public int getMovieId() {
         return movieId;
     }
