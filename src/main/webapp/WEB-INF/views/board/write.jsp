@@ -16,7 +16,7 @@
     <li class="active"><a href="#">${writeBoard.bbsNm} - ${writeBoard.bbsEnNm}</a></li>
 </ol>
 <div class="section-header">
-    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${writeBoard.bbsNm}</h3> <h4><small>${writeBoard.bbsNm}을 추가하거나 삭제할 수 있습니다.</small></h4>
+    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${writeBoard.bbsNm}</h3> <h4><small>${writeBoard.bbsNm}에 게시물을 추가할 수 있습니다.</small></h4>
 </div>
 <div class="section-body">
 <!-- START DATATABLE 1 -->
@@ -31,7 +31,7 @@
 <input type="hidden" name="delfile" id="delfile" />
 <div class="form-group">
     <div class="col-lg-1 col-md-2 col-sm-3">
-        <label for="title" class="control-label">제목</label>
+        <label for="nttSj" class="control-label">제목</label>
     </div>
     <div class="col-lg-11 col-md-10 col-sm-9">
         <input type="text" name="nttSj" id="nttSj" class="form-control" placeholder="제목" value="${noticeView.title}">
@@ -610,7 +610,6 @@
 
                 if (images[i].existStage) {
                     // data는 팝업에서 execAttach 등을 통해 넘긴 데이터
-                    alert('attachment information - image[' + i + '] \r\n' + JSON.stringify(images[i].data));
                     input = document.createElement('input');
                     input.type = 'hidden';
                     input.name = images[i].data.filename;
