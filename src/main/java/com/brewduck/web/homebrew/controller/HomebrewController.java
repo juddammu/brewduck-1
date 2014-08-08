@@ -121,7 +121,7 @@ public class HomebrewController {
      * @param recipe
      * @return 레시피 출판 저장
      */
-    @RequestMapping(value = "/write", method = RequestMethod.POST)
+    @RequestMapping(value = "/publish/update", method = RequestMethod.POST)
     public String writeBoardMain(@ModelAttribute("paramRecipe") Recipe recipe,
                                  @RequestParam MultipartFile file,
                                  @RequestParam MultipartFile coverFile,
@@ -199,12 +199,13 @@ public class HomebrewController {
         String name = account.getName();
 
         recipe.setAtchFileId(fileseq+"");
-        recipe.setAtchCoverFileId(coverFileseq+"");
+        recipe.setAtchCoverFileId(coverFileseq + "");
+        recipe.setBrewer(account.getId() + "");
 
         recipeService.updateRecipe(recipe);
         //TODO : 레시피 상태와 이미지 update 처리
 
-        return "homebrew/myrecipes";
+        return "redirect:/homebrew/myrecipes";
     }
 
     /**

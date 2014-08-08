@@ -6,7 +6,8 @@
         SELECT
                seq                   seq
               ,name                  name
-              ,name                titleInUrl
+              ,status                status
+              ,name                  titleInUrl
               ,version               version
               ,type                  type
               ,style_seq             styleSeq
@@ -28,6 +29,10 @@
               ,age_temp              ageTemp
               ,priming_sugar_name    primingSugarName
               ,read_count            readCount
+              ,ATCH_FILE_ID          atchFileId
+              ,ATCH_COVER_FILE_ID    atchCoverFileId
+              ,(SELECT B.FILENAME FROM FILEINFO B WHERE ATCH_FILE_ID = B.SEQ) atchFileName
+              ,(SELECT C.FILENAME FROM FILEINFO C WHERE ATCH_COVER_FILE_ID = C.SEQ) atchCoverFileName
               ,insert_id             insertId
               ,insert_date           insertDate
               ,update_id             updateId
@@ -73,6 +78,7 @@
         LEFT JOIN brewduckdb.STYLE B on B.seq = A.style_seq
         WHERE A.delete_id IS NULL
     </sql>
+
     <select id="Recipe.selectRecipeList" parameterType="Recipe" resultType="Recipe">
         select
         R.*
@@ -86,6 +92,16 @@
             AND brewer = #{brewer}
         </if>
         ORDER BY  seq desc ) R
+    </select>
+
+    <select id="Recipe.selectNewPublicRecipeList" parameterType="Recipe" resultType="Recipe">
+        <include refid="Recipe.selectRecipe" />
+        WHERE delete_id IS NULL
+          AND STATUS = 2
+          AND ATCH_FILE_ID IS NOT NULL
+          AND ATCH_COVER_FILE_ID IS NOT NULL
+        ORDER BY update_date
+        LIMIT 4
     </select>
 
     <select id="Recipe.selectRecipeSeq" parameterType="Recipe" resultType="Recipe">
@@ -114,6 +130,7 @@
             AND insert_id = #{insertId}
         </if>
     </select>
+
 
     <select id="Recipe.selectCategoryMain" parameterType="Recipe" resultType="Recipe">
         SELECT A.SEQ              seq
@@ -215,6 +232,15 @@
         <!-- 맥주 레시피 수정 -->
         UPDATE brewduckdb.RECIPE
         <trim prefix="SET" suffixOverrides=",">
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="atchFileId != null">
+                atch_file_id = #{atchFileId},
+            </if>
+            <if test="atchCoverFileId != null">
+                atch_cover_file_id = #{atchCoverFileId},
+            </if>
             <if test="name != null">
                 name = #{name},
             </if>
@@ -223,9 +249,6 @@
             </if>
             <if test="type != null">
                 type = #{type},
-            </if>
-            <if test="brewer != null">
-                brewer = #{brewer},
             </if>
             <if test="asstBrewer != null">
                 asst_brewer = #{asstBrewer},

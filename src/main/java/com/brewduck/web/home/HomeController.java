@@ -7,7 +7,9 @@ import com.brewduck.web.common.service.CommonService;
 import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.Hop;
+import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.hop.service.HopService;
+import com.brewduck.web.recipe.service.RecipeService;
 import com.brewduck.web.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,6 +46,10 @@ public class HomeController {
     private CommonService commonService;
 
     @Autowired
+    private RecipeService recipeService;
+
+
+    @Autowired
     private MessageSource messageSource; //다국어
 
     @Autowired
@@ -78,10 +84,15 @@ public class HomeController {
         Account account = AuthenticationUtils.getUser();
 
         Board board = new Board();
+        Recipe recipe = new Recipe();
 
         Hop hop = hopService.selectRandomHop();
         List<Board> list = boardService.getNewPost(board);
         List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
+
+        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+
+
 
         logger.info("New Post List Size:", list.size());
 
@@ -89,6 +100,7 @@ public class HomeController {
         model.addAttribute("new_post", list);
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);
+        model.addAttribute("newRecipeList", selectNewPublicRecipeList);
 
         return "new_home";
     }

@@ -35,6 +35,11 @@ public class RecipeDaoImpl implements RecipeDao {
     }
 
     @Override
+    public List<Recipe> selectNewPublicRecipeList(Recipe recipe) {
+        return sqlSession.selectList("Recipe.selectNewPublicRecipeList", recipe);
+    }
+
+    @Override
     public Recipe selectRecipeDetail(Recipe recipe) {
         return sqlSession.selectOne("Recipe.selectRecipeDetail", recipe);
     }

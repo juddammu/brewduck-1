@@ -24,6 +24,10 @@ public interface RecipeDao {
      */
     public List<Recipe> selectRecipeList(Recipe recipe);
 
+
+    public List<Recipe> selectNewPublicRecipeList(Recipe recipe);
+
+
     /**
      * <pre>
      * 맥주 레시피 상세 조회.

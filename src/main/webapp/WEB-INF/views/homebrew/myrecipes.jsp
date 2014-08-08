@@ -55,7 +55,18 @@
                             <c:forEach items="${recipeList}" var="list">
                             <tr>
                                 <td>
-                                    <a href="/homebrew/publish/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="공개 설정"><i class="fa fa-lock"></i></button></a>
+                                    <a href="/homebrew/publish/${list.seq}">
+                                        <c:choose>
+                                            <c:when test="${list.status=='2'}">
+                                                <button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="공개중"><i class="fa fa-unlock"></i></button>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="비공개중"><i class="fa fa-lock"></i></button>
+                                            </c:otherwise>
+                                        </c:choose>
+
+
+                                    </a>
                                 </td>
                                 <td><a href="/homebrew/${list.seq}">${list.name}</a></td>
                                 <td>${list.styleName}</td>
