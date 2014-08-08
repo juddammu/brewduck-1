@@ -357,14 +357,15 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/updateBoardArticle", method = RequestMethod.POST)
-/*    public String updateBoardArticle(@ModelAttribute("board") Board board){*/
     public String updateBoardArticle(@ModelAttribute("board") Board board,
                                     BindingResult result,
                                     RedirectAttributes redirectAttributes) {
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
+        Integer bbsId = board.getBbsId();
 
+        board.setBbsId(bbsId);
         board.setUpdateId(name);
 
         int updateCount = boardService.updateBoardArticle(board);
@@ -372,7 +373,7 @@ public class BoardController {
         logger.info("Update Board Article");
         logger.info(" @@@ " + board.getBbsNm());
 
-        return "redirect:/board/freeBoard";
+        return "redirect:/board/main/"+bbsId;
     }
 
 
@@ -391,13 +392,13 @@ public class BoardController {
         return selectCommentList;
     }
 
-    @RequestMapping(value = "/deleteBoardArticle/{nttId}", method = RequestMethod.GET)
-    public String deleteBoardArticle(@ModelAttribute("board") Board board, @PathVariable("nttId") Integer nttId){
+    @RequestMapping(value = "/deleteBoardArticle/{bbsId}/{nttId}", method = RequestMethod.GET)
+    public String deleteBoardArticle(@ModelAttribute("board") Board board,@PathVariable("bbsId") Integer bbsId, @PathVariable("nttId") Integer nttId){
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        board.setBbsId(3);
+        board.setBbsId(bbsId);
         board.setNttId(nttId);
         board.setDeleteId(name);
 
@@ -406,7 +407,7 @@ public class BoardController {
         logger.info("Delete Board Article");
         logger.info(" @@@ " + board.getBbsNm());
 
-        return "redirect:/board/freeBoard";
+        return "redirect:/board/main/"+bbsId;
     }
 }
 

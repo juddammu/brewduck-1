@@ -36,11 +36,11 @@ public class StyleController {
 
     /**
      * <pre>
-     * 맥주 홉 메인
+     * 맥주 스타일 메인
      * </pre>
      *
      * @param model Model
-     * @return 맥주 홉 메인
+     * @return 맥주 스타일 메인
      */
 
     @RequestMapping(value =  {"/", ""}, method = RequestMethod.GET)
@@ -56,11 +56,11 @@ public class StyleController {
 
     /**
      * <pre>
-     * 맥주 홉 상세 조회.
+     * 맥주 스타일 상세 조회.
      * </pre>
      *
      * @param model Model
-     * @return 맥주 홉 상세.
+     * @return 맥주 스타일 상세.
      */
     @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
     public String detail(Model model, @PathVariable("seq") String seq) {
@@ -69,7 +69,7 @@ public class StyleController {
         //style.setName(name);
         style.setSeq(seq);
 
-        // 맥주 홉 상세 조회
+        // 맥주 스타일 상세 조회
         Style styleDetail = styleService.selectStyleDetail(style);
         String examples[] = null;
 
@@ -94,14 +94,14 @@ public class StyleController {
      * </pre>
      *
      * @param model Model
-     * @return 맥주 홉 목록
+     * @return 맥주 스타일 목록
      */
     @RequestMapping(value = "/list", method = {RequestMethod.GET, RequestMethod.POST})
     public List<Style> StyleList(Model model, Style paramStyle) {
         logger.info("Style List searching.........");
         Style style = new Style();
 
-        // 맥주 홉 목록 조회
+        // 맥주 스타일 목록 조회
         List<Style> list = styleService.selectStyleList(paramStyle);
 
         //logger.info(list.get(0).getTitleInUrl());
@@ -118,7 +118,7 @@ public class StyleController {
 
         Style style = new Style();
 
-        // 맥주 홉 목록 조회
+        // 맥주 스타일 목록 조회
         List<Style> list = styleService.selectStyleList(style);
 
         //logger.info(list.get(0).getTitleInUrl());
@@ -138,7 +138,7 @@ public class StyleController {
         //style.setName(name);
         style.setSeq(seq+"");
 
-        // 맥주 홉 상세 조회
+        // 맥주 스타일 상세 조회
         Style styleDetail = styleService.selectStyleDetail(style);
 
         return styleDetail;
