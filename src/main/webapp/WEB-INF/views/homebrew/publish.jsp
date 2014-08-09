@@ -17,7 +17,6 @@
         <div class="col-lg-12">
         <div class="box box-outlined">
         <div class="box-body no-padding">
-
         <form:form id="insert" class="form-horizontal form-banded form-bordered form-validate" name="insert" method="POST" enctype="multipart/form-data" action="/homebrew/publish/update"  modelAttribute="paramRecipe">
             <input id="status" name ="status" value="${recipeDetail.status}" type="hidden" >
             <input id="seq" name ="seq" value="${recipeDetail.seq}" type="hidden" >
@@ -41,7 +40,8 @@
                 <label class="control-label">커버 이미지<small>큰사이즈</small></label>
             </div>
             <div class="col-md-10">
-                <input name="coverFile" id="coverFile" type="file" multiple value="${recipeDetail.atchCoverFileName}" />
+                <input name="coverFile" id="coverFile" type="file" multiple />
+                <label class="control-label" name="coverFileNm" id="coverFileNm">${recipeDetail.atchCoverFileName}</label>
                 <p class="help-block">이미지 사이즈는 819x452으로 올려주세요.</p>
             </div>
         </div>
@@ -51,6 +51,7 @@
             </div>
             <div class="col-md-10">
                 <input name="file" id="file" type="file" multiple />
+                <label class="control-label" name="fileNm" id="fileNm">${recipeDetail.atchFileName}</label>
                 <p class="help-block">이미지 사이즈는 350x150으로 올려주세요.</p>
             </div>
         </div>
