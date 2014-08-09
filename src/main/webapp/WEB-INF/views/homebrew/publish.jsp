@@ -78,7 +78,6 @@
     <script>
 
         function setStatus(data){
-            alert("click");
             $("#status").val(data);
         }
 
