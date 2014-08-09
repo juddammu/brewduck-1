@@ -121,8 +121,46 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe selectCategoryDetail(Recipe recipe) {
-        return recipeDao.selectCategoryDetail(recipe);
+    public Recipe selectCategoryDetail(Recipe recipe, Integer seq, String brewer) {
+
+
+        Account account = AuthenticationUtils.getUser();
+        recipe.setSeq(seq);
+        recipe.setBrewer(brewer);
+        // 레시피 조회
+        Recipe categoryRecipe = recipeDao.selectCategoryDetail(recipe);
+
+        // 레시피 제조시 입력한 스타일 맥주 이름
+        Style paramStyle = new Style();
+        Fermentable paramFermentable = new Fermentable();
+        paramFermentable.setSeq(seq);
+        paramFermentable.setBrewer(brewer);
+
+        Hop paramHop = new Hop();
+        paramHop.setSeq(seq);
+        paramHop.setBrewer(brewer);
+
+        Yeast paramYeast = new Yeast();
+        paramYeast.setSeq(seq);
+        paramYeast.setBrewer(brewer);
+
+        Misc paramMisc = new Misc();
+        paramMisc.setSeq(seq);
+        paramMisc.setBrewer(brewer);
+
+        // 레시피에 포함되는 맥아 리스트
+        categoryRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(paramFermentable));
+        // 레시피에 포함되는 홉 리스트
+        categoryRecipe.setHops(hopDao.selectRecipeHopList(paramHop));
+        // 레시피에 포함되는 이스트 리스트
+        categoryRecipe.setYeasts(yeastDao.selectRecipeYeastList(paramYeast));
+        // 레시피에 포함되는 첨가물 리스트
+        categoryRecipe.setMiscs(miscDao.selectRecipeMiscList(paramMisc));
+        // 조회수 업데이트
+        categoryRecipe.setUpdateId(Integer.toString(account.getId()));
+        //recipeDao.updateRecipe(newRecipe);
+
+        return categoryRecipe;
     }
 
     @Transactional

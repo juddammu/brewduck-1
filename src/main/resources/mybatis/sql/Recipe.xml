@@ -44,14 +44,15 @@
 
     <sql id="Recipe.categoryList">
         SELECT
-            A.seq                   seq
+            A.seq                    seq
             ,A.name                  name
-            ,A.name                titleInUrl
+            ,A.name                  titleInUrl
             ,A.version               version
             ,A.type                  type
             ,A.style_seq             styleSeq
             ,(SELECT B.KOREAN_NAME FROM STYLE B WHERE style_seq = B.SEQ) styleName
             ,A.brewer                brewer
+            ,(SELECT C.name FROM account C WHERE C.id = brewer) brewerNm
             ,A.asst_brewer           asstBrewer
             ,A.batch_size            batchSize
             ,A.boil_size             boilSize
@@ -68,6 +69,10 @@
             ,A.age_temp              ageTemp
             ,A.priming_sugar_name    primingSugarName
             ,A.read_count            readCount
+            ,A.atch_file_id          atchFileId
+            ,A.atch_cover_file_id    atchCoverFileId
+            ,(SELECT B.FILENAME FROM FILEINFO B WHERE atch_file_id = B.SEQ) atchFileName
+            ,(SELECT C.FILENAME FROM FILEINFO C WHERE atch_cover_file_id = C.SEQ) atchCoverFileName
             ,A.insert_id             insertId
             ,A.insert_date           insertDate
             ,A.update_id             updateId
@@ -77,6 +82,7 @@
         FROM brewduckdb.RECIPE A
         LEFT JOIN brewduckdb.STYLE B on B.seq = A.style_seq
         WHERE A.delete_id IS NULL
+          AND A.status = 2
     </sql>
 
     <select id="Recipe.selectRecipeList" parameterType="Recipe" resultType="Recipe">
@@ -181,7 +187,7 @@
             AND A.name = #{name}
         </if>
         <if test="brewer != null">
-            AND A.brewer = #{brewer}
+            AND brewer = #{brewer}
         </if>
         <if test="insertId != null">
             AND A.insert_id = #{insertId}

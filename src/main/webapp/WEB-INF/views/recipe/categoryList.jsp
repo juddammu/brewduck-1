@@ -13,7 +13,7 @@
 <c:forEach items="${categoryList}" var="list">
     <tr>
         <td>${list.seq}<!--span class="label label-success">공개</span--></td>
-        <td><a href="/recipe/detail/${list.seq}/${list.name}">${list.name}</a></td>
+        <td><a href="/recipe/detail/${list.seq}/${list.titleInUrl}/${list.brewer}">${list.name}</a></td>
         <td>${list.styleName}</td>
         <td>${list.batchSize}리터</td>
         <td>
@@ -35,6 +35,7 @@
                 </c:otherwise>
             </c:choose>
         </td>
+        <td>${list.brewerNm}</td>
     </tr>
 </c:forEach>
 
