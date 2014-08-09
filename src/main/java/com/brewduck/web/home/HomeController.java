@@ -92,7 +92,20 @@ public class HomeController {
 
         List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
 
+        Integer lager[] = null;
 
+        lager[0] = 1;
+        lager[1] = 2;
+        lager[2] = 3;
+        lager[3] = 4;
+        lager[4] = 5;
+        lager[5] = 6;
+        lager[6] = 7;
+
+
+        //recipe.setStyleSeqs(1)[0];
+
+        List<Recipe> selectPublicRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
         logger.info("New Post List Size:", list.size());
 
@@ -101,6 +114,7 @@ public class HomeController {
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);
         model.addAttribute("newRecipeList", selectNewPublicRecipeList);
+        model.addAttribute("lagerMenuList", selectNewPublicRecipeList);
 
         return "new_home";
     }

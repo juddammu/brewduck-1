@@ -68,7 +68,7 @@
 
                                     </a>
                                 </td>
-                                <td><a href="/homebrew/${list.seq}">${list.name}</a></td>
+                                <td><a href="/homebrew/${list.seq}/${list.titleInUrl}">${list.name}</a></td>
                                 <td>${list.styleName}</td>
                                 <td>${list.batchSize}리터</td>
                                 <td>

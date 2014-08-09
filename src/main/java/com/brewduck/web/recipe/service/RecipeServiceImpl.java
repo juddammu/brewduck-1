@@ -45,6 +45,12 @@ public class RecipeServiceImpl implements RecipeService {
         return recipeDao.selectRecipeList(recipe);
     }
 
+
+    @Override
+    public List<Recipe> selectPublicRecipeMenuList(Recipe recipe) {
+        return recipeDao.selectPublicRecipeMenuList(recipe);
+    }
+
     @Override
     public List<Recipe> selectNewPublicRecipeList(Recipe recipe) {
         return recipeDao.selectNewPublicRecipeList(recipe);

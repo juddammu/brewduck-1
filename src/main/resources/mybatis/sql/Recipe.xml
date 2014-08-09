@@ -104,6 +104,20 @@
         LIMIT 4
     </select>
 
+    <select id="Recipe.selectPublicRecipeMenuList" parameterType="Recipe" resultType="Recipe">
+        <include refid="Recipe.selectRecipe" />
+        WHERE delete_id IS NULL
+        AND STATUS = 2
+        AND ATCH_FILE_ID IS NOT NULL
+        AND ATCH_COVER_FILE_ID IS NOT NULL
+        AND style_seq IN
+        <foreach item="array" collection="styleSeqs" open="(" separator="," close=")">
+            #{styleSeqs}
+        </foreach>
+        ORDER BY update_date
+        LIMIT 4
+    </select>
+
     <select id="Recipe.selectRecipeSeq" parameterType="Recipe" resultType="Recipe">
       SELECT IFNULL(MAX(SEQ)+1,1) as seq
         FROM RECIPE

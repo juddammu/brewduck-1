@@ -35,6 +35,8 @@ public class Recipe implements Serializable {
     private String styleName;
     // 맥주 스타일
     private Integer styleSeq;
+
+    private Integer[] styleSeqs;
     // 맥주 스타일 카테고리
     private Integer styleCategory;
     // 맥주 스타일 명
@@ -190,6 +192,15 @@ public class Recipe implements Serializable {
     private String atchCoverFileId;
 
     private String atchCoverFileName;
+
+
+    public Integer[] getStyleSeqs() {
+        return styleSeqs;
+    }
+
+    public void setStyleSeqs(Integer[] styleSeqs) {
+        this.styleSeqs = styleSeqs;
+    }
 
     public String getStatus() {
         return status;
@@ -1246,8 +1257,8 @@ public class Recipe implements Serializable {
 
     public void setTitleInUrl(String titleInUrl) {
 
-        //titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9ㄱ-ㅎ가-힣\\-\\s\\.]", "");
-        titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9\\-\\s\\.]", "");
+        titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9ㄱ-ㅎ가-힣\\-\\s\\.]", "");
+        //titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9\\-\\s\\.]", "");
         titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
 
         /*

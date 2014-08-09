@@ -26,6 +26,9 @@ public interface RecipeService {
 
     public List<Recipe> selectNewPublicRecipeList(Recipe recipe);
 
+    public List<Recipe> selectPublicRecipeMenuList(Recipe recipe);
+
+
 
     /**
      * <pre>
