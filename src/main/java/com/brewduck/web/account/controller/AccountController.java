@@ -152,6 +152,9 @@ public class AccountController {
                        ,@RequestParam(value = "error_message", required = false) String errorMessage) {
         LOGGER.info("로그인 페이지");
 
+        LOGGER.error("loginError : " + loginError);
+        LOGGER.error("errorMessage : " + errorMessage);
+
         model.addAttribute("loginError"  , loginError  );
         model.addAttribute("errorMessage", errorMessage);
 

@@ -36,7 +36,7 @@ public class Recipe implements Serializable {
     // 맥주 스타일
     private Integer styleSeq;
 
-    private Integer[] styleSeqs;
+    private List< Integer > styleSeqs;
     // 맥주 스타일 카테고리
     private Integer styleCategory;
     // 맥주 스타일 명
@@ -194,11 +194,11 @@ public class Recipe implements Serializable {
     private String atchCoverFileName;
 
 
-    public Integer[] getStyleSeqs() {
+    public List<Integer> getStyleSeqs() {
         return styleSeqs;
     }
 
-    public void setStyleSeqs(Integer[] styleSeqs) {
+    public void setStyleSeqs(List<Integer> styleSeqs) {
         this.styleSeqs = styleSeqs;
     }
 
