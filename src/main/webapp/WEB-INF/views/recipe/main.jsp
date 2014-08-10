@@ -71,6 +71,7 @@
                                 <th>스타일</th>
                                 <th>배치용량</th>
                                 <th>레시피 완성도</th>
+                                <th>작성자</th>
                             </tr>
                             </thead>
                             <tbody id="result">

@@ -193,6 +193,7 @@ public class Recipe implements Serializable {
 
     private String atchCoverFileName;
 
+    private String brewerNm;
 
     public List<Integer> getStyleSeqs() {
         return styleSeqs;
@@ -1270,5 +1271,13 @@ public class Recipe implements Serializable {
         */
 
         this.titleInUrl = titleInUrl;
+    }
+
+    public String getBrewerNm() {
+        return brewerNm;
+    }
+
+    public void setBrewerNm(String brewerNm) {
+        this.brewerNm = brewerNm;
     }
 }

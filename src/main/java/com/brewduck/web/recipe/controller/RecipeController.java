@@ -130,15 +130,12 @@ public class RecipeController {
         return categoryList;
     }
 
-    @RequestMapping(value = "/detail/{seq}/{name}", method = RequestMethod.GET)
-    public String abv(Model model, @PathVariable("seq") Integer seq, @PathVariable("name") String name) {
+    @RequestMapping(value = "/detail/{seq}/{titleInUrl}/{brewer}", method = RequestMethod.GET)
+    public String abv(Model model, @PathVariable("seq") Integer seq, @PathVariable("titleInUrl") String titleInUrl
+            ,@PathVariable("brewer") String brewer ) {
 
         Recipe recipe = new Recipe();
-        recipe.setSeq(seq);
-        recipe.setName(name);
-
-        Recipe recipeDetail = recipeService.selectCategoryDetail(recipe);
-
+        Recipe recipeDetail = recipeService.selectCategoryDetail(recipe, seq, brewer);
         model.addAttribute("recipeDetail", recipeDetail);
 
         return "homebrew/view";
