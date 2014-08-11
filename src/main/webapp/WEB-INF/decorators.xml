@@ -60,6 +60,7 @@
         <pattern>/board/write</pattern>
         <pattern>/board/editBoard/*</pattern>
         <pattern>/board/*/*</pattern>
+        <pattern>/admin/main</pattern>
     </decorator>
 
     <decorator name="full-content" page="full-content.jsp">

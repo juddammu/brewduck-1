@@ -497,4 +497,16 @@
         del_yn = 'Y'
         WHERE seq = #{seq} AND file_no = #{fileNo}
     </update>
+
+
+    <select id="Common.selectUserList" parameterType="Admin" resultType="Admin">
+         SELECT id               id
+              ,name              name
+              ,email             email
+              ,authority         authority
+              ,activation        activation
+              ,substring(insert_date, 1, 10)  insertDate
+          FROM account
+          ORDER BY id ASC;
+    </select>
 </mapper>

@@ -20,8 +20,9 @@
         <typeAlias type="com.brewduck.web.domain.Hop"         alias="Hop"         />
         <typeAlias type="com.brewduck.web.domain.Yeast"       alias="Yeast"       />
         <typeAlias type="com.brewduck.web.domain.Misc"        alias="Misc"        />
-        <typeAlias type="com.brewduck.web.domain.Board"        alias="Board"        />
-        <typeAlias type="com.brewduck.web.domain.Api"        alias="Api"        />
-        <typeAlias type="com.brewduck.web.domain.FileInfo"        alias="FileInfo"        />
+        <typeAlias type="com.brewduck.web.domain.Board"       alias="Board"       />
+        <typeAlias type="com.brewduck.web.domain.Api"         alias="Api"         />
+        <typeAlias type="com.brewduck.web.domain.FileInfo"    alias="FileInfo"    />
+        <typeAlias type="com.brewduck.web.domain.Admin"       alias="Admin"       />
     </typeAliases>
 </configuration>
