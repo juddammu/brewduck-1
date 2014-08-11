@@ -218,7 +218,6 @@ public class RecipeController {
             String fileName = file.getOriginalFilename();
         }
 */
-        LOGGER.info("111 ", paramRecipe.getRecipeFermantableAmounts());
 
 
         Account account = AuthenticationUtils.getUser();

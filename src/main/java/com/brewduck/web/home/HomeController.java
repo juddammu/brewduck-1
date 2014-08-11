@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.*;
 
 
 /**
@@ -92,18 +93,12 @@ public class HomeController {
 
         List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
 
-        Integer lager[] = null;
 
-        lager[0] = 1;
-        lager[1] = 2;
-        lager[2] = 3;
-        lager[3] = 4;
-        lager[4] = 5;
-        lager[5] = 6;
-        lager[6] = 7;
+        List< Integer > lagerMenuList = new ArrayList< Integer >( );
+        lagerMenuList.add(0);
+        lagerMenuList.add(27);
 
-
-        //recipe.setStyleSeqs(1)[0];
+        recipe.setStyleSeqs(lagerMenuList);
 
         List<Recipe> selectPublicRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
@@ -114,7 +109,7 @@ public class HomeController {
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);
         model.addAttribute("newRecipeList", selectNewPublicRecipeList);
-        model.addAttribute("lagerMenuList", selectNewPublicRecipeList);
+        model.addAttribute("lagerMenuList", selectPublicRecipeMenuList);
 
         return "new_home";
     }

@@ -117,8 +117,8 @@
         AND ATCH_FILE_ID IS NOT NULL
         AND ATCH_COVER_FILE_ID IS NOT NULL
         AND style_seq IN
-        <foreach item="array" collection="styleSeqs" open="(" separator="," close=")">
-            #{styleSeqs}
+        <foreach item="a" collection="styleSeqs" open="(" separator="," close=")">
+            #{a}
         </foreach>
         ORDER BY update_date
         LIMIT 4

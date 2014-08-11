@@ -6,9 +6,9 @@
 
     <!-- Root Context: defines shared resources visible to all other web components -->
 
-    <!-- 스프링 시큐리티 설정 -->
+    <!--   -->
     <import resource="security-context.xml" />
-    <!-- database 설정 -->
+
     <import resource="classpath:applicationContext.xml" />
 
 </beans>
