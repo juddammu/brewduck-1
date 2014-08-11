@@ -361,7 +361,7 @@
             AND A.BBS_ID = #{bbsId}
         </if>
         order by A.INSERT_DATE
-        DESC limit 4;
+        DESC limit 3
     </select>
 
     <select id="selectReplyList" parameterType="Board" resultType="Board">

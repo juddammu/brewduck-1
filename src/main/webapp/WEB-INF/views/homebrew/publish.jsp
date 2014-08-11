@@ -42,7 +42,7 @@
             <div class="col-md-10">
                 <input name="coverFile" id="coverFile" type="file" multiple />
                 <label class="control-label" name="coverFileNm" id="coverFileNm">${recipeDetail.atchCoverFileName}</label>
-                <p class="help-block">이미지 사이즈는 819x452으로 올려주세요.</p>
+                <p class="help-block">이미지 사이즈는 350x150으로 올려주세요.</p>
             </div>
         </div>
         <div id="thurmnailImage" class="form-group">
@@ -52,7 +52,7 @@
             <div class="col-md-10">
                 <input name="file" id="file" type="file" multiple />
                 <label class="control-label" name="fileNm" id="fileNm">${recipeDetail.atchFileName}</label>
-                <p class="help-block">이미지 사이즈는 350x150으로 올려주세요.</p>
+                <p class="help-block">이미지 사이즈는 190x140으로 올려주세요.</p>
             </div>
         </div>
         <div class="form-group">

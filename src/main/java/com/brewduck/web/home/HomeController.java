@@ -93,24 +93,106 @@ public class HomeController {
 
         List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
 
-
         List< Integer > lagerMenuList = new ArrayList< Integer >( );
-        lagerMenuList.add(0);
-        lagerMenuList.add(27);
+        lagerMenuList.add(7);
+        lagerMenuList.add(8);
+        lagerMenuList.add(9);
+        lagerMenuList.add(10);
+        lagerMenuList.add(12);
+        lagerMenuList.add(14);
+        lagerMenuList.add(18);
+        lagerMenuList.add(20);
+        lagerMenuList.add(21);
+        lagerMenuList.add(23);
+        lagerMenuList.add(40);
+        lagerMenuList.add(41);
+        lagerMenuList.add(44);
+        lagerMenuList.add(46);
+        lagerMenuList.add(48);
+        lagerMenuList.add(53);
+        lagerMenuList.add(60);
+        lagerMenuList.add(65);
+        lagerMenuList.add(69);
+        lagerMenuList.add(70);
+        lagerMenuList.add(71);
+        lagerMenuList.add(73);
+        lagerMenuList.add(75);
+        lagerMenuList.add(76);
 
         recipe.setStyleSeqs(lagerMenuList);
+        List<Recipe> selectPublicLagerRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
-        List<Recipe> selectPublicRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
+        List< Integer > ipaMenuList = new ArrayList< Integer >( );
+        ipaMenuList.add(22);
+        ipaMenuList.add(24);
+        ipaMenuList.add(33);
+        ipaMenuList.add(34);
+        ipaMenuList.add(35);
+        ipaMenuList.add(36);
+        ipaMenuList.add(37);
+        ipaMenuList.add(62);
+        ipaMenuList.add(63);
+        ipaMenuList.add(66);
+        ipaMenuList.add(68);
 
-        logger.info("New Post List Size:", list.size());
+        recipe.setStyleSeqs(ipaMenuList);
+        List<Recipe> selectPublicIpaRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
+
+        List< Integer > paleMenuList = new ArrayList< Integer >( );
+        paleMenuList.add(6);
+        paleMenuList.add(19);
+        paleMenuList.add(25);
+        paleMenuList.add(27);
+        paleMenuList.add(28);
+        paleMenuList.add(38);
+        paleMenuList.add(39);
+        paleMenuList.add(42);
+        paleMenuList.add(45);
+        paleMenuList.add(47);
+        paleMenuList.add(50);
+        paleMenuList.add(51);
+        paleMenuList.add(52);
+        paleMenuList.add(54);
+        paleMenuList.add(56);
+        paleMenuList.add(57);
+        paleMenuList.add(59);
+        paleMenuList.add(61);
+        paleMenuList.add(67);
+
+
+        recipe.setStyleSeqs(paleMenuList);
+        List<Recipe> selectPublicPaleRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
+
+        List< Integer > wheatMenuList = new ArrayList< Integer >( );
+        wheatMenuList.add(6);
+
+        recipe.setStyleSeqs(wheatMenuList);
+        List<Recipe> selectPublicWheatRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
+
+        List< Integer > porterMenuList = new ArrayList< Integer >( );
+        porterMenuList.add(12);
+        porterMenuList.add(13);
+
+        recipe.setStyleSeqs(porterMenuList);
+        List<Recipe> selectPublicPorterRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
+
+        List< Integer > sourMenuList = new ArrayList< Integer >( );
+        sourMenuList.add(17);
+
+        recipe.setStyleSeqs(sourMenuList);
+        List<Recipe> selectPublicSourRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
+
+
 
         model.addAttribute("account", account);
         model.addAttribute("new_post", list);
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);
         model.addAttribute("newRecipeList", selectNewPublicRecipeList);
-        model.addAttribute("lagerMenuList", selectPublicRecipeMenuList);
-
+        model.addAttribute("lagerMenuList", selectPublicLagerRecipeMenuList);
+        model.addAttribute("ipaMenuList",   selectPublicIpaRecipeMenuList);
+        model.addAttribute("paleMenuList",  selectPublicPaleRecipeMenuList);
+        model.addAttribute("wheatMenuList",   selectPublicWheatRecipeMenuList);
         return "new_home";
     }
 

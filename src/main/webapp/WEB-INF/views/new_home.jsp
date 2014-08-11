@@ -291,31 +291,15 @@
         <li class="current">
             <a href="#">라거</a>
             <div class="subnav-posts">
+                <c:forEach items="${lagerMenuList}" var="lagerMenuList" varStatus="status">
                 <!-- start:article -->
                 <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <a href="#"><img src="/resources/upload/${lagerMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
+                    <h3><a href="#">${lagerMenuList.name}</a></h3>
                 </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-            </div>                                            </li>
+                </c:forEach>
+            </div>
+        </li>
         <li>
             <a href="#">IPA/스트롱</a>
             <div class="subnav-posts">
@@ -537,44 +521,38 @@
 
 <!-- start:row -->
 <div class="row">
+    <div class="col-sm-8">
+        <article class="linkbox large cat-sports">
+            <a href="#">
+                <img src="/resources/upload/" width="819" height="452" alt="Responsive image" class="img-responsive" />
+                <div class="overlay">
+                    <h2> </h2>
+                    <p> </p>
+                </div>
+            </a>
+            <a href="#" class="theme">
+                뉘우스
+            </a>
+        </article>
+    </div>
     <c:forEach items="${new_post}" var="new_post" varStatus="status">
     <!-- start:col -->
-        <c:choose>
-        <c:when test="${status.count eq 1}" >
-            <div class="col-sm-8">
-                <article class="linkbox large cat-sports">
-                    <a href="#">
-                        <img src="/resources/upload/${new_post.atchCoverFileName}" width="819" height="452" alt="Responsive image" class="img-responsive" />
-                        <div class="overlay">
-                            <h2>${new_post.nttSj}</h2>
-                            <p>${new_post.nttCn}</p>
-                        </div>
-                    </a>
-                    <a href="#" class="theme">
-                        뉘우스
-                    </a>
-                </article>
-            </div>
-        </c:when>
-        <c:otherwise>
-            <div class="col-sm-4">
+        <div class="col-sm-4">
 
-                <article class="linkbox cat-sports">
-                    <a href="#">
-                        <img src="/resources/upload/${new_post.atchFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
-                        <div class="overlay">
-                            <h3>${new_post.nttSj}</h3>
-                        </div>
-                    </a>
-                    <a href="#" class="theme">
-                        뉘우스
-                    </a>
-                </article>
+            <article class="linkbox cat-sports">
+                <a href="#">
+                    <img src="/resources/upload/${new_post.atchCoverFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                    <div class="overlay">
+                        <h3>${new_post.nttSj}</h3>
+                    </div>
+                </a>
+                <a href="#" class="theme">
+                    뉘우스
+                </a>
+            </article>
 
-            </div>
+        </div>
         <!-- end:col -->
-        </c:otherwise>
-        </c:choose>
     </c:forEach>
 </div>
 <!-- end:row -->
