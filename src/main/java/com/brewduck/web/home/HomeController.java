@@ -158,8 +158,6 @@ public class HomeController {
         paleMenuList.add(59);
         paleMenuList.add(61);
         paleMenuList.add(67);
-
-
         recipe.setStyleSeqs(paleMenuList);
         List<Recipe> selectPublicPaleRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
