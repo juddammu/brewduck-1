@@ -28,8 +28,6 @@ public class Admin{
     //가입 일자
     private String insertDate;
 
-
-
     public Integer getId() {
         return id;
     }
