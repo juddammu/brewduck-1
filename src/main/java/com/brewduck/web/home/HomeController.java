@@ -162,20 +162,41 @@ public class HomeController {
         List<Recipe> selectPublicPaleRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
         List< Integer > wheatMenuList = new ArrayList< Integer >( );
-        wheatMenuList.add(6);
+        wheatMenuList.add(23);
+        wheatMenuList.add(11);
+        wheatMenuList.add(16);
+        wheatMenuList.add(29);
+        wheatMenuList.add(30);
+        wheatMenuList.add(67);
 
         recipe.setStyleSeqs(wheatMenuList);
         List<Recipe> selectPublicWheatRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
         List< Integer > porterMenuList = new ArrayList< Integer >( );
-        porterMenuList.add(12);
         porterMenuList.add(13);
+        porterMenuList.add(15);
+        porterMenuList.add(17);
+        porterMenuList.add(26);
+        porterMenuList.add(31);
+        porterMenuList.add(43);
+        porterMenuList.add(49);
+        porterMenuList.add(64);
 
         recipe.setStyleSeqs(porterMenuList);
         List<Recipe> selectPublicPorterRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
         List< Integer > sourMenuList = new ArrayList< Integer >( );
-        sourMenuList.add(17);
+        sourMenuList.add(1);
+
+        sourMenuList.add(2);
+        sourMenuList.add(3);
+        sourMenuList.add(4);
+        sourMenuList.add(5);
+        sourMenuList.add(32);
+        sourMenuList.add(55);
+        sourMenuList.add(72);
+        sourMenuList.add(74);
+        sourMenuList.add(77);
 
         recipe.setStyleSeqs(sourMenuList);
         List<Recipe> selectPublicSourRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
@@ -191,6 +212,8 @@ public class HomeController {
         model.addAttribute("ipaMenuList",   selectPublicIpaRecipeMenuList);
         model.addAttribute("paleMenuList",  selectPublicPaleRecipeMenuList);
         model.addAttribute("wheatMenuList",   selectPublicWheatRecipeMenuList);
+        model.addAttribute("porterMenuList",   selectPublicPorterRecipeMenuList);
+        model.addAttribute("sourMenuList",   selectPublicSourRecipeMenuList);
         return "new_home";
     }
 

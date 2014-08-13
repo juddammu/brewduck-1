@@ -303,171 +303,64 @@
         <li>
             <a href="#">IPA/스트롱</a>
             <div class="subnav-posts">
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-            </div>                                            </li>
+                <c:forEach items="${ipaMenuList}" var="ipaMenuList" varStatus="status">
+                    <!-- start:article -->
+                    <article>
+                        <a href="#"><img src="/resources/upload/${ipaMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
+                        <h3><a href="#">${ipaMenuList.name}</a></h3>
+                    </article>
+                </c:forEach>
+            </div>
+        </li>
         <li>
             <a href="#">에일</a>
             <div class="subnav-posts">
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-            </div>                                            </li>
+                <c:forEach items="${paleMenuList}" var="paleMenuList" varStatus="status">
+                    <!-- start:article -->
+                    <article>
+                        <a href="#"><img src="/resources/upload/${paleMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
+                        <h3><a href="#">${paleMenuList.name}</a></h3>
+                    </article>
+                </c:forEach>
+            </div>
+        </li>
         <li>
             <a href="#">밀맥주</a>
             <div class="subnav-posts">
                 <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-            </div>                                            </li>
+                <c:forEach items="${wheatMenuList}" var="wheatMenuList" varStatus="status">
+                    <!-- start:article -->
+                    <article>
+                        <a href="#"><img src="/resources/upload/${wheatMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
+                        <h3><a href="#">${wheatMenuList.name}</a></h3>
+                    </article>
+                </c:forEach>
+            </div>
+        </li>
         <li>
             <a href="#">포터/스타우트</a>
             <div class="subnav-posts">
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-            </div>                                            </li>
+                <c:forEach items="${porterMenuList}" var="porterMenuList" varStatus="status">
+                    <!-- start:article -->
+                    <article>
+                        <a href="#"><img src="/resources/upload/${porterMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
+                        <h3><a href="#">${porterMenuList.name}</a></h3>
+                    </article>
+                </c:forEach>
+            </div>
+        </li>
         <li>
             <a href="#">사우어</a>
             <div class="subnav-posts">
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-            </div>                                            </li>
-        <li>
-            <a href="#">기타</a>
-            <div class="subnav-posts">
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
-                </article>
-                <!-- end:article -->
-            </div>                                            </li>
+                <c:forEach items="${sourMenuList}" var="sourMenuList" varStatus="status">
+                    <!-- start:article -->
+                    <article>
+                        <a href="#"><img src="/resources/upload/${sourMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
+                        <h3><a href="#">${sourMenuList.name}</a></h3>
+                    </article>
+                </c:forEach>
+            </div>
+        </li>
     </ul>
 </div>
 <!-- end:submenu-news -->
