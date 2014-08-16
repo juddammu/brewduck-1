@@ -412,26 +412,67 @@
 <!-- start:carousel -->
 <div id="slider-carousel">
 
+    <div class="row">
+
+    <!-- start:col -->
+    <div class="col-sm-8">
+
+        <article class="linkbox large cat-news">
+            <a href="#">
+                <img src="/resources/recipe/ballast-point-drink-it.jpg" width="819" height="452" alt="Responsive image" class="img-responsive" />
+                <div class="overlay">
+                    <h2>Ballast Point Clone 레시피 특집 </h2>
+                    <p> 집에서 만들어볼까요?</p>
+                </div>
+            </a>
+            <a href="#" class="theme">
+                특집
+            </a>
+        </article>
+
+    </div>
+    <!-- end:col -->
+    <!-- start:col -->
+    <div class="col-sm-4">
+
+        <c:forEach items="${newRecipeList}" var="newRecipeList" varStatus="status">
+        <article class="linkbox cat-news">
+            <a href="#">
+                <img src="/resources/upload/${newRecipeList.atchCoverFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                <div class="overlay">
+                    <h3>${newRecipeList.name}</h3>
+                </div>
+            </a>
+            <a href="#" class="theme">
+                신규 레시피
+            </a>
+        </article>
+        </c:forEach>
+
+    </div>
+    <!-- end:col -->
+
+</div>
 <!-- start:row -->
 <div class="row">
     <div class="col-sm-8">
         <article class="linkbox large cat-sports">
             <a href="#">
-                <img src="/resources/upload/" width="819" height="452" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/recipe/ballast-point-drink-it.jpg" width="819" height="452" alt="Responsive image" class="img-responsive" />
                 <div class="overlay">
-                    <h2> </h2>
-                    <p> </p>
+                    <h2>Ballast Point Clone 레시피 특집 </h2>
+                    <p> 집에서 만들어볼까요?</p>
                 </div>
             </a>
             <a href="#" class="theme">
-                뉘우스
+                특집
             </a>
         </article>
     </div>
-    <c:forEach items="${new_post}" var="new_post" varStatus="status">
+
     <!-- start:col -->
         <div class="col-sm-4">
-
+            <c:forEach items="${new_post}" var="new_post" varStatus="status">
             <article class="linkbox cat-sports">
                 <a href="#">
                     <img src="/resources/upload/${new_post.atchCoverFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
@@ -443,10 +484,10 @@
                     뉘우스
                 </a>
             </article>
-
+            </c:forEach>
         </div>
         <!-- end:col -->
-    </c:forEach>
+
 </div>
 <!-- end:row -->
 
@@ -471,7 +512,6 @@
 
     </div>
     <!-- end:col -->
-
     <!-- start:col -->
     <div class="col-sm-4">
 

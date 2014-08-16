@@ -104,8 +104,9 @@
         <include refid="Recipe.selectRecipe" />
         WHERE delete_id IS NULL
           AND STATUS = 2
+          AND CATEGORY = 2
           AND ATCH_COVER_FILE_ID IS NOT NULL
-        ORDER BY update_date
+        ORDER BY insert_date
         LIMIT 3
     </select>
 

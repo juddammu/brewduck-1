@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -22,6 +23,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.awt.image.renderable.ParameterBlock;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.media.jai.JAI;
+import javax.media.jai.RenderedOp;
+
+import com.mortennobel.imagescaling.AdvancedResizeOp;
+import com.mortennobel.imagescaling.ResampleOp;
 
 /**
  * <pre>
@@ -41,6 +55,23 @@ public class HomebrewController {
 
     @Autowired
     private CommonService commonService;
+
+    public static void scale(BufferedImage srcImage,
+                             String descPath,
+                             String imageFormat,
+                             int destWidth,
+                             int descHeight) {
+        try {
+            ResampleOp resampleOp = new ResampleOp(destWidth, descHeight);
+            resampleOp.setUnsharpenMask(AdvancedResizeOp.UnsharpenMask.Soft);
+            BufferedImage rescaledImage = resampleOp.filter(srcImage, null);
+            File destFile = new File(descPath);
+            ImageIO.write(rescaledImage, imageFormat, destFile);
+
+        } catch (IOException e){
+            System.out.println(e);
+        }
+    }
 
     /**
      * <pre>
@@ -134,14 +165,16 @@ public class HomebrewController {
 
         HttpSession session = request.getSession();
 
+        ParameterBlock pb = new ParameterBlock();
+
+
         if(coverFile.getSize() > 0){
             FileInfo coverFileInfo = new FileInfo();
 
             String coverFileName = coverFile.getOriginalFilename();   //파일명
             String coverFilemime = coverFile.getContentType();        //마임 타입
-            String coverFilePath = session.getServletContext().getRealPath("/")+"/resources/upload/";   //파일 path
-            coverFile.transferTo(new File(coverFilePath+coverFileName));
-            Long coverFileSze = coverFile.getSize();
+            String coverFilePath = session.getServletContext().getRealPath("/")+"/resources/upload/";       //파일 path
+
 
             coverFileseq = commonService.selectFileSeq();
             coverFileInfo.setFileNo(coverFileseq);
@@ -150,49 +183,39 @@ public class HomebrewController {
             SimpleDateFormat simDate = new SimpleDateFormat("yyyyMMddHHmmss");
             Date nowTime = gc.getTime();
             String[] ArrFileName = null;
-
             if( coverFileName.indexOf(".") >= 0 ) {
                 ArrFileName = coverFileName.split("\\.");
             }
+            String fileName = "";
+            fileName = ArrFileName[0] + "_" + simDate.format(nowTime)+"."+ArrFileName[1];
+
+            coverFile.transferTo(new File(coverFilePath+fileName));
+            Long coverFileSze = coverFile.getSize();
+
+
             coverFileInfo.setSeq(coverFileseq);
-            coverFileInfo.setFilename(coverFileName);
-            coverFileInfo.setRealFilename(ArrFileName[0] + "_" + simDate.format(nowTime)+"."+ArrFileName[1]);
+            coverFileInfo.setFilename(fileName);
+            coverFileInfo.setRealFilename(coverFileName);
             coverFileInfo.setFilesize(coverFile.getSize());
             coverFileInfo.setFileNo(1);
             coverFileInfo.setFilemime(coverFileName);
 
             int fileInsertCount = commonService.insertNoticeFile(coverFileInfo);
-        }
 
-        if(file.getSize() > 0){
+            logger.info("file path " + coverFilePath+coverFileName);
 
-            FileInfo fileInfo = new FileInfo();
+            //썸네일 이미지 생성
+            pb.add(coverFilePath+fileName);
+            RenderedOp rOp = JAI.create("fileload", pb);
 
-            String fileName = file.getOriginalFilename();   //파일명
-            String filemime = file.getContentType();        //마임 타입
-            String filePath = session.getServletContext().getRealPath("/")+"/resources/upload/";   //파일 path
-            file.transferTo(new File(filePath+fileName));
-            Long fileSze = file.getSize();
+            /*
+            메인페이지 : 560x390
+            홈브루어 보유 레시피 : 265x160
+            메인페이지 메뉴 : 190x140
+             */
 
-            fileseq = commonService.selectFileSeq();
-            fileInfo.setFileNo(fileseq);
-
-            GregorianCalendar gc = new GregorianCalendar();
-            SimpleDateFormat simDate = new SimpleDateFormat("yyyyMMddHHmmss");
-            Date nowTime = gc.getTime();
-            String[] ArrFileName = null;
-
-            if( fileName.indexOf(".") >= 0 ) {
-                ArrFileName = fileName.split("\\.");
-            }
-            fileInfo.setSeq(fileseq);
-            fileInfo.setFilename(fileName);
-            fileInfo.setRealFilename(ArrFileName[0] + "_" + simDate.format(nowTime)+"."+ArrFileName[1]);
-            fileInfo.setFilesize(file.getSize());
-            fileInfo.setFileNo(1);
-            fileInfo.setFilemime(filemime);
-
-            int fileInsertCount = commonService.insertNoticeFile(fileInfo);
+            this.scale(rOp.getAsBufferedImage(), coverFilePath+ArrFileName[0] + "_265x160" +"."+ArrFileName[1], ArrFileName[1], 265, 160);
+            this.scale(rOp.getAsBufferedImage(), coverFilePath+ArrFileName[0] + "_190x140" +"."+ArrFileName[1], ArrFileName[1], 190, 140);
         }
 
         Account account = AuthenticationUtils.getUser();
