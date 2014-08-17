@@ -934,6 +934,10 @@
             var yeastHtml = "";
             var miscHtml = "";
             //getFermentableList();
+            $('#batchSize').change(function(){
+                calc();
+            });
+
             $('#styleSeq').change(function(){
                 var seq = $("#styleSeq option:selected").val();
 
@@ -962,6 +966,9 @@
 
                 calc();
             });
+
+
+
 
             $('#misc').change(function(){
                 miscHtml = "";

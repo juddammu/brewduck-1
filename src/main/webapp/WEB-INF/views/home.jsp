@@ -1,641 +1,666 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-    <%@ include file="/WEB-INF/views/common/include/home_header.jsp" %>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Fedora - Responsive Html5 Template" />
+    <meta name="author" content="Linethemes - linethemes.com" />
+    <meta name="keywords" content="wordpress, themes, wordpress themes, premium wordpress themes, premium themes, wordpress theme shop, free themes, wordpress templates" />
+    <title>Fedora - Responsive Html5 Template</title>
+    <link rel="shortcut icon" href="/resources/front/img/favico.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/front/img/apple-icon-114x114px.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/front/img/apple-icon-144x144px.png" />
+    <link rel="stylesheet" type="text/css" href="/resources/front/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/front/css/shortcode.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/front/css/woocommerce.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/front/css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/front/3rd/font-awesome/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/front/3rd/pretty-photo/pretty-photo.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/front/3rd/layerslider/css/layerslider.css" />
+    <!--[if IE]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
 </head>
-
-
 <body>
-
-<div class="page-box">
-<div class="page-box-content">
-
-    <!-- 히든 탑 메뉴 시작 -->
-    <%@ include file="/WEB-INF/views/common/include/home_top_menu.jsp" %>
-    <!-- 히든 탑 메뉴 끝 -->
-
-
-<div id="cm-video-bg" class="full-width-box bottom-padding">
-    <div class="fwb-bg fwb-video band-16">
-        <video autoplay="" muted="" loop="">
-            <source src="http://template.progressive.itembridge.com/2.1.8/video/video.mp4" type="video/mp4">
-            <source src="video/video.webm" type="video/webm">
-        </video>
-        <div class="overlay"></div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="white text-center col-sm-12 col-md-12">
-                <div class="title-box text-center title-white">
-                    <h1 class="title">세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다.</h1>
-                </div>
-                <p>알콜이 60도가 넘는 맥주부터, 오트통에서 숙성하는 사우어 에일, 훈연향이 가득한 맥주까지. </br>
-                    세상에는 맛보지 않은 맥주들이 너무나 많습니다.</br></br>
-                    광활한 맥주의 세계로 함께 떠나요!!</p>
-                <!--a href="#" class="btn btn-default">..더 보기</a-->
-            </div>
+<header>
+<div id="tm-header-top">
+    <div class="tm-wrap tm-table">
+        <div class="tm-logo">
+            <a href="index.html" class="tm-logo-simple">
+                <img alt="Logo" src="/resources/front/img/logo.jpg">
+            </a>
+            <a href="index.html" class="tm-logo-retina">
+                <img alt="Logo" width="142" height="60" src="/resources/front/img/logo@2x.jpg">
+            </a>
+        </div>
+        <!--
+        <nav class="tm-top-nav">
+            <ul>
+                <li>
+                    <a href="#">Check out</a>
+                </li>
+                <li>
+                    <a href="#">View cart</a>
+                </li>
+                <li>
+                    <a href="#">View order</a>
+                </li>
+            </ul>
+        </nav>
+        -->
+        <div class="tm-search">
+            <form>
+                <input type="text" autocomplete="off" placeholder="Search..." name="s" class="tm-input">
+                <button role="button" type="submit" class="tm-button">Search</button>
+            </form>
         </div>
     </div>
-</div><!-- .full-width-box -->
-
-<div class="container">
-<div class="carousel-box bottom-padding bottom-padding-mini load overflow">
-<div class="title-box no-margin">
-    <a class="next" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="16px" viewBox="0 0 9 16" enable-background="new 0 0 9 16" xml:space="preserve">
-          <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="1,0.001 0,1.001 7,8 0,14.999 1,15.999 9,8 "></polygon>
-        </svg>
+    <!--tm-wrap-->
+</div>
+<!--tm-header-top-->
+<div id="tm-header-nav" class="tm-menu-style2 tm-sticky-menu">
+<div class="tm-wrap tm-table">
+<nav class="tm-nav">
+<ul class="tm-menu tm-menu-simple">
+<li class="parent current-menu-item">
+    <a href="index.html">Home</a>
+    <ul class="sub-menu">
+        <li>
+            <a href="index.html">v1: Home LayerSlider</a>
+        </li>
+        <li>
+            <a href="home-flexslider.html">v2: Home FlexSlider</a>
+        </li>
+        <li>
+            <a href="home-landingpage.html">v3: Landing Page</a>
+        </li>
+        <li>
+            <a href="home-apps.html">v4: App Promo Style</a>
+        </li>
+        <li>
+            <a href="home-business.html">v5: Business</a>
+        </li>
+        <li>
+            <a href="home-box.html">v6: Business Boxed</a>
+        </li>
+        <li>
+            <a href="home-creative.html">v7: Creative</a>
+        </li>
+        <li>
+            <a href="home-personal.html">v8: Blog Personal</a>
+        </li>
+        <li>
+            <a href="home-masonry.html">v9: Blog Masonry</a>
+        </li>
+        <li>
+            <a href="home-maz.html">v10: Blog Tutorial</a>
+        </li>
+        <li>
+            <a href="home-shop.html">v11: Shop Fashion</a>
+        </li>
+        <li>
+            <a href="under-construction2.html">v12: Under Construction</a>
+        </li>
+        <li>
+            <a href="#">to be continue...</a>
+        </li>
+    </ul>
+</li>
+<li class="parent">
+    <a href="#">Pages</a>
+    <ul class="sub-menu">
+        <li>
+            <a href="about.html">About Us</a>
+        </li>
+        <li>
+            <a href="404.html">Error 404</a>
+        </li>
+        <li>
+            <a href="faq.html">FAQ</a>
+        </li>
+        <li>
+            <a href="under-construction.html">Under Construction</a>
+        </li>
+        <li>
+            <a href="under-construction2.html">Under Construction (2)</a>
+        </li>
+        <li>
+            <a href="services.html">Services</a>
+        </li>
+        <li>
+            <a href="pricing.html">Pricing</a>
+        </li>
+    </ul>
+</li>
+<li class="parent">
+    <a href="#">Layout</a>
+    <ul class="sub-menu">
+        <li>
+            <a href="widget.html">Widget Style</a>
+        </li>
+        <li>
+            <a href="template-full.html">Default Template Fullwidth</a>
+        </li>
+        <li>
+            <a href="template-box.html">Default Template Box</a>
+        </li>
+        <li>
+            <a href="template-fixed.html">Default Template Fixed</a>
+        </li>
+        <li>
+            <a href="sidebar-right.html">Right Sidebar</a>
+        </li>
+        <li>
+            <a href="sidebar-left.html">Left Sidebar</a>
+        </li>
+        <li>
+            <a href="sidebar-lcr.html">Sidebar + Content + Sidebar</a>
+        </li>
+        <li>
+            <a href="sidebar-clr.html">Content + Sidebar + Sidebar</a>
+        </li>
+    </ul>
+</li>
+<li class="parent">
+    <a href="#">Portfolio</a>
+    <ul class="sub-menu">
+        <li>
+            <a href="portfolio-3col-classic.html">3 Column Classic layouts</a>
+        </li>
+        <li>
+            <a href="portfolio-4col-text.html">4 Column Text layouts</a>
+        </li>
+        <li>
+            <a href="single-portfolio.html">Single post layouts</a>
+        </li>
+    </ul>
+</li>
+<li class="parent">
+    <a href="#">Blog</a>
+    <ul class="sub-menu">
+        <li>
+            <a href="switch-layout.html">Switch layouts</a>
+        </li>
+        <li class="parent">
+            <a href="#">News layouts</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="news-layout1.html">News layouts 01</a>
+                </li>
+                <li>
+                    <a href="news-layout2.html">News layouts 02</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="single-blog.html">Single post layouts</a>
+        </li>
+    </ul>
+</li>
+<li class="parent">
+    <a href="#">Shop</a>
+    <ul class="sub-menu">
+        <li>
+            <a href="home-shop.html">Fedora Shop</a>
+        </li>
+        <li>
+            <a href="shop-category.html">Category Page</a>
+        </li>
+        <li>
+            <a href="shop-product.html">Product Page</a>
+        </li>
+    </ul>
+</li>
+<li class="parent tm-mega-menu">
+    <a href="#">Shortcodes</a>
+    <ul class="sub-menu">
+        <li>
+            <a href="#">Title 1</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="s-accordion.html">Accordion</a>
+                </li>
+                <li>
+                    <a href="s-alert-blockquote.html">Alert Messages & Blockquote</a>
+                </li>
+                <li>
+                    <a href="s-animation.html">Animation Images</a>
+                </li>
+                <li>
+                    <a href="s-button.html">Button</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Title 2</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="s-column.html">Columns</a>
+                </li>
+                <li>
+                    <a href="s-countdown.html">Countdown</a>
+                </li>
+                <li>
+                    <a href="s-divider.html">Dividers</a>
+                </li>
+                <li>
+                    <a href="s-dropcap-testimonial.html">Dropcaps & Testimonial</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Title 3</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="s-gallery.html">Gallery</a>
+                </li>
+                <li>
+                    <a href="s-iconbox.html">Icon Box</a>
+                </li>
+                <li>
+                    <a href="s-iconlist.html">Icon List</a>
+                </li>
+                <li>
+                    <a href="s-logo.html">Logo Clients</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Title 4</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="s-post-content.html">Post Content</a>
+                </li>
+                <li>
+                    <a href="s-progress-bar.html">Progress Bar</a>
+                </li>
+                <li>
+                    <a href="s-promobox.html">Promo Box</a>
+                </li>
+                <li>
+                    <a href="s-tab.html">Tabs</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Title 5</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="s-table.html">Table & Pricing Table</a>
+                </li>
+                <li>
+                    <a href="s-team.html">Team Element</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li>
+    <a href="contact.html">Contact</a>
+</li>
+<li class="tm-modal">
+    <a href="#loginmodal">Modal Login</a>
+</li>
+</ul>
+</nav>
+<!--tm-nav-->
+<div class="tm-social-icons">
+    <a href="#" class="tm-icon-facebook">
+        <i class="fa fa-facebook"></i>
     </a>
-    <a class="prev" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="16px" viewBox="0 0 9 16" enable-background="new 0 0 9 16" xml:space="preserve">
-          <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="8,15.999 9,14.999 2,8 9,1.001 8,0.001 0,8 "></polygon>
-        </svg>
+    <a href="#" class="tm-icon-twitter">
+        <i class="fa fa-twitter"></i>
     </a>
-    <h2 class="title">인기 레시피</h2>
+    <a href="#" class="tm-icon-dribbble">
+        <i class="fa fa-dribbble"></i>
+    </a>
 </div>
-
-<div class="clearfix"></div>
-
-<div class="row">
-<div class="carousel products">
-<div class="col-sm-3 col-md-3 product rotation">
-    <div class="default">
-        <a href="/recipe/1/보스턴_라거_클론" class="product-image">
-            <img src="/resources/recipe/1/recipe_1.jpg" alt="" title="" width="270" height="270">
-        </a>
-        <div class="product-description">
-            <div class="vertical">
-                <h3 class="product-name">
-                    <a href="product-view.html">보스턴 라거</a>
-                </h3>
-                <div class="price">American Lager | 4.9% ABV</div>
-            </div>
-        </div>
-    </div>
-    <div class="product-hover">
-        <h3 class="product-name">
-            <a href="/recipe/1/보스턴_라거_클론">보스턴 라거</a>
-        </h3>
-        <div class="price">American Lager | 4.9% ABV</div>
-        <a href="/recipe/1/보스턴_라거_클론" class="product-image">
-            <img src="/resources/recipe/1/recipe_small_1.jpg" alt="" title="" width="70" height="70">
-        </a>
-        <ul>
-            <li>2SRM : 밝은 노랑</li>
-            <li>초기비중 : 1.070</li>
-            <li>최종비중 : 1.018</li>
-            <li>20IBU</li>
-        </ul>
-        <div class="actions">
-            <a href="/recipe/1/보스턴_라거_클론" class="add-cart">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <g>
-                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
-                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
-                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
-                      M13.001,14H3V6h10V14z"></path>
-                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
-                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
-                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
-                  </g>
-                </svg>
-            </a>
-            <a href="#" class="add-wishlist">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
-                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
-                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
-                </svg>
-            </a>
-            <a href="#" class="add-compare">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
-                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
-                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
-                </svg>
-            </a>
-        </div><!-- .actions -->
-    </div><!-- .product-hover -->
-</div><!-- .product -->
-<div class="col-sm-3 col-md-3 product rotation">
-    <div class="default">
-        <a href="product-view.html" class="product-image">
-            <img src="/resources/recipe/2/recipe_2.jpg" alt="" title="" width="270" height="270">
-        </a>
-        <div class="product-description">
-            <div class="vertical">
-                <h3 class="product-name">
-                    <a href="product-view.html">스컬핀 IPA</a>
-                </h3>
-                <div class="price">American IPA | 7.00% ABV</div>
-            </div>
-        </div>
-    </div>
-    <div class="product-hover">
-        <h3 class="product-name">
-            <a href="/recipe/1/보스턴_라거_클론">보스턴 라거</a>
-        </h3>
-        <div class="price">American Lager | 4.9% ABV</div>
-        <a href="/recipe/1/보스턴_라거_클론" class="product-image">
-            <img src="/resources/recipe/1/recipe_small_1.jpg" alt="" title="" width="70" height="70">
-        </a>
-        <ul>
-            <li>2SRM : 밝은 노랑</li>
-            <li>초기비중 : 1.070</li>
-            <li>최종비중 : 1.018</li>
-            <li>20IBU</li>
-        </ul>
-        <div class="actions">
-            <a href="/recipe/1/보스턴_라거_클론" class="add-cart">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <g>
-                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
-                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
-                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
-                      M13.001,14H3V6h10V14z"></path>
-                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
-                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
-                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
-                  </g>
-                </svg>
-            </a>
-            <a href="#" class="add-wishlist">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
-                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
-                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
-                </svg>
-            </a>
-            <a href="#" class="add-compare">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
-                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
-                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
-                </svg>
-            </a>
-        </div><!-- .actions -->
-    </div><!-- .product-hover -->
-</div><!-- .product -->
-<div class="col-sm-3 col-md-3 product rotation">
-    <div class="default">
-        <a href="product-view.html" class="product-image">
-            <img src="/resources/recipe/3/recipe_3.jpg" alt="" title="" width="270" height="270">
-        </a>
-        <div class="product-description">
-            <div class="vertical">
-                <h3 class="product-name">
-                    <a href="product-view.html">Dark Sea</a>
-                </h3>
-                <div class="price">Russian Imperial Stout |  9.80% ABV </div>
-            </div>
-        </div>
-    </div>
-    <div class="product-hover">
-        <h3 class="product-name">
-            <a href="/recipe/1/보스턴_라거_클론">보스턴 라거</a>
-        </h3>
-        <div class="price">American Lager | 4.9% ABV</div>
-        <a href="/recipe/1/보스턴_라거_클론" class="product-image">
-            <img src="/resources/recipe/1/recipe_small_1.jpg" alt="" title="" width="70" height="70">
-        </a>
-        <ul>
-            <li>2SRM : 밝은 노랑</li>
-            <li>초기비중 : 1.070</li>
-            <li>최종비중 : 1.018</li>
-            <li>20IBU</li>
-        </ul>
-        <div class="actions">
-            <a href="/recipe/1/보스턴_라거_클론" class="add-cart">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <g>
-                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
-                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
-                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
-                      M13.001,14H3V6h10V14z"></path>
-                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
-                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
-                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
-                  </g>
-                </svg>
-            </a>
-            <a href="#" class="add-wishlist">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
-                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
-                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
-                </svg>
-            </a>
-            <a href="#" class="add-compare">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
-                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
-                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
-                </svg>
-            </a>
-        </div><!-- .actions -->
-    </div><!-- .product-hover -->
-</div><!-- .product -->
-<div class="col-sm-3 col-md-3 product rotation">
-    <div class="default">
-        <a href="product-view.html" class="product-image">
-            <img src="/resources/recipe/4/recipe_4.jpg" alt="" title="" width="270" height="270">
-        </a>
-        <div class="product-description">
-            <div class="vertical">
-                <h3 class="product-name">
-                    <a href="product-view.html">오트밀 스타우트</a>
-                </h3>
-                <div class="price">Oatmeal Stout |  7.20% ABV</div>
-            </div>
-        </div>
-    </div>
-    <div class="product-hover">
-        <h3 class="product-name">
-            <a href="/recipe/1/보스턴_라거_클론">보스턴 라거</a>
-        </h3>
-        <div class="price">American Lager | 4.9% ABV</div>
-        <a href="/recipe/1/보스턴_라거_클론" class="product-image">
-            <img src="/resources/recipe/1/recipe_small_1.jpg" alt="" title="" width="70" height="70">
-        </a>
-        <ul>
-            <li>2SRM : 밝은 노랑</li>
-            <li>초기비중 : 1.070</li>
-            <li>최종비중 : 1.018</li>
-            <li>20IBU</li>
-        </ul>
-        <div class="actions">
-            <a href="/recipe/1/보스턴_라거_클론" class="add-cart">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <g>
-                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
-                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
-                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
-                      M13.001,14H3V6h10V14z"></path>
-                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
-                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
-                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
-                  </g>
-                </svg>
-            </a>
-            <a href="#" class="add-wishlist">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
-                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
-                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
-                </svg>
-            </a>
-            <a href="#" class="add-compare">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
-                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
-                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
-                </svg>
-            </a>
-        </div><!-- .actions -->
-    </div><!-- .product-hover -->
-</div><!-- .product -->
-<!--
-<div class="col-sm-3 col-md-3 product rotation">
-    <div class="default">
-        <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-5.png" alt="" title="" width="270" height="270">
-        </a>
-        <div class="product-description">
-            <div class="vertical">
-                <h3 class="product-name">
-                    <a href="product-view.html"> 800 Series Diamond</a>
-                </h3>
-                <div class="price">$1, 449.00</div>
-            </div>
-        </div>
-    </div>
-    <div class="product-hover">
-        <h3 class="product-name">
-            <a href="product-view.html"> 800 Series Diamond</a>
-        </h3>
-        <div class="price">$1, 449.00</div>
-        <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-5.png" alt="" title="" width="70" height="70">
-        </a>
-        <ul>
-            <li>117 cm / 46"LCD TV</li>
-            <li>Full HD 3D &amp; 2D</li>
-            <li>Sony Internet TV</li>
-            <li>Dynamic Edge LED</li>
-            <li>1X-Reality PRO</li>
-        </ul>
-        <div class="actions">
-            <a href="product-view.html" class="add-cart">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <g>
-                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
-                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
-                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
-                      M13.001,14H3V6h10V14z"></path>
-                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
-                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
-                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
-                  </g>
-                </svg>
-            </a>
-            <a href="#" class="add-wishlist">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
-                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
-                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
-                </svg>
-            </a>
-            <a href="#" class="add-compare">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
-                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
-                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
-                </svg>
-            </a>
-        </div>
-    </div>
-</div>
-<div class="col-sm-3 col-md-3 product rotation">
-    <div class="default">
-        <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-6.png" alt="" title="" width="270" height="270">
-        </a>
-        <div class="product-description">
-            <div class="vertical">
-                <h3 class="product-name">
-                    <a href="product-view.html">AirPlay Hi-Fi system</a>
-                </h3>
-                <div class="price">$1, 449.00</div>
-            </div>
-        </div>
-    </div>
-    <div class="product-hover">
-        <h3 class="product-name">
-            <a href="product-view.html">AirPlay Hi-Fi system</a>
-        </h3>
-        <div class="price">$1, 449.00</div>
-        <a href="product-view.html" class="product-image">
-            <img src="http://template.progressive.itembridge.com/2.1.8/img/content/product-6.png" alt="" title="" width="70" height="70">
-        </a>
-        <ul>
-            <li>117 cm / 46"LCD TV</li>
-            <li>Full HD 3D &amp; 2D</li>
-            <li>Sony Internet TV</li>
-            <li>Dynamic Edge LED</li>
-            <li>1X-Reality PRO</li>
-        </ul>
-        <div class="actions">
-            <a href="product-view.html" class="add-cart">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <g>
-                      <path fill="#1e1e1e" d="M15.001,4h-0.57l-3.707-3.707c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L11.603,4
-                      H4.43l2.293-2.293c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0L1.602,4H1C0.448,4,0,4.448,0,5s0.448,1,1,1
-                      c0,2.69,0,7.23,0,8c0,1.104,0.896,2,2,2h10c1.104,0,2-0.896,2-2c0-0.77,0-5.31,0-8c0.553,0,1-0.448,1-1S15.554,4,15.001,4z
-                      M13.001,14H3V6h10V14z"></path>
-                      <path fill="#1e1e1e" d="M11.001,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C10.001,12.553,10.448,13,11.001,13z"></path>
-                      <path fill="#1e1e1e" d="M8,13c0.553,0,1-0.447,1-1V8c0-0.553-0.448-1-1-1S7,7.447,7,8v4C7,12.553,7.448,13,8,13z"></path>
-                      <path fill="#1e1e1e" d="M5,13c0.553,0,1-0.447,1-1V8c0-0.553-0.447-1-1-1S4,7.447,4,8v4C4,12.553,4.448,13,5,13z"></path>
-                  </g>
-                </svg>
-            </a>
-            <a href="#" class="add-wishlist">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                <path fill="#1e1e1e" d="M11.335,0C10.026,0,8.848,0.541,8,1.407C7.153,0.541,5.975,0,4.667,0C2.088,0,0,2.09,0,4.667C0,12,8,16,8,16
-                  s8-4,8-11.333C16.001,2.09,13.913,0,11.335,0z M8,13.684C6.134,12.49,2,9.321,2,4.667C2,3.196,3.197,2,4.667,2C6,2,8,4,8,4
-                  s2-2,3.334-2c1.47,0,2.666,1.196,2.666,2.667C14.001,9.321,9.867,12.49,8,13.684z"></path>
-                </svg>
-            </a>
-            <a href="#" class="add-compare">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                  <path fill="#1e1e1e" d="M16,3.063L13,0v2H1C0.447,2,0,2.447,0,3s0.447,1,1,1h12v2L16,3.063z"></path>
-                    <path fill="#1e1e1e" d="M16,13.063L13,10v2H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h12v2L16,13.063z"></path>
-                    <path fill="#1e1e1e" d="M15,7H3V5L0,7.938L3,11V9h12c0.553,0,1-0.447,1-1S15.553,7,15,7z"></path>
-                </svg>
-            </a>
-        </div>
-    </div>
-</div>
--->
+<!--tm-social-icons-->
 </div>
 </div>
-</div><!-- .carousel-box -->
-
-<div class="content-block frame text-center bottom-padding">
-    <p class="lead">사이트 만드는라 맥주도 못먹고 일하고 있습니다. 9월달에 정식오픈할테니 기억나면 찾아오세요 :)  </p>
-    <button class="btn btn-default" data-appear-animation="bounceIn">Read More</button>
-    <button class="btn btn-default" data-appear-animation="bounceIn">Join Now</button>
-</div><!-- .content-block -->
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-6 promo-partners bottom-padding">
-            <div class="title-box">
-                <h2 class="title">파트너 - partners</h2>
-            </div>
-            <div class="row manufactures manufactures-list">
-                <div class="make-wrapper">
-                    <a href="#" class="make">
-                        <img src="http://template.progressive.itembridge.com/2.1.8/img/content/make-2.png" width="128" height="128" alt="">
-                    </a>
-                </div><!--
-
-        --><div class="make-wrapper">
-                <a href="#" class="make">
-                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/make-3.png" width="128" height="128" alt="">
-                </a>
-            </div><!--
-
-        --><div class="make-wrapper">
-                <a href="#" class="make">
-                    <img src="http://template.progressive.itembridge.com/2.1.8/img/content/make-4.png" width="128" height="128" alt="">
-                </a>
-            </div>
-            </div>
-            <p>Duis bibendum pulvinar laoreet. Ut eu arcu sit amet elit placerat pharetra sit amet a tortor. Fusce vestibulum auctor rhoncus. Nullam rhoncus, tellus a congue elementum, leo ipsum tincidunt justo, ut condimentum velit eros et lectus. Phasellus ultrices rhoncus vehicula.</p>
-            <p>Integer ultricies semper massa non condimentum. Phasellus eu ipsum justo. Nullam non pulvinar purus. Ut ante ipsum, venenatis at tristique quis, congue vitae felis. Aliquam cursus diam in massa dapibus auctor. In volutpat, risus non egestas luctus, justo tellus laoreet justo. </p>
-        </div><!-- .promo-partners -->
-
-        <div class="col-sm-12 col-md-6">
-            <div class="title-box">
-                <a href="/board/freeBoard" class="btn btn-default">전체 읽기 <i class="icon-arrow-right icon-white"></i></a>
-                <h2 class="title">최신 글 목록</h2>
-            </div>
-            <table class="table">
-                <tbody id="result">
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-</article>
-
-</div><!-- .page-box-content -->
-</div><!-- .page-box -->
-
-<footer id="footer">
-    <div class="footer-top">
-        <div class="container">
-            <div class="row sidebar">
-                <aside class="col-xs-12 col-sm-6 col-md-3 widget social">
-                    <div class="title-block">
-                        <h3 class="title">소식지</h3>
+<!--tm-header-nav-->
+</header>
+<div id="tm-page-body">
+    <div id="tm-blog" class="tm-container tm-wrap personal">
+        <div class="page-content">
+            <div id="main" class="tm-content page-content-inner masonry">
+                <article class="item column-width format-standard">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="single-blog.html">
+                                <img alt="Thumb" src="http://placehold.it/275x275">
+                            </a>
+                        </div>
+                        <div class="entry-container">
+                            <div class="time">August 13th, 2013</div>
+                            <h3>
+                                <a href="">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                            </h3>
+                        </div>
                     </div>
-                    <p>Follow us in social media</p>
-                    <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="#"></a>
-                    <a class="sbtnf sbtnf-rounded color color-hover icon-twitter" href="#"></a>
-                    <a class="sbtnf sbtnf-rounded color color-hover icon-gplus" href="#"></a>
-                    <a class="sbtnf sbtnf-rounded color color-hover icon-linkedin" href="#"></a>
-                    <div class="clearfix"></div>
-                </aside>
-
-                <aside class="col-xs-12 col-sm-6 col-md-3 widget newsletter">
-                    <div class="title-block">
-                        <h3 class="title">Newsletter Signup</h3>
+                </article>
+                <article class="item w2 format-gallery">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <div class="tm-gallery gallery-slide flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <a href="http://placehold.it/800x800" data-rel="prettyPhoto[gallery]">
+                                            <img alt="Thumb" src="http://placehold.it/550x550/aaa">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://placehold.it/800x800" data-rel="prettyPhoto[gallery]">
+                                            <img alt="Thumb" src="http://placehold.it/550x550/aaa">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://placehold.it/800x800" data-rel="prettyPhoto[gallery]">
+                                            <img alt="Thumb" src="http://placehold.it/550x550/aaa">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <p>Sign up for newsletter</p>
-                        <div class="clearfix"></div>
-                        <form>
-                            <input class="form-control" type="email">
-                            <button class="submit"><span class="glyphicon glyphicon-arrow-right"></span></button>
-                        </form>
+                </article>
+                <article class="item column-width format-aside">
+                    <div class="tm-content-inner">
+                        <div class="entry-container">
+                            <div class="time">August 13th, 2013</div>
+                            <h3>
+                                <a href="">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                            </h3>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                            </p>
+                        </div>
                     </div>
-                </aside><!-- .newsletter -->
-
-                <aside class="col-xs-12 col-sm-6 col-md-3 widget links">
-                    <div class="title-block">
-                        <h3 class="title">Information</h3>
+                </article>
+                <article class="item column-width format-image">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="http://placehold.it/800x800" data-rel="prettyPhoto[img1]">
+                                <img alt="Thumb" src="http://placehold.it/275x275/dddddd">
+                                <i class="fa fa-picture-o"></i>
+                            </a>
+                        </div>
                     </div>
-                    <nav>
+                </article>
+                <article class="item column-width format-video">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="http://www.youtube.com/watch?v=1iIZeIy7TqM" data-rel="prettyPhoto[video]">
+                                <img alt="Thumb" src="http://placehold.it/275x275">
+                                <i class="fa fa-play-circle-o"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="item column-width format-aside">
+                    <div class="tm-content-inner">
+                        <div class="entry-container">
+                            <div class="time">August 13th, 2013</div>
+                            <h3>
+                                <a href="">Tutorial: Affiliate Tracking Widget</a>
+                            </h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <article class="item column-width format-link">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="https://twitter.com/" target="_blank">
+                                <img alt="Thumb" src="http://placehold.it/275x275/dddddd">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="item column-width format-image">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="http://placehold.it/550x550" data-rel="prettyPhoto[img2]">
+                                <img alt="Thumb" src="http://placehold.it/275x275">
+                                <i class="fa fa-picture-o"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="item column-width format-quote">
+                    <div class="tm-content-inner" style="color:#fff;background:#bbb">
+                        <div class="entry-container">
+                            <blockquote>
+                                <p>
+                                    Quality is more important than quantity. One home run is much better than two doubles.
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </article>
+                <article class="item column-width format-standard">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="single-blog.html">
+                                <img alt="Thumb" src="http://placehold.it/550x550/aaa">
+                            </a>
+                        </div>
+                        <div class="entry-container">
+                            <div class="time">August 13th, 2013</div>
+                            <h3>
+                                <a href="">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                            </h3>
+                        </div>
+                    </div>
+                </article>
+                <article class="item column-width format-standard">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="single-blog.html">
+                                <img alt="Thumb" src="http://placehold.it/275x275">
+                            </a>
+                        </div>
+                        <div class="entry-container">
+                            <div class="time">August 13th, 2013</div>
+                            <h3>
+                                <a href="">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                            </h3>
+                        </div>
+                    </div>
+                </article>
+                <article class="item w2 format-standard">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="single-blog.html">
+                                <img alt="Thumb" src="http://placehold.it/550x550/ddd">
+                            </a>
+                        </div>
+                        <div class="entry-container">
+                            <div class="time">August 13th, 2013</div>
+                            <h3>
+                                <a href="">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                            </h3>
+                        </div>
+                    </div>
+                </article>
+                <article class="item column-width format-standard">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="single-blog.html">
+                                <img alt="Thumb" src="http://placehold.it/275x275">
+                            </a>
+                        </div>
+                        <div class="entry-container">
+                            <div class="time">August 13th, 2013</div>
+                            <h3>
+                                <a href="">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                            </h3>
+                        </div>
+                    </div>
+                </article>
+                <article class="item column-width format-standard">
+                    <div class="tm-content-inner">
+                        <div class="entry-thumbnail">
+                            <a href="single-blog.html">
+                                <img alt="Thumb" src="http://placehold.it/275x275/bbb">
+                            </a>
+                        </div>
+                        <div class="entry-container">
+                            <div class="time">August 13th, 2013</div>
+                            <h3>
+                                <a href="">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                            </h3>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <!--page-content-->
+    </div>
+    <!--tm-blog-->
+</div>
+<!--tm-page-body-default-box-->
+<div id="tm-page-footer">
+    <div class="tm-sidebar-footer">
+        <div class="tm-wrap">
+            <div class="tm-sidebar-footer-inner">
+                <div class="tm-column tm3">
+                    <aside class="widget widget_text">
+                        <div class="textwidget">
+                            <p>
+                                <img alt="img" src="/resources/front/img/sample/home/logo.png" width="139" height="24">
+                            </p>
+                            <p>
+                                Fedora is the theme that innovatively uses the power of LESS and HTML5/CSS3 as the base. Besides the exclusive style and the compatibility with WooCommerce, it also has responsive layout, retina-ready, and rich-customizing options.
+                            </p>
+                        </div>
+                    </aside>
+                </div>
+                <div class="tm-column tm2">
+                    <aside class="widget tm-list-style1">
+                        <h3 class="tm-title">Category</h3>
                         <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms &amp; Condotions</a></li>
-                            <li><a href="#">Secure payment</a></li>
+                            <li>
+                                <a href="">New products</a>
+                            </li>
+                            <li>
+                                <a href="">Top sellers</a>
+                            </li>
+                            <li>
+                                <a href="">Specials</a>
+                            </li>
+                            <li>
+                                <a href="">Manufacturers</a>
+                            </li>
+                            <li>
+                                <a href="">Suppliers</a>
+                            </li>
+                            <li>
+                                <a href="">Customer Service</a>
+                            </li>
                         </ul>
-                    </nav>
-                </aside>
-
-                <aside class="col-xs-12 col-sm-6 col-md-3 widget links">
-                    <div class="title-block">
-                        <h3 class="title">My account</h3>
-                    </div>
-                    <nav>
-                        <ul>
-                            <li><a href="#">My account</a></li>
-                            <li><a href="#">Order History</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Newsletter</a></li>
-                        </ul>
-                    </nav>
-                </aside>
-            </div>
-        </div>
-    </div><!-- .footer-top -->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="copyright col-xs-12 col-sm-3 col-md-3">
-                    Copyright © 브루덕., 2013
+                    </aside>
                 </div>
 
-                <div class="phone col-xs-6 col-sm-3 col-md-3">
-                    <div class="footer-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-			  <path fill="#c6c6c6" d="M11.001,0H5C3.896,0,3,0.896,3,2c0,0.273,0,11.727,0,12c0,1.104,0.896,2,2,2h6c1.104,0,2-0.896,2-2
-			   c0-0.273,0-11.727,0-12C13.001,0.896,12.105,0,11.001,0z M8,15c-0.552,0-1-0.447-1-1s0.448-1,1-1s1,0.447,1,1S8.553,15,8,15z
-				M11.001,12H5V2h6V12z"></path>
-			</svg>
-                    </div>
-                    <strong class="title">연락처 :</strong> help@brewduck.com<br>
+                <div class="tm-column tm3">
+                    <aside class="widget widget_tag_cloud">
+                        <h3 class="tm-title">Popular Tags</h3>
+                        <div class="tagcloud">
+                            <a href="#" style="font-size: 22pt;" title="2 topics">Design</a>
+                            <a href="#" style="font-size: 8pt;" title="1 topic">jQuery</a>
+                            <a href="#" style="font-size: 8pt;" title="1 topic">PHP</a>
+                            <a href="#" style="font-size: 8pt;" title="1 topic">Wordpress</a>
+                            <a href="#" style="font-size: 22pt;" title="2 topics">Animation</a>
+                            <a href="#" style="font-size: 22pt;" title="2 topics">Audio</a>
+                            <a href="#" style="font-size: 8pt;" title="1 topic">Developer</a>
+                        </div>
+                    </aside>
                 </div>
-
-                <div class="address col-xs-6 col-sm-3 col-md-3">
-                    <div class="footer-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-			  <g>
-                  <g>
-                      <path fill="#c6c6c6" d="M8,16c-0.256,0-0.512-0.098-0.707-0.293C7.077,15.491,2,10.364,2,6c0-3.309,2.691-6,6-6
-					c3.309,0,6,2.691,6,6c0,4.364-5.077,9.491-5.293,9.707C8.512,15.902,8.256,16,8,16z M8,2C5.795,2,4,3.794,4,6
-					c0,2.496,2.459,5.799,4,7.536c1.541-1.737,4-5.04,4-7.536C12.001,3.794,10.206,2,8,2z"></path>
-                  </g>
-                  <g>
-                      <circle fill="#c6c6c6" cx="8.001" cy="6" r="2"></circle>
-                  </g>
-              </g>
-			</svg>
-                    </div>
-                    사무실을 구하고 있습니다.
-                </div>
-
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <a href="#" class="up">
-                        <span class="glyphicon glyphicon-arrow-up"></span>
-                    </a>
+                <div class="tm-column tm4">
+                    <aside class="widget widget_text">
+                        <h3 class="tm-title">Get the latest news and promotion!</h3>
+                        <div class="textwidget">
+                            <form action="php/mail-subscribe.php" method="post" class="newsletter">
+                                <input type="email" value="" name="email" class="tm-input required" placeholder="Email..." />
+                                <button class="tm-button" type="submit" role="button">Subscribe</button>
+                            </form>
+                        </div>
+                    </aside>
+                    <aside class="widget widget_text">
+                        <div class="textwidget">
+                            <div class="payments">
+                                <img alt="img" src="/resources/front/img/sample/home/cards.png">
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </div>
-    </div><!-- .footer-bottom -->
+    </div>
+</div>
+<!--tm-page-page-footer-->
+<footer>
+    <div class="tm-wrap tm-table">
+        <div class="copyright">
+            <p>© Copyright - Linethemes.com - Fedora theme by Linethemes</p>
+        </div>
+        <div class="tm-social-icons">
+            <a class="tm-icon-facebook" href="#">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a class="tm-icon-twitter" href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a class="tm-icon-dribbble" href="#">
+                <i class="fa fa-dribbble"></i>
+            </a>
+        </div>
+    </div>
 </footer>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="/resources/asset/js/bootstrap.min.js"></script>
-<script src="/resources/asset/js/price-regulator/jshashtable-2.1_src.js"></script>
-<script src="/resources/asset/js/price-regulator/jquery.numberformatter-1.2.3.js"></script>
-<script src="/resources/asset/js/price-regulator/tmpl.js"></script>
-<script src="/resources/asset/js/price-regulator/jquery.dependClass-0.1.js"></script>
-<script src="/resources/asset/js/price-regulator/draggable-0.1.js"></script>
-<script src="/resources/asset/js/price-regulator/jquery.slider.js"></script>
-<script src="/resources/asset/js/jquery.carouFredSel-6.2.1-packed.js"></script>
-<script src="/resources/asset/js/jquery.touchSwipe.min.js"></script>
-<script src="/resources/asset/js/jquery.elevateZoom-3.0.8.min.js"></script>
-<script src="/resources/asset/js/jquery.imagesloaded.min.js"></script>
-<script src="/resources/asset/js/jquery.appear.js"></script>
-<script src="/resources/asset/js/jquery.sparkline.min.js"></script>
-<script src="/resources/asset/js/jquery.easypiechart.min.js"></script>
-<script src="/resources/asset/js/jquery.easing.1.3.js"></script>
-<script src="/resources/asset/js/jquery.fancybox.pack.js"></script>
-<script src="/resources/asset/js/isotope.pkgd.min.js"></script>
-<script src="/resources/asset/js/jquery.knob.js"></script>
-<script src="/resources/asset/js/jquery.stellar.min.js"></script>
-<script src="/resources/asset/js/jquery.selectBox.min.js"></script>
-<script src="/resources/asset/js/jquery.royalslider.min.js"></script>
-<script src="/resources/asset/js/jquery.tubular.1.0.js"></script>
-<script src="/resources/asset/js/country.js"></script>
-<script src="/resources/asset/js/spin.min.js"></script>
-<script src="/resources/asset/js/ladda.min.js"></script>
-<script src="/resources/asset/js/masonry.pkgd.min.js"></script>
-<script src="/resources/asset/js/morris.min.js"></script>
-<script src="/resources/asset/js/raphael.min.js"></script>
-<script src="/resources/asset/js/video.js"></script>
-<script src="/resources/asset/js/pixastic.custom.js"></script>
-<script src="/resources/asset/js/livicons-1.3.min.js"></script>
-<script src="/resources/asset/js/layerslider/greensock.js"></script>
-<script src="/resources/asset/js/layerslider/layerslider.transitions.js"></script>
-<script src="/resources/asset/js/layerslider/layerslider.kreaturamedia.jquery.js"></script>
-<script src="/resources/asset/js/revolution/jquery.themepunch.plugins.min.js"></script>
-<script src="/resources/asset/js/revolution/jquery.themepunch.revolution.min.js"></script>
-<script src="/resources/asset/js/main.js"></script>
 
+<div id="loginmodal" style="display:none;">
+    <div class="header-line-bottom">
+        <h3 class="tm-title">User Login</h3>
+    </div>
+    <form id="loginform" name="loginform" method="post">
+        <p>
+            <label for="user_login">Username<br>
+                <input type="text" size="20" value="" class="input" id="user_login" name="log"></label>
+        </p>
+        <p>
+            <label for="user_pass">Password<br>
+                <input type="password" size="20" value="" class="input" id="user_pass" name="pwd"></label>
+        </p>
+
+        <p class="submit">
+            <input type="submit" value="Log In" class="tm-btn hidemodal" id="wp-submit" name="wp-submit">
+        </p>
+    </form>
+</div>
+
+<!-- Go to top -->
+<a href="#" id="tm-gotop">
+    <i class="fa fa-chevron-up"></i>
+</a>
+
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-core.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-tinynav.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-isotope.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-flexslider.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-countdown.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-masonry.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-leanModal.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/jquery/jquery-validate.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/pretty-photo/pretty-photo.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/layerslider/js/greensock.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+<script type="text/javascript" src="/resources/front/3rd/layerslider/js/layerslider.transitions.js"></script>
+<script type="text/javascript" src="/resources/front/js/theme.js"></script>
 </body>
 </html>
-
-<content tag="local_script">
-    <script>
-
-        function getNewPost(){
-            $("#result").load("/common/list");
-        }
-
-
-        $(document).ready(function() {
-
-            getNewPost();
-
-        });
-
-    </script>
-</content>
