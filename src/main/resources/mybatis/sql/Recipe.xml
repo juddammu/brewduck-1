@@ -13,12 +13,14 @@
               ,style_seq             styleSeq
               ,(SELECT B.KOREAN_NAME FROM STYLE B WHERE style_seq = B.SEQ) styleName
               ,brewer                brewer
+              ,(SELECT C.name FROM account C WHERE C.id = brewer) brewerNm
               ,asst_brewer           asstBrewer
               ,batch_size            batchSize
               ,boil_size             boilSize
               ,boil_time             boilTime
               ,efficiency            efficiency
               ,notes                 notes
+              ,substring(notes, 1, 60)    shortNotes
               ,og                    og
               ,fg                    fg
               ,primary_age           primaryAge
@@ -107,7 +109,7 @@
           AND CATEGORY = 2
           AND ATCH_COVER_FILE_ID IS NOT NULL
         ORDER BY insert_date
-        LIMIT 3
+        LIMIT 4
     </select>
 
     <select id="Recipe.selectPublicRecipeMenuList" parameterType="Recipe" resultType="Recipe">

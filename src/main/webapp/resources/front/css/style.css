@@ -1,4 +1,10 @@
-@import url('http://fonts.googleapis.com/css?family=Fjalla+One');
+@font-face{
+    font-family:"Nanum Gothic";
+    src:url('/resources/front/font/NanumGothic.eot');
+    src:url('/resources/front/font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+    url('/resources/front/font/NanumGothic.woff') format('woff'),
+    url('/resources/front/font/NanumGothic.ttf') format('truetype');
+}
 
 /* global box-sizing */
 * {
@@ -473,7 +479,7 @@ img {
 .page-sidebar-second aside.widget_search form:after,
 .tm-sidebar-footer aside.widget_search form:after {
   content: "\f002";
-  font-family: 'FontAwesome';
+  font-family: 'Nanum Gothic';
   position: absolute;
   right: 15px;
   top: 7px;

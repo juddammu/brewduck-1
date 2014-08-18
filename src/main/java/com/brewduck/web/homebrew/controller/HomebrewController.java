@@ -206,23 +206,24 @@ public class HomebrewController {
 
             logger.info("file path " + coverFilePath+coverFileName);
 
+            /*
             Image image = ImageLoader.fromFile(coverFilePath+fileName);
-
-            image.getResizedToWidth(400).writeToJPG(new File(coverFilePath+coverFileName), 1f);
+            image.getResizedToWidth(408).writeToJPG(new File(coverFilePath+ArrFileName[0] + "_408x160" +"."+ArrFileName[1]), 1f);
+            */
 
             //썸네일 이미지 생성
-           /* pb.add(coverFilePath+fileName);
+            pb.add(coverFilePath+fileName);
             RenderedOp rOp = JAI.create("fileload", pb);
-*/
+
             /*
             메인페이지 : 560x390
             홈브루어 보유 레시피 : 265x160
             메인페이지 메뉴 : 190x140
              */
-/*
-            this.scale(rOp.getAsBufferedImage(), coverFilePath+ArrFileName[0] + "_265x160" +"."+ArrFileName[1], ArrFileName[1], 265, 160);
-            this.scale(rOp.getAsBufferedImage(), coverFilePath+ArrFileName[0] + "_190x140" +"."+ArrFileName[1], ArrFileName[1], 190, 140);
-            */
+
+            this.scale(rOp.getAsBufferedImage(), coverFilePath+ArrFileName[0] + "_408x408" +"."+ArrFileName[1], ArrFileName[1], 408, 408);
+            this.scale(rOp.getAsBufferedImage(), coverFilePath+ArrFileName[0] + "_204x204" +"."+ArrFileName[1], ArrFileName[1], 204, 204);
+
         }
 
         Account account = AuthenticationUtils.getUser();

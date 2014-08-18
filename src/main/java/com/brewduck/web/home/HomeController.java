@@ -67,12 +67,17 @@ public class HomeController {
         // Account account = AuthenticationUtils.getUser();
         // model.addAttribute("account", account);
         Hop hop = hopService.selectRandomHop();
+        Recipe recipe = new Recipe();
 
         /* 잠시 보류
         List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);
         */
+        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+
+        model.addAttribute("newRecipeList", selectNewPublicRecipeList);
+        model.addAttribute("hop", hop);
 
         return "home";
         //return "blank";

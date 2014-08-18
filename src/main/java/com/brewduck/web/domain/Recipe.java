@@ -139,6 +139,7 @@ public class Recipe implements Serializable {
     private List<Mash> mashs;
     // 레시피 메모
     private String notes;
+    private String shortNotes;
     // 초기 비중
     private Double og;
     // 최종 비중
@@ -194,6 +195,14 @@ public class Recipe implements Serializable {
     private String atchCoverFileName;
 
     private String brewerNm;
+
+    public String getShortNotes() {
+        return shortNotes;
+    }
+
+    public void setShortNotes(String shortNotes) {
+        this.shortNotes = shortNotes;
+    }
 
     public List<Integer> getStyleSeqs() {
         return styleSeqs;
