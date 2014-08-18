@@ -62,6 +62,53 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    public Recipe selectPublicRecipeDetail(Recipe recipe) {
+        // 레시피 조회
+        Recipe newPublicRecipe = recipeDao.selectRecipeDetail(recipe);
+
+        Integer recipeSeq = newPublicRecipe.getSeq();
+        String brewer = newPublicRecipe.getBrewer();
+
+        // 레시피 제조시 입력한 스타일 맥주 이름
+        Style paramStyle = new Style();
+        Fermentable paramFermentable = new Fermentable();
+        paramFermentable.setSeq(newPublicRecipe.getSeq());
+        paramFermentable.setBrewer(newPublicRecipe.getBrewer());
+
+        Hop paramHop = new Hop();
+        paramHop.setSeq(newPublicRecipe.getSeq());
+        paramHop.setBrewer(newPublicRecipe.getBrewer());
+
+        Yeast paramYeast = new Yeast();
+        paramYeast.setSeq(newPublicRecipe.getSeq());
+        paramYeast.setBrewer(newPublicRecipe.getBrewer());
+
+        Misc paramMisc = new Misc();
+        paramMisc.setSeq(newPublicRecipe.getSeq());
+        paramMisc.setBrewer(newPublicRecipe.getBrewer());
+
+        // 레시피 작성시 선택한 스타일 맥주
+        //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
+        // 레시피에 포함되는 맥아 리스트
+        newPublicRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(paramFermentable));
+        // 레시피에 포함되는 홉 리스트
+        /*newRecipe.setHops(hopDao.selectRecipeHopList(recipeSeq));*/
+        newPublicRecipe.setHops(hopDao.selectRecipeHopList(paramHop));
+        // 레시피에 포함되는 이스트 리스트
+        /*newRecipe.setYeasts(yeastDao.selectRecipeYeastList(recipeSeq));*/
+        newPublicRecipe.setYeasts(yeastDao.selectRecipeYeastList(paramYeast));
+        // 레시피에 포함되는 첨가물 리스트
+        /*newRecipe.setMiscs(miscDao.selectRecipeMiscList(recipeSeq));*/
+        newPublicRecipe.setMiscs(miscDao.selectRecipeMiscList(paramMisc));
+
+        // 조회수 업데이트
+        newPublicRecipe.setUpdateId(newPublicRecipe.getBrewer());
+        //recipeDao.updateRecipe(newRecipe);
+
+        return newPublicRecipe;
+    }
+
+    @Override
     public Recipe selectRecipeDetail(Recipe recipe) {
         Account account = AuthenticationUtils.getUser();
         // 레시피 조회

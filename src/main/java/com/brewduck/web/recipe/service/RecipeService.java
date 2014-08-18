@@ -40,6 +40,9 @@ public interface RecipeService {
      */
     public Recipe selectRecipeDetail(Recipe recipe);
 
+    public Recipe selectPublicRecipeDetail(Recipe recipe);
+
+
     public Recipe selectRecipeSeq(Recipe recipe);
 
     /**

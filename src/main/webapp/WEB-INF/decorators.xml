@@ -21,6 +21,9 @@
     <decorator name="main-content" page="main.jsp">
         <pattern>/index</pattern>
     </decorator>
+    <decorator name="main-content" page="public.jsp">
+        <pattern>/recipe/public/*/*/*</pattern>
+    </decorator>
 
     <decorator name="expert" page="recipe.jsp">
         <pattern>/recipe/</pattern>

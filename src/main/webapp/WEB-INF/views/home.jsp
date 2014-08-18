@@ -100,17 +100,17 @@
                             <div class="tm-gallery gallery-slide flexslider">
                                 <ul class="slides">
                                     <li>
-                                        <a href="http://placehold.it/800x800" data-rel="prettyPhoto[gallery]">
+                                        <a href="#">
                                             <img alt="Thumb" src="/resources/front/img/main3.jpg">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="http://placehold.it/800x800" data-rel="prettyPhoto[gallery]">
+                                        <a href="#">
                                             <img alt="Thumb" src="/resources/front/img/main1.jpg">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="http://placehold.it/800x800" data-rel="prettyPhoto[gallery]">
+                                        <a href="#">
                                             <img alt="Thumb" src="/resources/front/img/main2.jpg">
                                         </a>
                                     </li>
