@@ -38,6 +38,7 @@
         <intercept-url pattern="/resources/**" access="permitAll" />
         <intercept-url pattern="/hop/**"       access="permitAll" />
         <intercept-url pattern="/account/**"   access="permitAll" />
+        <intercept-url pattern="/public/**"   access="permitAll" />
         <intercept-url pattern="/recipe/**"    access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/user/**"      access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/homebrew/**"  access="hasRole('ROLE_SIGNIN')" />

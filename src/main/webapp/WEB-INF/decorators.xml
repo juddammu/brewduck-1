@@ -22,7 +22,7 @@
         <pattern>/index</pattern>
     </decorator>
     <decorator name="main-content" page="public.jsp">
-        <pattern>/recipe/public/*/*/*</pattern>
+        <pattern>/public/recipe/*/*/*</pattern>
     </decorator>
 
     <decorator name="expert" page="recipe.jsp">

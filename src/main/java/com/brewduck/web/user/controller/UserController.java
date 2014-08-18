@@ -1,6 +1,8 @@
 package com.brewduck.web.user.controller;
 
+import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.domain.User;
+import com.brewduck.web.recipe.service.RecipeService;
 import com.brewduck.web.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +29,26 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
+    @Autowired
+    private RecipeService recipeService;
+
+    @RequestMapping(value="/public/recipe/{user_id}/{seq}/*", method=RequestMethod.GET)
+    public String selectPublicRecipeDetail(Model model,
+                                           @PathVariable("seq") Integer seq,
+                                           @PathVariable("user_id") String user_id) {
+
+        Recipe recipe = new Recipe();
+        recipe.setSeq(seq);
+        recipe.setBrewer(user_id);
+
+        // 맥주 레시피 상세 조회
+        Recipe recipeDetail = recipeService.selectPublicRecipeDetail(recipe);
+
+        model.addAttribute("recipeDetail", recipeDetail);
+
+        return "public-recipe/detail";
+    }
 	/**
 	 * Gets the all.
 	 * 

@@ -1,342 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Fedora - Responsive Html5 Template" />
-    <meta name="author" content="Linethemes - linethemes.com" />
-    <meta name="keywords" content="wordpress, themes, wordpress themes, premium wordpress themes, premium themes, wordpress theme shop, free themes, wordpress templates" />
-    <title>Fedora - Responsive Html5 Template</title>
-    <link rel="shortcut icon" href="assets/img/favico.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/apple-icon-114x114px.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/apple-icon-144x144px.png" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/shortcode.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/woocommerce.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
-    <link rel="stylesheet" type="text/css" href="assets/3rd/font-awesome/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="assets/3rd/pretty-photo/pretty-photo.css" />
-    <link rel="stylesheet" type="text/css" href="assets/3rd/layerslider/css/layerslider.css" />
-    <!--[if IE]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
-</head>
-<body>
-<header>
-<div id="tm-header-top">
-    <div class="tm-wrap tm-table">
-        <div class="tm-logo">
-            <a href="index.html" class="tm-logo-simple">
-                <img alt="Logo" src="assets/img/logo.jpg">
-            </a>
-            <a href="index.html" class="tm-logo-retina">
-                <img alt="Logo" width="142" height="60" src="assets/img/logo@2x.jpg">
-            </a>
-        </div>
-        <!--
-        <nav class="tm-top-nav">
-            <ul>
-                <li>
-                    <a href="#">Check out</a>
-                </li>
-                <li>
-                    <a href="#">View cart</a>
-                </li>
-                <li>
-                    <a href="#">View order</a>
-                </li>
-            </ul>
-        </nav>
-        -->
-        <div class="tm-search">
-            <form>
-                <input type="text" autocomplete="off" placeholder="Search..." name="s" class="tm-input">
-                <button role="button" type="submit" class="tm-button">Search</button>
-            </form>
-        </div>
-    </div>
-    <!--tm-wrap-->
-</div>
-<!--tm-header-top-->
-<div id="tm-header-nav" class="tm-menu-style1 tm-sticky-menu">
-<div class="tm-wrap tm-table">
-<nav class="tm-nav">
-<ul class="tm-menu tm-menu-simple">
-<li class="parent">
-    <a href="index.html">Home</a>
-    <ul class="sub-menu">
-        <li>
-            <a href="index.html">v1: Home LayerSlider</a>
-        </li>
-        <li>
-            <a href="home-flexslider.html">v2: Home FlexSlider</a>
-        </li>
-        <li>
-            <a href="home-landingpage.html">v3: Landing Page</a>
-        </li>
-        <li>
-            <a href="home-apps.html">v4: App Promo Style</a>
-        </li>
-        <li>
-            <a href="home-business.html">v5: Business</a>
-        </li>
-        <li>
-            <a href="home-box.html">v6: Business Boxed</a>
-        </li>
-        <li>
-            <a href="home-creative.html">v7: Creative</a>
-        </li>
-        <li>
-            <a href="home-personal.html">v8: Blog Personal</a>
-        </li>
-        <li>
-            <a href="home-masonry.html">v9: Blog Masonry</a>
-        </li>
-        <li>
-            <a href="home-maz.html">v10: Blog Tutorial</a>
-        </li>
-        <li>
-            <a href="home-shop.html">v11: Shop Fashion</a>
-        </li>
-        <li>
-            <a href="under-construction2.html">v12: Under Construction</a>
-        </li>
-        <li>
-            <a href="#">to be continue...</a>
-        </li>
-    </ul>
-</li>
-<li class="parent">
-    <a href="#">Pages</a>
-    <ul class="sub-menu">
-        <li>
-            <a href="about.html">About Us</a>
-        </li>
-        <li>
-            <a href="404.html">Error 404</a>
-        </li>
-        <li>
-            <a href="faq.html">FAQ</a>
-        </li>
-        <li>
-            <a href="under-construction.html">Under Construction</a>
-        </li>
-        <li>
-            <a href="under-construction2.html">Under Construction (2)</a>
-        </li>
-        <li>
-            <a href="services.html">Services</a>
-        </li>
-        <li>
-            <a href="pricing.html">Pricing</a>
-        </li>
-    </ul>
-</li>
-<li class="parent">
-    <a href="#">Layout</a>
-    <ul class="sub-menu">
-        <li>
-            <a href="widget.html">Widget Style</a>
-        </li>
-        <li>
-            <a href="template-full.html">Default Template Fullwidth</a>
-        </li>
-        <li>
-            <a href="template-box.html">Default Template Box</a>
-        </li>
-        <li>
-            <a href="template-fixed.html">Default Template Fixed</a>
-        </li>
-        <li>
-            <a href="sidebar-right.html">Right Sidebar</a>
-        </li>
-        <li>
-            <a href="sidebar-left.html">Left Sidebar</a>
-        </li>
-        <li>
-            <a href="sidebar-lcr.html">Sidebar + Content + Sidebar</a>
-        </li>
-        <li>
-            <a href="sidebar-clr.html">Content + Sidebar + Sidebar</a>
-        </li>
-    </ul>
-</li>
-<li class="parent">
-    <a href="#">Portfolio</a>
-    <ul class="sub-menu">
-        <li>
-            <a href="portfolio-3col-classic.html">3 Column Classic layouts</a>
-        </li>
-        <li>
-            <a href="portfolio-4col-text.html">4 Column Text layouts</a>
-        </li>
-        <li>
-            <a href="single-portfolio.html">Single post layouts</a>
-        </li>
-    </ul>
-</li>
-<li class="current-menu-item parent">
-    <a href="#">Blog</a>
-    <ul class="sub-menu">
-        <li>
-            <a href="switch-layout.html">Switch layouts</a>
-        </li>
-        <li class="parent">
-            <a href="#">News layouts</a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="news-layout1.html">News layouts 01</a>
-                </li>
-                <li>
-                    <a href="news-layout2.html">News layouts 02</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="single-blog.html">Single post layouts</a>
-        </li>
-    </ul>
-</li>
-<li class="parent">
-    <a href="#">Shop</a>
-    <ul class="sub-menu">
-        <li>
-            <a href="home-shop.html">Fedora Shop</a>
-        </li>
-        <li>
-            <a href="shop-category.html">Category Page</a>
-        </li>
-        <li>
-            <a href="shop-product.html">Product Page</a>
-        </li>
-    </ul>
-</li>
-<li class="parent tm-mega-menu">
-    <a href="#">Shortcodes</a>
-    <ul class="sub-menu">
-        <li>
-            <a href="#">Title 1</a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="s-accordion.html">Accordion</a>
-                </li>
-                <li>
-                    <a href="s-alert-blockquote.html">Alert Messages & Blockquote</a>
-                </li>
-                <li>
-                    <a href="s-animation.html">Animation Images</a>
-                </li>
-                <li>
-                    <a href="s-button.html">Button</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Title 2</a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="s-column.html">Columns</a>
-                </li>
-                <li>
-                    <a href="s-countdown.html">Countdown</a>
-                </li>
-                <li>
-                    <a href="s-divider.html">Dividers</a>
-                </li>
-                <li>
-                    <a href="s-dropcap-testimonial.html">Dropcaps & Testimonial</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Title 3</a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="s-gallery.html">Gallery</a>
-                </li>
-                <li>
-                    <a href="s-iconbox.html">Icon Box</a>
-                </li>
-                <li>
-                    <a href="s-iconlist.html">Icon List</a>
-                </li>
-                <li>
-                    <a href="s-logo.html">Logo Clients</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Title 4</a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="s-post-content.html">Post Content</a>
-                </li>
-                <li>
-                    <a href="s-progress-bar.html">Progress Bar</a>
-                </li>
-                <li>
-                    <a href="s-promobox.html">Promo Box</a>
-                </li>
-                <li>
-                    <a href="s-tab.html">Tabs</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Title 5</a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="s-table.html">Table & Pricing Table</a>
-                </li>
-                <li>
-                    <a href="s-team.html">Team Element</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</li>
-<li>
-    <a href="contact.html">Contact</a>
-</li>
-<li class="tm-modal">
-    <a href="#loginmodal">Modal Login</a>
-</li>
-</ul>
-</nav>
-<!--tm-nav-->
-<div class="tm-social-icons">
-    <a href="#" class="tm-icon-facebook">
-        <i class="fa fa-facebook"></i>
-    </a>
-    <a href="#" class="tm-icon-twitter">
-        <i class="fa fa-twitter"></i>
-    </a>
-    <a href="#" class="tm-icon-dribbble">
-        <i class="fa fa-dribbble"></i>
-    </a>
-</div>
-<!--tm-social-icons-->
-</div>
-</div>
-<!--tm-header-nav-->
-</header>
+
 <div id="tm-page-title">
     <div class="tm-wrap tm-table">
         <div class="tm-title-captions">
-            <h2 class="tm-entry-title">Single Blog Post</h2>
+            <h2 class="tm-entry-title">${recipeDetail.name}</h2>
         </div>
         <ul class="tm-breadcrumbs">
             <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="category-blog.html">Category</a>
-            </li>
-            <li>
-                Single Blog Post
+                <a href="#">${recipeDetail.styleName}</a>
             </li>
         </ul>
     </div>
@@ -346,82 +18,169 @@
 <div id="tm-single-blog" class="tm-container tm-wrap tm-sidebar-right">
 <div class="page-content">
 <div class="page-content-inner">
-<div class="entry-thumbnail">
+<!--div class="entry-thumbnail">
     <img src="http://placehold.it/815x495" alt="Thumb">
 </div>
 <!--entry-thumb-->
 <div class="entry-header">
-    <h2>Tutorial: Affiliate Tracking Widget In WordPress</h2>
+    <h2>${recipeDetail.name}</h2>
     <div class="meta">
-        Post by
-        <a href="author.html">admin</a>
-        in
-								<span class="incategory">
-								<a href="category-blog.html">Design</a>,
-								<a href="category-blog.html">News</a>
-								</span>
+        <a href="#">${recipeDetail.brewerNm}</a> 님
+        <span class="incategory">
+        <a href="/style/${recipeDetail.styleSeq}/">${recipeDetail.styleName}</a>
+        </span>
     </div>
     <div class="time">
-        June 20, 2013
-        <a href="#tm-comment">9 Comments</a>
+        ${recipeDetail.insertDate}
+        <a href="#tm-comment">0 댓글</a>
     </div>
 </div>
 <!--entry-header-->
 <div class="entry-container">
 <div class="entry-content">
-    <p>
-        <span class="tm-dropcap tm-style3">L</span>
-        orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-        scrambled it to make a type specimen book. It has survived not only five centuries. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-    </p>
-    <blockquote class="tm-style2">
-									<span>
-										"Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas"
-									</span>
-    </blockquote>
-    <br>
-    <p>
-        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lor
-
-        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-
-        Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-    </p>
+    <div class="tm-row">
+        <div class="tm-promobox no-button">
+            <div class="tm-promocontent">
+                <p>
+                    ${recipeDetail.notes}
+                </p>
+            </div>
+            <div class="tm-promobutton">
+                <a href="#" class="tm-btn">Purchase Now</a>
+            </div>
+        </div>
+    </div>
 </div>
-<section class="tags">
-    <i class="fa fa-tags"></i>
-    <ul>
-        <li>
-            <a href="#">Code</a>
-        </li>
-        <li>
-            <a href="#">PHP</a>
-        </li>
-        <li>
-            <a href="#">HTML/CSS</a>
-        </li>
-        <li>
-            <a href="#">Design</a>
-        </li>
-        <li>
-            <a href="#">Wordpress</a>
-        </li>
-        <li>
-            <a href="#">jQuery</a>
-        </li>
-        <li>
-            <a href="#">Developer</a>
-        </li>
-    </ul>
-</section>
+<div class="tm-row">
+    <h2 class="tm-title">발효 재료 <small>Fermentables</small></h2>
+
+    <table class="tm-table tm-style1">
+        <thead>
+        <tr class="header">
+            <th>재료명</th>
+            <th>수량</th>
+            <th>사용방법</th>
+            <th>색상</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${recipeDetail.fermentables}" var="fermentables" varStatus="i">
+        <tr>
+            <td>${fermentables.koreanName }</td>
+            <td class="text-right">${fermentables.amount} kg</td>
+            <td class="text-right">
+                <c:choose>
+                    <c:when test="${fermentables.fermentableUse=='1'}">
+                        당화 - Mash
+                    </c:when>
+                    <c:when test="${fermentables.fermentableUse=='2'}">
+                        우려내기 - Steep
+                    </c:when>
+                    <c:when test="${fermentables.fermentableUse=='3'}">
+                        끊임 - Boil
+                    </c:when>
+                    <c:when test="${fermentables.fermentableUse=='4'}">
+                        후반 끓임 - Late Boil
+                    </c:when>
+                    <c:otherwise>
+                        -
+                    </c:otherwise>
+                </c:choose>
+            </td>
+            <td class="text-right">${fermentables.color} °L</td>
+        </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    </br> </br>
+    <h2 class="tm-title">홉 - <small>hops  ${recipeDetail.boilTime} 분</small></h2>
+    <table class="tm-table tm-style1">
+        <thead>
+        <tr class="header">
+            <th>재료명</th>
+            <th>수량</th>
+            <th>용도</th>
+            <th>시간</th>
+            <th>형태</th>
+            <th>Alpha</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${recipeDetail.hops}" var="hops" varStatus="i">
+            <tr>
+                <td>${hops.koreanName } (${hops.name })</td>
+                <td class="text-right">${hops.amount} g</td>
+                <td class="text-right">
+                    <c:choose>
+                        <c:when test="${hops.hopsUse=='1'}">
+                            당화 - Mash
+                        </c:when>
+                        <c:when test="${hops.hopsUse=='3'}">
+                            끓임 - Boil
+                        </c:when>
+                        <c:when test="${hops.hopsUse=='5'}">
+                            드라이 홉 - Dry Hop
+                        </c:when>
+                        <c:when test="${hops.hopsUse=='6'}">
+                            월풀 - Whirlpool
+                        </c:when>
+                        <c:otherwise>
+                            -
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+                <td class="text-right">${hops.time} min</td>
+                <td class="text-right">
+                    <c:choose>
+                        <c:when test="${hops.form=='1'}">
+                            Plug
+                        </c:when>
+                        <c:when test="${hops.form=='2'}">
+                            -
+                        </c:when>
+                        <c:when test="${hops.form=='3'}">
+                            Leaf
+                        </c:when>
+                        <c:when test="${hops.form=='4'}">
+                            Pellet
+                        </c:when>
+                        <c:otherwise>
+                            -
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+                <td class="text-right">${hops.alpha} %</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    </br> </br>
+    <h2 class="tm-title">효모 - <small>Yeasts</small></h2>
+    <table class="tm-table tm-style1">
+        <thead>
+        <tr class="header">
+            <th>재료명</th>
+            <th>제조사</th>
+            <th>ID</th>
+            <th>발효온도</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${recipeDetail.yeasts}" var="yeasts" varStatus="i">
+            <tr>
+                <td>${yeasts.koreanName }</td>
+                <td class="text-right">${yeasts.laboratory }</td>
+                <td class="text-right">${yeasts.productId }</td>
+                <td class="text-right">${yeasts.minTemperature} ~ ${yeasts.maxTemperature}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+
 <section class="about-author">
-    <h3 class="tm-title">about the author:
-        <a href="author.html">Admin</a>
+    <h3 class="tm-title">양조자 :
+        <a href="#">${recipeDetail.brewerNm}</a>님
     </h3>
     <div class="about-author-conteainer">
         <div class="avatar">
@@ -429,13 +188,13 @@
         </div>
         <div class="description">
             <p>
-                Aliquam tristique bibendum velit vel pellentesque. Morbi eget semper ipsum. Maecenas cursus perdiet leo, egestas ullamcorper mauris mattis et. Aenean posuere feugiat fermentum serts. Maecenas mentum sollicitudin conguesertis.
+                클론레시피 전문... lol
             </p>
         </div>
     </div>
 </section>
-<section class="tm-recent-post">
-    <h3 class="tm-title">You may also like</h3>
+<!--section class="tm-recent-post">
+    <h3 class="tm-title">유사 레시피 스타일 </h3>
     <ul class="tm-col-3">
         <li>
             <a class="thumb" href="single-portfolio.html">
@@ -529,9 +288,9 @@
         </li>
     </ul>
     <div class="clear"></div>
-</section>
+</section-->
 <section class="tm-share">
-    <h3 class="tm-title">Share this:</h3>
+    <h3 class="tm-title">공유하기 :</h3>
     <ul class="social-networks">
         <li>
             <a href="" data-title="Facebook">
@@ -556,7 +315,7 @@
     </ul>
 </section>
 <section id="tm-comment">
-    <h3 class="tm-title">9 Comments</h3>
+    <h3 class="tm-title">1 Comments</h3>
     <ol class="commentlist">
         <li>
             <div class="comment">
@@ -565,12 +324,12 @@
                 </div>
                 <div class="comment-container">
                     <div class="comment-author meta">
-                        <strong>admin</strong>
+                        <strong>양조마법사</strong>
                         Jan 11, 2013
                         <a class="comment-reply-link" href=""> - Reply</a>
                     </div>
                     <div class="text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        레시피 댓글 테스트중
                     </div>
                 </div>
             </div>
@@ -582,12 +341,12 @@
                 </div>
                 <div class="comment-container">
                     <div class="comment-author meta">
-                        <strong>admin</strong>
+                        <strong>양조마법사</strong>
                         Jan 11, 2013
-                        <a class="comment-reply-link" href=""> - Reply</a>
+                        <a class="comment-reply-link" href=""> - 댓글달기</a>
                     </div>
                     <div class="text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        여기서 이거하나면 SOUR로 변경가능요.
                     </div>
                 </div>
             </div>
@@ -599,66 +358,19 @@
                         </div>
                         <div class="comment-container">
                             <div class="comment-author meta">
-                                <strong>admin</strong>
+                                <strong>티라노-SOURS</strong>
                                 Jan 11, 2013
                                 <a class="comment-reply-link" href=""> - Reply</a>
                             </div>
                             <div class="text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                                와우..
                             </div>
                         </div>
                     </div>
                 </li>
             </ul>
         </li>
-        <li>
-            <div class="comment">
-                <div class="avatar">
-                    <img alt="img" src="http://placehold.it/50x50">
-                </div>
-                <div class="comment-container">
-                    <div class="comment-author meta">
-                        <strong>admin</strong>
-                        Jan 11, 2013
-                        <a class="comment-reply-link" href=""> - Reply</a>
-                    </div>
-                    <div class="text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                    </div>
-                </div>
-            </div>
-        </li>
     </ol>
-</section>
-<section id="respond">
-    <h3 class="tm-title">Leave A Comment</h3>
-    <form id="commentform">
-        <p class="comment-form-author">
-            <label for="author">
-                Name
-                <span class="required">*</span>
-            </label>
-            <input id="author" type="text" value="" name="author">
-        </p>
-        <p class="comment-form-email">
-            <label for="email">
-                Email
-                <span class="required">*</span>
-            </label>
-            <input id="email" type="text" value="" name="email">
-        </p>
-        <p class="comment-form-url">
-            <label for="url">Website</label>
-            <input id="url" type="text" value="" name="url">
-        </p>
-        <p class="comment-form-comment">
-            <label for="url">Comment</label>
-            <textarea id="comment" name="comment"></textarea>
-        </p>
-        <p class="form-submit">
-            <input id="submit" class="tm-btn" type="submit" value="Post Comment" name="submit">
-        </p>
-    </form>
 </section>
 </div>
 <!--entry-container-->
@@ -669,65 +381,65 @@
     <aside class="widget tm-tabs">
         <ul class="tm-filter tabs tm-style1">
             <li>
-                <a href="#tab1">Recent Posts</a>
+                <a href="#tab1">신규 레시피들</a>
             </li>
             <li>
-                <a href="#tab2">Comments</a>
+                <a href="#tab2">최근 댓글들</a>
             </li>
         </ul>
         <div class="tab-container">
             <aside id="tab1" class="widget tm-list-style2 widget_recent_entries tab-content">
                 <ul>
                     <li>
-                        <a href="single-blog.html">
+                        <a href="#">
 										<span class="thumb">
 										<img src="http://placehold.it/60x60" width="60" alt="thumb">
 										</span>
-                            <h3>Tutorial: Affiliate Tracking Widget In WordPress</h3>
+                            <h3>제목이 들어갑니다...</h3>
 										<span class="time">
 										July 31, 2012
 										</span>
                         </a>
                     </li>
                     <li>
-                        <a href="single-blog.html">
+                        <a href="#">
 										<span class="thumb">
 										<img src="http://placehold.it/60x60" width="60" alt="thumb">
 										</span>
-                            <h3>Tutorial: Affiliate Tracking Widget In WordPress</h3>
+                            <h3>제목이 들어갑니다...</h3>
 										<span class="time">
 										July 31, 2012
 										</span>
                         </a>
                     </li>
                     <li>
-                        <a href="single-blog.html">
+                        <a href="#">
 										<span class="thumb">
 										<img src="http://placehold.it/60x60" width="60" alt="thumb">
 										</span>
-                            <h3>Tutorial: Affiliate Tracking Widget In WordPress</h3>
+                            <h3>제목이 들어갑니다...</h3>
 										<span class="time">
 										July 31, 2012
 										</span>
                         </a>
                     </li>
                     <li>
-                        <a href="single-blog.html">
+                        <a href="#">
 										<span class="thumb">
 										<img src="http://placehold.it/60x60" width="60" alt="thumb">
 										</span>
-                            <h3>Tutorial: Affiliate Tracking Widget In WordPress</h3>
+                            <h3>제목이 들어갑니다...</h3>
 										<span class="time">
 										July 31, 2012
 										</span>
                         </a>
                     </li>
                     <li>
-                        <a href="single-blog.html">
+                        <a href="#">
 										<span class="thumb">
 										<img src="http://placehold.it/60x60" width="60" alt="thumb">
 										</span>
-                            <h3>Tutorial: Affiliate Tracking Widget In WordPress</h3>
+                            <h3>제목이 들어갑니다...</h3>
 										<span class="time">
 										July 31, 2012
 										</span>
@@ -738,50 +450,37 @@
             <aside id="tab2" class="widget tm-list-style2 widget_recent_comments tab-content">
                 <ul id="recentcomments">
                     <li class="recentcomments">
-                        admin on
+                        양조 마법사 -
                         <a href="single-blog.html#tm-comment">
-                            Finally! An Acne Cream That Actually Does What It Says
+                            댓글 1
                         </a>
                     </li>
                     <li class="recentcomments">
-                        admin on
+                        양조 마법사 -
                         <a href="single-blog.html#tm-comment">
-                            Finally! An Acne Cream That Actually Does What It Says
+                            댓글 1
                         </a>
                     </li>
                     <li class="recentcomments">
-                        admin on
+                        양조 마법사 -
                         <a href="single-blog.html#tm-comment">
-                            Finally! An Acne Cream That Actually Does What It Says
+                            댓글 1
                         </a>
                     </li>
                     <li class="recentcomments">
-                        admin on
+                        양조 마법사 -
                         <a href="single-blog.html#tm-comment">
-                            Finally! An Acne Cream That Actually Does What It Says
+                            댓글 1
                         </a>
                     </li>
                     <li class="recentcomments">
-                        admin on
+                        양조 마법사 -
                         <a href="single-blog.html#tm-comment">
-                            Finally! An Acne Cream That Actually Does What It Says
+                            댓글 1
                         </a>
                     </li>
                 </ul>
             </aside>
-        </div>
-    </aside>
-    <aside class="widget widget_tag_cloud">
-        <h3 class="tm-title">Popular Tags</h3>
-        <div class="tagcloud">
-            <a href="#" style="font-size: 22pt;" title="2 topics">Design</a>
-            <a href="#" style="font-size: 8pt;" title="1 topic">jQuery</a>
-            <a href="#" style="font-size: 8pt;" title="1 topic">PHP</a>
-            <a href="#" style="font-size: 8pt;" title="1 topic">Wordpress</a>
-            <a href="#" style="font-size: 22pt;" title="2 topics">Animation</a>
-            <a href="#" style="font-size: 22pt;" title="2 topics">Audio</a>
-            <a href="#" style="font-size: 8pt;" title="1 topic">Developer</a>
-            <a href="#" style="font-size: 8pt;" title="1 topic">Cover</a>
         </div>
     </aside>
     <aside class="widget widget_text box-dark">
@@ -789,13 +488,13 @@
             <div class="tm-testimonial tm-style2">
                 <div style="" class="testimonial-content">
                     <p>
-                        "Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et"
+                        맥주만들기 이제 커피보다 쉬워요..
                     </p>
                 </div>
                 <div class="info">
                     <div class="name">
-                        <h3>- Jone Doe -</h3>
-                        <p>Co-Founder - <span>Themeforest</span></p>
+                        <h3>- XX비어 -</h3>
+                        <p>  - <span>XX 비어</span></p>
                     </div>
                 </div>
             </div>
@@ -807,7 +506,7 @@
     <i class="fa fa-angle-left"></i>
     <div class="post-entry">
         <div class="post-entry-inner">
-            <h3>Single Blog Post: Prev</h3>
+            <h3>이전 레시피 보기</h3>
 							<span class="img">
 								<img src="http://placehold.it/60x60" alt="thumb">
 							</span>
@@ -821,7 +520,7 @@
             <div class="img">
                 <img src="http://placehold.it/60x60" alt="thumb">
             </div>
-            <h3>Single Blog Post: Next</h3>
+            <h3>다음 레시피 보기</h3>
         </div>
     </div>
 </a>
@@ -829,142 +528,3 @@
 <!--tm-single-blog-->
 </div>
 <!--tm-page-body-->
-<div id="tm-page-footer">
-    <div class="tm-sidebar-footer">
-        <div class="tm-wrap">
-            <div class="tm-sidebar-footer-inner">
-                <div class="tm-column tm3">
-                    <aside class="widget widget_text">
-                        <div class="textwidget">
-                            <p>
-                                <img alt="img" src="assets/img/sample/home/logo.png" width="139" height="24">
-                            </p>
-                            <p>
-                                Fedora is the theme that innovatively uses the power of LESS and HTML5/CSS3 as the base. Besides the exclusive style and the compatibility with WooCommerce, it also has responsive layout, retina-ready, and rich-customizing options.
-                            </p>
-                        </div>
-                    </aside>
-                </div>
-                <div class="tm-column tm2">
-                    <aside class="widget tm-list-style1">
-                        <h3 class="tm-title">Category</h3>
-                        <ul>
-                            <li>
-                                <a href="">New products</a>
-                            </li>
-                            <li>
-                                <a href="">Top sellers</a>
-                            </li>
-                            <li>
-                                <a href="">Specials</a>
-                            </li>
-                            <li>
-                                <a href="">Manufacturers</a>
-                            </li>
-                            <li>
-                                <a href="">Suppliers</a>
-                            </li>
-                            <li>
-                                <a href="">Customer Service</a>
-                            </li>
-                        </ul>
-                    </aside>
-                </div>
-
-                <div class="tm-column tm3">
-                    <aside class="widget widget_tag_cloud">
-                        <h3 class="tm-title">Popular Tags</h3>
-                        <div class="tagcloud">
-                            <a href="#" style="font-size: 22pt;" title="2 topics">Design</a>
-                            <a href="#" style="font-size: 8pt;" title="1 topic">jQuery</a>
-                            <a href="#" style="font-size: 8pt;" title="1 topic">PHP</a>
-                            <a href="#" style="font-size: 8pt;" title="1 topic">Wordpress</a>
-                            <a href="#" style="font-size: 22pt;" title="2 topics">Animation</a>
-                            <a href="#" style="font-size: 22pt;" title="2 topics">Audio</a>
-                            <a href="#" style="font-size: 8pt;" title="1 topic">Developer</a>
-                        </div>
-                    </aside>
-                </div>
-                <div class="tm-column tm4">
-                    <aside class="widget widget_text">
-                        <h3 class="tm-title">Get the latest news and promotion!</h3>
-                        <div class="textwidget">
-                            <form action="php/mail-subscribe.php" method="post" class="newsletter">
-                                <input type="email" value="" name="email" class="tm-input required" placeholder="Email..." />
-                                <button class="tm-button" type="submit" role="button">Subscribe</button>
-                            </form>
-                        </div>
-                    </aside>
-                    <aside class="widget widget_text">
-                        <div class="textwidget">
-                            <div class="payments">
-                                <img alt="img" src="assets/img/sample/home/cards.png">
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--tm-page-page-footer-->
-<footer>
-    <div class="tm-wrap tm-table">
-        <div class="copyright">
-            <p>© Copyright - Linethemes.com - Fedora theme by Linethemes</p>
-        </div>
-        <div class="tm-social-icons">
-            <a class="tm-icon-facebook" href="#">
-                <i class="fa fa-facebook"></i>
-            </a>
-            <a class="tm-icon-twitter" href="#">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <a class="tm-icon-dribbble" href="#">
-                <i class="fa fa-dribbble"></i>
-            </a>
-        </div>
-    </div>
-</footer>
-
-<div id="loginmodal" style="display:none;">
-    <div class="header-line-bottom">
-        <h3 class="tm-title">User Login</h3>
-    </div>
-    <form id="loginform" name="loginform" method="post">
-        <p>
-            <label for="user_login">Username<br>
-                <input type="text" size="20" value="" class="input" id="user_login" name="log"></label>
-        </p>
-        <p>
-            <label for="user_pass">Password<br>
-                <input type="password" size="20" value="" class="input" id="user_pass" name="pwd"></label>
-        </p>
-
-        <p class="submit">
-            <input type="submit" value="Log In" class="tm-btn hidemodal" id="wp-submit" name="wp-submit">
-        </p>
-    </form>
-</div>
-
-<!-- Go to top -->
-<a href="#" id="tm-gotop">
-    <i class="fa fa-chevron-up"></i>
-</a>
-
-<script type="text/javascript" src="assets/3rd/jquery/jquery-core.js"></script>
-<script type="text/javascript" src="assets/3rd/jquery/jquery-ui.js"></script>
-<script type="text/javascript" src="assets/3rd/jquery/jquery-tinynav.js"></script>
-<script type="text/javascript" src="assets/3rd/jquery/jquery-isotope.js"></script>
-<script type="text/javascript" src="assets/3rd/jquery/jquery-flexslider.js"></script>
-<script type="text/javascript" src="assets/3rd/jquery/jquery-countdown.js"></script>
-<script type="text/javascript" src="assets/3rd/jquery/jquery-masonry.js"></script>
-<script type="text/javascript" src="assets/3rd/jquery/jquery-leanModal.js"></script>
-<script type="text/javascript" src="assets/3rd/jquery/jquery-validate.js"></script>
-<script type="text/javascript" src="assets/3rd/pretty-photo/pretty-photo.js"></script>
-<script type="text/javascript" src="assets/3rd/layerslider/js/greensock.js"></script>
-<script type="text/javascript" src="assets/3rd/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
-<script type="text/javascript" src="assets/3rd/layerslider/js/layerslider.transitions.js"></script>
-<script type="text/javascript" src="assets/js/theme.js"></script>
-</body>
-</html>

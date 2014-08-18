@@ -164,23 +164,7 @@ public class RecipeController {
         return list;
     }
 
-    @RequestMapping(value="public/{user_id}/{seq}/*", method=RequestMethod.GET)
-    public String selectPublicRecipeDetail(Model model,
-                                           @PathVariable("seq") Integer seq,
-                                           @PathVariable("user_id") String user_id) {
-        LOGGER.info("Recipe Name : {}", seq);
 
-        Recipe recipe = new Recipe();
-        recipe.setSeq(seq);
-        recipe.setBrewer(user_id);
-
-        // 맥주 레시피 상세 조회
-        Recipe recipeDetail = recipeService.selectPublicRecipeDetail(recipe);
-
-        model.addAttribute("recipeDetail", recipeDetail);
-
-        return "public-recipe/detail";
-    }
 
     /**
      * <pre>

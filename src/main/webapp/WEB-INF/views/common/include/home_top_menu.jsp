@@ -3,223 +3,63 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ page import="com.brewduck.web.domain.Account" %>
-
-
-<div class="top-fixed-box">
-    <div class="container">
-        <div class="contact-box pull-left">
-            <div class="email pull-left">
-                <i class="fa fa-envelope"></i>
-                클로즈 베타테스터 진행중입니다.
-            </div>
+<div id="tm-header-top">
+    <div class="tm-wrap tm-table">
+        <div class="tm-logo">
+            <a href="/" class="tm-logo-simple">
+                <img alt="Logo" src="/resources/front/img/logo.jpg">
+            </a>
+            <a href="/" class="tm-logo-retina">
+                <img alt="Logo" width="142" height="60" src="/resources/front/img/logo@2x.jpg">
+            </a>
         </div>
-
-        <div class="pull-right">
-            <div class="social">
-                <a class="sbtnf sbtnf-rounded color color-hover icon-facebook" href="https://www.facebook.com/brewduck"></a>
-            </div>
-            <a href="/homebrew/myrecipes" class="btn btn-primary">맥Duck 모드</a>
-        </div>
-
-        <div class="clearfix"></div>
-    </div>
-</div>
-
-<!-- 헤더 메뉴 시작 -->
-<header class="header header-two">
-<div class="container">
-<div class="row">
-<div class="col-xs-6 col-md-2 col-lg-3 logo-box">
-    <div class="logo">
-        <a href="/">
-            <img src="/resources/asset/img/logo.png" class="logo-img" alt="">
-        </a>
-    </div>
-</div><!-- .logo-box -->
-
-<div class="col-xs-6 col-md-10 col-lg-9 right-box">
-<div class="right-box-wrapper">
-<div class="header-icons">
-    <div class="search-header hidden-600">
-
-        <a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-                                              <path d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
-                                              s2.687,6,6,6c1.402,0,2.688-0.484,3.71-1.29l0.79,0.79l-0.5,0.5l4,4l2-2L12.001,10z M6,10c-2.206,0-4-1.794-4-4s1.794-4,4-4
-                                              s4,1.794,4,4S8.206,10,6,10z"></path>
-                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/search-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
-                                            </svg>
-        </a>
-    </div><!-- .search-header -->
-    <%
-        if (AuthenticationUtils.isAuthenticated() == false) {
-    %>
-    <!--div class="btn-group">
-        <a href="/account/signup" class="btn btn-info">회원 가입</a>
-    </div><!-- .cart-header -->
-    <div class="btn-group">
-        <a href="/account/login" class="btn btn-success">로그인</a>
-    </div><!-- .cart-header -->
-    <%
-    } else {
-    %>
-    <div class="btn-group">
-        <a href="/account/logout" class="btn btn-success">로그아웃</a>
-    </div><!-- .cart-header -->
-    <%
-        }
-    %>
-
-</div><!-- .header-icons -->
-
-<div class="primary">
-    <div class="navbar navbar-default" role="navigation">
-        <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target=".primary .navbar-collapse">
-            <span class="text">Menu</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-
-        <nav class="collapse collapsing navbar-collapse">
-            <ul class="nav navbar-nav navbar-center">
-                <li class="parent"> <a>기초재료</a>
-                    <ul class="sub">
-                        <li><a href="/style/">스타일 (BJCP STYLE)</a></li>
-                        <li><a href="/fermentable/">발효재료 (Fermentable) </a></li>
-                        <li><a href="/hop/">홉 (Hop) <span class="item-new">Hot</span></a></li>
-                        <li><a href="/yeast/">효모 (Yeast)</a></li>
-                        <li><a href="/misc/">기타재료</a></li>
-                    </ul>
-                </li>
-                <li class="parent megamenu promo">
-                    <a href="#">레시피 찾기</a>
-                    <ul class="sub">
-                        <li class="sub-wrapper">
-                            <div class="sub-list">
-                                <div class="box closed">
-                                    <h6 class="title">라거</h6>
-                                    <ul>
-                                        <li><a href="/recipe/main/1">LIGHT LAGER</a></li>
-                                        <li><a href="/recipe/main/5">BOCK</a></li>
-                                        <li><a href="/recipe/main/2">필스너 <span class="item-new bg-warning">Wow</span></a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">에일</h6>
-                                    <ul>
-                                        <li><a href="/recipe/main/10">미국식 에일</a></li>
-                                        <li><a href="/recipe/main/11">영국식 브라운 에일</a></li>
-                                        <li><a href="/recipe/main/16">세종</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">IPA/스트롱</h6>
-                                    <ul>
-                                        <li><a href="/recipe/main/14">INDIA PALE ALE (IPA) <span class="item-new">HOT</span></a></li>
-                                        <li><a href="/recipe/main/16">BELGIAN STRONG ALE</a></li>
-                                        <li><a href="/recipe/main/19">STRONG ALE</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">밀맥주</h6>
-                                    <ul>
-                                        <li><a href="/recipe/main/15">로겐비어 (독일식 호밀 맥주)</a></li>
-                                        <li><a href="/recipe/main/16">윗비어</a></li>
-                                        <li><a href="/recipe/main/15">바이젠복</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">포터/스타우트</h6>
-                                    <ul>
-                                        <li><a href="/recipe/main/12">발틱 포터</a></li>
-                                        <li><a href="/recipe/main/13">오트밀 스타우트</a></li>
-                                        <li><a href="/recipe/main/13">러시안 임페리얼 스타우트</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-
-                                <div class="box closed">
-                                    <h6 class="title">사우어 및 기타</h6>
-                                    <ul>
-                                        <li><a href="/recipe/main/17">베를리너 바이세</a></li>
-                                        <li><a href="/recipe/main/20">과일맥주</a></li>
-                                        <li><a href="/recipe/main/17">과일 람빅</a></li>
-                                    </ul>
-                                </div><!-- .box -->
-                            </div><!-- .sub-list -->
-
-                            <div class="promo-block">
-                                <a href="#">
-                                    <img src="/resources/recipe/menu_banner.png" width="253" height="457" alt="">
-                                </a>
-                            </div><!-- .promo-block -->
-                        </li>
-                    </ul><!-- .sub -->
+        <!--
+        <nav class="tm-top-nav">
+            <ul>
+                <li>
+                    <a href="#">Check out</a>
                 </li>
                 <li>
-                    <a href="/recipe/create">레시피 만들기 </a>
+                    <a href="#">View cart</a>
                 </li>
                 <li>
-                    <a href="#">가이드</a>
-                </li>
-                <li class="parent">
-                    <a href="#">커뮤니티</a>
-                        <ul class="sub">
-                            <li><a href="/board/main/1">공지사항 (Notice) </a></li>
-                            <li><a href="/board/main/3">자유게시판 (Free Board)</a></li>
-                            <li><a href="/board/main/9">Q&A게시판 (Notice) </a></li>
-                        </ul>
+                    <a href="#">View order</a>
                 </li>
             </ul>
         </nav>
+        -->
+        <div class="tm-search">
+            <form>
+                <input type="text" autocomplete="on" placeholder="검색어를 입력해보세요." name="s" class="tm-input">
+                <button role="button" type="submit" class="tm-button">검색</button>
+            </form>
+        </div>
     </div>
-</div><!-- .primary -->
+    <!--tm-wrap-->
 </div>
+<!--tm-header-top-->
+<div id="tm-header-nav" class="tm-menu-style1 tm-sticky-menu">
+    <div class="tm-wrap tm-table">
+        <nav class="tm-nav">
+            <ul class="tm-menu tm-menu-simple">
+                <li class="parent">
+                    <a href="/">HOME</a>
+                </li>
+                <li class="parent">
+                    <a href="/recipe/create">레시피 만들기</a>
+                </li>
+                <li class="parent">
+                    <a href="/account/login">로그인</a>
+                </li>
+            </ul>
+        </nav>
+        <!--tm-nav-->
+        <div class="tm-social-icons">
+            <a href="#" class="tm-icon-facebook">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </div>
+        <!--tm-social-icons-->
+    </div>
 </div>
-<div class="phone-active col-sm-9 col-md-9">
-    <a href="#" class="close"><span>close</span>×</a>
-    <span class="title"> </span> <strong> </strong>
-</div>
-<div class="search-active col-sm-9 col-md-9">
-    <a href="#" class="close"><span>close</span>×</a>
-    <form name="search-form">
-        <input class="search-string form-control" type="search" placeholder="검색어를 입력하세요." name="search-string">
-        <button class="search-submit">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-          <path fill="#231F20" d="M12.001,10l-0.5,0.5l-0.79-0.79c0.806-1.021,1.29-2.308,1.29-3.71c0-3.313-2.687-6-6-6C2.687,0,0,2.687,0,6
-          s2.687,6,6,6c1.402,0,2.688-0.484,3.71-1.29l0.79,0.79l-0.5,0.5l4,4l2-2L12.001,10z M6,10c-2.206,0-4-1.794-4-4s1.794-4,4-4
-          s4,1.794,4,4S8.206,10,6,10z"></path>
-                <image src="http://template.progressive.itembridge.com/2.1.8/img/png-icons/search-icon.png" alt="" width="16" height="16" style="vertical-align: top;">
-        </svg>
-        </button>
-    </form>
-</div>
-</div><!--.row -->
-</div>
-</header><!-- .header -->
-                <%
-                    if (AuthenticationUtils.isAuthenticated() == false) {
-                %>
-                    <!--form:form id="authentication" class="animated fadeIn" method="POST" action="/account/authentication" modelAttribute="account">
-                    <li>
-                        <input type="text" id="email" name="email" class="form-control input-sm" style="width:120px;" placeholder="이메일" />      &nbsp;    &nbsp;
-                    </li>
-                    <li>
-                        <input type="password" id="password" name="password" class="form-control input-sm" style="width:120px;" placeholder="패스워드" />
-                    </li>
-                    <li>
-                        <button type="submit" class="btn btn-small btn-primary btn-cons-md"> 로그인</button>
-                    </li>
-                    <!--/form:form-->
-                <%
-                } else {
-                %>
-
-
-                <%
-                    }
-                %>
+<!--tm-header-nav-->
