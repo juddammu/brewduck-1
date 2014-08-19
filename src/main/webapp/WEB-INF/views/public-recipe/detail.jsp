@@ -384,101 +384,40 @@
                 <a href="#tab1">신규 레시피들</a>
             </li>
             <li>
-                <a href="#tab2">최근 댓글들</a>
+                <a href="#tab2">최근 게시글</a>
             </li>
         </ul>
         <div class="tab-container">
             <aside id="tab1" class="widget tm-list-style2 widget_recent_entries tab-content">
                 <ul>
+                    <c:forEach items="${newRecipeList}" var="newRecipeList" varStatus="status">
                     <li>
-                        <a href="#">
-										<span class="thumb">
-										<img src="http://placehold.it/60x60" width="60" alt="thumb">
-										</span>
-                            <h3>제목이 들어갑니다...</h3>
-										<span class="time">
-										July 31, 2012
-										</span>
+                        <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">
+                            <span class="thumb">
+                            <img src="/resources/upload/${newRecipeList.atchCoverFileName}" width="60" alt="thumb">
+                            </span>
+                            <h3>${newRecipeList.name}</h3>
+                            <span class="time">
+                                ${newRecipeList.styleName} / ${newRecipeList.batchSize}리터 / ${newRecipeList.efficiency}%
+                            </span>
+                            <span class="time">
+                                </br>${newRecipeList.brewerNm}
+                            </span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-										<span class="thumb">
-										<img src="http://placehold.it/60x60" width="60" alt="thumb">
-										</span>
-                            <h3>제목이 들어갑니다...</h3>
-										<span class="time">
-										July 31, 2012
-										</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-										<span class="thumb">
-										<img src="http://placehold.it/60x60" width="60" alt="thumb">
-										</span>
-                            <h3>제목이 들어갑니다...</h3>
-										<span class="time">
-										July 31, 2012
-										</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-										<span class="thumb">
-										<img src="http://placehold.it/60x60" width="60" alt="thumb">
-										</span>
-                            <h3>제목이 들어갑니다...</h3>
-										<span class="time">
-										July 31, 2012
-										</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-										<span class="thumb">
-										<img src="http://placehold.it/60x60" width="60" alt="thumb">
-										</span>
-                            <h3>제목이 들어갑니다...</h3>
-										<span class="time">
-										July 31, 2012
-										</span>
-                        </a>
-                    </li>
+                    </c:forEach>
                 </ul>
             </aside>
             <aside id="tab2" class="widget tm-list-style2 widget_recent_comments tab-content">
                 <ul id="recentcomments">
+                    <c:forEach items="${newPostList}" var="newPostList" varStatus="status">
                     <li class="recentcomments">
-                        양조 마법사 -
+                            ${newPostList.insertId} -
                         <a href="single-blog.html#tm-comment">
-                            댓글 1
+                         ${newPostList.nttSj}
                         </a>
                     </li>
-                    <li class="recentcomments">
-                        양조 마법사 -
-                        <a href="single-blog.html#tm-comment">
-                            댓글 1
-                        </a>
-                    </li>
-                    <li class="recentcomments">
-                        양조 마법사 -
-                        <a href="single-blog.html#tm-comment">
-                            댓글 1
-                        </a>
-                    </li>
-                    <li class="recentcomments">
-                        양조 마법사 -
-                        <a href="single-blog.html#tm-comment">
-                            댓글 1
-                        </a>
-                    </li>
-                    <li class="recentcomments">
-                        양조 마법사 -
-                        <a href="single-blog.html#tm-comment">
-                            댓글 1
-                        </a>
-                    </li>
+                    </c:forEach>
                 </ul>
             </aside>
         </div>

@@ -49,10 +49,6 @@ public class HomeController {
     @Autowired
     private RecipeService recipeService;
 
-
-    @Autowired
-    private MessageSource messageSource; //다국어
-
     @Autowired
     private BoardService boardService;
 
@@ -69,6 +65,7 @@ public class HomeController {
         Hop hop = hopService.selectRandomHop();
         Recipe recipe = new Recipe();
 
+
         /* 잠시 보류
         List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
         model.addAttribute("hop", hop);
@@ -76,7 +73,9 @@ public class HomeController {
         */
         List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
 
+
         model.addAttribute("newRecipeList", selectNewPublicRecipeList);
+
         model.addAttribute("hop", hop);
 
         return "home";
