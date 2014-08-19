@@ -24,6 +24,7 @@ public class Recipe implements Serializable {
     // 레시피 순번
     private Integer seq;
 
+
     private Integer recipeSeq;
     // 레시피 한글명
     private String name;

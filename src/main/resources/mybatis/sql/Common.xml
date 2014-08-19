@@ -361,7 +361,7 @@
             AND A.BBS_ID = #{bbsId}
         </if>
         order by A.INSERT_DATE
-        DESC limit 3
+        DESC limit 5
     </select>
 
     <select id="selectReplyList" parameterType="Board" resultType="Board">
@@ -382,31 +382,29 @@
 
 
     <insert id="writeReply" parameterType="Board">
-
-            INSERT INTO BOARD_COMMENT(
-               NTT_ID
-              ,BBS_ID
-              ,ANSWER_NO
-              ,WRTER_ID
-              ,WRTER_NM
-              ,ANSWER
-              ,USE_AT
-              ,INSERT_DATE
-              ,INSERT_ID
-            ) VALUES (
-               #{nttId}
-              ,#{bbsId}
-              ,(SELECT * FROM (SELECT CASE COUNT(*) WHEN 0 THEN 1 ELSE MAX(ANSWER_NO)+1 END
-              FROM BOARD_COMMENT WHERE BOARD_COMMENT.NTT_ID =#{nttId}
-              AND BOARD_COMMENT.BBS_ID =#{bbsId})NEXT)
-              ,#{wrterId}
-              ,#{wrterNm}
-              ,#{amswer}
-              ,#{useAt}
-              ,SYSDATE()
-              ,#{insertId}
-            )
-
+        INSERT INTO BOARD_COMMENT(
+           NTT_ID
+          ,BBS_ID
+          ,ANSWER_NO
+          ,WRTER_ID
+          ,WRTER_NM
+          ,ANSWER
+          ,USE_AT
+          ,INSERT_DATE
+          ,INSERT_ID
+        ) VALUES (
+           #{nttId}
+          ,#{bbsId}
+          ,(SELECT * FROM (SELECT CASE COUNT(*) WHEN 0 THEN 1 ELSE MAX(ANSWER_NO)+1 END
+          FROM BOARD_COMMENT WHERE BOARD_COMMENT.NTT_ID =#{nttId}
+          AND BOARD_COMMENT.BBS_ID =#{bbsId})NEXT)
+          ,#{wrterId}
+          ,#{wrterNm}
+          ,#{amswer}
+          ,#{useAt}
+          ,SYSDATE()
+          ,#{insertId}
+        )
     </insert>
 
     <insert id="Common.deleteReply" parameterType="Board">

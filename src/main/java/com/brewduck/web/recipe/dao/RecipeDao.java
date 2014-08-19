@@ -1,5 +1,6 @@
 package com.brewduck.web.recipe.dao;
 
+import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.Recipe;
 
 import java.util.List;
@@ -126,5 +127,9 @@ public interface RecipeDao {
     public Integer insertRecipeYeast(Recipe recipe);
 
     public Integer insertRecipeMisc(Recipe recipe);
+
+    public List<Board> selectReplyList(Board board);
+
+    public int writeReply(Board board);
 
 }

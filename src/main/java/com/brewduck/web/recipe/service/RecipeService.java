@@ -1,5 +1,6 @@
 package com.brewduck.web.recipe.service;
 
+import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.Recipe;
 
 import java.util.List;
@@ -113,5 +114,9 @@ public interface RecipeService {
     public int insertRecipeYeast(Recipe recipe);
 
     public int insertRecipeMisc(Recipe recipe);
+
+    public List<Board> selectReplyList(Board board);
+
+    public int writeReply(Board board);
 
 }

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<title>${recipeDetail.name}</title>
 <div id="tm-page-title">
     <div class="tm-wrap tm-table">
         <div class="tm-title-captions">

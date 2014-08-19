@@ -18,6 +18,11 @@ public class Board{
 
     //게시물 ID
     private Integer nttId;
+
+    private Integer userId;
+
+    private Integer recipeId;
+
     //게시판 ID
     private Integer  bbsId;
 
@@ -115,6 +120,22 @@ public class Board{
     private Integer insertFlag;
 
     private String countNum;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(Integer recipeId) {
+        this.recipeId = recipeId;
+    }
 
     public String getAtchFileName() {
         return atchFileName;

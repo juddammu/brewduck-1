@@ -265,4 +265,13 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
 
+    @Override
+    public List<Board> selectReplyList(Board board) {
+        return recipeDao.selectReplyList(board);
+    }
+
+    @Override
+    public int writeReply(Board board) {
+        return recipeDao.writeReply(board);
+    }
 }

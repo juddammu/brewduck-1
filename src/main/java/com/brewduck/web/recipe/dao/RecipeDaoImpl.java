@@ -1,7 +1,9 @@
 package com.brewduck.web.recipe.dao;
 
+import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.Recipe;
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ import java.util.List;
 @Repository("recipeDao")
 public class RecipeDaoImpl implements RecipeDao {
     private static final Logger logger = LoggerFactory.getLogger(RecipeDaoImpl.class);
+
+    @Autowired
+    private SqlSessionTemplate sqlSessionTemplate;
 
     /**
      * Mybatis SQL Session Dependency Injection.
@@ -123,5 +128,15 @@ public class RecipeDaoImpl implements RecipeDao {
     @Override
     public Integer insertRecipeMisc(Recipe recipe) {
         return sqlSession.insert("Recipe.insertRecipeMisc", recipe);
+    }
+
+    @Override
+    public List<Board> selectReplyList(Board board) {
+        return sqlSessionTemplate.selectList("Recipe.selectReplyList", board);
+    }
+
+    @Override
+    public int writeReply(Board board) {
+        return sqlSessionTemplate.insert("Recipe.writeReply", board);
     }
 }

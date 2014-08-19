@@ -164,6 +164,23 @@ public class RecipeController {
         return list;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/replyList/{user_id}/{recipe_id}", method = RequestMethod.GET)
+    public List<Board> replyList (Model model, @PathVariable("user_id") Integer user_id, @PathVariable("recipe_id") Integer recipe_id) {
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+        Board board = new Board();
+        board.setUserId(user_id);
+        board.setRecipeId(recipe_id);
+        List<Board> replyList  = recipeService.selectReplyList(board);
+
+        LOGGER.info("Reply List Size : {}", replyList.size());
+
+        model.addAttribute("replyList", replyList);
+        return replyList;
+    }
+
 
 
     /**
