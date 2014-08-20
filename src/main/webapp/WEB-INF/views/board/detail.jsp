@@ -15,6 +15,7 @@
 
 <title>${BoardDetail.bbsNm} - ${BoardDetail.bbsEnNm}</title>
 
+
 <section>
     <ol class="breadcrumb">
         <li><a href="#">홈</a></li>
