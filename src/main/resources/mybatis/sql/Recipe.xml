@@ -111,7 +111,10 @@
         </if>
           AND ATCH_COVER_FILE_ID IS NOT NULL
         ORDER BY insert_date
-        LIMIT 4
+        <if test="limit != null">
+            LIMIT  #{limit}
+        </if>
+
     </select>
 
     <select id="Recipe.selectPublicRecipeMenuList" parameterType="Recipe" resultType="Recipe">

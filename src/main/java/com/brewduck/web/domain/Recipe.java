@@ -24,6 +24,7 @@ public class Recipe implements Serializable {
     // 레시피 순번
     private Integer seq;
 
+    private Integer limit;
 
     private Integer recipeSeq;
     // 레시피 한글명
@@ -196,6 +197,14 @@ public class Recipe implements Serializable {
     private String atchCoverFileName;
 
     private String brewerNm;
+
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
 
     public String getShortNotes() {
         return shortNotes;

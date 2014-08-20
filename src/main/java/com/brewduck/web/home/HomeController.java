@@ -65,6 +65,7 @@ public class HomeController {
         Hop hop = hopService.selectRandomHop();
         Recipe recipe = new Recipe();
         recipe.setStatus("2");
+        recipe.setLimit(4);
 
 
         /* 잠시 보류

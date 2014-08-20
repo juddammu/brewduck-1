@@ -49,6 +49,7 @@ public class UserController {
         recipe.setSeq(seq);
         recipe.setBrewer(user_id);
         recipe.setStatus("2");
+        recipe.setLimit(4);
         Board board = new Board();
 
         // 맥주 레시피 상세 조회
