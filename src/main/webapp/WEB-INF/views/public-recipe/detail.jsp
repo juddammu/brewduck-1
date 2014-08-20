@@ -315,7 +315,7 @@
         </li>
     </ul>
 </section>
-<section>
+<section id="tm-comment">
     <ul class="list-comments">
         <li>
             <div class="box style-white" id="reply_list">
