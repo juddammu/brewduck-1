@@ -62,7 +62,7 @@ public class UserController {
         return "public-recipe/detail";
     }
 
-    @RequestMapping(value="/public/recipe-list/{user_id}/*", method=RequestMethod.GET)
+    @RequestMapping(value="/public/recipe/list/{user_id}/*", method=RequestMethod.GET)
     public String selectPublicRecipeList(Model model,
                                            @PathVariable("user_id") String user_id) {
 
@@ -87,7 +87,7 @@ public class UserController {
 
 
     @ResponseBody
-    @RequestMapping(value = "/public/replyList/{user_id}/{recipe_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/public/recipe/replyList/{user_id}/{recipe_id}", method = RequestMethod.GET)
     public List<Board> replyList (Model model, @PathVariable("user_id") Integer user_id, @PathVariable("recipe_id") Integer recipe_id) {
 
         Account account = AuthenticationUtils.getUser();
