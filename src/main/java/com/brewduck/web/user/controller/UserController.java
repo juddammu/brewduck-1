@@ -48,6 +48,7 @@ public class UserController {
         List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
         recipe.setSeq(seq);
         recipe.setBrewer(user_id);
+        recipe.setStatus("2");
         Board board = new Board();
 
         // 맥주 레시피 상세 조회
@@ -68,6 +69,9 @@ public class UserController {
 
         Recipe recipe = new Recipe();
 
+        recipe.setBrewer(user_id);
+        List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
+
 /*        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
         recipe.setSeq(seq);
         recipe.setBrewer(user_id);
@@ -81,6 +85,7 @@ public class UserController {
         model.addAttribute("recipeDetail", recipeDetail);
         model.addAttribute("newPostList", selectNewPostList);
         model.addAttribute("newRecipeList", selectNewPublicRecipeList);*/
+        model.addAttribute("recipeList", recipeList);
 
         return "public-recipe/list";
     }

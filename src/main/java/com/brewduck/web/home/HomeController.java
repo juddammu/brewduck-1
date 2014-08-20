@@ -64,6 +64,7 @@ public class HomeController {
         // model.addAttribute("account", account);
         Hop hop = hopService.selectRandomHop();
         Recipe recipe = new Recipe();
+        recipe.setStatus("2");
 
 
         /* 잠시 보류
