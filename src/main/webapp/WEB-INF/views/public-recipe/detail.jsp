@@ -354,7 +354,7 @@
 
                         <p class="comment-form-comment">
                             <label for="url">Comment</label>
-                            <textarea id="comment" name="comment"></textarea>
+                            <textarea id="answer" name="answer"></textarea>
                         </p>
     <%--                    <div class="form-group">
                             <div class="col-md-12">
@@ -611,8 +611,8 @@
                     replyListHtml = replyListHtml + "</li>";
                     replyListHtml = replyListHtml + "</oi>";
                 });
+                $("#reply_list").html("");
                 $("#reply_list").append(replyListHtml);
-                boostbox.App.removeBoxLoader(box);
             })
         }
 
