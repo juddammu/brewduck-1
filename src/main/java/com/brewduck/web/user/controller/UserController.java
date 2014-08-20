@@ -1,6 +1,8 @@
 package com.brewduck.web.user.controller;
 
+import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.common.service.BoardService;
+import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.domain.User;
@@ -12,9 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -83,6 +83,59 @@ public class UserController {
         model.addAttribute("newRecipeList", selectNewPublicRecipeList);*/
 
         return "public-recipe/list";
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/public/replyList/{user_id}/{recipe_id}", method = RequestMethod.GET)
+    public List<Board> replyList (Model model, @PathVariable("user_id") Integer user_id, @PathVariable("recipe_id") Integer recipe_id) {
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+
+        Board board = new Board();
+        board.setUserId(user_id);
+        board.setRecipeId(recipe_id);
+
+        List<Board> replyList  = recipeService.selectReplyList(board);
+        model.addAttribute("replyList", replyList);
+        return replyList;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/public/writeReply", method = RequestMethod.POST)
+    public Board writeReply(Model model, @RequestBody Board board) {
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+
+        board.setWrterNm(name);
+        board.setInsertId(name);
+        int insertFlag = recipeService.writeReply(board);
+
+        // 맥주 레시피 저장했는지 성공 세팅
+        Board returnBoard = new Board();
+        returnBoard.setInsertFlag(insertFlag);
+
+        return returnBoard;
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/public/countReply/{user_id}/{recipe_id}", method = RequestMethod.GET)
+    public Board countReply(Model model, @PathVariable("user_id") Integer user_id, @PathVariable("recipe_id") Integer recipe_id) {
+        Board board = new Board();
+        board.setUserId(user_id);
+        board.setRecipeId(recipe_id);
+
+        Board countReply = recipeService.countReply(board);
+
+        // model.addAttribute("Hop", Hop);
+        // return "/Hop/HopView";
+
+        return countReply;
     }
 	/**
 	 * Gets the all.

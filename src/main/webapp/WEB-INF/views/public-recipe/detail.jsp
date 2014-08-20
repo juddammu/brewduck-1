@@ -568,7 +568,7 @@
             var json = {"userId" : userId, "recipeId" : recipeId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
             $.ajax({
                 type: "POST",
-                url: "/recipe/writeReply",
+                url: "/public/recipe/writeReply",
                 contentType: "application/json; charset=utf-8",
                 dataType:"json",
                 data:  JSON.stringify(json),
@@ -584,15 +584,15 @@
 
         function getReplyCount(){
 
-            $.get("/countReply/"+recipeId+"/"+userId, function(data, status){
-                $("#replyCount").html(data.countNum+" Comments"); /*미국*/
-            })
+           /* $.get("/countReply/"+recipeId+"/"+userId, function(data, status){
+                $("#replyCount").html(data.countNum+" Comments"); *//*미국*//*
+            })*/
         }
 
         function replyList(){
             var replyListHtml = "";
 
-            $.get("/recipe/replyList/"+userId+"/"+recipeId, function(data, status){
+            $.get("/public/recipe/replyList/"+userId+"/"+recipeId, function(data, status){
                 $.each(data, function(i){
                     replyListHtml = replyListHtml + "<ol class='commentlist'>";
                     replyListHtml = replyListHtml + "<li>";
