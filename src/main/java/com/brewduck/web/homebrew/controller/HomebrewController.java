@@ -6,9 +6,14 @@ import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.common.service.CommonService;
 import com.brewduck.web.domain.*;
 import com.brewduck.web.recipe.service.RecipeService;
+import com.sun.xml.internal.fastinfoset.sax.Properties;
+import com.sun.xml.internal.ws.api.PropertySet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -49,6 +55,7 @@ import com.mortennobel.imagescaling.ResampleOp;
  */
 @Controller
 @RequestMapping(value = "/homebrew")
+@PropertySource("classpath:properties/common/common.properties")
 public class HomebrewController {
     private static final Logger logger = LoggerFactory.getLogger(HomebrewController.class);
 
@@ -57,6 +64,10 @@ public class HomebrewController {
 
     @Autowired
     private CommonService commonService;
+
+
+    @Resource
+    private Environment environment;
 
     public static void scale(BufferedImage srcImage,
                              String descPath,
@@ -161,6 +172,11 @@ public class HomebrewController {
                                  HttpServletRequest request,
                                  BindingResult result,
                                  RedirectAttributes redirectAttributes) throws IOException {
+
+
+       logger.info("upload file path : {}", environment.getProperty("upload.filepath"));
+
+
 
         int fileseq = 0;
         int coverFileseq = 0;

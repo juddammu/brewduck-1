@@ -372,6 +372,36 @@
         </li>
     </ol>
 </section>
+<section id="respond">
+    <h3 class="tm-title">Leave A Comment</h3>
+    <form id="commentform">
+        <p class="comment-form-author">
+            <label for="author">
+                Name
+                <span class="required">*</span>
+            </label>
+            <input id="author" type="text" value="" name="author">
+        </p>
+        <p class="comment-form-email">
+            <label for="email">
+                Email
+                <span class="required">*</span>
+            </label>
+            <input id="email" type="text" value="" name="email">
+        </p>
+        <p class="comment-form-url">
+            <label for="url">Website</label>
+            <input id="url" type="text" value="" name="url">
+        </p>
+        <p class="comment-form-comment">
+            <label for="url">Comment</label>
+            <textarea id="comment" name="comment"></textarea>
+        </p>
+        <p class="form-submit">
+            <input id="submit" class="tm-btn" type="submit" value="Post Comment" name="submit">
+        </p>
+    </form>
+</section>
 </div>
 <!--entry-container-->
 </div>
