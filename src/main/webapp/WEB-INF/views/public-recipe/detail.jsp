@@ -26,7 +26,7 @@
 <div class="entry-header">
     <h2>${recipeDetail.name}</h2>
     <div class="meta">
-        <a href="#">${recipeDetail.brewerNm}</a> 님
+        <a href="/list/recipe/${recipeDetail.brewer}/${recipeDetail.brewerNm}">${recipeDetail.brewerNm}</a> 님
         <span class="incategory">
         <a href="/style/${recipeDetail.styleSeq}/">${recipeDetail.styleName}</a>
         </span>

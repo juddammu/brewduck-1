@@ -25,6 +25,10 @@
         <pattern>/public/recipe/*/*/*</pattern>
     </decorator>
 
+    <decorator name="recipe-content" page="public-recipe.jsp">
+        <pattern>/list/recipe/*/*</pattern>
+    </decorator>
+
     <decorator name="expert" page="recipe.jsp">
         <pattern>/recipe/</pattern>
         <pattern>/recipe/detail/*</pattern>
