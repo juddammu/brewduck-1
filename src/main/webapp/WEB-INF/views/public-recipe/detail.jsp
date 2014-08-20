@@ -473,7 +473,6 @@
 
         function replyList(){
             //getLoadingTime();
-
             $("#reply_list").html("");
             var replyListHtml = "";
 
