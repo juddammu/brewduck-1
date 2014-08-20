@@ -132,4 +132,6 @@ public interface RecipeDao {
 
     public int writeReply(Board board);
 
+    public Board countReply(Board board);
+
 }

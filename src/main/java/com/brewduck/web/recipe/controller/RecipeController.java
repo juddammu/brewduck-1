@@ -170,15 +170,52 @@ public class RecipeController {
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
+
+
         Board board = new Board();
         board.setUserId(user_id);
         board.setRecipeId(recipe_id);
+
         List<Board> replyList  = recipeService.selectReplyList(board);
-
         LOGGER.info("Reply List Size : {}", replyList.size());
-
         model.addAttribute("replyList", replyList);
         return replyList;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/writeReply", method = RequestMethod.POST)
+    public Board writeReply(Model model, @RequestBody Board board) {
+
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+
+
+        board.setWrterNm(name);
+        board.setInsertId(name);
+        int insertFlag = recipeService.writeReply(board);
+
+        // 맥주 레시피 저장했는지 성공 세팅
+        Board returnBoard = new Board();
+        returnBoard.setInsertFlag(insertFlag);
+
+        return returnBoard;
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/countReply/{user_id}/{recipe_id}", method = RequestMethod.GET)
+    public Board countReply(Model model, @PathVariable("user_id") Integer user_id, @PathVariable("recipe_id") Integer recipe_id) {
+        Board board = new Board();
+        board.setUserId(user_id);
+        board.setRecipeId(recipe_id);
+
+        // 맥주 발효재료 국가 별 갯수 조회.
+        Board countReply = recipeService.countReply(board);
+
+        // model.addAttribute("Hop", Hop);
+        // return "/Hop/HopView";
+
+        return countReply;
     }
 
 

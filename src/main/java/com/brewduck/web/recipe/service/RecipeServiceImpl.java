@@ -274,4 +274,9 @@ public class RecipeServiceImpl implements RecipeService {
     public int writeReply(Board board) {
         return recipeDao.writeReply(board);
     }
+
+    @Override
+    public Board countReply(Board board) {
+        return recipeDao.countReply(board);
+    }
 }

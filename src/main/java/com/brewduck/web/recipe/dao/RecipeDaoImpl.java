@@ -139,4 +139,9 @@ public class RecipeDaoImpl implements RecipeDao {
     public int writeReply(Board board) {
         return sqlSessionTemplate.insert("Recipe.writeReply", board);
     }
+
+    @Override
+    public Board countReply(Board board) {
+        return sqlSessionTemplate.selectOne("Recipe.countReply", board);
+    }
 }

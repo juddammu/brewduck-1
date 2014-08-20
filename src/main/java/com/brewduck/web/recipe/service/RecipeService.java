@@ -119,4 +119,6 @@ public interface RecipeService {
 
     public int writeReply(Board board);
 
+    public Board countReply(Board board);
+
 }
