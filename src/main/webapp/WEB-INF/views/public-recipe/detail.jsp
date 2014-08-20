@@ -373,94 +373,27 @@
             <!-- END BLOG POST TEXT -->
         </div><!--end .row -->
     </div>
-<%--
-
-    <h3 class="tm-title">1 Comments</h3>
-    <ol class="commentlist">
-        <li>
-            <div class="comment">
-                <div class="avatar">
-                    <img alt="img" src="http://placehold.it/50x50">
-                </div>
-                <div class="comment-container">
-                    <div class="comment-author meta">
-                        <strong>양조마법사</strong>
-                        Jan 11, 2013
-                        <a class="comment-reply-link" href=""> - Reply</a>
-                    </div>
-                    <div class="text">
-                        레시피 댓글 테스트중
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="comment">
-                <div class="avatar">
-                    <img alt="img" src="http://placehold.it/50x50">
-                </div>
-                <div class="comment-container">
-                    <div class="comment-author meta">
-                        <strong>양조마법사</strong>
-                        Jan 11, 2013
-                        <a class="comment-reply-link" href=""> - 댓글달기</a>
-                    </div>
-                    <div class="text">
-                        여기서 이거하나면 SOUR로 변경가능요.
-                    </div>
-                </div>
-            </div>
-            <ul class="children">
-                <li>
-                    <div class="comment">
-                        <div class="avatar">
-                            <img alt="img" src="http://placehold.it/50x50">
-                        </div>
-                        <div class="comment-container">
-                            <div class="comment-author meta">
-                                <strong>티라노-SOURS</strong>
-                                Jan 11, 2013
-                                <a class="comment-reply-link" href=""> - Reply</a>
-                            </div>
-                            <div class="text">
-                                와우..
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </li>
-    </ol>--%>
 </section>
 <section id="respond">
-    <h3 class="tm-title">Leave A Comment</h3>
-    <form id="commentform">
-        <p class="comment-form-author">
-            <label for="author">
-                Name
-                <span class="required">*</span>
-            </label>
-            <input id="author" type="text" value="" name="author">
-        </p>
-        <p class="comment-form-email">
-            <label for="email">
-                Email
-                <span class="required">*</span>
-            </label>
-            <input id="email" type="text" value="" name="email">
-        </p>
-        <p class="comment-form-url">
-            <label for="url">Website</label>
-            <input id="url" type="text" value="" name="url">
-        </p>
+    <form:form  id="commentform" class="form-horizontal" role="form" onsubmit="return false">
         <p class="comment-form-comment">
-            <label for="url">Comment</label>
-            <textarea id="comment" name="comment"></textarea>
+            <label for="url">댓글</label>
+            <%
+                if (AuthenticationUtils.isAuthenticated() == false) {
+            %>
+            <a href="/account/login"><textarea id="answer" name="answer">로그인 후 등록할 수 있습니다.</textarea></a>
+            <%
+            } else {
+            %>
+            <textarea id="answer" name="answer"></textarea>
+            <%
+                }
+            %>
         </p>
         <p class="form-submit">
-            <input id="submit" class="tm-btn" type="submit" value="Post Comment" name="submit">
+            <input id="insertReply" name="insertReply" class="tm-btn" type="submit" value="Post Comment" >
         </p>
-    </form>
+    </form:form>
 </section>
 </div>
 <!--entry-container-->

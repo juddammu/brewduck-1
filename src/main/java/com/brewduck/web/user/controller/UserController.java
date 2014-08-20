@@ -104,7 +104,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/public/writeReply", method = RequestMethod.POST)
+    @RequestMapping(value = "/public/recipe/writeReply", method = RequestMethod.POST)
     public Board writeReply(Model model, @RequestBody Board board) {
 
         Account account = AuthenticationUtils.getUser();
