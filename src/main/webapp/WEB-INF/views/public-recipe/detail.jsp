@@ -473,11 +473,11 @@
 
         function replyList(){
             //getLoadingTime();
-            $("#reply_list").html("");
+            //$("#reply_list").html("");
             var replyListHtml = "";
 
-            $.get("/community/replyList/"+nttId+"/"+bbsId, function(data, status){
-                $.each(data, function(i){
+            $.get("/recipe/replyList/${recipeDetail.brewer}/${recipeDetail.seq}, function(data, status){
+                /*$.each(data, function(i){
                     //<optgroup  label="1. LIGHT LAGER">
                     replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
                     replyListHtml = replyListHtml + "<div class='box-body'>";
@@ -487,7 +487,7 @@
                     replyListHtml = replyListHtml + "</div>";
                 });
                 $("#reply_list").append(replyListHtml);
-                boostbox.App.removeBoxLoader(box);
+                boostbox.App.removeBoxLoader(box);*/
             })
 
             /*
