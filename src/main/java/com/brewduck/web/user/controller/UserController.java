@@ -61,6 +61,29 @@ public class UserController {
 
         return "public-recipe/detail";
     }
+
+    @RequestMapping(value="/public/recipe-list/{user_id}/*", method=RequestMethod.GET)
+    public String selectPublicRecipeList(Model model,
+                                           @PathVariable("user_id") String user_id) {
+
+        Recipe recipe = new Recipe();
+
+/*        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+        recipe.setSeq(seq);
+        recipe.setBrewer(user_id);
+        Board board = new Board();
+
+        // 맥주 레시피 상세 조회
+
+        Recipe recipeDetail = recipeService.selectPublicRecipeDetail(recipe);
+        List<Board> selectNewPostList = boardService.getNewPost(board);
+
+        model.addAttribute("recipeDetail", recipeDetail);
+        model.addAttribute("newPostList", selectNewPostList);
+        model.addAttribute("newRecipeList", selectNewPublicRecipeList);*/
+
+        return "public-recipe/list";
+    }
 	/**
 	 * Gets the all.
 	 * 
