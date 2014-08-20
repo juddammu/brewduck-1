@@ -33,7 +33,7 @@
     </div>
     <div class="time">
         ${recipeDetail.insertDate}
-        <a href="#tm-comment">0 댓글</a>
+        <a href="#commentform"><label id = "replyCount" type ="text"></label></a>
     </div>
 </div>
 <!--entry-header-->
@@ -315,69 +315,19 @@
         </li>
     </ul>
 </section>
+<section>
+    <ul class="list-comments">
+        <li>
+            <div class="box style-white" id="reply_list">
 
-<section id="tm-comment">
-    <div class="row">
-        <div class="col-md-12">
-            <label class="medium_text_shadow" id = "replyCount" type ="text"></label>
-            <div class="box style-white" id="reply_count">
-                <ul class="list-comments">
-                    <li>
-                        <div class="box style-white" id="reply_list">
-
-                        </div><!--end .box -->
-                    </li><!-- end comment -->
-                </ul>
-            </div><!--end .col-md-9 -->
-        </div><!--end .row -->
-    </div>
-    <div class="box box-tiles style-white">
-        <div class="row">
-            <div class="col-md-12">
-                <article class="style-white">
-                    <form:form  class="form-horizontal" role="form" onsubmit="return false">
-                        <%
-                            if (AuthenticationUtils.isAuthenticated() == false) {
-                        %>
-                        <%--<div class="form-group">
-                            <div class="col-md-12">
-                                <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="로그인 후 등록할 수 있습니다." disabled></textarea>
-                            </div>
-                        </div>--%>
-                        <p class="comment-form-comment">
-                            <label for="url">Comment</label>
-                            <textarea id="answer" name="answer" placeholder="로그인 후 등록할 수 있습니다." disabled></textarea>
-                        </p>
-                        <%
-                        } else {
-                        %>
-
-                        <p class="comment-form-comment">
-                            <label for="url">Comment</label>
-                            <textarea id="answer" name="answer"></textarea>
-                        </p>
-    <%--                    <div class="form-group">
-                            <div class="col-md-12">
-                                <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
-                            </div>
-                        </div>--%>
-                        <div class="form-footer">
-                            <button type="submit" class="ui-button" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
-                        </div>
-                        <%
-                            }
-                        %>
-                    </form:form>
-                </article>
-            </div>
-            <!-- END BLOG POST TEXT -->
-        </div><!--end .row -->
-    </div>
+            </div><!--end .box -->
+        </li><!-- end comment -->
+    </ul>
 </section>
 <section id="respond">
     <form:form  id="commentform" class="form-horizontal" role="form" onsubmit="return false">
         <p class="comment-form-comment">
-            <label for="url">댓글</label>
+            <label>댓글</label>
             <%
                 if (AuthenticationUtils.isAuthenticated() == false) {
             %>
@@ -513,13 +463,14 @@
                     }
                 }
             });
+            $("#answer").focus();
         });
 
         function getReplyCount(){
 
-           /* $.get("/countReply/"+recipeId+"/"+userId, function(data, status){
-                $("#replyCount").html(data.countNum+" Comments"); *//*미국*//*
-            })*/
+            $.get("/public/countReply/"+userId+"/"+recipeId, function(data, status){
+                $("#replyCount").html(data.countNum+" 개 댓글");
+            })
         }
 
         function replyList(){
