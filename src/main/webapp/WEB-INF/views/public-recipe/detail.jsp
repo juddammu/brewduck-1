@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <title>${recipeDetail.name}</title>
 <div id="tm-page-title">
@@ -314,7 +315,58 @@
         </li>
     </ul>
 </section>
+
 <section id="tm-comment">
+    <div class="row">
+        <div class="col-md-12">
+            <label class="medium_text_shadow" id = "replyCount" type ="text"></label>
+            <div class="box style-white" id="reply_count">
+                <ul class="list-comments">
+                    <li>
+                        <div class="box style-white" id="reply_list">
+
+                        </div><!--end .box -->
+                    </li><!-- end comment -->
+                </ul>
+            </div><!--end .col-md-9 -->
+        </div><!--end .row -->
+    </div>
+    <div class="box box-tiles style-white">
+        <div class="row">
+            <div class="col-md-12">
+                <article class="style-white">
+                    <form:form  class="form-horizontal" role="form" onsubmit="return false">
+                        <%
+                            if (AuthenticationUtils.isAuthenticated() == false) {
+                        %>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="로그인 후 등록할 수 있습니다." disabled></textarea>
+                            </div>
+                        </div>
+                        <%
+                        } else {
+                        %>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-footer">
+                            <button type="submit" class="ui-button" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
+                        </div>
+                        <%
+                            }
+                        %>
+                    </form:form>
+                </article>
+            </div>
+            <!-- END BLOG POST TEXT -->
+        </div><!--end .row -->
+    </div>
+<%--
+
     <h3 class="tm-title">1 Comments</h3>
     <ol class="commentlist">
         <li>
@@ -370,7 +422,7 @@
                 </li>
             </ul>
         </li>
-    </ol>
+    </ol>--%>
 </section>
 </div>
 <!--entry-container-->
@@ -471,44 +523,65 @@
 <content tag="local_script">
     <script>
 
+        var bbsId = '4';
+        var nttId = ${StyleDetail.seq};
+
+        $('#insertReply').on('click', function () {
+            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
+            $.ajax({
+                type: "POST",
+                url: "/community/writeReply",
+                contentType: "application/json; charset=utf-8",
+                dataType:"json",
+                data:  JSON.stringify(json),
+                success:function( data ) {
+                    if(data.insertFlag == 1){
+                        replyList();
+                        getReplyCount();
+                        $('#answer').val('');
+                    }
+                }
+            });
+        });
+
+        function getReplyCount(){
+
+            $.get("/community/countReply/"+nttId+"/"+bbsId, function(data, status){
+                $("#replyCount").html(data.countNum+" Comments"); /*미국*/
+            })
+        }
+
         function replyList(){
             //getLoadingTime();
             //$("#reply_list").html("");
             var replyListHtml = "";
 
-            $.get("/recipe/replyList/${recipeDetail.brewer}/${recipeDetail.seq}, function(data, status){
-                /*$.each(data, function(i){
-                    //<optgroup  label="1. LIGHT LAGER">
-                    replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
-                    replyListHtml = replyListHtml + "<div class='box-body'>";
+            $.get("/recipe/replyList/"${recipeDetail.brewer}/${recipeDetail.seq}, function(data, status){
+                $.each(data, function(i){
+
+                    replyListHtml = replyListHtml + "<div class='comment'>";
+                    replyListHtml = replyListHtml + "<div class='avatar'>";
+                    replyListHtml = replyListHtml + "<img alt='img' src='http://placehold.it/50x50'>";
+                    replyListHtml = replyListHtml + "</div>'
+                    replyListHtml = replyListHtml + "<div class='comment-container'>"
+                    replyListHtml = replyListHtml + "<div class='comment-author meta'>"
                     replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
-                    replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
+                    replyListHtml = replyListHtml + "<a class='comment-reply-link' href=''> - 댓글달기</a>";
+                    replyListHtml = replyListHtml + "</div>";
                     replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
+                    replyListHtml = replyListHtml + "</div>";
                     replyListHtml = replyListHtml + "</div>";
                 });
                 $("#reply_list").append(replyListHtml);
-                boostbox.App.removeBoxLoader(box);*/
+                boostbox.App.removeBoxLoader(box);
             })
-
-            /*
-             <div class="comment-avatar"><i class="glyphicon glyphicon-user text-gray-lighter"></i></div>
-             <div class="box-body">
-             <h4 class="comment-title">Jim Peters <small>20/06/2013 at 4:02 pm</small></h4>
-             <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-             <p>Etiam dui libero, tempor quis congue in, interdum eget tortor. Vivamus aliquam dictum lacus quis tincidunt. Phasellus rhoncus ante sollicitudin nisl consectetur ultricies. Sed rhoncus ullamcorper mauris, ac condimentum metus egestas ut. Nam et urna ante, vitae pretium lacus.</p>
-             </div>
-
-             $("#result").html("");
-             $( "#result" ).load("/style/list", $("#searchForm").serialize(), function( response, status, xhr ) {
-
-             if ( status == "success" ) {
-             boostbox.App.removeBoxLoader(box);
-             }
-             });*/
         }
+
 
         $(document).ready(function() {
             alert();
+            getReplyCount();
+            replyList();
         });
 
     </script>
