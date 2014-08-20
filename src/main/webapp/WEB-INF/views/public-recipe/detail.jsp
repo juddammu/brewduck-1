@@ -467,3 +467,50 @@
 <!--tm-single-blog-->
 </div>
 <!--tm-page-body-->
+
+<content tag="local_script">
+    <script>
+
+        function replyList(){
+            //getLoadingTime();
+
+            $("#reply_list").html("");
+            var replyListHtml = "";
+
+            $.get("/community/replyList/"+nttId+"/"+bbsId, function(data, status){
+                $.each(data, function(i){
+                    //<optgroup  label="1. LIGHT LAGER">
+                    replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
+                    replyListHtml = replyListHtml + "<div class='box-body'>";
+                    replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
+                    replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
+                    replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
+                    replyListHtml = replyListHtml + "</div>";
+                });
+                $("#reply_list").append(replyListHtml);
+                boostbox.App.removeBoxLoader(box);
+            })
+
+            /*
+             <div class="comment-avatar"><i class="glyphicon glyphicon-user text-gray-lighter"></i></div>
+             <div class="box-body">
+             <h4 class="comment-title">Jim Peters <small>20/06/2013 at 4:02 pm</small></h4>
+             <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
+             <p>Etiam dui libero, tempor quis congue in, interdum eget tortor. Vivamus aliquam dictum lacus quis tincidunt. Phasellus rhoncus ante sollicitudin nisl consectetur ultricies. Sed rhoncus ullamcorper mauris, ac condimentum metus egestas ut. Nam et urna ante, vitae pretium lacus.</p>
+             </div>
+
+             $("#result").html("");
+             $( "#result" ).load("/style/list", $("#searchForm").serialize(), function( response, status, xhr ) {
+
+             if ( status == "success" ) {
+             boostbox.App.removeBoxLoader(box);
+             }
+             });*/
+        }
+
+        $(document).ready(function() {
+            alert();
+        });
+
+    </script>
+</content>

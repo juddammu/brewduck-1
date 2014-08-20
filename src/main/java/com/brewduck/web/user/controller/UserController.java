@@ -52,9 +52,6 @@ public class UserController {
 
         // 맥주 레시피 상세 조회
 
-
-
-
         Recipe recipeDetail = recipeService.selectPublicRecipeDetail(recipe);
         List<Board> selectNewPostList = boardService.getNewPost(board);
 

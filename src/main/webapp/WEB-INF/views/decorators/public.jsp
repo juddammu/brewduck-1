@@ -57,6 +57,7 @@
     <i class="fa fa-chevron-up"></i>
 </a>
 
+
 <script type="text/javascript" src="/resources/front/3rd/jquery/jquery-core.js"></script>
 <script type="text/javascript" src="/resources/front/3rd/jquery/jquery-ui.js"></script>
 <script type="text/javascript" src="/resources/front/3rd/jquery/jquery-tinynav.js"></script>
@@ -71,5 +72,6 @@
 <script type="text/javascript" src="/resources/front/3rd/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
 <script type="text/javascript" src="/resources/front/3rd/layerslider/js/layerslider.transitions.js"></script>
 <script type="text/javascript" src="/resources/front/js/theme.js"></script>
+<decorator:getProperty property="page.local_script"></decorator:getProperty>
 </body>
 </html>
