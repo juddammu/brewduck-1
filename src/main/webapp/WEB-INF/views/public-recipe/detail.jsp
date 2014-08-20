@@ -339,20 +339,28 @@
                         <%
                             if (AuthenticationUtils.isAuthenticated() == false) {
                         %>
-                        <div class="form-group">
+                        <%--<div class="form-group">
                             <div class="col-md-12">
                                 <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="로그인 후 등록할 수 있습니다." disabled></textarea>
                             </div>
-                        </div>
+                        </div>--%>
+                        <p class="comment-form-comment">
+                            <label for="url">Comment</label>
+                            <textarea id="answer" name="answer" placeholder="로그인 후 등록할 수 있습니다." disabled></textarea>
+                        </p>
                         <%
                         } else {
                         %>
 
-                        <div class="form-group">
+                        <p class="comment-form-comment">
+                            <label for="url">Comment</label>
+                            <textarea id="comment" name="comment"></textarea>
+                        </p>
+    <%--                    <div class="form-group">
                             <div class="col-md-12">
                                 <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="form-footer">
                             <button type="submit" class="ui-button" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
                         </div>
@@ -553,14 +561,14 @@
 <content tag="local_script">
     <script>
 
-        var bbsId = '4';
-        var nttId = ${StyleDetail.seq};
+        var recipeId = ${recipeDetail.seq};
+        var userId = ${recipeDetail.brewer};
 
         $('#insertReply').on('click', function () {
-            var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
+            var json = {"userId" : userId, "recipeId" : recipeId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
             $.ajax({
                 type: "POST",
-                url: "/community/writeReply",
+                url: "/recipe/writeReply",
                 contentType: "application/json; charset=utf-8",
                 dataType:"json",
                 data:  JSON.stringify(json),
@@ -576,31 +584,32 @@
 
         function getReplyCount(){
 
-            $.get("/community/countReply/"+nttId+"/"+bbsId, function(data, status){
+            $.get("/countReply/"+recipeId+"/"+userId, function(data, status){
                 $("#replyCount").html(data.countNum+" Comments"); /*미국*/
             })
         }
 
         function replyList(){
-            //getLoadingTime();
-            //$("#reply_list").html("");
             var replyListHtml = "";
 
-            $.get("/recipe/replyList/"${recipeDetail.brewer}/${recipeDetail.seq}, function(data, status){
+            $.get("/recipe/replyList/"+userId+"/"+recipeId, function(data, status){
                 $.each(data, function(i){
-
+                    replyListHtml = replyListHtml + "<ol class='commentlist'>";
+                    replyListHtml = replyListHtml + "<li>";
                     replyListHtml = replyListHtml + "<div class='comment'>";
                     replyListHtml = replyListHtml + "<div class='avatar'>";
                     replyListHtml = replyListHtml + "<img alt='img' src='http://placehold.it/50x50'>";
-                    replyListHtml = replyListHtml + "</div>'
-                    replyListHtml = replyListHtml + "<div class='comment-container'>"
-                    replyListHtml = replyListHtml + "<div class='comment-author meta'>"
+                    replyListHtml = replyListHtml + "</div>";
+                    replyListHtml = replyListHtml + "<div class='comment-container'>";
+                    replyListHtml = replyListHtml + "<div class='comment-author meta'>";
                     replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
                     replyListHtml = replyListHtml + "<a class='comment-reply-link' href=''> - 댓글달기</a>";
                     replyListHtml = replyListHtml + "</div>";
                     replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
                     replyListHtml = replyListHtml + "</div>";
                     replyListHtml = replyListHtml + "</div>";
+                    replyListHtml = replyListHtml + "</li>";
+                    replyListHtml = replyListHtml + "</oi>";
                 });
                 $("#reply_list").append(replyListHtml);
                 boostbox.App.removeBoxLoader(box);
@@ -609,7 +618,6 @@
 
 
         $(document).ready(function() {
-            alert();
             getReplyCount();
             replyList();
         });
