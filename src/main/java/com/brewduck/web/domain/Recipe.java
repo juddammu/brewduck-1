@@ -169,7 +169,7 @@ public class Recipe implements Serializable {
     // 작성자 아이디
     private String insertId;
     // 작성자 날짜
-    private Date insertDate;
+    private String insertDate;
     // 수정자 아이디
     private String updateId;
     // 수정자 날짜
@@ -1137,16 +1137,17 @@ public class Recipe implements Serializable {
      *
      * @return 작성 날짜
      */
-    public Date getInsertDate() {
+
+    public String getInsertDate() {
         return insertDate;
     }
 
     /**
      * 작성 날짜
      *
-     * @param insertDate 작성 날짜
+     * @return 작성 날짜
      */
-    public void setInsertDate(Date insertDate) {
+    public void setInsertDate(String insertDate) {
         this.insertDate = insertDate;
     }
 
