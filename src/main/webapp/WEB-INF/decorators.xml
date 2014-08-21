@@ -30,7 +30,7 @@
         <pattern>/list/recipe/*/*</pattern>
     </decorator>
 
-    <decorator name="recipe-content" page="public-list.jsp">
+    <decorator name="board-content" page="public-list.jsp">
         <pattern>/board/list</pattern>
     </decorator>
 

@@ -43,6 +43,8 @@ public class Recipe implements Serializable {
     private Integer styleCategory;
     // 맥주 스타일 명
     private String category;
+
+    private String mainDisplayYn;
     // 맥주 스타일 번호
     private Integer categoryNumber;
     // 레시피 양조자
@@ -56,7 +58,7 @@ public class Recipe implements Serializable {
     // 레시피 워트 보일링 시간 (분)
     private Integer boilTime;
     // 레시피 수율
-    private Integer efficiency;
+    private Double efficiency;
     // 맥주 맥아(발효) 리스트
     private List<Fermentable> fermentables;
     //레시피 몰트 구성 일련번호
@@ -200,6 +202,14 @@ public class Recipe implements Serializable {
 
     public Integer getLimit() {
         return limit;
+    }
+
+    public String getMainDisplayYn() {
+        return mainDisplayYn;
+    }
+
+    public void setMainDisplayYn(String mainDisplayYn) {
+        this.mainDisplayYn = mainDisplayYn;
     }
 
     public void setLimit(Integer limit) {
@@ -803,7 +813,7 @@ public class Recipe implements Serializable {
      *
      * @return 레시피 수율
      */
-    public Integer getEfficiency() {
+    public Double getEfficiency() {
         return efficiency;
     }
 
@@ -812,7 +822,7 @@ public class Recipe implements Serializable {
      *
      * @param efficiency 레시피 수율
      */
-    public void setEfficiency(Integer efficiency) {
+    public void setEfficiency(Double efficiency) {
         this.efficiency = efficiency;
     }
 

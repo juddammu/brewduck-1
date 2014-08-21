@@ -1064,7 +1064,7 @@
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";
                 hopHtml = hopHtml +"<select id='recipeHopUses' name ='recipeHopUses' class='form-control' required> ";
-                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3' selected>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='1'>당화 - First Wort Hopping</option><option value='6'>월풀 - Whirlpool</option>";
+                hopHtml = hopHtml +"<option value=''>Choose...</option><option value='3' selected>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='1'>당화 - First Wort Hopping</option><option value='2'>플레임 아웃 - Flame Out</option><option value='6'>월풀 - Whirlpool</option>";
                 hopHtml = hopHtml +"</select> ";
                 hopHtml = hopHtml +"</td> ";
                 hopHtml = hopHtml +"<td>";

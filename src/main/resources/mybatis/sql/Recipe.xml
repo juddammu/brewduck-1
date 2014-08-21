@@ -107,10 +107,12 @@
         WHERE delete_id IS NULL
         <if test="status != null">
             AND STATUS = #{status}
-            AND CATEGORY = 2
+        </if>
+        <if test="mainDisplayYn != null">
+            AND MAIN_DISPLAY_YN = #{status}
         </if>
           AND ATCH_COVER_FILE_ID IS NOT NULL
-        ORDER BY insert_date
+        ORDER BY insert_date desc
         <if test="limit != null">
             LIMIT  #{limit}
         </if>

@@ -66,6 +66,7 @@ public class HomeController {
         Recipe recipe = new Recipe();
         recipe.setStatus("2");
         recipe.setLimit(4);
+        recipe.setMainDisplayYn("2");
 
 
         /* 잠시 보류

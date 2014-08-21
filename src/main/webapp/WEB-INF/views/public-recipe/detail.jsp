@@ -116,6 +116,9 @@
                         <c:when test="${hops.hopsUse=='1'}">
                             당화 - Mash
                         </c:when>
+                        <c:when test="${hops.hopsUse=='2'}">
+                            플레임 아웃 - Flame Out
+                        </c:when>
                         <c:when test="${hops.hopsUse=='3'}">
                             끓임 - Boil
                         </c:when>
@@ -130,7 +133,19 @@
                         </c:otherwise>
                     </c:choose>
                 </td>
-                <td class="text-right">${hops.time} min</td>
+                <td class="text-right">
+                    <c:choose>
+                        <c:when test="${hops.hopsUse=='2'}">
+                            -
+                        </c:when>
+                        <c:when test="${hops.hopsUse=='5'}">
+                            -
+                        </c:when>
+                        <c:otherwise>
+                            ${hops.time} min
+                        </c:otherwise>
+                    </c:choose>
+                </td>
                 <td class="text-right">
                     <c:choose>
                         <c:when test="${hops.form=='1'}">
@@ -487,7 +502,7 @@
                     replyListHtml = replyListHtml + "<div class='comment-container'>";
                     replyListHtml = replyListHtml + "<div class='comment-author meta'>";
                     replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+" <small>"+data[i].insertDate+"</small></h4>";
-                    replyListHtml = replyListHtml + "<a class='comment-reply-link' href=''> - 댓글달기</a>";
+                    replyListHtml = replyListHtml + "<!--a class='comment-reply-link' href=''> - 댓글달기</a-->";
                     replyListHtml = replyListHtml + "</div>";
                     replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
                     replyListHtml = replyListHtml + "</div>";

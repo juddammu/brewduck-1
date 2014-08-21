@@ -55,12 +55,12 @@
             <%
                 if (AuthenticationUtils.isAuthenticated() == false) {
             %>
-            <a href="/account/login" class="tm-btn blue">로그인</a>
+            <a href="/account/login" class="tm-btn small blue">로그인</a>
             <%
             } else {
             %>
 
-            <a href="/account/logout" class="tm-btn">로그아웃</a>
+            <a href="/account/logout" class="tm-btn small blue">로그아웃</a>
             <%
                 }
             %>

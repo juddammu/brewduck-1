@@ -164,6 +164,9 @@
                                                     <c:when test="${hops.hopsUse=='1'}">
                                                         당화 - Mash
                                                     </c:when>
+                                                    <c:when test="${hops.hopsUse=='2'}">
+                                                        플레임 아웃 - Flame Out
+                                                    </c:when>
                                                     <c:when test="${hops.hopsUse=='3'}">
                                                         끓임 - Boil
                                                     </c:when>
