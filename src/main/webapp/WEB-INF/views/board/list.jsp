@@ -12,9 +12,10 @@
 
 <c:forEach items="${list}" var="list">
 <tr>
-    <div id="tm-blog" class="tm-container tm-wrap tm-blog-style-magazine1 tm-sidebar-right">
+    <div id="tm-blog" class="tm-container tm-wrap tm-blog-style-magazine1">
     <div class="page-content">
-    <div class="tm-content page-content-inner tm-sidebar-second-right">
+    <div class="entry-content">
+    <div class="tm-content page-content-inner">
     <div class="tm-main-content">
     <div class="tm-main-content-inner">
     <article>
@@ -41,6 +42,7 @@
             </div>
         </div>
     </article>
+    </div>
     </div>
     </div>
     </div>

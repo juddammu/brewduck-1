@@ -59,14 +59,12 @@
                         </div>
                     </p>
                     <br>
-                    <div class="tm-row">
-                        <hr>
-                        <table class="tm-table tm-style2">
-                            <tbody id="result">
-                            </tbody>
-                        </table>
-                    </div>
+                    <hr>
                 </div>
+                <table class="tm-table tm-style2">
+                    <tbody id="result">
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="page-sidebar">
