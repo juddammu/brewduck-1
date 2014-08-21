@@ -431,12 +431,12 @@
 			max: 100,
 			values: [ 0, 75 ],
 			slide: function( event, ui ) {
-				$( ".price_label > input " ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
+				$( ".price_label > input " ).val(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
 				}
 		});
 
-		$( ".price_label > input " ).val( "€" + $( ".price_slider" ).slider( "values", 0 ) +
-		" - €" + $( ".price_slider" ).slider( "values", 1 ) );
+		$( ".price_label > input " ).val($( ".price_slider" ).slider( "values", 0 ) +
+		" - " + $( ".price_slider" ).slider( "values", 1 ) );
 	});
 
 	// Woocommerce - Spinner

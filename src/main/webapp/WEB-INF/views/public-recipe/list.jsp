@@ -17,10 +17,12 @@
 <div id="tm-page-body">
 <div id="tm-blog" class="tm-container tm-wrap tm-blog-style-magazine1 tm-sidebar-right">
 <div class="page-content">
-<div class="tm-content page-content-inner">
+    <div class="tm-content page-content-inner tm-sidebar-second-left">
 <div class="tm-main-content">
 <div class="tm-main-content-inner">
-<article>
+
+<c:forEach items="${recipeList}" var="recipeList" varStatus="i">
+    <article>
     <div class="tm-content-inner">
         <div class="entry-thumbnail">
             <a href="single-blog.html">
@@ -48,312 +50,21 @@
         </div>
     </div>
 </article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
-<article>
-    <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
-        <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
-            <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
-            </h3>
-            <div class="meta">
-                by
-                <a href="author.html" class="author">admin</a>
-                in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
-            </div>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
-            </p>
-        </div>
-    </div>
-</article>
+</c:forEach>
 </div>
 </div>
 <!--page-sidebar-second-->
+        <div class="page-sidebar-second">
+        <aside class="widget widget_text box-white">
+            <h3 class="tm-title">뱃지</h3>
+            <div class="textwidget">
+                <a href="#" class="tm-btn blue small">버그왕</a>
+                <a href="#" class="tm-btn small">클로즈베타테스터</a>
+                <a href="#" class="tm-btn blue small">2014 KHC 우승</a>
+            </div>
+        </aside>
+    </div>
+    <!--page-sidebar-second-->
 </div>
 </div>
 <!--page-content-->
@@ -409,83 +120,66 @@
     </aside>
     <aside class="widget woocommerce chosen-color widget_layered_nav">
         <h3 class="tm-title">Color</h3>
-        <!--
+
         <select id="dropdown_layered_nav_color">
-            <option value="">Blue</option>
-            <option value="">Red</option>
-            <option value="">Green</option>
-            <option value="">Grey</option>
-            <option value="">White</option>
-            <option value="">Black</option>
-            <option value="">Orange</option>
+            <option value="">Pale Straw (1~2)</option>
+            <option value="">Straw (3)</option>
+            <option value="">Pale Gold (4)</option>
+            <option value="">Deep Gold (5~6)</option>
+            <option value="">Pale Amber(7~9)</option>
+            <option value="">Medium Amber (10~12)</option>
+            <option value="">Pale Amber (13~15)</option>
+            <option value="">Amber Brown (16~18)</option>
+            <option value="">Brown (19~20)</option>
+            <option value="">Ruby Brown (21~24)</option>
+            <option value="">Deep Brown (25~30)</option>
+            <option value="">Black (31~40)</option>
         </select>
-        -->
-        <ul>
-            <li class="blue">
-                <a href="">Blue</a>
-            </li>
-            <li class="red">
-                <a href="">Red</a>
-            </li>
-            <li class="green">
-                <a href="">Green</a>
-            </li>
-            <li class="grey">
-                <a href="">Grey</a>
-            </li>
-            <li class="white">
-                <a href="">White</a>
-            </li>
-            <li class="black">
-                <a href="">Black</a>
-            </li>
-            <li class="orange">
-                <a href="">Orange</a>
-            </li>
-            <li class="lightblue">
-                <a href="">LightBlue</a>
-            </li>
-            <li class="darkblue">
-                <a href="">DarkBlue</a>
-            </li>
-        </ul>
     </aside>
     <aside class="widget woocommerce chosen-size widget_layered_nav">
-        <h3 class="tm-title">Size</h3>
+        <h3 class="tm-title">양조방법</h3>
         <ul>
             <li>
                 <a href="">
-                    XL
+                    완곡
                     <small class="count">3</small>
                 </a>
             </li>
             <li class="chosen">
                 <a href="">
-                    L
+                    부분
                     <small class="count">15</small>
                 </a>
             </li>
             <li>
                 <a href="">
-                    M
+                    캔
                     <small class="count">11</small>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    S
-                    <small class="count">5</small>
                 </a>
             </li>
         </ul>
     </aside>
     <aside class="widget woocommerce">
-        <h3 class="tm-title">Featured Product</h3>
+        <h3 class="tm-title">높은 평점의 레시피들</h3>
         <ul class="product_list_widget">
             <li>
                 <a title="Product" href="">
                     <img alt="img" width="70" height="70" src="http://placehold.it/70x70/eee">
-                    ARMILLA EMBUATADA
+                    Fathom
+                </a>
+                <div title="Rated 3.50 out of 5" class="star-rating">
+									<span style="width:90%">
+										<strong class="rating">4.70</strong>
+										out of 5
+									</span>
+                </div>
+                <span class="from">IPA</span>
+                <span class="amount">..더보기</span>
+            </li>
+            <li>
+                <a title="Product" href="">
+                    <img alt="img" width="70" height="70" src="http://placehold.it/70x70/eee">
+                    Fathom
                 </a>
                 <div title="Rated 3.50 out of 5" class="star-rating">
 									<span style="width:70%">
@@ -493,31 +187,8 @@
 										out of 5
 									</span>
                 </div>
-                <span class="from">From: </span>
-                <span class="amount">27,99 €</span>
-            </li>
-            <li>
-                <a title="Product" href="">
-                    <img alt="img" width="70" height="70" src="http://placehold.it/70x70/eee">
-                    SAMARRETA BÀSICA COTÓ
-                </a>
-                <span class="amount">7,59 €</span>
-            </li>
-            <li>
-                <a title="Product" href="">
-                    <img alt="img" width="70" height="70" src="http://placehold.it/70x70/eee">
-                    BOTES URBANES NAPA
-                </a>
-                <span class="from">From: </span>
-                <span class="amount">55,99 €</span>
-            </li>
-            <li>
-                <a title="Product" href="">
-                    <img alt="img" width="70" height="70" src="http://placehold.it/70x70/eee">
-                    JEANS SKINNY FIT
-                </a>
-                <span class="from">From: </span>
-                <span class="amount">23,99 €</span>
+                <span class="from">TEST</span>
+                <span class="amount">..더보기</span>
             </li>
         </ul>
     </aside>
