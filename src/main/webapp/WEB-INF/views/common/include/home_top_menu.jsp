@@ -48,16 +48,22 @@
                 <li class="parent">
                     <a href="/recipe/create">레시피 만들기</a>
                 </li>
-                <li class="parent">
-                    <a href="/account/login">로그인</a>
-                </li>
             </ul>
         </nav>
         <!--tm-nav-->
         <div class="tm-social-icons">
-            <a href="#" class="tm-icon-facebook">
-                <i class="fa fa-facebook"></i>
-            </a>
+            <%
+                if (AuthenticationUtils.isAuthenticated() == false) {
+            %>
+            <a href="/account/login" class="tm-btn blue">로그인</a>
+            <%
+            } else {
+            %>
+
+            <a href="/account/logout" class="tm-btn">로그아웃</a>
+            <%
+                }
+            %>
         </div>
         <!--tm-social-icons-->
     </div>

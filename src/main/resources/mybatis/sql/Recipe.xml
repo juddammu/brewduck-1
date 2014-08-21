@@ -126,7 +126,7 @@
         <foreach item="a" collection="styleSeqs" open="(" separator="," close=")">
             #{a}
         </foreach>
-        ORDER BY update_date
+        ORDER BY insert_date
         LIMIT 4
     </select>
 

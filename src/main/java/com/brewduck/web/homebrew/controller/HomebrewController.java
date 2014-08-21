@@ -185,13 +185,12 @@ public class HomebrewController {
 
         ParameterBlock pb = new ParameterBlock();
 
-
         if(coverFile.getSize() > 0){
             FileInfo coverFileInfo = new FileInfo();
 
             String coverFileName = coverFile.getOriginalFilename();   //파일명
             String coverFilemime = coverFile.getContentType();        //마임 타입
-            String coverFilePath = session.getServletContext().getRealPath("/")+"/resources/upload/";       //파일 path
+            String coverFilePath = "/home/brewduck/upload/";       //파일 path
 
 
             coverFileseq = commonService.selectFileSeq();
