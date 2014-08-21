@@ -17,7 +17,7 @@
 <div id="tm-page-body">
 <div id="tm-blog" class="tm-container tm-wrap tm-blog-style-magazine1 tm-sidebar-right">
 <div class="page-content">
-<div class="tm-content page-content-inner tm-sidebar-second-left">
+<div class="tm-content page-content-inner">
 <div class="tm-main-content">
 <div class="tm-main-content-inner">
 <article>
@@ -28,9 +28,9 @@
             </a>
         </div>
         <div class="entry-container">
-            <div class="time">August 13th, 2013</div>
+            <div class="time">2014sus</div>
             <h3>
-                <a href="single-blog.html">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                <a href="#">Tutorial: Affiliate Tracking Widget In WordPress</a>
             </h3>
             <div class="meta">
                 by
@@ -50,11 +50,6 @@
 </article>
 <article>
     <div class="tm-content-inner">
-        <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
-            </a>
-        </div>
         <div class="entry-container">
             <div class="time">August 13th, 2013</div>
             <h3>
@@ -357,16 +352,6 @@
     </div>
 </article>
 </div>
-</div>
-<div class="page-sidebar-second">
-    <aside class="widget widget_text box-white">
-        <h3 class="tm-title">Sidebar left</h3>
-        <div class="textwidget">
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </p>
-        </div>
-    </aside>
 </div>
 <!--page-sidebar-second-->
 </div>
@@ -398,49 +383,24 @@
     </aside>
     -->
     <aside class="widget woocommerce tm-list-style1 widget_product_categories">
-        <h3 class="tm-title">Product Categories</h3>
+        <h3 class="tm-title">스타일 (BJCP-2008)</h3>
         <ul class="product-categories">
             <li>
                 <a href="">
-                    Beat Collection
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    Coats
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    Jeans
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    Shoes
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    T-shirts
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    Accessoris
+                    인디아 페일 에일 (4)
                 </a>
             </li>
         </ul>
     </aside>
     <aside class="widget woocommerce widget_price_filter">
-        <h3 class="tm-title">Filter by price</h3>
+        <h3 class="tm-title">Bitterness 필터</h3>
         <form>
             <div class="price_slider_wrapper">
                 <div class="price_slider ui-slider"></div>
                 <div class="price_slider_amount">
-                    <button class="button" type="submit">Filter</button>
+                    <button class="button" type="submit">필터</button>
                     <div class="price_label">
-                        Price: <input type="text">
+                        IBU : <input type="text">
                     </div>
                     <div class="clear"></div>
                 </div>

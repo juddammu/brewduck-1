@@ -36,7 +36,7 @@
               ,(SELECT B.FILENAME FROM FILEINFO B WHERE ATCH_FILE_ID = B.SEQ) atchFileName
               ,(SELECT C.FILENAME FROM FILEINFO C WHERE ATCH_COVER_FILE_ID = C.SEQ) atchCoverFileName
               ,insert_id             insertId
-              ,insert_date           insertDate
+              ,substring(insert_date, 1, 10)  insertDate
               ,update_id             updateId
               ,update_date           updateDate
               ,delete_id             deleteId
@@ -75,8 +75,7 @@
             ,A.atch_cover_file_id    atchCoverFileId
             ,(SELECT B.FILENAME FROM FILEINFO B WHERE atch_file_id = B.SEQ) atchFileName
             ,(SELECT C.FILENAME FROM FILEINFO C WHERE atch_cover_file_id = C.SEQ) atchCoverFileName
-            ,A.insert_id             insertId
-            ,A.insert_date           insertDate
+            ,substring(A.insert_date, 1, 10)  insertDate
             ,A.update_id             updateId
             ,A.update_date           updateDate
             ,A.delete_id             deleteId
