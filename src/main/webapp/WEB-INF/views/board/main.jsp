@@ -18,7 +18,7 @@
 <div id="tm-page-title">
     <div class="tm-wrap tm-table">
         <div class="tm-title-captions">
-            <h2 class="tm-entry-title">${boardList.bbsNm} - ${boardList.bbsEnNm}</h2>
+            <a href="/board/main/${boardList.bbsId}"><h2 class="tm-entry-title">${boardList.bbsNm} - ${boardList.bbsEnNm}</h2></a>
         </div>
     </div>
 </div>
@@ -41,7 +41,7 @@
                                         <option value="userId">작성자</option>
                                     </select>
                                     <input class="tm-input" style="width: 60%;" placeholder="검색어를 입력하세요." name="searchVal" id="searchVal" onkeypress="if(event.keyCode==13){return false;};"  >
-                                    <button type="submit" class="tm-btn" id="search" name="search">검색</button>
+                                    <button type="button" class="tm-btn" id="search" name="search">검색</button>
                                 </div>
                             </form:form>
                         </div>
@@ -141,6 +141,7 @@
 
             $("#result").html("");
             $("#result").load("/board/list", $("#searchForm").serialize());
+
         }
 
         function goDetail(nttId){
@@ -160,6 +161,16 @@
         });
 
         $("#search").click(function(){
+            if($("#searchVal").val()=="")
+            {
+                alert("검색어를 입력하여 주세요.");
+                return;
+            }
+            if($("#select2").val()=="")
+            {
+                alert("검색구분을 선택하여 주세요.");
+                return;
+            }
             search();
         });
 
