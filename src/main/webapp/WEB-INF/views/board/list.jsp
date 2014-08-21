@@ -12,16 +12,10 @@
 
 <c:forEach items="${list}" var="list">
 <tr>
-    <div id="tm-blog" class="tm-container tm-wrap tm-blog-style-magazine1">
-    <div class="page-content">
-    <div class="entry-content">
-    <div class="tm-content page-content-inner">
-    <div class="tm-main-content">
-    <div class="tm-main-content-inner">
     <article>
         <div class="tm-content-inner">
             <div class="entry-thumbnail">
-                <a href="single-blog.html">
+                <a href="#">
                     <img src="http://placehold.it/150x150" alt="Thumb">
                 </a>
             </div>
@@ -33,7 +27,7 @@
                 <div class="meta">
                     by
                     <a href="#" class="author">${list.insertId}</a>
-                    <a class="tm-icon-comment" href="single-blog.html#tm-comment">${list.rdcnt}</a>
+                    <a class="tm-icon-comment" href="#">${list.rdcnt}</a>
                 </div>
                 <p>
                     ${list.nttCnSub}...
@@ -42,12 +36,6 @@
             </div>
         </div>
     </article>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
 </tr>
 
 </c:forEach>

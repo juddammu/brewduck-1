@@ -34,14 +34,14 @@
                                 <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
                                 <input name="sort" id="sort" type="hidden"  class="form-control" value="">
                                 <div class="tm-search">
-                                <select name = "select2" id = "select2" style="width: 20%;">
-                                    <option value="">-- 전체 --</option>
-                                    <option value="subject">제목</option>
-                                    <option value="content">내용</option>
-                                    <option value="userId">작성자</option>
-                                </select>
-                                <input class="tm-input" style="width: 60%;" placeholder="검색어를 입력하세요." name="searchVal" id="searchVal" onkeypress="if(event.keyCode==13){return false;};"  >
-                                <button type="submit" class="tm-btn" id="search" name="search">검색</button>
+                                    <select name = "select2" id = "select2" style="width: 20%;">
+                                        <option value="">-- 전체 --</option>
+                                        <option value="subject">제목</option>
+                                        <option value="content">내용</option>
+                                        <option value="userId">작성자</option>
+                                    </select>
+                                    <input class="tm-input" style="width: 60%;" placeholder="검색어를 입력하세요." name="searchVal" id="searchVal" onkeypress="if(event.keyCode==13){return false;};"  >
+                                    <button type="submit" class="tm-btn" id="search" name="search">검색</button>
                                 </div>
                             </form:form>
                         </div>

@@ -30,6 +30,10 @@
         <pattern>/list/recipe/*/*</pattern>
     </decorator>
 
+    <decorator name="recipe-content" page="public-list.jsp">
+        <pattern>/board/list</pattern>
+    </decorator>
+
     <decorator name="expert" page="recipe.jsp">
         <pattern>/recipe/</pattern>
         <pattern>/recipe/detail/*</pattern>
@@ -92,7 +96,6 @@
         <pattern>/misc/list/*</pattern>
         <pattern>/board/replyList</pattern>
         <pattern>/common/list</pattern>
-        <pattern>/board/list</pattern>
     </decorator>
     <!--
 <decorator name="default" page="default.jsp">
