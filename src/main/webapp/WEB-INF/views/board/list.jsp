@@ -11,13 +11,43 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:forEach items="${list}" var="list">
-        <tr onclick="goDetail('${list.nttId}');">
-            <td>${list.nttId}</td>
-            <td class="text-left"><a onclick="goDetail('${list.nttId}');">${list.nttSj}</a></td>
-            <td>${list.insertId}</td>
-            <td>${list.insertDate}</td>
-            <td>${list.rdcnt}</td>
-        </tr>
+<tr>
+    <div id="tm-blog" class="tm-container tm-wrap tm-blog-style-magazine1 tm-sidebar-right">
+    <div class="page-content">
+    <div class="tm-content page-content-inner tm-sidebar-second-right">
+    <div class="tm-main-content">
+    <div class="tm-main-content-inner">
+    <article>
+        <div class="tm-content-inner">
+            <div class="entry-thumbnail">
+                <a href="single-blog.html">
+                    <img src="http://placehold.it/150x150" alt="Thumb">
+                </a>
+            </div>
+            <div class="entry-container">
+                <div class="time">${list.insertDate}</div>
+                <h3>
+                    <a href="/board/detail/${list.nttId}">${list.nttSj}</a>
+                </h3>
+                <div class="meta">
+                    by
+                    <a href="#" class="author">${list.insertId}</a>
+                    <a class="tm-icon-comment" href="single-blog.html#tm-comment">${list.rdcnt}</a>
+                </div>
+                <p>
+                    ${list.nttCnSub}...
+                    <a class="more-link" href="/board/detail/${list.nttId}">Read more</a>
+                </p>
+            </div>
+        </div>
+    </article>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</tr>
+
 </c:forEach>
 
 <content tag="local_script">

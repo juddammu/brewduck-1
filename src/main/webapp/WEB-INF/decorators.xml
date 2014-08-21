@@ -23,6 +23,7 @@
     </decorator>
     <decorator name="main-content" page="public.jsp">
         <pattern>/public/recipe/*/*/*</pattern>
+        <pattern>/board/*/*</pattern>
     </decorator>
 
     <decorator name="recipe-content" page="public-recipe.jsp">
@@ -62,11 +63,9 @@
         <pattern>/misc/</pattern>
         <pattern>/misc/*/</pattern>
         <pattern>/misc/*/*</pattern>
-        <pattern>/board/main/*</pattern>
         <pattern>/board/detail/*</pattern>
         <pattern>/board/write</pattern>
         <pattern>/board/editBoard/*</pattern>
-        <pattern>/board/*/*</pattern>
         <pattern>/admin/main</pattern>
     </decorator>
 
@@ -91,9 +90,9 @@
         <pattern>/fermentable/list/*</pattern>
         <pattern>/misc/list/</pattern>
         <pattern>/misc/list/*</pattern>
-        <pattern>/board/main/list</pattern>
         <pattern>/board/replyList</pattern>
         <pattern>/common/list</pattern>
+        <pattern>/board/list</pattern>
     </decorator>
     <!--
 <decorator name="default" page="default.jsp">

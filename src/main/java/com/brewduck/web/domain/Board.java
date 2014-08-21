@@ -121,6 +121,9 @@ public class Board{
 
     private String countNum;
 
+    private String nttCnSub;
+
+
     public Integer getUserId() {
         return userId;
     }
@@ -519,5 +522,13 @@ public class Board{
 
     public void setCountNum(String countNum) {
         this.countNum = countNum;
+    }
+
+    public String getNttCnSub() {
+        return nttCnSub;
+    }
+
+    public void setNttCnSub(String nttCnSub) {
+        this.nttCnSub = nttCnSub;
     }
 }

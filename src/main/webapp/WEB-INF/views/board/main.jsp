@@ -15,84 +15,126 @@
 
 
 <title>${boardList.bbsNm} - ${boardList.bbsEnNm}</title>
-
-<section>
-    <ol class="breadcrumb">
-        <li><a href="#">홈</a></li>
-        <li class="active"><a href="#">${boardList.bbsNm} - ${boardList.bbsEnNm}</a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${boardList.bbsNm} - ${boardList.bbsEnNm}</h3>
+<div id="tm-page-title">
+    <div class="tm-wrap tm-table">
+        <div class="tm-title-captions">
+            <h2 class="tm-entry-title">${boardList.bbsNm} - ${boardList.bbsEnNm}</h2>
+        </div>
     </div>
-    <div class="section-body">
-        <!-- BEGIN BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body">
-                        <form:form class="form-horizontal" id="searchForm"  name="searchForm" modelAttribute="board">
-                            <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
-                            <div class="form-group">
+</div>
+<!--tm-page-title-->
+<div id="tm-page-body">
+    <div id="tm-single-blog" class="tm-container tm-wrap tm-sidebar-right">
+        <div class="page-content">
+            <div class="page-content-inner">
+                <div class="entry-header">
+                    <p>
+                        <div class="tm-row">
+                            <form:form id="searchForm"  name="searchForm" modelAttribute="board">
+                                <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
                                 <input name="sort" id="sort" type="hidden"  class="form-control" value="">
-                                <div class="col-md-2">
-                                    <select class="form-control select2-active" name = "select2" id = "select2">
-                                        <option value="">-- 전체 --</option>
-                                        <option value="subject">제목</option>
-                                        <option value="content">내용</option>
-                                        <option value="userId">작성자</option>
-                                    </select>
+                                <div class="tm-search">
+                                <select name = "select2" id = "select2" style="width: 20%;">
+                                    <option value="">-- 전체 --</option>
+                                    <option value="subject">제목</option>
+                                    <option value="content">내용</option>
+                                    <option value="userId">작성자</option>
+                                </select>
+                                <input class="tm-input" style="width: 60%;" placeholder="검색어를 입력하세요." name="searchVal" id="searchVal" onkeypress="if(event.keyCode==13){return false;};"  >
+                                <button type="submit" class="tm-btn" id="search" name="search">검색</button>
                                 </div>
-                                <div class="col-md-10">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="searchVal" id="searchVal" onkeypress="if(event.keyCode==13){return false;};"  >
-                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form:form>
-                        <form:form class="form-horizontal" method="post" action="/board/write">
-                            <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
-                            <div class="form-group">
-                                <div class="col-md-2">
-                                    <%
-                                        if (AuthenticationUtils.isAuthenticated() == true) {
-                                    %>
-                                    <button type="submit" class="btn btn-primary" id="write" name="write">게시물 작성</button>
-                                    <%
-                                        }
-                                    %>
-                                </div>
-                            </div>
-                        </form:form>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined" id="result_list">
-                    <div class="box-body no-padding style-white">
-                        <table class="table table-hover no-margin">
-                            <thead>
-                            <tr>
-                                <th style="width:30px" >#</th>
-                                <th style="width:300px">제목</th>
-                                <th style="width:40px">작성자</th>
-                                <th style="width:40px">작성일</th>
-                                <th style="width:30px">조회</th>
-                            </tr>
-                            </thead>
+                            </form:form>
+                        </div>
+                        <div class="tm-row tm-right">
+                            <form:form method="post" action="/board/write">
+                                <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
+                                <%
+                                    if (AuthenticationUtils.isAuthenticated() == true) {
+                                %>
+                                <button type="submit" class="tm-btn blue" id="write" name="write">게시물 작성</button>
+                                <%
+                                    }
+                                %>
+                            </form:form>
+                        </div>
+                    </p>
+                    <br>
+                    <div class="tm-row">
+                        <hr>
+                        <table class="tm-table tm-style2">
                             <tbody id="result">
                             </tbody>
                         </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-    <!-- END FORM TOOLS -->
-    </div><!--end .section-body -->
-</section><!-- #main -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-sidebar">
+            <aside class="widget tm-tabs">
+                <ul class="tm-filter tabs tm-style1">
+                    <li>
+                        <a href="#tab1">신규 레시피들</a>
+                    </li>
+                    <li>
+                        <a href="#tab2">최근 게시글</a>
+                    </li>
+                </ul>
+                <div class="tab-container">
+                    <aside id="tab1" class="widget tm-list-style2 widget_recent_entries tab-content">
+                        <ul>
+                            <c:forEach items="${newRecipeList}" var="newRecipeList" varStatus="status">
+                                <li>
+                                    <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">
+                            <span class="thumb">
+                            <img src="/resources/upload/${newRecipeList.atchCoverFileName}" width="60" alt="thumb">
+                            </span>
+                                        <h3>${newRecipeList.name}</h3>
+                            <span class="time">
+                                ${newRecipeList.styleName} / ${newRecipeList.batchSize}리터 / ${newRecipeList.efficiency}%
+                            </span>
+                            <span class="time">
+                                </br>${newRecipeList.brewerNm}
+                            </span>
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </aside>
+                    <aside id="tab2" class="widget tm-list-style2 widget_recent_comments tab-content">
+                        <ul id="recentcomments">
+                            <c:forEach items="${newPostList}" var="newPostList" varStatus="status">
+                                <li class="recentcomments">
+                                        ${newPostList.insertId} -
+                                    <a href="single-blog.html#tm-comment">
+                                            ${newPostList.nttSj}
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </aside>
+                </div>
+            </aside>
+            <aside class="widget widget_text box-dark">
+                <div class="textwidget">
+                    <div class="tm-testimonial tm-style2">
+                        <div style="" class="testimonial-content">
+                            <p>
+                                맥주만들기 이제 커피보다 쉬워요..
+                            </p>
+                        </div>
+                        <div class="info">
+                            <div class="name">
+                                <h3>- XX비어 -</h3>
+                                <p>  - <span>XX 비어</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
 
 <content tag="local_script">
     <script>

@@ -146,6 +146,7 @@
             A.BBS_ID          bbsId,
             A.NTT_SJ          nttSj,
             A.NTT_CN          nttCn,
+            substring(A.NTT_CN,1,30)      nttCnSub,
             A.INSERT_ID       insertId,
             substring(A.INSERT_DATE, 1, 10)  insertDate,
             A.RDCNT           rdcnt
