@@ -367,7 +367,7 @@
                     <li>
                         <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">
                             <span class="thumb">
-                            <img src="/resources/upload/${newRecipeList.atchCoverFileName}" width="60" alt="thumb">
+                            <img src="<c:url value='/download/downloadFile.do?'/>requestedFile=${newRecipeList.atchCoverFileName}" width="60" alt="thumb">
                             </span>
                             <h3>${newRecipeList.name}</h3>
                             <span class="time">

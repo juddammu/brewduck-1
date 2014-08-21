@@ -128,7 +128,7 @@
                 <div class="tm-content-inner">
                     <div class="entry-thumbnail">
                         <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">
-                            <img src="/resources/upload/${newRecipeList.atchCoverFileName}" alt="${newRecipeList.name}">
+                            <img src="<c:url value='/download/downloadFile.do?'/>requestedFile=${newRecipeList.atchCoverFileName}"/>
                         </a>
                     </div>
                     <div class="entry-container">

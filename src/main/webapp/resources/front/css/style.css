@@ -1025,13 +1025,8 @@ header .tm-social-icons {
 }
 header .tm-social-icons a {
   color: #ffffff;
-  width: 32px;
+  width: 105px;
   height: 32px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
   text-align: center;

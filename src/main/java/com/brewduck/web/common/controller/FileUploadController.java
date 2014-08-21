@@ -63,13 +63,11 @@ public class FileUploadController {
 
         HttpSession session = request.getSession();
 
-        logger.warn("### 파일업로드 페이지"+session.getServletContext().getRealPath("/"));
-
         FileInfo fileInfo = new FileInfo();
 
         String fileName = file.getOriginalFilename();   //파일명
         String filemime = file.getContentType();        //마임 타입
-        String filePath = session.getServletContext().getRealPath("/")+"/resources/upload/";   //파일 path
+        String filePath = "/home/brewduck/upload/";   //파일 path
         file.transferTo(new File(filePath+fileName));
         Long fileSze = file.getSize();
         int fileseq = 0;
