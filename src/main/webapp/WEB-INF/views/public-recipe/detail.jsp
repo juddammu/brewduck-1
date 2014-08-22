@@ -2,6 +2,7 @@
 <%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <title>${recipeDetail.name}</title>
+<img src="<c:url value='/download/downloadFile.do?'/>requestedFile=${recipeDetail.atchCoverFileName}" hidden="hidden"/>
 <div id="tm-page-title">
     <div class="tm-wrap tm-table">
         <div class="tm-title-captions">
@@ -9,7 +10,7 @@
         </div>
         <ul class="tm-breadcrumbs">
             <li>
-                <a href="#">${recipeDetail.styleName}</a>
+                <a href="/style/${recipeDetail.styleSeq}/">${recipeDetail.styleName}</a>
             </li>
         </ul>
     </div>

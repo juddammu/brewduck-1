@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>BREWDUCK - 세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다.</title>
     <meta name="description" content="BRWEDUCK - 세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다." />
-    <meta name="keywords" content="ale, beer, brewduck, Home Brewing, lager, SOMA, 곡주, 공방, 과실주, 라거, 맥주, 문화, 바이젠, 발효, 숙성, 양조, 에일, 옥수동, 옥토버페스트, 와인, 맥만동, 임세환, 제조, 주조, 증류주, 포도주, 프로젝트, 홈 브루잉, 효모" />
+    <meta name="keywords" content="ale, beer, brewduck, Home Brewing, lager, 곡주, 공방, 과실주, 라거, 맥주, 문화, 바이젠, 발효, 숙성, 양조, 에일, 옥수동, 옥토버페스트, 와인, 맥만동, 임세환, 제조, 주조, 증류주, 포도주, 프로젝트, 홈 브루잉, 효모" />
     <meta name="Author" content="brewduck, http://www.brewduck.com, 맥주 대동여지도" />
     <!-- end:meta info -->
 

@@ -70,6 +70,7 @@ public class UserController {
         Recipe recipe = new Recipe();
 
         recipe.setBrewer(user_id);
+        recipe.setStatus("2");
         List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
 
 /*        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);

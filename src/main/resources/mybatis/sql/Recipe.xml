@@ -98,6 +98,9 @@
         <if test="brewer != null">
             AND brewer = #{brewer}
         </if>
+        <if test="status != null">
+            AND STATUS = #{status}
+        </if>
         ORDER BY  seq desc ) R
     </select>
 

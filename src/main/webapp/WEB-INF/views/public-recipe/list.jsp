@@ -25,27 +25,27 @@
     <article>
     <div class="tm-content-inner">
         <div class="entry-thumbnail">
-            <a href="single-blog.html">
-                <img src="http://placehold.it/150x150" alt="Thumb">
+            <a href="#">
+                <img width="150" src="<c:url value='/download/downloadFile.do?'/>requestedFile=${recipeList.atchCoverFileName}"  alt="Thumb">
             </a>
         </div>
         <div class="entry-container">
-            <div class="time">2014sus</div>
+            <div class="time">${recipeList.insertDate}</div>
             <h3>
-                <a href="#">Tutorial: Affiliate Tracking Widget In WordPress</a>
+                <a href="/public/recipe/${recipeList.brewer}/${recipeList.seq}/${recipeList.titleInUrl}">${recipeList.name}</a>
             </h3>
             <div class="meta">
                 by
-                <a href="author.html" class="author">admin</a>
+                <a href="#" class="author">${recipeList.brewerNm}</a>
                 in
-											<span class="incategory">
-											<a href="category-blog.html">Design</a>
-											</span>
-                <a class="tm-icon-comment" href="single-blog.html#tm-comment">9</a>
+                    <span class="incategory">
+                    <a href="/style/${recipeList.styleSeq}/">${recipeList.styleName}</a>
+                    </span>
+                <a class="tm-icon-comment" href="#">0</a>
             </div>
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum...
-                <a class="more-link" href="single-blog.html">Read more</a>
+                    ${recipeList.notes}
+                <!--a class="more-link" href="#">..더읽기</a-->
             </p>
         </div>
     </div>
