@@ -228,10 +228,8 @@
 
         $(document).ready(function() {
 
-            refresh();
-            $('.slider-element').slider();  //슬라이더 초기화
-            $("#submit_details").focus();              //제목칸 포커스
-            document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
+            getReplyCount();
+            replyList();
 
         });
 

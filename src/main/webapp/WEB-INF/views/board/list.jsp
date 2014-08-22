@@ -27,7 +27,7 @@
                 <div class="meta">
                     by
                     <a href="#" class="author">${list.insertId}</a>
-                    <a class="tm-icon-comment" href="#">${list.rdcnt}</a>
+                    <a class="tm-icon-comment" href="#">${list.countNum}</a>
                 </div>
                 <p>
                     ${list.nttCnSub}...
@@ -42,12 +42,9 @@
 
 <content tag="local_script">
     <script>
+
         $(document).ready(function() {
             var selectedItems=0;
-            //Table Row Click Event
-            /*            $('.clickable').click( function() {
-             alert();
-             });*/
         });
     </script>
 </content>

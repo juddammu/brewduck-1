@@ -146,6 +146,7 @@
             A.BBS_ID          bbsId,
             A.NTT_SJ          nttSj,
             A.NTT_CN          nttCn,
+            (select COUNT(C.ANSWER_NO) FROM BOARD_COMMENT C WHERE A.BBS_ID = C.BBS_ID AND A.NTT_ID = C.NTT_ID)    countNum,
             substring(A.NTT_CN,1,30)      nttCnSub,
             A.INSERT_ID       insertId,
             substring(A.INSERT_DATE, 1, 10)  insertDate,

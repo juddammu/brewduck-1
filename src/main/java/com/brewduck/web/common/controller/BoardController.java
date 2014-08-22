@@ -4,6 +4,8 @@ import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.common.service.BoardService;
 import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Board;
+import com.brewduck.web.domain.Recipe;
+import com.brewduck.web.recipe.service.RecipeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,8 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
+    @Autowired
+    private RecipeService recipeService;
 
 
     /**
@@ -58,10 +62,19 @@ public class BoardController {
     public String freeBoardMain(Model model, Board board, @PathVariable("bbsId") Integer bbsId) {
         logger.info("Free Board Main");
 
+        Recipe recipe = new Recipe();
         board.setBbsId(bbsId);
+        recipe.setStatus("2");
+        recipe.setLimit(4);
         Account account = AuthenticationUtils.getUser();
+
         Board boardList = boardService.selectBoardName(board);
+        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+        List<Board> selectNewPostList = boardService.getNewPost(board);
+
         model.addAttribute("boardList", boardList);
+        model.addAttribute("newPostList", selectNewPostList);
+        model.addAttribute("newRecipeList", selectNewPublicRecipeList);
         model.addAttribute("account", account);
 
         return "board/main";
