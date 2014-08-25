@@ -210,7 +210,7 @@
             $("#result").html("");
             $("#result").load("/misc/list", $("#searchForm").serialize());
             $("#type").val('');
-            $("#use_for").val('');
+            $("#useFor").val('');
         }
 
         $(document).ready(function() {
@@ -219,7 +219,7 @@
             replyList();
             $("#name").val('');
             $("#type").val('');
-            $("#use_for").val('');
+            $("#useFor").val('');
         });
 
     </script>
