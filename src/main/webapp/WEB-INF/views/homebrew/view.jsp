@@ -28,7 +28,6 @@
                         </div>
                         <div class="clip_button">Copy To Clipboard</div>
                         <div class="clip_button">Copy This Too!</div>
-
                     </div>
                     <div class="box-body style-white">
                         <!-- START INVOICE HEADER -->
@@ -60,8 +59,7 @@
                             <div class="col-xs-12">
                                 <div class="well">
                                     <div class="clearfix">
-                                        <div class="pull-left"> 컨셉 : </div>
-                                        <div class="pull-right text-left"> ${recipeDetail.notes} </div>
+                                        <div class="pull-left text-left"> ${recipeDetail.notes} </div>
                                     </div>
                                 </div>
                             </div><!--end .col-md-4 -->

@@ -146,7 +146,7 @@
                         </div>
                         <p>
                                 ${newRecipeList.shortNotes}
-                            <a class="more-link" href="#">더 보기</a>
+                            <a class="more-link" href="#">.. 더 보기</a>
                         </p>
                     </div>
                 </div>
