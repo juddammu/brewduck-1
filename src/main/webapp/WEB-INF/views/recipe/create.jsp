@@ -205,15 +205,6 @@
 </div>
 <div class="form-group">
     <div class="col-md-2">
-        <label class="control-label">커버 이미지</label>
-    </div>
-    <div class="col-md-10">
-        <input name="file" type="file" multiple />
-        <p class="help-block">이미지 사이즈는 270x270으로 올려주세요.</p>
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-md-2">
         <label class="control-label">레시피 컨셉 설명</label>
     </div>
     <div class="col-md-10">
@@ -700,13 +691,13 @@
 
 
         for (var i=0; i < $("input[name='recipeHopTimes']").length; i++) {
-            time = parseFloat($("input[name='recipeHopTimes']").eq(i).val());
+            time = time + parseFloat($("input[name='recipeHopTimes']").eq(i).val());
         }
         for (var i=0; i < $("input[name='recipeHopAlphas']").length; i++) {
-            alpha = parseFloat($("input[name='recipeHopAlphas']").eq(i).val());
+            alpha = alpha + parseFloat($("input[name='recipeHopAlphas']").eq(i).val());
         }
         for (var i=0; i < $("input[name='recipeHopAmounts']").length; i++) {
-            amount = parseFloat($("input[name='recipeHopAmounts']").eq(i).val());
+            amount = amount + parseFloat($("input[name='recipeHopAmounts']").eq(i).val());
         }
 
         $.get("/hop/utilization/"+og+"/"+time+"/"+batchSize+"/"+amount+"/"+alpha, function(data, status){
@@ -720,16 +711,14 @@
     }
 
     function calcOg() {
+
         var batchSize = parseFloat($('#batchSize').val());
         var efficiency = parseFloat($('#efficiency').val());
         var ppg = 0 ;
         var recipeFermantableAmounts = 0 ;
         var og = 0;
 
-        if(isNaN(batchSize)) {
-            //$('#abv').html('&ndash;');
-            return;
-        }
+
         if(isNaN(batchSize)) {
             //$('#abv').html('&ndash;');
             return;
@@ -737,13 +726,16 @@
             efficiency = efficiency / 100;
         }
 
+
         for (var i=0; i < $("input[name='ppg']").length; i++) {
-            ppg = parseFloat($("input[name='ppg']").eq(i).val());
+            ppg = ppg + parseFloat($("input[name='ppg']").eq(i).val());
         }
 
         for (var i=0; i < $("input[name='recipeFermantableAmounts']").length; i++) {
-            recipeFermantableAmounts = parseFloat($("input[name='recipeFermantableAmounts']").eq(i).val());
+            recipeFermantableAmounts = recipeFermantableAmounts + parseFloat($("input[name='recipeFermantableAmounts']").eq(i).val());
         }
+
+
 
         if($("input[name='ppg']").length == 0){
             $('#ogText').html('');
@@ -753,8 +745,11 @@
             batchSize = literToGalon(batchSize);
 
             og = (recipeFermantableAmounts * ppg * efficiency) / batchSize;
+
             og = (og / 1000) + 1;
             og = og.toFixed(3);
+
+            $('#ogText').html('');
 
             $('#ogText').html('OG : '+og);
             $('#resultOg').val(og);

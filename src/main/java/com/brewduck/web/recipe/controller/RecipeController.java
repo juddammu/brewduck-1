@@ -191,6 +191,8 @@ public class RecipeController {
         return "recipe/detail";
     }
 
+
+
     @ResponseBody
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public Recipe insertRecipe2(Model model, @RequestBody Recipe paramRecipe) {

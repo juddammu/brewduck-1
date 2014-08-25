@@ -119,6 +119,21 @@ public class HomebrewController {
         return "homebrew/myrecipes";
     }
 
+    @RequestMapping(value="/update/{seq}", method=RequestMethod.GET)
+    public String selectRecipeUpdate(Model model, @PathVariable("seq") Integer seq) {
+
+        Recipe recipe = new Recipe();
+        Account account = AuthenticationUtils.getUser();
+        recipe.setSeq(seq);
+        recipe.setBrewer(account.getId() + "");
+
+        Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
+
+        model.addAttribute("recipeDetail", recipeDetail);
+
+        return "homebrew/update";
+    }
+
     @RequestMapping(value = "/{seq}/**", method = RequestMethod.GET)
     public String abv(Model model, @PathVariable("seq") Integer seq) {
 
