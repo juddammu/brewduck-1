@@ -123,6 +123,8 @@ public class Board{
 
     private String nttCnSub;
 
+    private String boardId;
+
 
     public Integer getUserId() {
         return userId;
@@ -530,5 +532,13 @@ public class Board{
 
     public void setNttCnSub(String nttCnSub) {
         this.nttCnSub = nttCnSub;
+    }
+
+    public String getBoardId() {
+        return boardId;
+    }
+
+    public void setBoardId(String boardId) {
+        this.boardId = boardId;
     }
 }

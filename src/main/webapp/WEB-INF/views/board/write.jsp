@@ -12,11 +12,10 @@
 <section>
 <ol class="breadcrumb">
     <li><a href="/">홈</a></li>
-    <li><a href="/">커뮤니티</a></li>
-    <li class="active"><a href="#">${writeBoard.bbsNm} - ${writeBoard.bbsEnNm}</a></li>
+    <li class="active"><a href="/board/main/${writeBoard.bbsId}">${writeBoard.bbsNm} - ${writeBoard.bbsEnNm}</a></li>
 </ol>
 <div class="section-header">
-    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${writeBoard.bbsNm}</h3> <h4><small>${writeBoard.bbsNm}에 게시물을 추가할 수 있습니다.</small></h4>
+    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/board/main/${writeBoard.bbsId}">${writeBoard.bbsNm} - ${writeBoard.bbsEnNm}</a></h3><h4><small>${writeBoard.bbsNm}에 게시물을 추가할 수 있습니다.</small></h4>
 </div>
 <div class="section-body">
 <!-- START DATATABLE 1 -->
@@ -31,7 +30,7 @@
 <input type="hidden" name="delfile" id="delfile" />
 <div class="form-group">
     <div class="col-lg-1 col-md-2 col-sm-3">
-        <label for="nttSj" class="control-label">제목</label>
+        <label for="nttSj" class="control-label">제목</label><span class="text-danger"> *</span>
     </div>
     <div class="col-lg-11 col-md-10 col-sm-9">
         <input type="text" name="nttSj" id="nttSj" class="form-control" placeholder="제목" value="${noticeView.title}">
@@ -41,7 +40,7 @@
 <div class="col-lg-1 col-md-2 col-sm-3">
     <label class="control-label">
         내용
-    </label>
+    </label><span class="text-danger"> *</span>
 </div>
 <div class="col-lg-11 col-md-10 col-sm-9">
 
@@ -539,7 +538,7 @@
                         popPageUrl: "/fileupload/upload/imageIndex"
                     },
                     file: {
-                        popPageUrl: "/fileupload/upload"
+                        popPageUrl: "/fileupload/upload/"
                     }
                 }
             }

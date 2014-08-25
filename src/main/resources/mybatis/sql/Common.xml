@@ -148,6 +148,7 @@
             A.NTT_CN          nttCn,
             (select COUNT(C.ANSWER_NO) FROM BOARD_COMMENT C WHERE A.BBS_ID = C.BBS_ID AND A.NTT_ID = C.NTT_ID)    countNum,
             substring(A.NTT_CN,1,30)      nttCnSub,
+            (select D.id from account D where D.name = A.INSERT_ID)     boardId,
             A.INSERT_ID       insertId,
             substring(A.INSERT_DATE, 1, 10)  insertDate,
             A.RDCNT           rdcnt
@@ -359,6 +360,7 @@
         A.INSERT_DATE insertDate
         from BOARD A
        WHERE 1 = 1
+        AND DELETE_ID is null
         <if test="bbsId != null">
             AND A.BBS_ID = #{bbsId}
         </if>

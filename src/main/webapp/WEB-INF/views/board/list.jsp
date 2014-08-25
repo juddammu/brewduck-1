@@ -26,7 +26,7 @@
                 </h3>
                 <div class="meta">
                     by
-                    <a href="#" class="author">${list.insertId}</a>
+                    <a href="/list/recipe/${list.boardId}/${list.insertId}" class="author">${list.insertId}</a>
                     <a class="tm-icon-comment" href="#">${list.countNum}</a>
                 </div>
                 <p>

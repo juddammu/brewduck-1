@@ -13,10 +13,10 @@
 <ol class="breadcrumb">
     <li><a href="/">홈</a></li>
     <li><a href="/">커뮤니티</a></li>
-    <li class="active"><a href="#">${EditBoard.bbsNm} - ${EditBoard.bbsEnNm}</a></li>
+    <li class="active"><a href="/board/main/${EditBoard.bbsId}">${EditBoard.bbsNm} - ${EditBoard.bbsEnNm}</a></li>
 </ol>
 <div class="section-header">
-    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${EditBoard.bbsNm}</h3> <h4><small>${EditBoard.bbsNm}을 수정할 수 있습니다.</small></h4>
+    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/board/main/${EditBoard.bbsId}">${EditBoard.bbsNm} - ${EditBoard.bbsEnNm}</a></h3><h4><small>${EditBoard.bbsNm}을 수정할 수 있습니다.</small></h4>
 </div>
 <div class="section-body">
 <!-- START DATATABLE 1 -->
@@ -25,13 +25,14 @@
 <div class="box">
 <div class="box-body">
 <form:form id="board" name="board" class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="/board/updateBoardArticle" modelAttribute="board">
+<input type="hidden" name="bbsId" id="bbsId" value="${EditBoard.bbsId}"/>
 <input type="hidden" id = "nttId" name="nttId" value="<c:out value='${EditBoard.nttId}'/>" />
 <input type="hidden" name="fileSeq" id="fileSeq" value="${noticeView.fileSeq}"/>
 <input type="hidden" name="fileNo" id="fileNo" value="${noticeView.fileNo}"/>
 <input type="hidden" name="delfile" id="delfile" />
 <div class="form-group">
     <div class="col-lg-1 col-md-2 col-sm-3">
-        <label for="nttSj" class="control-label">제목</label>
+        <label for="nttSj" class="control-label">제목</label><span class="text-danger"> *</span>
     </div>
     <div class="col-lg-11 col-md-10 col-sm-9">
         <input type="text" name="nttSj" id="nttSj" class="form-control" placeholder="제목" value="${EditBoard.nttSj}">
@@ -41,7 +42,7 @@
 <div class="col-lg-1 col-md-2 col-sm-3">
     <label class="control-label">
         내용
-    </label>
+    </label><span class="text-danger"> *</span>
 </div>
 <div class="col-lg-11 col-md-10 col-sm-9">
 
@@ -470,7 +471,7 @@
 
 </div>
 </div>
-<div class="form-footer col-lg-offset-1 col-md-offset-2 col-sm-offset-3">
+<div class="form-footer col-lg-offset-1 col-md-offset-2 col-sm-offset-3 pull-right">
     <button type="button" onclick='updateContent();' class="btn btn-primary">등록</button>
     <button type="button" id = "delete"class="btn btn-danger"> 삭제 </button>
     <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
