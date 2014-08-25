@@ -1121,8 +1121,6 @@
                 $("#fermantableListTable").append(fermentableHtml);
                 calc();
             });
-
-
         });
 
     function getLineFeed(){
