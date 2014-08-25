@@ -9,6 +9,7 @@
               ,A.seq              seq
               ,A.korean_name      koreanName
               ,A.version          version
+              ,A.type             type
               ,(select B.attribute1desc
                   from common_code B
                  where common_set = 'misc_type'
@@ -17,10 +18,11 @@
               ,A.time             time
               ,A.amount           amount
               ,A.amount_is_weight amountIsWeight
+              ,A.use_for          useFor
               ,(select B.attribute1desc
                   from common_code B
                  where common_set = 'misc_use_for'
-                   and A.use_for = B.common_code) as useFor
+                   and A.use_for = B.common_code) as useForKorean
               ,A.notes            notes
               ,A.insert_id        insertId
               ,A.insert_date      insertDate
@@ -62,7 +64,28 @@
                 AND (NAME like CONCAT('%', #{name}, '%')
                 OR korean_name like CONCAT('%', #{name}, '%'))
             </if>
-            <if test="type != null and type != 0">AND type =  #{type} </if>
+            <choose>
+                <when test="type == ''">
+
+                </when>
+                <when test="type != null">
+                    AND type =  #{type}
+                </when>
+                <otherwise>
+
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="useFor == ''">
+
+                </when>
+                <when test="useFor != null">
+                    AND use_for =  #{useFor}
+                </when>
+                <otherwise>
+
+                </otherwise>
+            </choose>
             AND delete_id IS NULL
         </trim>
     </select>

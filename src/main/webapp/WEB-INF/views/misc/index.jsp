@@ -7,11 +7,11 @@
 
 <section>
     <ol class="breadcrumb">
-        <li><a href="#">홈</a></li>
+        <li><a href="/">홈</a></li>
         <li class="active"><a href="#">재료 데이터베이스</a></li>
     </ol>
     <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 기타재료 데이터베이스 - MISC DATABASE</h3>
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/misc/">기타재료 데이터베이스 - MISC DATABASE</a></h3>
     </div>
     <div class="section-body">
         <!-- BEGIN BASIC FORM INPUTS -->

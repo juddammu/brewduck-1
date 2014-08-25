@@ -9,7 +9,7 @@
         <td>${list.koreanName}</td>
         <td>${list.name}</td>
         <td>${list.typeKorean}</td>
-        <td>${list.useFor}</td>
+        <td>${list.useForKorean}</td>
     </tr>
 </c:forEach>
 

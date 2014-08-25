@@ -17,10 +17,12 @@
     <ol class="breadcrumb">
         <li><a href="#">홈</a></li>
         <li><a href="#">재료 데이터베이스</a></li>
-        <li class="active"><a href="/style">스타일 데이터베이스 <small>STYLE DATABASE</small></a></li>
+        <li class="active"><a href="/style/">스타일 데이터베이스 <small>STYLE DATABASE</small></a></li>
     </ol>
     <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${StyleDetail.koreanName} - <strong class="text-support3">${StyleDetail.name}</strong></h3>
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>
+            <a href="/style/${StyleDetail.seq}/${StyleDetail.titleInUrl}">${StyleDetail.koreanName} - <strong class="text-support3">${StyleDetail.name}</strong></a>
+        </h3>
     </div>
     <div class="section-body">
         <div class="row">
@@ -30,7 +32,7 @@
                         <!-- START INVOICE HEADER -->
                         <div class="row">
                             <div class="col-xs-8">
-                                <h1 class="text-light"><strong class="text-support3">${StyleDetail.categoryNumber}${StyleDetail.styleLetter}.${StyleDetail.koreanName}</strong></h1>
+                                <a href="/style/${StyleDetail.seq}/${StyleDetail.titleInUrl}"><h1 class="text-light"><strong class="text-support3">${StyleDetail.categoryNumber}${StyleDetail.styleLetter}.${StyleDetail.koreanName}</strong></h1></a>
                             </div>
                             <div class="col-xs-4 text-right">
                                 <h1 class="text-light text-gray-light">${StyleDetail.styleGuide}</h1>

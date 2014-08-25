@@ -312,7 +312,6 @@
                 AND (NAME like CONCAT('%', #{name}, '%')
                 OR korean_name like CONCAT('%', #{name}, '%'))
             </if>
-            <if test="type != null and type != 0">AND type =  #{type} </if>
             <choose>
                 <when test="origin == 'ETC'">
                     AND ORIGIN != 'US' AND ORIGIN != 'DE' AND ORIGIN != 'UK' AND ORIGIN != 'BE' AND ORIGIN != 'CA'
@@ -322,6 +321,28 @@
                 </when>
                 <when test="origin != null">
                     AND origin = #{origin}
+                </when>
+                <otherwise>
+
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="type == ''">
+
+                </when>
+                <when test="type != null">
+                    AND type = #{type}
+                </when>
+                <otherwise>
+
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="supplier == ''">
+
+                </when>
+                <when test="supplier != null">
+                    AND supplier = #{supplier}
                 </when>
                 <otherwise>
 

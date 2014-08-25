@@ -36,6 +36,8 @@ public class Misc implements Serializable {
     private Boolean amountIsWeight;
     // 기타 재료의 사용 항목에 대한 간단한 설명
     private String useFor;
+    // 기타 재료의 사용 항목에 대한 한글 설명
+    private String useForKorean;
     // 기타 재료의 사용 항목에 대한 상세한 설명
     private String notes;
     // 작성자 아이디
@@ -244,6 +246,24 @@ public class Misc implements Serializable {
      */
     public void setUseFor(String useFor) {
         this.useFor = useFor;
+    }
+
+    /**
+     * 기타 재료의 사용 항목에 대한 한글 설명
+     *
+     * @param  기타 재료의 사용 항목에 대한 한글 설명
+     */
+    public String getUseForKorean() {
+        return useForKorean;
+    }
+
+    /**
+     * 기타 재료의 사용 항목에 대한 간단한 설명
+     *
+     * @param useForKorean 기타 재료의 사용 항목에 대한 간단한 설명
+     */
+    public void setUseForKorean(String useForKorean) {
+        this.useForKorean = useForKorean;
     }
 
     /**

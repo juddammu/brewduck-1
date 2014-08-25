@@ -13,6 +13,9 @@
             ${list.originKorean}
         </td>
         <td>
+            ${list.supplier}
+        </td>
+        <td>
             ${list.yield} %
         </td>
         <td>

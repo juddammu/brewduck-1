@@ -7,12 +7,14 @@
 
 <section>
     <ol class="breadcrumb">
-        <li><a href="#">홈</a></li>
+        <li><a href="/">홈</a></li>
         <li><a href="#">재료 데이터베이스</a></li>
-        <li class="active"><a href="/style">발효재료 데이터베이스 <small>FERMENTABLE DATABASE</small></a></li>
+        <li class="active"><a href="/fermentable/">발효재료 데이터베이스 <small>FERMENTABLE DATABASE</small></a></li>
     </ol>
     <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${FermentableDetail.koreanName} - <strong class="text-support3">${FermentableDetail.name}</strong></h3>
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>
+            <a href="/fermentable/${FermentableDetail.seq}/${FermentableDetail.titleInUrl}">${FermentableDetail.koreanName} - <strong class="text-support3">${FermentableDetail.name}</strong></a>
+        </h3>
     </div>
     <div class="section-body">
         <div class="row">
@@ -22,7 +24,7 @@
                         <!-- START INVOICE HEADER -->
                         <div class="row">
                             <div class="col-xs-8">
-                                <h1 class="text-light"><strong class="text-support3">${FermentableDetail.koreanName}</strong></h1>
+                                <a href="/fermentable/${FermentableDetail.seq}/${FermentableDetail.titleInUrl}"><h1 class="text-light"><strong class="text-support3">${FermentableDetail.koreanName}</strong></h1></a>
                             </div>
                         </div>
                         <!-- END INVOICE HEADER -->
@@ -36,6 +38,11 @@
                                         <div>
                                             <button type="button" class="btn btn-warning btn-sm" onclick="goOrigin('${FermentableDetail.origin}')">${FermentableDetail.originKorean} ( ${FermentableDetail.origin} )</button>
                                             <button type="button" class="btn btn-primary btn-sm" onclick="goType('${FermentableDetail.type}')">${FermentableDetail.typeKorean}</button>
+                                        </div>
+                                        <br>
+                                        <h3 class="text-light">제조사</h3>
+                                        <div>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="goSupplier('${FermentableDetail.supplier}')">${FermentableDetail.supplier}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -90,9 +97,10 @@
             <div class="col-lg-12">
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                        <form:form class="form-horizontal form-banded form-bordered" action="/fermentable/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
                             <input id ="origin" name="origin" type ="hidden" value="">
                             <input id = "type" name ="type" type ="hidden" value="">
+                            <input id = "supplier" name ="supplier" type ="hidden" value="">
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
@@ -122,6 +130,7 @@
                                     <th style="width:120px">영문명</th>
                                     <th style="width:70px">타입</th>
                                     <th style="width:70px">원산지</th>
+                                    <th style="width:70px">제조사</th>
                                     <th style="width:70px">수율(%)</th>
                                     <th style="width:100px">색상(SRM)</th>
                                 </tr>
@@ -202,9 +211,17 @@
             search();
         }
 
+        function goSupplier(data){
+            $("#supplier").val(data);
+            search();
+        }
+
         function search(){
             $("#result").html("");
             $("#result").load("/fermentable/list", $("#searchForm").serialize());
+            $("#origin").val('');
+            $("#type").val('');
+            $("#supplier").val('');
         }
 
         $(document).ready(function() {
@@ -214,6 +231,7 @@
             $("#name").val('');
             $("#origin").val('');
             $("#type").val('');
+            $("#supplier").val('');
         });
 
     </script>

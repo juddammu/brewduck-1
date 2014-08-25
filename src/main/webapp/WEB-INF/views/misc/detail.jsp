@@ -7,12 +7,14 @@
 
 <section>
     <ol class="breadcrumb">
-        <li><a href="#">홈</a></li>
+        <li><a href="/">홈</a></li>
         <li><a href="#">재료 데이터베이스</a></li>
-        <li class="active"><a href="/style">기타재료 데이터베이스 <small>MISC DATABASE</small></a></li>
+        <li class="active"><a href="/misc/">기타재료 데이터베이스 <small>MISC DATABASE</small></a></li>
     </ol>
     <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>${MiscDetail.koreanName} - <strong class="text-support3">${MiscDetail.name}</strong></h3>
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>
+            <a href="/misc/${MiscDetail.seq}/${MiscDetail.titleInUrl}">${MiscDetail.koreanName} - <strong class="text-support3">${MiscDetail.name}</strong></a>
+        </h3>
     </div>
     <div class="section-body">
         <div class="row">
@@ -22,7 +24,7 @@
                         <!-- START INVOICE HEADER -->
                         <div class="row">
                             <div class="col-xs-8">
-                                <h1 class="text-light"><strong class="text-support3">${MiscDetail.koreanName}</strong></h1>
+                                <a href="/misc/${MiscDetail.seq}/${MiscDetail.titleInUrl}"><h1 class="text-light"><strong class="text-support3">${MiscDetail.koreanName}</strong></h1></a>
                             </div>
                         </div>
                         <!-- END INVOICE HEADER -->
@@ -33,9 +35,9 @@
                                 <div class="col-md-3 style-gray">
                                     <div class="box-body">
                                         <h3 class="text-light">타입</h3 >
-                                            <button type="button" class="btn btn-warning btn-sm" onclick="goIndex('${MiscDetail.typeKorean}')">   ${MiscDetail.typeKorean}   </button>
+                                            <button type="button" class="btn btn-warning btn-sm" onclick="goType('${MiscDetail.type}')">   ${MiscDetail.typeKorean}   </button>
                                         <h3 class="text-light">용도</h3 >
-                                            <button type="button" class="btn btn-warning btn-sm" onclick="goIndex('${MiscDetail.useFor}')">   ${MiscDetail.useFor}   </button>
+                                            <button type="button" class="btn btn-warning btn-sm" onclick="goUseFor('${MiscDetail.useFor}')">   ${MiscDetail.useForKorean}   </button>
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -91,7 +93,8 @@
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
                         <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
-                            <input id ="typeKorean" name="typeKorean" type="hidden">
+                            <input id ="type" name="type" type="hidden">
+                            <input id ="useFor" name="useFor" type="hidden">
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
@@ -192,15 +195,22 @@
             location.href = "/misc/"+seq+"/"+titleInUrl;
         }
 
-        function goIndex(typeKorean){
-            $("#typeKorean").val(typeKorean);
+        function goType(data){
+            $("#type").val(data);
             search();
 
+        }
+
+        function goUseFor(data){
+            $("#useFor").val(data);
+            search();
         }
 
         function search(){
             $("#result").html("");
             $("#result").load("/misc/list", $("#searchForm").serialize());
+            $("#type").val('');
+            $("#use_for").val('');
         }
 
         $(document).ready(function() {
@@ -208,7 +218,8 @@
             getReplyCount();
             replyList();
             $("#name").val('');
-            $("#typeKorean").val('');
+            $("#type").val('');
+            $("#use_for").val('');
         });
 
     </script>
