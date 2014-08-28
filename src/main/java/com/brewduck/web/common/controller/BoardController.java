@@ -185,11 +185,22 @@ public class BoardController {
         logger.info("Board nttId : {}", nttId);
 
         Board board = new Board();
-        board.setNttId(nttId);
         Account account = AuthenticationUtils.getUser();
-        Board boardDetail = boardService.selectBoardDetail(board);
-
         String loginId = account.getName();
+        board.setUpdateId(loginId);
+        board.setNttId(nttId);
+
+        Board boardDetail = boardService.selectBoardDetail(board);
+        String insertId = boardDetail.getInsertId();
+
+        if( ! insertId.equals(loginId))
+        {
+            int hitCount = boardService.updateHitCount(board);
+            logger.info("Board Hit {}: ", hitCount);
+            logger.info("Insert ID {}: ", insertId);
+            logger.info("login ID {}: ", loginId);
+        }
+
         String regiID = boardDetail.getInsertId();
 
         model.addAttribute("loginId",loginId);

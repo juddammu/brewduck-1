@@ -108,4 +108,9 @@ public class BoardDaoImpl implements BoardDao {
         return sqlSessionTemplate.selectOne("Common.countReply", board);
     }
 
+    @Override
+    public int updateHitCount(Board board) {
+        return sqlSessionTemplate.update("Common.updateHitCount", board);
+    }
+
 }

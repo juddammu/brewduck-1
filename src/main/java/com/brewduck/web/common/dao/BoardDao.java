@@ -52,4 +52,6 @@ public interface BoardDao {
 
     public Board countReply(Board board);
 
+    public int updateHitCount(Board board);
+
 }

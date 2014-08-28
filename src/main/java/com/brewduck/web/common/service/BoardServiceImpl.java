@@ -127,4 +127,14 @@ public class BoardServiceImpl implements BoardService {
     public Board countReply(Board board) {
         return boardDao.countReply(board);
     }
+
+    @Transactional
+    @Override
+    public int updateHitCount(Board board) {
+        int hitCount = 0;
+
+        hitCount = boardDao.updateHitCount(board);
+
+        return hitCount;
+    }
 }

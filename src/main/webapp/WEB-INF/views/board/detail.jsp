@@ -30,125 +30,123 @@
             <div class="col-lg-12">
                 <div class="box box-outlined">
                     <div class="box-body">
-                        <div class="row frame border-radius">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="bottom-padding-mini"></div>
-                                    <div class="col-md-12  text-right">
-                                        <h6>
-                                            <a href="/list/recipe/${BoardDetail.boardId}/${BoardDetail.insertId}" ><span>${BoardDetail.insertId}, </span></a>
-                                            <span class="time">${BoardDetail.insertDate}</span>
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-2  text-left">
-                                            <label for="nttSj" class="control-label">제목
-                                        </div>
-                                        <div class="col-md-10">
-                                            <input type="text" name="nttSj" id="nttSj" class="form-control" placeholder="제목" value="${BoardDetail.nttSj}">
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="bottom-padding-mini"></div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-2  text-left">
-                                            <label for="nttSj" class="control-label">내용
-                                        </div>
-                                        <div class="col-md-10 ">
-                                            <div class="well">
-                                                ${BoardDetail.nttCn}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-2  text-left">
-                                            <label for="nttSj" class="control-label">첨부파일</label>
-                                        </div>
-                                        <div class="form-group col-md-10">
-                                            <input type="file" id="exampleInputFile">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-12 form-actions">
-                                            <div class="pull-right">
-                                                <%
-                                                    Object regiId = request.getAttribute("regiId");
-                                                    Object loginId = request.getAttribute("loginId");
-
-                                                    if(loginId.equals(regiId)){
-                                                %>
-                                                <button type="button" id ="edit" class="btn btn-warning"> 수정 </button>
-
-                                                <%
-                                                    }
-                                                %>
-                                                <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <a href="#"><label onclick="scroll()">${BoardDetail.countNum} Commnets</label></a>
-                                            <ul class="list-comments">
-                                                <li>
-                                                    <div class="box style-white" id="reply_list">
-
-                                                    </div><!--end .box -->
-                                                </li><!-- end comment -->
-                                            </ul>
-                                        </div><!--end .col-md-12 -->
-                                    </div><!--end .form-group -->
-                                </div><!--end .row -->
-                                <!-- END COMMENTS -->
-                                <div class="box box-tiles style-white">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <article class="style-white">
-                                                <form:form  class="form-horizontal" role="form" onsubmit="return false">
-                                                    <div class="form-group">
-                                                        <div class="col-md-12">
-                                                            <textarea name="answer" id="answer" class="form-control" rows="4" placeholder="Leave a comment"></textarea>
-                                                        </div>
-                                                    </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12  text-left">
+                                                <a href="/board/detail/${BoardDetail.nttId}" ><h2>${BoardDetail.nttSj}</h2></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="bottom-padding-mini"></div>
+                                        <div class="col-md-6 text-left">
+                                            <h4>
+                                                by <a href="/list/recipe/${BoardDetail.boardId}/${BoardDetail.insertId}" ><span>${BoardDetail.insertId} </span></a>
+                                            </h4>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <h6><span class="meta">${BoardDetail.insertDate} | Views : ${BoardDetail.rdcnt} </span></h6>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <hr>
+                                    <div class="bottom-padding-mini"></div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                                <div class="col-md-12">
+                                                    ${BoardDetail.nttCn}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <br>
+                                    <hr>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-1  text-left">
+                                                <label for="nttSj" class="control-label">첨부파일</label>
+                                            </div>
+                                            <div class="col-md-11 text-left">
+                                                <input type="file" id="exampleInputFile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12 form-actions">
+                                                <div class="pull-right">
                                                     <%
-                                                        if (AuthenticationUtils.isAuthenticated() == true) {
+                                                        Object regiId = request.getAttribute("regiId");
+                                                        Object loginId = request.getAttribute("loginId");
+
+                                                        if(loginId.equals(regiId)){
                                                     %>
-                                                    <div class="form-group">
-                                                        <div class="col-md-12">
-                                                            <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
-                                                        </div>
-                                                    </div>
-                                                    <%
-                                                    }else {
-                                                    %>
-                                                    <div class="alert alert-danger fade in border-radius" style="margin: 8px;"><i class="fa fa-warning"></i> 로그인 후에 댓글을 작성 할 수 있습니다.
-                                                        <button type="button" class="close" data-dismiss="alert">×</button>
-                                                    </div>
+                                                    <button type="button" id ="edit" class="btn btn-warning"> 수정 </button>
+
                                                     <%
                                                         }
                                                     %>
-                                                </form:form>
-                                            </article>
+                                                    <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <!-- END BLOG POST TEXT -->
-                                    </div><!--end .row -->
+                                    </div>
                                 </div>
                             </div>
-                            <div class="bottom-padding-mini"></div>
+                            <br><br>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <h4><label onclick="scroll()">${BoardDetail.countNum} Commnets</label></h4>
+                                        <ul class="list-comments">
+                                            <li>
+                                                <div class="box style-white" id="reply_list">
+
+                                                </div><!--end .box -->
+                                            </li><!-- end comment -->
+                                        </ul>
+                                    </div><!--end .col-md-12 -->
+                                </div><!--end .form-group -->
+                            </div><!--end .row -->
+                            <!-- END COMMENTS -->
+                            <div class="box box-tiles style-white">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <article class="style-white">
+                                            <form:form  class="form-horizontal" role="form" onsubmit="return false">
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <textarea name="answer" id="answer" class="form-control" rows="4" placeholder="Leave a comment"></textarea>
+                                                    </div>
+                                                </div>
+                                                <%
+                                                    if (AuthenticationUtils.isAuthenticated() == true) {
+                                                %>
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
+                                                    </div>
+                                                </div>
+                                                <%
+                                                }else {
+                                                %>
+                                                <div class="alert alert-danger fade in border-radius" style="margin: 8px;"><i class="fa fa-warning"></i> 로그인 후에 댓글을 작성 할 수 있습니다.
+                                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                                </div>
+                                                <%
+                                                    }
+                                                %>
+                                            </form:form>
+                                        </article>
+                                    </div>
+                                    <!-- END BLOG POST TEXT -->
+                                </div><!--end .row -->
+                            </div>
                         </div>
+                        <div class="bottom-padding-mini"></div>
                     </div>
                  </div>
             </div>
@@ -187,9 +185,10 @@
 
             $.get("/community/replyList/"+nttId+"/"+bbsId, function(data, status){
                 $.each(data, function(i){
+
                     replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
                     replyListHtml = replyListHtml + "<div class='box-body'>";
-                    replyListHtml = replyListHtml + "<h4 class='comment-title'>"+data[i].insertId+"<small>"+data[i].insertDate+"</small></h4>";
+                    replyListHtml = replyListHtml + "<h4 class='comment-title'><a href='#'>"+data[i].insertId+"</a><small>"+data[i].insertDate+"</small></h4>";
                     replyListHtml = replyListHtml + "<a class='btn btn-inverse stick-top-right' href='#'>Reply</a>";
                     replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
                     replyListHtml = replyListHtml + "</div>";

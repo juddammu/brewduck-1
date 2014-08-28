@@ -22,17 +22,18 @@
             <div class="entry-container">
                 <div class="time">${list.insertDate}</div>
                 <h3>
-                    <a href="/board/detail/${list.nttId}">${list.nttSj}</a>
+                    <a href="/board/detail/${list.nttId}">${list.nttSj}<label class="text-danger"> ( ${list.rdcnt} )</label></a>
                 </h3>
                 <div class="meta">
                     by
                     <a href="/list/recipe/${list.boardId}/${list.insertId}" class="author">${list.insertId}</a>
                     <a class="tm-icon-comment" href="#">${list.countNum}</a>
                 </div>
-                <p>
-                    ${list.nttCnSub}...
-                    <a class="more-link" href="/board/detail/${list.nttId}">Read more</a>
-                </p>
+                <div>
+                    ${list.nttCnSub}...<a class="more-link" href="/board/detail/${list.nttId}">Read more</a>
+                </div>
+
+
             </div>
         </div>
     </article>

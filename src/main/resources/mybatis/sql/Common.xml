@@ -511,4 +511,13 @@
           FROM account
           ORDER BY id ASC;
     </select>
+
+    <update id="Common.updateHitCount" parameterType="Board">
+
+        UPDATE BOARD SET
+          RDCNT = RDCNT +1
+      WHERE NTT_ID = #{nttId}
+
+    </update>
+
 </mapper>
