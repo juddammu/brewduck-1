@@ -45,12 +45,14 @@
             ,password
             ,authority
             ,activation
+            ,insert_date
         ) values (
              #{name}
             ,#{email}
             ,#{password}
             ,'ROLE_SIGNIN'
             ,'DISABLE'
+            ,SYSDATE()
         )
         <selectKey keyProperty="id" resultType="int" order="AFTER">
             SELECT LAST_INSERT_ID();
