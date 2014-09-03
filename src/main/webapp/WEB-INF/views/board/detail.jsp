@@ -15,145 +15,194 @@
 
 <title>${BoardDetail.bbsNm} - ${BoardDetail.bbsEnNm}</title>
 
-
-<section>
-    <ol class="breadcrumb">
-        <li><a href="/">홈</a></li>
-        <li class="active"><a href="/board/main/${BoardDetail.bbsId}">${BoardDetail.bbsNm} - ${BoardDetail.bbsEnNm}</a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/board/main/${BoardDetail.bbsId}">${BoardDetail.bbsNm} - ${BoardDetail.bbsEnNm}</a></h3>
+<div id="tm-page-title">
+    <div class="tm-wrap tm-table">
+        <div class="tm-title-captions">
+            <a href="/board/detail/${BoardDetail.nttId}"><h2 class="tm-entry-title">${BoardDetail.nttSj}</h2></a>
+        </div>
+        <ul class="tm-breadcrumbs">
+            <li>
+                <a href="/">홈</a>
+            </li>
+            <li>
+                <a href="/board/main/${BoardDetail.bbsId}">${BoardDetail.bbsNm}</a>
+            </li>
+            <li>
+                <a href="#">게시물</a>
+            </li>
+        </ul>
     </div>
-    <div class="section-body">
-    <!-- BEGIN BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12  text-left">
-                                                <a href="/board/detail/${BoardDetail.nttId}" ><h2>${BoardDetail.nttSj}</h2></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="bottom-padding-mini"></div>
-                                        <div class="col-md-6 text-left">
-                                            <h4>
-                                                by <a href="/list/recipe/${BoardDetail.boardId}/${BoardDetail.insertId}" ><span>${BoardDetail.insertId} </span></a>
-                                            </h4>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <h6><span class="meta">${BoardDetail.insertDate} | Views : ${BoardDetail.rdcnt} </span></h6>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <hr>
-                                    <div class="bottom-padding-mini"></div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                                <div class="col-md-12">
-                                                    ${BoardDetail.nttCn}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <br>
-                                    <hr>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-1  text-left">
-                                                <label for="nttSj" class="control-label">첨부파일</label>
-                                            </div>
-                                            <div class="col-md-11 text-left">
-                                                <input type="file" id="exampleInputFile">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <div class="col-md-12 form-actions">
-                                                <div class="pull-right">
-                                                    <%
-                                                        Object regiId = request.getAttribute("regiId");
-                                                        Object loginId = request.getAttribute("loginId");
-
-                                                        if(loginId.equals(regiId)){
-                                                    %>
-                                                    <button type="button" id ="edit" class="btn btn-warning"> 수정 </button>
-
-                                                    <%
-                                                        }
-                                                    %>
-                                                    <button type="button" id = "list" class="btn btn-primary"> 목록 </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+</div>
+<div id="tm-page-body">
+    <div id="tm-single-blog" class="tm-container tm-wrap tm-sidebar-right">
+        <div class="page-content">
+            <div class="page-content-inner">
+                <!--entry-thumb-->
+                <div class="entry-header">
+                    <a href="/board/detail/${BoardDetail.nttId}" ><h2>${BoardDetail.nttSj}</h2></a>
+                    <div class="meta">
+                        Post by
+                        <a href="/list/recipe/${BoardDetail.boardId}/${BoardDetail.insertId}" ><span>${BoardDetail.insertId} </span></a>
+                        in
+                        <a href="/board/main/${BoardDetail.bbsId}"><span>${BoardDetail.bbsNm}</span></a>
+                    </div>
+                    <div class="time">
+                        <h6><span class="meta">${BoardDetail.insertDate}  |  읽음 : ${BoardDetail.rdcnt} </span></h6>
+                    </div>
+                </div>
+                <!--entry-header-->
+                <div class="entry-container">
+                    <div class="entry-content">
+                        <hr>
+                        <p>
+                            ${BoardDetail.nttCn}
+                        </p>
+                        <p>
+                            <div>
+                                <strong>첨부파일</strong>
                             </div>
-                            <br><br>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <h4><label onclick="scroll()">${BoardDetail.countNum} Commnets</label></h4>
-                                        <ul class="list-comments">
-                                            <li>
-                                                <div class="box style-white" id="reply_list">
-
-                                                </div><!--end .box -->
-                                            </li><!-- end comment -->
-                                        </ul>
-                                    </div><!--end .col-md-12 -->
-                                </div><!--end .form-group -->
-                            </div><!--end .row -->
-                            <!-- END COMMENTS -->
-                            <div class="box box-tiles style-white">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <article class="style-white">
-                                            <form:form  class="form-horizontal" role="form" onsubmit="return false">
-                                                <div class="form-group">
-                                                    <div class="col-md-12">
-                                                        <textarea name="answer" id="answer" class="form-control" rows="4" placeholder="Leave a comment"></textarea>
-                                                    </div>
-                                                </div>
-                                                <%
-                                                    if (AuthenticationUtils.isAuthenticated() == true) {
-                                                %>
-                                                <div class="form-group">
-                                                    <div class="col-md-12">
-                                                        <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
-                                                    </div>
-                                                </div>
-                                                <%
-                                                }else {
-                                                %>
-                                                <div class="alert alert-danger fade in border-radius" style="margin: 8px;"><i class="fa fa-warning"></i> 로그인 후에 댓글을 작성 할 수 있습니다.
-                                                    <button type="button" class="close" data-dismiss="alert">×</button>
-                                                </div>
-                                                <%
-                                                    }
-                                                %>
-                                            </form:form>
-                                        </article>
-                                    </div>
-                                    <!-- END BLOG POST TEXT -->
-                                </div><!--end .row -->
+                            <div>
+                                <input type="file" id="exampleInputFile">
+                            </div>
+                        </p>
+                    </div>
+                    <section class="about-author">
+                        <h3 class="tm-title">작성자 :
+                            <a href="/list/recipe/${BoardDetail.boardId}/${BoardDetail.insertId}">${BoardDetail.insertId}</a> 님
+                        </h3>
+                        <div class="about-author-conteainer">
+                            <div class="avatar">
+                                <img alt="img" src="http://placehold.it/60x60">
+                            </div>
+                            <div class="description">
+                                <p>
+                                    클론레시피 전문... lol
+                                </p>
                             </div>
                         </div>
-                        <div class="bottom-padding-mini"></div>
-                    </div>
-                 </div>
+                    </section>
+                    <p>
+                        <div class="form-group">
+                            <div class="col-md-12 form-actions">
+                                <div class="pull-right">
+                                    <%
+                                        Object regiId = request.getAttribute("regiId");
+                                        Object loginId = request.getAttribute("loginId");
+
+                                        if(loginId.equals(regiId)){
+                                    %>
+                                    <button type="button" id ="edit" class="tm-btn red" style="width: 90px;"> 수정 </button>
+
+                                    <%
+                                        }
+                                    %>
+                                    <button type="button" id = "list" class="tm-btn blue" style="width: 90px;"> 목록 </button>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                    <section id="tm-comment">
+                        <h4><label onclick="scroll()">${BoardDetail.countNum} Commnets</label></h4>
+                        <ul class="list-comments">
+                            <li>
+                                <div class="box style-white" id="reply_list">
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="respond">
+                        <form:form id="commentform" onsubmit="return false">
+                            <%
+                                if (AuthenticationUtils.isAuthenticated() == true) {
+                            %>
+                            <p class="comments-form-comment">
+                                <textarea name="answer" id="answer" placeholder="Leave a comment"></textarea>
+                            </p>
+                            <p>
+                                <button type="submit" id="insertReply" name="insertReply" class="tm-btn">댓글 등록</button>
+                            </p>
+                            <%
+                            }else {
+                            %>
+                            <div class="tm-alert error">
+                                <strong>로그인 후에 댓글을 작성 할 수 있습니다.</strong>
+                                <a class="close" href="javascript:void(0)">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                            <%
+                                }
+                            %>
+                        </form:form>
+                    </section>
+                </div>
             </div>
         </div>
+        <div class="page-sidebar">
+            <aside class="widget tm-tabs">
+                <ul class="tm-filter tabs tm-style1">
+                    <li>
+                        <a href="#tab1">신규 레시피들</a>
+                    </li>
+                    <li>
+                        <a href="#tab2">최근 게시글</a>
+                    </li>
+                </ul>
+                <div class="tab-container">
+                    <aside id="tab1" class="widget tm-list-style2 widget_recent_entries tab-content">
+                        <ul>
+                            <c:forEach items="${newRecipeList}" var="newRecipeList" varStatus="status">
+                                <li>
+                                    <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">
+                        <span class="thumb">
+                        <img src="/resources/upload/${newRecipeList.atchCoverFileName}" width="60" alt="thumb">
+                        </span>
+                                        <h3>${newRecipeList.name}</h3>
+                        <span class="time">
+                            ${newRecipeList.styleName} / ${newRecipeList.batchSize}리터 / ${newRecipeList.efficiency}%
+                        </span>
+                        <span class="time">
+                            </br>${newRecipeList.brewerNm}
+                        </span>
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </aside>
+                    <aside id="tab2" class="widget tm-list-style2 widget_recent_comments tab-content">
+                        <ul id="recentcomments">
+                            <c:forEach items="${newPostList}" var="newPostList" varStatus="status">
+                                <li class="recentcomments">
+                                        ${newPostList.insertId} -
+                                    <a href="single-blog.html#tm-comment">
+                                            ${newPostList.nttSj}
+                                    </a>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </aside>
+                </div>
+            </aside>
+            <aside class="widget widget_text box-dark">
+                <div class="textwidget">
+                    <div class="tm-testimonial tm-style2">
+                        <div style="" class="testimonial-content">
+                            <p>
+                                맥주만들기 이제 커피보다 쉬워요..
+                            </p>
+                        </div>
+                        <div class="info">
+                            <div class="name">
+                                <h3>- XX비어 -</h3>
+                                <p>  - <span>XX 비어</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </div>
-</section>
-
+</div>
 <content tag="local_script">
     <script>
         var bbsId = ${BoardDetail.bbsId};
@@ -177,26 +226,31 @@
         });
 
         function replyList(){
-            var box = $("#reply_list");
-            boostbox.App.addBoxLoader(box);
-
-            $("#reply_list").html("");
             var replyListHtml = "";
 
             $.get("/community/replyList/"+nttId+"/"+bbsId, function(data, status){
                 $.each(data, function(i){
-
-                    replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
-                    replyListHtml = replyListHtml + "<div class='box-body'>";
-                    replyListHtml = replyListHtml + "<h4 class='comment-title'><a href='#'>"+data[i].insertId+"</a><small>"+data[i].insertDate+"</small></h4>";
-                    replyListHtml = replyListHtml + "<a class='btn btn-inverse stick-top-right' href='#'>Reply</a>";
-                    replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
+                    replyListHtml = replyListHtml + "<ol class='commentlist'>";
+                    replyListHtml = replyListHtml + "<li>";
+                    replyListHtml = replyListHtml + "<div class='comment'>";
+                    replyListHtml = replyListHtml + "<div class='avatar'>";
+                    replyListHtml = replyListHtml + "<img alt='img' src='http://placehold.it/50x50'>";
                     replyListHtml = replyListHtml + "</div>";
+                    replyListHtml = replyListHtml + "<div class='comment-container'>";
+                    replyListHtml = replyListHtml + "<div class='comment-author meta'>";
+                    replyListHtml = replyListHtml + "<a href='/list/recipe/"+data[i].boardId+"/"+data[i].insertId+"'><strong>"+data[i].insertId+"</strong></a>"+data[i].insertDate+"<a class='comment-reply-link' href=''> - Reply</a>";
+                    replyListHtml = replyListHtml + "</div>";
+                    replyListHtml = replyListHtml + "<div class='text'>"+data[i].answer+"</div>";
+                    replyListHtml = replyListHtml + "</div>";
+                    replyListHtml = replyListHtml + "</div>";
+                    replyListHtml = replyListHtml + "</li>";
+                    replyListHtml = replyListHtml + "</ol>";
                 });
+                $("#reply_list").html("");
                 $("#reply_list").append(replyListHtml);
-                boostbox.App.removeBoxLoader(box);
             })
         }
+
 
         function goList(bbsId){
                 location.href = "/board/main/"+bbsId;

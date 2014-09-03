@@ -370,18 +370,21 @@
 
     <select id="selectReplyList" parameterType="Board" resultType="Board">
         SELECT
-          ANSWER_NO     answerNo,
-          BBS_ID        bbsId,
-          NTT_ID        nttId,
-          INSERT_ID     insertId,
-          INSERT_DATE   insertDate,
-          ANSWER        answer,
-          WRTER_NM      wrterNm,
-          WRTER_ID      wrterId
-        FROM BOARD_COMMENT
+          A.ANSWER_NO     answerNo,
+          A.BBS_ID        bbsId,
+          A.NTT_ID        nttId,
+          A.INSERT_ID     insertId,
+          A.INSERT_DATE   insertDate,
+          A.ANSWER        answer,
+          A.WRTER_NM      wrterNm,
+          A.WRTER_ID      wrterId,
+          (select B.id
+          from account B
+          where B.name = A.INSERT_ID)     boardId
+        FROM BOARD_COMMENT  A
         WHERE USE_AT = 'Y'
-        AND BBS_ID = #{bbsId}
-        AND NTT_ID = #{nttId}
+        AND A.BBS_ID = #{bbsId}
+        AND A.NTT_ID = #{nttId}
     </select>
 
 

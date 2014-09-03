@@ -185,12 +185,17 @@ public class BoardController {
         logger.info("Board nttId : {}", nttId);
 
         Board board = new Board();
+        Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
         String loginId = account.getName();
+        recipe.setStatus("2");
+        recipe.setLimit(4);
         board.setUpdateId(loginId);
         board.setNttId(nttId);
 
         Board boardDetail = boardService.selectBoardDetail(board);
+        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+        List<Board> selectNewPostList = boardService.getNewPost(board);
         String insertId = boardDetail.getInsertId();
 
         if( ! insertId.equals(loginId))
@@ -205,6 +210,8 @@ public class BoardController {
 
         model.addAttribute("loginId",loginId);
         model.addAttribute("regiId",regiID);
+        model.addAttribute("newPostList", selectNewPostList);
+        model.addAttribute("newRecipeList", selectNewPublicRecipeList);
         model.addAttribute("account", account);
         model.addAttribute("BoardDetail", boardDetail);
 

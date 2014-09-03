@@ -20,6 +20,14 @@
         <div class="tm-title-captions">
             <a href="/board/main/${boardList.bbsId}"><h2 class="tm-entry-title">${boardList.bbsNm} - ${boardList.bbsEnNm}</h2></a>
         </div>
+        <ul class="tm-breadcrumbs">
+            <li>
+                <a href="/">홈</a>
+            </li>
+            <li>
+                <a href="/board/main/${boardList.bbsId}">${boardList.bbsNm}</a>
+            </li>
+        </ul>
     </div>
 </div>
 <!--tm-page-title-->
