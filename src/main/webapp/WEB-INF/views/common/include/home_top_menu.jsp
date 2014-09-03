@@ -38,11 +38,11 @@
     <!--tm-wrap-->
 </div>
 <!--tm-header-top-->
-<div id="tm-header-nav" class="tm-menu-style1 tm-sticky-menu">
+<div id="tm-header-nav" class="tm-menu-style2 tm-sticky-menu">
     <div class="tm-wrap tm-table">
         <nav class="tm-nav">
             <ul class="tm-menu tm-menu-simple">
-                <li class="parent">
+                <li class="parent  current-menu-item">
                     <a href="/">HOME</a>
                 </li>
                 <li class="parent">

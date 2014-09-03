@@ -134,11 +134,11 @@
                     <div class="entry-container">
                         <div class="time">${newRecipeList.insertDate}</div>
                         <h3>
-                            <a href="">${newRecipeList.name}</a>
+                            <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">${newRecipeList.name}</a>
                         </h3>
                         <div class="meta">
                             by
-                            <a href="#" class="author">${newRecipeList.brewerNm}</a>
+                            <a href="/list/recipe/${newRecipeList.brewer}/${newRecipeList.brewerNm}" class="author">${newRecipeList.brewerNm}</a>
                             -
                             <span class="incategory">
                                 <a href="#">${newRecipeList.styleName}</a>
