@@ -193,6 +193,52 @@
         </c:forEach>
         </tbody>
     </table>
+    </br> </br>
+    <h2 class="tm-title">첨가물 - <small>Misc</small></h2>
+    <table class="tm-table tm-style1">
+        <thead>
+        <tr class="header">
+            <th>재료명</th>
+            <th>용량</th>
+            <th>시간</th>
+            <th>용도</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${recipeDetail.miscs}" var="miscs" varStatus="i">
+            <tr>
+                <td>${miscs.koreanName }</td>
+                <td class="text-right">${miscs.amount }</td>
+                <td class="text-right">${miscs.time }</td>
+                <td class="text-right">
+                    <c:choose>
+                        <c:when test="${miscs.miscUse=='1'}">
+                            Mash
+                        </c:when>
+                        <c:when test="${miscs.miscUse=='2'}">
+                            Boil
+                        </c:when>
+                        <c:when test="${miscs.miscUse=='3'}">
+                            Primary
+                        </c:when>
+                        <c:when test="${miscs.miscUse=='4'}">
+                            Secondary
+                        </c:when>
+                        <c:when test="${miscs.miscUse=='5'}">
+                            Bottle
+                        </c:when>
+                        <c:when test="${miscs.miscUse=='6'}">
+                            Keg
+                        </c:when>
+                        <c:otherwise>
+                            -
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 </div>
 
 <section class="about-author">
@@ -382,9 +428,9 @@
                     <c:forEach items="${newRecipeList}" var="newRecipeList" varStatus="status">
                     <li>
                         <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">
-                            <span class="thumb">
-                            <img src="<c:url value='/download/downloadFile.do?'/>requestedFile=${newRecipeList.atchCoverFileName}" width="60" alt="thumb">
-                            </span>
+                             <span class="thumb">
+                                <img src="<c:url value='/download/downloadFile.do?'/>requestedFile=${newRecipeList.atchCoverFileName}" width="60" alt="thumb">
+                             </span>
                             <h3>${newRecipeList.name}</h3>
                             <span class="time">
                                 ${newRecipeList.styleName} / ${newRecipeList.batchSize}리터 / ${newRecipeList.efficiency}%
