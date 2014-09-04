@@ -123,6 +123,8 @@ public class Board{
 
     private String nttCnSub;
 
+    private String nttSjSub;
+
     private String boardId;
 
 
@@ -532,6 +534,14 @@ public class Board{
 
     public void setNttCnSub(String nttCnSub) {
         this.nttCnSub = nttCnSub;
+    }
+
+    public String getNttSjSub() {
+        return nttSjSub;
+    }
+
+    public void setNttSjSub(String nttSjSub) {
+        this.nttSjSub = nttSjSub;
     }
 
     public String getBoardId() {

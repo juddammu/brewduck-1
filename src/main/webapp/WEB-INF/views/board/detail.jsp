@@ -230,21 +230,21 @@
 
             $.get("/community/replyList/"+nttId+"/"+bbsId, function(data, status){
                 $.each(data, function(i){
-                    replyListHtml = replyListHtml + "<ol class='commentlist'>";
-                    replyListHtml = replyListHtml + "<li>";
-                    replyListHtml = replyListHtml + "<div class='comment'>";
-                    replyListHtml = replyListHtml + "<div class='avatar'>";
-                    replyListHtml = replyListHtml + "<img alt='img' src='http://placehold.it/50x50'>";
-                    replyListHtml = replyListHtml + "</div>";
-                    replyListHtml = replyListHtml + "<div class='comment-container'>";
-                    replyListHtml = replyListHtml + "<div class='comment-author meta'>";
-                    replyListHtml = replyListHtml + "<a href='/list/recipe/"+data[i].boardId+"/"+data[i].insertId+"'><strong>"+data[i].insertId+"</strong></a>"+data[i].insertDate+"<a class='comment-reply-link' href=''> - Reply</a>";
-                    replyListHtml = replyListHtml + "</div>";
-                    replyListHtml = replyListHtml + "<div class='text'>"+data[i].answer+"</div>";
-                    replyListHtml = replyListHtml + "</div>";
-                    replyListHtml = replyListHtml + "</div>";
-                    replyListHtml = replyListHtml + "</li>";
-                    replyListHtml = replyListHtml + "</ol>";
+                replyListHtml = replyListHtml + "<ol class='commentlist'>";
+                replyListHtml = replyListHtml + "<li>";
+                replyListHtml = replyListHtml + "<div class='comment'>";
+                replyListHtml = replyListHtml + "<div class='avatar'>";
+                replyListHtml = replyListHtml + "<img alt='img' src='http://placehold.it/50x50'>";
+                replyListHtml = replyListHtml + "</div>";
+                replyListHtml = replyListHtml + "<div class='comment-container'>";
+                replyListHtml = replyListHtml + "<div class='comment-author meta'>";
+                replyListHtml = replyListHtml + "<a href='/list/recipe/"+data[i].boardId+"/"+data[i].insertId+"'><strong>"+data[i].insertId+"</strong></a>"+data[i].insertDate+"<a class='comment-reply-link' href=''> - Reply</a>";
+                replyListHtml = replyListHtml + "</div>";
+                replyListHtml = replyListHtml + "<div class='text'>"+data[i].answer+"</div>";
+                replyListHtml = replyListHtml + "</div>";
+                replyListHtml = replyListHtml + "</div>";
+                replyListHtml = replyListHtml + "</li>";
+                replyListHtml = replyListHtml + "</ol>";
                 });
                 $("#reply_list").html("");
                 $("#reply_list").append(replyListHtml);
