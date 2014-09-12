@@ -19,7 +19,7 @@
             <div class="col-lg-12">
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
+                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
                             <input name="type"  id="type" type="hidden"  class="form-control" value="">
                             <div class="form-group">
                                 <div class="col-md-2">
@@ -39,13 +39,13 @@
                                 <div class="col-md-10">
                                     <div class="input-group">
                                         <div>
-                                            <button id="spiceButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(2)" value="2"> </button>
-                                            <button id="flavorButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(3)" value="3"> </button>
-                                            <button id="waterAgentButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(4)" value="4"> </button>
-                                            <button id="finingButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(5)" value="5"> </button>
-                                            <button id="herbButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(6)" value="6"> </button>
-                                            <button id="otherButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch(1)" value="1"> </button>
-                                            <button id="allButton" type="button" class="btn btn-xs btn-primary" onclick="setTypeSearch()">  전체  </button>
+                                            <button id="spiceButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(2)" value="2"> </button>
+                                            <button id="flavorButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(3)" value="3"> </button>
+                                            <button id="waterAgentButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(4)" value="4"> </button>
+                                            <button id="finingButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(5)" value="5"> </button>
+                                            <button id="herbButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(6)" value="6"> </button>
+                                            <button id="otherButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(1)" value="1"> </button>
+                                            <button id="allButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch()">  전체  </button>
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
         getTypeCount();                  //타입별 카운트 (조회영역)
         search();                        //조회
 
-        $("#search").onClick(function(){
+        $("#search").click(function(){
         search();
         });
 

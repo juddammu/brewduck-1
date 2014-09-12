@@ -304,23 +304,12 @@
         search();
     }
 
-    function getLoadingTime(){
-        if($("loading").is("visible")){return;}
-        document.getElementById("loading").style.display="block";       //로딩 아이콘 노출
-        setTimeout(function(){
-            document.getElementById("loading").style.display="none";    //로딩 아이콘 숨김
-        },500);
-    }
-
-
     $(document).ready(function() {
 
-        $('.slider-element').slider();  //슬라이더 초기화
         getNationCount();                  //원산지별 카운트 (조회영역)
         getAromaList();
         search();                          //조회
         $("#name").focus();              //이름칸으로 포커스
-        document.getElementById("loading").style.display="none"; //로딩 아이콘 숨김
 
         $("#search").click(function(){
         search();
@@ -333,6 +322,7 @@
             $("#allRadio").attr('checked', true);
             search();
         });
+
         $("#allRadio").click(setAromaSearch);
         $("#aromaRadio").click(setAromaSearch);
         $("#bittersRadio").click(setAromaSearch);
