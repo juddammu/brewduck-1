@@ -32,7 +32,7 @@
 </div>
 <!--tm-page-title-->
 <div id="tm-page-body">
-    <div id="tm-single-blog" class="tm-container tm-wrap tm-sidebar-right">
+    <div id="tm-single-blog" class="tm-container tm-wrap tm-blog-style-magazine1 tm-sidebar-right">
         <div class="page-content">
             <div class="page-content-inner">
                 <div class="entry-header">
@@ -69,10 +69,12 @@
                     <br>
                     <hr>
                 </div>
-                <table class="tm-table tm-style2">
-                    <tbody id="result">
-                    </tbody>
-                </table>
+                <div class="tm-main-content">
+                    <div class="tm-main-content-inner">
+                        <div id="result">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="page-sidebar">
@@ -111,7 +113,7 @@
                             <c:forEach items="${newPostList}" var="newPostList" varStatus="status">
                                 <li class="recentcomments">
                                         ${newPostList.insertId} -
-                                    <a href="single-blog.html#tm-comment">
+                                    <a href="/board/detail/${newPostList.nttId}">
                                             ${newPostList.nttSj}
                                     </a>
                                 </li>

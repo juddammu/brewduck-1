@@ -195,7 +195,7 @@ public class BoardController {
         String loginId = account.getName();
         recipe.setStatus("2");
         recipe.setLimit(4);
-        board.setUpdateId(loginId);
+/*        board.setUpdateId(loginId);*/
         board.setNttId(nttId);
 
         Board boardDetail = boardService.selectBoardDetail(board);

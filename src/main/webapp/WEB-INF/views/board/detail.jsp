@@ -104,10 +104,19 @@
                     <section id="tm-comment">
                         <h4><label onclick="scroll()">${BoardDetail.countNum} Commnets</label></h4>
                         <ul class="list-comments">
+                            <%
+                                if (AuthenticationUtils.isAuthenticated() == true) {
+                            %>
                             <li>
                                 <div class="box style-white" id="reply_list">
                                 </div>
                             </li>
+                            <%
+                            }else {
+                            %>
+                            <%
+                                }
+                            %>
                         </ul>
                     </section>
                     <section id="respond">
@@ -174,7 +183,7 @@
                             <c:forEach items="${newPostList}" var="newPostList" varStatus="status">
                                 <li class="recentcomments">
                                         ${newPostList.insertId} -
-                                    <a href="single-blog.html#tm-comment">
+                                    <a href="/board/detail/${newPostList.nttId}">
                                             ${newPostList.nttSj}
                                     </a>
                                 </li>
@@ -240,7 +249,7 @@
                 replyListHtml = replyListHtml + "<div class='comment-author meta'>";
                 replyListHtml = replyListHtml + "<a href='/list/recipe/"+data[i].boardId+"/"+data[i].insertId+"'><strong>"+data[i].insertId+"</strong></a>"+data[i].insertDate+"<a class='comment-reply-link' href=''> - Reply</a>";
                 replyListHtml = replyListHtml + "</div>";
-                replyListHtml = replyListHtml + "<div class='text'>"+data[i].answer+"</div>";
+                replyListHtml = replyListHtml + "<p>"+data[i].answer+"</p>";
                 replyListHtml = replyListHtml + "</div>";
                 replyListHtml = replyListHtml + "</div>";
                 replyListHtml = replyListHtml + "</li>";

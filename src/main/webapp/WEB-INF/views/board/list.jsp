@@ -11,7 +11,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:forEach items="${list}" var="list">
-<tr>
     <article>
         <div class="tm-content-inner">
             <div class="entry-thumbnail">
@@ -32,13 +31,9 @@
                 <div>
                     ${list.nttCnSub}...<a class="more-link" href="/board/detail/${list.nttId}">Read more</a>
                 </div>
-
-
             </div>
         </div>
     </article>
-</tr>
-
 </c:forEach>
 
 <content tag="local_script">

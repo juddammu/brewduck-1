@@ -448,7 +448,7 @@
                     <c:forEach items="${newPostList}" var="newPostList" varStatus="status">
                     <li class="recentcomments">
                             ${newPostList.insertId} -
-                        <a href="single-blog.html#tm-comment">
+                        <a href="/board/detail/${newPostList.nttId}">
                          ${newPostList.nttSj}
                         </a>
                     </li>
