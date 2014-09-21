@@ -56,6 +56,7 @@
                 if (AuthenticationUtils.isAuthenticated() == false) {
             %>
             <a href="/account/login" class="tm-btn small blue">로그인</a>
+            <a href="/account/signup" class="tm-btn small blue">가입</a>
             <%
             } else {
             %>

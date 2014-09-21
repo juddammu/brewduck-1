@@ -51,7 +51,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="/board/off-flavor">
                                             <img alt="Thumb" src="/resources/front/img/main2.jpg">
                                         </a>
                                     </li>
@@ -146,7 +146,7 @@
                         </div>
                         <p>
                                 ${newRecipeList.shortNotes}
-                            <a class="more-link" href="#">.. 더 보기</a>
+                            <a class="more-link" href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">.. 더 보기</a>
                         </p>
                     </div>
                 </div>

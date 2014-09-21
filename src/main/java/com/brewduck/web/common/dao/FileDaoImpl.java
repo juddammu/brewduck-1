@@ -37,17 +37,20 @@ public class FileDaoImpl implements FileDao {
 
     @Override
     public  int selectFileSeq() {
-        return sqlSessionTemplate.selectOne("Common.selectFileSeq");
+        //return sqlSessionTemplate.selectOne("Common.selectFileSeq");
+        return 1;
     }
 
     @Override
     public  int selectFileNo(Integer seq) {
-        return sqlSessionTemplate.selectOne("Common.selectFileNo",seq);
+        //return sqlSessionTemplate.selectOne("Common.selectFileNo",seq);
+        return 1;
     }
 
     @Override
     public  int selectFileCount(Integer seq) {
-        return sqlSessionTemplate.selectOne("Common.selectFileCount", seq);
+       // return sqlSessionTemplate.selectOne("Common.selectFileCount", seq);
+        return 1;
     }
 
     @Override

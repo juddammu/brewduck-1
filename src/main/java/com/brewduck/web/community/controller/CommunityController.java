@@ -38,6 +38,8 @@ public class CommunityController {
     private CommonService commonService;
 
 
+
+
     /**
      * <pre>
      * 자유게시판 리스트.

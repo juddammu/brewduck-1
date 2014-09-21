@@ -24,6 +24,7 @@
     <decorator name="public-content" page="public.jsp">
         <pattern>/public/recipe/*/*/*</pattern>
         <pattern>/board/main/*</pattern>
+        <pattern>/board/off-flavor</pattern>
         <pattern>/board/detail/*</pattern>
         <pattern>/board/write</pattern>
         <pattern>/board/editBoard/*</pattern>
@@ -79,6 +80,7 @@
         <pattern>/board/addBoard</pattern>
         <pattern>/board/writeBoard</pattern>
         <pattern>/board/writeReply*</pattern>
+
 
 
     </decorator>

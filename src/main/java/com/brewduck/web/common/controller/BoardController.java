@@ -30,6 +30,11 @@ public class BoardController {
     @Autowired
     private RecipeService recipeService;
 
+    @RequestMapping(value = "/off-flavor", method = RequestMethod.GET)
+    public String offFlavor(Model model, HttpServletRequest request) {
+
+        return "board/off-flavor";
+    }
 
     /**
      * <pre>
