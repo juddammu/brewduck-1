@@ -39,6 +39,8 @@ public class Fermentable implements Serializable {
     private Double yield;
     // 맥주의 색상 (SRM)
     private Double color;
+    // 맥주의 색상 코드
+    private String colorCode;
     // 끓인 후 추가되는 것의 유무 (Default : "FALSE")
     private Boolean addAfterBoil;
     // 원산지 국가 및 장소
@@ -320,6 +322,24 @@ public class Fermentable implements Serializable {
      */
     public void setColor(Double color) {
         this.color = color;
+    }
+
+    /**
+     * 맥주의 색상 코드
+     *
+     * @return 맥주의 색상 코드
+     */
+    public String getColorCode() {
+        return colorCode;
+    }
+
+    /**
+     * 맥주의 색상 코드
+     *
+     * @param colorCode 맥주의 색상
+     */
+    public void setColorCode(String colorCode) {
+        this.colorCode = colorCode;
     }
 
     /**

@@ -35,25 +35,21 @@
                                     <div class="box-body">
                                         <h3 class="text-light">원산지 / 타입</h3>
                                         <div>
-                                            <button type="button" class="btn btn-warning btn-xs" onclick="goOrigin('${HopDetail.origin}')">${HopDetail.originKorean} ( ${HopDetail.origin} )</button>
-                                            <button type="button" class="btn btn-primary btn-xs" onclick="goType('${HopDetail.type}')">${HopDetail.typeKorean}</button>
+                                            <button type="button" class="btn btn-info btn-sm" style="width: 49%" onclick="goOrigin('${HopDetail.origin}')">${HopDetail.originKorean} ( ${HopDetail.origin} )</button>
+                                            <button type="button" class="btn btn-primary btn-sm" style="width: 49%" onclick="goType('${HopDetail.type}')">${HopDetail.typeKorean}</button>
                                         </div>
                                         <div class="pull-left"> <span class="small-text muted">버튼을 클릭하시면 조회됩니다.</span> </div>
                                         <br>
                                         <h3 class="text-light">사용 용도</h3>
                                         <c:forEach items="${hopUsedForList}" var="usedFor">
-                                            <button type="button" class="btn btn-xs btn-support1">
-                                                ${usedFor.usedFor}
-                                            </button>
+                                            <button type="button" class="btn btn-sm btn-warning" style="width: 49%">${usedFor.usedFor}</button>
                                         </c:forEach>
                                         <br>
                                         <br>
                                         <p>${HopDetail.koreanNotes}</p>
                                         <h3 class="text-light">풍미</h3>
                                         <c:forEach items="${hopAromaList}" var="aromaName">
-                                            <button type="button" class="btn btn-xs btn-support1">
-                                                    ${aromaName.aromaName}
-                                            </button>
+                                            <button type="button" class="btn btn-sm btn-danger">${aromaName.aromaName}</button>
                                         </c:forEach>
                                     </div>
                                 </div>
@@ -62,7 +58,7 @@
                                         <div class="box-body">
                                             <h3 class="text-light">대체 홉</h3>
                                             <c:forEach items="${selectHopSubstitutesList}" var="substitutesName">
-                                                <button type="button" onclick="goDetail(' ${substitutesName.substitutesSeq}');" class="btn btn-primary btn-xs">
+                                                <button type="button" onclick="goDetail(' ${substitutesName.substitutesSeq}');" class="btn btn-success btn-sm" style="width: 20%">
                                                         ${substitutesName.substitutesName}
                                                 </button>
                                             </c:forEach>

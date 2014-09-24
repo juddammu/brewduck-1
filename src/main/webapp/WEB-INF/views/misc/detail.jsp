@@ -35,9 +35,9 @@
                                 <div class="col-md-3 style-gray">
                                     <div class="box-body">
                                         <h3 class="text-light">타입</h3 >
-                                            <button type="button" class="btn btn-warning btn-sm" onclick="goType('${MiscDetail.type}')">   ${MiscDetail.typeKorean}   </button>
+                                            <button type="button" class="btn btn-info btn-sm" style="width: 49%" onclick="goType('${MiscDetail.type}')">   ${MiscDetail.typeKorean}   </button>
                                         <h3 class="text-light">용도</h3 >
-                                            <button type="button" class="btn btn-warning btn-sm" onclick="goUseFor('${MiscDetail.useFor}')">   ${MiscDetail.useForKorean}   </button>
+                                            <button type="button" class="btn btn-warning btn-sm" style="width: 49%" onclick="goUseFor('${MiscDetail.useFor}')">   ${MiscDetail.useForKorean}   </button>
                                     </div>
                                 </div>
                                 <div class="col-md-9">
