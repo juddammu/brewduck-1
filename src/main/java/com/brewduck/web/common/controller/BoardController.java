@@ -36,10 +36,9 @@ public class BoardController {
         Board board = new Board();
         board.setBbsId(10);
 
-        Board boardList = boardService.selectBoardName(board);
-        List<Board> selectNewPostList = boardService.getNewPost(board);
+        List<Board> list = boardService.selectBoardList(board);
 
-        model.addAttribute("boardList", boardList);
+        model.addAttribute("list", list);
 
         return "board/off-flavor";
     }

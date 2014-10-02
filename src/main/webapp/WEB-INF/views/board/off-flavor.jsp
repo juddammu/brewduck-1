@@ -82,30 +82,17 @@
 </div>
 <div class="two-third last">
     <div class="tm-accordion tm-style3">
-        <div class="accordion-title">
-            <h3><a href="#">Acetaldehyde - 아세트알데히드</a></h3>
-        </div>
-        <div class="accordion-container">
-            <p>
+        <c:forEach items="${list}" var="list">
+            <div class="accordion-title">
+                <h3><a href="#">${list.nttSj}</a></h3>
+            </div>
+            <div class="accordion-container">
+                <p>
+                    <a href="#">${list.nttCn}</a>
+                </p>
+            </div>
+        </c:forEach>
 
-            </p>
-        </div>
-        <div class="accordion-title">
-            <h3><a href="#">Acetic - 아세틱, 신맛나는</a></h3>
-        </div>
-        <div class="accordion-container">
-            <p>
-
-            </p>
-        </div>
-        <div class="accordion-title">
-            <h3><a href="#">Almond - 아몬드</a></h3>
-        </div>
-        <div class="accordion-container">
-            <p>
-
-            </p>
-        </div>
     </div>
 </div>
 </div>
