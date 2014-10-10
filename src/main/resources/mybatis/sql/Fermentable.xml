@@ -248,6 +248,7 @@
               ,A.amount              amount
               ,A.yield               yield
               ,A.color               color
+              ,A.color_code          colorCode
               ,A.add_after_boil      addAfterBoil
               ,A.origin           origin
              ,(select B.attribute1desc
@@ -263,6 +264,7 @@
               ,A.max_in_batch        maxInBatch
               ,A.recommend_mash      recommendMash
               ,A.ibu_gal_per_lb      ibuGalPerLb
+              ,A.specific_gravity    specificGravity
               ,A.insert_id           insertId
               ,A.insert_date         insertDate
               ,A.update_id           updateId
@@ -282,6 +284,7 @@
               ,a.type                type
               ,b.yield               yield
               ,b.color               color
+              ,b.color_code          colorCode
               ,b.add_after_boil      addAfterBoil
               ,b.origin              origin
               ,b.supplier            supplier
@@ -293,6 +296,7 @@
               ,b.max_in_batch        maxInBatch
               ,b.recommend_mash      recommendMash
               ,b.ibu_gal_per_lb      ibuGalPerLb
+              ,A.specific_gravity    specificGravity
               ,b.insert_id           insertId
               ,b.insert_date         insertDate
               ,b.update_id           updateId

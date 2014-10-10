@@ -19,6 +19,7 @@
             ${list.yield} %
         </td>
         <td>
+            <i class="fa fa-beer" style="color:${list.colorCode};"></i>
             ${list.color}
         </td>
     </tr>

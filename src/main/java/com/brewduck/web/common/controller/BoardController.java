@@ -33,6 +33,13 @@ public class BoardController {
     @RequestMapping(value = "/off-flavor", method = RequestMethod.GET)
     public String offFlavor(Model model, HttpServletRequest request) {
 
+        Board board = new Board();
+        board.setBbsId(10);
+
+        List<Board> list = boardService.selectBoardList(board);
+
+        model.addAttribute("list", list);
+
         return "board/off-flavor";
     }
 

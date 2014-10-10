@@ -24,7 +24,7 @@
                         <!-- START INVOICE HEADER -->
                         <div class="row">
                             <div class="col-xs-8">
-                                <a href="/fermentable/${FermentableDetail.seq}/${FermentableDetail.titleInUrl}"><h1 class="text-light"><strong class="text-support3">${FermentableDetail.koreanName}</strong></h1></a>
+                                <h1 class="text-light"><strong class="text-support3"><a href="/fermentable/${FermentableDetail.seq}/${FermentableDetail.titleInUrl}">${FermentableDetail.koreanName}  </a></strong><a href="#"><i class="fa fa-beer" data-toggle="tooltip" data-placement="bottom" data-original-title="색상: ${FermentableDetail.color}°L"style="color:${FermentableDetail.colorCode};"></i></a></h1>
                             </div>
                         </div>
                         <!-- END INVOICE HEADER -->
@@ -32,25 +32,41 @@
                         <!-- START INVOICE DESCRIPTION -->
                         <div class="box box-tiles style-white">
                             <div class="row">
-                                <div class="col-md-3 style-gray">
-                                    <div class="box-body">
-                                        <h3 class="text-light">원산지 / 타입</h3 >
-                                        <div>
-                                            <button type="button" class="btn btn-warning btn-sm" onclick="goOrigin('${FermentableDetail.origin}')">${FermentableDetail.originKorean} ( ${FermentableDetail.origin} )</button>
-                                            <button type="button" class="btn btn-primary btn-sm" onclick="goType('${FermentableDetail.type}')">${FermentableDetail.typeKorean}</button>
+                                <div class="col-md-3 col-sm-3">
+                                    <article class="style-gray">
+                                        <div class="box-body">
+                                            <h3 class="text-light">원산지 / 타입</h3 >
+                                            <div>
+                                                <button type="button" class="btn btn-info btn-sm" style="width: 49%" onclick="goOrigin('${FermentableDetail.origin}')">${FermentableDetail.originKorean} ( ${FermentableDetail.origin} )</button>
+                                                <button type="button" class="btn btn-primary btn-sm" style="width: 49%" onclick="goType('${FermentableDetail.type}')">${FermentableDetail.typeKorean}</button>
+                                            </div>
+                                            <br>
+                                            <h3 class="text-light">제조사</h3>
+                                            <div>
+                                                <button type="button" class="btn btn-success btn-sm" style="width: 49%" onclick="goSupplier('${FermentableDetail.supplier}')">${FermentableDetail.supplier}</button>
+                                            </div>
                                         </div>
-                                        <br>
-                                        <h3 class="text-light">제조사</h3>
-                                        <div>
-                                            <button type="button" class="btn btn-primary btn-sm" onclick="goSupplier('${FermentableDetail.supplier}')">${FermentableDetail.supplier}</button>
-                                        </div>
-                                    </div>
+                                    </article>
                                 </div>
                                 <div class="col-md-9">
                                     <article class="style-white">
                                         <div class="box-body">
-                                            <h3 class="text-light">내용</h3 >
+                                            <h3 class="text-light">내용</h3>
                                             <p> ${FermentableDetail.notes}</p>
+                                            <br>
+                                            <h3 class="text-light">수치</h3>
+                                            <div class="row clearfix">
+                                                <div class="heading">
+                                                    <div>
+                                                        <p>
+                                                            <button class="btn btn-sm btn-info" style="width: 24%" data-toggle="tooltip" data-placement="bottom" data-original-title="SRM(몰트색상)°L"><i class="fa fa-check"></i> 몰트색상: ${FermentableDetail.color} °L</button>
+                                                            <button class="btn btn-sm btn-primary" style="width: 24%" data-toggle="tooltip" data-placement="bottom" data-original-title="Moisture(수분함량)%"><i class="fa fa-check"></i> 수분함량: ${FermentableDetail.moisture} %</button>
+                                                            <button class="btn btn-sm btn-warning" style="width: 24%" data-toggle="tooltip" data-placement="bottom" data-original-title="Protein(단백질)%"><i class="fa fa-check"></i> 단백질 : ${FermentableDetail.protein} %</button>
+                                                            <button class="btn btn-sm btn-danger" style="width: 24%" data-toggle="tooltip" data-placement="bottom" data-original-title="Specific Gravity(비중)"><i class="fa fa-check"></i> SG: ${FermentableDetail.specificGravity} </button>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </article>
                                 </div>
@@ -126,7 +142,7 @@
                             <thead>
                                 <tr>
                                     <th style="width:30px" >#</th>
-                                    <th>발효재료명</th>
+                                    <th style="width:120px">발효재료명</th>
                                     <th style="width:120px">영문명</th>
                                     <th style="width:70px">타입</th>
                                     <th style="width:70px">원산지</th>
