@@ -46,6 +46,7 @@
         <intercept-url pattern="/profile/**"   access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/user/profile" access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/community/**" access="hasRole('ROLE_ADMIN')"  />
+        <intercept-url pattern="/admin/main" access="hasRole('ROLE_ADMIN')"  />
         <intercept-url pattern="/"             access="permitAll" />
 
         <logout logout-url="/logout" success-handler-ref="logoutHandler" />

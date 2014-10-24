@@ -30,6 +30,9 @@ public interface RecipeDao {
 
     public List<Recipe> selectPublicRecipeMenuList(Recipe recipe);
 
+    public List<Recipe> searchRecipeList(Recipe recipe);
+
+
 
 
     /**

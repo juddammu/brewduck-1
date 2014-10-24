@@ -296,7 +296,7 @@
               ,b.max_in_batch        maxInBatch
               ,b.recommend_mash      recommendMash
               ,b.ibu_gal_per_lb      ibuGalPerLb
-              ,A.specific_gravity    specificGravity
+              ,b.specific_gravity    specificGravity
               ,b.insert_id           insertId
               ,b.insert_date         insertDate
               ,b.update_id           updateId

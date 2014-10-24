@@ -29,10 +29,10 @@
         </nav>
         -->
         <div class="tm-search">
-            <form>
-                <input type="text" autocomplete="on" placeholder="검색어를 입력해보세요." name="s" class="tm-input">
+            <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  action="/search/" name="searchForm" modelAttribute="recipe"  method="post">
+                <input type="text" autocomplete="on" placeholder="검색어를 입력해보세요." name="name" class="tm-input">
                 <button role="button" type="submit" class="tm-button">검색</button>
-            </form>
+            </form:form>
         </div>
     </div>
     <!--tm-wrap-->
