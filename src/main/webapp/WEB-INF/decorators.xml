@@ -32,6 +32,7 @@
 
     <decorator name="recipe-content" page="public-recipe.jsp">
         <pattern>/list/recipe/*/*</pattern>
+        <pattern>/search/*</pattern>
     </decorator>
 
     <decorator name="board-content" page="public-list.jsp">

@@ -114,7 +114,7 @@
 
             <div class="header-line-bottom">
                 <h2 class="tm-title">
-                    <span><i class="fa fa-magic"></i></span> 신규 레시피
+                    <span><i class="fa fa-magic"></i></span> 추천 레시피
                 </h2>
 
             </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="page-content">
         <div class="tm-content page-content-inner tm-col-4">
-            <c:forEach items="${newRecipeList}" var="newRecipeList" varStatus="status">
+            <c:forEach items="${recomendPublicRecipeList}" var="newRecipeList" varStatus="status">
                 <article>
                 <div class="tm-content-inner">
                     <div class="entry-thumbnail">
@@ -156,7 +156,53 @@
         </div>
     </div>
 
+    <!--tm-blog-->
+    <div id="tm-blog" class="tm-container tm-wrap tm-blog-style-grid">
+        <div class="tm-row">
 
+            <div class="header-line-bottom">
+                <h2 class="tm-title">
+                    <span><i class="fa fa-magic"></i></span> 신규 레시피
+                </h2>
+
+            </div>
+
+
+        </div>
+        <div class="page-content">
+            <div class="tm-content page-content-inner tm-col-4">
+                <c:forEach items="${newPublicRecipeList}" var="newRecipeList" varStatus="status">
+                    <article>
+                        <div class="tm-content-inner">
+                            <div class="entry-thumbnail">
+                                <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">
+                                    <img src="<c:url value='/download/downloadFile.do?'/>requestedFile=${newRecipeList.atchCoverFileName}" />
+                                </a>
+                            </div>
+                            <div class="entry-container">
+                                <div class="time">${newRecipeList.insertDate}</div>
+                                <h3>
+                                    <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">${newRecipeList.name}</a>
+                                </h3>
+                                <div class="meta">
+                                    by
+                                    <a href="/list/recipe/${newRecipeList.brewer}/${newRecipeList.brewerNm}" class="author">${newRecipeList.brewerNm}</a>
+                                    -
+                            <span class="incategory">
+                                <a href="#">${newRecipeList.styleName}</a>
+                            </span>
+                                </div>
+                                <p>
+                                        ${newRecipeList.shortNotes}
+                                    <a class="more-link" href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">.. 더 보기</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </c:forEach>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!--tm-page-page-footer-->

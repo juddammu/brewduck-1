@@ -74,11 +74,17 @@ public class HomeController {
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);
         */
-        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+        List<Recipe> selectRecomendPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+
+        Recipe NewRecipe = new Recipe();
+        NewRecipe.setStatus("2");
+        NewRecipe.setLimit(4);
+
+        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(NewRecipe);
 
 
-        model.addAttribute("newRecipeList", selectNewPublicRecipeList);
-
+        model.addAttribute("recomendPublicRecipeList", selectRecomendPublicRecipeList);
+        model.addAttribute("newPublicRecipeList", selectNewPublicRecipeList);
         model.addAttribute("hop", hop);
 
         return "home";

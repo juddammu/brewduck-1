@@ -56,6 +56,9 @@ public interface RecipeService {
      */
     public Recipe selectCategoryMain(Recipe recipe);
 
+    public List<Recipe> searchRecipeList(Recipe recipe);
+
+
     /**
      * <pre>
      * 맥주 레시피 스타일 리스트.
