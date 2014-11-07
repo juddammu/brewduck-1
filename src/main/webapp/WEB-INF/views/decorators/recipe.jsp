@@ -2,71 +2,148 @@
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title><decorator:title /> | BREWDUCK - 맥주의 모든것</title>
+    <title><decorator:title /> | BREWDUCK</title>
     <%@ include file="/WEB-INF/views/common/include/expert_header.jsp" %>
 </head>
 
-<body >
+<body role="document">
 
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+
+<!-- TOPNAV -->
+<%@ include file="/WEB-INF/views/common/include/expert_top_nav.jsp" %>
+<!-- END OF TOPNAV -->
+<!-- Comtainer -->
+<div class="container-fluid paper-wrap bevel tlbr">
 <%@ include file="/WEB-INF/views/common/include/expert_top_menu.jsp" %>
 
 
-<!-- BEGIN BASE-->
-<div id="base">
+<!-- SIDE MENU -->
+<div class="wrap-sidebar-content">
+<div id="skin-select">
+<a id="toggle">
+    <span class="fa icon-menu"></span>
+</a>
 
-<%@ include file="/WEB-INF/views/common/include/expert_left_menu.jsp" %>
-<!-- BEGIN SIDEBAR-->
+<div class="skin-part">
+    <%@ include file="/WEB-INF/views/common/include/expert_left_menu.jsp" %>
+</div>
+</div>
+<!-- #/skin-select -->
+<!-- END OF SIDE MENU -->
 
-<!-- END SIDEBAR -->
+<!-- Breadcrumb -->
+<div class="sub-board">
+                <span class="header-icon"><i class="fontello-home"></i>
+                </span>
+    <ol class="breadcrumb newcrumb ng-scope">
+        <li>
+            <a href="#">
+                            <span>
+                            </span>Table</a>
+        </li>
+        <li><a href="#">Table Dynamic</a>
+        </li>
+    </ol>
+    <div class="dark" style="visibility: visible;">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control search rounded id_search" placeholder="Search">
+            </div>
+        </form>
+    </div>
+</div>
+<!-- End of Breadcrumb -->
 
-<!-- BEGIN CONTENT-->
-<div id="content">
+
+
+
+
+
+<!-- CONTENT -->
+<div class="wrap-fluid" id="paper-bg">
+
     <decorator:body />
-</div><!--end #content-->
-<!-- END CONTENT -->
 
-</div><!--end #base-->
-<!-- END BASE -->
+</div>
+    <!-- #/paper bg -->
+</div>
+    <!-- ./wrap-sidebar-content -->
 
-<!-- BEGIN JAVASCRIPT -->
-<script src="/resources/expert/js/libs/jquery/jquery-1.11.0.min.js"></script>
-<script src="/resources/expert/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
-<script src="/resources/expert/js/libs/jquery-ui/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="/resources/expert/js/core/BootstrapFixed.js"></script>
-<script src="/resources/expert/js/libs/bootstrap/bootstrap.min.js"></script>
-<script src="/resources/expert/js/libs/spin.js/spin.min.js"></script>
-<script src="/resources/expert/js/libs/select2/select2.min.js"></script>
-<script src="/resources/expert/js/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-<script src="/resources/expert/js/libs/multi-select/jquery.multi-select.js"></script>
-<script src="/resources/expert/js/libs/inputmask/jquery.inputmask.bundle.min.js"></script>
-<script src="/resources/expert/js/libs/moment/moment.min.js"></script>
-<script src="/resources/expert/js/libs/typeahead/typeahead.min.js"></script>
-<script src="/resources/expert/js/libs/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="/resources/expert/js/libs/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="/resources/expert/js/core/demo/DemoFormComponents.js"></script>
-<script src="/resources/expert/js/libs/toastr/toastr.min.js"></script>
+    <!-- / END OF CONTENT -->
 
 
-<script src="/resources/expert/js/core/App.js"></script>
-<script src="/resources/expert/js/core/demo/Demo.js"></script>
-<!-- END JAVASCRIPT -->
-<script type="text/javascript">
-    $(document).ready(function(){
-        var nowUrl = location.pathname;
 
-        $(".main-menu li a").each(function(){
-            if( nowUrl.indexOf($(this).attr("href")) >= 0 ){
-                if( $(this).parent("li").parent("ul").html() != "" ) {
-                    $(this).addClass("active");
-                    $(this).parent("li").parent("ul").parent("li").addClass("active expanded");
-                }
-            }
-        });
 
-    });
-</script>
+
+
+
+<!-- FOOTER -->
+<div id="footer">
+    <div class="devider-footer-left"></div>
+    <div class="time">
+        <p id="spanDate"></p>
+        <p id="clock"></p>
+    </div>
+    <div class="copyright">Copyright &copy; 2014 <a href="http://ndesaintheme.com/">Themesmile</a> Made with <i class="fontello-heart-filled text-red"></i>
+    </div>
+    <div class="devider-footer"></div>
+    <ul>
+        <li><i class="fa fa-facebook-square"></i>
+        </li>
+        <li><i class="fa fa-twitter-square"></i>
+        </li>
+        <li><i class="fa fa-instagram"></i>
+        </li>
+    </ul>
+</div>
+<!-- / FOOTER -->
+</div>
+<!-- Container -->
+
+
+
+<!--
+================================================== -->
+<!-- Main jQuery Plugins -->
+<script type='text/javascript' src="/resources/brewing/js/jquery.js"></script>
+
+<script type='text/javascript' src='/resources/brewing/js/bootstrap.js'></script>
+<script type='text/javascript' src='/resources/brewing/js/date.js'></script>
+<script type='text/javascript' src='/resources/brewing/js/slimscroll/jquery.slimscroll.js'></script>
+<script type='text/javascript' src='/resources/brewing/js/jquery.nicescroll.min.js'></script>
+<script type='text/javascript' src='/resources/brewing/js/sliding-menu.js'></script>
+<script type='text/javascript' src='/resources/brewing/js/scriptbreaker-multiple-accordion-1.js'></script>
+<script type='text/javascript' src='/resources/brewing/js/tip/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src="/resources/brewing/js/donut-chart/jquery.drawDoughnutChart.js"></script>
+<script type='text/javascript' src="/resources/brewing/js/tab/jquery.newsTicker.js"></script>
+<script type='text/javascript' src="/resources/brewing/js/tab/app.ticker.js"></script>
+<script type='text/javascript' src='/resources/brewing/js/app.js'></script>
+
+<script type='text/javascript' src='/resources/brewing/js/vegas/jquery.vegas.js'></script>
+<script type='text/javascript' src='/resources/brewing/js/image-background.js'></script>
+<script type="text/javascript" src="/resources/brewing/js/jquery.tabSlideOut.v1.3.js"></script>
+<script type="text/javascript" src="/resources/brewing/js/bg-changer.js"></script>
+
+<script src="/resources/brewing/js/datatables/jquery.dataTables.js" type="text/javascript"></script>
+<script src="/resources/brewing/js/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+
+<script src="/resources/brewing/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="/resources/brewing/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="/resources/brewing/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="/resources/brewing/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="/resources/brewing/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+
+
+
+<!-- page script -->
 <decorator:getProperty property="page.local_script"></decorator:getProperty>
 
+
 </body>
+
 </html>

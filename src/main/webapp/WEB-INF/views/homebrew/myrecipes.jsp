@@ -2,115 +2,155 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<section>
-    <ol class="breadcrumb">
-        <li><a href="#">홈</a></li>
-        <li class="active"><a href="#">재료 데이터베이스</a></li>
-    </ol>
-    <div class="section-body">
 
-        <!-- BEGIN BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/style/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
-                            <div class="form-group">
-                                <div class="col-md-2">
-                                    <label class="control-label">이름</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
-                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form:form>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END BASIC FORM INPUTS -->
+<div class="row">
+    <div class="col-sm-12">
+        <ul class="list-unstyled list-inline mail-btn">
+            <li> <i class="fontello-pencil-1"></i> &nbsp;<b> 레시피 작성</b>
+            <li> <i class="fontello-paper-plane"></i> &nbsp;<b>보내기</b>
+            </li>
+            <li> <i class="fontello-rss"></i><b>담아온 레시피<small>68</small></b>
+            </li>
+            <li> <i class="fontello-trash-2"></i><b>휴지통<small>23</small></b>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined" id="result_list">
-                    <div class="box-head">
-                        <header><h4 class="text-light">레시피 <strong>목록</strong></h4></header>
-                    </div>
-                    <div class="box-body">
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>레시피명</th>
-                                <th>스타일</th>
-                                <th>배치용량</th>
-                                <th>레시피 완성도</th>
-                                <th class="text-right1" style="width:90px">액션</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${recipeList}" var="list">
-                            <tr>
-                                <td>
-                                    <a href="/homebrew/publish/${list.seq}">
-                                        <c:choose>
-                                            <c:when test="${list.status=='2'}">
-                                                <button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="공개중"><i class="fa fa-unlock"></i></button>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="비공개중"><i class="fa fa-lock"></i></button>
-                                            </c:otherwise>
-                                        </c:choose>
-
-
-                                    </a>
-                                </td>
-                                <td><a href="/homebrew/${list.seq}/${list.titleInUrl}">${list.name}</a></td>
-                                <td>${list.styleName}</td>
-                                <td>${list.batchSize}리터</td>
-                                <td>
-                                    <c:choose>
-                                        <c:when test="${list.completeness=='0'}">
-                                            <div class="progress no-margin"><div class="progress-bar progress-bar-danger" style="width: 25%"></div></div>
-                                        </c:when>
-                                        <c:when test="${list.completeness=='1'}">
-                                            <div class="progress no-margin"><div class="progress-bar progress-bar-warning" style="width: 50%"></div></div>
-                                        </c:when>
-                                        <c:when test="${list.completeness=='2'}">
-                                            <div class="progress no-margin"><div class="progress-bar progress-bar-success" style="width: 75%"></div></div>
-                                        </c:when>
-                                        <c:when test="${list.completeness=='3'}">
-                                            <div class="progress no-margin"><div class="progress-bar progress-bar-info" style="width: 100%"></div></div>
-                                        </c:when>
-                                        <c:otherwise>
-                                            -
-                                        </c:otherwise>
-                                    </c:choose>
-                                </td>
-                                <td class="text-right">
-                                    <a href="/homebrew/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="자세히 보기"><i class="fa fa-pencil"></i></button></a>
-                                    <a href="/homebrew/delete/${list.seq}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="삭제"><i class="fa fa-trash-o"></i></button></a>
-                                </td>
-                            </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END FORM TOOLS -->
-
-    </div><!--end .section-body -->
+<!-- CONTENT MAIL -->
+<div class="col-sm-12">
+<div class="mail_header">
+    <div class="row">
+        <div class="col-sm-6">
+            <div style="margin-right:10px" class="btn-group pull-left">
+                <div class="btn btn-sm btn-default bg-amber">
+                    <input type="checkbox" style="margin:0 5px;padding:0;position:relative;top:2px;">All</div>
+                <button type="button" class="btn btn-sm btn-default dropdown-toggle bg-amber" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">전체</a>
+                    </li>
+                    <li><a href="#">공개</a>
+                    </li>
+                    <li><a href="#">비공개</a>
+                    </li>
+                </ul>
+            </div>
 
 
 
-</section>
+            <div style="margin-right:10px" class="btn-group pull-left">
+                <button type="button" class="btn btn-sm btn-default dropdown-toggle bg-amber" data-toggle="dropdown">More
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-ban"></i> Spam</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a>
+                    </li>
+                </ul>
+            </div>
 
+            <button style="margin-right:10px" type="button" data-color="#39B3D7" data-opacity="0.95" class="btn btn-sm btn-default button test pull-left bg-amber">
+                <span class="fontello-loop"></span>&nbsp;&nbsp;Refresh</button>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="btn-group  pull-right ">
+                <button type="button" class="btn btn-sm btn-default bg-amber">
+                    <span class="fontello-left-open-outline"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm bg-amber">
+                    <span class="fontello-right-open-outline"></span>
+                </button>
+            </div>
+
+            <div class="btn-group pull-right " style="margin-right:10px;">
+                <button type="button" class="btn btn-default btn-sm bg-amber">1-50 of 124</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content-mail" class="bg-amber">
+
+    <div class="box-body table-responsive no-padding">
+<!-- THE MESSAGES -->
+        <table class="table table-hover">
+        <thead>
+            <tr>
+            <th></th>
+            <th></th>
+            <th>레시피명</th>
+            <th>스타일</th>
+            <th>배치용량</th>
+            <th>레시피 완성도</th>
+        </tr>
+        </thead>
+            <c:forEach items="${recipeList}" var="list">
+            <tr class="unread">
+                <td class="small-col">
+                    <input type="checkbox" />
+                </td>
+                <td>
+                    <a href="/homebrew/publish/${list.seq}">
+                        <c:choose>
+                            <c:when test="${list.status=='2'}">
+                                <span class="label label-primary">OPEN</span>
+                            </c:when>
+                            <c:otherwise>
+                                <span class="status-metro status-disabled">CLOSE</span>
+                            </c:otherwise>
+                        </c:choose>
+                    </a>
+                </td>
+                <td>
+                    <a href="/homebrew/${list.seq}/${list.titleInUrl}">${list.name}</a>
+                </td>
+                <td>${list.styleName}</td>
+                <td>${list.batchSize}리터</td>
+                <td>
+                    <c:choose>
+                        <c:when test="${list.completeness=='0'}">
+                            <div class="progress no-margin"><div class="progress-bar progress-bar-danger" style="width: 25%"></div></div>
+                        </c:when>
+                        <c:when test="${list.completeness=='1'}">
+                            <div class="progress no-margin"><div class="progress-bar progress-bar-warning" style="width: 50%"></div></div>
+                        </c:when>
+                        <c:when test="${list.completeness=='2'}">
+                            <div class="progress no-margin"><div class="progress-bar progress-bar-success" style="width: 75%"></div></div>
+                        </c:when>
+                        <c:when test="${list.completeness=='3'}">
+                            <div class="progress no-margin"><div class="progress-bar progress-bar-info" style="width: 100%"></div></div>
+                        </c:when>
+                        <c:otherwise>
+                            -
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+            </tr>
+            </c:forEach>
+        </table>
+    </div>
+<!-- /.table-responsive -->
+
+
+</div>
+
+</div>
+</div>
+
+
+<!-- #/paper bg -->
 <content tag="local_script">
+
     <script>
     </script>
 </content>

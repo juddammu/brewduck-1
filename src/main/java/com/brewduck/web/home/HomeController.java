@@ -230,17 +230,37 @@ public class HomeController {
         return "new_home";
     }
 
-    @RequestMapping(value = "/default", method = RequestMethod.GET)
+    @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String basic(Model model,
                              HttpServletRequest request) {
 
 
-        Account account = AuthenticationUtils.getUser();
-        model.addAttribute("account", account);
+        Hop hop = hopService.selectRandomHop();
+        Recipe recipe = new Recipe();
+        recipe.setStatus("2");
+        recipe.setLimit(4);
+        recipe.setMainDisplayYn("2");
 
-        logger.warn("this is default page");
 
-        return "decorators/default";
+        /* 잠시 보류
+        List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
+        model.addAttribute("hop", hop);
+        model.addAttribute("hopAromaList", hopAromaList);
+        */
+        List<Recipe> selectRecomendPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+
+        Recipe NewRecipe = new Recipe();
+        NewRecipe.setStatus("2");
+        NewRecipe.setLimit(4);
+
+        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(NewRecipe);
+
+
+        model.addAttribute("recomendPublicRecipeList", selectRecomendPublicRecipeList);
+        model.addAttribute("newPublicRecipeList", selectNewPublicRecipeList);
+        model.addAttribute("hop", hop);
+
+        return "main";
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)

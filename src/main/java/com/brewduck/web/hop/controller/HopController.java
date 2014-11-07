@@ -53,9 +53,12 @@ public class HopController {
      * @return 맥주 홉 메인
      */
     @RequestMapping(value =  {"/", ""}, method = RequestMethod.GET)
-    public String main(Model model) {
-        Account account = AuthenticationUtils.getUser();
-        model.addAttribute("account", account);
+    public String main(Model model, Hop paramHop) {
+
+        // 맥주 홉 목록 조회
+        List<Hop> list = hopService.selectHopList(paramHop);
+        model.addAttribute("list", list);
+
         return "hop/index";
     }
 
