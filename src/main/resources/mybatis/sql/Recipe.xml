@@ -12,6 +12,7 @@
               ,type                  type
               ,style_seq             styleSeq
               ,(SELECT B.KOREAN_NAME FROM STYLE B WHERE style_seq = B.SEQ) styleName
+              ,(SELECT B.STYLE_LETTER FROM STYLE B WHERE style_seq = B.SEQ) styleLetter
               ,brewer                brewer
               ,(SELECT C.name FROM account C WHERE C.id = brewer) brewerNm
               ,asst_brewer           asstBrewer

@@ -2,162 +2,178 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<section id="main_data" >
-    <ol class="breadcrumb">
-        <li><a href="#">홈</a></li>
-        <li class="active">레시피 상세</li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> ${recipeDetail.name} <small>${recipeDetail.styleName}</small></h3>
-    </div>
-    <div class="section-body">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-printable style-transparent">
-                    <div class="box-head">
-                        <div class="tools">
-                            <div class="btn-group">
-                                <a class="btn btn-warning" id="clipboard-btn" href="javascript:;"><i class="fa fa-copy"></i> 클립보드</a>
-                            </div>
-                            <div class="btn-group">
-                                <a class="btn btn-warning" id="kakao-link-btn" href="javascript:;"><i class="fa fa-link"></i> 카톡으로</a>
-                            </div>
-                            <div class="btn-group">
-                                <a class="btn btn-primary" href="javascript:void(0);" onclick="javascript:window.print();"><i class="fa fa-print"></i> 출력</a>
-                            </div>
-                        </div>
-                        <div class="clip_button">Copy To Clipboard</div>
-                        <div class="clip_button">Copy This Too!</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box">
+            <div class="box-header">
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                    <span class="box-btn" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </span>
+                    <span class="box-btn" data-widget="remove"><i class="fa fa-times"></i>
+                    </span>
+                </div>
+                <h3 class="box-title fontello-doc"><small>${recipeDetail.styleName}</small></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <!-- Main content -->
+                <section class="content invoice">
+                <div class="row no-print">
+                    <div class="col-xs-12">
+                        <button class="btn pull-right bg-red"><i class="fa fa-download"></i> PDF 로 다운로드</button>
+                        <button class="btn pull-right btn-warning"  style="margin-right: 5px;" id="clipboard-btn" href="javascript:;"><i class="fa fa-copy"></i> 복사</button>
                     </div>
-                    <div class="box-body style-white">
-                        <!-- START INVOICE HEADER -->
-                        <div class="row">
-                            <div class="col-xs-8">
-                                <h1 class="text-light"><strong class="text-support3"> ${recipeDetail.name}</strong></h1>
-                            </div>
-                            <div class="col-xs-4 text-right">
-                                <h1 class="text-light text-gray-light">
-                                <c:choose>
-                                    <c:when test="${recipeDetail.type=='1'}">
-                                        <small>완전 곡물 - All Grain</small>
-                                    </c:when>
-                                    <c:when test="${recipeDetail.type=='2'}">
-                                        <small>부분곡물 - Partial Mash</small>
-                                    </c:when>
-                                    <c:when test="${recipeDetail.type=='3'}">
-                                        <small>원액 캔 - Extract</small>
-                                    </c:when>
-                                </c:choose>
-                                </h1>
+                </div>
+                    <!-- title row -->
+                    <div class="row">
+                        <div class="col-xs-12 invoice-header">
+                            <h2 class="page-header text-red">
+                                <i class="fa fa-globe"></i> ${recipeDetail.name}
+                                <small style="font-size:12px;" class="pull-right">
+                                    <c:choose>
+                                        <c:when test="${recipeDetail.type=='1'}">
+                                            완전 곡물 - All Grain
+                                        </c:when>
+                                        <c:when test="${recipeDetail.type=='2'}">
+                                            부분곡물 - Partial Mash
+                                        </c:when>
+                                        <c:when test="${recipeDetail.type=='3'}">
+                                            원액 캔 - Extract
+                                        </c:when>
+                                    </c:choose>
+                                </small>
+                            </h2>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- info row -->
+                    <div class="row invoice-info">
+                        <div class="col-sm-4 invoice-col">
+                            <p class="lead">SPEC</p>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <th style="width:50%">Style:</th>
+                                        <td>${recipeDetail.styleSeq}${recipeDetail.styleLetter}. ${recipeDetail.styleName}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Efficiency:</th>
+                                        <td>${recipeDetail.efficiency} %</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Color / Calories</th>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <th>OG / FG</th>
+                                        <td>1.054 / 1.010</td>
+                                    </tr>
+                                    <tr>
+                                        <th>ABV:</th>
+                                        <td>$265.24</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IBU's:</th>
+                                        <td>$265.24</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Batch Size:</th>
+                                        <td>${recipeDetail.batchSize} L</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Boil Time:</th>
+                                        <td>${recipeDetail.boilTime} 분</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
-                        <!-- END INVOICE HEADER -->
+                        <!-- /.col -->
+                        <div class="col-sm-8 invoice-col">
+                            <p class="lead">NOTE</p>
+                            <table class="table">
+                                <tr>
+                                    <td>${recipeDetail.notes} </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h2 class="box-title"></h2>
+                    <!-- /.row -->
+                    <div class="row invoice-info">
+                        <div class="col-sm-12 invoice-col">
+                            <p class="lead">발효 재료 <small>Fermentables</small></p>
+                            <div class="table-responsive">
+                                <table class="table">
 
-                        <br/>
-                        <!-- START INVOICE DESCRIPTION -->
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="well">
-                                    <div class="clearfix">
-                                        <div class="pull-left text-left"> ${recipeDetail.notes} </div>
-                                    </div>
-                                </div>
-                            </div><!--end .col-md-4 -->
-                        </div><!--end .row -->
-                        <!-- END INVOICE DESCRIPTION -->
-
-                        <br/>
-                        <!-- START INVOICE PRODUCTS -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="table-responsive no-margin">
-                                <table class="table table-hover table-striped no-margin">
-                                    <thead>
-                                    <tr>
-                                        <td colspan="2">
-                                            <h3 class="text-light opacity-70">발효 재료 <small>Fermentables</small></h3>
+                                <thead>
+                                <tr>
+                                    <th>재료명</th>
+                                    <th>수량</th>
+                                    <th>사용방법</th>
+                                    <th>색상</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${recipeDetail.fermentables}" var="fermentables" varStatus="i">
+                                    <tr class="bg-white">
+                                        <td>${fermentables.koreanName }</td>
+                                        <td>${fermentables.amount} kg</td>
+                                        <td>
+                                            <c:choose>
+                                                <c:when test="${fermentables.fermentableUse=='1'}">
+                                                    당화 - Mash
+                                                </c:when>
+                                                <c:when test="${fermentables.fermentableUse=='2'}">
+                                                    우려내기 - Steep
+                                                </c:when>
+                                                <c:when test="${fermentables.fermentableUse=='3'}">
+                                                    끊임 - Boil
+                                                </c:when>
+                                                <c:when test="${fermentables.fermentableUse=='4'}">
+                                                    후반 끓임 - Late Boil
+                                                </c:when>
+                                                <c:otherwise>
+                                                    -
+                                                </c:otherwise>
+                                            </c:choose>
                                         </td>
-                                        <td style="text-align: right;" colspan="3">
-                                            <h3 class="text-light opacity-70"><small>수율: ${recipeDetail.efficiency} % &nbsp; 배치용량: ${recipeDetail.batchSize} L</small></h3>
-                                        </td>
+                                        <td>${fermentables.color} °L</td>
                                     </tr>
-                                    <tr>
-                                        <th style="width:60px" class="text-center">#</th>
-                                        <th class="text-left">재료명</th>
-                                        <th style="width:140px" class="text-right">수량</th>
-                                        <th style="width:150px" class="text-right">사용방법</th>
-                                        <th style="width:90px" class="text-right">색상</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <c:forEach items="${recipeDetail.fermentables}" var="fermentables" varStatus="i">
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td>${fermentables.koreanName }</td>
-                                            <td class="text-right">${fermentables.amount} kg</td>
-                                            <td class="text-right">
-                                                <c:choose>
-                                                    <c:when test="${fermentables.fermentableUse=='1'}">
-                                                        당화 - Mash
-                                                    </c:when>
-                                                    <c:when test="${fermentables.fermentableUse=='2'}">
-                                                        우려내기 - Steep
-                                                    </c:when>
-                                                    <c:when test="${fermentables.fermentableUse=='3'}">
-                                                        끊임 - Boil
-                                                    </c:when>
-                                                    <c:when test="${fermentables.fermentableUse=='4'}">
-                                                        후반 끓임 - Late Boil
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        -
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </td>
-                                            <td class="text-right">${fermentables.color} °L</td>
-                                        </tr>
-                                    </c:forEach>
-                                    <tr>
-                                        <td class="text-right hidden-border"><strong></strong></td>
-                                        <td class="text-right hidden-border" colspan="4">
-                                            <strong id="srmText" name="srmText" class="text-lg text-support3"> </strong>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                </div>
+                                </c:forEach>
+                                </tbody>
+                            </table>
                             </div>
-                        </div><!--end .row -->
-                        <!-- END INVOICE PRODUCTS -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="table-responsive no-margin">
-                                    <table class="table table-hover table-striped no-margin">
-                                    <thead>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- Table row -->
 
+                    <!-- /.row -->
+                    <div class="row invoice-info">
+                        <h3 class="box-title"></h3>
+                        <div class="col-sm-12 invoice-col">
+                            <p class="lead">홉  <small>Hops</small></p>
+                            <div class="table-responsive">
+                                <table class="table">
+
+                                    <thead>
                                     <tr>
-                                        <td colspan="2">
-                                            <h3 class="text-light opacity-70">홉 <small>Hops</small></h3>
-                                        </td>
-                                        <td style="text-align: right;" colspan="6">
-                                            <h3 class="text-light opacity-70"><small>끓임시간: ${recipeDetail.boilTime} 분</small></h3>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-left">재료명</th>
-                                        <th style="width:140px" class="text-right">수량</th>
-                                        <th style="width:120px" class="text-right">용도</th>
-                                        <th style="width:100px" class="text-right">시간</th>
-                                        <th style="width:110px" class="text-right">형태</th>
-                                        <th style="width:90px" class="text-right">Alpha</th>
+                                        <th>재료명</th>
+                                        <th>수량</th>
+                                        <th>용도</th>
+                                        <th>시간</th>
+                                        <th>형태</th>
+                                        <th>Alpha</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <c:forEach items="${recipeDetail.hops}" var="hops" varStatus="i">
-                                        <tr>
+                                        <tr class="bg-white">
                                             <td>${hops.koreanName }</td>
-                                            <td class="text-right">${hops.amount} g</td>
-                                            <td class="text-right">
+                                            <td >${hops.amount} g</td>
+                                            <td >
                                                 <c:choose>
                                                     <c:when test="${hops.hopsUse=='1'}">
                                                         당화 - Mash
@@ -179,8 +195,8 @@
                                                     </c:otherwise>
                                                 </c:choose>
                                             </td>
-                                            <td class="text-right">${hops.time} min</td>
-                                            <td class="text-right">
+                                            <td >${hops.time} min</td>
+                                            <td >
                                                 <c:choose>
                                                     <c:when test="${hops.form=='1'}">
                                                         Plug
@@ -199,116 +215,122 @@
                                                     </c:otherwise>
                                                 </c:choose>
                                             </td>
-                                            <td class="text-right">${hops.alpha} %</td>
+                                            <td >${hops.alpha} %</td>
                                         </tr>
                                     </c:forEach>
-                                    <tr>
-                                        <td class="text-right hidden-border"><strong></strong></td>
-                                        <td class="text-right hidden-border" colspan="4">
-                                            <strong class="text-lg text-support3">  </strong>
-                                        </td>
-                                    </tr>
                                     </tbody>
                                 </table>
-                                </div>
-                            </div><!--end .col-md-12 -->
-                        </div><!--end .row -->
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- Table row -->
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="table-responsive no-margin">
-                                <table class="table table-hover border table-striped no-margin">
-                                    <thead>
-
-                                    <tr>
-                                        <td colspan="4">
-                                            <h3 class="text-light opacity-70">효모 <small>Yeasts</small></h3>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>재료명</th>
-                                        <th class="text-right" style="width:140px" class="text-center">제조사</th>
-                                        <th class="text-right" style="width:100px" class="text-center">ID</th>
-                                        <th class="text-right" style="width:140px" class="text-center">발효온도</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <c:forEach items="${recipeDetail.yeasts}" var="yeasts" varStatus="i">
+                    <!-- /.row -->
+                    <div class="row invoice-info">
+                        <h3 class="box-title"></h3>
+                        <div class="col-sm-12 invoice-col">
+                            <p class="lead">효모 <small>Yeasts</small></p>
+                            <div class="table-responsive">
+                                    <table class="table table-condensed table-hover">
+                                        <thead>
                                         <tr>
-                                            <td>${yeasts.koreanName }</td>
-                                            <td class="text-right">${yeasts.laboratory }</td>
-                                            <td class="text-right">${yeasts.productId }</td>
-                                            <td class="text-right">${yeasts.minTemperature} ~ ${yeasts.maxTemperature}</td>
+                                            <th>재료명</th>
+                                            <th>제조사</th>
+                                            <th>ID</th>
+                                            <th>발효온도</th>
                                         </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
-                                </div>
-                            </div><!--end .col-md-12 -->
-                        </div><!--end .row -->
+                                        </thead>
+                                        <tbody>
+                                        <c:forEach items="${recipeDetail.yeasts}" var="yeasts" varStatus="i">
+                                            <tr>
+                                                <td>${yeasts.koreanName }</td>
+                                                <td>${yeasts.laboratory }</td>
+                                                <td>${yeasts.productId }</td>
+                                                <td>${yeasts.minTemperature} ~ ${yeasts.maxTemperature}</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        <!-- /.col -->
+                        </div>
+                    </div>
+                    <!-- Table row -->
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="table-responsive no-margin">
-                                <table class="table table-hover border table-striped no-margin">
-                                    <thead>
 
-                                    <tr>
-                                        <td colspan="4">
-                                            <h3 class="text-light opacity-70">첨가물 <small>Extras</small></h3>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>재료명</th>
-                                        <th style="width:140px" class="text-right">용량 g</th>
-                                        <th style="width:140px" class="text-right">시간 min</th>
-                                        <th style="width:90px" class="text-right">용도</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <c:forEach items="${recipeDetail.miscs}" var="miscs" varStatus="i">
-                                        <tr>
-                                            <td>${miscs.koreanName}</td>
-                                            <td class="text-right">${miscs.amount}</td>
-                                            <td class="text-right">${miscs.time}</td>
-                                            <td class="text-right">
-                                                <c:choose>
-                                                    <c:when test="${miscs.miscUse=='1'}">
-                                                        Mash
-                                                    </c:when>
-                                                    <c:when test="${miscs.miscUse=='2'}">
-                                                        Boil
-                                                    </c:when>
-                                                    <c:when test="${miscs.miscUse=='3'}">
-                                                        Primary
-                                                    </c:when>
-                                                    <c:when test="${miscs.miscUse=='4'}">
-                                                        Secondary
-                                                    </c:when>
-                                                    <c:when test="${miscs.miscUse=='5'}">
-                                                        Bottle
-                                                    </c:when>
-                                                    <c:when test="${miscs.miscUse=='6'}">
-                                                        Keg
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        -
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
-                                </div>
-                            </div><!--end .col-md-12 -->
-                        </div><!--end .row -->
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-    </div><!--end .section-body -->
-</section>
+                    <!-- /.row -->
+                    <!-- /.row -->
+<c:if test="${!empty recipeDetail.miscs}">
+    <div class="row invoice-info">
+        <h3 class="box-title"></h3>
+        <div class="col-sm-12 invoice-col">
+            <p class="lead">첨가물 <small>Extras</small></p>
+            <div class="table-responsive">
+                <table class="table table-condensed table-hover">
+
+                    <thead>
+                    <tr>
+                        <th>재료명</th>
+                        <th>용량</th>
+                        <th>시간 min</th>
+                        <th>용도</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${recipeDetail.miscs}" var="miscs" varStatus="i">
+                        <tr>
+                            <td>${miscs.koreanName}</td>
+                            <td>${miscs.amount}</td>
+                            <td>${miscs.time}</td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${miscs.miscUse=='1'}">
+                                        Mash
+                                    </c:when>
+                                    <c:when test="${miscs.miscUse=='2'}">
+                                        Boil
+                                    </c:when>
+                                    <c:when test="${miscs.miscUse=='3'}">
+                                        Primary
+                                    </c:when>
+                                    <c:when test="${miscs.miscUse=='4'}">
+                                        Secondary
+                                    </c:when>
+                                    <c:when test="${miscs.miscUse=='5'}">
+                                        Bottle
+                                    </c:when>
+                                    <c:when test="${miscs.miscUse=='6'}">
+                                        Keg
+                                    </c:when>
+                                    <c:otherwise>
+                                        -
+                                    </c:otherwise>
+                                </c:choose>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.col -->
+        </div>
+    </div>
+</c:if>
+
+                    <!-- Table row -->
+
+                    <!-- Table row -->
+
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
+
 <content tag="local_script">
     <script src="/resources/expert/js/kakao/kakao-1.0.11.min.js"></script>
     <script src="/resources/expert/js/clipboard/ZeroClipboard.js"></script>

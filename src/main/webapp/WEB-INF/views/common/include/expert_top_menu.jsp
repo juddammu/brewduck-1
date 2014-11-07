@@ -1,53 +1,259 @@
 <%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!-- BEGIN HEADER-->
-<header id="header">
+<div id="paper-top">
+<div class="row">
+<div class="col-sm-3 no-pad">
 
-    <!-- BEGIN NAVBAR -->
-    <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="btn btn-transparent btn-equal btn-menu" href="javascript:void(0);"><i class="fa fa-bars fa-lg"></i></a>
-            <div class="navbar-brand">
-                <a class="main-brand" href="#">
-                    <h3 class="text-light text-white"><span>맥덕<strong>모드</strong> </span><i class="fa fa-rocket fa-fw"></i></h3>
-                </a>
-            </div><!--end .navbar-brand -->
-            <a class="btn btn-transparent btn-equal navbar-toggle" data-toggle="collapse" data-target="#header-navbar-collapse"><i class="fa fa-wrench fa-lg"></i></a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="header-navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#"><i class="fa fa-home fa-lg"></i></a></li>
-            </ul><!--end .nav -->
-            <ul class="nav navbar-nav navbar-right">
-                <li><span class="navbar-devider"></span></li>
-                <li class="dropdown">
-                    <%
-                        if (AuthenticationUtils.isAuthenticated() == false) {
-                    %>
-                    <a href="/account/signup" class="navbar-profile text-bold">회원 가입</a>
-                    <%
-                    } else {
-                    %>
-                    <a href="javascript:void(0);" class="navbar-profile dropdown-toggle text-bold" data-toggle="dropdown">
-                        <%=AuthenticationUtils.getUser().getName()%>
-                        <i class="fa fa-fw fa-angle-down"></i> <img class="img-circle" src="/resources/expert/img/avatar1.jpg?1401297311" alt="" /></a>
-                    <ul class="dropdown-menu animation-slide">
-                        <li><a href="#">프로필 설정(준비중)</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/account/logout"><i class="fa fa-fw fa-power-off text-danger"></i> 로그아웃</a></li>
-                    </ul><!--end .dropdown-menu -->
-                    <%
-                        }
-                    %>
+    <a class="navbar-brand logo-text" href="#">BREWDUCK 2.0</a>
+
+    <ul class="list-unstyled list-inline noft-btn">
+        <li data-toggle="tooltip" data-placement="bottom" title="한국어"> <a href="?lang=ko" class="text-white"><i class="fontello-airport"></i></a>
+        </li>
+
+        <li data-toggle="tooltip" data-placement="bottom" title="영어"> <a href="?lang=en" class="text-white"><i class="fontello-globe"></i></a>
+        </li>
+
+    </ul>
+</div>
+
+<div class="col-sm-6 no-pad">
+    <ul style="margin-top:8px;" class="nav navbar-nav navbar-left list-unstyled list-inline text-gray date-list news-list">
+        <!-- <li><i class="fontello-doc-text text-gray"></i>
+        </li> -->
+        <!--li>
+            <ul class="list-unstyled top-newsticker text-gray news-list">
+                <li><i class="fontello-cloud-flash-inv text-gray"></i>&nbsp;&nbsp;
+                    <strong>김동석</strong> 님이, <b>Zombie Dust</b>를 만들고 있습니다.&nbsp;
+                </li>
+                <li>
+                    <strong>자유 게시판</strong> <b>경리단 길은....</b> &nbsp;
+                </li>
+            </ul>
+        </li-->
+    </ul>
+
+</div>
 
 
-                </li><!--end .dropdown -->
-            </ul><!--end .nav -->
-        </div><!--end #header-navbar-collapse -->
-    </nav>
-    <!-- END NAVBAR -->
 
-</header>
-<!-- END HEADER-->
+<div class="col-sm-3 no-pad">
+<!-- menu right -->
+<div class="navbar-right">
+<ul class="nav navbar-nav margin-left">
+<!-- Messages: style can be found in dropdown.less-->
+<li class="dropdown messages-menu">
+    <div class="drop-btn dropdown-toggle bg-white" data-toggle="dropdown">
+        <i class="fa  fa-envelope text-navy"></i>
+        <span class="label label-success label-drop">4</span>
+    </div>
+    <ul class="dropdown-menu drop-msg ">
+        <li class="header bg-green">
+            You have 4 messages</li>
+
+        <li>
+            <!-- inner menu: contains the actual data -->
+            <ul class="menu bg-white">
+                <li>
+                    <!-- start message -->
+                    <a href="#">
+                        <div class="pull-left">
+                            <img src="http://api.randomuser.me/portraits/thumb/men/37.jpg" class="img-circle" alt="User Image" />
+                        </div>
+                        <h4>
+                            Developer
+                            <!-- <small><i class="fa fa-clock-o"></i> 5 mins</small> -->
+                        </h4>
+                        <p>Bug fixed level 90%</p>
+                    </a>
+                </li>
+                <!-- end message -->
+                <li>
+                    <a href="#">
+                        <div class="pull-left">
+                            <img src="http://api.randomuser.me/portraits/thumb/women/36.jpg" class="img-circle" alt="user image" />
+                        </div>
+                        <h4>
+                            Aplication Support
+
+                        </h4>
+                        <p>There is some bug in your last submit</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pull-left">
+                            <img src="http://api.randomuser.me/portraits/thumb/men/35.jpg" class="img-circle" alt="user image" />
+                        </div>
+                        <h4>
+                            Lead Developers
+
+                        </h4>
+                        <p>Please check again your submit</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pull-left">
+                            <img src="http://api.randomuser.me/portraits/thumb/women/34.jpg" class="img-circle" alt="user image" />
+                        </div>
+                        <h4>
+                            Web Designer
+
+                        </h4>
+                        <p>Art has done</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pull-left">
+                            <img src="http://api.randomuser.me/portraits/thumb/men/33.jpg" class="img-circle" alt="user image" />
+                        </div>
+                        <h4>
+                            General Manager
+
+                        </h4>
+                        <p>Employed newslatter</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="footer-green">
+            <!--    <div class="btn btn-xs bg-opacity-white-btn  fontello-arrows-cw"></div>
+            <div class="btn btn-xs bg-opacity-white-btn fontello-trash"></div>
+            <div class="btn btn-xs bg-opacity-white-btn fontello-eye-outline"></div> -->
+        </li>
+    </ul>
+</li>
+<!-- Notifications: style can be found in dropdown.less -->
+<li class="dropdown notifications-menu">
+    <div class="drop-btn dropdown-toggle bg-white" data-toggle="dropdown">
+        <i class="fa  fa-exclamation-triangle text-navy"></i>
+        <span class="label bg-aqua label-drop">7</span>
+    </div>
+    <ul class="dropdown-menu drop-noft">
+
+        <li class="header bg-aqua">
+            You have 10 notifications</li>
+
+        <li>
+            <!-- inner menu: contains the actual data -->
+            <ul class="menu bg-white">
+                <li>
+                    <a href="#">
+                        <i class="fa icon-user"></i> New developer registered
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa icon-cloud"></i> 2 item commit
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa icon-download"></i> 3 members joined
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa icon-tag"></i> 22 sales made
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa icon-document"></i> New task from manager
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="footer-blue">
+
+        </li>
+    </ul>
+</li>
+<!-- Tasks: style can be found in dropdown.less -->
+<li class="dropdown tasks-menu">
+    <div class="drop-btn bg-white dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-briefcase text-navy"></i>
+        <span class="label bg-red label-drop">9</span>
+    </div>
+    <ul class="dropdown-menu drop-task">
+
+        <li class="header bg-red">
+            <span></span>You have 9 tasks</li>
+
+        <li>
+            <!-- inner menu: contains the actual data -->
+            <ul class="menu bg-white">
+                <li>
+                    <!-- Task item -->
+                    <div class="task-list-item">
+                        <h2>Wed, 25 Mar 2014
+                                                        <span>9:32
+                                                            <small>PM</small>
+                                                        </span>
+                        </h2>
+                        <h1>Finished task Testing.</h1>
+                        <p>Lorem ipsum dollor si amet amet jabang bayi</p>
+                    </div>
+                </li>
+                <!-- end task item -->
+                <li>
+                    <!-- Task item -->
+
+                    <div class="task-list-item">
+                        <h2>Thu, 23 Mar 2014
+                                                        <span>7:54
+                                                            <small>PM</small>
+                                                        </span>
+                        </h2>
+                        <h1>Creat the documentation</h1>
+                        <p>Lorem ipsum dollor si amet amet jabang bayi</p>
+                    </div>
+
+                </li>
+                <!-- end task item -->
+                <li>
+                    <!-- Task item -->
+                    <div class="task-list-item">
+                        <h2>Wed, 21 Mar 2014
+                                                        <span>12:43
+                                                            <small>PM</small>
+                                                        </span>
+                        </h2>
+                        <h1>Repository you file now!</h1>
+                        <p>Lorem ipsum dollor si amet amet jabang bayi</p>
+                    </div>
+                </li>
+                <!-- end task item -->
+                <li>
+                    <!-- Task item -->
+                    <div class="task-list-item">
+                        <h2>Fri, 20 Mar 2014
+                                                        <span>8:00
+                                                            <small>PM</small>
+                                                        </span>
+                        </h2>
+                        <h1>Fill the job description</h1>
+                        <p>Lorem ipsum dollor si amet amet jabang bayi</p>
+                    </div>
+                </li>
+                <!-- end task item -->
+            </ul>
+        </li>
+
+        <li class="footer-red">
+
+        </li>
+    </ul>
+</li>
+
+
+</ul>
+</div>
+</div>
+<!-- end of menu right -->
+</div>
+</div>

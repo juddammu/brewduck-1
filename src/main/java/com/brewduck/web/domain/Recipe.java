@@ -38,6 +38,9 @@ public class Recipe implements Serializable {
     // 맥주 스타일
     private Integer styleSeq;
 
+    // 스타일 레터
+    private String styleLetter;
+
     private List< Integer > styleSeqs;
     // 맥주 스타일 카테고리
     private Integer styleCategory;
@@ -77,6 +80,14 @@ public class Recipe implements Serializable {
     private String[] recipeFermantableUses;
 
     private String[] recipeFermantableTypes;
+
+    public String getStyleLetter() {
+        return styleLetter;
+    }
+
+    public void setStyleLetter(String styleLetter) {
+        this.styleLetter = styleLetter;
+    }
 
     //맥주 홉
     private List<Hop> hops;

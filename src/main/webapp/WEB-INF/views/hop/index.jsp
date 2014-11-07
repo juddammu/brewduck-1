@@ -3,329 +3,132 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<title>홉 데이터베이스 - HOP DATABASE</title>
 
-<section>
-    <ol class="breadcrumb">
-        <li><a href="/">홈</a></li>
-        <li class="active"><a href="#">재료 데이터베이스</a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/hop/">홉 데이터베이스 - HOP DATABASE</a></h3>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box">
+            <div class="box-header">
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                    <span class="box-btn" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </span>
+                    <span class="box-btn" data-widget="remove"><i class="fa fa-times"></i>
+                    </span>
+                </div>
+                <h3 class="box-title"><i class="fontello-doc"></i>
+                    <span>홉 데이터베이스 - HOP DATABASE</span>
+                </h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-sm-4">
+                        <input class="form-control" id="filter" placeholder="Search..." type="text" />
+                    </div>
+                    <div class="col-sm-2">
+                        <select class="filter-status form-control">
+                            <option value="둘다">둘다</option>
+                            <option value="향기">향기</option>
+                            <option value="쓴맛">쓴맛</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#clear" style="margin-left:10px;" class="pull-right btn bg-red clear-filter" title="clear filter">초기화</a>
+
+                    </div>
+
+                </div>
+                <table  id="footable-res2" class="demo footable-res footable metro-blue" data-filter="#filter" data-filter-text-only="true" data-page-size="30">
+                    <thead>
+                    <tr>
+                        <th data-hide="phone">
+                            순번
+                        </th>
+                        <th>
+                            이름
+                        </th>
+                        <th data-hide="phone">
+                            영문명
+                        </th>
+                        <th data-hide="phone">
+                            목적
+                        </th>
+                        <th data-hide="phone,tablet">
+                            원산지
+                        </th>
+                        <th>
+                            ALPHA
+                        </th>
+                        <th data-hide="phone,tablet">
+                            BETA
+                        </th>
+                        <th data-hide="phone,tablet">
+                            HSI
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${list}" var="list">
+                        <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
+                            <td>${list.seq}</td>
+                            <td> ${list.koreanName}</td>
+                            <td><a href="/hop/${list.seq}/${list.titleInUrl}">${list.name}</a></td>
+                            <td data-value="${list.typeKorean}"> ${list.typeKorean}</td>
+                            <td data-value="${list.originKorean}"> ${list.originKorean}</td>
+                            <td>
+                                <span class="status-metro status-disabled" title="Disabled">${list.alpha} %</span>
+                            </td>
+                            <td>
+                                <span class="status-metro status-disabled" title="Disabled">${list.beta} %</span>
+                            </td>
+                            <td>
+                                <span class="status-metro status-disabled" title="Disabled">${list.hsi} %</span>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <div class="pagination pagination-centered"></div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+                <br>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
     </div>
-    <div class="section-body">
-
-        <!-- BEGIN BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  name="searchForm" modelAttribute="paramHop">
-                            <input name="origin" type ="hidden" id="origin" value="">
-                            <input name="aroma" type ="hidden" id="aroma" value="">
-                            <div class="form-group">
-                                <div class="col-md-2">
-                                    <label class="control-label">이름</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
-                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-2">
-                                    <label class="control-label">특성</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="radio-inline">
-                                        <label>
-                                            <input id="allRadio" type="radio" name="type" value="" checked>
-                                            전체
-                                        </label>
-                                    </div>
-                                    <div class="radio-inline">
-                                        <label>
-                                            <input id="aromaRadio" type="radio" name="type" value="1">
-                                            향
-                                        </label>
-                                    </div>
-                                    <div class="radio-inline">
-                                        <label>
-                                            <input id="bittersRadio" type="radio" name="type" value="2">
-                                            쓴맛
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-2">
-                                    <label class="control-label">국가</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="input-group">
-                                    <p>
-                                    <button id="usButton" type="button" class="btn btn-support1 btn-sm" value="US" onclick="setOriginSearch('US')"> 미국</button>
-                                        <button id="deButton" type="button" class="btn btn-support1 btn-sm" value="DE" onclick="setOriginSearch('DE')"> </button>
-                                        <button id="ukButton" type="button" class="btn btn-support1 btn-sm" value="UK" onclick="setOriginSearch('UK')"> </button>
-                                        <button id="nzButton" type="button" class="btn btn-support1 btn-sm" value="NZ" onclick="setOriginSearch('NZ')"> </button>
-                                        <button id="auButton" type="button" class="btn btn-support1 btn-sm" value="AU" onclick="setOriginSearch('AU')"> </button>
-                                        <button id="siButton" type="button" class="btn btn-support1 btn-sm" value="SI" onclick="setOriginSearch('SI')"> </button>
-                                        <button id="etcButton" type="button" class="btn btn-support1 btn-sm" value="" onclick="setOriginSearch('ETC')"> </button>
-                                    </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            </form:form>
-
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END BASIC FORM INPUTS -->
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined" id="result_list">
-                    <div class="box-body no-padding style-white">
-                        <table class="table table-hover no-margin">
-                            <thead>
-                            <tr>
-                                <th class="small-cell"> </th>
-                                <th>이름</th>
-                                <th>영문명</th>
-                                <th>타입</th>
-                                <th>원산지</th>
-                                <th>ALPHA</th>
-                                <th>BETA</th>
-                                <th>HSI</th>
-                            </tr>
-                            </thead>
-                            <tbody id="result">
-                            </tbody>
-                        </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END FORM TOOLS -->
-
-    </div><!--end .section-body -->
-
-
-
-</section>
-
-
-<%--
-<div class="content">
-<div class="page-title"> <i class="icon-custom-left"></i>
-    <h3>홉 데이터베이스 - <span class="semi-bold">HOP DATABASE</span></h3>
 </div>
-<div class="row-fluid">
-<div class="span12">
-<div class="grid simple ">
-<div class="grid-title">
-    <form:form class="form-no-horizontal-spacing" id="searchForm"  name="searchForm" modelAttribute="paramHop">
-        <input name="origin" type ="hidden" id="origin" value=""> &lt;%&ndash;국가별&ndash;%&gt;
-        <input name="aroma" type ="hidden" id="aroma" value=""> &lt;%&ndash;전체/ 향 /쓴맛&ndash;%&gt;
 
-        <div class="row column-seperation">
-            <div class="col-md-6">
-                <h4>특성으로 찾기</h4>
-                <div class="row form-row">
-                    <div class="col-md-11 input-group">
-                        <input name="name" id="name" type="text"  class="form-control" placeholder="홉 이름" onkeypress="javascript:if(event.keyCode == 13){search();}">
-                       <span class="input-group-addon primary">
-                           <span class="arrow"></span>
-                            <i class="fa fa-align-justify"></i>
-                       </span>
-                    </div>
-                    <!--div class="col-md-1" id="loading">
-                        <img style="float: left;" alt="" src="/resources/landing/images/supersized-progress.gif" />
-                    </div-->
-                </div>
-                <div class="row form-row">
-                    <br>
-                    <div class="col-md-12">
-                        <div class="radio">
-                            <input id="allRadio" type="radio" name="type" value="" checked="checked">
-                            <label for="allRadio">전체</label>
-                            <input id="aromaRadio" type="radio" name="type" value="1">
-                            <label for="aromaRadio">향</label>
-                            <input id="bittersRadio" type="radio" name="type" value="2">
-                            <label for="bittersRadio">쓴맛</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row form-row">
-                    <br>
-                    <div class="col-md-12">
-                        <button id="usButton" type="button" class="btn btn-white btn-xs btn-mini" value="US"> </button>
-                        <button id="deButton" type="button" class="btn btn-white btn-xs btn-mini" value="DE"> </button>
-                        <button id="ukButton" type="button" class="btn btn-white btn-xs btn-mini" value="UK"> </button>
-                        <button id="nzButton" type="button" class="btn btn-white btn-xs btn-mini" value="NZ"> </button>
-                        <button id="auButton" type="button" class="btn btn-white btn-xs btn-mini" value="AU"> </button>
-                        <button id="siButton" type="button" class="btn btn-white btn-xs btn-mini" value="SI"> </button>
-                        <button id="etcButton" type="button" class="btn btn-white btn-xs btn-mini" value=""> </button>
-                    </div>
-
-
-
-                </div>
-                <div class="row form-row">
-                    <br>
-                    <br>
-                    <div class="col-md-12">
-                        <div id="aromaArea" class="checkbox check-default checkbox-circle">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h4>수치로 찾기 (기능 구현중)</h4>
-                <div class="row">
-                    <div class="slider sucess col-md-4">
-                        <span class="semi-bold">ALPHA</span>
-                        <p>Alpha 산 (α acids) 은 맥주의 생산에 있어서 가장 중요한 ...(더보기) </p>
-                    </div>
-                    <div class="slider warning col-md-8">
-                        <input type="text" class="slider-element form-control" value="" data-slider-min="1" data-slider-max="70" data-slider-step="1" data-slider-value="40" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
-                    </div>
-                </div>
-                <div class="row form-row">
-                    <div class="slider sucess col-md-4">
-                        <span class="semi-bold">BETA</span>
-                        <p>Beta 산은 ...(더보기) </p>
-                    </div>
-                    <div class="slider warning col-md-8">
-                        <input type="text" class="slider-element form-control" value="" data-slider-min="1" data-slider-max="70" data-slider-step="1" data-slider-value="40" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
-                    </div>
-                </div>
-                <div class="row form-row">
-                    <div class="slider col-md-4">
-                        <span class="semi-bold">HSI</span>
-                        <p>HSI는...(더보기) </p>
-                    </div>
-                    <div class="slider info col-md-8">
-                        <input type="text"  data-slider-value="[10,20]" data-slider-step="5" data-slider-max="100" data-slider-min="10" value="" class="slider-element form-control" data-slider-selection="after">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-actions">
-            <div class="pull-right">
-                <div id="search" class="btn btn-danger btn-cons" ><i class="icon-ok"></i> 조회</div>
-                <div id="fullSearch" class="btn btn-primary btn-cons" ><i class="icon-ok"></i> 전체 조회</div>
-            </div>
-        </div>
-    </form:form>
-</div>
-<div class="grid-body ">
-    <table class="table table-striped">
-    <thead>
-        <tr>
-            <th class="small-cell"> </th>
-            <th>이름</th>
-            <th>영문명</th>
-            <th>타입</th>
-            <th>원산지</th>
-            <th>ALPHA</th>
-            <th>BETA</th>
-            <th>HSI</th>
-        </tr>
-        </thead>
-        <tbody id="result" name="result">
-            <div class="progress progress-striped active progress-large" id="loading">
-                <div data-percentage="0%" style="width: 45%;" class="progress-bar progress-bar-success"></div>
-            </div>
-        </tbody>
-    </table>
-</div>
-</div>
-</div>
-</div>
-</div>--%>
 <content tag="local_script">
+
 <script>
-    function getNationCount(){
-        $.get("/hop/countHopOrigin", function(data, status){
-            //alert("US 값은 : " + data.usCnt + "\n" + "de 값은 : " + data.deCnt +
-            $("#usButton").html("("+data.usCntName +data.usCnt+" 건)"); /*미국*/
-            $("#deButton").html("("+data.deCntName +data.deCnt+" 건)"); /*독일*/
-            $("#ukButton").html("("+data.ukCntName +data.ukCnt+" 건)"); /*영국*/
-            $("#nzButton").html("("+data.nzCntName +data.nzCnt+" 건)"); /*뉴질랜드*/
-            $("#auButton").html("("+data.auCntName +data.auCnt+" 건)"); /*호주*/
-            $("#siButton").html("("+data.siCntName +data.siCnt+" 건)"); /*슬로베니아*/
-            $("#etcButton").html("("+data.etcCntName +data.etcCnt+" 건)"); /*기타*/
-        })
-    }
+    (function($) {
+        "use strict";
+        $('#footable-res2').footable().bind('footable_filtering', function(e) {
 
-    function getAromaList(){
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                e.clear = !e.filter;
+            }
+        });
 
-        var aromaHtml = "";
+        $('.clear-filter').click(function(e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+        });
 
-        $.get("/hop/getAromaList", function(data, status){
-            //alert("US 값은 : " + data.aromaName);
-
-            $.each(data, function(i){
-
-                aromaHtml = aromaHtml +  "<input id='aromaCode"+ data[i].aromaCode +"' type='checkbox' value='"+ data[i].aromaCode +"'>";
-                aromaHtml = aromaHtml +  "<label for='aromaCode"+ data[i].aromaCode +"'>"+data[i].aromaName+"</label>";
-
+        $('.filter-status').change(function(e) {
+            e.preventDefault();
+            $('table.demo').trigger('footable_filter', {
+                filter: $('#filter').val()
             });
-
-            $("#aromaArea").append(aromaHtml);
-
-        })
-    }
-
-    function search(){
-        $("#result").html("");
-        $("#result").load("/hop/list", $("#searchForm").serialize());
-
-    }
-
-    function goDetail(seq, titleInUrl){
-        location.href = "/hop/"+seq+"/"+titleInUrl;
-    }
-
-    function setOriginSearch(data){
-        $("#origin").val(data);
-        search();
-    }
-
-    function setAromaSearch(){
-        $("#aroma").val(jQuery(this).val());
-        search();
-    }
-
-    $(document).ready(function() {
-
-        getNationCount();                  //원산지별 카운트 (조회영역)
-        getAromaList();
-        search();                          //조회
-        $("#name").focus();              //이름칸으로 포커스
-
-        $("#search").click(function(){
-        search();
         });
-
-        $("#fullSearch").click(function(){
-            $("#origin").val('');             //TODO : 초기화 함수로 뺄것
-            $("#name").val('');
-            $("#aroma").val('');
-            $("#allRadio").attr('checked', true);
-            search();
-        });
-
-        $("#allRadio").click(setAromaSearch);
-        $("#aromaRadio").click(setAromaSearch);
-        $("#bittersRadio").click(setAromaSearch);
-    });
+    })(jQuery);
 </script>
 </content>
