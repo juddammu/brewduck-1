@@ -13,7 +13,7 @@
 <div id="tm-page-title">
     <div class="tm-wrap tm-table">
         <div class="tm-title-captions">
-            <a href="/board/editBoard/${writeBoard.nttId}"><h2 class="tm-entry-title">게시물 작성     <span class=""><i class="fa fa-book"></i></span></h2></a>
+            <a href="#" onclick="refresh()"><h2 class="tm-entry-title">게시물 작성     <span class=""><i class="fa fa-book"></i></span></h2></a>
         </div>
         <ul class="tm-breadcrumbs">
             <li>
@@ -23,7 +23,7 @@
                 <a href="/board/main/${writeBoard.bbsId}">${writeBoard.bbsNm}</a>
             </li>
             <li>
-                <a href="/board/editBoard/${writeBoard.nttId}">게시물 작성</a>
+                <a href="#" onclick="refresh()">게시물 작성</a>
             </li>
         </ul>
     </div>
@@ -670,6 +670,11 @@
                 }(),
                 "content": document.getElementById("sample_contents_source") /* 내용 문자열, 주어진 필드(textarea) 엘리먼트 */
             });
+        }
+
+        function refresh()
+        {
+            location.reload();
         }
 
         function goList(bbsId){

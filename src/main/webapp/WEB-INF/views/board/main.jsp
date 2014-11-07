@@ -38,7 +38,7 @@
                 <div class="entry-header">
                     <p>
                         <div class="tm-row">
-                            <form:form id="searchForm"  name="searchForm" modelAttribute="board">
+                            <form:form id="boardSerchForm"  name="boardSerchForm" modelAttribute="board">
                                 <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
                                 <input name="sort" id="sort" type="hidden"  class="form-control" value="">
                                 <div class="tm-search">
@@ -150,7 +150,7 @@
         function search(){
 
             $("#result").html("");
-            $("#result").load("/board/list", $("#searchForm").serialize());
+            $("#result").load("/board/list", $("#boardSerchForm").serialize());
 
         }
 
