@@ -44,6 +44,7 @@
         <pattern>/recipe/detail/*</pattern>
         <pattern>/recipe/main/*</pattern>
         <pattern>/recipe/create</pattern>
+        <pattern>/recipe/createtest</pattern>
         <pattern>/recipe/create2</pattern>
         <pattern>/recipe/insertRecipe</pattern>
         <pattern>/recipe/*/*</pattern>
