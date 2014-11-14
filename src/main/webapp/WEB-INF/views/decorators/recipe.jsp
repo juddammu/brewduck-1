@@ -124,7 +124,6 @@
 <script type='text/javascript' src="/resources/brewing/js/tab/app.ticker.js"></script>
 <script type='text/javascript' src='/resources/brewing/js/app.js'></script>
 
-<script type='text/javascript' src='/resources/brewing/select2/select2.js'></script>
 
 <script type='text/javascript' src='/resources/brewing/js/vegas/jquery.vegas.js'></script>
 <script type='text/javascript' src='/resources/brewing/js/image-background.js'></script>
