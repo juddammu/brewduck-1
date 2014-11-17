@@ -163,7 +163,7 @@
                     </select>
                     </br>
                     <a class="btn btn-app">
-                        <span class="badge bg-aqua">PASS</span>
+                        <span class="badge bg-blue">PASS</span>
                         <i class="fa fa-flask"></i> OG / FG
                     </a>
                     <a class="btn btn-app">
@@ -171,7 +171,7 @@
                         <i class="fa fontello-beer-1"></i> SRM
                     </a>
                     <a class="btn btn-app">
-                        <span class="badge bg-aqua">PASS</span>
+                        <span class="badge bg-blue">PASS</span>
                         <i class="fa fontello-bell"></i> IBU
                     </a>
                     <a class="btn btn-app">
@@ -212,6 +212,67 @@
 
 
             </div>
+            <h2 class="box-title"></h2>
+            <div class="row invoice-info">
+                <div class="col-lg-12">
+                    <div class="box-header">
+                        <!-- tools box -->
+                        <h3 class="page-header">
+                            발효 재료 <small>Fermentables</small>
+                            <button class="btn pull-right bg-red" style="margin-right: 5px;"><i class="fa fa-lemon-o"></i> :: 발효재료 추가</button>
+                        </h3>
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-12 invoice-col">
+
+                    <div class="table-responsive">
+                        <table class="table">
+
+                            <thead>
+                            <tr>
+                                <th>재료명</th>
+                                <th>수량</th>
+                                <th>사용방법</th>
+                                <th>색상</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${recipeDetail.fermentables}" var="fermentables" varStatus="i">
+                                <tr class="bg-white">
+                                    <td>${fermentables.koreanName }</td>
+                                    <td>${fermentables.amount} kg</td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${fermentables.fermentableUse=='1'}">
+                                                당화 - Mash
+                                            </c:when>
+                                            <c:when test="${fermentables.fermentableUse=='2'}">
+                                                우려내기 - Steep
+                                            </c:when>
+                                            <c:when test="${fermentables.fermentableUse=='3'}">
+                                                끊임 - Boil
+                                            </c:when>
+                                            <c:when test="${fermentables.fermentableUse=='4'}">
+                                                후반 끓임 - Late Boil
+                                            </c:when>
+                                            <c:otherwise>
+                                                -
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td>${fermentables.color} °L</td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- /.col -->
+            </div>
         </div>
         <!-- /.box-body -->
     </div>
@@ -219,281 +280,6 @@
 </div>
 </div>
 
-<div class="row">
-<div class="col-lg-12">
-
-<ul class="timeline">
-
-
-<!-- timeline item -->
-<li>
-    <i class="fa fontello-sunrise bg-green"></i>
-
-    <div class="timeline-item bg-white">
-        <h3 style="padding: 15px 20px 0 20px;" class="timeline-header text-white  no-border">
-            <span class="text-gray"><i class="fontello-doc"></i>&nbsp;&nbsp;신규 레시피</span>
-            <span class="text-gray pull-right fontello-wrench-outline"></span>
-        </h3>
-
-        <div class="timeline-body ">
-            <span>
-                <strong>Post&nbsp;&nbsp;</strong>from<i> &nbsp;&nbsp;Jennifer Paijo</i>
-                <small>25/6/2014</small>
-            </span>
-
-            <br>Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...
-        </div>
-        <div class='timeline-footer'>
-            <a class="btn bg-white btn-xs">View comment</a>
-        </div>
-    </div>
-</li>
-<!-- END timeline item -->
-
-
-<!-- timeline item -->
-<li>
-    <i class="fa fontello-sun-1 bg-aqua"></i>
-
-    <div class="timeline-item bg-aqua">
-        <h3 style="padding: 15px 20px 0 20px;" class="timeline-header text-aqua  no-border">
-            <span class="text-gray"><i class="fa fa-twitter"></i>&nbsp;&nbsp;My Tweet</span>
-            <span class="text-white pull-right fontello-wrench-outline"></span>
-        </h3>
-
-        <div class="timeline-body">
-                                        <span>
-                                            <strong>Tweet&nbsp;&nbsp;</strong>from<i> &nbsp;&nbsp;Agus Anak Baik</i>
-                                            <small>23/6/2014</small>
-                                        </span>
-            <br>Take me to your leader! Switzerland is small and neutral! We are more like Germany, ambitious and misunderstood!
-        </div>
-        <div class='timeline-footer'>
-            <a class="btn bg-aqua btn-flat btn-xs">View comment</a>
-        </div>
-    </div>
-</li>
-<!-- END timeline item -->
-
-<!-- timeline item -->
-<li>
-    <i class="fa fontello-cloud-sun-1 bg-red"></i>
-
-    <div class="timeline-item bg-red">
-        <h3 style="padding: 15px 20px 0 20px;" class="timeline-header text-red  no-border">
-            <span class="text-gray"><i class="fontello-users-outline"></i>&nbsp;&nbsp;Friends List</span>
-            <span class="text-white pull-right fontello-wrench-outline"></span>
-        </h3>
-
-        <div class="timeline-body">
-                                        <span>
-                                            <strong>New Frieds Added&nbsp;&nbsp;</strong>from<i> &nbsp;&nbsp;Bruce Wyne</i>
-                                            <small>25/6/2014</small>
-                                        </span>
-            <br>
-            <img src="http://api.randomuser.me/portraits/thumb/men/45.jpg" alt="..." class="img-circle">
-            <img src="http://api.randomuser.me/portraits/thumb/women/46.jpg" alt="..." class="margin img-circle">
-            <img src="http://api.randomuser.me/portraits/thumb/men/47.jpg" alt="..." class="margin img-circle">
-            <img src="http://api.randomuser.me/portraits/thumb/women/48.jpg" alt="..." class="margin img-circle">
-        </div>
-    </div>
-</li>
-<!-- END timeline item -->
-
-<!-- timeline item -->
-<li>
-    <i class="fa  fontello-rain-1 bg-orange"></i>
-
-    <div class="timeline-item bg-orange">
-        <h3 style="padding: 15px 20px 0 20px;" class="timeline-header text-orange  no-border">
-            <span class="text-gray"><i class="fontello-news"></i>&nbsp;&nbsp;News Article</span>
-            <span class="text-white pull-right fontello-wrench-outline"></span>
-        </h3>
-
-        <div class="timeline-body" style="padding:20px">
-                                        <span>
-                                            <strong>News&nbsp;&nbsp;</strong>from<i> &nbsp;&nbsp;Jennifer Paijo</i>
-                                            <small>25/6/2014</small>
-                                        </span>
-            <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus vitae neque eu mattis. Donec sit amet dui lorem. Vestibulum rhoncus mi non quam fringilla, ut rhoncus dolor pellentesque. Sed hendrerit augue sed elit fringilla euismod. Integer nec rhoncus nisl. Pellentesque vel commodo massa, a luctus ligula. Suspendisse mattis blandit dolor. Maecenas ac sollicitudin tellus, a scelerisque lectus. Ut in mi at justo suscipit pretium. Mauris eu ultrices nulla. Phasellus consequat erat odio, vitae dignissim ante fermentum nec.</p>
-
-
-        </div>
-        <div class='timeline-footer'>
-            <a class="btn bg-white btn-xs">View comment</a>
-        </div>
-    </div>
-</li>
-<!-- END timeline item -->
-<!-- timeline item -->
-<li>
-    <i class="fa fontello-moon-inv bg-blue"></i>
-
-    <div class="timeline-item bg-blue">
-        <h3 style="padding: 15px 20px 0 20px;" class="timeline-header text-blue  no-border">
-            <span class="text-gray"><i class="fontello-doc-text"></i>&nbsp;&nbsp;Table Content</span>
-            <span class="text-white pull-right fontello-wrench-outline"></span>
-        </h3>
-
-        <div class="timeline-body">
-                                        <span>
-                                            <strong>Table&nbsp;&nbsp;</strong>from<i> &nbsp;&nbsp;Jennifer Paijo</i>
-                                            <small>25/6/2014</small>
-                                        </span>
-            <br>
-            <table class="table table-bordered table-striped cf bg-amber">
-                <thead class="cf">
-                <tr>
-                    <th>Code</th>
-                    <th>Company</th>
-                    <th class="numeric">Price</th>
-                    <th class="numeric">Change</th>
-                    <th class="numeric">Change %</th>
-                    <th class="numeric">Open</th>
-                    <th class="numeric">High</th>
-                    <th class="numeric">Low</th>
-                    <th class="numeric">Volume</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>AAC</td>
-                    <td>AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
-                    <td class="numeric">$1.38</td>
-                    <td class="numeric">-0.01</td>
-                    <td class="numeric">-0.36%</td>
-                    <td class="numeric">$1.39</td>
-                    <td class="numeric">$1.39</td>
-                    <td class="numeric">$1.38</td>
-                    <td class="numeric">9,395</td>
-                </tr>
-                <tr>
-                    <td>AAD</td>
-                    <td>ARDENT LEISURE GROUP</td>
-                    <td class="numeric">$1.15</td>
-                    <td class="numeric">+0.02</td>
-                    <td class="numeric">1.32%</td>
-                    <td class="numeric">$1.14</td>
-                    <td class="numeric">$1.15</td>
-                    <td class="numeric">$1.13</td>
-                    <td class="numeric">56,431</td>
-                </tr>
-                <tr>
-                    <td>AAX</td>
-                    <td>AUSENCO LIMITED</td>
-                    <td class="numeric">$4.00</td>
-                    <td class="numeric">-0.04</td>
-                    <td class="numeric">-0.99%</td>
-                    <td class="numeric">$4.01</td>
-                    <td class="numeric">$4.05</td>
-                    <td class="numeric">$4.00</td>
-                    <td class="numeric">90,641</td>
-                </tr>
-                <tr>
-                    <td>ABC</td>
-                    <td>ADELAIDE BRIGHTON LIMITED</td>
-                    <td class="numeric">$3.00</td>
-                    <td class="numeric">+0.06</td>
-                    <td class="numeric">2.04%</td>
-                    <td class="numeric">$2.98</td>
-                    <td class="numeric">$3.00</td>
-                    <td class="numeric">$2.96</td>
-                    <td class="numeric">862,518</td>
-                </tr>
-                <tr>
-                    <td>ABP</td>
-                    <td>ABACUS PROPERTY GROUP</td>
-                    <td class="numeric">$1.91</td>
-                    <td class="numeric">0.00</td>
-                    <td class="numeric">0.00%</td>
-                    <td class="numeric">$1.92</td>
-                    <td class="numeric">$1.93</td>
-                    <td class="numeric">$1.90</td>
-                    <td class="numeric">595,701</td>
-                </tr>
-                <tr>
-                    <td>ABY</td>
-                    <td>ADITYA BIRLA MINERALS LIMITED</td>
-                    <td class="numeric">$0.77</td>
-                    <td class="numeric">+0.02</td>
-                    <td class="numeric">2.00%</td>
-                    <td class="numeric">$0.76</td>
-                    <td class="numeric">$0.77</td>
-                    <td class="numeric">$0.76</td>
-                    <td class="numeric">54,567</td>
-                </tr>
-                <tr>
-                    <td>ACR</td>
-                    <td>ACRUX LIMITED</td>
-                    <td class="numeric">$3.71</td>
-                    <td class="numeric">+0.01</td>
-                    <td class="numeric">0.14%</td>
-                    <td class="numeric">$3.70</td>
-                    <td class="numeric">$3.72</td>
-                    <td class="numeric">$3.68</td>
-                    <td class="numeric">191,373</td>
-                </tr>
-                <tr>
-                    <td>ADU</td>
-                    <td>ADAMUS RESOURCES LIMITED</td>
-                    <td class="numeric">$0.72</td>
-                    <td class="numeric">0.00</td>
-                    <td class="numeric">0.00%</td>
-                    <td class="numeric">$0.73</td>
-                    <td class="numeric">$0.74</td>
-                    <td class="numeric">$0.72</td>
-                    <td class="numeric">8,602,291</td>
-                </tr>
-                <tr>
-                    <td>AGG</td>
-                    <td>ANGLOGOLD ASHANTI LIMITED</td>
-                    <td class="numeric">$7.81</td>
-                    <td class="numeric">-0.22</td>
-                    <td class="numeric">-2.74%</td>
-                    <td class="numeric">$7.82</td>
-                    <td class="numeric">$7.82</td>
-                    <td class="numeric">$7.81</td>
-                    <td class="numeric">148</td>
-                </tr>
-                <tr>
-                    <td>AGK</td>
-                    <td>AGL ENERGY LIMITED</td>
-                    <td class="numeric">$13.82</td>
-                    <td class="numeric">+0.02</td>
-                    <td class="numeric">0.14%</td>
-                    <td class="numeric">$13.83</td>
-                    <td class="numeric">$13.83</td>
-                    <td class="numeric">$13.67</td>
-                    <td class="numeric">846,403</td>
-                </tr>
-                <tr>
-                    <td>AGO</td>
-                    <td>ATLAS IRON LIMITED</td>
-                    <td class="numeric">$3.17</td>
-                    <td class="numeric">-0.02</td>
-                    <td class="numeric">-0.47%</td>
-                    <td class="numeric">$3.11</td>
-                    <td class="numeric">$3.22</td>
-                    <td class="numeric">$3.10</td>
-                    <td class="numeric">5,416,303</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class='timeline-footer'>
-            <a class="btn bg-white  btn-xs">View comment</a>
-        </div>
-    </div>
-</li>
-<!-- END timeline item -->
-
-<li>
-    <i class="fa  fontello-moon-inv bg-balck"></i>
-</li>
-</ul>
-</div>
-</div>
 
 
 <content tag="local_script">
