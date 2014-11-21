@@ -39,7 +39,11 @@
         <pattern>/board/list</pattern>
     </decorator>
 
-    <decorator name="expert" page="recipe.jsp">
+    <decorator name="expert2" page="recipe2.jsp">
+        <pattern>/common/code/list</pattern>
+    </decorator>
+
+    <decorator name="expert" page="recipe2.jsp">
         <pattern>/recipe/</pattern>
         <pattern>/recipe/detail/*</pattern>
         <pattern>/recipe/main/*</pattern>
