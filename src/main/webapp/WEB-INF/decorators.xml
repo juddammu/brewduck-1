@@ -43,7 +43,7 @@
         <pattern>/common/code/list</pattern>
     </decorator>
 
-    <decorator name="expert" page="recipe2.jsp">
+    <decorator name="expert" page="recipe.jsp">
         <pattern>/recipe/</pattern>
         <pattern>/recipe/detail/*</pattern>
         <pattern>/recipe/main/*</pattern>
