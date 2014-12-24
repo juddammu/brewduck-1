@@ -26,8 +26,8 @@
     </appender>
 
 	<logger name="jdbc.resultsettable" additivity="false">
-		<level value="info" />
-		<appender-ref ref="console" />
+		<level value="fatal" />
+		<appender-ref ref="FILE" />
 	</logger>
 
 	<logger name="jdbc.audit" additivity="false">
@@ -36,8 +36,8 @@
 	</logger>
 
 	<logger name="jdbc.resultset" additivity="false">
-		<level value="warn" />
-		<appender-ref ref="console" />
+		<level value="fatal" />
+		<appender-ref ref="FILE" />
 	</logger>
 
 	<logger name="jdbc.sqltiming" additivity="false">

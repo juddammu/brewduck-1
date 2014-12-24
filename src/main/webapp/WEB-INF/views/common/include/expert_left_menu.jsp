@@ -10,7 +10,7 @@
     </h3>
 </li>
 <li>
-    <a class="tooltip-tip" href="/fermentable/" title="Dashboard">
+    <a class="tooltip-tip" href="/style/" title="Dashboard">
         <i class="fontello-beer-1"></i>
         <span><spring:message code="menu.style"/></span>
 

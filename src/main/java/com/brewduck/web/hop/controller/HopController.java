@@ -1,10 +1,5 @@
 package com.brewduck.web.hop.controller;
 
-import com.brewduck.framework.security.AuthenticationUtils;
-import com.brewduck.web.common.service.BoardService;
-import com.brewduck.web.common.service.CommonService;
-import com.brewduck.web.domain.Account;
-import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.Hop;
 import com.brewduck.web.hop.service.HopService;
 import org.slf4j.Logger;
@@ -13,13 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -42,6 +36,8 @@ public class HopController {
     @Autowired
     private HopService hopService;
 
+    private MessageSource messageSource;
+
 
 
     /**
@@ -53,11 +49,20 @@ public class HopController {
      * @return 맥주 홉 메인
      */
     @RequestMapping(value =  {"/", ""}, method = RequestMethod.GET)
-    public String main(Model model, Hop paramHop) {
+    public String main(Model model, Hop paramHop, HttpServletRequest req) {
 
+        CookieLocaleResolver resolver = new CookieLocaleResolver();
+        Locale loc = resolver.resolveLocale(req);
+        String nationCode = String.valueOf(loc);
+
+        paramHop.setNationCode(nationCode);
         // 맥주 홉 목록 조회
         List<Hop> list = hopService.selectHopList(paramHop);
         model.addAttribute("list", list);
+
+
+
+
 
         return "hop/index";
     }

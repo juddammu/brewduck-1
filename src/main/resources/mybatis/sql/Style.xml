@@ -42,7 +42,7 @@
               ,mouthfeel          mouthfeel
               ,overall            overall
               ,comment            comment
-          FROM brewduckdb.STYLE
+          FROM STYLES
     </sql>
 
     <select id="Style.selectStyleList" parameterType="Style" resultType="Style">
@@ -78,7 +78,7 @@
 
     <insert id="Style.insertStyle" parameterType="Style">
         <!-- 맥주 스타일 저장 -->
-        INSERT INTO brewduckdb.STYLE (
+        INSERT INTO STYLES (
              name
             ,korean_name
             ,version
@@ -137,7 +137,7 @@
 
     <update id="updateStyle" parameterType="Style">
         <!-- 맥주 스타일 수정 -->
-        UPDATE brewduckdb.STYLE
+        UPDATE STYLES
         <trim prefix="SET" suffixOverrides=",">
             <if test="koreanName != null">
                 korean_name = #{koreanName},
@@ -214,7 +214,7 @@
 
     <update id="deleteStyle" parameterType="Style">
         <!-- 맥주 스타일 삭제 -->
-        UPDATE brewduckdb.STYLE
+        UPDATE STYLES
            SET delete_id = #{deleteId}
               ,delete_date = now()
          WHERE name = #{name}

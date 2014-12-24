@@ -21,7 +21,11 @@ public class Hop implements Serializable {
     // 홉 영문명
     private String name;
 
+    //SEO URL
     private String titleInUrl;
+
+    //언어 설정
+    private String nationCode;
 
     // 홉 한글명
     private String koreanName;
@@ -130,6 +134,14 @@ public class Hop implements Serializable {
     public String shortKoreanNotes;
 
     public String brewer;
+
+    public String getNationCode() {
+        return nationCode;
+    }
+
+    public void setNationCode(String nationCode) {
+        this.nationCode = nationCode;
+    }
 
     public Double getGravity() {
         return gravity;

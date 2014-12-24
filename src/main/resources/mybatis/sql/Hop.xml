@@ -35,7 +35,7 @@
               ,A.update_date      updateDate
               ,A.delete_id        deleteId
               ,A.delete_date      deleteDate
-          FROM brewduckdb.HOPS A
+          FROM HOPS A
     </sql>
 
     <sql id="Hop.selectRecipeHop">
@@ -64,8 +64,8 @@
               ,b.update_date      updateDate
               ,b.delete_id        deleteId
               ,b.delete_date      deleteDate
-          FROM brewduckdb.RECIPE_HOPS a
-              LEFT OUTER join brewduckdb.HOPS b on a.hops_seq = b.seq
+          FROM RECIPE_HOPS a
+              LEFT OUTER join HOPS b on a.hops_seq = b.seq
          WHERE a.hops_seq = b.seq
     </sql>
 
@@ -76,6 +76,9 @@
             <if test="name != null">
                 AND (NAME like CONCAT('%', #{name}, '%')
                 OR korean_name like CONCAT('%', #{name}, '%'))
+            </if>
+            <if test="nationCode != null">
+                AND nation_code = #{nationCode}
             </if>
             <if test="type != null and type != 0">AND type =  #{type} </if>
             <choose>
@@ -178,7 +181,7 @@
 
     <insert id="Hop.insertHop" parameterType="Hop">
         <!-- 맥주 홉 저장 -->
-        INSERT INTO brewduckdb.HOPS (
+        INSERT INTO HOPS (
         name
         ,korean_name
         ,version
@@ -225,7 +228,7 @@
 
     <update id="Hop.updateHop" parameterType="Hop">
         <!-- 맥주 홉 수정 -->
-        UPDATE brewduckdb.HOPS
+        UPDATE HOPS
         <trim prefix="SET" suffixOverrides=",">
             <if test="koreanName != null">
                 korean_name = #{koreanName},
@@ -287,7 +290,7 @@
 
     <update id="Hop.deleteHop" parameterType="Hop">
         <!-- 맥주 홉 삭제 -->
-        UPDATE brewduckdb.HOPS
+        UPDATE HOPS
         SET delete_id = #{deleteId}
         ,delete_date = now()
         WHERE name = #{name}
