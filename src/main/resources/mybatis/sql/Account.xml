@@ -33,7 +33,10 @@
               ,authority
               ,activation
           FROM ACCOUNT
-         WHERE name = #{name}
+        WHERE 1 = 1
+        <if test="name != null">
+            AND name = #{name}
+        </if>
     </select>
 
     <insert id="Account.insertAccount"

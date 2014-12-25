@@ -1,7 +1,5 @@
 package com.brewduck.web.style.controller;
 
-import com.brewduck.framework.security.AuthenticationUtils;
-import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Style;
 import com.brewduck.web.style.service.StyleService;
 import org.slf4j.Logger;
@@ -9,7 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -44,12 +45,9 @@ public class StyleController {
      */
 
     @RequestMapping(value =  {"/", ""}, method = RequestMethod.GET)
-    public String main(Model model) {
-        logger.info("style index");
-
-        Account account = AuthenticationUtils.getUser();
-
-        model.addAttribute("account", account);
+    public String main(Model model, Style paramStyle) {
+        List<Style> list = styleService.selectStyleList(paramStyle);
+        model.addAttribute("list", list);
 
         return "style/index";
     }

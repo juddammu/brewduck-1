@@ -3,118 +3,130 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<title>스타일 데이터베이스 - STYLE DATABASE(BJCP 2008)</title>
-
-<section>
-<ol class="breadcrumb">
-    <li><a href="/">홈</a></li>
-    <li class="active"><a href="#">재료 데이터베이스</a></li>
-</ol>
-<div class="section-header">
-    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/style/">스타일 데이터베이스 - STYLE DATABASE</a></h3>
-</div>
-<div class="section-body">
-
-<!-- BEGIN BASIC FORM INPUTS -->
 <div class="row">
     <div class="col-lg-12">
-    <div class="box box-outlined">
-    <div class="box-body no-padding">
-    <form:form class="form-horizontal form-banded form-bordered" action="/style/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
-    <div class="form-group">
-        <div class="col-md-2">
-            <label class="control-label">이름</label>
-        </div>
-        <div class="col-md-10">
-            <div class="input-group">
-                <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
-                <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+        <div class="box">
+            <div class="box-header">
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                    <span class="box-btn" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </span>
+                    <span class="box-btn" data-widget="remove"><i class="fa fa-times"></i>
+                    </span>
+                </div>
+                <h3 class="box-title"><i class="fontello-doc"></i>
+                    <span>스타일 - BJCP-2008</span>
+                </h3>
             </div>
-        </div>
-    </div>
-    </form:form>
-    </div><!--end .box-body -->
-    </div><!--end .box -->
-    </div><!--end .col-lg-12 -->
-</div><!--end .row -->
-<!-- END BASIC FORM INPUTS -->
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-sm-4">
+                        <input class="form-control" id="filter" placeholder="Search..." type="text" />
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#clear" style="margin-left:10px;" class="pull-right btn bg-red clear-filter" title="clear filter">초기화</a>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="box box-outlined" id="result_list">
-                <div class="box-body no-padding style-white">
-                    <table class="table table-hover no-margin">
-                        <thead>
-                        <tr>
-                            <th style="width:30px"  class="mobile-device">#</th>
-                            <th style="width:150px" class="mobile-device">스타일명</th>
-                            <th style="width:150px" class="mobile-device hidden">영문명</th>
-                            <th style="width:70px"  class="mobile-device hidden">초기비중</th>
-                            <th style="width:70px"  class="mobile-device hidden">최종비중</th>
-                            <th style="width:70px"  class="mobile-device hidden">IBU</th>
-                            <th style="width:70px"  class="mobile-device hidden-600">SRM</th>
-                            <th style="width:70px"  class="mobile-device hidden">ABV</th>
+                    </div>
+
+                </div>
+                <table  id="footable-res2" class="demo footable-res footable metro-blue" data-filter="#filter" data-filter-text-only="true" data-page-size="30">
+                    <thead>
+                    <tr>
+                        <th data-hide="phone">
+                            #
+                        </th>
+                        <th>
+                            스타일명
+                        </th>
+                        <th data-hide="phone">
+                            영문명
+                        </th>
+                        <th data-hide="phone">
+                            초기비중
+                        </th>
+                        <th data-hide="phone,tablet">
+                            최종비중
+                        </th>
+                        <th>
+                            IBU
+                        </th>
+                        <th data-hide="phone,tablet">
+                            SRM
+                        </th>
+                        <th data-hide="phone,tablet">
+                            ABV
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${list}" var="list">
+                        <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
+                            <td>${list.categoryNumber}${list.styleLetter}</td>
+                            <td> ${list.koreanName}</td>
+                            <td> ${list.name}</td>
+                            <td>
+                                <span class="badge">${list.ogMax}</span>
+                            </td>
+                            <td>
+                                <span class="badge">${list.fgMax}</span>
+                            </td>
+                            <td>
+                                <span class="badge">${list.ogMax}</span>
+                            </td>
+                            <td>
+                                    ${list.colorMax} °L
+                            </td>
+                            <td>
+                                    ${list.abvMax} %
+                            </td>
                         </tr>
-                        </thead>
-                        <tbody id="result">
-                        </tbody>
-                    </table>
-                </div><!--end .box-body -->
-            </div><!--end .box -->
-        </div><!--end .col-lg-12 -->
-    </div><!--end .row -->
-<!-- END FORM TOOLS -->
-
-</div><!--end .section-body -->
-
-
-
-</section>
+                    </c:forEach>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <div class="pagination pagination-centered"></div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+                <br>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
 
 <content tag="local_script">
+
     <script>
-        function search(){
-            //getLoadingTime();
-            var box = $("#result_list");
-            boostbox.App.addBoxLoader(box);
+        (function($) {
+            "use strict";
+            $('#footable-res2').footable().bind('footable_filtering', function(e) {
 
-            $("#result").html("");
-            $( "#result" ).load("/style/list", $("#searchForm").serialize(), function( response, status, xhr ) {
-
-                if ( status == "success" ) {
-                    boostbox.App.removeBoxLoader(box);
+                var selected = $('.filter-status').find(':selected').text();
+                if (selected && selected.length > 0) {
+                    e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+                    e.clear = !e.filter;
                 }
             });
-        }
 
-        function goDetail(seq, titleInUrl){
-            location.href = "/style/"+seq+"/"+titleInUrl;
-        }
-
-
-          $(document).ready(function() {
-
-            search();                          //조회
-            $("#name").focus();              //이름칸으로 포커스
-
-            $("#search").click(function(){
-                search();
+            $('.clear-filter').click(function(e) {
+                e.preventDefault();
+                $('.filter-status').val('');
+                $('table.demo').trigger('footable_clear_filter');
             });
 
-            $('#name').on('keyup', function(){
-                if(($('#name').val()).length > 2){
-                    search();
-                }
-
+            $('.filter-status').change(function(e) {
+                e.preventDefault();
+                $('table.demo').trigger('footable_filter', {
+                    filter: $('#filter').val()
+                });
             });
-
-
-            $("#fullSearch").click(function(){
-                $("#name").val('');             //TODO : 초기화 함수로 뺄것
-                $("#origin").val('');
-                $("#aroma").val('');
-                search();
-            });
-        });
+        })(jQuery);
     </script>
 </content>
