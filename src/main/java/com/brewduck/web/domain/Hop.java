@@ -15,7 +15,7 @@ import java.util.Date;
  * @author  chacha
  * @version 1.0, 2014.02.16
  */
-public class Hop implements Serializable {
+public class Hop extends Common implements Serializable {
     private static final long serialVersionUID = 1L;
 
     // 홉 영문명
@@ -39,7 +39,7 @@ public class Hop implements Serializable {
     // 홉 사용 용도
     private String hopsUse;
     // 홉 사용 용도의 시간(단위:분)
-    private Integer time;
+
     // 설명
     private String notes;
     // 설명
@@ -267,10 +267,6 @@ public class Hop implements Serializable {
         this.koreanName = koreanName;
     }
 
-    public Integer getVersion() {
-        return version;
-    }
-
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -299,13 +295,6 @@ public class Hop implements Serializable {
         this.hopsUse = hopsUse;
     }
 
-    public Integer getTime() {
-        return time;
-    }
-
-    public void setTime(Integer time) {
-        this.time = time;
-    }
 
     public String getNotes() {
         return notes;
