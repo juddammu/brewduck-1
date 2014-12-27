@@ -9,7 +9,6 @@
  */
 package com.brewduck.web.common.service;
 
-import com.brewduck.web.domain.Code;
 import com.brewduck.web.domain.Common;
 
 import java.util.List;
@@ -23,7 +22,10 @@ import java.util.List;
  */
 public interface CodeService {
 
-    //서브 카테고리 리스트
-    public List<Code> getSelectCodeList(Code code) throws RuntimeException;
+    //코드 마스터
+    public List<Common> selectCodeMaster() throws RuntimeException;
+
+    //서브 디테일
+    public List<Common> selectCodeList(Common common) throws RuntimeException;
 
 }

@@ -2,24 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Common">
 
-    <!-- 공통코드 목록 -->
+    <!-- 공통코드 -->
     <sql id="Common.selectCode">
         SELECT
-            A.common_code, A.description,
-            A.attribute1, A.attribute1desc,
-            A.attribute2, A.attribute2desc,
-            A.attribute3, A.attribute3desc,
-            A.attribute4, A.attribute4desc,
-            A.attribute5, A.attribute5desc
-          FROM commons A
+            COMMON_SET    commonSet,
+            COMMON_CODE   commonCode,
+            NOTES         notes,
+            NAME          name,
+            INSERT_ID     insertId,
+            INSERT_DATE   insertDate,
+            UPDATE_ID     updateId,
+            UPDATE_DATE   updateDate,
+            DELETE_ID     deleteId,
+            DELETE_DATE   deleteDate
+          FROM brewduckdatabase.COMMON_CODE
     </sql>
+
+    <select id="Common.selectCodeMaster"
+            resultType="Common">
+        <include refid="Common.selectCode" />
+       GROUP BY COMMON_SET
+    </select>
 
     <select id="Common.selectCodeList"
             resultType="Common">
         <include refid="Common.selectCode" />
-          WHERE GROUP_CODE = '2100'
-       ORDER BY GROUP_CODE,
-                DISPLAY
     </select>
 
     <!-- 성별 리스트  -->

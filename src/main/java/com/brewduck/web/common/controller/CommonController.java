@@ -52,7 +52,7 @@ public class CommonController {
     @ResponseBody
     public List getSubArea(@PathVariable("subArea") String subArea) {
         Common common = new Common();
-        common.setParentCode(subArea);
+     //   common.setParentCode(subArea);
         List<Common> getSubArea = commonService.selectSubAreaList(common);
         return getSubArea;
     }
@@ -80,7 +80,7 @@ public class CommonController {
     @ResponseBody
     public List getSubCategory(@PathVariable("mainCategory") String mainCategory) {
         Common common = new Common();
-        common.setParentCode(mainCategory);
+      //  common.setParentCode(mainCategory);
         List<Common> subCategory = commonService.selectSubCategoryList(common);
         return subCategory;
     }

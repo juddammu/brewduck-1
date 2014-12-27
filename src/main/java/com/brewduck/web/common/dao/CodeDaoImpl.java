@@ -9,7 +9,6 @@
  */
 package com.brewduck.web.common.dao;
 
-import com.brewduck.web.domain.Code;
 import com.brewduck.web.domain.Common;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -35,8 +34,13 @@ public class CodeDaoImpl implements CodeDao {
     private SqlSessionTemplate sqlSessionTemplate;
 
     @Override
-    public List<Code> getSelectCodeList(Code code) throws DataAccessException {
-        return sqlSessionTemplate.selectList("Common.selectCodeList", code);
+    public List<Common> selectCodeMaster() throws DataAccessException {
+        return sqlSessionTemplate.selectList("Common.selectCodeMaster");
+    }
+
+    @Override
+    public List<Common> selectCodeList(Common common) throws DataAccessException {
+        return sqlSessionTemplate.selectList("Common.selectCodeList", common);
     }
 
 

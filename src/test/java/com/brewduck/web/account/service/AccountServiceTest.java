@@ -41,10 +41,8 @@ public class AccountServiceTest {
     @Test
     public void selectAccountListTest() {
         Account account = new Account();
-
         List<Account> selectAccountList = accountDao.selectAccountList(account);
-
-        // 결과를 확인한다.
+        //결과를 확인한다.
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectAccountList);
     }
 }

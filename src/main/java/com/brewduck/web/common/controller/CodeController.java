@@ -1,7 +1,6 @@
 package com.brewduck.web.common.controller;
 
 import com.brewduck.web.common.service.CodeService;
-import com.brewduck.web.domain.Code;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +20,10 @@ public class CodeController {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model) {
-
-        Code code = new Code();
         return "common/code/list";
     }
+
+
 }
 
 
