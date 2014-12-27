@@ -31,18 +31,14 @@ public class CodeServiceTest {
     @Test
     public void selectCodeMasterListTest() {
         Common common = new Common();
-
         List<Common> selectCodeMasterList = codeDao.selectCodeMaster();
-
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectCodeMasterList);
     }
 
     @Test
     public void selectCodeListTest() {
         Common common = new Common();
-
         List<Common> getSelectCodeList = codeDao.selectCodeList(common);
-
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", getSelectCodeList);
     }
 }
