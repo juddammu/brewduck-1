@@ -4,9 +4,9 @@
 
     <sql id="Style.selectStyle">
         SELECT
-               seq                seq
+               id                id
               ,name              name
-              ,name              titleInUrl
+              ,trim(name)              as titleInUrl
               ,korean_name        koreanName
               ,category           category
               ,version            version
@@ -62,8 +62,8 @@
         <!-- 맥주 스타일 상세 조회 -->
         <include refid="Style.selectStyle" />
         WHERE delete_id IS NULL
-            <if test="seq != null">
-                AND seq = #{seq}
+            <if test="id != null">
+                AND id = #{id}
             </if>
             <if test="name != null">
                 AND name = #{name}

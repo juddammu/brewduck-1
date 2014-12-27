@@ -21,6 +21,14 @@
     <decorator name="main-content" page="main.jsp">
         <pattern>/index</pattern>
     </decorator>
+    <decorator name="normal" page="normal.jsp">
+        <pattern>/</pattern>
+
+        <pattern>/style</pattern>
+        <pattern>/style/</pattern>
+        <pattern>/style/*/*</pattern>
+    </decorator>
+
     <decorator name="public-content" page="public.jsp">
         <pattern>/public/recipe/*/*/*</pattern>
         <pattern>/board/main/*</pattern>
@@ -52,9 +60,6 @@
         <pattern>/recipe/create2</pattern>
         <pattern>/recipe/insertRecipe</pattern>
         <pattern>/recipe/*/*</pattern>
-        <pattern>/style</pattern>
-        <pattern>/style/</pattern>
-        <pattern>/style/*/*</pattern>
         <pattern>/homebrew</pattern>
         <pattern>/homebrew/</pattern>
         <pattern>/homebrew/*</pattern>

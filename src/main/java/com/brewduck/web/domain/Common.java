@@ -13,6 +13,9 @@ public class Common {
 
     private static final long serialVersionUID = 1L;
 
+    //일련번호
+    private Integer id;
+
     //코드설정
     private String commonSet;
 
@@ -21,6 +24,9 @@ public class Common {
 
     //이름
     private String name;
+
+    //SEO를 위한 타이틀 URL
+    private String titleInUrl;
 
     //저장아이디
     private String insertId;
@@ -99,6 +105,14 @@ public class Common {
 
     //무게	DOUBLE
     private Double weight;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCommonSet() {
         return commonSet;
@@ -330,5 +344,17 @@ public class Common {
 
     public void setBrewerId(Integer brewerId) {
         this.brewerId = brewerId;
+    }
+
+    public String getTitleInUrl() {
+        return titleInUrl;
+    }
+
+    public void setTitleInUrl(String titleInUrl) {
+
+        titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9\\-\\s\\.]", "");
+        titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
+
+        this.titleInUrl = titleInUrl;
     }
 }

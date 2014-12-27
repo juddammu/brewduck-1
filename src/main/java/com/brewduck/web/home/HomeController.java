@@ -60,6 +60,7 @@ public class HomeController {
                        HttpServletRequest request) {
         // Account account = AuthenticationUtils.getUser();
         // model.addAttribute("account", account);
+        /* 잠시 보류
         Hop hop = hopService.selectRandomHop();
         Recipe recipe = new Recipe();
         recipe.setStatus("2");
@@ -67,7 +68,7 @@ public class HomeController {
         recipe.setMainDisplayYn("2");
 
 
-        /* 잠시 보류
+
         List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);

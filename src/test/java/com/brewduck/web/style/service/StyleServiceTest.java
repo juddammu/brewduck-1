@@ -2,6 +2,8 @@ package com.brewduck.web.style.service;
 
 import com.brewduck.web.domain.Style;
 import com.brewduck.web.style.dao.StyleDao;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 
 /**
@@ -28,30 +32,43 @@ public class StyleServiceTest {
     @Autowired
     private StyleDao styleDao;
 
+
+    private Style style;
+    private int listSize;
+
+
+    @Before
+    public void setUp(){
+        style = new Style();
+        listSize = 77;
+
+    }
+
     /**
-     * <pre>
-     * 맥주 스타일 목록 조회.
-     * </pre>
+     * 기본 수행 테스트
      */
-    @Test
+    @Test(timeout=5000)
     public void selectStyleListTest() {
-        Style style = new Style();
         List<Style> selectStyleListTest = styleDao.selectStyleList(style);
-        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectStyleListTest);
+        assertThat(true,  is(selectStyleListTest.size() > 0));
+        assertEquals(listSize, selectStyleListTest.size());
     }
 
     /**
      * <pre>
-     * 맥주 스타일 상세 조회.
+     * 기본 수행 테스트
      * </pre>
      */
+    @Test(timeout=5000)
     public void selectStyleDetailTest() {
-        Style style = new Style();
         Style selectStyleDetail = new Style();
-
+        style.setId(1);
         selectStyleDetail = styleDao.selectStyleDetail(style);
+        assertThat(true,  is(selectStyleDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectStyleDetail);
+        assertThat(true, is(selectStyleDetail.getName().equals("Fruit Lambic")));
     }
+
 
     /**
      * <pre>
@@ -59,7 +76,6 @@ public class StyleServiceTest {
      * </pre>
      */
     public void insertStyleTest(){
-        Style style = new Style();
         Integer insertStyle = styleDao.insertStyle(style);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", insertStyle);
     }
@@ -70,7 +86,6 @@ public class StyleServiceTest {
      * </pre>
      */
     public void updateStyleTest(){
-        Style style = new Style();
         Integer updateStyle = styleDao.updateStyle(style);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateStyle);
     }
@@ -86,4 +101,9 @@ public class StyleServiceTest {
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", deleteStyle);
     }
 
+    @After
+    public void tearDown() throws Exception {
+        System.out.println("complete");
+
+    }
 }
