@@ -29,8 +29,7 @@ public class Hop extends Common implements Serializable {
 
     // 홉 한글명
     private String koreanName;
-    // 홉 버전
-    private Integer version;
+
     // 홉 투명도
     private Double alpha;
     // 홉 량
@@ -267,9 +266,6 @@ public class Hop extends Common implements Serializable {
         this.koreanName = koreanName;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
 
     public Double getAlpha() {
         return alpha;

@@ -40,5 +40,50 @@ public class StyleServiceTest {
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectStyleListTest);
     }
 
+    /**
+     * <pre>
+     * 맥주 스타일 상세 조회.
+     * </pre>
+     */
+    public void selectStyleDetailTest() {
+        Style style = new Style();
+        Style selectStyleDetail = new Style();
+
+        selectStyleDetail = styleDao.selectStyleDetail(style);
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectStyleDetail);
+    }
+
+    /**
+     * <pre>
+     * 맥주 스타일 저장.
+     * </pre>
+     */
+    public void insertStyleTest(){
+        Style style = new Style();
+        Integer insertStyle = styleDao.insertStyle(style);
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", insertStyle);
+    }
+
+    /**
+     * <pre>
+     * 맥주 스타일 수정.
+     * </pre>
+     */
+    public void updateStyleTest(){
+        Style style = new Style();
+        Integer updateStyle = styleDao.updateStyle(style);
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateStyle);
+    }
+
+    /**
+     * <pre>
+     * 맥주 스타일 삭제.
+     * </pre>
+     */
+    public void deleteStyleTest(){
+        Style style = new Style();
+        Integer deleteStyle = styleDao.deleteStyle(style);
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", deleteStyle);
+    }
 
 }
