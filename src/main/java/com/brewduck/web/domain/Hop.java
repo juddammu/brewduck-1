@@ -295,7 +295,6 @@ public class Hop extends Common implements Serializable {
         this.hopsUse = hopsUse;
     }
 
-
     public String getNotes() {
         return notes;
     }
