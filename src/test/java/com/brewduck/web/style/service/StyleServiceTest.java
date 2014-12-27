@@ -28,9 +28,13 @@ public class StyleServiceTest {
     @Autowired
     private StyleDao styleDao;
 
+    /**
+     * <pre>
+     * 맥주 스타일 목록 조회.
+     * </pre>
+     */
     @Test
     public void selectStyleListTest() {
-
         Style style = new Style();
         List<Style> selectStyleListTest = styleDao.selectStyleList(style);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectStyleListTest);
