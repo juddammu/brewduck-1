@@ -52,7 +52,7 @@ public class HopServiceTest {
      */
     @Test(timeout=5000)
     public void selectHopListTest() {
-        List<Style> selectHopListTest = hopDao.selectHopList(hop);
+        List<Hop> selectHopListTest = hopDao.selectHopList(hop);
         assertThat(true,  is(selectHopListTest.size() > 0));
         assertEquals(listSize, selectHopListTest.size());
     }
@@ -65,8 +65,8 @@ public class HopServiceTest {
     @Test(timeout=5000)
     public void selectHopDetailTest() {
         Hop selectHopDetail = new Hop();
-        style.setId(1);
-        selectHopDetail = hopDao.selectHopDetail(style);
+        hop.setId(1);
+        selectHopDetail = hopDao.selectHopDetail(hop);
         assertThat(true,  is(selectHopDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopDetail);
         assertThat(true, is(selectHopDetail.getName().equals("Fruit Lambic")));
