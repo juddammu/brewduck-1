@@ -42,6 +42,7 @@
         <intercept-url pattern="/list/**"   access="permitAll" />
         <intercept-url pattern="/recipe/**"    access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/user/**"      access="hasRole('ROLE_SIGNIN')" />
+        <intercept-url pattern="/admin/main"      access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/homebrew/**"  access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/profile/**"   access="hasRole('ROLE_SIGNIN')" />
         <intercept-url pattern="/user/profile" access="hasRole('ROLE_SIGNIN')" />

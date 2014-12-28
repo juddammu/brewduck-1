@@ -103,9 +103,9 @@
 </thead>
 <tbody>
 <c:forEach items="${list}" var="list">
-<tr onclick="goDetail('${list.id}', '${list.titleInUrl}');">
+<tr>
     <th>${list.categoryNumber}${list.styleLetter}</th>
-    <td> ${list.koreanName}</td>
+    <td><a href="/style/${list.id}/${list.titleInUrl}">${list.koreanName}</a></td>
     <td> ${list.name}</td>
     <td>
         <span class="badge">${list.ogMax}</span>
@@ -137,8 +137,8 @@
 <content tag="local_script">
 
     <script>
-        function goDetail(seq, titleInUrl){
-            location.href = "/style/"+seq+"/"+titleInUrl;
+        function goDetail(id, titleInUrl){
+            location.href = "/style/"+id+"/"+titleInUrl;
         }
         // This JavaScript Will Replace Checkboxes in dropdown toggles
         jQuery(document).ready(function($)

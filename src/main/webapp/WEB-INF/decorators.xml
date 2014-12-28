@@ -31,6 +31,7 @@
 
     <decorator name="public-content" page="public.jsp">
         <pattern>/public/recipe/*/*/*</pattern>
+        <pattern>/search/*/*</pattern>
         <pattern>/board/main/*</pattern>
         <pattern>/board/off-flavor</pattern>
         <pattern>/board/detail/*</pattern>

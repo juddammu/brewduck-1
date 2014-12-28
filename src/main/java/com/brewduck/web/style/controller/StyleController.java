@@ -62,7 +62,7 @@ public class StyleController {
      * @param model Model
      * @return 맥주 스타일 상세.
      */
-    @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
+    @RequestMapping(value="{id}/*", method=RequestMethod.GET)
     public String detail(Model model, @PathVariable("id") Integer id) {
 
         Style style = new Style();

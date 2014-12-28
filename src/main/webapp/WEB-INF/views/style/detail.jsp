@@ -13,17 +13,33 @@
 
 <title>${StyleDetail.koreanName} - ${StyleDetail.name}</title>
 
-<section>
-    <ol class="breadcrumb">
-        <li><a href="#">홈</a></li>
-        <li><a href="#">재료 데이터베이스</a></li>
-        <li class="active"><a href="/style/">스타일 데이터베이스 <small>STYLE DATABASE</small></a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>
-            <a href="/style/${StyleDetail.seq}/${StyleDetail.titleInUrl}">${StyleDetail.koreanName} - <strong class="text-support3">${StyleDetail.name}</strong></a>
-        </h3>
+<div class="page-title">
+
+    <div class="title-env">
+        <h1 class="title"><a href="/style/${StyleDetail.id}/${StyleDetail.titleInUrl}">${StyleDetail.categoryNumber}${StyleDetail.styleLetter}. ${StyleDetail.koreanName}</a></h1>
+        <p class="description">${StyleDetail.name}</p>
     </div>
+
+    <div class="breadcrumb-env">
+
+        <ol class="breadcrumb bc-1" >
+            <li>
+                <a href="/"><i class="fa-home"></i>홈</a>
+            </li>
+            <li>
+                <a href="#">재료 데이터베이스</a>
+            </li>
+            <li class="active">
+
+                <strong>스타일</strong>
+            </li>
+        </ol>
+
+    </div>
+
+</div>
+
+<section>
     <div class="section-body">
         <div class="row">
             <div class="col-lg-12">
@@ -32,7 +48,7 @@
                         <!-- START INVOICE HEADER -->
                         <div class="row">
                             <div class="col-xs-8">
-                                <a href="/style/${StyleDetail.seq}/${StyleDetail.titleInUrl}"><h1 class="text-light"><strong class="text-support3">${StyleDetail.categoryNumber}${StyleDetail.styleLetter}.${StyleDetail.koreanName}</strong></h1></a>
+                                <a href="/style/${StyleDetail.id}/${StyleDetail.titleInUrl}"><h1 class="text-light"><strong class="text-support3">${StyleDetail.categoryNumber}${StyleDetail.styleLetter}.${StyleDetail.koreanName}</strong></h1></a>
                             </div>
                             <div class="col-xs-4 text-right">
                                 <h1 class="text-light text-gray-light">${StyleDetail.styleGuide}</h1>
@@ -203,7 +219,7 @@
     <script>
 
         var bbsId = '4';
-        var nttId = ${StyleDetail.seq};
+        var nttId = ${StyleDetail.id};
 
         $('#insertReply').on('click', function () {
             var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
