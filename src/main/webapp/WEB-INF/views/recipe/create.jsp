@@ -924,6 +924,7 @@
 
         $(document).ready(function() {
 
+            //$("#e1").select2();ss
             var fermentableHtml = "";
             var hopHtml = "";
             var yeastHtml = "";

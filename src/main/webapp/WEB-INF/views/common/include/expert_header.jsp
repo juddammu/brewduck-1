@@ -28,6 +28,8 @@
 <link href="/resources/brewing/js/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="/resources/brewing/css/mail.css">
 
+<link rel="stylesheet" href="/resources/brewing/select2/select2.css">
+
 <link href="/resources/brewing/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
 <link href="/resources/brewing/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css" />
 <link href="/resources/brewing/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css" />

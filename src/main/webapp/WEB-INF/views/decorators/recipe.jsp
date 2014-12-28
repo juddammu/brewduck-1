@@ -124,6 +124,7 @@
 <script type='text/javascript' src="/resources/brewing/js/tab/app.ticker.js"></script>
 <script type='text/javascript' src='/resources/brewing/js/app.js'></script>
 
+
 <script type='text/javascript' src='/resources/brewing/js/vegas/jquery.vegas.js'></script>
 <script type='text/javascript' src='/resources/brewing/js/image-background.js'></script>
 <script type="text/javascript" src="/resources/brewing/js/jquery.tabSlideOut.v1.3.js"></script>
@@ -138,6 +139,7 @@
 <script src="/resources/brewing/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
 <script src="/resources/brewing/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
 
+<script type="text/javascript" src="/resources/brewing/select2/select2.js"></script>
 
 
 <!-- page script -->

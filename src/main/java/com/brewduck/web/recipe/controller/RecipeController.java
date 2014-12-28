@@ -65,6 +65,24 @@ public class RecipeController {
     @Resource
     private Environment environment;
 
+    @RequestMapping(value = "/createtest", method = RequestMethod.GET)
+    public String createtest(Model model) {
+
+        LOGGER.info("Recipe List Size : {}", environment.getProperty("jdbc.url"));
+
+        List<Fermentable> fermentableList = fermentableService.selectFermentableGroupList();
+        List<Hop> hopList = hopService.selectHopList(new Hop());
+        List<Yeast> yeastList = yeastService.selectYeastList(new Yeast());
+        List<Misc> miscList = miscService.selectMiscList(new Misc());
+
+        model.addAttribute("fermentableList", fermentableList);
+        model.addAttribute("hopList",   hopList);
+        model.addAttribute("yeastList", yeastList);
+        model.addAttribute("miscList",  miscList);
+
+        return "recipe/createtest";
+    }
+
 
     /**
      * <pre>

@@ -9,7 +9,6 @@
  */
 package com.brewduck.web.common.dao;
 
-import com.brewduck.web.domain.Code;
 import com.brewduck.web.domain.Common;
 import org.springframework.dao.DataAccessException;
 
@@ -24,7 +23,10 @@ import java.util.List;
  */
 public interface CodeDao {
 
-    public List<Code> getSelectCodeList(Code code) throws DataAccessException;
+    public List<Common> selectCodeMaster() throws DataAccessException;
+
+    public List<Common> selectCodeList(Common common) throws DataAccessException;
+
 
 
 }

@@ -5,6 +5,7 @@ import com.brewduck.web.hop.dao.HopDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,11 +22,13 @@ import java.util.List;
 public class HopServiceImpl implements HopService {
     private static final Logger LOGGER = LoggerFactory.getLogger(HopServiceImpl.class);
 
+    private MessageSource messageSource;
     /**
      * HopDao Dependency Injection.
      */
     @Autowired
     private HopDao hopDao;
+
 
 
     @Override

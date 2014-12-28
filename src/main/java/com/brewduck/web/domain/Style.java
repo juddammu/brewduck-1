@@ -15,19 +15,14 @@ import java.util.Date;
  * @author jaeger
  * @version 1.0, 2014.02.10
  */
-public class Style implements Serializable {
+public class Style extends Common implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    //홉 순번
-    public String seq;
-    // 스타일 영문명
-    private String name;
     // 스타일 한글명
     private String koreanName;
     // 스타일 카테고리
     private String category;
-    // 스타일 버전 (1)
-    private Integer version;
+
     // 스타일 카테고리 수 (1)
     private String categoryNumber;
     // 스타일 문자 (A)
@@ -86,8 +81,7 @@ public class Style implements Serializable {
     private Boolean updateFlag;
     // 삭제 성공 여부
     private Boolean deleteFlag;
-    //SEO를 위한 타이틀 URL
-    private String titleInUrl;
+
 
     private String look;
 
@@ -101,17 +95,7 @@ public class Style implements Serializable {
 
     private String comment;
 
-    public String getTitleInUrl() {
-        return titleInUrl;
-    }
 
-    public void setTitleInUrl(String titleInUrl) {
-
-        titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9\\-\\s\\.]", "");
-        titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
-
-        this.titleInUrl = titleInUrl;
-    }
 
     public void setMouthfeel(String mouthfeel) {
         this.mouthfeel = mouthfeel;
@@ -163,31 +147,7 @@ public class Style implements Serializable {
         this.comment = comment;
     }
 
-    public String getSeq() {
-        return seq;
-    }
 
-    public void setSeq(String seq) {
-        this.seq = seq;
-    }
-
-    /**
-     * 스타일 영문명
-     *
-     * @return 스타일 영문명
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * 스타일 영문명
-     *
-     * @param name 스타일 영문명
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
 
     /**
      * 스타일 한글명
@@ -225,24 +185,6 @@ public class Style implements Serializable {
         this.category = category;
     }
 
-    /**
-     * 스타일 버전
-     * 항상 '1'
-     *
-     * @return 버전
-     */
-    public Integer getVersion() {
-        return version;
-    }
-
-    /**
-     * 스타일 버전
-     *
-     * @param version 버전
-     */
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
 
     /**
      * 스타일 카테고리 수

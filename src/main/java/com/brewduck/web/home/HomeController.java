@@ -14,16 +14,14 @@ import com.brewduck.web.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.*;
 
 
 /**
@@ -62,6 +60,7 @@ public class HomeController {
                        HttpServletRequest request) {
         // Account account = AuthenticationUtils.getUser();
         // model.addAttribute("account", account);
+        /* 잠시 보류
         Hop hop = hopService.selectRandomHop();
         Recipe recipe = new Recipe();
         recipe.setStatus("2");
@@ -69,11 +68,11 @@ public class HomeController {
         recipe.setMainDisplayYn("2");
 
 
-        /* 잠시 보류
+
         List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
         model.addAttribute("hop", hop);
         model.addAttribute("hopAromaList", hopAromaList);
-        */
+
         List<Recipe> selectRecomendPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
 
         Recipe NewRecipe = new Recipe();
@@ -82,11 +81,12 @@ public class HomeController {
 
         List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(NewRecipe);
 
+        System.out.println("한글한글");
 
         model.addAttribute("recomendPublicRecipeList", selectRecomendPublicRecipeList);
         model.addAttribute("newPublicRecipeList", selectNewPublicRecipeList);
         model.addAttribute("hop", hop);
-
+ */
         return "home";
         //return "blank";
     }

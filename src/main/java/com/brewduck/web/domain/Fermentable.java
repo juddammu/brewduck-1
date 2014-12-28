@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * 신재근, 2014-02-12
  */
-public class Fermentable implements Serializable {
+public class Fermentable implements Serializable  {
     private static final long serialVersionUID = 1L;
 
     private String titleInUrl;
