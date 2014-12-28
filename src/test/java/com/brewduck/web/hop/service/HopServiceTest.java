@@ -36,17 +36,42 @@ public class HopServiceTest {
     @Autowired
     private HopDao hopDao;
 
+    private Hop hop;
+    private int listSize;
+
+
+    @Before
+    public void setUp(){
+        hop = new Hop();
+        listSize = 77;
+
+    }
+
+    /**
+     * 기본 수행 테스트
+     */
+    @Test(timeout=5000)
+    public void selectHopListTest() {
+        List<Style> selectHopListTest = hopDao.selectHopList(hop);
+        assertThat(true,  is(selectHopListTest.size() > 0));
+        assertEquals(listSize, selectHopListTest.size());
+    }
+
     /**
      * <pre>
-     * 맥주 홉 목록 조회.
+     * 기본 수행 테스트
      * </pre>
      */
-    @Test
-    public void selectHopListTest() {
-        Hop hop = new Hop();
-        List<Hop> selectHopListTest = hopDao.selectHopList(hop);
-        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopListTest);
+    @Test(timeout=5000)
+    public void selectHopDetailTest() {
+        Hop selectHopDetail = new Hop();
+        style.setId(1);
+        selectHopDetail = hopDao.selectHopDetail(style);
+        assertThat(true,  is(selectHopDetail != null));
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopDetail);
+        assertThat(true, is(selectHopDetail.getName().equals("Fruit Lambic")));
     }
+
 
     /**
      * <pre>
@@ -90,19 +115,6 @@ public class HopServiceTest {
         Hop hop = new Hop();
         List<Hop> selectHopSubstitutesListTest = hopDao.selectHopSubstitutesList(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopSubstitutesListTest);
-    }
-
-    /**
-     * <pre>
-     * 맥주 홉 상세 조회.
-     * </pre>
-     */
-    public void selectHopDetailTest() {
-        Hop hop = new Hop();
-        Hop selectHopDetail = new Hop();
-
-        selectHopDetail = hopDao.selectHopDetail(hop);
-        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopDetail);
     }
 
     /**
