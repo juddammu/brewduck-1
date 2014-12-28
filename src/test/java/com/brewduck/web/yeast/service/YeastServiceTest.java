@@ -61,7 +61,7 @@ public class YeastServiceTest {
         selectYeastDetail = yeastDao.selectYeastDetail(yeast);
         assertThat(true,  is(selectYeastDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectYeastDetail);
-        assertThat(true, is(selectYeastDetail.getName().equals("Fruit Lambic")));
+        assertThat(true, is(selectYeastDetail.getName().equals("Abbey Ale")));
     }
 
     /**

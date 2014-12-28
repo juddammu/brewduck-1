@@ -61,7 +61,7 @@ public class FermentableServiceTest {
         selectFermentableDetail = fermentableDao.selectFermentableDetail(fermentable);
         assertThat(true,  is(selectFermentableDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableDetail);
-        assertThat(true, is(selectFermentableDetail.getName().equals("Fruit Lambic")));
+        assertThat(true, is(selectFermentableDetail.getName().equals("Amber Dry Extract")));
     }
 
     /**
@@ -107,7 +107,7 @@ public class FermentableServiceTest {
      */
     public void updateFermentableTest(){
         Fermentable fermentable = new Fermentable();
-        Integer updateFermentable =  fermentableDao.updateFermentable(hop);
+        Integer updateFermentable =  fermentableDao.updateFermentable(fermentable);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateFermentable);
     }
 
@@ -120,7 +120,7 @@ public class FermentableServiceTest {
      */
     public void deleteFermentableTest(){
         Fermentable fermentable = new Fermentable();
-        Integer deleteFermentable =  fermentableDao.deleteFermentable(hop);
+        Integer deleteFermentable =  fermentableDao.deleteFermentable(fermentable);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", deleteFermentable);
     }
 

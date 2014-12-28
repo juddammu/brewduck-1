@@ -61,7 +61,7 @@ public class MiscServiceTest {
         selectMiscDetail = miscDao.selectMiscDetail(misc);
         assertThat(true,  is(selectMiscDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectMiscDetail);
-        assertThat(true, is(selectMiscDetail.getName().equals("Fruit Lambic")));
+        assertThat(true, is(selectMiscDetail.getName().equals("Amylase Enzyme")));
     }
 
     /**

@@ -1,7 +1,7 @@
 package com.brewduck.web.hop.service;
 
 import com.brewduck.web.domain.Hop;
-import com.brewduck.web.Hop.dao.hopDao;
+import com.brewduck.web.hop.dao.hopDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +69,7 @@ public class HopServiceTest {
         selectHopDetail = hopDao.selectHopDetail(hop);
         assertThat(true,  is(selectHopDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopDetail);
-        assertThat(true, is(selectHopDetail.getName().equals("Fruit Lambic")));
+        assertThat(true, is(selectHopDetail.getName().equals("Admiral")));
     }
 
 
