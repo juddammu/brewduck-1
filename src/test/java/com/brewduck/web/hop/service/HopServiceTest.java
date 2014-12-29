@@ -1,7 +1,8 @@
 package com.brewduck.web.hop.service;
 
 import com.brewduck.web.domain.Hop;
-import com.brewduck.web.hop.dao.hopDao;
+import com.brewduck.web.hop.dao.HopDao;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,24 +11,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
+
+
 /**
  * <pre>
- * 맥주 홉 Service 구현체.
+ * 맥주 홉 테스트
  * </pre>
  *
- * @author  chacha
+ * @author chacha
  * @version 1.0, 2014.12.28
- */
-import static org.junit.Assert.assertNotNull;
-
-
-/**
- * <pre>
- * 계정 서비스 인터페이스.
- * </pre>
- *
- * @author 임세환
- * @version 1.0, 2013.12.11
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
@@ -139,7 +134,7 @@ public class HopServiceTest {
         Hop hop = new Hop();
         Hop selectRandomHop = new Hop();
 
-        selectRandomHop = hopDao.selectRandomHop(hop);
+        selectRandomHop = hopDao.selectRandomHop();
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectRandomHop);
     }
 
@@ -152,7 +147,7 @@ public class HopServiceTest {
         Hop hop = new Hop();
         Hop countHopOrigin = new Hop();
 
-        countHopOrigin = hopDao.countHopOrigin(hop);
+        countHopOrigin = hopDao.countHopOrigin();
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", countHopOrigin);
     }
 
@@ -194,7 +189,7 @@ public class HopServiceTest {
      * 맥주 홉 삭제.
      * </pre>
      */
-    public voiddeleteHopTest() {
+    public void deleteHopTest() {
         Hop hop = new Hop();
         Integer deleteHop =  hopDao.deleteHop(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", deleteHop);

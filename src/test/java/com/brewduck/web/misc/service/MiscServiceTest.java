@@ -2,6 +2,7 @@ package com.brewduck.web.misc.service;
 
 import com.brewduck.web.domain.Misc;
 import com.brewduck.web.misc.dao.MiscDao;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 
 
 /**
@@ -57,7 +59,7 @@ public class MiscServiceTest {
     @Test(timeout=5000)
     public void selectMiscDetailTest() {
         Misc selectMiscDetail = new Misc();
-        misc.setId(1);
+       // misc.setId(1);
         selectMiscDetail = miscDao.selectMiscDetail(misc);
         assertThat(true,  is(selectMiscDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectMiscDetail);
@@ -73,7 +75,7 @@ public class MiscServiceTest {
         Misc misc = new Misc();
         Misc countMiscType = new Misc();
 
-        countMiscType = miscDao.countMiscType(misc);
+        countMiscType = miscDao.countMiscType();
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", countMiscType);
 
     }

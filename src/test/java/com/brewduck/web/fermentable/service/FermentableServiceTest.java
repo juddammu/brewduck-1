@@ -2,6 +2,8 @@ package com.brewduck.web.fermentable.service;
 
 import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.fermentable.dao.FermentableDao;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 
 /**
@@ -57,7 +61,7 @@ public class FermentableServiceTest {
     @Test(timeout=5000)
     public void selectFermentableDetailTest() {
         Fermentable selectFermentableDetail = new Fermentable();
-        fermentable.setId(1);
+        //fermentable.setId(1);
         selectFermentableDetail = fermentableDao.selectFermentableDetail(fermentable);
         assertThat(true,  is(selectFermentableDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableDetail);
@@ -71,7 +75,7 @@ public class FermentableServiceTest {
      */
     public void selectFermentableGroupListTest(){
         Fermentable fermentable = new Fermentable();
-        List<Fermentable> selectFermentableGroupListTest = fermentableDao.selectFermentableGroupList(fermentable);
+        List<Fermentable> selectFermentableGroupListTest = fermentableDao.selectFermentableGroupList();
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableGroupListTest);
     }
 
@@ -85,7 +89,7 @@ public class FermentableServiceTest {
         Fermentable fermentable = new Fermentable();
         Fermentable countFermentableOrigin = new Fermentable();
 
-        countFermentableOrigin = fermentableDao.countFermentableOrigin(fermentable);
+        countFermentableOrigin = fermentableDao.countFermentableOrigin();
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", countFermentableOrigin);
     }
 
@@ -111,7 +115,6 @@ public class FermentableServiceTest {
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateFermentable);
     }
 
-    }
 
     /**
      * <pre>

@@ -2,6 +2,9 @@ package com.brewduck.web.yeast.service;
 
 import com.brewduck.web.domain.Yeast;
 import com.brewduck.web.yeast.dao.YeastDao;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 
 /**
@@ -57,7 +62,7 @@ public class YeastServiceTest {
     @Test(timeout=5000)
     public void selectYeastDetailTest() {
         Yeast selectYeastDetail = new Yeast();
-        yeast.setId(1);
+        //yeast.setId(1);
         selectYeastDetail = yeastDao.selectYeastDetail(yeast);
         assertThat(true,  is(selectYeastDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectYeastDetail);
@@ -73,7 +78,7 @@ public class YeastServiceTest {
         Yeast yeast = new Yeast();
         Yeast countYeastType = new Yeast();
 
-        countYeastType = yeastDao.countYeastType(yeast);
+        countYeastType = yeastDao.countYeastType();
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", countYeastType);
 
     }
