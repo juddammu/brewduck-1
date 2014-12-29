@@ -62,7 +62,6 @@ public class RecipeServiceTest {
         style = new Style();
         recipe = new Recipe();
         listSize = 77;
-
     }
 
     /**
