@@ -4,6 +4,7 @@ import com.brewduck.web.domain.Style;
 import com.brewduck.web.style.dao.StyleDao;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +76,7 @@ public class StyleServiceTest {
      * 맥주 스타일 저장.
      * </pre>
      */
+    @Ignore(value="기능사용하지 않음")
     public void insertStyleTest(){
         Integer insertStyle = styleDao.insertStyle(style);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", insertStyle);
@@ -85,6 +87,7 @@ public class StyleServiceTest {
      * 맥주 스타일 수정.
      * </pre>
      */
+    @Ignore(value="기능사용하지 않음")
     public void updateStyleTest(){
         Integer updateStyle = styleDao.updateStyle(style);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateStyle);
@@ -95,6 +98,7 @@ public class StyleServiceTest {
      * 맥주 스타일 삭제.
      * </pre>
      */
+    @Ignore(value="기능사용하지 않음")
     public void deleteStyleTest(){
         Style style = new Style();
         Integer deleteStyle = styleDao.deleteStyle(style);
