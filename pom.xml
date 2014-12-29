@@ -412,6 +412,52 @@
         </dependency>
     </dependencies>
 
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <env>local</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+                <database-version>com.mysql.jdbc.Driver</database-version>
+                <database-url>jdbc:mysql://mariadb-001.cafe24.com/brewduckdatabase?useUnicode=true</database-url>
+                <database-username>brewduckdatabase</database-username>
+                <database-password>b!aorwnejrgna99</database-password>
+                <tomcat-url>http://54.65.119.92:8080/manager/text</tomcat-url>
+                <tomcat-user>dev_user01</tomcat-user>
+                <tomcat-pwd>dev_user1234</tomcat-pwd>
+            </properties>
+        </profile>
+        <!-- tomcat 배포용 계정
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+                <tomcat-url>http://54.65.119.92:8080/manager/text</tomcat-url>
+                <tomcat-user>dev_user01</tomcat-user>
+                <tomcat-pwd>dev_user1234</tomcat-pwd>
+            </properties>
+        </profile>
+        <profile>
+            <id>real</id>
+            <properties>
+                <env>real</env>
+                <tomcat-url>http://54.92.104.226:8080/manager/text</tomcat-url>
+                <tomcat-user>dev_user01</tomcat-user>
+                <tomcat-pwd>dev_user1234</tomcat-pwd>
+            </properties>
+        </profile>
+        -->
+    </profiles>
+
     <build>
         <finalName>ROOT</finalName>
         <plugins>
@@ -429,6 +475,29 @@
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <url>jdbc:mysql://mariadb-001.cafe24.com/brewduckdatabase?useUnicode=true&amp;characterEncoding=UTF8</url>
+                    <user>brewduckdatabase</user>
+                    <password>b!aorwnejrgna99</password>
+                    <encoding>utf-8</encoding>
+                    <driver>com.mysql.jdbc.Driver</driver>
+                    <table>DATABASE_HISTORY</table>
+                    <locations>
+                        <location>filesystem:/src/main/resources/db/migration</location>
+                    </locations>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.6</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

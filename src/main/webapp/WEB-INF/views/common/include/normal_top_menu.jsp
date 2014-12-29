@@ -47,17 +47,40 @@
 
         <ul class="navbar-nav">
             <li>
-                <a href="dashboard-1.html">
+                <a href="/recipe/">
                     <i class="fa-search"></i>
                     <span class="title">찾기</span>
                 </a>
             </li>
             <li>
-                <a href="dashboard-1.html">
-                    <i class="linecons-pencil"></i>
+                <a href="/recipe/create">
+                    <i class="fa-edit"></i>
                     <span class="title">만들기</span>
                 </a>
             </li>
+            <li>
+                <a href="/recipe/create">
+                    <i class="fa-edit"></i>
+                    <span class="title">만들기</span>
+                </a>
+            </li>
+            <!-- Added in v1.2 -->
+            <li class="dropdown hover-line language-switcher">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="/resources/commons/images/flags/flag-uk.png" alt="flag-uk" />
+                    English
+                </a>
+
+                <ul class="dropdown-menu languages">
+                    <li>
+                        <a href="#">
+                            <img src="/resources/commons/images/flags/flag-ko.png" alt="flag-ko" />
+                            한국어,Korean
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
         </ul>
 
 
@@ -91,31 +114,21 @@
                     <li>
                         <a href="#edit-profile">
                             <i class="fa-edit"></i>
-                            New Post
+                            레시피 만들기
                         </a>
                     </li>
                     <li>
-                        <a href="#settings">
-                            <i class="fa-wrench"></i>
-                            Settings
-                        </a>
+                        <a href="#">
+                            <span class="fa-user"></span>&nbsp;&nbsp;프로필 설정</a>
                     </li>
                     <li>
-                        <a href="#profile">
-                            <i class="fa-user"></i>
-                            Profile
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#help">
-                            <i class="fa-info"></i>
-                            Help
-                        </a>
+                        <a href="#">
+                            <span class="fa-cogs"></span>&nbsp;&nbsp;계정 설정</a>
                     </li>
                     <li class="last">
-                        <a href="extra-lockscreen.html">
+                        <a href="/account/logout">
                             <i class="fa-lock"></i>
-                            Logout
+                            로그 아웃
                         </a>
                     </li>
                 </ul>
