@@ -108,36 +108,37 @@ ALTER TABLE `brewduckdatabase`.`FERMENTABLES`
 
 -- 효모
 CREATE TABLE `brewduckdatabase`.`YEASTS` (
-	`ID`               INTEGER       NOT NULL COMMENT '일련번호', -- 일련번호
-	`NAME`             VARCHAR(800)  NULL     COMMENT '이름', -- 이름
-	`KOREAN_NAME`      VARCHAR(400)  NULL     COMMENT '한글이름', -- 한글이름
-	`VERSION`          INTEGER       NULL     COMMENT '버젼', -- 버젼
-	`TYPE_CODE`        VARCHAR(2)    NULL     COMMENT '종류코드', -- 종류코드
-	`LABORATORY`       VARCHAR(100)  NULL     COMMENT '연구소', -- 연구소
-	`PRODUCT_ID`       VARCHAR(100)  NULL     COMMENT '제품일련번호', -- 제품일련번호
-	`MIN_TEMPERATURE`  DOUBLE        NULL     COMMENT '최소온도', -- 최소온도
-	`MAX_TEMPERATURE`  DOUBLE        NULL     COMMENT '최대온도', -- 최대온도
-	`FLOCCULATION`     VARCHAR(200)  NULL     COMMENT '응집력', -- 응집력
-	`NOTES`            TEXT          NULL     COMMENT '설명', -- 설명
-	`BEST_FOR`         VARCHAR(2000) NULL     COMMENT 'BEST방법', -- BEST방법
-	`TIMES_CULTURED`   DOUBLE        NULL     COMMENT '효모배앙횟수', -- 효모배앙횟수
-	`MAX_REUSE`        DOUBLE        NULL     COMMENT '최대재사용', -- 최대재사용
-	`ADD_TO_SECONDARY` DOUBLE        NULL     COMMENT '2번째효모추가유무', -- 2번째효모추가유무
-	`INSERT_ID`        VARCHAR(400)  NULL     COMMENT '저장아이디', -- 저장아이디
-	`INSERT_DATE`      DATE          NULL     COMMENT '저장일시', -- 저장일시
-	`UPDATE_ID`        VARCHAR(400)  NULL     COMMENT '수정아이디', -- 수정아이디
-	`UPDATE_DATE`      DATE          NULL     COMMENT '수정일시', -- 수정일시
-	`DELETE_ID`        VARCHAR(400)  NULL     COMMENT '삭제아이디', -- 삭제아이디
-	`DELETE_DATE`      DATE          NULL     COMMENT '삭제일시' -- 삭제일시
+  `ID`               INTEGER       NOT NULL COMMENT '일련번호', -- 일련번호
+  `NAME`             VARCHAR(800)  NULL     COMMENT '이름', -- 이름
+  `KOREAN_NAME`      VARCHAR(400)  NULL     COMMENT '한글이름', -- 한글이름
+  `VERSION`          INTEGER       NULL     COMMENT '버젼', -- 버젼
+  `TYPE_CODE`        VARCHAR(2)    NULL     COMMENT '종류코드', -- 종류코드
+  `FORM_CODE`        VARCHAR(2)    NULL     COMMENT '유형코드', -- 유형코드
+  `LABORATORY`       VARCHAR(100)  NULL     COMMENT '연구소', -- 연구소
+  `PRODUCT_ID`       VARCHAR(100)  NULL     COMMENT '제품일련번호', -- 제품일련번호
+  `MIN_TEMPERATURE`  DOUBLE        NULL     COMMENT '최소온도', -- 최소온도
+  `MAX_TEMPERATURE`  DOUBLE        NULL     COMMENT '최대온도', -- 최대온도
+  `FLOCCULATION`     VARCHAR(200)  NULL     COMMENT '응집력', -- 응집력
+  `NOTES`            TEXT          NULL     COMMENT '설명', -- 설명
+  `BEST_FOR`         VARCHAR(2000) NULL     COMMENT 'BEST방법', -- BEST방법
+  `TIMES_CULTURED`   DOUBLE        NULL     COMMENT '효모배앙횟수', -- 효모배앙횟수
+  `MAX_REUSE`        DOUBLE        NULL     COMMENT '최대재사용', -- 최대재사용
+  `ADD_TO_SECONDARY` DOUBLE        NULL     COMMENT '2번째효모추가유무', -- 2번째효모추가유무
+  `INSERT_ID`        VARCHAR(400)  NULL     COMMENT '저장아이디', -- 저장아이디
+  `INSERT_DATE`      DATE          NULL     COMMENT '저장일시', -- 저장일시
+  `UPDATE_ID`        VARCHAR(400)  NULL     COMMENT '수정아이디', -- 수정아이디
+  `UPDATE_DATE`      DATE          NULL     COMMENT '수정일시', -- 수정일시
+  `DELETE_ID`        VARCHAR(400)  NULL     COMMENT '삭제아이디', -- 삭제아이디
+  `DELETE_DATE`      DATE          NULL     COMMENT '삭제일시' -- 삭제일시
 )
-COMMENT '효모';
+  COMMENT '효모';
 
 -- 효모
 ALTER TABLE `brewduckdatabase`.`YEASTS`
-	ADD CONSTRAINT `PK_YEASTS` -- 효모 기본키
-		PRIMARY KEY (
-			`ID` -- 일련번호
-		);
+ADD CONSTRAINT `PK_YEASTS` -- 효모 기본키
+PRIMARY KEY (
+    `ID` -- 일련번호
+  );
 
 -- 스타일
 CREATE TABLE `brewduckdatabase`.`STYLES` (
@@ -294,24 +295,25 @@ ALTER TABLE `brewduckdatabase`.`RECIPES_MISCS`
 
 -- 홉 대체
 CREATE TABLE `brewduckdatabase`.`HOPS_SUBSTITUTES` (
-	`ID`          INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
-	`HOP_ID`      INTEGER      NULL     COMMENT '대체품 일련번호', -- 대체품 일련번호
-	`NAME`        VARCHAR(800) NULL     COMMENT '이름', -- 이름
-	`INSERT_ID`   VARCHAR(400) NULL     COMMENT '저장아이디', -- 저장아이디
-	`INSERT_DATE` DATE         NULL     COMMENT '저장일시', -- 저장일시
-	`UPDATE_ID`   VARCHAR(400) NULL     COMMENT '수정아이디', -- 수정아이디
-	`UPDATE_DATE` DATE         NULL     COMMENT '수정일시', -- 수정일시
-	`DELETE_ID`   VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
-	`DELETE_DATE` DATE         NULL     COMMENT '삭제일시' -- 삭제일시
+  `ID`             INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
+  `HOP_ID`         INTEGER      NULL     COMMENT '홉 일련번호', -- 홉 일련번호
+  `SUBSTITUTES_ID` INTEGER      NULL     COMMENT '대체품 일련번호', -- 대체품 일련번호
+  `NAME`           VARCHAR(800) NULL     COMMENT '이름', -- 이름
+  `INSERT_ID`      VARCHAR(400) NULL     COMMENT '저장아이디', -- 저장아이디
+  `INSERT_DATE`    DATE         NULL     COMMENT '저장일시', -- 저장일시
+  `UPDATE_ID`      VARCHAR(400) NULL     COMMENT '수정아이디', -- 수정아이디
+  `UPDATE_DATE`    DATE         NULL     COMMENT '수정일시', -- 수정일시
+  `DELETE_ID`      VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
+  `DELETE_DATE`    DATE         NULL     COMMENT '삭제일시' -- 삭제일시
 )
-COMMENT '홉 대체';
+  COMMENT '홉 대체';
 
 -- 홉 대체
 ALTER TABLE `brewduckdatabase`.`HOPS_SUBSTITUTES`
-	ADD CONSTRAINT `PK_HOPS_SUBSTITUTES` -- 홉 대체 기본키
-		PRIMARY KEY (
-			`ID` -- 일련번호
-		);
+ADD CONSTRAINT `PK_HOPS_SUBSTITUTES` -- 홉 대체 기본키
+PRIMARY KEY (
+    `ID` -- 일련번호
+  );
 
 -- 게시판 마스터
 CREATE TABLE `brewduckdatabase`.`BOARD_MASTER` (
