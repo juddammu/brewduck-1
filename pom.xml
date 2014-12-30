@@ -412,45 +412,6 @@
         </dependency>
     </dependencies>
 
-
-    <profiles>
-        <profile>
-            <id>local</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <env>local</env>
-            </properties>
-        </profile>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <env>dev</env>
-            </properties>
-        </profile>
-        <!-- tomcat 배포용 계정
-        <profile>
-            <id>dev</id>
-            <properties>
-                <env>dev</env>
-                <tomcat-url>http://54.65.119.92:8080/manager/text</tomcat-url>
-                <tomcat-user>dev_user01</tomcat-user>
-                <tomcat-pwd>dev_user1234</tomcat-pwd>
-            </properties>
-        </profile>
-        <profile>
-            <id>real</id>
-            <properties>
-                <env>real</env>
-                <tomcat-url>http://54.92.104.226:8080/manager/text</tomcat-url>
-                <tomcat-user>dev_user01</tomcat-user>
-                <tomcat-pwd>dev_user1234</tomcat-pwd>
-            </properties>
-        </profile>
-        -->
-    </profiles>
-
     <build>
         <finalName>ROOT</finalName>
         <plugins>
@@ -474,6 +435,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
+                    <url>${url}</url>
+                    <user>${username}</user>
+                    <password>${password}</password>
                     <encoding>utf-8</encoding>
                     <driver>com.mysql.jdbc.Driver</driver>
                     <table>DATABASE_HISTORY</table>
