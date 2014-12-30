@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <nav class="navbar horizontal-menu navbar-fixed-top"><!-- set fixed position by adding class "navbar-fixed-top" -->
 
     <div class="navbar-inner">
@@ -59,23 +60,61 @@
                 </a>
             </li>
             <li>
-                <a href="/recipe/create">
-                    <i class="fa-edit"></i>
-                    <span class="title">만들기</span>
+                <a href="#">
+                    <i class="fa-book"></i>
+                    <span class="title">재료</span>
                 </a>
+                <ul>
+                    <li>
+                        <a href="/style/">
+                            <i class="linecons-star"></i>
+                            <span class="title"><spring:message code="menu.style"/></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fermentable/">
+                            <i class="linecons-star"></i>
+                            <span class="title"><spring:message code="menu.fermentable"/></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/hop/">
+                            <i class="linecons-star"></i>
+                            <span class="title"><spring:message code="menu.hop"/></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/yeast/">
+                            <i class="linecons-star"></i>
+                            <span class="title"><spring:message code="menu.yeast"/></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/misc/">
+                            <i class="linecons-star"></i>
+                            <span class="title"><spring:message code="menu.extra"/></span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <!-- Added in v1.2 -->
             <li class="dropdown hover-line language-switcher">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="/resources/commons/images/flags/flag-uk.png" alt="flag-uk" />
-                    English
+                    <img src="/resources/commons/images/flags/flag-ko.png" alt="flag-ko" />
+                    한국어
                 </a>
 
                 <ul class="dropdown-menu languages">
                     <li>
-                        <a href="#">
-                            <img src="/resources/commons/images/flags/flag-ko.png" alt="flag-ko" />
-                            한국어,Korean
+                        <a href="?lang=en">
+                            <img src="/resources/commons/images/flags/flag-es.png" alt="flag-uk" />
+                            English
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="?lang=ko">
+                            <img src="assets/images/flags/flag-ko.png" alt="flag-ko" />
+                            한국어
                         </a>
                     </li>
                 </ul>
