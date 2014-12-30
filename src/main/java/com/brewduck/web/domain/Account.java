@@ -4,6 +4,7 @@ import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
@@ -19,6 +20,11 @@ public class Account implements Serializable {
 
     public static interface Join {}
 
+    // UserId
+    private int id;
+
+    @NotNull(message = "may not be null")
+    private String manufacturer;
 
     public Account() {
     }
@@ -35,10 +41,7 @@ public class Account implements Serializable {
     }
 
 
-    // UserId
-    private int id;
-
-    @NotEmpty(message = "이름은 필수 입력입니다.", groups = { Join.class })
+    @NotEmpty(message = "menu.color.converter", groups = { Join.class })
     @Size(min = 2, max = 40, message = "이름은 2자에서 40자까지 입력하세요.", groups = { Join.class })
     private String name;
 
