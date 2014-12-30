@@ -427,13 +427,6 @@
             <id>dev</id>
             <properties>
                 <env>dev</env>
-                <database-version>com.mysql.jdbc.Driver</database-version>
-                <database-url>jdbc:mysql://mariadb-001.cafe24.com/brewduckdatabase?useUnicode=true</database-url>
-                <database-username>brewduckdatabase</database-username>
-                <database-password>b!aorwnejrgna99</database-password>
-                <tomcat-url>http://54.65.119.92:8080/manager/text</tomcat-url>
-                <tomcat-user>dev_user01</tomcat-user>
-                <tomcat-pwd>dev_user1234</tomcat-pwd>
             </properties>
         </profile>
         <!-- tomcat 배포용 계정
@@ -481,9 +474,6 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <url>jdbc:mysql://mariadb-001.cafe24.com/brewduckdatabase?useUnicode=true&amp;characterEncoding=UTF8</url>
-                    <user>brewduckdatabase</user>
-                    <password>b!aorwnejrgna99</password>
                     <encoding>utf-8</encoding>
                     <driver>com.mysql.jdbc.Driver</driver>
                     <table>DATABASE_HISTORY</table>
