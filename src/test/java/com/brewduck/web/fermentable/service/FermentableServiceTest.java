@@ -52,13 +52,17 @@ public class FermentableServiceTest {
     }
 
     @Test(timeout=5000)
-    public void notNullDataTest() {
+    public void notNullEmptyTest() {
         List<Fermentable> selectFermentableList = fermentableDao.selectFermentableList(fermentable);
 
-
+        //필수입력 테스트
         for(int i=0;i<selectFermentableList.size();i++){
-            assertThat(true, is(((Fermentable) (selectFermentableList.get(i))).getSpecificGravity() > 0));
-            assertThat(true, is(((Fermentable) (selectFermentableList.get(i))).getColor() > 0));
+
+            //TODO : SpecificGravity 0이상이어야 함
+            assertThat(true, is(((Fermentable) (selectFermentableList.get(i))).getSpecificGravity() >= 0));
+            //발효재료 색상 0이상
+            assertThat(true, is(((Fermentable) (selectFermentableList.get(i))).getColor() >= 0));
+            //컬러코드 (필수아님)
             assertNotNull("색상코드 확인", ((Fermentable) (selectFermentableList.get(i))).getColorCode());
         }
 
