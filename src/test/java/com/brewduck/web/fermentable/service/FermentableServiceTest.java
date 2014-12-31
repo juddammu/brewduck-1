@@ -2,7 +2,6 @@ package com.brewduck.web.fermentable.service;
 
 import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.fermentable.dao.FermentableDao;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +13,6 @@ import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertThat;
 
 
 /**
@@ -51,6 +49,19 @@ public class FermentableServiceTest {
         List<Fermentable> selectFermentableListTest = fermentableDao.selectFermentableList(fermentable);
         assertThat(true,  is(selectFermentableListTest.size() > 0));
         assertEquals(listSize, selectFermentableListTest.size());
+    }
+
+    @Test(timeout=5000)
+    public void notNullDataTest() {
+        List<Fermentable> selectFermentableList = fermentableDao.selectFermentableList(fermentable);
+
+
+        for(int i=0;i<selectFermentableList.size();i++){
+            assertThat(true, is(((Fermentable) (selectFermentableList.get(i))).getSpecificGravity() > 0));
+            assertThat(true, is(((Fermentable) (selectFermentableList.get(i))).getColor() > 0));
+            assertNotNull("색상코드 확인", ((Fermentable) (selectFermentableList.get(i))).getColorCode());
+        }
+
     }
 
     /**

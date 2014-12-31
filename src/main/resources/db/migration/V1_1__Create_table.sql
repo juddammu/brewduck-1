@@ -72,13 +72,13 @@ ALTER TABLE `brewduckdatabase`.`RECIPES_HOPS`
 -- 발효재료
 CREATE TABLE `brewduckdatabase`.`FERMENTABLES` (
 	`ID`               INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
-	`NAME`             VARCHAR(800) NULL     COMMENT '이름', -- 이름
+	`NAME`             VARCHAR(800) NOT NULL COMMENT '이름', -- 이름
 	`KOREAN_NAME`      VARCHAR(400) NULL     COMMENT '한국이름', -- 한국이름
 	`VERSION`          INTEGER      NULL     COMMENT '버젼', -- 버젼
 	`TYPE_CODE`        VARCHAR(2)   NULL     COMMENT '종류코드', -- 종류코드
 	`YIELD`            DOUBLE       NULL     COMMENT '수율', -- 수율
-	`COLOR`            DOUBLE       NULL     COMMENT '색상', -- 색상
-	`COLOR_CODE`       VARCHAR(6)   NULL     COMMENT '색상코드', -- 색상코드
+	`COLOR`            DOUBLE       NOT NULL     COMMENT '색상', -- 색상
+	`COLOR_CODE`       VARCHAR(8)   NULL     COMMENT '색상코드', -- 색상코드
 	`ADD_AFTER_BOIL`   BOOLEAN      NULL     COMMENT '보일링후추가여부', -- 보일링후추가여부
 	`ORIGIN_CODE`      VARCHAR(2)   NULL     COMMENT '원산지코드', -- 원산지코드
 	`SUPPLIER`         VARCHAR(500) NULL     COMMENT '공급업체', -- 공급업체
@@ -89,7 +89,7 @@ CREATE TABLE `brewduckdatabase`.`FERMENTABLES` (
 	`PROTEIN`          DOUBLE       NULL     COMMENT '단백질', -- 단백질
 	`MAX_IN_BATCH`     DOUBLE       NULL     COMMENT '권장배치율', -- 권장배치율
 	`RECOMMEND_MASH`   DOUBLE       NULL     COMMENT '추천당화', -- 추천당화
-	`SPECIFIC_GRAVITY` DOUBLE       NULL     COMMENT 'SG', -- SG
+	`SPECIFIC_GRAVITY` DOUBLE       NOT NULL     COMMENT 'SG', -- SG
 	`INSERT_ID`        VARCHAR(400) NULL     COMMENT '저장아이디', -- 저장아이디
 	`INSERT_DATE`      DATE         NULL     COMMENT '저장일시', -- 저장일시
 	`UPDATE_ID`        VARCHAR(400) NULL     COMMENT '수정아이디', -- 수정아이디

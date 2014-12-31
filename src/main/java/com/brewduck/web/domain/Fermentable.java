@@ -11,21 +11,16 @@ import java.util.Date;
  *
  * 신재근, 2014-02-12
  */
-public class Fermentable implements Serializable  {
+public class Fermentable extends Common implements Serializable  {
     private static final long serialVersionUID = 1L;
 
     private String titleInUrl;
 
-    //발효재료 순번
-    public Integer seq;
-    // 발효재료 한글명
-    private String name;
-    // 발효재료 영문명
-    private String koreanName;
+
     // 발효재료 버전 (Fix : "1")
     private Integer version;
     // 발효재료 종류 ("Grain", "Sugar", "Extract", "Dry Extract" or "Adjunct")
-    private String type;
+    private String typeCode;
 
     private String titleYn;
     // 발효재료의 양 (발효재료, 추출 또는 설탕의 무게 : "Kg")
@@ -158,59 +153,6 @@ public class Fermentable implements Serializable  {
         this.brewer = brewer;
     }
 
-    /**
-     * 발효재료 순번
-     *
-     * @return 발효재료 순번
-     */
-    public Integer getSeq() {
-        return seq;
-    }
-
-    /**
-     * 발효재료 한글명
-     *
-     * @param seq 발효재료 순번
-     */
-    public void setSeq(Integer seq) {
-        this.seq = seq;
-    }
-
-    /**
-     * 발효재료 한글명
-     *
-     * @return 발효재료 한글명
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * 발효재료 한글명
-     *
-     * @param name 발효재료 한글명
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * 발효재료 영문명
-     *
-     * @return 발효재료 영문명
-     */
-    public String getKoreanName() {
-        return koreanName;
-    }
-
-    /**
-     * 발효재료 영문명
-     *
-     * @param koreanName 발효재료 영문명
-     */
-    public void setKoreanName(String koreanName) {
-        this.koreanName = koreanName;
-    }
 
     /**
      * 발효재료 버전
@@ -218,9 +160,6 @@ public class Fermentable implements Serializable  {
      *
      * @return 발효재료 버전
      */
-    public Integer getVersion() {
-        return version;
-    }
 
     /**
      * 발효재료 버전
@@ -237,17 +176,15 @@ public class Fermentable implements Serializable  {
      *
      * @return 발효재료 종류
      */
-    public String getType() {
-        return type;
+    public String getTypeCode() {
+        return typeCode;
     }
-
     /**
      * 발효재료 종류
      *
-     * @param type 발효재료 종류
      */
-    public void setType(String type) {
-        this.type = type;
+    public void setTypeCode(String typeCode) {
+        this.typeCode = typeCode;
     }
 
     /**

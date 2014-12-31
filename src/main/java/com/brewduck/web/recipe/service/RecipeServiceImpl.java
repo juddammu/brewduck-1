@@ -79,7 +79,7 @@ public class RecipeServiceImpl implements RecipeService {
         // 레시피 제조시 입력한 스타일 맥주 이름
         Style paramStyle = new Style();
         Fermentable paramFermentable = new Fermentable();
-        paramFermentable.setSeq(newPublicRecipe.getSeq());
+        paramFermentable.setId(newPublicRecipe.getSeq());
         paramFermentable.setBrewer(newPublicRecipe.getBrewer());
 
         Hop paramHop = new Hop();
@@ -127,7 +127,7 @@ public class RecipeServiceImpl implements RecipeService {
         // 레시피 제조시 입력한 스타일 맥주 이름
         Style paramStyle = new Style();
         Fermentable paramFermentable = new Fermentable();
-        paramFermentable.setSeq(newRecipe.getSeq());
+        paramFermentable.setId(newRecipe.getSeq());
         paramFermentable.setBrewer(account.getId()+"");
 
         Hop paramHop = new Hop();
@@ -187,7 +187,7 @@ public class RecipeServiceImpl implements RecipeService {
         // 레시피 제조시 입력한 스타일 맥주 이름
         Style paramStyle = new Style();
         Fermentable paramFermentable = new Fermentable();
-        paramFermentable.setSeq(seq);
+        paramFermentable.setId(seq);
         paramFermentable.setBrewer(brewer);
 
         Hop paramHop = new Hop();

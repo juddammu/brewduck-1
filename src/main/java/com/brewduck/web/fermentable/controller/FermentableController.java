@@ -147,7 +147,7 @@ public class FermentableController {
         logger.info("Fermentable seq : {}", seq);
 
         Fermentable fermentable = new Fermentable();
-        fermentable.setSeq(seq);
+        fermentable.setId(seq);
 
         // 맥주 발효재료 상세 조회
         Fermentable fermentableDetail = fermentableService.selectFermentableDetail(fermentable);
@@ -178,7 +178,7 @@ public class FermentableController {
         logger.info("Fermentable seq : {}", seq);
 
         Fermentable fermentable = new Fermentable();
-        fermentable.setSeq(seq);
+        fermentable.setId(seq);
 
         // 맥주 발효재료 상세 조회
         Fermentable fermentableDetail = fermentableService.selectFermentableDetail(fermentable);

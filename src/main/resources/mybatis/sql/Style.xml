@@ -13,7 +13,7 @@
               ,category_number    categoryNumber
               ,style_letter       styleLetter
               ,style_guide        styleGuide
-              ,type               type
+              ,typeCode               typeCode
               ,og_min             ogMin
               ,og_max             ogMax
               ,fg_min             fgMin
@@ -71,8 +71,8 @@
             <if test="category != null">
                 AND category = #{category}
             </if>
-            <if test="type != null">
-                AND type = #{type}
+            <if test="typeCode != null">
+                AND typeCode = #{typeCode}
             </if>
     </select>
 
@@ -86,7 +86,7 @@
             ,category_number
             ,style_letter
             ,style_guide
-            ,type
+            ,typeCode
             ,og_min
             ,og_max
             ,fg_min
@@ -113,7 +113,7 @@
             ,#{categoryNumber}
             ,#{styleLetter}
             ,'BJCP 2008'
-            ,#{type}
+            ,#{typeCode}
             ,#{ogMin}
             ,#{ogMax}
             ,#{fgMin}
@@ -151,8 +151,8 @@
             <if test="styleLetter != null">
                 style_letter = #{styleLetter},
             </if>
-            <if test="type != null">
-                type = #{type},
+            <if test="typeCode != null">
+                typeCode = #{typeCode},
             </if>
             <if test="ogMin != null">
                 og_min = #{ogMin},

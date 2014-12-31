@@ -55,6 +55,29 @@ public class StyleServiceTest {
         assertEquals(listSize, selectStyleListTest.size());
     }
 
+    @Test(timeout=5000)
+    public void notNullDataTest() {
+        List<Style> selectStyleList = styleDao.selectStyleList(style);
+
+        for(int i=0;i<selectStyleList.size();i++){
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getAbvMin() > 0));
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getAbvMax() > 0));
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getOgMin() > 0));
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getOgMax() > 0));
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getFgMin() > 0));
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getFgMax() > 0));
+
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getIbuMin() > 0));
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getIbuMax() > 0));
+
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getColorMin() > 0));
+            assertThat(true, is(((Style) (selectStyleList.get(i))).getColorMax() > 0));
+
+
+        }
+
+    }
+
     /**
      * <pre>
      * 기본 수행 테스트

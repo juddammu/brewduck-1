@@ -6,7 +6,7 @@
         SELECT
             0 SEQ,
             '곡물 - Grain' AS NAME,
-            '0' TYPE,
+            '0' typeCode,
             '곡물 - Grain' typeKorean,
             '' originKorean,
             '' color,
@@ -19,7 +19,7 @@
         SELECT
             A.SEQ,
             A.NAME,
-            A.TYPE,
+            A.TYPE_CODE typeCode,
             (select B.attribute1desc
                   from common_code B
                  where common_set = 'fermentable_type'
@@ -34,12 +34,12 @@
            (A.specific_gravity -1 )*1000 AS ppg,
            'N' endTitleYn
           FROM FERMENTABLE A
-         WHERE A.TYPE = 0
+         WHERE A.TYPE_CODE = 0
    UNION ALL
         SELECT
             0 SEQ,
             '' AS NAME,
-            '1' TYPE,
+            '1' typeCode,
             '' typeKorean,
             '' originKorean,
             '' color,
@@ -52,7 +52,7 @@
         SELECT
             0 SEQ,
             '추출물' AS NAME,
-            '1' TYPE,
+            '1' typeCode,
             '추출물' typeKorean,
             '' originKorean,
             '' color,
@@ -65,7 +65,7 @@
         SELECT
             A.SEQ,
             A.NAME,
-            A.TYPE,
+            A.TYPE_CODE typeCode,
             (select B.attribute1desc
                   from common_code B
                  where common_set = 'fermentable_type'
@@ -237,24 +237,23 @@
         SELECT
                A.name                name
               ,A.name                titleInUrl
-              ,A.seq                 seq
+              ,A.id                  id
               ,A.korean_name         koreanName
               ,A.version             version
-              ,A.type                type
-              ,(select B.attribute1desc
-                  from common_code B
+              ,A.type_code           typeCode
+              ,(select B.name
+                  from COMMON_CODE B
                  where common_set = 'fermentable_type'
-                   and A.type = B.common_code) as typeKorean
-              ,A.amount              amount
+                   and A.type_code = B.common_code) as typeKorean
               ,A.yield               yield
               ,A.color               color
               ,A.color_code          colorCode
               ,A.add_after_boil      addAfterBoil
-              ,A.origin           origin
-             ,(select B.attribute1desc
-                  from common_code B
+              ,A.origin_code         origin
+             ,(select B.name
+                  from COMMON_CODE B
                  where common_set = 'nation_code'
-                   and A.origin = B.common_code) as originKorean
+                   and A.origin_code = B.common_code) as originKorean
               ,A.supplier            supplier
               ,A.notes               notes
               ,A.coarse_fine_diff    coarseFineDiff
@@ -263,7 +262,6 @@
               ,A.protein             protein
               ,A.max_in_batch        maxInBatch
               ,A.recommend_mash      recommendMash
-              ,A.ibu_gal_per_lb      ibuGalPerLb
               ,A.specific_gravity    specificGravity
               ,A.insert_id           insertId
               ,A.insert_date         insertDate
@@ -271,7 +269,7 @@
               ,A.update_date         updateDate
               ,A.delete_id           deleteId
               ,A.delete_date         deleteDate
-          FROM brewduckdb.FERMENTABLE A
+          FROM brewduckdatabase.FERMENTABLES A
     </sql>
 
     <sql id="Fermentable.selectRecipeFermentable">
@@ -281,7 +279,7 @@
               ,b.version             version
               ,a.amount              amount
               ,a.fermentable_use     fermentableUse
-              ,a.type                type
+              ,a.type_code                typeCode
               ,b.yield               yield
               ,b.color               color
               ,b.color_code          colorCode
@@ -331,11 +329,11 @@
                 </otherwise>
             </choose>
             <choose>
-                <when test="type == ''">
+                <when test="typeCode == ''">
 
                 </when>
-                <when test="type != null">
-                    AND type = #{type}
+                <when test="typeCode != null">
+                    AND type = #{typeCode}
                 </when>
                 <otherwise>
 
