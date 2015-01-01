@@ -98,7 +98,7 @@
                 </ul>
             </li>
             <!-- Added in v1.2 -->
-            <li class="dropdown hover-line language-switcher">
+            <!--li class="dropdown hover-line language-switcher">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="/resources/commons/images/flags/flag-ko.png" alt="flag-ko" />
                     한국어
@@ -118,7 +118,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li-->
 
         </ul>
 
