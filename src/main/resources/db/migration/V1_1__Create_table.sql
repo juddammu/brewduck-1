@@ -7,8 +7,8 @@ CREATE TABLE `brewduckdatabase`.`HOPS` (
 	`ORIGIN_CODE`   VARCHAR(2)   NULL     COMMENT '원산지코드', -- 원산지코드
 	`NOTES`         TEXT         NULL     COMMENT '설명', -- 설명
 	`KOREAN_NOTES`  TEXT         NULL     COMMENT '한글설명', -- 한글설명
-	`TYPE_CODE`     VARCHAR(6)   NULL     COMMENT '타입 코드', -- 타입 코드
-	`ALPHA`         DOUBLE       NULL     COMMENT '알파', -- 알파
+	`TYPE_CODE`     VARCHAR(6)   NOT NULL     COMMENT '타입 코드', -- 타입 코드
+	`ALPHA`         DOUBLE       NOT NULL     COMMENT '알파', -- 알파
 	`BETA`          DOUBLE       NULL     COMMENT '베타', -- 베타
 	`HSI`           DOUBLE       NULL     COMMENT 'HSI', -- HSI
 	`HUMULENE`      DOUBLE       NULL     COMMENT 'HUMULENE', -- HUMULENE
@@ -24,7 +24,7 @@ CREATE TABLE `brewduckdatabase`.`HOPS` (
 )
 COMMENT '홉';
 
--- 홉
+-- 홉le
 ALTER TABLE `brewduckdatabase`.`HOPS`
 	ADD CONSTRAINT `PK_HOPS` -- 홉 기본키
 		PRIMARY KEY (
@@ -150,7 +150,7 @@ CREATE TABLE `brewduckdatabase`.`STYLES` (
 	`CATEGORY_NUMBER` VARCHAR(3)   NULL     COMMENT '카테고리번호', -- 카테고리번호
 	`STYLE_LETTER`    VARCHAR(2)   NULL     COMMENT '문자', -- 문자
 	`STYLE_GUIDE`     VARCHAR(20)  NULL     COMMENT '가이드명', -- 가이드명
-	`TYPE`            VARCHAR(2)   NULL     COMMENT '종류', -- 종류
+	`TYPE_CODE`            VARCHAR(2)   NULL     COMMENT '종류', -- 종류
 	`OG_MIN`          DOUBLE       NULL     COMMENT 'OG, 최소값', -- OG, 최소값
 	`OG_MAX`          DOUBLE       NULL     COMMENT 'OG, 최대값', -- OG, 최대값
 	`FG_MIN`          DOUBLE       NULL     COMMENT 'FG, 최소값', -- FG, 최소값

@@ -140,7 +140,7 @@
 
 
 
-            <li class="dropdown user-profile">
+            <!--li class="dropdown user-profile">
                 <a href="#" data-toggle="dropdown">
                     <img src="/resources/commons/images/user-1.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
 						<span>
@@ -171,7 +171,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li-->
 
 
         </ul>

@@ -1,15 +1,9 @@
-<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: ChaJunYoung
-  Date: 14. 6. 11
-  Time: 오전 9:57
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 
 <title>${StyleDetail.koreanName} - ${StyleDetail.name}</title>
 
@@ -39,7 +33,10 @@
 
 </div>
 
-<section>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<section  class="invoice-env">
     <div class="section-body">
         <div class="row">
             <div class="col-lg-12">
@@ -213,7 +210,8 @@
         </div><!--end .row -->
     </div><!--end .section-body -->
 </section>
-
+</div>
+</div>
 
 <content tag="local_script">
     <script>

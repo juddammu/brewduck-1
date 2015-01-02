@@ -13,7 +13,7 @@
               ,category_number    categoryNumber
               ,style_letter       styleLetter
               ,style_guide        styleGuide
-              ,typeCode               typeCode
+              ,type_code          typeCode
               ,og_min             ogMin
               ,og_max             ogMax
               ,fg_min             fgMin

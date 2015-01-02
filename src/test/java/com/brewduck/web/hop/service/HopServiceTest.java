@@ -53,6 +53,27 @@ public class HopServiceTest {
     }
 
     /**
+     * 데이터 테스트
+     */
+    @Test(timeout=5000)
+    public void notEmptyTest() {
+        List<Hop> selectHopList = hopDao.selectHopList(hop);
+
+        //필수입력 테스트
+        for(int i=0;i<selectHopList.size();i++){
+
+            //이름
+            assertNotNull("색상코드 확인", ((Hop) (selectHopList.get(i))).getName());
+            //TODO : SpecificGravity 0이상이어야 함
+            assertThat(true, is(((Hop) (selectHopList.get(i))).getAlpha() > 0));
+            //발효재료 색상 0이상
+            assertNotNull("색상코드 확인", ((Hop) (selectHopList.get(i))).getTypeCode());
+
+        }
+
+    }
+
+    /**
      * <pre>
      * 기본 수행 테스트
      * </pre>

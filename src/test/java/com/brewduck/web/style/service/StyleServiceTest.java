@@ -66,7 +66,6 @@ public class StyleServiceTest {
             assertThat(true, is(((Style) (selectStyleList.get(i))).getOgMax() > 0));
             assertThat(true, is(((Style) (selectStyleList.get(i))).getFgMin() > 0));
             assertThat(true, is(((Style) (selectStyleList.get(i))).getFgMax() > 0));
-
             assertThat(true, is(((Style) (selectStyleList.get(i))).getIbuMin() > 0));
             assertThat(true, is(((Style) (selectStyleList.get(i))).getIbuMax() > 0));
 

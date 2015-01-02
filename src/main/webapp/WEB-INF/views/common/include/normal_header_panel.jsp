@@ -82,24 +82,6 @@
                                 Support Center
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa-angle-right"></i>
-                                Submit a Ticket
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa-angle-right"></i>
-                                Domains Protocol
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa-angle-right"></i>
-                                Terms of Service
-                            </a>
-                        </li>
                     </ul>
                 </div>
 

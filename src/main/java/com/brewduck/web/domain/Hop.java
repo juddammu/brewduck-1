@@ -18,12 +18,6 @@ import java.util.Date;
 public class Hop extends Common implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    // 홉 영문명
-    private String name;
-
-    //SEO URL
-    private String titleInUrl;
-
     //언어 설정
     private String nationCode;
 
@@ -228,24 +222,6 @@ public class Hop extends Common implements Serializable {
 
     public void setUsedFor(String usedFor) {
         this.usedFor = usedFor;
-    }
-
-    /**
-     * 홉 영문명
-     *
-     * @return 홉 영문명
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * 홉 영문명
-     *
-     * @param name 홉 영문명
-     */
-    public void setName(String name) {
-        this.name = name;
     }
 
     /**
@@ -671,26 +647,6 @@ public class Hop extends Common implements Serializable {
 
     public void setOriginKorean(String originKorean) {
         this.originKorean = originKorean;
-    }
-
-    public String getTitleInUrl() {
-        return titleInUrl;
-    }
-
-    public void setTitleInUrl(String titleInUrl) {
-
-        titleInUrl = titleInUrl.trim().replaceAll("[^a-zA-Z0-9\\-\\s\\.]", "");
-        titleInUrl = titleInUrl.replaceAll("[\\-| |\\.]+", "-");
-
-        /*
-        if(titleInUrl.length() > 200){
-            titleInUrl.setTitleInUrl(titleInUrl.substring(0, 100));
-        } else {
-            titleInUrl.setTitleInUrl(titleInUrl);
-        }
-        */
-
-        this.titleInUrl = titleInUrl;
     }
 
     @Override

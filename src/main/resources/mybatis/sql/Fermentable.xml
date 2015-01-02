@@ -235,9 +235,9 @@
 
     <sql id="Fermentable.selectFermentable">
         SELECT
-               A.name                name
-              ,A.name                titleInUrl
-              ,A.id                  id
+               A.id                  id
+              ,A.name                name
+              ,trim(A.name)          titleInUrl
               ,A.korean_name         koreanName
               ,A.version             version
               ,A.type_code           typeCode
@@ -249,7 +249,7 @@
               ,A.color               color
               ,A.color_code          colorCode
               ,A.add_after_boil      addAfterBoil
-              ,A.origin_code         origin
+              ,A.origin_code         originCode
              ,(select B.name
                   from COMMON_CODE B
                  where common_set = 'nation_code'
