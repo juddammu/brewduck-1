@@ -31,20 +31,54 @@ ALTER TABLE `brewduckdatabase`.`HOPS`
 			`ID` -- 일련번호
 		);
 
+
 -- 레시피
 CREATE TABLE `brewduckdatabase`.`RECIPES` (
-	`ID`       INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
-	`STYLE_ID` INTEGER      NOT NULL COMMENT '스타일일련번호', -- 스타일일련번호
-	`NAME`     VARCHAR(800) NULL     COMMENT '이름' -- 이름
+  `ID`                          INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
+  `STYLE_ID`                    INTEGER      NOT NULL COMMENT '스타일일련번호', -- 스타일일련번호
+  `NAME`                        VARCHAR(800) NULL     COMMENT '이름', -- 이름
+  `VERSION`                     INTEGER      NULL     COMMENT '버젼', -- 버젼
+  `TYPE_CODE`                   VARCHAR(2)   NULL     COMMENT '유형코드', -- 유형코드
+  `EQUIPMENT_ID`                INTEGER      NULL     COMMENT '장비일련번호', -- 장비일련번호
+  `BREWER_ID`                   INTEGER      NULL     COMMENT '양조자일련번호', -- 양조자일련번호
+  `ASST_BREWER_ID`              INTEGER      NULL     COMMENT '보조양조자일련번호', -- 보조양조자일련번호
+  `BATCH_SIZE`                  INTEGER      NULL     COMMENT '배치용량', -- 배치용량
+  `BOIL_SIZE`                   INTEGER      NULL     COMMENT '보일용량', -- 보일용량
+  `BOIL_TIME`                   INTEGER      NULL     COMMENT '보일시간', -- 보일시간
+  `EFFICIENCY`                  DOUBLE       NULL     COMMENT '효율', -- 효율
+  `NOTES`                       TEXT         NULL     COMMENT '설명', -- 설명
+  `TASTE_NOTES`                 TEXT         NULL     COMMENT '테이스팅설명', -- 테이스팅설명
+  `TASTE_RATING`                DOUBLE       NULL     COMMENT '테이스팅점수', -- 테이스팅점수
+  `OG`                          DOUBLE       NULL     COMMENT 'OG', -- OG
+  `FG`                          DOUBLE       NULL     COMMENT 'FG', -- FG
+  `FERMENTATION_STAGES`         INTEGER      NULL     COMMENT '발효단계', -- 발효단계
+  `PRIMARY_FERMENTATION_TIME`   INTEGER      NULL     COMMENT '1차발효시간', -- 1차발효시간
+  `PRIMARY_FERMENTATION_TEMP`   INTEGER      NULL     COMMENT '1차발효온도', -- 1차발효온도
+  `SECONDARY_FERMENTATION_TIME` INTEGER      NULL     COMMENT '2차발효시간', -- 2차발효시간
+  `SECONDARY_FERMENTATION_TEMP` INTEGER      NULL     COMMENT '2차발효온도', -- 2차발효온도
+  `TERTIARY_FERMENTATION_TIME`  INTEGER      NULL     COMMENT '3차발효시간', -- 3차발효시간
+  `TERTIARY_FERMENTATION_TEMP`  INTEGER      NULL     COMMENT '3차발효온도', -- 3차발효온도
+  `AGE_TIME`                    INTEGER      NULL     COMMENT '숙성시간', -- 숙성시간
+  `AGE_TEMP`                    INTEGER      NULL     COMMENT '숙성온도', -- 숙성온도
+  `DATE`                        DATE         NULL     COMMENT '일자', -- 일자
+  `STATUS`                      INTEGER      NULL     COMMENT '상태', -- 상태
+  `ATCH_FILE_ID`                INTEGER      NULL     COMMENT '첨부파일일련번호', -- 첨부파일일련번호
+  `INSERT_ID`                   VARCHAR(400) NULL     COMMENT '저장아이디', -- 저장아이디
+  `INSERT_DATE`                 DATE         NULL     COMMENT '저장일시', -- 저장일시
+  `UPDATE_ID`                   VARCHAR(400) NULL     COMMENT '수정아이디', -- 수정아이디
+  `UPDATE_DATE`                 DATE         NULL     COMMENT '수정일시', -- 수정일시
+  `DELETE_ID`                   VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
+  `DELETE_DATE`                 DATE         NULL     COMMENT '삭제일시' -- 삭제일시
 )
-COMMENT '레시피';
+  COMMENT '레시피';
 
 -- 레시피
 ALTER TABLE `brewduckdatabase`.`RECIPES`
-	ADD CONSTRAINT `PK_RECIPES` -- 레시피 기본키
-		PRIMARY KEY (
-			`ID` -- 일련번호
-		);
+ADD CONSTRAINT `PK_RECIPES` -- 레시피 기본키
+PRIMARY KEY (
+    `ID` -- 일련번호
+  );
+
 
 -- 레시피_홉_맵핑
 CREATE TABLE `brewduckdatabase`.`RECIPES_HOPS` (
