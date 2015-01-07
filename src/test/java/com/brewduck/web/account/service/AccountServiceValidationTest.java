@@ -2,7 +2,6 @@ package com.brewduck.web.account.service;
 
 import com.brewduck.web.account.dao.AccountDao;
 import com.brewduck.web.domain.Account;
-import com.brewduck.web.domain.Car;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -73,26 +72,15 @@ public class AccountServiceValidationTest {
     @Test
     @Ignore
     public void manufacturerIsNull() {
-        Car car = new Car( null, "DD-AB-123", 4 );
 
-        Set<ConstraintViolation<Car>> constraintViolations =
-                validator.validate( car );
-
-        //   assertEquals( 1, constraintViolations.size() );
-
-        System.out.println(constraintViolations.iterator().next().getMessage());
-        assertEquals(
-                "may not be null",
-                constraintViolations.iterator().next().getMessage()
-        );
     }
 
     @Test
     @Ignore
     public void licensePlateTooShort() {
-        Car car = new Car( "Morris", "D", 4 );
+        //Car car = new Car( "Morris", "D", 4 );
 
-        Set<ConstraintViolation<Car>> constraintViolations =
+/*        Set<ConstraintViolation<Car>> constraintViolations =
                 validator.validate( car );
 
         assertEquals( 1, constraintViolations.size() );
@@ -102,7 +90,7 @@ public class AccountServiceValidationTest {
         assertEquals(
                 "size must be between 2 and 14",
                 constraintViolations.iterator().next().getMessage()
-        );
+        );*/
     }
 
     //회원 정보 조회

@@ -19,10 +19,11 @@
     </decorator>
 
     <decorator name="main-content" page="main.jsp">
-        <pattern>/index</pattern>
-    </decorator>
-    <decorator name="normal" page="normal.jsp">
         <pattern>/</pattern>
+    </decorator>
+
+    <decorator name="normal" page="normal.jsp">
+
         <pattern>/style</pattern>
         <pattern>/style/</pattern>
         <pattern>/style/*/*</pattern>
