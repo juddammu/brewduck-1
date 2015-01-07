@@ -14,7 +14,7 @@
                 <div class="user-info">
 
                     <div class="user-image">
-                        <a href="extra-profile.html">
+                        <a href="#">
                             <img src="/resources/commons/images/user-2.png" class="img-responsive img-circle" />
                         </a>
                     </div>
@@ -31,8 +31,8 @@
                         <p class="user-title">Web Developer</p>
 
                         <div class="user-links">
-                            <a href="extra-profile.html" class="btn btn-primary">Edit Profile</a>
-                            <a href="extra-profile.html" class="btn btn-success">Upgrade</a>
+                            <a href="#" class="btn btn-primary">Edit Profile</a>
+                            <a href="#" class="btn btn-success">Upgrade</a>
                         </div>
 
                     </div>

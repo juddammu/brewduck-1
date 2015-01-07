@@ -9,7 +9,10 @@
  */
 package com.brewduck.web.common.service;
 
+import com.brewduck.framework.youtube.UploadVideo;
+import com.brewduck.web.common.dao.CommonDao;
 import com.brewduck.web.common.dao.FileDao;
+import com.brewduck.web.domain.Common;
 import com.brewduck.web.domain.FileInfo;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
@@ -29,9 +32,6 @@ import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoSnippet;
 import com.google.api.services.youtube.model.VideoStatus;
 import com.google.common.collect.Lists;
-import com.brewduck.framework.youtube.UploadVideo;
-import com.brewduck.web.common.dao.CommonDao;
-import com.brewduck.web.domain.Common;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +42,8 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

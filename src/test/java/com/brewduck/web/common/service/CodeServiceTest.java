@@ -2,6 +2,7 @@ package com.brewduck.web.common.service;
 
 import com.brewduck.web.common.dao.CodeDao;
 import com.brewduck.web.domain.Common;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class CodeServiceTest {
     private CodeDao codeDao;
 
     @Test
+    @Ignore
     public void selectCodeMasterListTest() {
         Common common = new Common();
         List<Common> selectCodeMasterList = codeDao.selectCodeMaster();
@@ -36,6 +38,7 @@ public class CodeServiceTest {
     }
 
     @Test
+    @Ignore
     public void selectCodeListTest() {
         Common common = new Common();
         List<Common> getSelectCodeList = codeDao.selectCodeList(common);

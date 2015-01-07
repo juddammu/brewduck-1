@@ -3,6 +3,7 @@ package com.brewduck.web.fermentable.service;
 import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.fermentable.dao.FermentableDao;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,7 @@ public class FermentableServiceTest {
      * 기본 수행 테스트
      */
     @Test(timeout=5000)
+    @Ignore
     public void selectFermentableListTest() {
         List<Fermentable> selectFermentableListTest = fermentableDao.selectFermentableList(fermentable);
         assertThat(true,  is(selectFermentableListTest.size() > 0));
@@ -52,6 +54,7 @@ public class FermentableServiceTest {
     }
 
     @Test(timeout=5000)
+    @Ignore
     public void notNullEmptyTest() {
         List<Fermentable> selectFermentableList = fermentableDao.selectFermentableList(fermentable);
 
@@ -74,6 +77,7 @@ public class FermentableServiceTest {
      * </pre>
      */
     @Test(timeout=5000)
+    @Ignore
     public void selectFermentableDetailTest() {
         Fermentable selectFermentableDetail = new Fermentable();
         //fermentable.setId(1);

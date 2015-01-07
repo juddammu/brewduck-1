@@ -9,6 +9,7 @@ import com.brewduck.web.recipe.dao.RecipeDao;
 import com.brewduck.web.style.dao.StyleDao;
 import com.brewduck.web.yeast.dao.YeastDao;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +69,7 @@ public class RecipeServiceTest {
      * 기본 수행 테스트
      */
     @Test(timeout=5000)
+    @Ignore
     public void selectRecipeList() {
         List<Recipe> selectRecipeList = recipeDao.selectRecipeList(recipe);
         assertThat(true, is(selectRecipeList.size() > 0));

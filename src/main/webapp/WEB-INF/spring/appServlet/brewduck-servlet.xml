@@ -73,7 +73,10 @@
             </beans:list>
         </beans:property>
         <beans:property name="defaultEncoding" value="UTF-8" />
+        <beans:property name="cacheSeconds" value="5"/>
     </beans:bean>
+
+
 
     <mvc:interceptors>
         <beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">

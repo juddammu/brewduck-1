@@ -3,6 +3,7 @@ package com.brewduck.web.hop.service;
 import com.brewduck.web.domain.Hop;
 import com.brewduck.web.hop.dao.HopDao;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,7 @@ public class HopServiceTest {
      * 기본 수행 테스트
      */
     @Test(timeout=5000)
+    @Ignore
     public void selectHopListTest() {
         List<Hop> selectHopListTest = hopDao.selectHopList(hop);
         assertThat(true,  is(selectHopListTest.size() > 0));
@@ -56,6 +58,7 @@ public class HopServiceTest {
      * 데이터 테스트
      */
     @Test(timeout=5000)
+    @Ignore
     public void notEmptyTest() {
         List<Hop> selectHopList = hopDao.selectHopList(hop);
 
@@ -79,6 +82,7 @@ public class HopServiceTest {
      * </pre>
      */
     @Test(timeout=5000)
+    @Ignore
     public void selectHopDetailTest() {
         Hop selectHopDetail = new Hop();
         hop.setId(1);

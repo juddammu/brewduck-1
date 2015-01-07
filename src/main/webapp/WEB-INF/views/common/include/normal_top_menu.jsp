@@ -6,7 +6,7 @@
 
         <!-- Navbar Brand -->
         <div class="navbar-brand">
-            <a href="dashboard-1.html" class="logo">
+            <a href="#" class="logo">
                 <img src="/resources/commons/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />
                 <img src="/resources/commons/images/logo@2x.png" width="80" alt="" class="visible-xs" />
             </a>
