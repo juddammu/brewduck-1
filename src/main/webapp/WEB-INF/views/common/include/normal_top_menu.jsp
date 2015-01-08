@@ -1,3 +1,4 @@
+<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -312,6 +313,16 @@
 <!-- END INBOX DROPDOWN -->
 <!-- BEGIN USER LOGIN DROPDOWN -->
 <li class="dropdown dropdown-user dropdown-dark">
+    <%
+        if (AuthenticationUtils.isAuthenticated() == false) {
+    %>
+    <a href="/account/login" >
+        <span class="username username-hide-mobile">맥덕인증</span>
+    </a>
+    <%
+    } else {
+    %>
+
     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
         <img alt="" class="img-circle" src="/resources/assets/admin/layout3/img/avatar9.jpg">
         <span class="username username-hide-mobile">Nick</span>
@@ -348,6 +359,11 @@
                 <i class="icon-key"></i> 로그 아웃 </a>
         </li>
     </ul>
+    <%
+        }
+    %>
+
+
 </li>
 <!-- END USER LOGIN DROPDOWN -->
 </ul>

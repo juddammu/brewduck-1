@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 
 <title>${StyleDetail.koreanName} - ${StyleDetail.name}</title>
@@ -13,7 +14,7 @@
     <div class="container-fluid">
         <!-- BEGIN PAGE TITLE -->
         <div class="page-title">
-            <h1>${StyleDetail.categoryNumber}${StyleDetail.styleLetter}. ${StyleDetail.koreanName} <small>${StyleDetail.name}</small></h1>
+            <h1><a href="/style/"><spring:message code="menu.style"/> </a> > ${StyleDetail.categoryNumber}${StyleDetail.styleLetter}. ${StyleDetail.koreanName} <small>(${StyleDetail.name})</small></h1>
         </div>
         <!-- END PAGE TITLE -->
     </div>
