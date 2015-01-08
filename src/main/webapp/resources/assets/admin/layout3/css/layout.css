@@ -771,7 +771,7 @@ Page Header
   font-size: 18px;
 }
 .page-header .page-header-top .top-menu .navbar-nav > li.dropdown > .dropdown-toggle > .badge {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Nanum Gothic', "Open Sans", sans-serif;
   position: absolute;
   top: 9px;
   right: 24px;
@@ -785,7 +785,7 @@ Page Header
   z-index: 9996;
   margin-top: 5px;
   margin-right: 7px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Nanum Gothic', "Open Sans", sans-serif;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -927,7 +927,7 @@ Page Header
   -ms-border-radius: 50% !important;
   -o-border-radius: 50% !important;
   border-radius: 50% !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Nanum Gothic', "Open Sans", sans-serif;
   font-weight: 300;
 }
 .page-header .page-header-top .top-menu .navbar-nav > li.dropdown-inbox > .dropdown-toggle > .corner {
@@ -1112,7 +1112,7 @@ Page Header
   width: auto;
 }
 .page-header .page-header-menu .hor-menu .navbar-nav > li.mega-menu-dropdown > .dropdown-menu .mega-menu-content {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Nanum Gothic', "Open Sans", sans-serif;
   padding: 15px;
   margin: 0;
 }
@@ -1139,7 +1139,7 @@ Page Header
 }
 .page-header .page-header-menu .hor-menu .navbar-nav > li.mega-menu-dropdown > .dropdown-menu .mega-menu-content .mega-menu-submenu li > a {
   white-space: normal;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Nanum Gothic', "Open Sans", sans-serif;
   padding: 7px;
   margin: 0;
   font-size: 14px;

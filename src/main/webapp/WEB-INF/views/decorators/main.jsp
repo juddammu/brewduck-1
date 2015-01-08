@@ -60,7 +60,7 @@ License: You must have a valid license purchased only from themeforest(the above
     </div>
     <div class="row">
         <div class="col-md-6 coming-soon-content">
-            <h1>Comming Soon</h1>
+            <h1>Coming Soon</h1>
             <p>
                 클로즈베타테스트에 참여해주셔서 감사드립니다.    </br>         </br>
 
