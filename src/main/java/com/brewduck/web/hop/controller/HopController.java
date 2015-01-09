@@ -71,10 +71,10 @@ public class HopController {
      * @param model Model
      * @return 맥주 홉 상세.
      */
-    @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
-    public String detail(Model model, @PathVariable("seq") Integer seq) {
+    @RequestMapping(value="{id}/*", method=RequestMethod.GET)
+    public String detail(Model model, @PathVariable("id") Integer id) {
         Hop hop = new Hop();
-        hop.setSeq(seq);
+        hop.setId(id);
         // 맥주 홉 상세 조회
         Hop hopDetail = hopService.selectHopDetail(hop);
 

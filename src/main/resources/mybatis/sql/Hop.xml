@@ -109,8 +109,8 @@
         <!-- 맥주 홉 상세 조회 -->
         <include refid="Hop.selectHop" />
         WHERE delete_id IS NULL
-        <if test="seq != null">
-            AND seq = #{seq}
+        <if test="id != null">
+            AND id = #{id}
         </if>
         <if test="name != null">
             AND name = #{name}
@@ -297,7 +297,7 @@
         <!-- 맥주 홉 뷰 증가 -->
         UPDATE HOPS
         SET UPDATE_COUNT = UPDATE_COUNT + 1
-        WHERE name = #{name}
+        WHERE id = #{id}
     </update>
 
     <select id="Hop.selectHopAromaList" parameterType="Hop" resultType="Hop">
