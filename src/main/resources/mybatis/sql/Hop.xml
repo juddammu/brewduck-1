@@ -77,9 +77,6 @@
                 AND (NAME like CONCAT('%', #{name}, '%')
                 OR korean_name like CONCAT('%', #{name}, '%'))
             </if>
-            <if test="nationCode != null">
-                AND nation_code = #{nationCode}
-            </if>
             <if test="typeCode != null and typeCode != 0">AND type_code =  #{typeCode} </if>
             <choose>
                 <when test="originCode == 'ETC'">

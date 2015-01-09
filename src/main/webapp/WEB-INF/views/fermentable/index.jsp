@@ -3,31 +3,54 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<title>발효재료 데이터베이스 - FERMENTABLE DATABASE</title>
+<title>발효재료 - FERMENTABLES</title>
 
-<section>
-    <ol class="breadcrumb">
-        <li><a href="/">홈</a></li>
-        <li class="active"><a href="#">재료 데이터베이스</a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/fermentable/">발효재료 데이터베이스 - FERMENTABLE DATABASE</a></h3>
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1>발효재료 <small>FERMENTABLES</small></h1>
+        </div>
+        <!-- END PAGE TITLE -->
     </div>
-    <div class="section-body">
-    <!-- BEGIN BASIC FORM INPUTS -->
+</div>
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM--><%--
+        <!-- BEGIN PAGE BREADCRUMB -->
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="#">홈</a><i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="#">재료 데이터베이스</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li class="active">
+                스타일
+            </li>
+        </ul>
+        <!-- END PAGE BREADCRUMB -->--%>
+        <!-- BEGIN PAGE CONTENT INNER -->
         <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
-                            <input name="origin" type ="hidden" id="origin" value="">
+            <div class="col-md-12">
+
+                <!-- Begin: life time stats -->
+                <div class="portlet light">
+                    <div class="portlet-title">
+                        <form:form class="form-horizontal" action="/fermentable/" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
                                 </div>
                                 <div class="col-md-10">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
+                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" value="${paramStyle.name}">
                                         <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
                                     </div>
                                 </div>
@@ -40,53 +63,85 @@
                                     <div class="input-group">
                                         <div>
                                             <div>
-                                                <button id="usButton" type="button" class="btn btn-support1 btn-sm" value="US" onclick="setOriginSearch('US')" > </button>
-                                                <button id="deButton" type="button" class="btn btn-support1 btn-sm" value="DE" onclick="setOriginSearch('DE')"> </button>
-                                                <button id="ukButton" type="button" class="btn btn-support1 btn-sm" value="UK" onclick="setOriginSearch('UK')"> </button>
-                                                <button id="beButton" type="button" class="btn btn-support1 btn-sm" value="BE" onclick="setOriginSearch('BE')"> </button>
-                                                <button id="caButton" type="button" class="btn btn-support1 btn-sm" value="CA" onclick="setOriginSearch('CA')"> </button>
-                                                <button id="etcButton" type="button" class="btn btn-support1 btn-sm" value="ETC" onclick="setOriginSearch('ETC')"> </button>
+                                                <button id="usButton" type="button" class="btn btn btn-default btn-sm" value="US" onclick="setOriginSearch('US')" > </button>
+                                                <button id="deButton" type="button" class="btn btn btn-default btn-sm" value="DE" onclick="setOriginSearch('DE')"> </button>
+                                                <button id="ukButton" type="button" class="btn btn btn-default btn-sm" value="UK" onclick="setOriginSearch('UK')"> </button>
+                                                <button id="beButton" type="button" class="btn btn btn-default btn-sm" value="BE" onclick="setOriginSearch('BE')"> </button>
+                                                <button id="caButton" type="button" class="btn btn btn-default btn-sm" value="CA" onclick="setOriginSearch('CA')"> </button>
+                                                <button id="etcButton" type="button" class="btn btn btn-default btn-sm" value="ETC" onclick="setOriginSearch('ETC')"> </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </form:form>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined" id="result_list">
-                    <div class="box-body no-padding style-white">
-                        <table class="table table-hover no-margin">
-                            <thead>
+
+                        <div class="caption pull-right">
+                            <span class="caption-subject font-green-sharp bold uppercase">${list_cnt}</span>
+                            <span class="caption-helper">건이 조회되었습니다.</span>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+
+
+                        <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+
+                            <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                                <thead>
                                 <tr>
-                                    <th style="width:30px" >#</th>
-                                    <th style="width:150px">재료명</th>
-                                    <th style="width:150px">영문명</th>
-                                    <th style="width:70px">타입</th>
-                                    <th style="width:70px">원산지</th>
-                                    <th style="width:70px">제조사</th>
-                                    <th style="width:70px">수율</th>
-                                    <th style="width:70px">색상</th>
+                                    <th data-hide="phone" data-priority="1">영문명</th>
+                                    <th data-hide="phone" data-priority="2">재료명</th>
+                                    <th data-hide="phone" data-priority="4">타입</th>
+                                    <th data-hide="phone" data-priority="5">원산지</th>
+                                    <th data-hide="phone" data-priority="6">SG</th>
+                                    <th data-hide="phone" data-priority="7">색상</th>
+
                                 </tr>
-                            </thead>
-                            <tbody id="result">
-                            </tbody>
-                        </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END FORM TOOLS -->
-    </div><!--end .section-body -->
-</section><!-- #main -->
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${list}" var="list">
+                                    <tr>
+                                        <td><a href="/fermentable/${list.id}/${list.titleInUrl}">${list.name}</a></td>
+                                        <td> ${list.koreanName}</td>
+                                        <td> ${list.typeKorean}</td>
+                                        <td> ${list.originKorean}</td>
+                                        <td> <fmt:formatNumber value="${list.specificGravity}" />
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm" style="background :${list.colorCode};"></button>
+                                            ${list.color} °L
+                                        </td>
+
+                                    </tr>
+                                </c:forEach>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End: life time stats -->
+
+
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+    </div>
+</div>
+<!-- END PAGE CONTENT -->
+
+
 
 <content tag="local_script">
+
     <script>
+        function goDetail(id, titleInUrl){
+            location.href = "/style/"+id+"/"+titleInUrl;
+        }
+
         function getNationCount(){
             $.get("/fermentable/countFermentableOrigin", function(data, status){
                 //alert("US 값은 : " + data.usCnt + "\n" + "de 값은 : " + data.deCnt + "\n");
@@ -99,40 +154,16 @@
             })
         }
 
-        function search(){
-
-            $("#result").html("");
-            $("#result").load("/fermentable/list", $("#searchForm").serialize());
-        }
-
-        function goDetail(seq, titleInUrl){
-            location.href = "/fermentable/"+seq+"/"+titleInUrl;
-        }
-
-        function setOriginSearch(data){
-
-            $("#origin").val(data);
-/*            $("#origin").val(jQuery(this).attr('value'));*/
-
-            search();
-        }
-
-        $(document).ready(function() {
+        // This JavaScript Will Replace Checkboxes in dropdown toggles
+        jQuery(document).ready(function($) {
 
             getNationCount();                  //원산지별 카운트 (조회영역)
-            search();                          //조회
-            $("#name").focus();              //이름칸으로 포커스
+
+            $("#name").focus();
 
             $("#search").click(function(){
                 search();
-            });
-
-            $("#fullSearch").click(function(){
-                $("#name").val('');             //TODO : 초기화 함수로 뺄것
-                $("#type").val('');
-                $("#origin").val('');
-                search();
-            });
+            })
         });
     </script>
 </content>

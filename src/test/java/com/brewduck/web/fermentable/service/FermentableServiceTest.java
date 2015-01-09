@@ -54,13 +54,11 @@ public class FermentableServiceTest {
     }
 
     @Test(timeout=5000)
-    @Ignore
     public void notNullEmptyTest() {
         List<Fermentable> selectFermentableList = fermentableDao.selectFermentableList(fermentable);
 
         //필수입력 테스트
         for(int i=0;i<selectFermentableList.size();i++){
-
             //TODO : SpecificGravity 0이상이어야 함
             assertThat(true, is(((Fermentable) (selectFermentableList.get(i))).getSpecificGravity() >= 0));
             //발효재료 색상 0이상
@@ -77,15 +75,16 @@ public class FermentableServiceTest {
      * </pre>
      */
     @Test(timeout=5000)
-    @Ignore
     public void selectFermentableDetailTest() {
         Fermentable selectFermentableDetail = new Fermentable();
-        //fermentable.setId(1);
+        fermentable.setId(1);
         selectFermentableDetail = fermentableDao.selectFermentableDetail(fermentable);
         assertThat(true,  is(selectFermentableDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableDetail);
         assertThat(true, is(selectFermentableDetail.getName().equals("Amber Dry Extract")));
     }
+
+
 
     /**
      * <pre>
@@ -104,6 +103,7 @@ public class FermentableServiceTest {
      * 맥주 맥아 국가 별 갯수 조회.
      * </pre>
      */
+    @Test(timeout=5000)
     public void countFermentableOriginTest(){
         Fermentable fermentable = new Fermentable();
         Fermentable countFermentableOrigin = new Fermentable();

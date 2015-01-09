@@ -9,11 +9,8 @@ import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Locale;
 
 
 /**
@@ -48,21 +45,20 @@ public class HopController {
      * @param model Model
      * @return 맥주 홉 메인
      */
-    @RequestMapping(value =  {"/", ""}, method = RequestMethod.GET)
-    public String main(Model model, Hop paramHop, HttpServletRequest req) {
+    @RequestMapping(value =  {"/", ""}, method =  { RequestMethod.GET, RequestMethod.POST })
+    public String main(Model model, Hop paramHop) {
 
-        CookieLocaleResolver resolver = new CookieLocaleResolver();
+     /*   CookieLocaleResolver resolver = new CookieLocaleResolver();
         Locale loc = resolver.resolveLocale(req);
         String nationCode = String.valueOf(loc);
 
-        paramHop.setNationCode(nationCode);
+        paramHop.setNationCode(nationCode);*/
         // 맥주 홉 목록 조회
         List<Hop> list = hopService.selectHopList(paramHop);
+
+        model.addAttribute("list_cnt", list.size());
         model.addAttribute("list", list);
-
-
-
-
+        model.addAttribute("paramStyle", paramHop);
 
         return "hop/index";
     }

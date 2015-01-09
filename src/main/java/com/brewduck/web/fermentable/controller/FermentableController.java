@@ -40,12 +40,14 @@ public class FermentableController {
      * @param model Model
      * @return 맥주 맥덕 모드 메인
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String main(Model model) {
-        logger.info("Fermentable index");
-        Account account = AuthenticationUtils.getUser();
+    @RequestMapping(value = "/", method =  { RequestMethod.GET, RequestMethod.POST })
+    public String main(Model model, Fermentable paramStyle) {
+        List<Fermentable> list = fermentableService.selectFermentableList(paramStyle);
 
-        model.addAttribute("account", account);
+        model.addAttribute("list_cnt", list.size());
+        model.addAttribute("list", list);
+        model.addAttribute("paramStyle", paramStyle);
+
 
         return "fermentable/index";
     }

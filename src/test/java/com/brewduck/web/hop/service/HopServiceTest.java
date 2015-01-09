@@ -39,7 +39,7 @@ public class HopServiceTest {
     @Before
     public void setUp(){
         hop = new Hop();
-        listSize = 77;
+        listSize = 158;
 
     }
 
@@ -47,7 +47,6 @@ public class HopServiceTest {
      * 기본 수행 테스트
      */
     @Test(timeout=5000)
-    @Ignore
     public void selectHopListTest() {
         List<Hop> selectHopListTest = hopDao.selectHopList(hop);
         assertThat(true,  is(selectHopListTest.size() > 0));

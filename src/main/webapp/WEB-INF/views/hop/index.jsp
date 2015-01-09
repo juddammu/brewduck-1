@@ -3,132 +3,131 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<title>홉 - HOPS</title>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="box">
-            <div class="box-header">
-                <!-- tools box -->
-                <div class="pull-right box-tools">
-                    <span class="box-btn" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </span>
-                    <span class="box-btn" data-widget="remove"><i class="fa fa-times"></i>
-                    </span>
-                </div>
-                <h3 class="box-title"><i class="fontello-doc"></i>
-                    <span>홉 데이터베이스 - HOP DATABASE</span>
-                </h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                <div class="row" style="margin-bottom:10px;">
-                    <div class="col-sm-4">
-                        <input class="form-control" id="filter" placeholder="Search..." type="text" />
-                    </div>
-                    <div class="col-sm-2">
-                        <select class="filter-status form-control">
-                            <option value="둘다">둘다</option>
-                            <option value="향기">향기</option>
-                            <option value="쓴맛">쓴맛</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="#clear" style="margin-left:10px;" class="pull-right btn bg-red clear-filter" title="clear filter">초기화</a>
-
-                    </div>
-
-                </div>
-                <table  id="footable-res2" class="demo footable-res footable metro-blue" data-filter="#filter" data-filter-text-only="true" data-page-size="30">
-                    <thead>
-                    <tr>
-                        <th data-hide="phone">
-                            순번
-                        </th>
-                        <th>
-                            이름
-                        </th>
-                        <th data-hide="phone">
-                            영문명
-                        </th>
-                        <th data-hide="phone">
-                            목적
-                        </th>
-                        <th data-hide="phone,tablet">
-                            원산지
-                        </th>
-                        <th>
-                            ALPHA
-                        </th>
-                        <th data-hide="phone,tablet">
-                            BETA
-                        </th>
-                        <th data-hide="phone,tablet">
-                            HSI
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${list}" var="list">
-                        <tr onclick="goDetail('${list.seq}', '${list.titleInUrl}');">
-                            <td>${list.seq}</td>
-                            <td> ${list.koreanName}</td>
-                            <td><a href="/hop/${list.seq}/${list.titleInUrl}">${list.name}</a></td>
-                            <td data-value="${list.typeKorean}"> ${list.typeKorean}</td>
-                            <td data-value="${list.originKorean}"> ${list.originKorean}</td>
-                            <td>
-                                <span class="status-metro status-disabled" title="Disabled">${list.alpha} %</span>
-                            </td>
-                            <td>
-                                <span class="status-metro status-disabled" title="Disabled">${list.beta} %</span>
-                            </td>
-                            <td>
-                                <span class="status-metro status-disabled" title="Disabled">${list.hsi} %</span>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td colspan="8">
-                            <div class="pagination pagination-centered"></div>
-                        </td>
-                    </tr>
-                    </tfoot>
-                </table>
-                <br>
-            </div>
-            <!-- /.box-body -->
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1>홉 <small>HOPS</small></h1>
         </div>
-        <!-- /.box -->
+        <!-- END PAGE TITLE -->
     </div>
 </div>
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM--><%--
+        <!-- BEGIN PAGE BREADCRUMB -->
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="#">홈</a><i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="#">재료 데이터베이스</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li class="active">
+                스타일
+            </li>
+        </ul>
+        <!-- END PAGE BREADCRUMB -->--%>
+        <!-- BEGIN PAGE CONTENT INNER -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Begin: life time stats -->
+                <div class="portlet light">
+                    <div class="portlet-title">
+                        <form:form class="form-horizontal" action="/hop/" id="searchForm"  name="searchForm" modelAttribute="paramHop">
+                            <div class="form-group">
+                                <div class="col-sm-11">
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="검색어를 입력하세요." value="${paramStyle.name}">
+                                </div>
+
+                                <div class="col-sm-1 pull-right">
+                                    <button class="btn btn-white btn-single"><i id="search" name="search" class="fa fa-search"></i> 검색</button>
+                                </div>
+                            </div>
+                        </form:form>
+
+                        <div class="caption pull-right">
+                            <span class="caption-subject font-green-sharp bold uppercase">${list_cnt}</span>
+                            <span class="caption-helper">건이 조회되었습니다.</span>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+
+
+                        <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+
+                            <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th data-hide="phone" data-priority="2">이름</th>
+                                    <th data-hide="phone" data-priority="3">영문명</th>
+                                    <th data-hide="phone" data-priority="4">타입</th>
+                                    <th data-hide="phone" data-priority="5">원산지</th>
+                                    <th data-hide="phone" data-priority="6">ALPHA</th>
+                                    <th data-hide="phone" data-priority="7">BETA</th>
+                                    <th data-hide="phone" data-priority="8">HSI</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${list}" var="list">
+                                    <tr>
+                                        <td><a href="/hop/${list.id}/${list.titleInUrl}">${list.name}</a></td>
+                                        <td><a href="/hop/${list.id}/${list.titleInUrl}">${list.koreanName}</a></td>
+                                        <td> ${list.typeKorean}</td>
+                                        <td> ${list.originKorean}</td>
+                                        <td>
+                                            <span class="badge badge-success">${list.alpha} %</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-success">${list.beta} %</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-success">${list.hsi} %</span>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End: life time stats -->
+
+
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+    </div>
+</div>
+<!-- END PAGE CONTENT -->
+
+
 
 <content tag="local_script">
 
-<script>
-    (function($) {
-        "use strict";
-        $('#footable-res2').footable().bind('footable_filtering', function(e) {
+    <script>
+        function goDetail(id, titleInUrl){
+            location.href = "/style/"+id+"/"+titleInUrl;
+        }
+        // This JavaScript Will Replace Checkboxes in dropdown toggles
+        jQuery(document).ready(function($) {
+            $("#name").focus();
 
-            var selected = $('.filter-status').find(':selected').text();
-            if (selected && selected.length > 0) {
-                e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
-                e.clear = !e.filter;
-            }
+            $("#search").click(function(){
+                search();
+            })
         });
-
-        $('.clear-filter').click(function(e) {
-            e.preventDefault();
-            $('.filter-status').val('');
-            $('table.demo').trigger('footable_clear_filter');
-        });
-
-        $('.filter-status').change(function(e) {
-            e.preventDefault();
-            $('table.demo').trigger('footable_filter', {
-                filter: $('#filter').val()
-            });
-        });
-    })(jQuery);
-</script>
+    </script>
 </content>

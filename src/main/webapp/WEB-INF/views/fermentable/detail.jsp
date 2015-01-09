@@ -13,7 +13,7 @@
     </ol>
     <div class="section-header">
         <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>
-            <a href="/fermentable/${FermentableDetail.seq}/${FermentableDetail.titleInUrl}">${FermentableDetail.koreanName} - <strong class="text-support3">${FermentableDetail.name}</strong></a>
+            <a href="/fermentable/${FermentableDetail.id}/${FermentableDetail.titleInUrl}">${FermentableDetail.koreanName} - <strong class="text-support3">${FermentableDetail.name}</strong></a>
         </h3>
     </div>
     <div class="section-body">
@@ -24,7 +24,7 @@
                         <!-- START INVOICE HEADER -->
                         <div class="row">
                             <div class="col-xs-8">
-                                <h1 class="text-light"><strong class="text-support3"><a href="/fermentable/${FermentableDetail.seq}/${FermentableDetail.titleInUrl}">${FermentableDetail.koreanName}  </a></strong><a href="#"><i class="fa fa-beer" data-toggle="tooltip" data-placement="bottom" data-original-title="색상: ${FermentableDetail.color}°L"style="color:${FermentableDetail.colorCode};"></i></a></h1>
+                                <h1 class="text-light"><strong class="text-support3"><a href="/fermentable/${FermentableDetail.id}/${FermentableDetail.titleInUrl}">${FermentableDetail.koreanName}  </a></strong><a href="#"><i class="fa fa-beer" data-toggle="tooltip" data-placement="bottom" data-original-title="색상: ${FermentableDetail.color}°L"style="color:${FermentableDetail.colorCode};"></i></a></h1>
                             </div>
                         </div>
                         <!-- END INVOICE HEADER -->
@@ -38,7 +38,7 @@
                                             <h3 class="text-light">원산지 / 타입</h3 >
                                             <div>
                                                 <button type="button" class="btn btn-info btn-sm" style="width: 49%" onclick="goOrigin('${FermentableDetail.origin}')">${FermentableDetail.originKorean} ( ${FermentableDetail.origin} )</button>
-                                                <button type="button" class="btn btn-primary btn-sm" style="width: 49%" onclick="goType('${FermentableDetail.type}')">${FermentableDetail.typeKorean}</button>
+                                                <button type="button" class="btn btn-primary btn-sm" style="width: 49%" onclick="goType('${FermentableDetail.typeCode}')">${FermentableDetail.typeKorean}</button>
                                             </div>
                                             <br>
                                             <h3 class="text-light">제조사</h3>
@@ -164,7 +164,7 @@
 <content tag="local_script">
     <script>
         var bbsId = '5';
-        var nttId = ${FermentableDetail.seq};
+        var nttId = ${FermentableDetail.id};
 
         $('#insertReply').on('click', function () {
             var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};

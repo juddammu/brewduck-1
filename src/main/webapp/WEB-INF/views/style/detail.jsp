@@ -16,6 +16,11 @@
         <div class="page-title">
             <h1><a href="/style/"><spring:message code="menu.style"/> </a> > ${StyleDetail.categoryNumber}${StyleDetail.styleLetter}. ${StyleDetail.koreanName} <small>(${StyleDetail.name})</small></h1>
         </div>
+
+        <div class="pull-right">
+        <button id="register-back-btn" type="button" class="btn">
+            <i class="m-icon-swapleft"></i> Back </button>
+        </div>
         <!-- END PAGE TITLE -->
     </div>
 </div>
