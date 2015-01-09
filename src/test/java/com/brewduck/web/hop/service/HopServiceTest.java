@@ -104,8 +104,9 @@ public class HopServiceTest {
      * 홉 사용용도 리스트
      * </pre>
      */
+    @Test(timeout=5000)
     public void selectHopUsedForListTest(){
-        Hop hop = new Hop();
+        hop.setId(1);
         List<Hop> selectHopUsedForListTest = hopDao.selectHopUsedForList(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopUsedForListTest);
     }
@@ -115,8 +116,9 @@ public class HopServiceTest {
      * 홉 아로마 리스트
      * </pre>
      */
+    @Test(timeout=5000)
     public void selectHopAromaListTest(){
-        Hop hop = new Hop();
+        hop.setId(1);
         List<Hop> selectHopAromaListTest = hopDao.selectHopAromaList(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopAromaListTest);
     }
@@ -126,8 +128,9 @@ public class HopServiceTest {
      * 홉 대체 리스트
      * </pre>
      */
+    @Test(timeout=5000)
     public void selectHopSubstitutesListTest(){
-        Hop hop = new Hop();
+        hop.setId(1);
         List<Hop> selectHopSubstitutesListTest = hopDao.selectHopSubstitutesList(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopSubstitutesListTest);
     }

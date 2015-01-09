@@ -57,7 +57,6 @@ public class StyleServiceTest {
     }
 
     @Test(timeout=5000)
-    @Ignore
     public void notNullDataTest() {
         List<Style> selectStyleList = styleDao.selectStyleList(style);
 
@@ -73,7 +72,6 @@ public class StyleServiceTest {
 
             assertThat(true, is(((Style) (selectStyleList.get(i))).getColorMin() > 0));
             assertThat(true, is(((Style) (selectStyleList.get(i))).getColorMax() > 0));
-
 
         }
 

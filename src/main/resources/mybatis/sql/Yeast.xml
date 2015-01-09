@@ -4,20 +4,20 @@
 
     <sql id="Yeast.selectYeast">
         SELECT
-               seq                 seq
+               id                  id
               ,name               name
               ,name               titleInUrl
               ,korean_name         koreanName
               ,version             version
-              ,(select B.BBS_ID
+              ,(select B.id
                   from BOARD_MASTER B
                 where B.BBS_EN_NM = 'Yeast Board') as cmtBbsId
               ,(select B.NAME
-                  from common_code B
+                  from COMMON_CODE B
                  where common_set = 'yeast_type'
                    and A.type_code = B.common_code) as type
-              ,(select B.attribute1desc
-                  from common_code B
+              ,(select B.name
+                  from COMMON_CODE B
                  where common_set = 'form_code'
                    and A.form = B.common_code) as form
               ,amount              amount
@@ -41,7 +41,7 @@
               ,delete_date         deleteDate
               ,max_attenuation     maxAttenuation
               ,min_attenuation     minAttenuation
-          FROM YEAST A
+          FROM YEASTS A
     </sql>
 
     <sql id="Yeast.selectRecipeYeast">

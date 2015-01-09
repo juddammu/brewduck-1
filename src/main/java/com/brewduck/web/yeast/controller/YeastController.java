@@ -46,13 +46,14 @@ public class YeastController {
      * @param model Model
      * @return 맥주 홉 메인
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String main(Model model) {
-        logger.info("Yeast index");
+    @RequestMapping(value =  {"/", ""}, method =  { RequestMethod.GET, RequestMethod.POST })
+    public String main(Model model, Yeast paramYeast) {
 
-        Account account = AuthenticationUtils.getUser();
+        List<Yeast> list = yeastService.selectYeastList(paramYeast);
 
-        model.addAttribute("account", account);
+        model.addAttribute("list_cnt", list.size());
+        model.addAttribute("list", list);
+        model.addAttribute("paramStyle", paramYeast);
 
         return "yeast/index";
     }

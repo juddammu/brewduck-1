@@ -46,7 +46,6 @@ public class YeastServiceTest {
      * 기본 수행 테스트
      */
     @Test(timeout=5000)
-    @Ignore
     public void selectYeastListTest() {
         List<Yeast> selectYeastListTest = yeastDao.selectYeastList(yeast);
         assertThat(true,  is(selectYeastListTest.size() > 0));
