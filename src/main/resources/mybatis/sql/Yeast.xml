@@ -11,7 +11,7 @@
               ,version             version
               ,(select B.id
                   from BOARD_MASTER B
-                where B.BBS_EN_NM = 'Yeast Board') as cmtBbsId
+                where B.NAME = 'Yeast Board') as cmtBbsId
               ,(select B.NAME
                   from COMMON_CODE B
                  where common_set = 'yeast_type'
@@ -19,15 +19,15 @@
               ,(select B.name
                   from COMMON_CODE B
                  where common_set = 'form_code'
-                   and A.form = B.common_code) as form
-              ,amount              amount
-              ,amount_is_weight    amountIsWeight
+                   and A.form_code = B.common_code) as form
+              /*,amount              amount*/
+              /*,amount_is_weight    amountIsWeight*/
               ,laboratory          laboratory
               ,product_id          productId
               ,min_temperature     minTemperature
               ,max_temperature     maxTemperature
               ,flocculation        flocculation
-              ,attenuation         attenuation
+              /*,attenuation         attenuation*/
               ,notes               notes
               ,best_for            bestFor
               ,times_cultured      timesCultured
@@ -39,8 +39,8 @@
               ,update_date         updateDate
               ,delete_id           deleteId
               ,delete_date         deleteDate
-              ,max_attenuation     maxAttenuation
-              ,min_attenuation     minAttenuation
+              /*,max_attenuation     maxAttenuation
+              ,min_attenuation     minAttenuation*/
           FROM YEASTS A
     </sql>
 
@@ -100,7 +100,7 @@
         <!-- 맥주 이스트 타입 조회 -->
         SELECT
         type
-        ,(select B.attribute1desc
+        ,(select B.name
         from common_code B
         where common_set = 'yeast_type'
         and A.type = B.common_code) as typeName
@@ -113,8 +113,8 @@
         <!-- 맥주 이스트 상세 조회 -->
         <include refid="Yeast.selectYeast" />
         WHERE delete_id IS NULL
-        <if test="seq != null">
-            AND seq = #{seq}
+        <if test="id != null">
+            AND id = #{id}
         </if>
         <if test="name != null">
             AND name = #{name}
@@ -126,29 +126,29 @@
 
     <select id="Yeast.countYeastType" resultType="Yeast">
          SELECT
-        (SELECT COUNT(*) FROM YEAST WHERE TYPE = '1') aleCnt,
-        (SELECT B.attribute1desc
-           FROM common_code B
+        (SELECT COUNT(*) FROM YEASTS WHERE TYPE_CODE = '1') aleCnt,
+        (SELECT B.name
+           FROM COMMON_CODE B
           WHERE common_set = 'yeast_type'
           AND B.common_code = '1') as aleCntName,
-        (SELECT COUNT(*) FROM YEAST WHERE TYPE = '3') lagerCnt,
-        (SELECT B.attribute1desc
-           FROM common_code B
+        (SELECT COUNT(*) FROM YEASTS WHERE TYPE_CODE = '3') lagerCnt,
+        (SELECT B.name
+           FROM COMMON_CODE B
           WHERE common_set = 'yeast_type'
           AND B.common_code = '3') as lagerCntName,
-        (SELECT COUNT(*) FROM YEAST WHERE TYPE = '4') wheatCnt,
-        (SELECT B.attribute1desc
-           FROM common_code B
+        (SELECT COUNT(*) FROM YEASTS WHERE TYPE_CODE = '4') wheatCnt,
+        (SELECT B.name
+           FROM COMMON_CODE B
           WHERE common_set = 'yeast_type'
           AND B.common_code = '4') as wheatCntName,
-        (SELECT COUNT(*) FROM YEAST WHERE TYPE = '5') wineCnt,
-        (SELECT B.attribute1desc
-           FROM common_code B
+        (SELECT COUNT(*) FROM YEASTS WHERE TYPE_CODE = '5') wineCnt,
+        (SELECT B.name
+           FROM COMMON_CODE B
           WHERE common_set = 'yeast_type'
           AND B.common_code = '5') as wineCntName,
-        (SELECT COUNT(*) FROM YEAST WHERE TYPE = '2') champagneCnt,
-        (SELECT B.attribute1desc
-           FROM common_code B
+        (SELECT COUNT(*) FROM YEASTS WHERE TYPE_CODE = '2') champagneCnt,
+        (SELECT B.name
+           FROM COMMON_CODE B
           WHERE common_set = 'yeast_type'
           AND B.common_code = '2') as champagneCntName
         FROM DUAL

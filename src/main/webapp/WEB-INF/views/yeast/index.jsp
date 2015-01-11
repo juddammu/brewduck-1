@@ -3,22 +3,45 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<title>효모 데이터베이스 - YEAST DATABASE</title>
+<title>효모 - YEAST</title>
 
-<section>
-    <ol class="breadcrumb">
-        <li><a href="/">홈</a></li>
-        <li class="active"><a href="#">재료 데이터베이스</a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/yeast/">효모 데이터베이스 - YEAST DATABASE</a></h3>
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1>효모 <small>YEAST</small></h1>
+        </div>
+        <!-- END PAGE TITLE -->
     </div>
-    <div class="section-body">
-        <!-- BEGIN BASIC FORM INPUTS -->
+</div>
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM--><%--
+        <!-- BEGIN PAGE BREADCRUMB -->
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="#">홈</a><i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="#">재료 데이터베이스</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li class="active">
+                스타일
+            </li>
+        </ul>
+        <!-- END PAGE BREADCRUMB -->--%>
+        <!-- BEGIN PAGE CONTENT INNER -->
         <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body no-padding">
+            <div class="col-md-12">
+
+                <!-- Begin: life time stats -->
+                <div class="portlet light">
+                    <div class="portlet-title">
                         <form:form class="form-horizontal form-banded form-bordered" id="searchForm" name="searchForm" modelAttribute="paramYeast">
                             <input id ="type" name="type" type="hidden">
                         <div class="form-group">
@@ -40,100 +63,120 @@
                                 <div class="input-group">
                                     <div>
                                         <div>
-                                            <button id="aleButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(1)" value="1"> </button>
-                                            <button id="lagerButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(3)" value="3"> </button>
-                                            <button id="wheatButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(4)" value="4"> </button>
-                                            <button id="wineButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(5)" value="5"> </button>
-                                            <button id="champagneButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(2)" value="2"> </button>
-                                            <button id="allButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch()">  전체   </button>
+                                            <button id="aleButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(1)" value="1"> </button>
+                                            <button id="lagerButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(3)" value="3"> </button>
+                                            <button id="wheatButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(4)" value="4"> </button>
+                                            <button id="wineButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(5)" value="5"> </button>
+                                            <button id="champagneButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(2)" value="2"> </button>
+                                            <button id="allButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch()">  전체   </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         </form:form>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined" id="result_list">
-                    <div class="box-body no-padding style-white">
-                        <table class="table table-hover no-margin">
-                            <thead>
+
+                        <div class="caption pull-right">
+                            <span class="caption-subject font-green-sharp bold uppercase">${list_cnt}</span>
+                            <span class="caption-helper">건이 조회되었습니다.</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+
+
+                        <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+
+                            <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                                <thead>
                                 <tr>
-                                    <th style="width:30px" >#</th>
-                                    <th style="width:150px">이스트명</th>
-                                    <th style="width:150px">영문명</th>
-                                    <th style="width:70px">타입</th>
-                                    <th style="width:70px">형태</th>
-                                    <th style="width:70px">최대온도</th>
-                                    <th style="width:70px">최소온도</th>
+                                    <th data-hide="phone" data-priority="1">영문명</th>
+                                    <th data-hide="phone" data-priority="2">이스트명</th>
+                                    <th data-hide="phone" data-priority="4">타입</th>
+                                    <th data-hide="phone" data-priority="5">형태</th>
+                                    <th data-hide="phone" data-priority="6">최대온도</th>
+                                    <th data-hide="phone" data-priority="7">최소온도</th>
+
                                 </tr>
-                            </thead>
-                            <tbody id="result">
-                            </tbody>
-                        </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END FORM TOOLS -->
-    </div><!--end .section-body -->
-</section><!-- #main -->
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${list}" var="list">
+                                    <tr>
+                                        <td><a href="/yeast/${list.id}/${list.titleInUrl}">${list.name}</a></td>
+                                        <td> ${list.koreanName}</td>
+                                        <td> ${list.type}</td>
+                                        <td> ${list.form}</td>
+                                        <td>${list.minTemperature} °C</td>
+                                        <td>${list.maxTemperature} °C</td>
+                                    </tr>
+                                </c:forEach>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End: life time stats -->
+
+
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+    </div>
+</div>
+<!-- END PAGE CONTENT -->
 
 
 <content tag="local_script">
-<script>
-    function getTypeCount(){
-        $.get("/yeast/countYeastType", function(data, status){
-            /*alert("에일 값은 : " + data.aleCntName + "\n" + "de 값은 : " + data.aleCnt + "\n");*/
-            $("#aleButton").html("("+data.aleCntName +data.aleCnt+" 건)"); /*에일*/
-            $("#lagerButton").html("("+data.lagerCntName +data.lagerCnt+" 건)"); /*라거*/
-            $("#wheatButton").html("("+data.wheatCntName +data.wheatCnt+" 건)"); /*위트*/
-            $("#wineButton").html("("+data.wineCntName +data.wineCnt+" 건)"); /*와인*/
-            $("#champagneButton").html("("+data.champagneCntName +data.champagneCnt+" 건)"); /*샴페인*/
-        })
-    }
+    <script>
+        function getTypeCount(){
+            $.get("/yeast/countYeastType", function(data, status){
+                /*alert("에일 값은 : " + data.aleCntName + "\n" + "de 값은 : " + data.aleCnt + "\n");*/
+                $("#aleButton").html("("+data.aleCntName +data.aleCnt+" 건)"); /*에일*/
+                $("#lagerButton").html("("+data.lagerCntName +data.lagerCnt+" 건)"); /*라거*/
+                $("#wheatButton").html("("+data.wheatCntName +data.wheatCnt+" 건)"); /*위트*/
+                $("#wineButton").html("("+data.wineCntName +data.wineCnt+" 건)"); /*와인*/
+                $("#champagneButton").html("("+data.champagneCntName +data.champagneCnt+" 건)"); /*샴페인*/
+            })
+        }
 
-    function search(){
+        function search(){
 
-        $("#result").html("");
-        $("#result").load("/yeast/list", $("#searchForm").serialize());
+            $("#result").html("");
+            $("#result").load("/yeast/list", $("#searchForm").serialize());
 
-    }
+        }
 
-    function goDetail(seq, titleInUrl){
-        location.href = "/yeast/"+seq+"/"+titleInUrl;
-    }
+        function goDetail(seq, titleInUrl){
+            location.href = "/yeast/"+seq+"/"+titleInUrl;
+        }
 
-    function setTypeSearch(data){
+        function setTypeSearch(data){
 
-        $("#type").val(data);
+            $("#type").val(data);
 
-        search();
-
-    }
-
-    $(document).ready(function() {
-
-        getTypeCount();                  //타입별 카운트 (조회영역)
-        search();                        //조회
-        $("#name").focus();              //이름칸으로 포커스
-
-        $("#search").click(function(){
-        search();
-        });
-
-        $("#fullSearch").click(function(){
-            $("#type").val('');             //TODO : 초기화 함수로 뺄것
-            $("#name").val('');
             search();
-        });
 
-        $("#aleButton").click(setTypeSearch);
-    });
-</script>
+        }
+
+        jQuery(document).ready(function($) {
+
+            getTypeCount();                  //타입별 카운트 (조회영역)
+            search();                        //조회
+            $("#name").focus();              //이름칸으로 포커스
+
+            $("#search").click(function(){
+            search();
+            })
+
+            $("#fullSearch").click(function(){
+                $("#type").val('');             //TODO : 초기화 함수로 뺄것
+                $("#name").val('');
+                search();
+            })
+
+            $("#aleButton").click(setTypeSearch);
+        });
+    </script>
 </content>

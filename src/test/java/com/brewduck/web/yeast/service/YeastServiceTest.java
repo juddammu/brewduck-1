@@ -38,7 +38,7 @@ public class YeastServiceTest {
     @Before
     public void setUp(){
         yeast = new Yeast();
-        listSize = 77;
+        listSize = 231;
 
     }
 
@@ -58,14 +58,14 @@ public class YeastServiceTest {
      * </pre>
      */
     @Test(timeout=5000)
-    @Ignore
+    //@Ignore
     public void selectYeastDetailTest() {
         Yeast selectYeastDetail = new Yeast();
-        //yeast.setId(1);
-        /*selectYeastDetail = yeastDao.selectYeastDetail(yeast);
+        yeast.setId(1);
+        selectYeastDetail = yeastDao.selectYeastDetail(yeast);
         assertThat(true,  is(selectYeastDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectYeastDetail);
-        assertThat(true, is(selectYeastDetail.getName().equals("Abbey Ale")));*/
+        assertThat(true, is(selectYeastDetail.getName().equals("Abbey Ale")));
     }
 
     /**
@@ -73,13 +73,13 @@ public class YeastServiceTest {
      * 맥주 이스트 타입 별 갯수 조회.
      * </pre>
      */
+    @Test(timeout=5000)
     public void countYeastTypeTest(){
         Yeast yeast = new Yeast();
         Yeast countYeastType = new Yeast();
 
         countYeastType = yeastDao.countYeastType();
-        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", countYeastType);
-
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", countYeastType);
     }
 
     /**
