@@ -16,6 +16,8 @@ public class Yeast implements Serializable {
 
     //효모 순번
     public Integer seq;
+    //효모 ID
+    public Integer id;
     //SEO를 위한 타이틀 URL
     private String titleInUrl;
     // 효모 영문명
@@ -614,6 +616,14 @@ public class Yeast implements Serializable {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -729,4 +739,5 @@ public class Yeast implements Serializable {
     public void setBrewer(String brewer) {
         this.brewer = brewer;
     }
+
 }

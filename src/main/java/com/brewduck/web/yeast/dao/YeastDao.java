@@ -29,7 +29,7 @@ public interface YeastDao {
      * 맥주 레시피 이스트 목록 조회.
      * </pre>
      *
-     * @param seq 레시피 이름
+     * @param id 레시피 이름
      * @return 맥주 이스트 목록
      */
     public List<Yeast> selectRecipeYeastList(Yeast yeast);
