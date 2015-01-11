@@ -101,7 +101,7 @@
                                     <tr>
                                         <td><a href="/misc/${list.id}/${list.titleInUrl}">${list.name}</a></td>
                                         <td> ${list.name}</td>
-                                        <td> ${list.type}</td>
+                                        <td> ${list.typeCode}</td>
                                         <td> ${list.miscUse}</td>
                                     </tr>
                                 </c:forEach>

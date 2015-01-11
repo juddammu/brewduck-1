@@ -145,15 +145,15 @@ public class MiscController {
      * @param model Model
      * @return 맥주 기타 맥덕 모드 재료 상세.
      */
-    @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
-    public String detail(Model model, @PathVariable("seq") Integer seq) {
+    @RequestMapping(value="{id}/*", method=RequestMethod.GET)
+    public String detail(Model model, @PathVariable("id") Integer id) {
 
-        logger.info("Misc seq : {}", seq);
+        logger.info("Misc id : {}", id);
 
         Misc misc = new Misc();
-        misc.setSeq(seq);
+        misc.setId(id);
         //misc.setName(name);
-       //misc.setSeq(seq);
+       //misc.setid(id);
 
         // 맥주 기타 재료 상세 조회
         Misc miscDetail = miscService.selectMiscDetail(misc);
@@ -171,15 +171,15 @@ public class MiscController {
      * @param model Model
      * @return 맥주 기타 재료 상세.
      */
-    @RequestMapping(value="/miscDetail/{seq}/*", method=RequestMethod.GET)
-    public String miscDetail(Model model, @PathVariable("seq") Integer seq) {
+    @RequestMapping(value="/miscDetail/{id}/*", method=RequestMethod.GET)
+    public String miscDetail(Model model, @PathVariable("id") Integer id) {
 
-        logger.info("Misc seq : {}", seq);
+        logger.info("Misc id : {}", id);
 
         Misc misc = new Misc();
-        misc.setSeq(seq);
+        misc.setId(id);
         //misc.setName(name);
-        //misc.setSeq(seq);
+        //misc.setid(id);
 
         // 맥주 기타 재료 상세 조회
         Misc miscDetail = miscService.selectMiscDetail(misc);
