@@ -98,12 +98,12 @@ public class YeastController {
      * @param model Model
      * @return 맥주 이스트 상세.
      */
-    @RequestMapping(value = "/{seq}/*", method = RequestMethod.GET)
-    public String detail(Model model, @PathVariable("seq") Integer seq) {
-        logger.info("Yeast seq : {}", seq);
+    @RequestMapping(value = "/{id}/*", method = RequestMethod.GET)
+    public String detail(Model model, @PathVariable("id") Integer id) {
+        logger.info("Yeast id : {}", id);
 
         Yeast yeast = new Yeast();
-        yeast.setSeq(seq);
+        yeast.setId(id);
 
         // 맥주 이스트 상세 조회
         Yeast yeastDetail = yeastService.selectYeastDetail(yeast);

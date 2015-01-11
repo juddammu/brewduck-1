@@ -18,6 +18,8 @@ public class Misc implements Serializable {
 
     // 기타 재료 순번
     private Integer seq;
+    // 기타 재료 ID
+    private Integer id;
     // 기타 재료 영문명
     private String name;
     // 기타 재료 한글명
@@ -26,6 +28,8 @@ public class Misc implements Serializable {
     private Integer version;
     // 기타 재료 종류 ("Spice", "Fining", "Water Agent", "Herb", "Flavor" or "Other")
     private String type;
+    // 기타 재료 종류 ("Spice", "Fining", "Water Agent", "Herb", "Flavor" or "Other")
+    private String typeCode;
     // 기타 재료 사용 ("Boil", "Mash", "Primary", "Secondary", "Bottling")
     private String miscUse;
     // 기타 재료의 사용되는 시간
@@ -581,5 +585,21 @@ public class Misc implements Serializable {
 
     public void setBrewer(String brewer) {
         this.brewer = brewer;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTypeCode() {
+        return typeCode;
+    }
+
+    public void setTypeCode(String typeCode) {
+        this.typeCode = typeCode;
     }
 }

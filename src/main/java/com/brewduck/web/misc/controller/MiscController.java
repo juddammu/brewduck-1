@@ -43,13 +43,18 @@ public class MiscController {
      * @return 맥주 기타 재료 맥덕 모드 메인
      */
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String main(Model model) {
+    @RequestMapping(value =  {"/", ""}, method =  { RequestMethod.GET, RequestMethod.POST })
+    public String main(Model model, Misc paramMisc) {
         logger.info("Misc index");
 
-        Account account = AuthenticationUtils.getUser();
+/*        Account account = AuthenticationUtils.getUser();
 
-        model.addAttribute("account", account);
+        model.addAttribute("account", account);*/
+        List<Misc> list = miscService.selectMiscList(paramMisc);
+
+        model.addAttribute("list_cnt", list.size());
+        model.addAttribute("list", list);
+        model.addAttribute("paramMisc", paramMisc);
 
         return "misc/index";
     }

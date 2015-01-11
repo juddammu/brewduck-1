@@ -3,22 +3,45 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<title>기타재료 데이터베이스 - MISC DATABASE</title>
+<title>기타재료 - MISC</title>
 
-<section>
-    <ol class="breadcrumb">
-        <li><a href="/">홈</a></li>
-        <li class="active"><a href="#">재료 데이터베이스</a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/misc/">기타재료 데이터베이스 - MISC DATABASE</a></h3>
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1>기타재료 <small>MISC</small></h1>
+        </div>
+        <!-- END PAGE TITLE -->
     </div>
-    <div class="section-body">
-        <!-- BEGIN BASIC FORM INPUTS -->
+</div>
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM--><%--
+        <!-- BEGIN PAGE BREADCRUMB -->
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="#">홈</a><i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="#">재료 데이터베이스</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li class="active">
+                스타일
+            </li>
+        </ul>
+        <!-- END PAGE BREADCRUMB -->--%>
+        <!-- BEGIN PAGE CONTENT INNER -->
         <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body no-padding">
+            <div class="col-md-12">
+
+                <!-- Begin: life time stats -->
+                <div class="portlet light">
+                    <div class="portlet-title">
                         <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
                             <input name="type"  id="type" type="hidden"  class="form-control" value="">
                             <div class="form-group">
@@ -39,47 +62,66 @@
                                 <div class="col-md-10">
                                     <div class="input-group">
                                         <div>
-                                            <button id="spiceButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(2)" value="2"> </button>
-                                            <button id="flavorButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(3)" value="3"> </button>
-                                            <button id="waterAgentButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(4)" value="4"> </button>
-                                            <button id="finingButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(5)" value="5"> </button>
-                                            <button id="herbButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(6)" value="6"> </button>
-                                            <button id="otherButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch(1)" value="1"> </button>
-                                            <button id="allButton" type="button" class="btn btn-support1 btn-sm" onclick="setTypeSearch()">  전체  </button>
+                                            <button id="spiceButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(2)" value="2"> </button>
+                                            <button id="flavorButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(3)" value="3"> </button>
+                                            <button id="waterAgentButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(4)" value="4"> </button>
+                                            <button id="finingButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(5)" value="5"> </button>
+                                            <button id="herbButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(6)" value="6"> </button>
+                                            <button id="otherButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(1)" value="1"> </button>
+                                            <button id="allButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch()">  전체  </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </form:form>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined" id="result_list">
-                    <div class="box-body no-padding style-white">
-                        <table class="table table-hover no-margin">
-                            <thead>
+
+                        <div class="caption pull-right">
+                            <span class="caption-subject font-green-sharp bold uppercase">${list_cnt}</span>
+                            <span class="caption-helper">건이 조회되었습니다.</span>
+                        </div>
+                    </div>
+
+                    <div class="portlet-body">
+
+
+                        <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+
+
+                            <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                                <thead>
                                 <tr>
-                                    <th class="small-cell"> </th>
-                                    <th>재료명</th>
-                                    <th>영문명</th>
-                                    <th>타입</th>
-                                    <th>용도</th>
+                                    <th data-hide="phone" data-priority="1">영문명</th>
+                                    <th data-hide="phone" data-priority="2">재료명</th>
+                                    <th data-hide="phone" data-priority="4">타입</th>
+                                    <th data-hide="phone" data-priority="5">용도</th>
                                 </tr>
-                            </thead>
-                            <tbody id="result">
-                            </tbody>
-                        </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-            <!-- END FORM TOOLS -->
-    </div><!--end .section-body -->
-</section><!-- #main -->
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${list}" var="list">
+                                    <tr>
+                                        <td><a href="/misc/${list.id}/${list.titleInUrl}">${list.name}</a></td>
+                                        <td> ${list.name}</td>
+                                        <td> ${list.type}</td>
+                                        <td> ${list.miscUse}</td>
+                                    </tr>
+                                </c:forEach>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                    <!-- End: life time stats -->
+
+
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+    </div>
+</div>
+<!-- END PAGE CONTENT -->
+
 
 
 <content tag="local_script">
@@ -118,7 +160,7 @@
         search();
     }
 
-    $(document).ready(function() {
+    jQuery(document).ready(function($) {
 
         $("#type").val("");
         $("#name").val("");
@@ -128,14 +170,14 @@
 
         $("#search").click(function(){
         search();
-        });
+        })
 
         $('#name').on('keyup', function(){
             if(($('#name').val()).length > 2){
                 search();
             }
 
-        });
+        })
     });
 </script>
 </content>

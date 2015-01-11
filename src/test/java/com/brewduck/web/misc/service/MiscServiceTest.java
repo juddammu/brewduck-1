@@ -38,7 +38,7 @@ public class MiscServiceTest {
     @Before
     public void setUp(){
         misc = new Misc();
-        listSize = 77;
+        listSize = 41;
 
     }
 
@@ -46,7 +46,7 @@ public class MiscServiceTest {
      * 기본 수행 테스트
      */
     @Test(timeout=5000)
-    @Ignore
+    //@Ignore
     public void selectMiscListTest() {
         List<Misc> selectMiscListTest = miscDao.selectMiscList(misc);
         assertThat(true,  is(selectMiscListTest.size() > 0));
@@ -59,10 +59,10 @@ public class MiscServiceTest {
      * </pre>
      */
     @Test(timeout=5000)
-    @Ignore
+    //@Ignore
     public void selectMiscDetailTest() {
         Misc selectMiscDetail = new Misc();
-       // misc.setId(1);
+        misc.setId(1);
         selectMiscDetail = miscDao.selectMiscDetail(misc);
         assertThat(true,  is(selectMiscDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectMiscDetail);
@@ -74,6 +74,7 @@ public class MiscServiceTest {
      * 맥주 기타 재료 타입 별갯수 조회.
      * </pre>
      */
+    @Test(timeout=5000)
     public void countMiscTypeTest(){
         Misc misc = new Misc();
         Misc countMiscType = new Misc();
