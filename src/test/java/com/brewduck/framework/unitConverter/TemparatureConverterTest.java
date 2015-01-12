@@ -1,6 +1,6 @@
 package com.brewduck.framework.unitConverter;
 
-import com.brewduck.framework.util.TemperatureConverter;
+import com.brewduck.framework.convert.TemperatureConverter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

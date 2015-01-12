@@ -1,4 +1,4 @@
-package com.brewduck.framework.util;
+package com.brewduck.framework.convert;
 
 
 
@@ -27,7 +27,7 @@ public class WeightConverter {
         return (measurement / factor);
     }
 
-    public double fromOz(double measurement){
+    public double fromGram(double measurement){
         return (measurement * factor);
     }
 

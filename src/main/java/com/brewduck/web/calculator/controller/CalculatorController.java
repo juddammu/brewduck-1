@@ -35,17 +35,20 @@ public class CalculatorController {
      * 맥주 발효재료 메인
      * </pre>
      *
-     * @param model Model
      * @return 맥주 발효재료 메인
      */
     @RequestMapping(value =  {"/", ""}, method = RequestMethod.GET)
-    public String main(Model model) {
-        logger.info("calc index");
-        Account account = AuthenticationUtils.getUser();
-        model.addAttribute("account", account);
+    public String main() {
 
         return "calc/index";
     }
+
+    @RequestMapping(value = "/unit-converter", method = RequestMethod.GET)
+    public String unitConverter() {
+
+        return "calc/unit-converter";
+    }
+
 
     @RequestMapping(value = "/abv-calculator", method = RequestMethod.GET)
     public String abv(Model model) {

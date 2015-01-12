@@ -1,6 +1,6 @@
 package com.brewduck.framework.unitConverter;
 
-import com.brewduck.framework.util.LengthConverter;
+import com.brewduck.framework.convert.LengthConverter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,13 +23,11 @@ public class LengthConverterTest {
         LengthConverter from = new LengthConverter(fromUnit);
 
         double metters = from.toMetters(4);
-        double inchs = from.fromMetters(4);
+        double inchs = from.fromInch(metters);
 
         //inch --> metter
         System.out.println("inch   --> metter " + metters);
         System.out.println("metter --> inch " + inchs);
-
-
 
     }
 }

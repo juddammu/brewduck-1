@@ -1,4 +1,4 @@
-package com.brewduck.framework.util;
+package com.brewduck.framework.convert;
 
 
 
@@ -22,7 +22,7 @@ public class LengthConverter {
         return (measurement * factor);
     }
 
-    public double fromMetters(double measurement){
+    public double fromInch(double measurement){
         return (measurement / factor);
     }
 

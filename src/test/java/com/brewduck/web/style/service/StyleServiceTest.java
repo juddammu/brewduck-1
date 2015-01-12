@@ -42,7 +42,6 @@ public class StyleServiceTest {
     public void setUp(){
         style = new Style();
         listSize = 77;
-
     }
 
     /**
