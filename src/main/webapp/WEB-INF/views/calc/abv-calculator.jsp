@@ -170,7 +170,6 @@
 
                 debugger;
 
-
                 var gravity = 1.001843 - 0.002318474*oBrix - 0.000007775*oBrix*oBrix - 0.000000034*oBrix*oBrix*oBrix + 0.00574*mBrix + 0.00003344*mBrix*mBrix + 0.000000086*mBrix*mBrix*mBrix
 
                 var fBrix = gravityToBrix(gravity);

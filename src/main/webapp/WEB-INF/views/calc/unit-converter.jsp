@@ -3,13 +3,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<title>알콜 함유량 계산기</title>
+<title>단위 변환</title>
 <!-- BEGIN PAGE HEAD -->
 <div class="page-head">
     <div class="container-fluid">
         <!-- BEGIN PAGE TITLE -->
         <div class="page-title">
-            <h1>알콜 함유량 계산기 <small>ABV(Alcohol By Volume) Calculator</small></h1>
+            <h1>단위 변환 <small>Unit Converter</small></h1>
         </div>
         <!-- END PAGE TITLE -->
     </div>

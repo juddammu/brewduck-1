@@ -443,6 +443,12 @@
     </a>
     <ul class="dropdown-menu pull-left">
         <li class="">
+            <a href="/calc/unit-converter">
+                <i class="fa fa-joomla"></i>
+                <spring:message code="menu.unit.calculators"/>
+            </a>
+        </li>
+        <li class="">
             <a href="/calc/abv-calculator">
                 <i class="fa fa-glass"></i>
                 <spring:message code="menu.alcohol.calculators"/>
