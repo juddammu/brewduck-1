@@ -2,16 +2,14 @@ package com.brewduck.web.calculator.controller;
 
 import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.domain.Account;
-import com.brewduck.web.domain.Fermentable;
-import com.brewduck.web.fermentable.service.FermentableService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <pre>
@@ -123,7 +121,24 @@ public class CalculatorController {
     }
 
 
+    @ResponseBody
+    @RequestMapping(value = "/unitClac/{fromUnit}/{toUnit}/{weight}", method = RequestMethod.GET)
+    public Double weightConverter(@PathVariable("fromUnit") String fromUnit, @PathVariable("toUnit") String toUnit, @PathVariable("weight") Double weight) {
 
+        String unitCalculator = null;
+
+     /*   WeightConverter from = new WeightConverter(fromUnit, toUnit);
+
+        from.toOz(weight);
+
+        logger.info("fromUnit : " + fromUnit);
+        logger.info("weight : " + weight);*/
+
+        Double returnWeight = 0.0;
+
+
+        return returnWeight;
+    }
 
 
 }

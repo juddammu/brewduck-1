@@ -9,8 +9,6 @@
         <!-- /.box-header -->
         <div class="box-body">
 
-
-
             <form class="bs-example bs-example-form" role="form">
                 <div class="row">
                     <div class="col-lg-12">
