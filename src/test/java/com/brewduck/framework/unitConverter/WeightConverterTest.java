@@ -60,7 +60,6 @@ public class WeightConverterTest {
         assertNotNull("킬로그램 --> 온즈   변환", weightConverter.getKgToOunce(requestWeight));
         assertNotNull("킬로그램 --> 파운드 변환    ", weightConverter.getKgToPound(requestWeight));
 
-
         assertEquals(requestWeight*POUNDS_TO_KILOGRAMS, weightConverter.getPoundToKg(requestWeight), delta);
         assertEquals(requestWeight*POUNDS_TO_GRAMS,     weightConverter.getPoundToGrams(requestWeight), delta);
 
@@ -73,17 +72,24 @@ public class WeightConverterTest {
         assertEquals(requestWeight/KILOGRAMS_TO_OZ,     weightConverter.getKgToOunce(requestWeight), delta);
         assertEquals(requestWeight/KILOGRAMS_TO_POUNDS, weightConverter.getKgToPound(requestWeight), delta);
 
-/*
-        System.out.println(weightConverter.getPoundToKg(1.0));
-        System.out.println(weightConverter.getPoundToGrams(1.0));
 
-        System.out.println(weightConverter.getOunceToKg(1.0));
-        System.out.println(weightConverter.getOunceToGrams(1.0));
+    }
 
-        System.out.println(weightConverter.getGramsToOunce(1.0));
+    @Test(timeout=5000)
+    public void WeightConverterSwitchTest() {
+
+        String fromUnit = "gram";
+        String toUnit = "pounds";
+
+        Converter converter = new Converter();
+
+        converter.setFromUnit(fromUnit);
+        converter.setToUnit(toUnit);
+
+        WeightConverter weightConverter = new WeightConverter(converter);
+
+        //weightConverter.getPoundToKg(requestWeight));
+
         System.out.println(weightConverter.getGramsToPound(1.0));
-*/
-
-
     }
 }
