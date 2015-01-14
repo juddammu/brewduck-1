@@ -7,12 +7,27 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 /**
  * Created by asus on 15. 1. 12.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class WeightConverterTest {
+
+    final private double GRAMS_TO_OZ = 28.349523;
+    final private double GRAMS_TO_POUNDS = 453.59237;
+
+    final private double KILOGRAMS_TO_OZ = 0.02835;
+    final private double KILOGRAMS_TO_POUNDS = 0.453592;
+
+    final private double POUNDS_TO_KILOGRAMS = 0.45359237;
+    final private double POUNDS_TO_GRAMS = 453.59237;
+
+    final private double OUNCE_TO_KILOGRAMS = 0.0283495231;
+    final private double OUNCE_TO_GRAMS = 028.3495231;
 
     @Test(timeout=5000)
     public void WeightConverterTest() {
@@ -26,26 +41,49 @@ public class WeightConverterTest {
         converter.setToUnit(toUnit);
 
         WeightConverter weightConverter = new WeightConverter(converter);
+        double requestWeight = 1.0;
+        double responseWeight = 0.0;
+        //delta 값은 소수점의 허용 오차,
+        //assertEquals(0.551, 0.5512, 0.001) => equal
+        //assertEquals(0.551, 0.5512, 0.0001) => not equal
+        double delta = 0.000001;
 
-        //todo : 테스트 값 일치 하지 않음
-        System.out.println(weightConverter.toOz(28));
+        assertNotNull("파운드 --> 킬로그램 변환", weightConverter.getPoundToKg(requestWeight));
+        assertNotNull("파운드 --> 그램 변환    ", weightConverter.getPoundToGrams(requestWeight));
+
+        assertNotNull("온즈 --> 킬로그램 변환", weightConverter.getOunceToKg(requestWeight));
+        assertNotNull("온즈 --> 그램 변환    ", weightConverter.getOunceToGrams(requestWeight));
+
+        assertNotNull("그램 --> 온즈 변환  ", weightConverter.getGramsToOunce(requestWeight));
+        assertNotNull("그램 --> 파운드 변환", weightConverter.getGramsToPound(requestWeight));
+
+        assertNotNull("킬로그램 --> 온즈   변환", weightConverter.getKgToOunce(requestWeight));
+        assertNotNull("킬로그램 --> 파운드 변환    ", weightConverter.getKgToPound(requestWeight));
+
+
+        assertEquals(requestWeight*POUNDS_TO_KILOGRAMS, weightConverter.getPoundToKg(requestWeight), delta);
+        assertEquals(requestWeight*POUNDS_TO_GRAMS,     weightConverter.getPoundToGrams(requestWeight), delta);
+
+        assertEquals(requestWeight*OUNCE_TO_KILOGRAMS, weightConverter.getOunceToKg(requestWeight), delta);
+        assertEquals(requestWeight*OUNCE_TO_GRAMS,     weightConverter.getOunceToGrams(requestWeight), delta);
+
+        assertEquals(requestWeight/GRAMS_TO_OZ,     weightConverter.getGramsToOunce(requestWeight), delta);
+        assertEquals(requestWeight/GRAMS_TO_POUNDS, weightConverter.getGramsToPound(requestWeight), delta);
+
+        assertEquals(requestWeight/KILOGRAMS_TO_OZ,     weightConverter.getKgToOunce(requestWeight), delta);
+        assertEquals(requestWeight/KILOGRAMS_TO_POUNDS, weightConverter.getKgToPound(requestWeight), delta);
 
 /*
-  *//*      double oz = from.toOz(1);
-        double gram = from.fromGram(oz);
-*//*
-        if(fromUnit.equals("gram")){
-            if(toUnit.equals("oz")){    //gram --> oz
-                returnWeight =  from.toOz(weight);
-            }else if(toUnit.equals("pounds")){    //gram --> oz
-                returnWeight =  from.toPounds(weight);
-            }
-        }
+        System.out.println(weightConverter.getPoundToKg(1.0));
+        System.out.println(weightConverter.getPoundToGrams(1.0));
 
-        //double ceisius = from.fromFerenheit(ferenheit);
+        System.out.println(weightConverter.getOunceToKg(1.0));
+        System.out.println(weightConverter.getOunceToGrams(1.0));
 
-        //inch --> metter
-        System.out.println("returnWeight" + returnWeight);*/
+        System.out.println(weightConverter.getGramsToOunce(1.0));
+        System.out.println(weightConverter.getGramsToPound(1.0));
+*/
+
 
     }
 }

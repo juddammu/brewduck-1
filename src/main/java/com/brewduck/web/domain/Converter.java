@@ -21,7 +21,9 @@ public class Converter {
 
     private String toUnit;
 
-    private double measurement;
+    private double fromMeasurement;
+
+    private double toMeasurement;
 
 
     public String getFromUnit() {
@@ -40,12 +42,19 @@ public class Converter {
         this.toUnit = toUnit;
     }
 
-    public double getMeasurement() {
-        return measurement;
+    public double getFromMeasurement() {
+        return fromMeasurement;
     }
 
-    public void setMeasurement(double measurement) {
-        this.measurement = measurement;
+    public void setFromMeasurement(double fromMeasurement) {
+        this.fromMeasurement = fromMeasurement;
     }
 
+    public double getToMeasurement() {
+        return toMeasurement;
+    }
+
+    public void setToMeasurement(double toMeasurement) {
+        this.toMeasurement = toMeasurement;
+    }
 }

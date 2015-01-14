@@ -8,36 +8,74 @@ import com.brewduck.web.domain.Converter;
  */
 public class WeightConverter {
 
-    final private double GRAMS_TO_OZ = 0.035274;
-    final private double GRAMS_TO_POUNDS = 0.220462;
-    final private double KILOGRAMS_TO_OZ = 28.349523125;
-    final private double KILOGRAMS_TO_POUNDS = 0.0254;
+    final private double GRAMS_TO_OZ = 28.349523;
+    final private double GRAMS_TO_POUNDS = 453.59237;
+
+    final private double KILOGRAMS_TO_OZ = 0.02835;
+    final private double KILOGRAMS_TO_POUNDS = 0.453592;
+
+    final private double POUNDS_TO_KILOGRAMS = 0.45359237;
+    final private double POUNDS_TO_GRAMS = 453.59237;
+
+    final private double OUNCE_TO_KILOGRAMS = 0.0283495231;
+    final private double OUNCE_TO_GRAMS = 028.3495231;
 
     private double factor;
 
 
     public WeightConverter(Converter converter){
 
-        if(converter.getFromUnit().equals("gram")){
-            if(converter.getToUnit().equals("oz")){    //gram --> oz
-                factor = GRAMS_TO_OZ;
-            }else if(converter.getToUnit().equals("pounds")){  //gram --> pounds
-                factor = GRAMS_TO_POUNDS;
+        if(converter.getFromUnit().equals("pounds")){
+            if(converter.getToUnit().equals("gram")){    //gram --> oz
+                factor = POUNDS_TO_KILOGRAMS;
             }
         }
-
     }
 
-    public double toOz(double measurement){
-        return (measurement * factor);
+    private double getRoundMeasurement(double pound){
+       //return Math.round(pound/0.001)*0.001;
+       return pound;
     }
 
-    public double toPounds(double measurement){
-        return (measurement / factor);
+    public double getPoundToKg(double pound) {
+        double kg = pound * POUNDS_TO_KILOGRAMS;
+        return getRoundMeasurement(kg);
     }
 
-    public double fromGram(double measurement){
-        return (measurement * factor);
+    public double getPoundToGrams(double pound) {
+        double kg = pound * POUNDS_TO_GRAMS;
+        return getRoundMeasurement(kg);
     }
+
+    public double getOunceToKg(double ounce) {
+        double kg = ounce * OUNCE_TO_KILOGRAMS;
+        return getRoundMeasurement(kg);
+    }
+
+    public double getOunceToGrams(double ounce) {
+        double kg = ounce * OUNCE_TO_GRAMS;
+        return getRoundMeasurement(kg);
+    }
+
+    public double getGramsToOunce(double grams){
+        double kg = grams / GRAMS_TO_OZ;
+        return getRoundMeasurement(kg);
+    }
+
+    public double getGramsToPound(double grams){
+        double kg = grams / GRAMS_TO_POUNDS;
+        return getRoundMeasurement(kg);
+    }
+
+    public double getKgToOunce(double grams){
+        double kg = grams / KILOGRAMS_TO_OZ;
+        return getRoundMeasurement(kg);
+    }
+
+    public double getKgToPound(double grams){
+        double kg = grams / KILOGRAMS_TO_POUNDS;
+        return getRoundMeasurement(kg);
+    }
+
 
 }
