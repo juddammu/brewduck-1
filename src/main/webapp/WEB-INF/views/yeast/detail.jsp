@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <!-- BEGIN PAGE TITLE -->
         <div class="page-title">
-            <h1><a href="/yeast/"><spring:message code="menu.yeast"/></a> > ${YeastDetail.name}</h1>
+            <h1><a href="/yeast/"><spring:message code="menu.yeast"/></a> > ${YeastDetail.koreanName} <small>(${YeastDetail.name})</small></h1>
         </div>
 
         <div class="pull-right">
