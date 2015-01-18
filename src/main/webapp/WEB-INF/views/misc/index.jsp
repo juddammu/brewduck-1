@@ -102,7 +102,7 @@
                                         <td><a href="/misc/${list.id}/${list.titleInUrl}">${list.name}</a></td>
                                         <td> ${list.name}</td>
                                         <td> ${list.typeKorean}</td>
-                                        <td> ${list.useForKorean}</td>
+                                        <td><span class="badge badge-success">${list.useForKorean}</span></td>
                                     </tr>
                                 </c:forEach>
 
