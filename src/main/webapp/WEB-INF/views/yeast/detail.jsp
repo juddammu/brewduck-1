@@ -92,7 +92,7 @@
                                         <p>${YeastDetail.notes}</p>
                                         <br/>
                                         <div class="well clearfix">
-                                            <h5><span class="badge">용도 - Best For</span> </h5>
+                                            <h4>Best For</h4>
                                             <p> ${YeastDetail.bestFor}</p>
                                         </div>
                                     </div>
