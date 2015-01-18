@@ -1,75 +1,110 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<title>${MiscDetail.koreanName} - ${MiscDetail.name}</title>
 
-<section>
-    <ol class="breadcrumb">
-        <li><a href="/">홈</a></li>
-        <li><a href="#">재료 데이터베이스</a></li>
-        <li class="active"><a href="/misc/">기타재료 데이터베이스 <small>MISC DATABASE</small></a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>
-            <a href="/misc/${MiscDetail.seq}/${MiscDetail.titleInUrl}">${MiscDetail.koreanName} - <strong class="text-support3">${MiscDetail.name}</strong></a>
-        </h3>
+<title>${MiscDetail.name} - ${MiscDetail.name}</title>
+
+
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1><a href="/misc/"><spring:message code="menu.misc"/> </a> > ${MiscDetail.name}</h1>
+        </div>
+
+        <div class="pull-right">
+            <button id="register-back-btn" type="button" class="btn">
+                <i class="m-icon-swapleft"></i> Back </button>
+        </div>
+        <!-- END PAGE TITLE -->
     </div>
-    <div class="section-body">
+</div>
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-printable style-transparent">
-                    <div class="box-body style-white">
-                        <!-- START INVOICE HEADER -->
+            <div class="col-md-12">
+
+                <!-- Begin: life time stats -->
+                <div class="portlet light">
+                    <div class="portlet-title">
+
+                    </div>
+                    <div class="portlet-body">
                         <div class="row">
-                            <div class="col-xs-8">
-                                <a href="/misc/${MiscDetail.seq}/${MiscDetail.titleInUrl}"><h1 class="text-light"><strong class="text-support3">${MiscDetail.koreanName}</strong></h1></a>
-                            </div>
-                        </div>
-                        <!-- END INVOICE HEADER -->
-                        <br/>
-                        <!-- START INVOICE DESCRIPTION -->
-                    <div class="box box-tiles style-white">
-                            <div class="row">
-                                <div class="col-md-3 style-gray">
-                                    <div class="box-body">
-                                        <h3 class="text-light">타입</h3 >
-                                            <button type="button" class="btn btn-info btn-sm" style="width: 49%" onclick="goType('${MiscDetail.type}')">   ${MiscDetail.typeKorean}   </button>
-                                        <h3 class="text-light">용도</h3 >
-                                            <button type="button" class="btn btn-warning btn-sm" style="width: 49%" onclick="goUseFor('${MiscDetail.useFor}')">   ${MiscDetail.useForKorean}   </button>
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <article class="style-white">
-                                        <div class="box-body">
-                                            <h3 class="text-light">내용</h3 >
-                                                <p> ${MiscDetail.notes}</p>
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <h3 class="text-light">타입</h3>
+                                    <ul class="nav nav-pills nav-stacked nav-transparent">
+                                            <button type="button" class="btn yellow-crusta ">${MiscDetail.typeKorean}</button>
+                                    </ul>
+                                    <h3>사례</h3>
+                                    <c:forEach items="${MiscDetail.useForKorean}" var="examples" >
+                                        <div class="list-tags">
+                                            <c:forEach items="${MiscDetail.useForKorean}" var="examples">
+                                                <button type="button" class="btn blue-madison">${MiscDetail.useForKorean}</button>
+                                            </c:forEach>
                                         </div>
-                                    </article>
+                                    </c:forEach>
                                 </div>
-                                <!-- END BLOG POST TEXT -->
-                            </div><!--end .row -->
-                            <!-- END INVOICE DESCRIPTION -->
-                        </div>
+                            </div>
+
+
+                            <div class="col-md-9">
+                                <article class="style-white">
+                                    <div class="box-body">
+                                        <br/>
+                                        <p class="lead">설명</p>
+                                        <div class="well clearfix">
+                                            <p>${MiscDetail.notes}</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+
+
+                            <!-- END BLOG POST TEXT -->
+                        </div><!--end .row -->
+
                         <div class="row">
                             <div class="col-md-12">
-                                <label class="medium_text_shadow" id = "replyCount" type ="text"></label>
-                                <ul class="list-comments">
-                                    <li>
-                                        <div class="box style-white" id="reply_list">
+                                <%--<label class="medium_text_shadow" id = "replyCount" type ="text"></label>--%>
+                                <div class="box style-white" id="reply_count">
+                                    <ul class="list-comments">
+                                        <li>
+                                            <div class="box style-white" id="reply_list">
 
-                                        </div><!--end .box -->
-                                    </li><!-- end comment -->
-                                </ul>
-                            </div><!--end .col-md-9 -->
-                        </div><!--end .row -->
-                        <!-- END COMMENTS -->
+                                            </div><!--end .box -->
+                                        </li><!-- end comment -->
+                                    </ul>
+                                </div><!--end .col-md-9 -->
+                            </div><!--end .row -->
+                            <!-- END COMMENTS -->
+                        </div>
                         <div class="box box-tiles style-white">
                             <div class="row">
                                 <div class="col-md-12">
                                     <article class="style-white">
                                         <form:form  class="form-horizontal" role="form" onsubmit="return false">
+                                            <%
+                                                if (AuthenticationUtils.isAuthenticated() == false) {
+                                            %>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="로그인 후 등록할 수 있습니다." disabled></textarea>
+                                                </div>
+                                            </div>
+                                            <%
+                                            } else {
+                                            %>
+
                                             <div class="form-group">
                                                 <div class="col-md-12">
                                                     <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
@@ -78,70 +113,34 @@
                                             <div class="form-footer">
                                                 <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
                                             </div>
+                                            <%
+                                                }
+                                            %>
                                         </form:form>
                                     </article>
                                 </div>
                                 <!-- END BLOG POST TEXT -->
                             </div><!--end .row -->
                         </div>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/misc/list" id="searchForm"  name="searchForm" modelAttribute="paramMisc">
-                            <input id ="type" name="type" type="hidden">
-                            <input id ="useFor" name="useFor" type="hidden">
-                            <div class="form-group">
-                                <div class="col-md-2">
-                                    <label class="control-label">이름</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
-                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form:form>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined" id="result_list">
-                    <div class="box-body no-padding style-white">
-                        <table class="table table-hover no-margin">
-                            <thead>
-                                <tr>
-                                    <th style="width:30px" >#</th>
-                                    <th style="width:150px">기타재료명</th>
-                                    <th style="width:150px">영문명</th>
-                                    <th style="width:70px">타입</th>
-                                    <th style="width:70px">용도</th>
-                                </tr>
-                            </thead>
-                            <tbody id="result">
-                            </tbody>
-                        </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-    </div><!--end .section-body -->
-</section>
+
+                    </div>
+                </div>
+                <!-- End: life time stats -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT -->
 
 
 
 <content tag="local_script">
     <script>
+
         var bbsId = '8';
-        var nttId = ${MiscDetail.seq};
+        var nttId = ${MiscDetail.id};
 
         $('#insertReply').on('click', function () {
             var json = { "bbsId" : bbsId, "nttId" : nttId, "amswer" : $('#answer').val().replace(/\n/g, '<br>')};
@@ -212,6 +211,7 @@
             $("#type").val('');
             $("#useFor").val('');
         }
+
 
         $(document).ready(function() {
             search();                          //조회
