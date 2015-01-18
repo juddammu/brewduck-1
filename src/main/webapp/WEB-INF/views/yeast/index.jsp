@@ -106,8 +106,8 @@
                                         <td> ${list.koreanName}</td>
                                         <td> ${list.type}</td>
                                         <td> ${list.form}</td>
-                                        <td>${list.minTemperature} °C</td>
-                                        <td>${list.maxTemperature} °C</td>
+                                        <td><span class="badge badge-success">${list.maxTemperature} °C</span></td>
+                                        <td><span class="badge badge-success">${list.minTemperature} °C</span></td>
                                     </tr>
                                 </c:forEach>
 
