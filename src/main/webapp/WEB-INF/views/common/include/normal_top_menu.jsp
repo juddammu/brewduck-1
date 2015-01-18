@@ -429,9 +429,9 @@
             </a>
         </li>
         <li class="">
-            <a href="/misc//">
+            <a href="/misc/">
                 <i class="fa fa-asterisk"></i>
-                <spring:message code="menu.extra"/>
+                <spring:message code="menu.misc"/>
             </a>
         </li>
     </ul>
