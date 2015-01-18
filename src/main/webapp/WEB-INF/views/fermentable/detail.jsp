@@ -1,96 +1,138 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 
 <title>${FermentableDetail.koreanName} - ${FermentableDetail.name}</title>
 
-<section>
-    <ol class="breadcrumb">
-        <li><a href="/">홈</a></li>
-        <li><a href="#">재료 데이터베이스</a></li>
-        <li class="active"><a href="/fermentable/">발효재료 데이터베이스 <small>FERMENTABLE DATABASE</small></a></li>
-    </ol>
-    <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>
-            <a href="/fermentable/${FermentableDetail.id}/${FermentableDetail.titleInUrl}">${FermentableDetail.koreanName} - <strong class="text-support3">${FermentableDetail.name}</strong></a>
-        </h3>
+
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1><a href="/fermentable/"><spring:message code="menu.fermentable"/></a> > ${FermentableDetail.koreanName} <small>(${FermentableDetail.name})</small></h1>
+        </div>
+
+        <div class="pull-right">
+            <button id="register-back-btn" type="button" class="btn">
+                <i class="m-icon-swapleft"></i> Back </button>
+        </div>
+        <!-- END PAGE TITLE -->
     </div>
-    <div class="section-body">
+</div>
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-printable style-transparent">
-                    <div class="box-body style-white">
-                        <!-- START INVOICE HEADER -->
+            <div class="col-md-12">
+
+                <!-- Begin: life time stats -->
+                <div class="portlet light">
+                    <div class="portlet-title">
+
+                    </div>
+                    <div class="portlet-body">
                         <div class="row">
-                            <div class="col-xs-8">
-                                <h1 class="text-light"><strong class="text-support3"><a href="/fermentable/${FermentableDetail.id}/${FermentableDetail.titleInUrl}">${FermentableDetail.koreanName}  </a></strong><a href="#"><i class="fa fa-beer" data-toggle="tooltip" data-placement="bottom" data-original-title="색상: ${FermentableDetail.color}°L"style="color:${FermentableDetail.colorCode};"></i></a></h1>
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <h3 class="text-light">제원</h3>
+                                    <ul class="nav nav-pills nav-stacked nav-transparent">
+                                        <table class="table table-bordered table-striped">
+
+                                            <thead><tr>
+                                                <th></th>
+                                                <th>정보</th>
+                                            </tr></thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>원산지</td>
+                                                <td><a href="#">${FermentableDetail.originKorean}</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>타입</td>
+                                                <td><a href="#">${FermentableDetail.typeKorean}</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>제조사</td>
+                                                <td><a href="#">${FermentableDetail.supplier}</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>몰트색상</td>
+                                                <td><a href="#"><a href="#"><i class="fa fa-beer" data-toggle="tooltip" data-placement="bottom" data-original-title="색상: ${FermentableDetail.color}°L"style="color:${FermentableDetail.colorCode};"></i></a>  ${FermentableDetail.color}</a> °L</td>
+                                            </tr>
+                                            <tr>
+                                                <td>수분함량</td>
+                                                <td><a href="#">${FermentableDetail.moisture}</a> %</td>
+                                            </tr>
+                                            <tr>
+                                                <td>단백질</td>
+                                                <td><a href="#">${FermentableDetail.protein}</a> %</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SG</td>
+                                                <td><a href="#">${FermentableDetail.specificGravity}</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <!-- END INVOICE HEADER -->
-                        <br/>
-                        <!-- START INVOICE DESCRIPTION -->
-                        <div class="box box-tiles style-white">
-                            <div class="row">
-                                <div class="col-md-3 col-sm-3">
-                                    <article class="style-gray">
-                                        <div class="box-body">
-                                            <h3 class="text-light">원산지 / 타입</h3 >
-                                            <div>
-                                                <button type="button" class="btn btn-info btn-sm" style="width: 49%" onclick="goOrigin('${FermentableDetail.origin}')">${FermentableDetail.originKorean} ( ${FermentableDetail.origin} )</button>
-                                                <button type="button" class="btn btn-primary btn-sm" style="width: 49%" onclick="goType('${FermentableDetail.typeCode}')">${FermentableDetail.typeKorean}</button>
-                                            </div>
-                                            <br>
-                                            <h3 class="text-light">제조사</h3>
-                                            <div>
-                                                <button type="button" class="btn btn-success btn-sm" style="width: 49%" onclick="goSupplier('${FermentableDetail.supplier}')">${FermentableDetail.supplier}</button>
-                                            </div>
+
+
+                            <div class="col-md-9">
+                                <article class="style-white">
+                                    <div class="box-body">
+                                        <br/>
+                                        <p class="lead">설명</p>
+                                        <div class="well clearfix">
+                                            <p>${FermentableDetail.notes}</p>
                                         </div>
-                                    </article>
-                                </div>
-                                <div class="col-md-9">
-                                    <article class="style-white">
-                                        <div class="box-body">
-                                            <h3 class="text-light">내용</h3>
-                                            <p> ${FermentableDetail.notes}</p>
-                                            <br>
-                                            <h3 class="text-light">수치</h3>
-                                            <div class="row clearfix">
-                                                <div class="heading">
-                                                    <div>
-                                                        <p>
-                                                            <button class="btn btn-sm btn-info" style="width: 24%" data-toggle="tooltip" data-placement="bottom" data-original-title="SRM(몰트색상)°L"><i class="fa fa-check"></i> 몰트색상: ${FermentableDetail.color} °L</button>
-                                                            <button class="btn btn-sm btn-primary" style="width: 24%" data-toggle="tooltip" data-placement="bottom" data-original-title="Moisture(수분함량)%"><i class="fa fa-check"></i> 수분함량: ${FermentableDetail.moisture} %</button>
-                                                            <button class="btn btn-sm btn-warning" style="width: 24%" data-toggle="tooltip" data-placement="bottom" data-original-title="Protein(단백질)%"><i class="fa fa-check"></i> 단백질 : ${FermentableDetail.protein} %</button>
-                                                            <button class="btn btn-sm btn-danger" style="width: 24%" data-toggle="tooltip" data-placement="bottom" data-original-title="Specific Gravity(비중)"><i class="fa fa-check"></i> SG: ${FermentableDetail.specificGravity} </button>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div><!--end .row -->
-                                <!-- END INVOICE DESCRIPTION -->
-                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+
+
+                            <!-- END BLOG POST TEXT -->
+                        </div><!--end .row -->
+
                         <div class="row">
                             <div class="col-md-12">
-                                <label class="medium_text_shadow" id = "replyCount" type ="text"></label>
-                                <ul class="list-comments">
-                                    <li>
-                                        <div class="box style-white" id="reply_list">
+                                <%--<label class="medium_text_shadow" id = "replyCount" type ="text"></label>--%>
+                                <div class="box style-white" id="reply_count">
+                                    <ul class="list-comments">
+                                        <li>
+                                            <div class="box style-white" id="reply_list">
 
-                                        </div><!--end .box -->
-                                    </li><!-- end comment -->
-                                </ul>
-                            </div><!--end .col-md-9 -->
-                        </div><!--end .row -->
-                        <!-- END COMMENTS -->
+                                            </div><!--end .box -->
+                                        </li><!-- end comment -->
+                                    </ul>
+                                </div><!--end .col-md-9 -->
+                            </div><!--end .row -->
+                            <!-- END COMMENTS -->
+                        </div>
                         <div class="box box-tiles style-white">
                             <div class="row">
                                 <div class="col-md-12">
                                     <article class="style-white">
                                         <form:form  class="form-horizontal" role="form" onsubmit="return false">
+                                            <%
+                                                if (AuthenticationUtils.isAuthenticated() == false) {
+                                            %>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="로그인 후 등록할 수 있습니다." disabled></textarea>
+                                                </div>
+                                            </div>
+                                            <%
+                                            } else {
+                                            %>
+
                                             <div class="form-group">
                                                 <div class="col-md-12">
                                                     <textarea name="answer" id="answer" class="form-control" rows="6" placeholder="Leave a comment"></textarea>
@@ -99,67 +141,28 @@
                                             <div class="form-footer">
                                                 <button type="submit" id="insertReply" name="insertReply" class="btn btn-primary">댓글 등록</button>
                                             </div>
+                                            <%
+                                                }
+                                            %>
                                         </form:form>
                                     </article>
                                 </div>
                                 <!-- END BLOG POST TEXT -->
                             </div><!--end .row -->
                         </div>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined">
-                    <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" action="/fermentable/list" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
-                            <input id ="origin" name="origin" type ="hidden" value="">
-                            <input id = "type" name ="type" type ="hidden" value="">
-                            <input id = "supplier" name ="supplier" type ="hidden" value="">
-                            <div class="form-group">
-                                <div class="col-md-2">
-                                    <label class="control-label">이름</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
-                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form:form>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-        <!-- END BASIC FORM INPUTS -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="box box-outlined" id="result_list">
-                    <div class="box-body no-padding style-white">
-                        <table class="table table-hover no-margin">
-                            <thead>
-                                <tr>
-                                    <th style="width:30px" >#</th>
-                                    <th style="width:120px">발효재료명</th>
-                                    <th style="width:120px">영문명</th>
-                                    <th style="width:70px">타입</th>
-                                    <th style="width:70px">원산지</th>
-                                    <th style="width:70px">제조사</th>
-                                    <th style="width:70px">수율(%)</th>
-                                    <th style="width:100px">색상(SRM)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="result">
-                            </tbody>
-                        </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
-    </div><!--end .section-body -->
-</section>
+
+                    </div>
+                </div>
+                <!-- End: life time stats -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT -->
+
+
 
 <content tag="local_script">
     <script>
@@ -240,6 +243,7 @@
             $("#supplier").val('');
         }
 
+
         $(document).ready(function() {
             search();                       //조회
             getReplyCount();
@@ -249,6 +253,7 @@
             $("#type").val('');
             $("#supplier").val('');
         });
+
 
     </script>
 </content>
