@@ -53,12 +53,15 @@ public class WeightConverterTest {
 
         assertNotNull("온즈 --> 킬로그램 변환", weightConverter.getOunceToKg(requestWeight));
         assertNotNull("온즈 --> 그램 변환    ", weightConverter.getOunceToGrams(requestWeight));
+        assertNotNull("온즈 --> 파운드 변환", weightConverter.getOunceToPounds(requestWeight));
 
         assertNotNull("그램 --> 온즈 변환  ", weightConverter.getGramsToOunce(requestWeight));
         assertNotNull("그램 --> 파운드 변환", weightConverter.getGramsToPound(requestWeight));
 
         assertNotNull("킬로그램 --> 온즈   변환", weightConverter.getKgToOunce(requestWeight));
         assertNotNull("킬로그램 --> 파운드 변환    ", weightConverter.getKgToPound(requestWeight));
+
+
 
         assertEquals(requestWeight*POUNDS_TO_KILOGRAMS, weightConverter.getPoundToKg(requestWeight), delta);
         assertEquals(requestWeight*POUNDS_TO_GRAMS,     weightConverter.getPoundToGrams(requestWeight), delta);

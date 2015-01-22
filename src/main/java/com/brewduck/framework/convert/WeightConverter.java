@@ -18,7 +18,11 @@ public class WeightConverter {
     final private double POUNDS_TO_GRAMS = 453.59237;
 
     final private double OUNCE_TO_KILOGRAMS = 0.0283495231;
-    final private double OUNCE_TO_GRAMS = 028.3495231;
+    final private double OUNCE_TO_GRAMS = 28.3495231;
+    final private double OUNCE_TO_POUNDS = 0.0625;
+
+    //0.0625
+
 
     private double factor;
 
@@ -55,6 +59,11 @@ public class WeightConverter {
     public double getOunceToGrams(double ounce) {
         double kg = ounce * OUNCE_TO_GRAMS;
         return getRoundMeasurement(kg);
+    }
+
+    public double getOunceToPounds(double ounce) {
+        double pounds = ounce * OUNCE_TO_POUNDS;
+        return getRoundMeasurement(pounds);
     }
 
     public double getGramsToOunce(double grams){

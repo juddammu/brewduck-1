@@ -99,6 +99,42 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="form-body">
+                                <h4 class="form-section">온도 (Temperature) </h4>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">화씨 (Farenheit)</label>
+                                        <div class="col-md-10">
+
+                                            <div class="input-group input-medium">
+                                                <input type="text" id="farenheit" name="farenheit" class="form-control" value="72.0">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn yellow dropdown-toggle"> F </button>
+                                                </div>
+                                                <!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">섭씨 (Celsius)</label>
+                                        <div class="col-md-10">
+
+                                            <div class="input-group input-medium">
+                                                <input type="text" id="celsius" name="celsius" class="form-control" value="22.2">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn yellow dropdown-toggle"> lbs </button>
+                                                </div>
+                                                <!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                         <!-- END FORM-->
                     </div>
@@ -116,78 +152,72 @@
 
 <content tag="local_script">
     <script>
+
+        function ozToPounds(oz){
+            oz = parseFloat(oz);
+            if(isNaN(oz)) { return; }
+            return oz*0.0625;
+        }
+        function ozToGrams(oz){
+            oz = parseFloat(oz);
+            if(isNaN(oz)) { return; }
+            return oz*28.3495231;
+        }
+        function ozToKilograms(oz){
+            oz = parseFloat(oz);
+            if(isNaN(oz)) { return; }
+            return oz*0.0283495231;
+        }
+
+        function poundsToOunces(pounds){
+            pounds = parseFloat(pounds);
+            if(isNaN(pounds)) { return; }
+            return pounds*16;
+        }
+        function poundsToGrams(pounds){
+            oz = parseFloat(pounds);
+            if(isNaN(pounds)) { return; }
+            return pounds*453.59237;
+        }
+        function poundsToKilorams(pounds){
+            oz = parseFloat(pounds);
+            if(isNaN(pounds)) { return; }
+            return pounds*0.453592;
+        }
+
+        function gramsToOunces(grams){
+            pounds = parseFloat(grams);
+            if(isNaN(grams)) { return; }
+            return grams*0.035274;
+        }
+        function gramsToPounds(grams){
+            oz = parseFloat(grams);
+            if(isNaN(grams)) { return; }
+            return grams*0.002205;
+        }
+        function gramsToKilorams(grams){
+            oz = parseFloat(grams);
+            if(isNaN(grams)) { return; }
+            return grams*0.001;
+        }
+
+        function kilogramsToOunces(kilograms){
+            pounds = parseFloat(kilograms);
+            if(isNaN(kilograms)) { return; }
+            return kilograms*35.273962;
+        }
+        function kilogramsToPounds(kilograms){
+            oz = parseFloat(kilograms);
+            if(isNaN(kilograms)) { return; }
+            return kilograms*2.204623;
+        }
+        function kilogramsTograms(kilograms){
+            oz = parseFloat(kilograms);
+            if(isNaN(kilograms)) { return; }
+            return kilograms*1000;
+        }
+
         $(document).ready(function() {
-
-
-
-  /*                  final private double OUNCE_TO_KILOGRAMS = 0.0283495231;
-            final private double OUNCE_TO_GRAMS = 28.3495231;
-            final private double OUNCE_TO_POUNDS = 0.0625;*/
-
-            function ozToPounds(oz){
-                oz = parseFloat(oz);
-                if(isNaN(oz)) { return; }
-                return oz*0.0625;
-            }
-            function ozToGrams(oz){
-                oz = parseFloat(oz);
-                if(isNaN(oz)) { return; }
-                return oz*28.3495231;
-            }
-            function ozToKilograms(oz){
-                oz = parseFloat(oz);
-                if(isNaN(oz)) { return; }
-                return oz*0.0283495231;
-            }
-
-            function poundsToOunces(pounds){
-                pounds = parseFloat(pounds);
-                if(isNaN(pounds)) { return; }
-                return pounds*16;
-            }
-            function poundsToGrams(pounds){
-                oz = parseFloat(pounds);
-                if(isNaN(pounds)) { return; }
-                return pounds*453.59237;
-            }
-            function poundsToKilorams(pounds){
-                oz = parseFloat(pounds);
-                if(isNaN(pounds)) { return; }
-                return pounds*0.453592;
-            }
-
-            function gramsToOunces(grams){
-                pounds = parseFloat(grams);
-                if(isNaN(grams)) { return; }
-                return grams*0.035274;
-            }
-            function gramsToPounds(grams){
-                oz = parseFloat(grams);
-                if(isNaN(grams)) { return; }
-                return grams*0.002205;
-            }
-            function gramsToKilorams(grams){
-                oz = parseFloat(grams);
-                if(isNaN(grams)) { return; }
-                return grams*0.001;
-            }
-
-            function kilogramsToOunces(kilograms){
-                pounds = parseFloat(kilograms);
-                if(isNaN(kilograms)) { return; }
-                return kilograms*35.273962;
-            }
-            function kilogramsToPounds(kilograms){
-                oz = parseFloat(kilograms);
-                if(isNaN(kilograms)) { return; }
-                return kilograms*2.204623;
-            }
-            function kilogramsTograms(kilograms){
-                oz = parseFloat(kilograms);
-                if(isNaN(kilograms)) { return; }
-                return kilograms*1000;
-            }
-
 
             $('input').on('keyup', function(){
                 var $this = $(this);
