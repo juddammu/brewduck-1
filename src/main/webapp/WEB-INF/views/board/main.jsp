@@ -15,51 +15,74 @@
 
 
 <title>${boardList.bbsNm} - ${boardList.bbsEnNm}</title>
-<div id="tm-page-title">
-    <div class="tm-wrap tm-table">
-        <div class="tm-title-captions">
-            <a href="/board/main/${boardList.bbsId}"><h2 class="tm-entry-title">${boardList.bbsNm} - ${boardList.bbsEnNm}</h2></a>
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1>${boardList.bbsNm} <small>${boardList.bbsEnNm}</small></h1>
         </div>
-        <ul class="tm-breadcrumbs">
-            <li>
-                <a href="/">홈</a>
-            </li>
-            <li>
-                <a href="/board/main/${boardList.bbsId}">${boardList.bbsNm}</a>
-            </li>
-        </ul>
+        <!-- END PAGE TITLE -->
     </div>
 </div>
-<!--tm-page-title-->
-<div id="tm-page-body">
-    <div id="tm-single-blog" class="tm-container tm-wrap tm-blog-style-magazine1 tm-sidebar-right">
-        <div class="page-content">
-            <div class="page-content-inner">
-                <div class="entry-header">
-                    <p>
-                        <div class="tm-row">
-                            <form:form id="boardSerchForm"  name="boardSerchForm" modelAttribute="board">
-                                <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
-                                <input name="sort" id="sort" type="hidden"  class="form-control" value="">
-                                <div class="tm-search">
-                                    <select name = "select2" id = "select2" style="width: 20%;">
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM--><%--
+        <!-- BEGIN PAGE BREADCRUMB -->
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="#">홈</a><i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="#">재료 데이터베이스</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li class="active">
+                스타일
+            </li>
+        </ul>
+        <!-- END PAGE BREADCRUMB -->--%>
+        <!-- BEGIN PAGE CONTENT INNER -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Begin: life time stats -->
+                <div class="portlet light">
+                    <div class="portlet-title">
+                        <form:form class="form-horizontal" action="/board/" id="boardSerchForm"  name="boardSerchForm" modelAttribute="paramBoard">
+                            <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
+                            <input name="sort" id="sort" type="hidden"  class="form-control" value="">
+
+                            <div class="form-group">
+                                <div class="col-sm-11">
+                                    <select name = "select2" id = "select2" class="form-control input-small">
                                         <option value="">-- 전체 --</option>
                                         <option value="subject">제목</option>
                                         <option value="content">내용</option>
                                         <option value="userId">작성자</option>
                                     </select>
-                                    <input class="tm-input" style="width: 60%;" placeholder="검색어를 입력하세요." name="searchVal" id="searchVal" onkeypress="if(event.keyCode==13){return false;};"  >
-                                    <button type="button" class="tm-btn" id="search" name="search">검색</button>
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="검색어를 입력하세요." value="${paramBoard.name}">
+                                    <button class="btn btn-white btn-single"><i id="search" name="search" class="fa fa-search"></i> 검색</button>
                                 </div>
-                            </form:form>
+                            </div>
+                        </form:form>
+
+                        <div class="caption pull-right">
+                            <span class="caption-subject font-green-sharp bold uppercase">${list_cnt}</span>
+                            <span class="caption-helper">건이 조회되었습니다.</span>
                         </div>
+
+                    </div>
                         <div class="tm-row tm-right">
                             <form:form method="post" action="/board/write">
                                 <input name="bbsId"  id="bbsId" type="hidden"  class="form-control" value="${boardList.bbsId}">
                                 <%
                                     if (AuthenticationUtils.isAuthenticated() == true) {
                                 %>
-                                <button type="submit" class="tm-btn blue" id="write" name="write">게시물 작성</button>
+                                <button class="btn btn-white btn-single" id="write" name="write">게시물 작성</button>
                                 <%
                                     }
                                 %>
@@ -76,69 +99,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="page-sidebar">
-            <aside class="widget tm-tabs">
-                <ul class="tm-filter tabs tm-style1">
-                    <li>
-                        <a href="#tab1">신규 레시피들</a>
-                    </li>
-                    <li>
-                        <a href="#tab2">최근 게시글</a>
-                    </li>
-                </ul>
-                <div class="tab-container">
-                    <aside id="tab1" class="widget tm-list-style2 widget_recent_entries tab-content">
-                        <ul>
-                            <c:forEach items="${newRecipeList}" var="newRecipeList" varStatus="status">
-                                <li>
-                                    <a href="/public/recipe/${newRecipeList.brewer}/${newRecipeList.seq}/${newRecipeList.titleInUrl}">
-                            <span class="thumb">
-                            <img src="/resources/upload/${newRecipeList.atchCoverFileName}" width="60" alt="thumb">
-                            </span>
-                                        <h3>${newRecipeList.name}</h3>
-                            <span class="time">
-                                ${newRecipeList.styleName} / ${newRecipeList.batchSize}리터 / ${newRecipeList.efficiency}%
-                            </span>
-                            <span class="time">
-                                </br>${newRecipeList.brewerNm}
-                            </span>
-                                    </a>
-                                </li>
-                            </c:forEach>
-                        </ul>
-                    </aside>
-                    <aside id="tab2" class="widget tm-list-style2 widget_recent_comments tab-content">
-                        <ul id="recentcomments">
-                            <c:forEach items="${newPostList}" var="newPostList" varStatus="status">
-                                <li class="recentcomments">
-                                        ${newPostList.insertId} -
-                                    <a href="/board/detail/${newPostList.nttId}">
-                                            ${newPostList.nttSj}
-                                    </a>
-                                </li>
-                            </c:forEach>
-                        </ul>
-                    </aside>
-                </div>
-            </aside>
-            <aside class="widget widget_text box-dark">
-                <div class="textwidget">
-                    <div class="tm-testimonial tm-style2">
-                        <div style="" class="testimonial-content">
-                            <p>
-                                맥주만들기 이제 커피보다 쉬워요..
-                            </p>
-                        </div>
-                        <div class="info">
-                            <div class="name">
-                                <h3>- XX비어 -</h3>
-                                <p>  - <span>XX 비어</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
         </div>
     </div>
 </div>
@@ -163,7 +123,8 @@
             $("#sort").val(jQuery(this).val());
         }
 
-        $(document).ready(function() {
+        // This JavaScript Will Replace Checkboxes in dropdown toggles
+        jQuery(document).ready(function($) {
 
             search();                                                       //조회
             $("#searchVal").focus();                                        //이름칸으로 포커스

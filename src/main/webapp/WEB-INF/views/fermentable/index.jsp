@@ -42,7 +42,7 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light">
                     <div class="portlet-title">
-                        <form:form class="form-horizontal" action="/fermentable/" id="searchForm"  name="searchForm" modelAttribute="paramStyle">
+                        <form:form class="form-horizontal" action="/fermentable/" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
 
                             <div class="form-group">
                                 <div class="col-md-2">
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" value="${paramStyle.name}">
+                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" value="${paramFermentable.name}">
                                         <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
                                     </div>
                                 </div>

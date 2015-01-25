@@ -81,12 +81,12 @@ public class BoardController {
         Account account = AuthenticationUtils.getUser();
 
         Board boardList = boardService.selectBoardName(board);
-        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
-        List<Board> selectNewPostList = boardService.getNewPost(board);
+/*        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+        List<Board> selectNewPostList = boardService.getNewPost(board);*/
 
         model.addAttribute("boardList", boardList);
-        model.addAttribute("newPostList", selectNewPostList);
-        model.addAttribute("newRecipeList", selectNewPublicRecipeList);
+/*        model.addAttribute("newPostList", selectNewPostList);
+        model.addAttribute("newRecipeList", selectNewPublicRecipeList);*/
         model.addAttribute("account", account);
 
         return "board/main";

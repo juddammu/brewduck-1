@@ -436,6 +436,55 @@
         </li>
     </ul>
 </li>
+<li class="menu-dropdown classic-menu-dropdown ">
+    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
+        <spring:message code="menu.board"/> <i class="fa fa-angle-down"></i>
+    </a>
+    <ul class="dropdown-menu pull-left">
+        <li class="">
+            <a href="/board/main/1">
+                <i class="fa fa-book"></i>
+                <spring:message code="menu.notice"/>
+            </a>
+        </li>
+        <li class="">
+            <a href="/board/main/2">
+                <i class="fa fa-book"></i>
+                <spring:message code="menu.free"/>
+            </a>
+        </li>
+        <li class="">
+            <a href="/board/main/3">
+                <i class="fa fa-glass"></i>
+                <spring:message code="menu.styleboard"/>
+            </a>
+        </li>
+        <li class="">
+            <a href="/board/main/4">
+                <i class="fa fa-recycle"></i>
+                <spring:message code="menu.fermentableboard"/>
+            </a>
+        </li>
+        <li class="">
+            <a href="/board/main/5">
+                <i class="fa fa-leaf"></i>
+                <spring:message code="menu.hopboard"/>
+            </a>
+        </li>
+        <li class="">
+            <a href="/board/main/6">
+                <i class="fa fa-flask"></i>
+                <spring:message code="menu.yeastboard"/>
+            </a>
+        </li>
+        <li class="">
+            <a href="/board/main/7">
+                <i class="fa fa-asterisk"></i>
+                <spring:message code="menu.miscboard"/>
+            </a>
+        </li>
+    </ul>
+</li>
 
 <li class="menu-dropdown classic-menu-dropdown ">
     <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
