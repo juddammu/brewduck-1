@@ -39,3 +39,5 @@ insert into `MISCS`(`ID`,`NAME`,`VERSION`,`TYPE_CODE`,`USE_FOR`,`NOTES`,`INSERT_
 insert into `MISCS`(`ID`,`NAME`,`VERSION`,`TYPE_CODE`,`USE_FOR`,`NOTES`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (39,'Oyster',1,'3',null,null,'hukoru','2014-08-22 00:00:00',null,null,null,null);
 insert into `MISCS`(`ID`,`NAME`,`VERSION`,`TYPE_CODE`,`USE_FOR`,`NOTES`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (40,'Lime zest',1,'3',null,'라임껍질',null,'2014-09-21 00:00:00',null,null,null,null);
 insert into `MISCS`(`ID`,`NAME`,`VERSION`,`TYPE_CODE`,`USE_FOR`,`NOTES`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (41,'Limeade',1,'3',null,'라임에이드 주스',null,'2014-09-21 00:00:00',null,null,null,null);
+
+commit;

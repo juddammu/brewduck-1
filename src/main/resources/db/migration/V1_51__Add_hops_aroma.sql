@@ -380,3 +380,5 @@ insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_
 insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (380,156,'Zythos ','06','citrus tones',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
 insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (381,156,'Zythos ','07','Distinct tropical (pineapple)',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
 insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (382,156,'Zythos ','05','slight pine characteristics',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
+
+commit;

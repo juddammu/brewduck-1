@@ -97,3 +97,5 @@ insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,
 insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('yeast_type','3','이스트 타입(라거)','라거',null,null,null,null,null,null);
 insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('yeast_type','4','이스트 타입(위트)','위트',null,null,null,null,null,null);
 insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('yeast_type','5','이스트 타입(와인)','와인',null,null,null,null,null,null);
+
+commit;
