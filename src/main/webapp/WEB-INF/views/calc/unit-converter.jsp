@@ -28,118 +28,143 @@
 <!-- BEGIN PAGE CONTENT INNER -->
     <div class="row">
         <div class="col-md-12">
-                <div class="portlet light bordered">
-                    <div class="portlet-body form">
-                        <!-- BEGIN FORM-->
-                        <form class="form-horizontal" role="form">
-                            <div class="form-body">
-                                <h4 class="form-section">무게 (Weight) </h4>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">온즈 (Ounces)</label>
-                                        <div class="col-md-10">
 
-                                            <div class="input-group input-medium">
-                                                <input type="text" id="oz" name="oz" class="form-control" value="16.00">
-                                                <div class="input-group-btn">
-                                                    <button type="button" class="btn yellow dropdown-toggle"> oz </button>
+        <div class="portlet light">
+            <div class="portlet-body">
+                <div class=" portlet-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#portlet_tab1" data-toggle="tab">
+                                무게 (Weight) </a>
+                        </li>
+                        <li>
+                            <a href="#portlet_tab2" data-toggle="tab">
+                                온도 (Temperature) </a>
+                        </li>
+                        <li>
+                            <a href="#portlet_tab3" data-toggle="tab">
+                                Tab 1 </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="portlet_tab1">
+                            <div class="portlet light bordered">
+                                <div class="portlet-body form">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">온즈 (Ounces)</label>
+                                            <div class="col-md-10">
+
+                                                <div class="input-group input-medium">
+                                                    <input type="text" id="oz" name="oz" class="form-control" value="16.00">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn yellow dropdown-toggle"> oz </button>
+                                                    </div>
+                                                    <!-- /btn-group -->
                                                 </div>
-                                                <!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                        <!--/span-->
+                                    </div>
+                                    <!--/row-->
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">파운드 (Pounds)</label>
+                                            <div class="col-md-10">
+
+                                                <div class="input-group input-medium">
+                                                    <input type="text" id="pounds" name="pounds" class="form-control" value="1.00">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn yellow dropdown-toggle"> lbs </button>
+                                                    </div>
+                                                    <!-- /btn-group -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--/span-->
-                                </div>
-                                <!--/row-->
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">파운드 (Pounds)</label>
-                                        <div class="col-md-10">
 
-                                            <div class="input-group input-medium">
-                                                <input type="text" id="pounds" name="pounds" class="form-control" value="1.00">
-                                                <div class="input-group-btn">
-                                                    <button type="button" class="btn yellow dropdown-toggle"> lbs </button>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">그램 (Grams)</label>
+                                            <div class="col-md-10">
+
+                                                <div class="input-group input-medium">
+                                                    <input type="text" id="gram" name="gram" class="form-control" value="453.6">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn yellow dropdown-toggle"> g </button>
+                                                    </div>
+                                                    <!-- /btn-group -->
                                                 </div>
-                                                <!-- /btn-group -->
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">그램 (Grams)</label>
-                                        <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">킬로그램 (kilograms)</label>
+                                            <div class="col-md-10">
 
-                                            <div class="input-group input-medium">
-                                                <input type="text" id="gram" name="gram" class="form-control" value="453.6">
-                                                <div class="input-group-btn">
-                                                    <button type="button" class="btn yellow dropdown-toggle"> g </button>
+                                                <div class="input-group input-medium">
+                                                    <input type="text" id="kilogram" name="kilogram" class="form-control" value="0.45">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn yellow dropdown-toggle"> kg </button>
+                                                    </div>
+                                                    <!-- /btn-group -->
                                                 </div>
-                                                <!-- /btn-group -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">킬로그램 (kilograms)</label>
-                                        <div class="col-md-10">
-
-                                            <div class="input-group input-medium">
-                                                <input type="text" id="kilogram" name="kilogram" class="form-control" value="0.45">
-                                                <div class="input-group-btn">
-                                                    <button type="button" class="btn yellow dropdown-toggle"> kg </button>
-                                                </div>
-                                                <!-- /btn-group -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-body">
-                                <h4 class="form-section">온도 (Temperature) </h4>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">화씨 (Farenheit)</label>
-                                        <div class="col-md-10">
-
-                                            <div class="input-group input-medium">
-                                                <input type="text" id="farenheit" name="farenheit" class="form-control" value="72.0">
-                                                <div class="input-group-btn">
-                                                    <button type="button" class="btn yellow dropdown-toggle"> F </button>
-                                                </div>
-                                                <!-- /btn-group -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                                <!--/row-->
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">섭씨 (Celsius)</label>
-                                        <div class="col-md-10">
-
-                                            <div class="input-group input-medium">
-                                                <input type="text" id="celsius" name="celsius" class="form-control" value="22.2">
-                                                <div class="input-group-btn">
-                                                    <button type="button" class="btn yellow dropdown-toggle"> lbs </button>
-                                                </div>
-                                                <!-- /btn-group -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                        <!-- END FORM-->
+                        </div>
+                        <div class="tab-pane" id="portlet_tab2">
+                            <div class="portlet light bordered">
+                                <div class="portlet-body form">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">화씨 (Farenheit)</label>
+                                            <div class="col-md-10">
+
+                                                <div class="input-group input-medium">
+                                                    <input type="text" id="farenheit" name="farenheit" class="form-control" value="72.0">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn yellow dropdown-toggle"> F </button>
+                                                    </div>
+                                                    <!-- /btn-group -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/span-->
+                                    </div>
+                                    <!--/row-->
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">섭씨 (Celsius)</label>
+                                            <div class="col-md-10">
+
+                                                <div class="input-group input-medium">
+                                                    <input type="text" id="celsius" name="celsius" class="form-control" value="22.2">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn yellow dropdown-toggle"> lbs </button>
+                                                    </div>
+                                                    <!-- /btn-group -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="portlet_tab3">
+                            3333333
+                        </div>
                     </div>
                 </div>
+            </div>
         </div>
+        <!-- END TAB PORTLET-->
+
 <!-- END PAGE CONTENT INNER -->
     </div>
 </div>
@@ -216,11 +241,22 @@
             if(isNaN(kilograms)) { return; }
             return kilograms*1000;
         }
+        function farenheitToCelsius(farenheit){
+            farenheit = parseFloat(farenheit);
+            if(isNaN(farenheit)) { return; }
+            return 5*(farenheit - 32) / 9.0;
+        }
+        function celsiusToFarenheit(celsius){
+            celsius = parseFloat(celsius);
+            if(isNaN(celsius)) { return; }
+            return (1.8*celsius) + 32;
+        }
 
         $(document).ready(function() {
 
             $('input').on('keyup', function(){
                 var $this = $(this);
+                //무게변환
                 if($this.attr('id') === 'oz'){
                     $('#pounds').val(ozToPounds($this.val()).toFixed(3));
                     $('#gram').val(ozToGrams($this.val()).toFixed(3));
@@ -244,6 +280,14 @@
                     $('#gram').val(kilogramsTograms($this.val()).toFixed(3));
                 }
 
+                //온도변환
+
+                if($this.attr('id') === 'farenheit'){
+                    $('#celsius').val(farenheitToCelsius($this.val()).toFixed(3));
+                }
+                if($this.attr('id') === 'celsius'){
+                    $('#farenheit').val(celsiusToFarenheit($this.val()).toFixed(3));
+                }
             });
             $("#oz").focus();              //이름칸으로 포커스
 
