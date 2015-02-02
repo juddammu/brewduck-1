@@ -1,7 +1,6 @@
 package com.brewduck.framework.convert;
 
 
-
 /**
  * Created by asus on 15. 1. 12.
  */
@@ -13,17 +12,17 @@ public class VolumeConverter {
     private double factor;
 
 
-    public VolumeConverter(String unit){
-        if(unit.equals("gallon")){
+    public VolumeConverter(String unit) {
+        if (unit.equals("gallon")) {
             factor = LITER_TO_GALLON;
         }
     }
 
-    public double toGalon(double measurement){
+    public double toGalon(double measurement) {
         return (measurement * factor);
     }
 
-    public double fromLiter(double measurement){
+    public double fromLiter(double measurement) {
 
         return (measurement / factor);
     }

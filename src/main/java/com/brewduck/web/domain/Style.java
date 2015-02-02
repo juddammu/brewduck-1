@@ -96,7 +96,6 @@ public class Style extends Common implements Serializable {
     private String comment;
 
 
-
     public void setMouthfeel(String mouthfeel) {
         this.mouthfeel = mouthfeel;
     }
@@ -130,7 +129,6 @@ public class Style extends Common implements Serializable {
     }
 
 
-
     public String getOverall() {
         return overall;
     }
@@ -146,7 +144,6 @@ public class Style extends Common implements Serializable {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
 
 
     /**

@@ -27,18 +27,18 @@ public class WeightConverter {
     private double factor;
 
 
-    public WeightConverter(Converter converter){
+    public WeightConverter(Converter converter) {
 
-        if(converter.getFromUnit().equals("pounds")){
-            if(converter.getToUnit().equals("gram")){    //gram --> oz
+        if (converter.getFromUnit().equals("pounds")) {
+            if (converter.getToUnit().equals("gram")) {    //gram --> oz
                 factor = POUNDS_TO_KILOGRAMS;
             }
         }
     }
 
-    private double getRoundMeasurement(double pound){
-       //return Math.round(pound/0.001)*0.001;
-       return pound;
+    private double getRoundMeasurement(double pound) {
+        //return Math.round(pound/0.001)*0.001;
+        return pound;
     }
 
     public double getPoundToKg(double pound) {
@@ -66,22 +66,22 @@ public class WeightConverter {
         return getRoundMeasurement(pounds);
     }
 
-    public double getGramsToOunce(double grams){
+    public double getGramsToOunce(double grams) {
         double kg = grams / GRAMS_TO_OZ;
         return getRoundMeasurement(kg);
     }
 
-    public double getGramsToPound(double grams){
+    public double getGramsToPound(double grams) {
         double kg = grams / GRAMS_TO_POUNDS;
         return getRoundMeasurement(kg);
     }
 
-    public double getKgToOunce(double grams){
+    public double getKgToOunce(double grams) {
         double kg = grams / KILOGRAMS_TO_OZ;
         return getRoundMeasurement(kg);
     }
 
-    public double getKgToPound(double grams){
+    public double getKgToPound(double grams) {
         double kg = grams / KILOGRAMS_TO_POUNDS;
         return getRoundMeasurement(kg);
     }

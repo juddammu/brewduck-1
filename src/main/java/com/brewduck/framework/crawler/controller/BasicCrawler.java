@@ -26,9 +26,9 @@ public class BasicCrawler extends WebCrawler {
 
     */
 /**
-     * You should implement this function to specify whether the given url
-     * should be crawled or not (based on your crawling logic).
-     *//*
+ * You should implement this function to specify whether the given url
+ * should be crawled or not (based on your crawling logic).
+ *//*
 
     @Override
     public boolean shouldVisit(WebURL url) {
@@ -38,9 +38,9 @@ public class BasicCrawler extends WebCrawler {
 
     */
 /**
-     * This function is called when a page is fetched and ready to be processed
-     * by your program.
-     *//*
+ * This function is called when a page is fetched and ready to be processed
+ * by your program.
+ *//*
 
     @Override
     public void visit(Page page) {

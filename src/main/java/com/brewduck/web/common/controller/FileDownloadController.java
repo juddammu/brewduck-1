@@ -9,29 +9,18 @@ package com.brewduck.web.common.controller;
  */
 
 
-import com.brewduck.web.common.service.CommonService;
-import com.brewduck.web.domain.FileInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.GregorianCalendar;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.PrintWriter;
 
 
 @Controller
@@ -42,8 +31,8 @@ public class FileDownloadController {
 
     @RequestMapping(value = "/downloadFile.do")
     public void downloadFile(
-            @RequestParam(value = "requestedFile") String requestedFile,
-            HttpServletResponse response) throws Exception {
+        @RequestParam(value = "requestedFile") String requestedFile,
+        HttpServletResponse response) throws Exception {
 
         //String uploadPath = fileUploadProperties.getProperty("file.upload.path");
 
@@ -56,14 +45,14 @@ public class FileDownloadController {
 
 
             BufferedInputStream in = new BufferedInputStream(
-                    new FileInputStream(uFile));
+                new FileInputStream(uFile));
             // String mimetype = servletContext.getMimeType(requestedFile);
-           // String mimetype = "image/jpeg";
+            // String mimetype = "image/jpeg";
 
             response.setBufferSize(fSize);
             //response.setContentType(mimetype);
             response.setHeader("Content-Disposition", "attachment; filename=\""
-                    + requestedFile + "\"");
+                + requestedFile + "\"");
             response.setContentLength(fSize);
 
             FileCopyUtils.copy(in, response.getOutputStream());
@@ -76,9 +65,9 @@ public class FileDownloadController {
             PrintWriter printwriter = response.getWriter();
             printwriter.println("<html>");
             printwriter.println("<br><br><br><h2>Could not get file name:<br>"
-                    + requestedFile + "</h2>");
+                + requestedFile + "</h2>");
             printwriter
-                    .println("<br><br><br><center><h3><a href='javascript: history.go(-1)'>Back</a></h3></center>");
+                .println("<br><br><br><center><h3><a href='javascript: history.go(-1)'>Back</a></h3></center>");
             printwriter.println("<br><br><br>&copy; webAccess");
             printwriter.println("</html>");
             printwriter.flush();

@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 당화 단계, Value Object
- *
+ * <p/>
  * 신재근, 2014-02-27
  */
 public class MashStep implements Serializable {

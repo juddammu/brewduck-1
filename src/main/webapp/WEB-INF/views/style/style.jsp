@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -23,12 +23,16 @@
     <h2><strong>스타일</strong> BJCP </h2>
     <label class="color">60가지의 표준<em><strong> 스타일</strong></em>을 정의합니다. - BJCP 2008</label>
 </header>
-<div class="panel-tools fully color" align="right"  data-toolscolor="#6CC   3A0">
+<div class="panel-tools fully color" align="right" data-toolscolor="#6CC   3A0">
     <ul class="tooltip-area">
-        <li><a href="javascript:void(0)" class="btn btn-reload"  title="리로딩"><i class="fa fa-retweet"></i></a></li>
-        <li><a href="javascript:void(0)" class="btn btn-add"  title="추가"><i class="fa fa-plus"></i></a></li>
-        <li><a href="javascript:void(0)" class="btn btn-reload"  title="출력"><i class="fa fa-print "></i></a></li>
-        <li><a href="javascript:void(0)" class="btn btn-close" title="Close"><i class="fa fa-times"></i></a></li>
+        <li><a href="javascript:void(0)" class="btn btn-reload" title="리로딩"><i
+                class="fa fa-retweet"></i></a></li>
+        <li><a href="javascript:void(0)" class="btn btn-add" title="추가"><i
+                class="fa fa-plus"></i></a></li>
+        <li><a href="javascript:void(0)" class="btn btn-reload" title="출력"><i
+                class="fa fa-print "></i></a></li>
+        <li><a href="javascript:void(0)" class="btn btn-close" title="Close"><i
+                class="fa fa-times"></i></a></li>
     </ul>
 </div>
 <div class="panel-body">
@@ -47,7 +51,8 @@
 <tr class="odd gradeX">
     <td>Trident</td>
     <td>Internet
-        Explorer 4.0</td>
+        Explorer 4.0
+    </td>
     <td>Win 95+</td>
     <td class="center"> 4</td>
     <td class="center">X</td>
@@ -55,7 +60,8 @@
 <tr class="even gradeC">
     <td>Trident</td>
     <td>Internet
-        Explorer 5.0</td>
+        Explorer 5.0
+    </td>
     <td>Win 95+</td>
     <td class="center">5</td>
     <td class="center">C</td>
@@ -63,7 +69,8 @@
 <tr class="odd gradeA">
     <td>Trident</td>
     <td>Internet
-        Explorer 5.5</td>
+        Explorer 5.5
+    </td>
     <td>Win 95+</td>
     <td class="center">5.5</td>
     <td class="center">A</td>
@@ -71,7 +78,8 @@
 <tr class="even gradeA">
     <td>Trident</td>
     <td>Internet
-        Explorer 6</td>
+        Explorer 6
+    </td>
     <td>Win 98+</td>
     <td class="center">6</td>
     <td class="center">A</td>

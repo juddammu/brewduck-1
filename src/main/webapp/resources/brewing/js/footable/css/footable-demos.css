@@ -1,11 +1,13 @@
 
 .demo-container {
-    margin:10px;
+    margin: 10px;
 }
+
 code {
     background: #ddd;
-    padding:2px 5px;
+    padding: 2px 5px;
 }
+
 .status-metro {
     border-radius: 3px;
     color: #FFFFFF;
@@ -13,15 +15,19 @@ code {
     padding: 2px 5px;
     font-size: 11px;
 }
+
 .status-metro.status-active {
     background: #41C3AC;
 }
+
 .status-metro.status-disabled {
     background: #999999;
 }
+
 .status-metro.status-suspended {
     background: #FF6B57;
 }
+
 .foo-setup li {
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }

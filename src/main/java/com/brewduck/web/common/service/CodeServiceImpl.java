@@ -33,7 +33,6 @@ public class CodeServiceImpl implements CodeService {
     private CodeDao codeDao;
 
 
-
     @Override
     public List<Common> selectCodeMaster() {
         return codeDao.selectCodeMaster();

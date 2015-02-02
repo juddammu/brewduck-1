@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <!DOCTYPE html>
 <html lang="en" ng-app="xenon-app">
@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Xenon Boostrap Admin Panel" />
-    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Xenon Boostrap Admin Panel"/>
+    <meta name="author" content=""/>
 
     <title>Xenon - Boostrap Admin Template</title>
 
@@ -30,13 +30,11 @@
             assetsDir: '/resources/assets',
 
             // Methods
-            templatePath: function(view_name)
-            {
+            templatePath: function (view_name) {
                 return this.templatesDir + '/' + view_name + '.html';
             },
 
-            assetPath: function(file_path)
-            {
+            assetPath: function (file_path) {
                 return this.assetsDir + '/' + file_path;
             }
         };
@@ -50,7 +48,8 @@
 
 
 </head>
-<body class="page-body" ng-controller="MainCtrl" ng-class="{'settings-pane-open': layoutOptions.settingsPane.isOpen, 'chat-open': layoutOptions.chat.isOpen, 'login-page': isLoginPage && isMainPage == false, 'login-light': isLightLoginPage && isMainPage == false, 'lockscreen-page': isLockscreenPage && isMainPage == false, 'right-sidebar': layoutOptions.sidebar.isRight, 'boxed-container': layoutOptions.container.isBoxed}">
+<body class="page-body" ng-controller="MainCtrl"
+      ng-class="{'settings-pane-open': layoutOptions.settingsPane.isOpen, 'chat-open': layoutOptions.chat.isOpen, 'login-page': isLoginPage && isMainPage == false, 'login-light': isLightLoginPage && isMainPage == false, 'lockscreen-page': isLockscreenPage && isMainPage == false, 'right-sidebar': layoutOptions.sidebar.isRight, 'boxed-container': layoutOptions.container.isBoxed}">
 
 
 <settings-pane></settings-pane>

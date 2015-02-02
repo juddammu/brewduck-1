@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserDao {
 
-	public List<User> getSelectOne(User user) throws DataAccessException;
+    public List<User> getSelectOne(User user) throws DataAccessException;
 
     public User selectUser(User user) throws DataAccessException;
 

@@ -1,7 +1,6 @@
 package com.brewduck.web.domain;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,7 +21,7 @@ public class Api {
     //패스워드
     private String password;
 
-    private Map<String,Object> apis;
+    private Map<String, Object> apis;
     //레시피 순번
     private Integer seq;
     //레시피 한글명

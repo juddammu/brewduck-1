@@ -15,7 +15,6 @@ import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertThat;
 
 
 /**
@@ -39,7 +38,7 @@ public class StyleServiceTest {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         style = new Style();
         listSize = 77;
     }
@@ -47,19 +46,19 @@ public class StyleServiceTest {
     /**
      * 기본 수행 테스트
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     @Ignore
     public void selectStyleListTest() {
         List<Style> selectStyleListTest = styleDao.selectStyleList(style);
-        assertThat(true,  is(selectStyleListTest.size() > 0));
+        assertThat(true, is(selectStyleListTest.size() > 0));
         assertEquals(listSize, selectStyleListTest.size());
     }
 
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void notNullDataTest() {
         List<Style> selectStyleList = styleDao.selectStyleList(style);
 
-        for(int i=0;i<selectStyleList.size();i++){
+        for (int i = 0; i < selectStyleList.size(); i++) {
             assertThat(true, is(((Style) (selectStyleList.get(i))).getAbvMin() > 0));
             assertThat(true, is(((Style) (selectStyleList.get(i))).getAbvMax() > 0));
             assertThat(true, is(((Style) (selectStyleList.get(i))).getOgMin() > 0));
@@ -81,12 +80,12 @@ public class StyleServiceTest {
      * 기본 수행 테스트
      * </pre>
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void selectStyleDetailTest() {
         Style selectStyleDetail = new Style();
         style.setId(1);
         selectStyleDetail = styleDao.selectStyleDetail(style);
-        assertThat(true,  is(selectStyleDetail != null));
+        assertThat(true, is(selectStyleDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectStyleDetail);
         assertThat(true, is(selectStyleDetail.getName().equals("Fruit Lambic")));
     }
@@ -97,8 +96,8 @@ public class StyleServiceTest {
      * 맥주 스타일 저장.
      * </pre>
      */
-    @Ignore(value="기능사용하지 않음")
-    public void insertStyleTest(){
+    @Ignore(value = "기능사용하지 않음")
+    public void insertStyleTest() {
         Integer insertStyle = styleDao.insertStyle(style);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", insertStyle);
     }
@@ -108,8 +107,8 @@ public class StyleServiceTest {
      * 맥주 스타일 수정.
      * </pre>
      */
-    @Ignore(value="기능사용하지 않음")
-    public void updateStyleTest(){
+    @Ignore(value = "기능사용하지 않음")
+    public void updateStyleTest() {
         Integer updateStyle = styleDao.updateStyle(style);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateStyle);
     }
@@ -119,8 +118,8 @@ public class StyleServiceTest {
      * 맥주 스타일 삭제.
      * </pre>
      */
-    @Ignore(value="기능사용하지 않음")
-    public void deleteStyleTest(){
+    @Ignore(value = "기능사용하지 않음")
+    public void deleteStyleTest() {
         Style style = new Style();
         Integer deleteStyle = styleDao.deleteStyle(style);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", deleteStyle);

@@ -1,7 +1,6 @@
 package com.brewduck.framework.convert;
 
 
-
 /**
  * Created by asus on 15. 1. 12.
  */
@@ -12,17 +11,17 @@ public class LengthConverter {
     private double factor;
 
 
-    public LengthConverter(String unit){
-        if(unit.equals("in")){
+    public LengthConverter(String unit) {
+        if (unit.equals("in")) {
             factor = INCH_TO_METER;
         }
     }
 
-    public double toMetters(double measurement){
+    public double toMetters(double measurement) {
         return (measurement * factor);
     }
 
-    public double fromInch(double measurement){
+    public double fromInch(double measurement) {
         return (measurement / factor);
     }
 

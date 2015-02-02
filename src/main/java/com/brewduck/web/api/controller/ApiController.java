@@ -1,21 +1,17 @@
 package com.brewduck.web.api.controller;
 
-import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.api.service.ApiService;
-import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Api;
-import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.recipe.service.RecipeService;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.io.IOException;
 import java.util.List;
 
 
@@ -48,29 +44,28 @@ public class ApiController {
      * url : /api/account/{email}/{password}
      * </pre>
      *
-     * @param email : 계정
+     * @param email    : 계정
      * @param password : 패스워드
-     * @return
-     * 성공시 : [{"RESULT":0}]
+     * @return 성공시 : [{"RESULT":0}]
      * 실패시 : [{"RESULT":1}]
      */
     @RequestMapping(value = "/{apiKey}/account/{email}/{password}", method = RequestMethod.GET)
     @ResponseBody
     public Api checkAccount(@PathVariable("apiKey") String apiKey,
-                            @PathVariable("email")  String email,
-                            @PathVariable("password") String password) {
+        @PathVariable("email") String email,
+        @PathVariable("password") String password) {
 
         int resultCode = -1;
         Api paramApi = new Api();
         Api resultApi = new Api();
 
-        if(email.length() < 1){
+        if (email.length() < 1) {
             resultCode = 0;
             resultApi.setResultCode(resultCode);
             return resultApi;
         }
 
-        if(password.length() < 1){
+        if (password.length() < 1) {
             resultCode = 0;
             return resultApi;
         }
@@ -89,17 +84,16 @@ public class ApiController {
      * </pre>
      *
      * @param userId
-     * @return
-     * 성공시 :
+     * @return 성공시 :
      * [{"idx":1,"title":"호가든클론레시피","content":"풍부한 거품과 ....... 추천레시피"},
-     *  {"idx":2,"title":"인디카클론레시피","content":"홉을 적게쓰고도 ....... 레시피"}]
+     * {"idx":2,"title":"인디카클론레시피","content":"홉을 적게쓰고도 ....... 레시피"}]
      * 실패시 :
      * []
      */
 
     @ResponseBody
     @RequestMapping(value = "/account/recipe/{userId}", method = RequestMethod.GET)
-    public List<Api> choseRecipeList(@PathVariable("userId") String userId){
+    public List<Api> choseRecipeList(@PathVariable("userId") String userId) {
         logger.info("Choose Recipe List");
         Api api = new Api();
         api.setInsertId(userId);

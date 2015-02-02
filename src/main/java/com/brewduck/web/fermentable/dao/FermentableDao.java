@@ -32,7 +32,7 @@ public interface FermentableDao {
      * 맥주 레시피 맥아 목록 조회.
      * </pre>
      *
-     * @param name 맥주 레시피 이름
+     * @param fermentable 맥주 레시피 이름
      * @return 맥주 맥아 목록
      */
     public List<Fermentable> selectRecipeFermentableList(Fermentable fermentable);

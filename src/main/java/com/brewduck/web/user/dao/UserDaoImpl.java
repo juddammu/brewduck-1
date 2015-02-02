@@ -19,19 +19,18 @@ import java.util.List;
 
 /**
  * @author hukoru
- *
  */
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
-	Logger logger = LoggerFactory.getLogger(this.getClass());
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
 
     @Override
-	public List<User> getSelectOne(User user) throws DataAccessException {
-		return sqlSessionTemplate.selectList("User.selectOne", user);
-	}
+    public List<User> getSelectOne(User user) throws DataAccessException {
+        return sqlSessionTemplate.selectList("User.selectOne", user);
+    }
 
 
     /**

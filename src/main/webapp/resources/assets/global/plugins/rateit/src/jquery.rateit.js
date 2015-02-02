@@ -1,9 +1,9 @@
 /*! RateIt | v1.0.18 / 12/22/2013 | https://rateit.codeplex.com/license
-    http://rateit.codeplex.com | Twitter: @gjunge
-*/
+ http://rateit.codeplex.com | Twitter: @gjunge
+ */
 (function ($) {
     $.rateit = {
-        aria : {
+        aria: {
             resetLabel: 'reset rating',
             ratingLabel: 'rating'
         }
@@ -12,7 +12,8 @@
     $.fn.rateit = function (p1, p2) {
         //quick way out.
         var index = 1;
-        var options = {}; var mode = 'init';
+        var options = {};
+        var mode = 'init';
         var capitaliseFirstLetter = function (string) {
             return string.charAt(0).toUpperCase() + string.substr(1);
         };
@@ -33,7 +34,7 @@
 
         return this.each(function () {
             var item = $(this);
-         
+
 
             //shorten all the item.data('rateit-XXX'), will save space in closure compiler, will be like item.data('XXX') will become x('XXX')
             var itemdata = function (key, value) {
@@ -54,19 +55,19 @@
 
             //handle programmatic reset
             if (p1 == 'reset') {
-              var setup = itemdata('init'); //get initial value
-              for (var prop in setup) {
-                item.data(prop, setup[prop]);
-              }
+                var setup = itemdata('init'); //get initial value
+                for (var prop in setup) {
+                    item.data(prop, setup[prop]);
+                }
 
-              if (itemdata('backingfld')) { //reset also backingfield
-                var fld = $(itemdata('backingfld'));
-                fld.val(itemdata('value'));
-                if (fld[0].min) fld[0].min = itemdata('min');
-                if (fld[0].max) fld[0].max = itemdata('max');
-                if (fld[0].step) fld[0].step = itemdata('step');
-              }
-              item.trigger('reset');
+                if (itemdata('backingfld')) { //reset also backingfield
+                    var fld = $(itemdata('backingfld'));
+                    fld.val(itemdata('value'));
+                    if (fld[0].min) fld[0].min = itemdata('min');
+                    if (fld[0].max) fld[0].max = itemdata('max');
+                    if (fld[0].step) fld[0].step = itemdata('step');
+                }
+                item.trigger('reset');
             }
 
             //add the rate it class.
@@ -122,7 +123,7 @@
                     var fld = $(itemdata('backingfld'));
                     itemdata('value', fld.hide().val());
 
-                    if (fld.attr('disabled') || fld.attr('readonly')) 
+                    if (fld.attr('disabled') || fld.attr('readonly'))
                         itemdata('readonly', true); //http://rateit.codeplex.com/discussions/362055 , if a backing field is disabled or readonly at instantiation, make rateit readonly.
 
 
@@ -153,7 +154,7 @@
                     item.find('.rateit-selected').addClass('rateit-selected-rtl');
                     item.find('.rateit-hover').addClass('rateit-hover-rtl');
                 }
-                
+
                 itemdata('init', JSON.parse(JSON.stringify(item.data()))); //cheap way to create a clone
             }
             //resize the height of all elements, 
@@ -162,7 +163,7 @@
             //set the range element to fit all the stars.
             var range = item.find('.rateit-range');
             range.width(itemdata('starwidth') * (itemdata('max') - itemdata('min'))).height(itemdata('starheight'));
-             
+
 
             //add/remove the preset class
             var presetclass = 'rateit-preset' + ((ltr) ? '' : '-rtl');
@@ -180,15 +181,15 @@
             //setup the reset button
             var resetbtn = item.find('.rateit-reset');
             if (resetbtn.data('wired') !== true) {
-                resetbtn.bind('click', function (e) {
+                resetbtn.bind('click',function (e) {
                     e.preventDefault();
                     resetbtn.blur();
                     item.rateit('value', null);
                     item.trigger('reset');
                 }).data('wired', true);
-                
+
             }
-            
+
             //this function calculates the score based on the current position of the mouse.
             var calcRawScore = function (element, event) {
                 var pageX = (event.changedTouches) ? event.changedTouches[0].pageX : event.pageX;
@@ -231,7 +232,7 @@
                 //if we are not read only, add all the events
 
                 //if we have a reset button, set the event handler.
-                if (!itemdata('resetable')) 
+                if (!itemdata('resetable'))
                     resetbtn.hide();
 
                 //when the mouse goes over the range element, we set the "hover" stars.
@@ -256,7 +257,7 @@
                     });
 
                     //support key nav
-                    range.keyup( function (e) {
+                    range.keyup(function (e) {
                         if (e.which == 38 || e.which == (ltr ? 39 : 37)) {
                             setSelection(Math.min(itemdata('value') + itemdata('step'), itemdata('max')));
                         }
@@ -264,7 +265,7 @@
                             setSelection(Math.max(itemdata('value') - itemdata('step'), itemdata('min')));
                         }
                     });
-                  
+
                     itemdata('wired', true);
                 }
                 if (itemdata('resetable')) {
@@ -283,19 +284,24 @@
     function touchHandler(event) {
 
         var touches = event.originalEvent.changedTouches,
-                first = touches[0],
-                type = "";
+            first = touches[0],
+            type = "";
         switch (event.type) {
-            case "touchmove": type = "mousemove"; break;
-            case "touchend": type = "mouseup"; break;
-            default: return;
+            case "touchmove":
+                type = "mousemove";
+                break;
+            case "touchend":
+                type = "mouseup";
+                break;
+            default:
+                return;
         }
 
         var simulatedEvent = document.createEvent("MouseEvent");
         simulatedEvent.initMouseEvent(type, true, true, window, 1,
-                              first.screenX, first.screenY,
-                              first.clientX, first.clientY, false,
-                              false, false, false, 0/*left*/, null);
+            first.screenX, first.screenY,
+            first.clientX, first.clientY, false,
+            false, false, false, 0/*left*/, null);
 
         first.target.dispatchEvent(simulatedEvent);
         event.preventDefault();
@@ -305,6 +311,8 @@
     $.fn.rateit.defaults = { min: 0, max: 5, step: 0.5, starwidth: 16, starheight: 16, readonly: false, resetable: true, ispreset: false};
 
     //invoke it on all .rateit elements. This could be removed if not wanted.
-    $(function () { $('div.rateit, span.rateit').rateit(); });
+    $(function () {
+        $('div.rateit, span.rateit').rateit();
+    });
 
 })(jQuery);

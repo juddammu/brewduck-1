@@ -84,8 +84,8 @@ public class AccountServiceTest {
             if (insertCount > 0) {
                 try {
                     authKey = SimpleCrypto.encrypt(
-                            SimpleCrypto.seed,
-                            String.valueOf(account.getId())
+                        SimpleCrypto.seed,
+                        String.valueOf(account.getId())
                     );
                     LOGGER.info("가입 인증키 : " + authKey);
                 } catch (Exception e) {
@@ -96,17 +96,17 @@ public class AccountServiceTest {
             if (authKey != null) {
                 MailService mailService = new MailService();
                 result = mailService.sendMail(
-                        account.getEmail(),
-                        "[브루덕] 회원 가입을 축하드립니다.",
-                        authKey
+                    account.getEmail(),
+                    "[브루덕] 회원 가입을 축하드립니다.",
+                    authKey
                 );
 
                 // 이메일 전송이 실패되면 회원 가입 롤백
-                if ( ! result ) {
+                if (!result) {
                     throw new RuntimeException("이메일 발송 실패하였습니다.");
                 }
             }
-        }else {
+        } else {
             throw new RuntimeException("가입된 이메일이 있습니다.");
         }
 

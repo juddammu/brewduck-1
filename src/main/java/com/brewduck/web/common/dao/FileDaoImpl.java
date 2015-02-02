@@ -9,16 +9,12 @@
  */
 package com.brewduck.web.common.dao;
 
-import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.FileInfo;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -36,35 +32,34 @@ public class FileDaoImpl implements FileDao {
 
 
     @Override
-    public  int selectFileSeq() {
-        return (Integer)sqlSessionTemplate.selectOne("Common.selectFileSeq");
+    public int selectFileSeq() {
+        return (Integer) sqlSessionTemplate.selectOne("Common.selectFileSeq");
     }
 
     @Override
-    public  int selectFileNo(Integer seq) {
-        return (Integer)sqlSessionTemplate.selectOne("Common.selectFileNo",seq);
+    public int selectFileNo(Integer seq) {
+        return (Integer) sqlSessionTemplate.selectOne("Common.selectFileNo", seq);
     }
 
     @Override
-    public  int selectFileCount(Integer seq) {
-        return (Integer)sqlSessionTemplate.selectOne("Common.selectFileCount", seq);
+    public int selectFileCount(Integer seq) {
+        return (Integer) sqlSessionTemplate.selectOne("Common.selectFileCount", seq);
     }
 
     @Override
-    public  int insertNoticeFile(FileInfo fileInfo) {
+    public int insertNoticeFile(FileInfo fileInfo) {
         return sqlSessionTemplate.insert("Common.insertNoticeFile", fileInfo);
     }
 
     @Override
-    public  int updateNoticeFile(FileInfo fileInfo) {
+    public int updateNoticeFile(FileInfo fileInfo) {
         return sqlSessionTemplate.update("Common.updateNoticeFile", fileInfo);
     }
 
     @Override
-    public  int deleteNoticeFile(FileInfo fileInfo) {
+    public int deleteNoticeFile(FileInfo fileInfo) {
         return sqlSessionTemplate.update("Common.deleteNoticeFile", fileInfo);
     }
-
 
 
 }

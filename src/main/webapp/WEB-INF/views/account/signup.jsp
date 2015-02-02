@@ -1,45 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="box text-center">
     <div class="box-head">
-        <h2 class="text-light text-white"> <strong>맥덕</strong> 모드 인증 시스템<i class="fa fa-rocket fa-fw"></i></h2>
+        <h2 class="text-light text-white"><strong>맥덕</strong> 모드 인증 시스템<i
+                class="fa fa-rocket fa-fw"></i></h2>
         <h4 class="text-light text-inverse-alt">브루덕에 가입하기</h4>
     </div>
     <div class="box-body box-centered style-inverse">
-        <form:form id="authentication" class="form-content login-form" method="POST" action="/account/join" modelAttribute="account">
+        <form:form id="authentication" class="form-content login-form" method="POST"
+                   action="/account/join" modelAttribute="account">
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input id="name" name="name" class="form-control" type="text" placeholder="성명을 입력하세요." maxlength="40">
+                    <input id="name" name="name" class="form-control" type="text"
+                           placeholder="성명을 입력하세요." maxlength="40">
 
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-flash"></i></span>
-                    <input id="email" name="email" class="form-control" type="email" placeholder="이메일 주소를 입력하세요." maxlength="100">
+                    <input id="email" name="email" class="form-control" type="email"
+                           placeholder="이메일 주소를 입력하세요." maxlength="100">
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input id="password" name="password" class="form-control" type="password" placeholder="패스워드를 입력하세요." maxlength="20">
+                    <input id="password" name="password" class="form-control" type="password"
+                           placeholder="패스워드를 입력하세요." maxlength="20">
 
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input id="rePassword" name="rePassword" class="form-control" type="password" placeholder="패스워드를 다시 입력하세요." maxlength="20">
+                    <input id="rePassword" name="rePassword" class="form-control" type="password"
+                           placeholder="패스워드를 다시 입력하세요." maxlength="20">
                 </div>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" type="submit"><i class="fa fa-key"></i> 가입하기</button>
+                <button class="btn btn-primary" type="submit"><i class="fa fa-key"></i> 가입하기
+                </button>
             </div>
         </form:form>
-    </div><!--end .box-body -->
+    </div>
+    <!--end .box-body -->
     <div class="box-footer force-padding text-white">
         <c:if test="${loginError eq 'false'}">
             <h4 class="rs title-box fc-orange">${errorMessage}</h4>

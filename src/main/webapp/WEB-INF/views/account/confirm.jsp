@@ -1,27 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="box text-center">
     <div class="box-head">
-        <h2 class="text-light text-white"> <strong>BREW</strong>덕 온라인 인증 시스템<i class="fa fa-rocket fa-fw"></i></h2>
+        <h2 class="text-light text-white"><strong>BREW</strong>덕 온라인 인증 시스템<i
+                class="fa fa-rocket fa-fw"></i></h2>
         <h4 class="text-light text-inverse-alt">클로즈 베타 서비스</h4>
     </div>
     <div class="box-body box-centered style-inverse">
         <h2 class="text-light"><span>입력하신 이메일 계정으로 확인 메일을 전송하였습니다.</span></h2>
         <br/>
         <h5 class="text-light"><span>- 회원가입 메일을 확인해주십시오. -</span></h5>
-        <form:form id="authentication" class="form-content login-form" method="POST" action="/account/authentication" modelAttribute="account">
+        <form:form id="authentication" class="form-content login-form" method="POST"
+                   action="/account/authentication" modelAttribute="account">
             <div class="form-group">
                 <div class="input-group">
 
                 </div>
             </div>
             <div>
-                <a href="/recipe/create"><button class="btn btn-primary" type="button"><i class="fa fa-key"></i> 레시피 만들러 가기</button></a>
+                <a href="/recipe/create">
+                    <button class="btn btn-primary" type="button"><i class="fa fa-key"></i> 레시피 만들러
+                        가기
+                    </button>
+                </a>
             </div>
         </form:form>
-    </div><!--end .box-body -->
+    </div>
+    <!--end .box-body -->
 </div>
 
 <%--<div class="row login-container animated fadeInUp">

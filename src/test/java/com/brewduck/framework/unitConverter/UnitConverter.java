@@ -17,17 +17,17 @@ public class UnitConverter {
     private double factor;
 
 
-    private UnitConverter(String unit){
-        if(unit.equals("in")){
+    private UnitConverter(String unit) {
+        if (unit.equals("in")) {
             factor = INCH_TO_METER;
         }
     }
 
-    public double toMetters(double measurement){
+    public double toMetters(double measurement) {
         return (measurement * factor);
     }
 
-    public double fromMetters(double measurement){
+    public double fromMetters(double measurement) {
         return (measurement / factor);
     }
 

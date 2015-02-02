@@ -5,5 +5,5 @@ $('body').delay(350).css({
     'overflow': 'visible'
 });
 //$.vegas('overlay', {
-   // src: 'js/vegas/overlays/02.png'
+// src: 'js/vegas/overlays/02.png'
 //});

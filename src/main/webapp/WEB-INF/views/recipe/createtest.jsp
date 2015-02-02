@@ -1,356 +1,480 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<title>스타일 STYLE (BJCP-2008)</title>
 
-<div class="row">
-<div class="col-lg-12">
-    <div class="box">
-        <!-- /.box-header -->
-        <div class="box-body">
-
-            <form class="bs-example bs-example-form" role="form">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <input class="form-control input-lg" type="text" placeholder="레시피 이름">
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <div class="radio">
-                                <label class="radio-inline btn-radio-primary-inverse active">
-                                    <input type="radio" id="type" name="type" value="1" checked> 완전 곡물 - All Grain
-                                </label>
-                                <label class="radio-inline btn-radio-primary-inverse">
-                                    <input type="radio" id="type" name="type" value="2"> 부분곡물 - Partial Mash
-                                </label>
-                                <label class="radio-inline btn-radio-primary-inverse">
-                                    <input type="radio" id="type" name="type" value="3"> 원액 캔 - Extract
-                                </label>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-8">
-                    </div>
-                    <!-- /.col-lg-6 -->
-                </div>
-                <!-- /.row -->
-            </form>
-            <div class="row">
-            <div class="col-lg-12">
-
-            </div>
-                <div class="col-lg-5">
-                        <div class="box">
-                            <ul class="timeline">
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fontello-sunrise bg-green"></i>
-
-                                    <div class="timeline-item bg-green">
-                                        <h3 style="padding: 15px 20px 0 20px;" class="timeline-header text-green  no-border">
-                                            <span class="text-white"><i class="fontello-pen"></i>&nbsp;&nbsp;스타일 마법사</span>
-                                            <span class="text-white pull-right fontello-wrench-outline"></span>
-                                        </h3>
-
-                                        <div class="timeline-body ">
-                                        <span>
-                                            <br>* 발효재료를 더 넣어보세요.
-                                            <br>* 효모를 넣어보세요.
-
-                                            <small>4.0/10.0</small>
-                                        </span>
-
-                                        </div>
-                                        <div class='timeline-footer'>
-                                            <a class="btn btn-app">
-                                                <span class="badge bg-blue">PASS</span>
-                                                <i class="fa fa-flask"></i> OG / FG
-                                            </a>
-                                            <a class="btn btn-app">
-                                                <span class="badge bg-red">FAIL</span>
-                                                <i class="fa fontello-beer-1"></i> SRM
-                                            </a>
-                                            <a class="btn btn-app">
-                                                <span class="badge bg-blue">PASS</span>
-                                                <i class="fa fontello-bell"></i> IBU
-                                            </a>
-                                            <a class="btn btn-app">
-                                                <span class="badge bg-red">FAIL</span>
-                                                <i class="fa fontello-beer"></i> ABV
-                                            </a>
-                                            <a class="btn btn-app">
-                                                <i class="fa  fa-book"></i> 가이드
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                </div>
-                <div class="col-sm-7 invoice-col">
-                    <p class="lead">SPEC</p>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tr>
-                                <th style="width:20%">OG:</th>
-                                <td>1.048 ~ 1.056</td>
-                            </tr>
-                            <tr>
-                                <th>FG:</th>
-                                <td>1.048 ~ 1.056</td>
-                            </tr>
-                            <tr>
-                                <th>SRM:</th>
-                                <td>4 ~ 6</td>
-                            </tr>
-                            <tr>
-                                <th>IBU:</th>
-                                <td>4 ~ 6</td>
-                            </tr>
-                            <tr>
-                                <th>ABV:</th>
-                                <td>2.8 ~ 4.2</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="row invoice-info">
-
-            <ul class="nav nav-tabs">
-                    <li class="active"><a href="#home" data-toggle="tab">재료 구성</a></li>
-                    <li><a href="#svn" data-toggle="tab">배치 사이즈</a></li>
-                    <li><a href="#ios" data-toggle="tab">노트</a></li>
-                    <li><a href="#dotnet" data-toggle="tab">제어판</a></li>
-                </ul>
-                <div class="col-lg-12 tab-content">
-                    <div class="box-header tab-pane fade in active" id="home">
-                        <!-- tools box -->
-                        <h3 class="page-header">
-                            발효 재료 <small>Fermentables</small>
-                            <button class="btn pull-right bg-red"  data-toggle="modal" data-target="#myModal" style="margin-right: 5px;"><i class="fa fa-lemon-o"></i> :: 발효재료 추가</button>
-                        </h3>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>재료명</th>
-                                    <th>수량</th>
-                                    <th>사용방법</th>
-                                    <th>색상</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach items="${recipeDetail.fermentables}" var="fermentables" varStatus="i">
-                                    <tr class="bg-white">
-                                        <td>${fermentables.koreanName }</td>
-                                        <td>${fermentables.amount} kg</td>
-                                        <td>
-                                            <c:choose>
-                                                <c:when test="${fermentables.fermentableUse=='1'}">
-                                                    당화 - Mash
-                                                </c:when>
-                                                <c:when test="${fermentables.fermentableUse=='2'}">
-                                                    우려내기 - Steep
-                                                </c:when>
-                                                <c:when test="${fermentables.fermentableUse=='3'}">
-                                                    끊임 - Boil
-                                                </c:when>
-                                                <c:when test="${fermentables.fermentableUse=='4'}">
-                                                    후반 끓임 - Late Boil
-                                                </c:when>
-                                                <c:otherwise>
-                                                    -
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </td>
-                                        <td>${fermentables.color} °L</td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">
-                                            <span aria-hidden="true">&times;</span>
-                                            <span class="sr-only">닫기</span>
-                                        </button>
-                                        <h4 class="modal-title" id="myModalLabel">발효재료 Fermentables</h4>
-                                    </div>
-                                    <div class="modal-body">
-
-
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <tr>
-                                                    <th style="width:20%">OG:</th>
-                                                    <td>1.048 ~ 1.056</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>FG:</th>
-                                                    <td>1.048 ~ 1.056</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>SRM:</th>
-                                                    <td>4 ~ 6</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>IBU:</th>
-                                                    <td>4 ~ 6</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>ABV:</th>
-                                                    <td>2.8 ~ 4.2</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="box-header tab-pane fade" id="svn">
-                        <!-- tools box -->
-                        <h3 class="page-header">
-                            발효 재료 <small>Fermentables</small>
-                            <button class="btn pull-right bg-red"  data-toggle="modal" data-target="#myModal" style="margin-right: 5px;"><i class="fa fa-lemon-o"></i> :: 발효재료 추가</button>
-                        </h3>
-                        <div class="table-responsive">
-                            <table class="table">
-
-                                <thead>
-                                <tr>
-                                    <th>재료명</th>
-                                    <th>수량</th>
-                                    <th>사용방법</th>
-                                    <th>색상</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach items="${recipeDetail.fermentables}" var="fermentables" varStatus="i">
-                                    <tr class="bg-white">
-                                        <td>${fermentables.koreanName }</td>
-                                        <td>${fermentables.amount} kg</td>
-                                        <td>
-                                            <c:choose>
-                                                <c:when test="${fermentables.fermentableUse=='1'}">
-                                                    당화 - Mash
-                                                </c:when>
-                                                <c:when test="${fermentables.fermentableUse=='2'}">
-                                                    우려내기 - Steep
-                                                </c:when>
-                                                <c:when test="${fermentables.fermentableUse=='3'}">
-                                                    끊임 - Boil
-                                                </c:when>
-                                                <c:when test="${fermentables.fermentableUse=='4'}">
-                                                    후반 끓임 - Late Boil
-                                                </c:when>
-                                                <c:otherwise>
-                                                    -
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </td>
-                                        <td>${fermentables.color} °L</td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">
-                                            <span aria-hidden="true">&times;</span>
-                                            <span class="sr-only">닫기</span>
-                                        </button>
-                                        <h4 class="modal-title" id="myModalLabel">발효재료 Fermentables</h4>
-                                    </div>
-                                    <div class="modal-body">
-
-
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <tr>
-                                                    <th style="width:20%">OG:</th>
-                                                    <td>1.048 ~ 1.056</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>FG:</th>
-                                                    <td>1.048 ~ 1.056</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>SRM:</th>
-                                                    <td>4 ~ 6</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>IBU:</th>
-                                                    <td>4 ~ 6</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>ABV:</th>
-                                                    <td>2.8 ~ 4.2</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /.col -->
-            </div>
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+    <div class="container-fluid">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1>레시피 만들기
+                <small>New Recipe</small>
+            </h1>
         </div>
-        <!-- /.box-body -->
+        <!-- END PAGE TITLE -->
     </div>
-       <!-- /.box -->
 </div>
-</div>
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <form:form  id="insert" class="form-horizontal form-row-seperated" name="insert"
+                            method="POST" enctype="multipart/form-data" action="/recipe/insertRecipe"
+                            modelAttribute="paramRecipe">
+                <!-- Begin: life time stats -->
+                <div class="note note-info note-bordered">
+                    <p>
+                        에러나 기능 개선이 필요하시면 <a href="ui_colors.html" target="_blank">
+                        기능개선 게시판</a>을 활용해주세요.
+                    </p>
+                </div>
+
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>레시피 개요
+                        </div>
+                    </div>
 
 
+                    <div class="portlet-body">
+                        <div class="tabbable">
+                            <div class="tabbable">
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#tab_1" data-toggle="tab">
+                                            일반 </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_2" data-toggle="tab">
+                                            노트 </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_4" data-toggle="tab">
+                                            설정 </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content no-space">
+                                    <div class="tab-pane active" id="tab_1">
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">레시피 이름<span class="required">
+                                                        * </span>
+                                                </label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control input-lg" type="text" placeholder="레시피 이름">
+                                                </div>
+                                            </div>
 
-<content tag="local_script">
-    <script type="text/javascript">
-        $(document).ready(function() {
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">양조 타입<span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-10">
+                                                    <div class="btn-group" data-toggle="buttons">
+                                                        <label class="btn btn-default active">
+                                                            <input type="radio" class="toggle"> 완전곡물 </label>
+                                                        <label class="btn btn-default">
+                                                            <input type="radio" class="toggle"> 부분곡물 </label>
+                                                        <label class="btn btn-default">
+                                                            <input type="radio" class="toggle"> 원액 캔 - Extract</label>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-            $("#styleSeq").select2({
-                placeholder: "Select a State",
-                allowClear: true
-            });
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">맥주 스타일<span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-10">
+                                                    <select class="form-control select2-list" id="styleSeq" name="styleSeq"
+                                                            data-placeholder="Select an item">
+                                                        <optgroup label="1. LIGHT LAGER">
+                                                            <option value="14">라이트 미국식 라거</option>
+                                                            <option value="53">스탠다드 미국식 라거</option>
+                                                            <option value="21">뮤닉 헬레스</option>
+                                                            <option value="8">도르트문트 엑스포트</option>
+                                                        </optgroup>
+                                                        <optgroup label="2. PILSNER">
+                                                            <option value="10">독일식 필스너</option>
+                                                            <option value="40">보헤미안 필스너</option>
+                                                            <option value="75">클래식 미국식 필스너</option>
+                                                        </optgroup>
+                                                        <optgroup label="3. EUROPEAN AMBER LAGER">
+                                                            <option value="46">비엔나 라거</option>
+                                                            <option value="65">옥토버페스트</option>
+                                                        </optgroup>
+                                                        <optgroup label="4. DARK LAGER">
+                                                            <option value="7">다크 미국식 라거</option>
+                                                            <option value="20">뮤닉 둔켈</option>
+                                                            <option value="48">슈바르츠비어(흑맥주)</option>
+                                                        </optgroup>
+                                                        <optgroup label="5. BOCK">
+                                                            <option value="18">마이복/헬레스복</option>
+                                                            <option value="69">전통복</option>
+                                                            <option value="9">도펠복</option>
+                                                            <option value="60">아이스복</option>
+                                                        </optgroup>
+                                                        <optgroup label="6. LIGHT HYBRID BEER">
+                                                            <option value="73">크림 에일</option>
+                                                            <option value="44">블론드 에일</option>
+                                                            <option value="71">쾰시</option>
+                                                            <option value="23">미국식 밀/호밀 맥주</option>
+                                                        </optgroup>
+                                                        <optgroup label="7. AMBER HYBRID BEER">
+                                                            <option value="41">북독일 알트비어</option>
+                                                            <option value="70">캘리포니아 커먼 맥주</option>
+                                                            <option value="12">뒤셀도르프 알트비어</option>
+                                                        </optgroup>
+                                                        <optgroup label="8. ENGLISH PALE ALE">
+                                                            <option value="54">스탠다드/보통 비터</option>
+                                                            <option value="57">스페셜/베스트/프리미엄 비터</option>
+                                                            <option value="61">엑스트라 스페셜/스트롱 비터(영국식 페일에일)</option>
+                                                        </optgroup>
+                                                        <optgroup label="9. SCOTTISH AND IRISH ALE">
+                                                            <option value="50">스카티쉬 라이트 60</option>
+                                                            <option value="52">스카티쉬 헤비 70</option>
+                                                            <option value="51">스카티쉬 엑스포트 80</option>
+                                                            <option value="59">아이리쉬 레드 에일</option>
+                                                            <option value="56">스트롱 스카치 에일</option>
+                                                        </optgroup>
+                                                        <optgroup label="10. AMERICAN ALE">
+                                                            <option value="28">미국식 페일 에일</option>
+                                                            <option value="27">미국식 앰버 에일</option>
+                                                            <option value="25">미국식 브라운 에일</option>
+                                                        </optgroup>
+                                                        <optgroup label="11. ENGLISH BROWN ALE">
+                                                            <option value="19">마일드</option>
+                                                            <option value="6">남부 영국식 브라운</option>
+                                                            <option value="42">북부 영국식 브라운 에일</option>
+                                                        </optgroup>
+                                                        <optgroup label="12. PORTER">
+                                                            <option value="43">브라운 포터</option>
+                                                            <option value="17">로버스트 포터</option>
+                                                            <option value="31">발틱 포터</option>
+                                                        </optgroup>
+                                                        <optgroup label="13. STOUT">
+                                                            <option value="13">드라이 스타우트</option>
+                                                            <option value="49">스위트 스타우트</option>
+                                                            <option value="64">오트밀 스타우트</option>
+                                                            <option value="26">미국식 스타우트</option>
+                                                            <option value="15">러시안 임페리얼 스타우트</option>
+                                                        </optgroup>
+                                                        <optgroup label="14. INDIA PALE ALE (IPA)">
+                                                            <option value="62">영국식 IPA</option>
+                                                            <option value="22">미국식 IPA</option>
+                                                            <option value="68">임페리얼 IPA</option>
+                                                        </optgroup>
+                                                        <optgroup label="15. GERMAN WHEAT AND RYE BEER">
+                                                            <option value="29">바이젠/바이스비어</option>
+                                                            <option value="11">둔켈바이젠</option>
+                                                            <option value="30">바이젠복</option>
+                                                            <option value="16">로겐비어 (독일식 호밀 맥주)</option>
+                                                        </optgroup>
+                                                        <optgroup label="16. BELGIAN AND FRENCH ALE">
+                                                            <option value="67">윗비어</option>
+                                                            <option value="38">벨지안 페일에일</option>
+                                                            <option value="47">세종</option>
+                                                            <option value="45">비에르드갸르드</option>
+                                                            <option value="39">벨지안/프렌치 에일</option>
+                                                        </optgroup>
+                                                        <optgroup label="17. SOUR ALE">
+                                                            <option value="32">베를리너 바이세</option>
+                                                            <option value="55">스트레이트(언블렌디드) 람빅</option>
+                                                            <option value="3">괴즈</option>
+                                                            <option value="1">과일 람빅</option>
+                                                        </optgroup>
+                                                        <optgroup label="18. BELGIAN STRONG ALE">
+                                                            <option value="36">벨지안 블론드 에일</option>
+                                                            <option value="35">벨지안 두벨</option>
+                                                            <option value="37">벨지안 트리펠</option>
+                                                            <option value="33">벨지안 골든 스트롱 에일</option>
+                                                            <option value="34">벨지안 다크 스트롱 에일</option>
+                                                        </optgroup>
+                                                        <optgroup label="19. STRONG ALE">
+                                                            <option value="66">올드에일</option>
+                                                            <option value="63">영국식 발리와인</option>
+                                                            <option value="24">미국식 발리와인</option>
+                                                        </optgroup>
+                                                        <optgroup label="20. FRUIT BEER">
+                                                            <option value="2">과일맥주</option>
+                                                        </optgroup>
+                                                        <optgroup label="21. SPICE/HERB/VEGETABLE BEER">
+                                                            <option value="72">크리스마스/겨울 스페셜티 향신료 맥주</option>
+                                                        </optgroup>
+                                                        <optgroup label="22. SMOKE-FLAVORED/WOOD-AGED BEER">
+                                                            <option value="74">클래식 라우흐비어</option>
+                                                            <option value="4">기타 훈제 맥주</option>
+                                                            <option value="5">나무숙성 맥주</option>
+                                                        </optgroup>
+                                                        <optgroup label="23. SPECIALTY BEER">
+                                                            <option value="58">스페셜 맥주</option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                            </div>
 
-        });
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">배치 용량<span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <div class='input-group' style='width:140px;'>
+                                                        <input id="batchSize" name="batchSize" type="text"
+                                                               class="form-control control-width-small" value="19" required>
+                                                        <span class='input-group-addon'>리터(ℓ)</span>
+                                                    </div>
+                                                </div>
+                                                <label class="col-md-2 control-label">수율<span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <div class='input-group' style='width:135px;'>
+                                                        <input id="efficiency" name="efficiency" type="text"
+                                                               class="form-control control-width-small" value="65" required>
+                                                        <span class='input-group-addon'>%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-        $(function(){
-            $(".dropdown-menu li a").click(function(){
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">레시피 컨셉 설명 </label>
+                                                <div class="col-md-10">
+                                                    <textarea id="note" name="note" class="form-control" onchange="getLineFeed()"
+                                                              rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab_2">
+                                        브루잉 프로세스
+                                    </div>
+                                    <div class="tab-pane" id="tab_3">
+                                        설정
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
 
-                $(".btn:first-child").text($(this).text());
-                $(".btn:first-child").val($(this).text());
+                <!-- End: life time stats -->
+            </div>
 
-            });
 
-        });
-    </script>
-</content>
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i> 몰트 & 발효재료
+                        </div>
+                    </div>
+
+
+                    <div class="portlet-body">
+
+
+                        <div class="row">
+
+
+                            <div class="col-xs-8 invoice-block">
+                                <div class="table-actions-wrapper pull-right  margin-bottom-10">
+									<span>
+									</span>
+                                    <button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> 추가</button>
+                                </div>
+
+
+                                <div class="table-scrollable"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="datatable_orders" aria-describedby="datatable_orders_info" role="grid">
+                                    <thead>
+                                    <tr role="row" class="heading"><th width="2%" class="sorting_disabled" rowspan="1" colspan="1">
+                                        <div class="checker"><span><input type="checkbox" class="group-checkable"></span></div>
+                                    </th><th width="5%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        Order&nbsp;#
+                                    </th><th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        Purchased&nbsp;On
+                                    </th><th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        Customer
+                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        Ship&nbsp;To
+                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        Base&nbsp;Price
+                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        Purchased&nbsp;Price
+                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        Status
+                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        Actions
+                                    </th></tr>
+                                    <tr role="row" class="filter"><td rowspan="1" colspan="1">
+                                    </td><td rowspan="1" colspan="1">
+                                        <input type="text" class="form-control form-filter input-sm" name="order_id">
+                                    </td><td rowspan="1" colspan="1">
+                                        <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+                                            <input type="text" class="form-control form-filter input-sm" readonly="" name="order_date_from" placeholder="From">
+											<span class="input-group-btn">
+											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+											</span>
+                                        </div>
+                                        <div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
+                                            <input type="text" class="form-control form-filter input-sm" readonly="" name="order_date_to" placeholder="To">
+											<span class="input-group-btn">
+											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+											</span>
+                                        </div>
+                                    </td><td rowspan="1" colspan="1">
+                                        <input type="text" class="form-control form-filter input-sm" name="order_customer_name">
+                                    </td><td rowspan="1" colspan="1">
+                                        <input type="text" class="form-control form-filter input-sm" name="order_ship_to">
+                                    </td><td rowspan="1" colspan="1">
+                                        <div class="margin-bottom-5">
+                                            <input type="text" class="form-control form-filter input-sm" name="order_base_price_from" placeholder="From">
+                                        </div>
+                                        <input type="text" class="form-control form-filter input-sm" name="order_base_price_to" placeholder="To">
+                                    </td><td rowspan="1" colspan="1">
+                                        <div class="margin-bottom-5">
+                                            <input type="text" class="form-control form-filter input-sm margin-bottom-5 clearfix" name="order_purchase_price_from" placeholder="From">
+                                        </div>
+                                        <input type="text" class="form-control form-filter input-sm" name="order_purchase_price_to" placeholder="To">
+                                    </td><td rowspan="1" colspan="1">
+                                        <select name="order_status" class="form-control form-filter input-sm">
+                                            <option value="">Select...</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="closed">Closed</option>
+                                            <option value="hold">On Hold</option>
+                                            <option value="fraud">Fraud</option>
+                                        </select>
+                                    </td><td rowspan="1" colspan="1">
+                                        <div class="margin-bottom-5">
+                                            <button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> 삭제</button>
+                                        </div>
+                                    </td></tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table></div>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <div class="top-news">
+                                    <a href="javascript:;" class="btn green-haze">
+										<span>
+										1.05 OG</span>
+                                        <em>1.045 ~ 1.065 (BJDP GUIDE)</em>
+                                        <i class="fa fa-briefcase top-news-icon"></i>
+                                    </a>
+                                </div>
+
+                                <div id="chartdiv" class="chart" style="height: 150px;">
+                                </div>
+
+                                <div class="top-news">
+                                    <a href="javascript:;" class="btn green-haze">
+										<span>
+										7 SRM</span>
+                                        <em>2 ~ 5 (BJDP GUIDE)</em>
+                                        <i class="fa fa-briefcase top-news-icon"></i>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                <!-- End: life time stats -->
+                </div>
+
+                </form:form>
+        </div>
+
+
+        <content tag="local_script">
+
+            <script src="/resources/assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
+            <script src="/resources/assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#styleSeq').select2();
+
+                });
+
+                var chart;
+
+                var chartData = [
+                    {
+                        "year": 1.045,
+                        "income": 1.045,
+                        "expenses": 1.05
+                    },
+                    {
+                        "year": 1.065,
+                        "income": 1.065,
+                        "expenses": 1.05
+                    }
+                ];
+
+
+                AmCharts.ready(function () {
+                    // SERIAL CHART
+                    chart = new AmCharts.AmSerialChart();
+                    chart.dataProvider = chartData;
+                    chart.categoryField = "year";
+                    chart.title = "OG"
+                    chart.text = "OG"
+
+                    // AXES
+                    // category
+                    var categoryAxis = chart.categoryAxis;
+                    categoryAxis.gridPosition = "start";
+                    categoryAxis.axisColor = "#DADADA";
+                    categoryAxis.dashLength = 3;
+
+
+                    // GRAPHS
+                    // column graph
+                    var graph1 = new AmCharts.AmGraph();
+                    graph1.type = "column";
+                    graph1.title = "OG Guide";
+                    graph1.valueField = "income";
+                    graph1.lineAlpha = 0;
+                    graph1.fillColors = "#ADD981";
+                    graph1.fillAlphas = 0.8;
+                    graph1.balloonText = "<span style='font-size:13px;'>OG (Guide) :<b>[[income]]</b></span>";
+                    chart.addGraph(graph1);
+
+                    // line graph
+                    var graph2 = new AmCharts.AmGraph();
+                    graph2.type = "line";
+                    graph2.lineColor = "#27c5ff";
+                    graph2.bulletColor = "#FFFFFF";
+                    graph2.bulletBorderColor = "#27c5ff";
+                    graph2.bulletBorderThickness = 2;
+                    graph2.bulletBorderAlpha = 1;
+                    graph2.title = "OG (You)";
+                    graph2.valueField = "expenses";
+                    graph2.lineThickness = 2;
+                    graph2.bullet = "round";
+                    graph2.fillAlphas = 0;
+                    graph2.balloonText = "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>";
+                    chart.addGraph(graph2);
+
+                    // LEGEND
+                    var legend = new AmCharts.AmLegend();
+                    legend.useGraphSettings = true;
+                    chart.addLegend(legend);
+
+                    chart.creditsPosition = "top-right";
+
+                    // WRITE
+                    chart.write("chartdiv");
+                });
+
+
+            </script>
+        </content>

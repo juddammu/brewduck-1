@@ -1,6 +1,7 @@
 package com.brewduck.web.style.service;
 
 import com.brewduck.web.domain.Style;
+
 import java.util.List;
 
 

@@ -34,7 +34,7 @@ import java.io.IOException;
  * <pre>
  * 계정 Controller.
  * </pre>
- *
+ * <p/>
  * -------------------
  * 작성 내역
  * -------------------
@@ -50,7 +50,7 @@ import java.io.IOException;
 public class AccountController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
-    private static String ENABLE  = "ENABLE";   // 계정 활성화
+    private static String ENABLE = "ENABLE";   // 계정 활성화
     private static String DISABLE = "DISABLE";  // 계정 비활성화
 
     @Autowired
@@ -83,8 +83,8 @@ public class AccountController {
      */
     @RequestMapping(value = "/join", method = RequestMethod.POST)
     public String join(@ModelAttribute("account") @Validated(Account.Join.class) Account account,
-                       BindingResult result,
-                       RedirectAttributes redirectAttributes) {
+        BindingResult result,
+        RedirectAttributes redirectAttributes) {
         LOGGER.info("회원 가입 처리");
 
         // 필수값 미입력시 가입 페이지로 전환
@@ -148,14 +148,14 @@ public class AccountController {
      */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model
-                       ,@RequestParam(value = "login_error"  , required = false) String loginError
-                       ,@RequestParam(value = "error_message", required = false) String errorMessage) {
+        , @RequestParam(value = "login_error", required = false) String loginError
+        , @RequestParam(value = "error_message", required = false) String errorMessage) {
         LOGGER.info("로그인 페이지");
 
         LOGGER.error("loginError : " + loginError);
         LOGGER.error("errorMessage : " + errorMessage);
 
-        model.addAttribute("loginError"  , loginError  );
+        model.addAttribute("loginError", loginError);
         model.addAttribute("errorMessage", errorMessage);
 
         return "account/login";
@@ -184,10 +184,10 @@ public class AccountController {
      * @throws javax.servlet.ServletException
      */
     @RequestMapping(value = "/authentication", method = RequestMethod.POST)
-    public void login(HttpServletRequest  request
-                     ,HttpServletResponse response
-                     ,@ModelAttribute("account") @Validated(Account.Login.class) Account account
-                     ,BindingResult result) throws IOException, ServletException {
+    public void login(HttpServletRequest request
+        , HttpServletResponse response
+        , @ModelAttribute("account") @Validated(Account.Login.class) Account account
+        , BindingResult result) throws IOException, ServletException {
         LOGGER.info("로그인 인증 프로세스 시작 : {}", account.toString());
 
         // 필수값 미입력시 로그인 페이지로 전환
@@ -196,13 +196,13 @@ public class AccountController {
             LOGGER.info("로그인 실패 이유 : {}", result.getAllErrors().toString());
         }
 
-        String email    = account.getEmail();
+        String email = account.getEmail();
         String password = account.getPassword();
 
 
         // 계정과 암호로 토큰 생성
         UsernamePasswordAuthenticationToken authRequest
-                            = new UsernamePasswordAuthenticationToken(email, password);
+            = new UsernamePasswordAuthenticationToken(email, password);
 
         // 인증
         Authentication authentication = authenticationManager.authenticate(authRequest);
@@ -232,7 +232,7 @@ public class AccountController {
      */
     @RequestMapping(value = "/activation/{authKey}", method = RequestMethod.GET)
     public String activation(Model model,
-                             @PathVariable("authKey") String authKey) {
+        @PathVariable("authKey") String authKey) {
         int result = 0;
         String userId = null;
 
@@ -246,7 +246,7 @@ public class AccountController {
         }
 
         Account account = new Account();
-        account.setId( Integer.parseInt(userId) );
+        account.setId(Integer.parseInt(userId));
         account.setAuthority(LoginAuthorityType.ROLE_USER.name());    // ROLE_USER
         account.setActivation(ENABLE);    // 계정 활성화(ENABLE)
 

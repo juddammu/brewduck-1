@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Recipe">
 
     <sql id="Recipe.selectRecipe">
@@ -88,7 +89,7 @@
     </sql>
 
     <select id="Recipe.searchRecipeList" parameterType="Recipe" resultType="Recipe">
-        <include refid="Recipe.selectRecipe" />
+        <include refid="Recipe.selectRecipe"/>
         <if test="name != null">
             WHERE name LIKE CONCAT('%', #{name}, '%')
         </if>
@@ -99,11 +100,14 @@
     <select id="Recipe.selectRecipeList" parameterType="Recipe" resultType="Recipe">
         select
         R.*
-        ,IFNULL((SELECT 1 FROM RECIPE_FERMENTABLE A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq LIMIT 1),0)
-        +IFNULL((SELECT 1 FROM RECIPE_YEAST A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq LIMIT 1),0)
-        +IFNULL((SELECT 1 FROM RECIPE_HOPS A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq LIMIT 1),0) as completeness
+        ,IFNULL((SELECT 1 FROM RECIPE_FERMENTABLE A WHERE A.brewer = R.brewer AND A.recipe_seq =
+        R.seq LIMIT 1),0)
+        +IFNULL((SELECT 1 FROM RECIPE_YEAST A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq
+        LIMIT 1),0)
+        +IFNULL((SELECT 1 FROM RECIPE_HOPS A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq
+        LIMIT 1),0) as completeness
         FROM (
-        <include refid="Recipe.selectRecipe" />
+        <include refid="Recipe.selectRecipe"/>
         WHERE delete_id IS NULL
         <if test="brewer != null">
             AND brewer = #{brewer}
@@ -111,11 +115,11 @@
         <if test="status != null">
             AND STATUS = #{status}
         </if>
-        ORDER BY  seq desc ) R
+        ORDER BY seq desc ) R
     </select>
 
     <select id="Recipe.selectNewPublicRecipeList" parameterType="Recipe" resultType="Recipe">
-        <include refid="Recipe.selectRecipe" />
+        <include refid="Recipe.selectRecipe"/>
         WHERE delete_id IS NULL
         <if test="status != null">
             AND STATUS = #{status}
@@ -123,16 +127,16 @@
         <if test="mainDisplayYn != null">
             AND MAIN_DISPLAY_YN = #{status}
         </if>
-          AND ATCH_COVER_FILE_ID IS NOT NULL
+        AND ATCH_COVER_FILE_ID IS NOT NULL
         ORDER BY insert_date desc
         <if test="limit != null">
-            LIMIT  #{limit}
+            LIMIT #{limit}
         </if>
 
     </select>
 
     <select id="Recipe.selectPublicRecipeMenuList" parameterType="Recipe" resultType="Recipe">
-        <include refid="Recipe.selectRecipe" />
+        <include refid="Recipe.selectRecipe"/>
         WHERE delete_id IS NULL
         AND STATUS = 2
         AND ATCH_FILE_ID IS NOT NULL
@@ -152,7 +156,7 @@
 
     <select id="Recipe.selectRecipeDetail" parameterType="Recipe" resultType="Recipe">
         <!-- 맥주 레시피 상세 조회 -->
-        <include refid="Recipe.selectRecipe" />
+        <include refid="Recipe.selectRecipe"/>
         WHERE delete_id IS NULL
         <if test="seq != null">
             AND seq = #{seq}
@@ -185,21 +189,24 @@
     <select id="Recipe.selectCategoryList" parameterType="Recipe" resultType="Recipe">
         select
         R.*
-        ,IFNULL((SELECT 1 FROM RECIPE_FERMENTABLE A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq LIMIT 1),0)
-        +IFNULL((SELECT 1 FROM RECIPE_YEAST A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq LIMIT 1),0)
-        +IFNULL((SELECT 1 FROM RECIPE_HOPS A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq LIMIT 1),0) as completeness
+        ,IFNULL((SELECT 1 FROM RECIPE_FERMENTABLE A WHERE A.brewer = R.brewer AND A.recipe_seq =
+        R.seq LIMIT 1),0)
+        +IFNULL((SELECT 1 FROM RECIPE_YEAST A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq
+        LIMIT 1),0)
+        +IFNULL((SELECT 1 FROM RECIPE_HOPS A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq
+        LIMIT 1),0) as completeness
         FROM (
         <include refid="Recipe.categoryList"/>
         <if test="styleCategory != null">
             AND B.category_number = #{styleCategory}
         </if>
-        ORDER BY  seq desc ) R
+        ORDER BY seq desc ) R
     </select>
 
 
     <select id="Recipe.selectCategoryDetail" parameterType="Recipe" resultType="Recipe">
         <!-- 맥주 레시피 상세 조회 -->
-        <include refid="Recipe.categoryList" />
+        <include refid="Recipe.categoryList"/>
         <if test="seq != null">
             AND A.seq = #{seq}
         </if>
@@ -218,53 +225,53 @@
     <insert id="Recipe.insertRecipe" parameterType="Recipe">
         <!-- 맥주 레시피 저장 -->
         INSERT INTO brewduckdb.RECIPE (
-             seq
-            ,name
-            ,version           
-            ,type              
-            ,brewer
-            ,style_seq
-            ,asst_brewer       
-            ,batch_size        
-            ,boil_size         
-            ,boil_time         
-            ,efficiency        
-            ,notes             
-            ,og                
-            ,fg                
-            ,primary_age       
-            ,primary_temp      
-            ,secondary_age     
-            ,secondary_temp    
-            ,age               
-            ,age_temp          
-            ,priming_sugar_name
-            ,insert_id  
-            ,insert_date
+        seq
+        ,name
+        ,version
+        ,type
+        ,brewer
+        ,style_seq
+        ,asst_brewer
+        ,batch_size
+        ,boil_size
+        ,boil_time
+        ,efficiency
+        ,notes
+        ,og
+        ,fg
+        ,primary_age
+        ,primary_temp
+        ,secondary_age
+        ,secondary_temp
+        ,age
+        ,age_temp
+        ,priming_sugar_name
+        ,insert_id
+        ,insert_date
         ) VALUES (
-             #{seq}
-            ,#{name}
-            ,#{version}
-            ,#{type}
-            ,#{brewer}
-            ,#{styleSeq}
-            ,#{asstBrewer}
-            ,#{batchSize}
-            ,#{boilSize}
-            ,#{boilTime}
-            ,#{efficiency}
-            ,#{notes}
-            ,#{og}
-            ,#{fg}
-            ,#{primaryAge}
-            ,#{primaryTemp}
-            ,#{secondaryAge}
-            ,#{secondaryTemp}
-            ,#{age}
-            ,#{ageTemp}
-            ,#{primingSugarName}
-            ,#{insertId}
-            ,now()
+        #{seq}
+        ,#{name}
+        ,#{version}
+        ,#{type}
+        ,#{brewer}
+        ,#{styleSeq}
+        ,#{asstBrewer}
+        ,#{batchSize}
+        ,#{boilSize}
+        ,#{boilTime}
+        ,#{efficiency}
+        ,#{notes}
+        ,#{og}
+        ,#{fg}
+        ,#{primaryAge}
+        ,#{primaryTemp}
+        ,#{secondaryAge}
+        ,#{secondaryTemp}
+        ,#{age}
+        ,#{ageTemp}
+        ,#{primingSugarName}
+        ,#{insertId}
+        ,now()
         )
     </insert>
 
@@ -335,16 +342,16 @@
             <if test="primingSugarName != null">
                 priming_sugar_name = #{primingSugarName},
             </if>
-<!--
-            <if test="updateId != null">
-                read_count = (
-                              SELECT (IFNULL(MAX(name), 0) + 1)  read_count
-                                FROM brewduckdb.RECIPE
-                               WHERE seq  = #{seq}
-                                 AND name = #{name}
-                             ),
-            </if>
--->
+            <!--
+                        <if test="updateId != null">
+                            read_count = (
+                                          SELECT (IFNULL(MAX(name), 0) + 1)  read_count
+                                            FROM brewduckdb.RECIPE
+                                           WHERE seq  = #{seq}
+                                             AND name = #{name}
+                                         ),
+                        </if>
+            -->
             <if test="updateId != null">
                 update_id = #{updateId},
             </if>
@@ -352,26 +359,26 @@
                 update_date = now()
             </if>
         </trim>
-        WHERE seq  = #{seq}
-          AND brewer = #{brewer}
+        WHERE seq = #{seq}
+        AND brewer = #{brewer}
     </update>
 
     <update id="deleteRecipe" parameterType="Recipe">
         <!-- 맥주 레시피 삭제 -->
         UPDATE brewduckdb.RECIPE
-           SET delete_id = #{deleteId}
-              ,delete_date = now()
-         WHERE seq  = #{seq}
-           AND brewer = #{brewer}
+        SET delete_id = #{deleteId}
+        ,delete_date = now()
+        WHERE seq = #{seq}
+        AND brewer = #{brewer}
     </update>
 
     <update id="deleteRecipeFermentable" parameterType="Recipe">
         <!-- 맥주 레시피 삭제 -->
         UPDATE brewduckdb.RECIPE_FERMENTABLE
-           SET delete_id = #{deleteId}
-              ,delete_date = now()
-        WHERE recipe_seq  = #{seq}
-          AND brewer = #{brewer}
+        SET delete_id = #{deleteId}
+        ,delete_date = now()
+        WHERE recipe_seq = #{seq}
+        AND brewer = #{brewer}
     </update>
 
     <update id="deleteRecipeYeast" parameterType="Recipe">
@@ -379,7 +386,7 @@
         UPDATE brewduckdb.RECIPE_YEAST
         SET delete_id = #{deleteId}
         ,delete_date = now()
-        WHERE recipe_seq  = #{seq}
+        WHERE recipe_seq = #{seq}
         AND brewer = #{brewer}
     </update>
 
@@ -388,7 +395,7 @@
         UPDATE brewduckdb.RECIPE_HOPS
         SET delete_id = #{deleteId}
         ,delete_date = now()
-        WHERE recipe_seq  = #{seq}
+        WHERE recipe_seq = #{seq}
         AND brewer = #{brewer}
     </update>
 
@@ -397,7 +404,7 @@
         UPDATE brewduckdb.RECIPE_MISC
         SET delete_id = #{deleteId}
         ,delete_date = now()
-        WHERE recipe_seq  = #{seq}
+        WHERE recipe_seq = #{seq}
         AND brewer = #{brewer}
     </update>
 

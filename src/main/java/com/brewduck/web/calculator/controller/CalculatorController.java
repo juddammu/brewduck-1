@@ -35,7 +35,7 @@ public class CalculatorController {
      *
      * @return 맥주 발효재료 메인
      */
-    @RequestMapping(value =  {"/", ""}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
     public String main() {
 
         return "calc/index";

@@ -1,7 +1,6 @@
 package com.brewduck.framework.unitConverter;
 
 import com.brewduck.framework.convert.VolumeConverter;
-import com.brewduck.framework.convert.WeightConverter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class VolumeConverterTest {
 
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void VolumeConverterTest() {
         String fromUnit = "gallon";
 

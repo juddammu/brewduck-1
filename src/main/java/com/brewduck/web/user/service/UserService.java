@@ -13,12 +13,11 @@ import java.util.List;
 
 /**
  * @author hukoru
- *
  */
 public interface UserService {
 
 
-	List<User> getSelectOne(User user) throws Throwable;
+    List<User> getSelectOne(User user) throws Throwable;
 
     public User selectUser(User user) throws RuntimeException;
 

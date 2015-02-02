@@ -42,11 +42,11 @@ public class CommonDaoImpl implements CommonDao {
     public int selectImageId() throws DataAccessException {
         return (Integer) sqlSessionTemplate.selectOne("Common.selectImageId");
     }
+
     @Override
     public int selectMovieId() throws DataAccessException {
         return (Integer) sqlSessionTemplate.selectOne("Common.selectMovieId");
     }
-
 
 
     /**

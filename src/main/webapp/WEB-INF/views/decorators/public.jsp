@@ -1,22 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><decorator:title /> | BREWDUCK - 맥주의 모든것</title>
+    <title><decorator:title/> | BREWDUCK - 맥주의 모든것</title>
     <%@ include file="/WEB-INF/views/common/include/home_header.jsp" %>
 </head>
-
-
 
 
 <body>
 <header>
     <%@ include file="/WEB-INF/views/common/include/home_top_menu.jsp" %>
-<!--tm-header-nav-->
+    <!--tm-header-nav-->
 </header>
 
-<decorator:body />
+<decorator:body/>
 <!--tm-page-body-->
 <!--tm-page-page-footer-->
 <footer>
@@ -39,15 +37,19 @@
     <form id="loginform" name="loginform" method="post">
         <p>
             <label for="user_login">Username<br>
-                <input type="text" size="20" value="" class="input" id="user_login" name="log"></label>
+                <input type="text" size="20" value="" class="input" id="user_login"
+                       name="log"></label>
         </p>
+
         <p>
             <label for="user_pass">Password<br>
-                <input type="password" size="20" value="" class="input" id="user_pass" name="pwd"></label>
+                <input type="password" size="20" value="" class="input" id="user_pass"
+                       name="pwd"></label>
         </p>
 
         <p class="submit">
-            <input type="submit" value="Log In" class="tm-btn hidemodal" id="wp-submit" name="wp-submit">
+            <input type="submit" value="Log In" class="tm-btn hidemodal" id="wp-submit"
+                   name="wp-submit">
         </p>
     </form>
 </div>
@@ -56,7 +58,6 @@
 <a href="#" id="tm-gotop">
     <i class="fa fa-chevron-up"></i>
 </a>
-
 
 
 <script type="text/javascript" src="/resources/front//3rd/jquery/jquery-core.js"></script>
@@ -70,8 +71,10 @@
 <script type="text/javascript" src="/resources/front//3rd/jquery/jquery-validate.js"></script>
 <script type="text/javascript" src="/resources/front//3rd/pretty-photo/pretty-photo.js"></script>
 <script type="text/javascript" src="/resources/front//3rd/layerslider/js/greensock.js"></script>
-<script type="text/javascript" src="/resources/front//3rd/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
-<script type="text/javascript" src="/resources/front//3rd/layerslider/js/layerslider.transitions.js"></script>
+<script type="text/javascript"
+        src="/resources/front//3rd/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+<script type="text/javascript"
+        src="/resources/front//3rd/layerslider/js/layerslider.transitions.js"></script>
 <script type="text/javascript" src="/resources/front//js/theme.js"></script>
 
 <decorator:getProperty property="page.local_script"></decorator:getProperty>

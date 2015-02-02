@@ -18,15 +18,18 @@ public class LoginBusinessException extends RuntimeException {
     public LoginBusinessException(String customMessage) {
         this.customMessage = customMessage;
     }
+
     public LoginBusinessException(String customMessage, int status) {
         this.customMessage = customMessage;
         this.status = status;
     }
+
     public LoginBusinessException(String customMessage, Throwable cause) {
         super(customMessage, cause);
         this.customMessage = customMessage;
         this.cause = cause;
     }
+
     public LoginBusinessException(String customMessage, Throwable cause, int status) {
         super(customMessage, cause);
         this.customMessage = customMessage;
@@ -37,6 +40,7 @@ public class LoginBusinessException extends RuntimeException {
     public String getCustomMessage() {
         return customMessage;
     }
+
     public void setCustomMessageg(String customMessage) {
         this.customMessage = customMessage;
     }
@@ -44,6 +48,7 @@ public class LoginBusinessException extends RuntimeException {
     public int getStatus() {
         return status;
     }
+
     public void setStatus(int status) {
         this.status = status;
     }
@@ -51,6 +56,7 @@ public class LoginBusinessException extends RuntimeException {
     public Throwable getCause() {
         return cause;
     }
+
     public void setCause(Throwable cause) {
         this.cause = cause;
     }

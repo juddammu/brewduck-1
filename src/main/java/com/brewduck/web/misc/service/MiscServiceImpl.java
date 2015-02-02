@@ -42,6 +42,7 @@ public class MiscServiceImpl implements MiscService {
     public Misc countMiscType() {
         return miscDao.countMiscType();
     }
+
     @Override
     public Boolean insertMisc(Misc misc) {
         int insertCount = miscDao.insertMisc(misc);

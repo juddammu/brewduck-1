@@ -33,8 +33,6 @@ public interface RecipeDao {
     public List<Recipe> searchRecipeList(Recipe recipe);
 
 
-
-
     /**
      * <pre>
      * 맥주 레시피 상세 조회.

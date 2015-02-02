@@ -36,7 +36,6 @@ public class HopController {
     private MessageSource messageSource;
 
 
-
     /**
      * <pre>
      * 맥주 홉 메인
@@ -45,7 +44,7 @@ public class HopController {
      * @param model Model
      * @return 맥주 홉 메인
      */
-    @RequestMapping(value =  {"/", ""}, method =  { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = {"/", ""}, method = {RequestMethod.GET, RequestMethod.POST})
     public String main(Model model, Hop paramHop) {
 
      /*   CookieLocaleResolver resolver = new CookieLocaleResolver();
@@ -71,20 +70,20 @@ public class HopController {
      * @param model Model
      * @return 맥주 홉 상세.
      */
-    @RequestMapping(value="{id}/*", method=RequestMethod.GET)
+    @RequestMapping(value = "{id}/*", method = RequestMethod.GET)
     public String detail(Model model, @PathVariable("id") Integer id) {
         Hop hop = new Hop();
         hop.setId(id);
         // 맥주 홉 상세 조회
         Hop hopDetail = hopService.selectHopDetail(hop);
 
-       // Boolean updateFlag = hopService.updateViewCount(hop);
+        // Boolean updateFlag = hopService.updateViewCount(hop);
 
-//        List<Hop> hopUsedForList = hopService.selectHopUsedForList(hop);
+        //        List<Hop> hopUsedForList = hopService.selectHopUsedForList(hop);
         List<Hop> hopAromaList = hopService.selectHopAromaList(hop);
         List<Hop> selectHopSubstitutesList = hopService.selectHopSubstitutesList(hop);
 
-       // logger.info("hopUsedForList List Size : {}", hopUsedForList.size());
+        // logger.info("hopUsedForList List Size : {}", hopUsedForList.size());
 
         model.addAttribute("HopDetail", hopDetail);
         //model.addAttribute("hopUsedForList", hopUsedForList);
@@ -116,7 +115,6 @@ public class HopController {
 
         return list;
     }
-
 
 
     /**
@@ -167,8 +165,8 @@ public class HopController {
      * 맥주 홉 저장.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 홉 영문명
+     * @param model    Model
+     * @param name     맥주 홉 영문명
      * @param paramHop 맥주 홉 VO
      * @return 맥주 홉 저장 여부
      */
@@ -194,8 +192,8 @@ public class HopController {
      * 맥주 홉 수정.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 홉 영문명
+     * @param model    Model
+     * @param name     맥주 홉 영문명
      * @param paramHop 맥주 홉 VO
      * @return 맥주 홉 수정 여부
      */
@@ -220,8 +218,8 @@ public class HopController {
      * 맥주 홉 삭제.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 홉 영문명
+     * @param model    Model
+     * @param name     맥주 홉 영문명
      * @param paramHop 맥주 홉 VO
      * @return 맥주 홉 삭제 여부
      */
@@ -244,12 +242,12 @@ public class HopController {
     @ResponseBody
     @RequestMapping(value = "/utilization/{gravity}/{time}/{batchSize}/{amount}/{alpha}", method = RequestMethod.GET)
     public String caluIbu(Model model,
-                              @PathVariable("gravity") Double gravity,
-                              @PathVariable("time") Double time,
-                              @PathVariable("batchSize") Double batchSize,
-                              @PathVariable("amount") Double amount,
-                              @PathVariable("alpha") Double alpha
-                              ) {
+        @PathVariable("gravity") Double gravity,
+        @PathVariable("time") Double time,
+        @PathVariable("batchSize") Double batchSize,
+        @PathVariable("amount") Double amount,
+        @PathVariable("alpha") Double alpha
+    ) {
 
         Double fg = 0.0;
         Double ft = 0.0;
@@ -275,16 +273,16 @@ public class HopController {
         gb = Math.pow(0.000125, gravity);
         fg = 1.65 * gb;
 
-        time = -0.04* time;
+        time = -0.04 * time;
         logger.info("time = " + time);
         gravity = gravity - 1.0;
 
-        e= Math.pow(e, time);
+        e = Math.pow(e, time);
 
         logger.info("e = " + e);
 
-        ft = (1 -e) / 4.15;
-        utilization = fg*ft;
+        ft = (1 - e) / 4.15;
+        utilization = fg * ft;
 
         ibu = aau * utilization * 75 / batchSize;
 
@@ -294,7 +292,7 @@ public class HopController {
         // model.addAttribute("Hop", Hop);
         // return "/Hop/HopView";
 
-        return ibu+"";
+        return ibu + "";
     }
 }
 

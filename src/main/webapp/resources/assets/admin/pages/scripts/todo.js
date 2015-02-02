@@ -1,12 +1,12 @@
 /**
-Todo Module
-**/
+ Todo Module
+ **/
 var Todo = function () {
 
     // private functions & variables
 
-    var _initComponents = function() {
-        
+    var _initComponents = function () {
+
         // init datepicker
         $('.todo-taskbody-due').datepicker({
             rtl: Metronic.isRTL(),
@@ -20,7 +20,7 @@ var Todo = function () {
         });
     }
 
-    var _handleProjectListMenu = function() {
+    var _handleProjectListMenu = function () {
         if (Metronic.getViewPort().width <= 992) {
             $('.todo-project-list-content').addClass("collapse");
         } else {
@@ -33,12 +33,12 @@ var Todo = function () {
 
         //main function
         init: function () {
-            _initComponents();     
+            _initComponents();
             _handleProjectListMenu();
 
-            Metronic.addResizeHandler(function(){
-                _handleProjectListMenu();    
-            });       
+            Metronic.addResizeHandler(function () {
+                _handleProjectListMenu();
+            });
         }
 
     };

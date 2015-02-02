@@ -40,8 +40,10 @@ public class FermentableController {
      * @param model Model
      * @return 맥주 맥덕 모드 메인
      */
-    @RequestMapping(value = "/", method =  { RequestMethod.GET, RequestMethod.POST })
-    public String main(Model model, Fermentable paramStyle) {
+    @RequestMapping(value = "/", method =
+        {RequestMethod.GET, RequestMethod.POST})
+    public String main(Model model,
+        Fermentable paramStyle) {
         List<Fermentable> list = fermentableService.selectFermentableList(paramStyle);
 
         model.addAttribute("list_cnt", list.size());
@@ -194,8 +196,8 @@ public class FermentableController {
      * 맥주 맥아 저장.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 맥아 영문명
+     * @param model            Model
+     * @param name             맥주 맥아 영문명
      * @param paramFermentable 맥주 맥아 VO
      * @return 맥주 맥아 저장 여부
      */
@@ -214,13 +216,14 @@ public class FermentableController {
 
         return returnFermentable;
     }
+
     /**
      * <pre>
      * 맥주 맥아 수정.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 맥아 영문명
+     * @param model            Model
+     * @param name             맥주 맥아 영문명
      * @param paramFermentable 맥주 맥아 VO
      * @return 맥주 맥아 수정 여부
      */
@@ -245,8 +248,8 @@ public class FermentableController {
      * 맥주 맥아 삭제.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 맥아 영문명
+     * @param model            Model
+     * @param name             맥주 맥아 영문명
      * @param paramFermentable 맥주 맥아 VO
      * @return 맥주 맥아 삭제 여부
      */

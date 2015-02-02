@@ -2,7 +2,6 @@ package com.brewduck.web.common.controller;
 
 import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.common.service.AdminService;
-import com.brewduck.web.common.service.BoardService;
 import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Admin;
 import org.slf4j.Logger;
@@ -10,11 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller

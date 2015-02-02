@@ -67,7 +67,6 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
 
-
     @Override
     public Recipe selectPublicRecipeDetail(Recipe recipe) {
         // 레시피 조회
@@ -128,19 +127,19 @@ public class RecipeServiceImpl implements RecipeService {
         Style paramStyle = new Style();
         Fermentable paramFermentable = new Fermentable();
         paramFermentable.setId(newRecipe.getSeq());
-        paramFermentable.setBrewer(account.getId()+"");
+        paramFermentable.setBrewer(account.getId() + "");
 
         Hop paramHop = new Hop();
         paramHop.setSeq(newRecipe.getSeq());
-        paramHop.setBrewer(account.getId()+"");
+        paramHop.setBrewer(account.getId() + "");
 
         Yeast paramYeast = new Yeast();
         paramYeast.setSeq(newRecipe.getSeq());
-        paramYeast.setBrewer(account.getId()+"");
+        paramYeast.setBrewer(account.getId() + "");
 
         Misc paramMisc = new Misc();
         paramMisc.setSeq(newRecipe.getSeq());
-        paramMisc.setBrewer(account.getId()+"");
+        paramMisc.setBrewer(account.getId() + "");
 
         // 레시피 작성시 선택한 스타일 맥주
         //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
@@ -240,9 +239,8 @@ public class RecipeServiceImpl implements RecipeService {
         int deleteRecipeYeastCount = recipeDao.deleteRecipeYeast(recipe);
         int deleteRecipeMiscCount = recipeDao.deleteRecipeMisc(recipe);
 
-        return (deleteRecipeCount+deleteRecipeFermentableCount+deleteRecipeHopsCount+deleteRecipeYeastCount+deleteRecipeMiscCount < 1);
+        return (deleteRecipeCount + deleteRecipeFermentableCount + deleteRecipeHopsCount + deleteRecipeYeastCount + deleteRecipeMiscCount < 1);
     }
-
 
 
     @Transactional

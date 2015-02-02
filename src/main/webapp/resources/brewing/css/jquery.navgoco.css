@@ -43,6 +43,7 @@
 .nav li > a > span:after {
     content: '\25be';
 }
+
 .nav li.open > a > span:after {
     content: '\25b4';
 }
@@ -52,7 +53,7 @@
     color: #f5f5f5;
 }
 
-.nav > li.active > a  {
+.nav > li.active > a {
     background-color: #4D90FE;
 }
 

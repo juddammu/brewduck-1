@@ -13,11 +13,11 @@ public class FileInfo {
     //게시물 ID
     private Integer seq;
     //게시판 ID
-    private String  filename;
+    private String filename;
 
-    private Integer  fileNo;
+    private Integer fileNo;
 
-    private Long  filesize;
+    private Long filesize;
 
     private String filemime;
 

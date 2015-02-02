@@ -1,5 +1,5 @@
-<%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div id="paper-top">
 <div class="row">
 <div class="col-sm-3 no-pad">
@@ -7,17 +7,22 @@
     <a class="navbar-brand logo-text" href="#">BREWDUCK 2.0</a>
 
     <ul class="list-unstyled list-inline noft-btn">
-        <li data-toggle="tooltip" data-placement="bottom" title="한국어"> <a href="?lang=ko" class="text-white"><i class="fontello-airport"></i></a>
+        <li data-toggle="tooltip" data-placement="bottom" title="한국어"><a href="?lang=ko"
+                                                                         class="text-white"><i
+                class="fontello-airport"></i></a>
         </li>
 
-        <li data-toggle="tooltip" data-placement="bottom" title="영어"> <a href="?lang=en" class="text-white"><i class="fontello-globe"></i></a>
+        <li data-toggle="tooltip" data-placement="bottom" title="영어"><a href="?lang=en"
+                                                                        class="text-white"><i
+                class="fontello-globe"></i></a>
         </li>
 
     </ul>
 </div>
 
 <div class="col-sm-6 no-pad">
-    <ul style="margin-top:8px;" class="nav navbar-nav navbar-left list-unstyled list-inline text-gray date-list news-list">
+    <ul style="margin-top:8px;"
+        class="nav navbar-nav navbar-left list-unstyled list-inline text-gray date-list news-list">
         <!-- <li><i class="fontello-doc-text text-gray"></i>
         </li> -->
         <!--li>
@@ -35,7 +40,6 @@
 </div>
 
 
-
 <div class="col-sm-3 no-pad">
 <!-- menu right -->
 <div class="navbar-right">
@@ -48,7 +52,8 @@
     </div>
     <ul class="dropdown-menu drop-msg ">
         <li class="header bg-green">
-            You have 4 messages</li>
+            You have 4 messages
+        </li>
 
         <li>
             <!-- inner menu: contains the actual data -->
@@ -57,12 +62,14 @@
                     <!-- start message -->
                     <a href="#">
                         <div class="pull-left">
-                            <img src="http://api.randomuser.me/portraits/thumb/men/37.jpg" class="img-circle" alt="User Image" />
+                            <img src="http://api.randomuser.me/portraits/thumb/men/37.jpg"
+                                 class="img-circle" alt="User Image"/>
                         </div>
                         <h4>
                             Developer
                             <!-- <small><i class="fa fa-clock-o"></i> 5 mins</small> -->
                         </h4>
+
                         <p>Bug fixed level 90%</p>
                     </a>
                 </li>
@@ -70,48 +77,56 @@
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="http://api.randomuser.me/portraits/thumb/women/36.jpg" class="img-circle" alt="user image" />
+                            <img src="http://api.randomuser.me/portraits/thumb/women/36.jpg"
+                                 class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             Aplication Support
 
                         </h4>
+
                         <p>There is some bug in your last submit</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="http://api.randomuser.me/portraits/thumb/men/35.jpg" class="img-circle" alt="user image" />
+                            <img src="http://api.randomuser.me/portraits/thumb/men/35.jpg"
+                                 class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             Lead Developers
 
                         </h4>
+
                         <p>Please check again your submit</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="http://api.randomuser.me/portraits/thumb/women/34.jpg" class="img-circle" alt="user image" />
+                            <img src="http://api.randomuser.me/portraits/thumb/women/34.jpg"
+                                 class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             Web Designer
 
                         </h4>
+
                         <p>Art has done</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="http://api.randomuser.me/portraits/thumb/men/33.jpg" class="img-circle" alt="user image" />
+                            <img src="http://api.randomuser.me/portraits/thumb/men/33.jpg"
+                                 class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             General Manager
 
                         </h4>
+
                         <p>Employed newslatter</p>
                     </a>
                 </li>
@@ -134,7 +149,8 @@
     <ul class="dropdown-menu drop-noft">
 
         <li class="header bg-aqua">
-            You have 10 notifications</li>
+            You have 10 notifications
+        </li>
 
         <li>
             <!-- inner menu: contains the actual data -->
@@ -182,7 +198,8 @@
     <ul class="dropdown-menu drop-task">
 
         <li class="header bg-red">
-            <span></span>You have 9 tasks</li>
+            <span></span>You have 9 tasks
+        </li>
 
         <li>
             <!-- inner menu: contains the actual data -->
@@ -196,6 +213,7 @@
                                                         </span>
                         </h2>
                         <h1>Finished task Testing.</h1>
+
                         <p>Lorem ipsum dollor si amet amet jabang bayi</p>
                     </div>
                 </li>
@@ -210,6 +228,7 @@
                                                         </span>
                         </h2>
                         <h1>Creat the documentation</h1>
+
                         <p>Lorem ipsum dollor si amet amet jabang bayi</p>
                     </div>
 
@@ -224,6 +243,7 @@
                                                         </span>
                         </h2>
                         <h1>Repository you file now!</h1>
+
                         <p>Lorem ipsum dollor si amet amet jabang bayi</p>
                     </div>
                 </li>
@@ -237,6 +257,7 @@
                                                         </span>
                         </h2>
                         <h1>Fill the job description</h1>
+
                         <p>Lorem ipsum dollor si amet amet jabang bayi</p>
                     </div>
                 </li>

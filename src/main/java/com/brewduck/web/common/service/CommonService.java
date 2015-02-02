@@ -29,6 +29,7 @@ public interface CommonService {
     public int selectImageId() throws RuntimeException;
 
     public int selectMovieId() throws RuntimeException;
+
     //성별 리스트
     public List<Common> selectGenderList() throws RuntimeException;
 

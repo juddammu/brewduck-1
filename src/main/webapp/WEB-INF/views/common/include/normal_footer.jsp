@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div class="page-prefooter">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12 footer-block">
                 <h2>브루덕이란?</h2>
+
                 <p>
                     다른 업종에 종사하는 사람들이 모여 만든 홈브루잉 프로젝트 그룹
                 </p>

@@ -52,7 +52,7 @@ public interface StyleDao {
      *
      * @param style 맥주 스타일
      * @return 수정 성공 횟수
-    */
+     */
     public Integer updateStyle(Style style);
 
     /**

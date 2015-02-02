@@ -129,55 +129,63 @@ var Index = function () {
                 }
             }
 
-           
 
             $('#calendar').fullCalendar('destroy'); // destroy the calendar
             $('#calendar').fullCalendar({ //re-initialize the calendar
-                disableDragging : false,
+                disableDragging: false,
                 header: h,
                 editable: true,
-                events: [{
-                    title: 'All Day',
-                    start: new Date(y, m, 1),
-                    backgroundColor: Metronic.getBrandColor('yellow')
-                }, {
-                    title: 'Long Event',
-                    start: new Date(y, m, d - 5),
-                    end: new Date(y, m, d - 2),
-                    backgroundColor: Metronic.getBrandColor('blue')
-                }, {
-                    title: 'Repeating Event',
-                    start: new Date(y, m, d - 3, 16, 0),
-                    allDay: false,
-                    backgroundColor: Metronic.getBrandColor('red')
-                }, {
-                    title: 'Repeating Event',
-                    start: new Date(y, m, d + 6, 16, 0),
-                    allDay: false,
-                    backgroundColor: Metronic.getBrandColor('green')
-                }, {
-                    title: 'Meeting',
-                    start: new Date(y, m, d+9, 10, 30),
-                    allDay: false
-                }, {
-                    title: 'Lunch',
-                    start: new Date(y, m, d, 14, 0),
-                    end: new Date(y, m, d, 14, 0),
-                    backgroundColor: Metronic.getBrandColor('grey'),
-                    allDay: false
-                }, {
-                    title: 'Birthday',
-                    start: new Date(y, m, d + 1, 19, 0),
-                    end: new Date(y, m, d + 1, 22, 30),
-                    backgroundColor: Metronic.getBrandColor('purple'),
-                    allDay: false
-                }, {
-                    title: 'Click for Google',
-                    start: new Date(y, m, 28),
-                    end: new Date(y, m, 29),
-                    backgroundColor: Metronic.getBrandColor('yellow'),
-                    url: 'http://google.com/'
-                }]
+                events: [
+                    {
+                        title: 'All Day',
+                        start: new Date(y, m, 1),
+                        backgroundColor: Metronic.getBrandColor('yellow')
+                    },
+                    {
+                        title: 'Long Event',
+                        start: new Date(y, m, d - 5),
+                        end: new Date(y, m, d - 2),
+                        backgroundColor: Metronic.getBrandColor('blue')
+                    },
+                    {
+                        title: 'Repeating Event',
+                        start: new Date(y, m, d - 3, 16, 0),
+                        allDay: false,
+                        backgroundColor: Metronic.getBrandColor('red')
+                    },
+                    {
+                        title: 'Repeating Event',
+                        start: new Date(y, m, d + 6, 16, 0),
+                        allDay: false,
+                        backgroundColor: Metronic.getBrandColor('green')
+                    },
+                    {
+                        title: 'Meeting',
+                        start: new Date(y, m, d + 9, 10, 30),
+                        allDay: false
+                    },
+                    {
+                        title: 'Lunch',
+                        start: new Date(y, m, d, 14, 0),
+                        end: new Date(y, m, d, 14, 0),
+                        backgroundColor: Metronic.getBrandColor('grey'),
+                        allDay: false
+                    },
+                    {
+                        title: 'Birthday',
+                        start: new Date(y, m, d + 1, 19, 0),
+                        end: new Date(y, m, d + 1, 22, 30),
+                        backgroundColor: Metronic.getBrandColor('purple'),
+                        allDay: false
+                    },
+                    {
+                        title: 'Click for Google',
+                        start: new Date(y, m, 28),
+                        end: new Date(y, m, 29),
+                        backgroundColor: Metronic.getBrandColor('yellow'),
+                        url: 'http://google.com/'
+                    }
+                ]
             });
         },
 
@@ -242,25 +250,28 @@ var Index = function () {
                 $('#site_statistics_content').show();
 
                 var plot_statistics = $.plot($("#site_statistics"),
-                    [{
-                        data: visitors,
-                        lines: {
-                            fill: 0.6,
-                            lineWidth: 0
+                    [
+                        {
+                            data: visitors,
+                            lines: {
+                                fill: 0.6,
+                                lineWidth: 0
+                            },
+                            color: ['#f89f9f']
                         },
-                        color: ['#f89f9f']
-                    }, {
-                        data: visitors,
-                        points: {
-                            show: true,
-                            fill: true,
-                            radius: 5,
-                            fillColor: "#f89f9f",
-                            lineWidth: 3
-                        },
-                        color: '#fff',
-                        shadowSize: 0
-                    }],
+                        {
+                            data: visitors,
+                            points: {
+                                show: true,
+                                fill: true,
+                                radius: 5,
+                                fillColor: "#f89f9f",
+                                lineWidth: 3
+                            },
+                            color: '#fff',
+                            shadowSize: 0
+                        }
+                    ],
 
                     {
                         xaxis: {
@@ -339,34 +350,38 @@ var Index = function () {
 
                 var plot_statistics = $.plot($("#site_activities"),
 
-                    [{
-                        data: data1,
-                        lines: {
-                            fill: 0.2,
-                            lineWidth: 0,
+                    [
+                        {
+                            data: data1,
+                            lines: {
+                                fill: 0.2,
+                                lineWidth: 0,
+                            },
+                            color: ['#BAD9F5']
                         },
-                        color: ['#BAD9F5']
-                    }, {
-                        data: data1,
-                        points: {
-                            show: true,
-                            fill: true,
-                            radius: 4,
-                            fillColor: "#9ACAE6",
-                            lineWidth: 2
+                        {
+                            data: data1,
+                            points: {
+                                show: true,
+                                fill: true,
+                                radius: 4,
+                                fillColor: "#9ACAE6",
+                                lineWidth: 2
+                            },
+                            color: '#9ACAE6',
+                            shadowSize: 1
                         },
-                        color: '#9ACAE6',
-                        shadowSize: 1
-                    }, {
-                        data: data1,
-                        lines: {
-                            show: true,
-                            fill: false,
-                            lineWidth: 3
-                        },
-                        color: '#9ACAE6',
-                        shadowSize: 0
-                    }],
+                        {
+                            data: data1,
+                            lines: {
+                                show: true,
+                                fill: false,
+                                lineWidth: 3
+                            },
+                            color: '#9ACAE6',
+                            shadowSize: 0
+                        }
+                    ],
 
                     {
 
@@ -437,11 +452,12 @@ var Index = function () {
 
                     var aArgs = Array.prototype.slice.call(arguments, 1),
                         fToBind = this,
-                        fNOP = function () {},
+                        fNOP = function () {
+                        },
                         fBound = function () {
                             return fToBind.apply(this instanceof fNOP && oThis ? this : oThis,
-                        aArgs.concat(Array.prototype.slice.call(arguments)));
-                    };
+                                aArgs.concat(Array.prototype.slice.call(arguments)));
+                        };
 
                     fNOP.prototype = this.prototype;
                     fBound.prototype = new fNOP();

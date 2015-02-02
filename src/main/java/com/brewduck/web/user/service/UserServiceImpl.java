@@ -18,7 +18,6 @@ import java.util.List;
 
 /**
  * @author hukoru
- *
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -48,7 +47,7 @@ public class UserServiceImpl implements UserService {
 
         int userCnt = this.selectUserCnt(user);
 
-        if(userCnt < 1){         //생성된 프로필이 없으면 생성
+        if (userCnt < 1) {         //생성된 프로필이 없으면 생성
             this.insertUser(user);
         }
     }

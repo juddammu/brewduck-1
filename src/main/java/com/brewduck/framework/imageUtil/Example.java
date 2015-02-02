@@ -2,11 +2,9 @@ package com.brewduck.framework.imageUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 
 /**
- *
  * @author James
  */
 public class Example {
@@ -20,8 +18,7 @@ public class Example {
             if (imgLocation.startsWith("http")) {
                 //read the image from a URL
                 img = ImageLoader.fromUrl(new URL(imgLocation));
-            }
-            else {
+            } else {
                 File f = new File(imgLocation);
                 if (!f.exists() || !f.isFile())
                     throw new IllegalArgumentException("Invalid path to image");
@@ -32,9 +29,9 @@ public class Example {
             }
 
             //output source type
-            System.out.println("Image source type: "+ img.getSourceType());
+            System.out.println("Image source type: " + img.getSourceType());
             //output dimensions
-            System.out.println("Image dimensions: "+ img.getWidth() +"x"+ img.getHeight());
+            System.out.println("Image dimensions: " + img.getWidth() + "x" + img.getHeight());
 
             //crop it
             Image cropped = img.crop(200, 200, 500, 350);
@@ -52,7 +49,7 @@ public class Example {
             softenAndSave(resized, 0.6f, 0.08f);
             softenAndSave(resized, 0.4f, 0.08f);
             resized.dispose();
-            
+
             //write a 0.95 quality JPG without using Sun's JPG codec
             resized.writeToFile(new File("resized--q0.95--s0.0--nocodec.jpg"));
 
@@ -64,21 +61,20 @@ public class Example {
             //small thumbs
             squareIt(img, 50, 0.0, 0.95f, 0.08f);
             squareIt(img, 50, 0.1, 0.95f, 0.08f);
-            squareIt(img, 50, 0.1, 0.5f, 0.08f);            
-        }
-        catch (IOException ioe) {
+            squareIt(img, 50, 0.1, 0.5f, 0.08f);
+        } catch (IOException ioe) {
             ioe.printStackTrace();
         }
 
     }
 
     private static void softenAndSave(Image img, float quality, float soften) throws IOException {
-        img.soften(soften).writeToJPG(new File("resized--q"+ quality +"--s"+ soften +".jpg"), quality);
+        img.soften(soften).writeToJPG(new File("resized--q" + quality + "--s" + soften + ".jpg"), quality);
     }
 
     private static void squareIt(Image img, int width, double cropEdges, float quality, float soften) throws IOException {
         Image square = img.getResizedToSquare(width, cropEdges).soften(soften);
-        square.writeToJPG(new File("square--w"+ width +"--e"+ cropEdges +"--q"+ quality +".jpg"), quality);
+        square.writeToJPG(new File("square--w" + width + "--e" + cropEdges + "--q" + quality + ".jpg"), quality);
         square.dispose();
     }
 

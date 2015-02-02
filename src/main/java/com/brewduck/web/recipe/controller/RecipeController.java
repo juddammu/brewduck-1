@@ -12,23 +12,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.core.env.Environment;
-
 
 import javax.annotation.Resource;
-import java.io.File;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * <pre>
@@ -70,7 +63,7 @@ public class RecipeController {
 
         LOGGER.info("Recipe List Size : {}", environment.getProperty("jdbc.url"));
 
-        List<Fermentable> fermentableList = fermentableService.selectFermentableGroupList();
+      /*  List<Fermentable> fermentableList = fermentableService.selectFermentableGroupList();
         List<Hop> hopList = hopService.selectHopList(new Hop());
         List<Yeast> yeastList = yeastService.selectYeastList(new Yeast());
         List<Misc> miscList = miscService.selectMiscList(new Misc());
@@ -78,7 +71,7 @@ public class RecipeController {
         model.addAttribute("fermentableList", fermentableList);
         model.addAttribute("hopList",   hopList);
         model.addAttribute("yeastList", yeastList);
-        model.addAttribute("miscList",  miscList);
+        model.addAttribute("miscList",  miscList);*/
 
         return "recipe/createtest";
     }
@@ -102,9 +95,9 @@ public class RecipeController {
         List<Misc> miscList = miscService.selectMiscList(new Misc());
 
         model.addAttribute("fermentableList", fermentableList);
-        model.addAttribute("hopList",   hopList);
+        model.addAttribute("hopList", hopList);
         model.addAttribute("yeastList", yeastList);
-        model.addAttribute("miscList",  miscList);
+        model.addAttribute("miscList", miscList);
 
         return "recipe/create";
     }
@@ -150,7 +143,7 @@ public class RecipeController {
 
     @RequestMapping(value = "/detail/{seq}/{titleInUrl}/{brewer}", method = RequestMethod.GET)
     public String abv(Model model, @PathVariable("seq") Integer seq, @PathVariable("titleInUrl") String titleInUrl
-            ,@PathVariable("brewer") String brewer ) {
+        , @PathVariable("brewer") String brewer) {
 
         Recipe recipe = new Recipe();
         Recipe recipeDetail = recipeService.selectCategoryDetail(recipe, seq, brewer);
@@ -175,14 +168,12 @@ public class RecipeController {
         Account account = AuthenticationUtils.getUser();
 
         // 맥주 레시피 목록 조회
-        recipe.setBrewer(account.getId()+"");
+        recipe.setBrewer(account.getId() + "");
         List<Recipe> list = recipeService.selectRecipeList(recipe);
         LOGGER.info("Recipe List Size : {}", list.size());
 
         return list;
     }
-
-
 
 
     /**
@@ -191,10 +182,10 @@ public class RecipeController {
      * </pre>
      *
      * @param model Model
-     * @param seq 맥주 레시피 영문명
+     * @param seq   맥주 레시피 영문명
      * @return 맥주 레시피 상세.
      */
-    @RequestMapping(value="{seq}/*", method=RequestMethod.GET)
+    @RequestMapping(value = "{seq}/*", method = RequestMethod.GET)
     public String selectRecipeDetail(Model model, @PathVariable("seq") Integer seq) {
         LOGGER.info("Recipe Name : {}", seq);
 
@@ -208,7 +199,6 @@ public class RecipeController {
 
         return "recipe/detail";
     }
-
 
 
     @ResponseBody
@@ -233,9 +223,9 @@ public class RecipeController {
 
     @RequestMapping(value = "/insertRecipe", method = RequestMethod.POST)
     public String join(@ModelAttribute("recipe") Recipe paramRecipe,
-                       Model model,
-                       BindingResult result,
-                       RedirectAttributes redirectAttributes) {
+        Model model,
+        BindingResult result,
+        RedirectAttributes redirectAttributes) {
 /*
         if(file.getSize() > 0){
             String fileName = file.getOriginalFilename();
@@ -261,23 +251,23 @@ public class RecipeController {
         int yeastSize = 0;
         int miscSize = 0;
 
-        if(paramRecipe.getRecipeFermantableSeqs() != null){
+        if (paramRecipe.getRecipeFermantableSeqs() != null) {
             fermentableSize = paramRecipe.getRecipeFermantableSeqs().length;
         }
-        if(paramRecipe.getRecipeHopSeqs() != null){
+        if (paramRecipe.getRecipeHopSeqs() != null) {
             hopSize = paramRecipe.getRecipeHopSeqs().length;
         }
-        if(paramRecipe.getRecipeYeastSeqs() != null){
+        if (paramRecipe.getRecipeYeastSeqs() != null) {
             yeastSize = paramRecipe.getRecipeYeastSeqs().length;
         }
-        if(paramRecipe.getRecipeMiscSeqs() != null){
+        if (paramRecipe.getRecipeMiscSeqs() != null) {
             miscSize = paramRecipe.getRecipeMiscSeqs().length;
         }
 
         Integer recipeSeq = recipeService.selectRecipeSeq(paramRecipe).getSeq();
 
-        if(fermentableSize > 0){
-            for(int i=0; i < fermentableSize; i++ ){
+        if (fermentableSize > 0) {
+            for (int i = 0; i < fermentableSize; i++) {
                 paramRecipeFermantable.setRecipeSeq(recipeSeq);
                 paramRecipeFermantable.setRecipeFermantableSeq(paramRecipe.getRecipeFermantableSeqs()[i]);
                 paramRecipeFermantable.setRecipeFermantableAmount(paramRecipe.getRecipeFermantableAmounts()[i]);
@@ -290,8 +280,8 @@ public class RecipeController {
         }
 
 
-        if(hopSize > 0){
-            for(int i=0; i < hopSize; i++ ){
+        if (hopSize > 0) {
+            for (int i = 0; i < hopSize; i++) {
                 paramRecipeHop.setRecipeSeq(recipeSeq);
                 paramRecipeHop.setRecipeHopSeq(paramRecipe.getRecipeHopSeqs()[i]);
                 paramRecipeHop.setRecipeHopAmount(paramRecipe.getRecipeHopAmounts()[i]);
@@ -305,8 +295,8 @@ public class RecipeController {
             }
         }
 
-        if(yeastSize > 0){
-            for(int i=0; i < yeastSize; i++ ){
+        if (yeastSize > 0) {
+            for (int i = 0; i < yeastSize; i++) {
                 paramRecipeYeast.setRecipeSeq(recipeSeq);
                 paramRecipeYeast.setRecipeYeastSeq(paramRecipe.getRecipeYeastSeqs()[i]);
                 //paramRecipeYeast.setRecipeYeastMinTemperature(paramRecipe.getRecipeYeastMinTemperatures()[i]);
@@ -317,8 +307,8 @@ public class RecipeController {
             }
         }
 
-        if(miscSize > 0){
-            for(int i=0; i < miscSize; i++ ){
+        if (miscSize > 0) {
+            for (int i = 0; i < miscSize; i++) {
                 paramRecipeMisc.setRecipeSeq(recipeSeq);
                 paramRecipeMisc.setRecipeMiscSeq(paramRecipe.getRecipeMiscSeqs()[i]);
                 paramRecipeMisc.setRecipeMiscAmount(paramRecipe.getRecipeMiscAmounts()[i]);
@@ -333,9 +323,9 @@ public class RecipeController {
         paramRecipe.setSeq(recipeSeq);
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
 
-        if(insertFlag == true){
-            return "redirect:/homebrew/"+recipeSeq;
-        }else{
+        if (insertFlag == true) {
+            return "redirect:/homebrew/" + recipeSeq;
+        } else {
             return "redirect:/recipe/create";
         }
     }
@@ -345,8 +335,8 @@ public class RecipeController {
      * 맥주 레시피 저장.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 레시피 영문명
+     * @param model       Model
+     * @param name        맥주 레시피 영문명
      * @param paramRecipe 맥주 레시피 VO
      * @return 맥주 레시피 저장 여부
      */
@@ -364,13 +354,14 @@ public class RecipeController {
 
         return returnRecipe;
     }
+
     /**
      * <pre>
      * 맥주 레시피 수정.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 레시피 영문명
+     * @param model       Model
+     * @param name        맥주 레시피 영문명
      * @param paramRecipe 맥주 레시피 VO
      * @return 맥주 레시피 수정 여부
      */
@@ -391,7 +382,6 @@ public class RecipeController {
     }
 
 
-
     @ResponseBody
     @RequestMapping(value = "/srm/{seq}/{batchSize}", method = RequestMethod.GET)
     public String getSrm(Model model, @PathVariable("seq") Integer seq, @PathVariable("batchSize") Double batchSize) {
@@ -407,7 +397,7 @@ public class RecipeController {
         Double weight = 0.0;
         Double srm = 0.0;
         //batchSize = Double.valueOf(recipeDetail.getBatchSize());
-        batchSize = batchSize/3.78534;
+        batchSize = batchSize / 3.78534;
         Double sumSrm = 0.0;
         Double resultSrm = 0.0;
 
@@ -417,21 +407,21 @@ public class RecipeController {
         List Fermentables = recipeDetail.getFermentables();
         //List Hops = recipeDetail.getHops();
 
-        if(Fermentables != null){
-            for(int i=0; i<Fermentables.size();i++){
+        if (Fermentables != null) {
+            for (int i = 0; i < Fermentables.size(); i++) {
                 srm = 0.0;
                 lovibond = 0.0;
                 weight = 0.0;
-                lovibond = ((Fermentable)(Fermentables.get(i))).getColor();
-                weight = ((Fermentable)(Fermentables.get(i))).getAmount();
+                lovibond = ((Fermentable) (Fermentables.get(i))).getColor();
+                weight = ((Fermentable) (Fermentables.get(i))).getAmount();
                 weight = weight * 2.2046;
 
-                srm = 0.3*weight*lovibond;
+                srm = 0.3 * weight * lovibond;
                 srm = srm / batchSize;
 
-                LOGGER.warn("lovibond = " + lovibond );
-                LOGGER.warn("weight = " + weight );
-                LOGGER.warn("batchSize = " +  batchSize );
+                LOGGER.warn("lovibond = " + lovibond);
+                LOGGER.warn("weight = " + weight);
+                LOGGER.warn("batchSize = " + batchSize);
                 sumSrm = sumSrm + srm;
             }
             sumSrm = sumSrm + 4.7;
@@ -450,7 +440,7 @@ public class RecipeController {
 
         //model.addAttribute("srm", resultSrm);
 
-        return resultSrm+"";
+        return resultSrm + "";
     }
 }
 

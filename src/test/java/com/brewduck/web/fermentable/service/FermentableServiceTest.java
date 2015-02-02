@@ -36,7 +36,7 @@ public class FermentableServiceTest {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         fermentable = new Fermentable();
         listSize = 77;
 
@@ -45,20 +45,20 @@ public class FermentableServiceTest {
     /**
      * 기본 수행 테스트
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     @Ignore
     public void selectFermentableListTest() {
         List<Fermentable> selectFermentableListTest = fermentableDao.selectFermentableList(fermentable);
-        assertThat(true,  is(selectFermentableListTest.size() > 0));
+        assertThat(true, is(selectFermentableListTest.size() > 0));
         assertEquals(listSize, selectFermentableListTest.size());
     }
 
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void notNullEmptyTest() {
         List<Fermentable> selectFermentableList = fermentableDao.selectFermentableList(fermentable);
 
         //필수입력 테스트
-        for(int i=0;i<selectFermentableList.size();i++){
+        for (int i = 0; i < selectFermentableList.size(); i++) {
             //TODO : SpecificGravity 0이상이어야 함
             assertThat(true, is(((Fermentable) (selectFermentableList.get(i))).getSpecificGravity() >= 0));
             //발효재료 색상 0이상
@@ -74,16 +74,15 @@ public class FermentableServiceTest {
      * 기본 수행 테스트
      * </pre>
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void selectFermentableDetailTest() {
         Fermentable selectFermentableDetail = new Fermentable();
         fermentable.setId(1);
         selectFermentableDetail = fermentableDao.selectFermentableDetail(fermentable);
-        assertThat(true,  is(selectFermentableDetail != null));
+        assertThat(true, is(selectFermentableDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableDetail);
         assertThat(true, is(selectFermentableDetail.getName().equals("Amber Dry Extract")));
     }
-
 
 
     /**
@@ -91,7 +90,7 @@ public class FermentableServiceTest {
      * 맥주 맥아 목록 조회.
      * </pre>
      */
-    public void selectFermentableGroupListTest(){
+    public void selectFermentableGroupListTest() {
         Fermentable fermentable = new Fermentable();
         List<Fermentable> selectFermentableGroupListTest = fermentableDao.selectFermentableGroupList();
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableGroupListTest);
@@ -103,8 +102,8 @@ public class FermentableServiceTest {
      * 맥주 맥아 국가 별 갯수 조회.
      * </pre>
      */
-    @Test(timeout=5000)
-    public void countFermentableOriginTest(){
+    @Test(timeout = 5000)
+    public void countFermentableOriginTest() {
         Fermentable fermentable = new Fermentable();
         Fermentable countFermentableOrigin = new Fermentable();
 
@@ -117,9 +116,9 @@ public class FermentableServiceTest {
      * 맥주 맥아 저장.
      * </pre>
      */
-    public void insertFermentableTest(){
+    public void insertFermentableTest() {
         Fermentable fermentable = new Fermentable();
-        Integer insertFermentable =  fermentableDao.insertFermentable(fermentable);
+        Integer insertFermentable = fermentableDao.insertFermentable(fermentable);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", insertFermentable);
     }
 
@@ -128,9 +127,9 @@ public class FermentableServiceTest {
      * 맥주 맥아 수정.
      * </pre>
      */
-    public void updateFermentableTest(){
+    public void updateFermentableTest() {
         Fermentable fermentable = new Fermentable();
-        Integer updateFermentable =  fermentableDao.updateFermentable(fermentable);
+        Integer updateFermentable = fermentableDao.updateFermentable(fermentable);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateFermentable);
     }
 
@@ -140,9 +139,9 @@ public class FermentableServiceTest {
      * 맥주 맥아 삭제.
      * </pre>
      */
-    public void deleteFermentableTest(){
+    public void deleteFermentableTest() {
         Fermentable fermentable = new Fermentable();
-        Integer deleteFermentable =  fermentableDao.deleteFermentable(fermentable);
+        Integer deleteFermentable = fermentableDao.deleteFermentable(fermentable);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", deleteFermentable);
     }
 

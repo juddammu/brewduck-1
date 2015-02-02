@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
  * @author James
  */
 public enum ImageType {
@@ -12,9 +11,9 @@ public enum ImageType {
     GIF,
     PNG,
     UNKNOWN;
-    
+
     private static final Map<String, ImageType> extensionMap = new HashMap<String, ImageType>();
-    
+
     static {
         extensionMap.put("jpg", ImageType.JPG);
         extensionMap.put("jpeg", ImageType.JPG);

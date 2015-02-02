@@ -38,8 +38,6 @@ public class CommunityController {
     private CommonService commonService;
 
 
-
-
     /**
      * <pre>
      * 자유게시판 리스트.
@@ -74,24 +72,24 @@ public class CommunityController {
 
     @RequestMapping(value = "/write", method = RequestMethod.POST)
     public String writeBoardMain(@ModelAttribute("board") Board board,
-                                 @RequestParam MultipartFile file,
-                                 @RequestParam MultipartFile coverFile,
-                                 HttpServletRequest request,
-                                 BindingResult result,
-                                 RedirectAttributes redirectAttributes) throws IOException {
+        @RequestParam MultipartFile file,
+        @RequestParam MultipartFile coverFile,
+        HttpServletRequest request,
+        BindingResult result,
+        RedirectAttributes redirectAttributes) throws IOException {
 
         int fileseq = 0;
         int coverFileseq = 0;
 
         HttpSession session = request.getSession();
 
-        if(coverFile.getSize() > 0){
+        if (coverFile.getSize() > 0) {
             FileInfo coverFileInfo = new FileInfo();
 
             String coverFileName = coverFile.getOriginalFilename();   //파일명
             String coverFilemime = coverFile.getContentType();        //마임 타입
-            String coverFilePath = session.getServletContext().getRealPath("/")+"/resources/upload/";   //파일 path
-            coverFile.transferTo(new File(coverFilePath+coverFileName));
+            String coverFilePath = session.getServletContext().getRealPath("/") + "/resources/upload/";   //파일 path
+            coverFile.transferTo(new File(coverFilePath + coverFileName));
             Long coverFileSze = coverFile.getSize();
 
             coverFileseq = commonService.selectFileSeq();
@@ -102,12 +100,12 @@ public class CommunityController {
             Date nowTime = gc.getTime();
             String[] ArrFileName = null;
 
-            if( coverFileName.indexOf(".") >= 0 ) {
+            if (coverFileName.indexOf(".") >= 0) {
                 ArrFileName = coverFileName.split("\\.");
             }
             coverFileInfo.setSeq(coverFileseq);
             coverFileInfo.setFilename(coverFileName);
-            coverFileInfo.setRealFilename(ArrFileName[0] + "_" + simDate.format(nowTime)+"."+ArrFileName[1]);
+            coverFileInfo.setRealFilename(ArrFileName[0] + "_" + simDate.format(nowTime) + "." + ArrFileName[1]);
             coverFileInfo.setFilesize(coverFile.getSize());
             coverFileInfo.setFileNo(1);
             coverFileInfo.setFilemime(coverFileName);
@@ -115,14 +113,14 @@ public class CommunityController {
             int fileInsertCount = commonService.insertNoticeFile(coverFileInfo);
         }
 
-        if(file.getSize() > 0){
+        if (file.getSize() > 0) {
 
             FileInfo fileInfo = new FileInfo();
 
             String fileName = file.getOriginalFilename();   //파일명
             String filemime = file.getContentType();        //마임 타입
-            String filePath = session.getServletContext().getRealPath("/")+"/resources/upload/";   //파일 path
-            file.transferTo(new File(filePath+fileName));
+            String filePath = session.getServletContext().getRealPath("/") + "/resources/upload/";   //파일 path
+            file.transferTo(new File(filePath + fileName));
             Long fileSze = file.getSize();
 
             fileseq = commonService.selectFileSeq();
@@ -133,12 +131,12 @@ public class CommunityController {
             Date nowTime = gc.getTime();
             String[] ArrFileName = null;
 
-            if( fileName.indexOf(".") >= 0 ) {
+            if (fileName.indexOf(".") >= 0) {
                 ArrFileName = fileName.split("\\.");
             }
             fileInfo.setSeq(fileseq);
             fileInfo.setFilename(fileName);
-            fileInfo.setRealFilename(ArrFileName[0] + "_" + simDate.format(nowTime)+"."+ArrFileName[1]);
+            fileInfo.setRealFilename(ArrFileName[0] + "_" + simDate.format(nowTime) + "." + ArrFileName[1]);
             fileInfo.setFilesize(file.getSize());
             fileInfo.setFileNo(1);
             fileInfo.setFilemime(filemime);
@@ -149,9 +147,9 @@ public class CommunityController {
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        board.setAtchFileId(fileseq+"");
+        board.setAtchFileId(fileseq + "");
         board.setBbsId(board.getBbsId());
-        board.setAtchCoverFileId(coverFileseq+"");
+        board.setAtchCoverFileId(coverFileseq + "");
         board.setNttNo(1);
         board.setSortOrder(1);
         board.setUseAt("Y");
@@ -188,7 +186,7 @@ public class CommunityController {
 
     @ResponseBody
     @RequestMapping(value = "/replyList/{nttId}/{bbsId}", method = RequestMethod.GET)
-    public List<Board> replyList (Model model, @PathVariable("nttId") Integer nttId, @PathVariable("bbsId") Integer bbsId) {
+    public List<Board> replyList(Model model, @PathVariable("nttId") Integer nttId, @PathVariable("bbsId") Integer bbsId) {
         logger.info("Free Board List");
         Board paramBoard = new Board();
         paramBoard.setNttId(nttId);

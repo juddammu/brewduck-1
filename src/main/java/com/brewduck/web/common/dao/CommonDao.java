@@ -30,7 +30,7 @@ public interface CommonDao {
     public int selectMovieId() throws DataAccessException;
 
 
-	public List<Common> selectGenderList() throws DataAccessException;
+    public List<Common> selectGenderList() throws DataAccessException;
 
     public List<Common> selectMonthList() throws DataAccessException;
 

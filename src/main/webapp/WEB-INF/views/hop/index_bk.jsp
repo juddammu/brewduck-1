@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <title>홉 데이터베이스 - HOP DATABASE</title>
 
@@ -11,7 +11,8 @@
         <li class="active"><a href="#">재료 데이터베이스</a></li>
     </ol>
     <div class="section-header">
-        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a href="/hop/">홉 데이터베이스 - HOP DATABASE</a></h3>
+        <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i><a
+                href="/hop/">홉 데이터베이스 - HOP DATABASE</a></h3>
     </div>
     <div class="section-body">
 
@@ -20,17 +21,22 @@
             <div class="col-lg-12">
                 <div class="box box-outlined">
                     <div class="box-body no-padding">
-                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  name="searchForm" modelAttribute="paramHop">
-                            <input name="origin" type ="hidden" id="origin" value="">
-                            <input name="aroma" type ="hidden" id="aroma" value="">
+                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm"
+                                   name="searchForm" modelAttribute="paramHop">
+                            <input name="origin" type="hidden" id="origin" value="">
+                            <input name="aroma" type="hidden" id="aroma" value="">
+
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label class="control-label">이름</label>
                                 </div>
                                 <div class="col-md-10">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
-                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+                                        <input class="form-control" placeholder="검색어를 입력하세요."
+                                               name="name" id="name"
+                                               onkeypress="if(event.keyCode==13){return false;};">
+                                        <span class="input-group-addon"><i id="search" name="search"
+                                                                           class="fa fa-search"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -41,19 +47,22 @@
                                 <div class="col-md-10">
                                     <div class="radio-inline">
                                         <label>
-                                            <input id="allRadio" type="radio" name="type" value="" checked>
+                                            <input id="allRadio" type="radio" name="type" value=""
+                                                   checked>
                                             전체
                                         </label>
                                     </div>
                                     <div class="radio-inline">
                                         <label>
-                                            <input id="aromaRadio" type="radio" name="type" value="1">
+                                            <input id="aromaRadio" type="radio" name="type"
+                                                   value="1">
                                             향
                                         </label>
                                     </div>
                                     <div class="radio-inline">
                                         <label>
-                                            <input id="bittersRadio" type="radio" name="type" value="2">
+                                            <input id="bittersRadio" type="radio" name="type"
+                                                   value="2">
                                             쓴맛
                                         </label>
                                     </div>
@@ -65,26 +74,45 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="input-group">
-                                    <p>
-                                    <button id="usButton" type="button" class="btn btn-support1 btn-sm" value="US" onclick="setOriginSearch('US')"> 미국</button>
-                                        <button id="deButton" type="button" class="btn btn-support1 btn-sm" value="DE" onclick="setOriginSearch('DE')"> </button>
-                                        <button id="ukButton" type="button" class="btn btn-support1 btn-sm" value="UK" onclick="setOriginSearch('UK')"> </button>
-                                        <button id="nzButton" type="button" class="btn btn-support1 btn-sm" value="NZ" onclick="setOriginSearch('NZ')"> </button>
-                                        <button id="auButton" type="button" class="btn btn-support1 btn-sm" value="AU" onclick="setOriginSearch('AU')"> </button>
-                                        <button id="siButton" type="button" class="btn btn-support1 btn-sm" value="SI" onclick="setOriginSearch('SI')"> </button>
-                                        <button id="etcButton" type="button" class="btn btn-support1 btn-sm" value="" onclick="setOriginSearch('ETC')"> </button>
-                                    </p>
+                                        <p>
+                                            <button id="usButton" type="button"
+                                                    class="btn btn-support1 btn-sm" value="US"
+                                                    onclick="setOriginSearch('US')"> 미국
+                                            </button>
+                                            <button id="deButton" type="button"
+                                                    class="btn btn-support1 btn-sm" value="DE"
+                                                    onclick="setOriginSearch('DE')"></button>
+                                            <button id="ukButton" type="button"
+                                                    class="btn btn-support1 btn-sm" value="UK"
+                                                    onclick="setOriginSearch('UK')"></button>
+                                            <button id="nzButton" type="button"
+                                                    class="btn btn-support1 btn-sm" value="NZ"
+                                                    onclick="setOriginSearch('NZ')"></button>
+                                            <button id="auButton" type="button"
+                                                    class="btn btn-support1 btn-sm" value="AU"
+                                                    onclick="setOriginSearch('AU')"></button>
+                                            <button id="siButton" type="button"
+                                                    class="btn btn-support1 btn-sm" value="SI"
+                                                    onclick="setOriginSearch('SI')"></button>
+                                            <button id="etcButton" type="button"
+                                                    class="btn btn-support1 btn-sm" value=""
+                                                    onclick="setOriginSearch('ETC')"></button>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
 
-                            </form:form>
+                        </form:form>
 
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
+                    </div>
+                    <!--end .box-body -->
+                </div>
+                <!--end .box -->
+            </div>
+            <!--end .col-lg-12 -->
+        </div>
+        <!--end .row -->
         <!-- END BASIC FORM INPUTS -->
 
         <div class="row">
@@ -94,7 +122,7 @@
                         <table class="table table-hover no-margin">
                             <thead>
                             <tr>
-                                <th class="small-cell"> </th>
+                                <th class="small-cell"></th>
                                 <th>이름</th>
                                 <th>영문명</th>
                                 <th>타입</th>
@@ -107,14 +135,18 @@
                             <tbody id="result">
                             </tbody>
                         </table>
-                    </div><!--end .box-body -->
-                </div><!--end .box -->
-            </div><!--end .col-lg-12 -->
-        </div><!--end .row -->
+                    </div>
+                    <!--end .box-body -->
+                </div>
+                <!--end .box -->
+            </div>
+            <!--end .col-lg-12 -->
+        </div>
+        <!--end .row -->
         <!-- END FORM TOOLS -->
 
-    </div><!--end .section-body -->
-
+    </div>
+    <!--end .section-body -->
 
 
 </section>
@@ -251,81 +283,88 @@
 </div>
 </div>--%>
 <content tag="local_script">
-<script>
-    function getNationCount(){
-        $.get("/hop/countHopOrigin", function(data, status){
-            //alert("US 값은 : " + data.usCnt + "\n" + "de 값은 : " + data.deCnt +
-            $("#usButton").html("("+data.usCntName +data.usCnt+" 건)"); /*미국*/
-            $("#deButton").html("("+data.deCntName +data.deCnt+" 건)"); /*독일*/
-            $("#ukButton").html("("+data.ukCntName +data.ukCnt+" 건)"); /*영국*/
-            $("#nzButton").html("("+data.nzCntName +data.nzCnt+" 건)"); /*뉴질랜드*/
-            $("#auButton").html("("+data.auCntName +data.auCnt+" 건)"); /*호주*/
-            $("#siButton").html("("+data.siCntName +data.siCnt+" 건)"); /*슬로베니아*/
-            $("#etcButton").html("("+data.etcCntName +data.etcCnt+" 건)"); /*기타*/
-        })
-    }
+    <script>
+        function getNationCount() {
+            $.get("/hop/countHopOrigin", function (data, status) {
+                //alert("US 값은 : " + data.usCnt + "\n" + "de 값은 : " + data.deCnt +
+                $("#usButton").html("(" + data.usCntName + data.usCnt + " 건)");
+                /*미국*/
+                $("#deButton").html("(" + data.deCntName + data.deCnt + " 건)");
+                /*독일*/
+                $("#ukButton").html("(" + data.ukCntName + data.ukCnt + " 건)");
+                /*영국*/
+                $("#nzButton").html("(" + data.nzCntName + data.nzCnt + " 건)");
+                /*뉴질랜드*/
+                $("#auButton").html("(" + data.auCntName + data.auCnt + " 건)");
+                /*호주*/
+                $("#siButton").html("(" + data.siCntName + data.siCnt + " 건)");
+                /*슬로베니아*/
+                $("#etcButton").html("(" + data.etcCntName + data.etcCnt + " 건)");
+                /*기타*/
+            })
+        }
 
-    function getAromaList(){
+        function getAromaList() {
 
-        var aromaHtml = "";
+            var aromaHtml = "";
 
-        $.get("/hop/getAromaList", function(data, status){
-            //alert("US 값은 : " + data.aromaName);
+            $.get("/hop/getAromaList", function (data, status) {
+                //alert("US 값은 : " + data.aromaName);
 
-            $.each(data, function(i){
+                $.each(data, function (i) {
 
-                aromaHtml = aromaHtml +  "<input id='aromaCode"+ data[i].aromaCode +"' type='checkbox' value='"+ data[i].aromaCode +"'>";
-                aromaHtml = aromaHtml +  "<label for='aromaCode"+ data[i].aromaCode +"'>"+data[i].aromaName+"</label>";
+                    aromaHtml = aromaHtml + "<input id='aromaCode" + data[i].aromaCode + "' type='checkbox' value='" + data[i].aromaCode + "'>";
+                    aromaHtml = aromaHtml + "<label for='aromaCode" + data[i].aromaCode + "'>" + data[i].aromaName + "</label>";
 
+                });
+
+                $("#aromaArea").append(aromaHtml);
+
+            })
+        }
+
+        function search() {
+            $("#result").html("");
+            $("#result").load("/hop/list", $("#searchForm").serialize());
+
+        }
+
+        function goDetail(seq, titleInUrl) {
+            location.href = "/hop/" + seq + "/" + titleInUrl;
+        }
+
+        function setOriginSearch(data) {
+            $("#origin").val(data);
+            search();
+        }
+
+        function setAromaSearch() {
+            $("#aroma").val(jQuery(this).val());
+            search();
+        }
+
+        $(document).ready(function () {
+
+            getNationCount();                  //원산지별 카운트 (조회영역)
+            getAromaList();
+            search();                          //조회
+            $("#name").focus();              //이름칸으로 포커스
+
+            $("#search").click(function () {
+                search();
             });
 
-            $("#aromaArea").append(aromaHtml);
+            $("#fullSearch").click(function () {
+                $("#origin").val('');             //TODO : 초기화 함수로 뺄것
+                $("#name").val('');
+                $("#aroma").val('');
+                $("#allRadio").attr('checked', true);
+                search();
+            });
 
-        })
-    }
-
-    function search(){
-        $("#result").html("");
-        $("#result").load("/hop/list", $("#searchForm").serialize());
-
-    }
-
-    function goDetail(seq, titleInUrl){
-        location.href = "/hop/"+seq+"/"+titleInUrl;
-    }
-
-    function setOriginSearch(data){
-        $("#origin").val(data);
-        search();
-    }
-
-    function setAromaSearch(){
-        $("#aroma").val(jQuery(this).val());
-        search();
-    }
-
-    $(document).ready(function() {
-
-        getNationCount();                  //원산지별 카운트 (조회영역)
-        getAromaList();
-        search();                          //조회
-        $("#name").focus();              //이름칸으로 포커스
-
-        $("#search").click(function(){
-        search();
+            $("#allRadio").click(setAromaSearch);
+            $("#aromaRadio").click(setAromaSearch);
+            $("#bittersRadio").click(setAromaSearch);
         });
-
-        $("#fullSearch").click(function(){
-            $("#origin").val('');             //TODO : 초기화 함수로 뺄것
-            $("#name").val('');
-            $("#aroma").val('');
-            $("#allRadio").attr('checked', true);
-            search();
-        });
-
-        $("#allRadio").click(setAromaSearch);
-        $("#aromaRadio").click(setAromaSearch);
-        $("#bittersRadio").click(setAromaSearch);
-    });
-</script>
+    </script>
 </content>

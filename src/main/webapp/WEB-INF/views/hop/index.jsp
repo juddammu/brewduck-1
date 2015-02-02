@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <title>홉 - HOPS</title>
 
@@ -10,7 +10,9 @@
     <div class="container-fluid">
         <!-- BEGIN PAGE TITLE -->
         <div class="page-title">
-            <h1>홉 <small>HOPS</small></h1>
+            <h1>홉
+                <small>HOPS</small>
+            </h1>
         </div>
         <!-- END PAGE TITLE -->
     </div>
@@ -42,14 +44,20 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light">
                     <div class="portlet-title">
-                        <form:form class="form-horizontal" action="/hop/" id="searchForm"  name="searchForm" modelAttribute="paramHop">
+                        <form:form class="form-horizontal" action="/hop/" id="searchForm"
+                                   name="searchForm" modelAttribute="paramHop">
                             <div class="form-group">
                                 <div class="col-sm-11">
-                                    <input type="text" id="name" name="name" class="form-control" placeholder="검색어를 입력하세요." value="${paramStyle.name}">
+                                    <input type="text" id="name" name="name" class="form-control"
+                                           placeholder="검색어를 입력하세요." value="${paramStyle.name}">
                                 </div>
 
                                 <div class="col-sm-1 pull-right">
-                                    <button class="btn btn-white btn-single"><i id="search" name="search" class="fa fa-search"></i> 검색</button>
+                                    <button class="btn btn-white btn-single"><i id="search"
+                                                                                name="search"
+                                                                                class="fa fa-search"></i>
+                                        검색
+                                    </button>
                                 </div>
                             </div>
                         </form:form>
@@ -63,10 +71,13 @@
                     <div class="portlet-body">
 
 
-                        <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+                        <div class="table-responsive" data-pattern="priority-columns"
+                             data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true"
+                             data-add-display-all-btn="true" data-add-focus-btn="true">
 
 
-                            <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                            <table cellspacing="0"
+                                   class="table table-small-font table-bordered table-striped">
                                 <thead>
                                 <tr>
                                     <th data-hide="phone" data-priority="2">이름</th>
@@ -81,8 +92,12 @@
                                 <tbody>
                                 <c:forEach items="${list}" var="list">
                                     <tr>
-                                        <td><a href="/hop/${list.id}/${list.titleInUrl}">${list.name}</a></td>
-                                        <td><a href="/hop/${list.id}/${list.titleInUrl}">${list.koreanName}</a></td>
+                                        <td>
+                                            <a href="/hop/${list.id}/${list.titleInUrl}">${list.name}</a>
+                                        </td>
+                                        <td>
+                                            <a href="/hop/${list.id}/${list.titleInUrl}">${list.koreanName}</a>
+                                        </td>
                                         <td> ${list.typeKorean}</td>
                                         <td> ${list.originKorean}</td>
                                         <td>
@@ -114,18 +129,17 @@
 <!-- END PAGE CONTENT -->
 
 
-
 <content tag="local_script">
 
     <script>
-        function goDetail(id, titleInUrl){
-            location.href = "/style/"+id+"/"+titleInUrl;
+        function goDetail(id, titleInUrl) {
+            location.href = "/style/" + id + "/" + titleInUrl;
         }
         // This JavaScript Will Replace Checkboxes in dropdown toggles
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
             $("#name").focus();
 
-            $("#search").click(function(){
+            $("#search").click(function () {
                 search();
             })
         });

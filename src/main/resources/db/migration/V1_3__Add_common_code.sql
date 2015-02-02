@@ -1,101 +1,200 @@
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','01','Floral','Floral',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','02','Spicy','Spicy',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','03','Herbal','Herbal',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','04','Earthy','Earthy',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','05','Piney','Piney',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','06','Citrusy','Citrusy',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','07','Fruity','Fruity',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','10','Mild','Mild',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','11','Strong','Strong',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('aroma_code','15','Pleasant','Pleasant',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('board','01','일반게시판','일반게시판',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('fermentable_type','0','발효재료타입(곡물)','곡물',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('fermentable_type','1','발효재료타입(추출물)','추출물',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('fermentable_type','2','발효재료타입(당)','당',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('fermentable_type','3','발효재료타입(부가물)','부가물',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('fermentable_type','4','발효재료타입(건조추출물)','건조추출물',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('form_code','1','형태 코드','액상',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('form_code','2','형태 코드','건조',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('form_code','3','형태 코드','튜브형',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('form_code','4','형태 코드','배양',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('grain_type','0','grain',null,null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('grain_type','1','extract',null,null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('grain_type','2','sugar',null,null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('grain_type','3','adjust',null,null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('grain_type','4','dry extract',null,null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('hop_type','0','홉의 용도 (쓴맛,향,둘다)','둘다',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('hop_type','1','홉의 용도 (쓴맛,향,둘다)','향기',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('hop_type','2','홉의 용도 (쓴맛,향,둘다)','쓴맛',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_type','1','기타 재료 타입(기타)','기타',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_type','2','기타 재료 타입(향신료)','향신료',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_type','3','기타 재료 타입(풍미)','풍미',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_type','4','기타 재료 타입(첨가물)','첨가물',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_type','5','기타 재료 타입(청정제)','청정제',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_type','6','기타 재료 타입(허브)','허브',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','1','Water Agent','첨가물',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','10','Head Retention','헤드 유지',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','11','Fruit Beer','프루츠 비어',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','12','Fermentation','발효',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','13','Clarity','투명도',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','14','Chill Haze','냉각혼탁',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','15','Bottles','병',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','16','Belgian Wit','벨지안 위트',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','2','Spruce Beer','스푸어 비어',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','3','Spiced Beer','스파이스드 비어',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','4','Root Beer Flavor','루트 비어 풍미',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','5','Preservative','방부제',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','6','Oak Flavor','오크 풍미',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','7','Mash pH','매쉬 pH',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','8','Licorice flavor','리커리쉬 풍미',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('misc_use_for','9','Holiday Beer','홀리데이 비어',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','-','국가코드','기타',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','AU','국가코드','호주',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','BE','국가코드','벨기에',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','CA','국가코드','캐나다',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','CN','국가코드','중국',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','CZ','국가코드','체코',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','DE','국가코드','독일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','ETC','국가코드','기타',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','FR','국가코드','프랑스',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','JP','국가코드','일본',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','NZ','국가코드','뉴질랜드',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','PL','국가코드','폴란드',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','SI','국가코드','슬로베니아',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','UK','국가코드','영국',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('nation_code','US','국가코드','미국',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','1','라거','라거',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','10','실험적 에일','실험적 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','11','벨기에 에일','벨기에 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','12','미국식 에일','미국식 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','13','복','복',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','14','호주식 에일','호주식 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','15','유럽식 에일','유럽식 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','16','미국식 페일 에일','미국식 페일 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','17','Kolsch','Kolsch',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','18','미국식 라거','미국식 라거',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','19','포터','포터',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','2','에일','에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','20','유럽식 라거','유럽식 라거',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','21','스코틀랜드 에일','스코틀랜드 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','22','알트비어','알트비어',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','23','발리 와인','발리 와인',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','24','독일식 라거','독일식 라거',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','25','세종','세종',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','26','보헤미안 라거','보헤미안 라거',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','27','캐나다 라거','캐나다 라거',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','28','스트롱 에일','스트롱 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','29','영국식 에일','영국식 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','3','인디아 페일 에일','인디아 페일 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','4','필스너','필스너',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','5','페일 에일','페일 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','6','스타우트','스타우트',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','7','ESB','ESB',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','8','독일식 에일','독일식 에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('use_code','9','밀맥주','밀맥주',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('yeast_type','1','이스트 타입(에일)','에일',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('yeast_type','2','이스트 타입(샴페인)','샴페인',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('yeast_type','3','이스트 타입(라거)','라거',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('yeast_type','4','이스트 타입(위트)','위트',null,null,null,null,null,null);
-insert into `COMMON_CODE`(`COMMON_SET`,`COMMON_CODE`,`NOTES`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values ('yeast_type','5','이스트 타입(와인)','와인',null,null,null,null,null,null);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '01', 'Floral', 'Floral', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '02', 'Spicy', 'Spicy', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '03', 'Herbal', 'Herbal', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '04', 'Earthy', 'Earthy', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '05', 'Piney', 'Piney', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '06', 'Citrusy', 'Citrusy', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '07', 'Fruity', 'Fruity', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '10', 'Mild', 'Mild', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '11', 'Strong', 'Strong', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('aroma_code', '15', 'Pleasant', 'Pleasant', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('board', '01', '일반게시판', '일반게시판', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('fermentable_type', '0', '발효재료타입(곡물)', '곡물', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('fermentable_type', '1', '발효재료타입(추출물)', '추출물', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('fermentable_type', '2', '발효재료타입(당)', '당', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('fermentable_type', '3', '발효재료타입(부가물)', '부가물', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('fermentable_type', '4', '발효재료타입(건조추출물)', '건조추출물', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('form_code', '1', '형태 코드', '액상', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('form_code', '2', '형태 코드', '건조', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('form_code', '3', '형태 코드', '튜브형', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('form_code', '4', '형태 코드', '배양', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('grain_type', '0', 'grain', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('grain_type', '1', 'extract', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('grain_type', '2', 'sugar', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('grain_type', '3', 'adjust', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('grain_type', '4', 'dry extract', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('hop_type', '0', '홉의 용도 (쓴맛,향,둘다)', '둘다', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('hop_type', '1', '홉의 용도 (쓴맛,향,둘다)', '향기', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('hop_type', '2', '홉의 용도 (쓴맛,향,둘다)', '쓴맛', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_type', '1', '기타 재료 타입(기타)', '기타', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_type', '2', '기타 재료 타입(향신료)', '향신료', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_type', '3', '기타 재료 타입(풍미)', '풍미', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_type', '4', '기타 재료 타입(첨가물)', '첨가물', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_type', '5', '기타 재료 타입(청정제)', '청정제', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_type', '6', '기타 재료 타입(허브)', '허브', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '1', 'Water Agent', '첨가물', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '10', 'Head Retention', '헤드 유지', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '11', 'Fruit Beer', '프루츠 비어', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '12', 'Fermentation', '발효', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '13', 'Clarity', '투명도', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '14', 'Chill Haze', '냉각혼탁', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '15', 'Bottles', '병', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '16', 'Belgian Wit', '벨지안 위트', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '2', 'Spruce Beer', '스푸어 비어', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '3', 'Spiced Beer', '스파이스드 비어', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '4', 'Root Beer Flavor', '루트 비어 풍미', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '5', 'Preservative', '방부제', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '6', 'Oak Flavor', '오크 풍미', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '7', 'Mash pH', '매쉬 pH', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '8', 'Licorice flavor', '리커리쉬 풍미', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('misc_use_for', '9', 'Holiday Beer', '홀리데이 비어', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', '-', '국가코드', '기타', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'AU', '국가코드', '호주', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'BE', '국가코드', '벨기에', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'CA', '국가코드', '캐나다', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'CN', '국가코드', '중국', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'CZ', '국가코드', '체코', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'DE', '국가코드', '독일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'ETC', '국가코드', '기타', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'FR', '국가코드', '프랑스', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'JP', '국가코드', '일본', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'NZ', '국가코드', '뉴질랜드', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'PL', '국가코드', '폴란드', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'SI', '국가코드', '슬로베니아', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'UK', '국가코드', '영국', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('nation_code', 'US', '국가코드', '미국', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '1', '라거', '라거', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '10', '실험적 에일', '실험적 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '11', '벨기에 에일', '벨기에 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '12', '미국식 에일', '미국식 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '13', '복', '복', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '14', '호주식 에일', '호주식 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '15', '유럽식 에일', '유럽식 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '16', '미국식 페일 에일', '미국식 페일 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '17', 'Kolsch', 'Kolsch', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '18', '미국식 라거', '미국식 라거', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '19', '포터', '포터', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '2', '에일', '에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '20', '유럽식 라거', '유럽식 라거', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '21', '스코틀랜드 에일', '스코틀랜드 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '22', '알트비어', '알트비어', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '23', '발리 와인', '발리 와인', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '24', '독일식 라거', '독일식 라거', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '25', '세종', '세종', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '26', '보헤미안 라거', '보헤미안 라거', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '27', '캐나다 라거', '캐나다 라거', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '28', '스트롱 에일', '스트롱 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '29', '영국식 에일', '영국식 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '3', '인디아 페일 에일', '인디아 페일 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '4', '필스너', '필스너', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '5', '페일 에일', '페일 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '6', '스타우트', '스타우트', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '7', 'ESB', 'ESB', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '8', '독일식 에일', '독일식 에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('use_code', '9', '밀맥주', '밀맥주', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('yeast_type', '1', '이스트 타입(에일)', '에일', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('yeast_type', '2', '이스트 타입(샴페인)', '샴페인', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('yeast_type', '3', '이스트 타입(라거)', '라거', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('yeast_type', '4', '이스트 타입(위트)', '위트', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `COMMON_CODE` (`COMMON_SET`, `COMMON_CODE`, `NOTES`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES ('yeast_type', '5', '이스트 타입(와인)', '와인', NULL, NULL, NULL, NULL, NULL, NULL);
 
-commit;
+COMMIT;

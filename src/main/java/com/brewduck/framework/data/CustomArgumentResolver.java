@@ -9,7 +9,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 /**
  * 커스텀 아규먼트 리졸버
- *
+ * <p/>
  * User: JAEGER
  * Date: 13. 8. 16
  */
@@ -20,9 +20,9 @@ public class CustomArgumentResolver implements HandlerMethodArgumentResolver {
     }
 
     public Object resolveArgument(MethodParameter parameter,
-                                  ModelAndViewContainer mavContainer,
-                                  NativeWebRequest webRequest,
-                                  WebDataBinderFactory binderFactory) throws Exception {
+        ModelAndViewContainer mavContainer,
+        NativeWebRequest webRequest,
+        WebDataBinderFactory binderFactory) throws Exception {
         RequestAttribute attr = parameter.getParameterAnnotation(RequestAttribute.class);
         return webRequest.getAttribute(attr.value(), WebRequest.SCOPE_REQUEST);
     }

@@ -1,8 +1,6 @@
 package com.brewduck.web.yeast.controller;
 
-import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.common.service.CommonService;
-import com.brewduck.web.domain.Account;
 import com.brewduck.web.domain.Common;
 import com.brewduck.web.domain.Yeast;
 import com.brewduck.web.yeast.service.YeastService;
@@ -46,7 +44,7 @@ public class YeastController {
      * @param model Model
      * @return 맥주 홉 메인
      */
-    @RequestMapping(value =  {"/", ""}, method =  { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = {"/", ""}, method = {RequestMethod.GET, RequestMethod.POST})
     public String main(Model model, Yeast paramYeast) {
 
         List<Yeast> list = yeastService.selectYeastList(paramYeast);
@@ -93,7 +91,6 @@ public class YeastController {
      * <pre>
      * 맥주 이스트 상세 조회.
      * </pre>
-     *
      *
      * @param model Model
      * @return 맥주 이스트 상세.
@@ -162,8 +159,8 @@ public class YeastController {
      * 맥주 이스트 저장.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 이스트 영문명
+     * @param model      Model
+     * @param name       맥주 이스트 영문명
      * @param paramYeast 맥주 이스트 VO
      * @return 맥주 이스트 저장 여부
      */
@@ -182,13 +179,14 @@ public class YeastController {
 
         return returnYeast;
     }
+
     /**
      * <pre>
      * 맥주 이스트 수정.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 이스트 영문명
+     * @param model      Model
+     * @param name       맥주 이스트 영문명
      * @param paramYeast 맥주 이스트 VO
      * @return 맥주 이스트 수정 여부
      */
@@ -213,8 +211,8 @@ public class YeastController {
      * 맥주 이스트 삭제.
      * </pre>
      *
-     * @param model Model
-     * @param name 맥주 이스트 영문명
+     * @param model      Model
+     * @param name       맥주 이스트 영문명
      * @param paramYeast 맥주 이스트 VO
      * @return 맥주 이스트 삭제 여부
      */

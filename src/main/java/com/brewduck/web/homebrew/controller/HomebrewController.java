@@ -1,17 +1,16 @@
 package com.brewduck.web.homebrew.controller;
 
-import com.brewduck.framework.imageUtil.Image;
-import com.brewduck.framework.imageUtil.ImageLoader;
 import com.brewduck.framework.security.AuthenticationUtils;
 import com.brewduck.web.common.service.CommonService;
-import com.brewduck.web.domain.*;
+import com.brewduck.web.domain.Account;
+import com.brewduck.web.domain.FileInfo;
+import com.brewduck.web.domain.Recipe;
 import com.brewduck.web.recipe.service.RecipeService;
-import com.sun.xml.internal.fastinfoset.sax.Properties;
-import com.sun.xml.internal.ws.api.PropertySet;
+import com.mortennobel.imagescaling.AdvancedResizeOp;
+import com.mortennobel.imagescaling.ResampleOp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -23,27 +22,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
+import javax.media.jai.JAI;
+import javax.media.jai.RenderedOp;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.awt.image.BufferedImage;
+import java.awt.image.renderable.ParameterBlock;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.awt.image.renderable.ParameterBlock;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.media.jai.JAI;
-import javax.media.jai.RenderedOp;
-
-import com.mortennobel.imagescaling.AdvancedResizeOp;
-import com.mortennobel.imagescaling.ResampleOp;
 
 /**
  * <pre>
@@ -70,10 +60,10 @@ public class HomebrewController {
     private Environment environment;
 
     public static void scale(BufferedImage srcImage,
-                             String descPath,
-                             String imageFormat,
-                             int destWidth,
-                             int descHeight) {
+        String descPath,
+        String imageFormat,
+        int destWidth,
+        int descHeight) {
         try {
             ResampleOp resampleOp = new ResampleOp(destWidth, descHeight);
             resampleOp.setUnsharpenMask(AdvancedResizeOp.UnsharpenMask.Soft);
@@ -81,7 +71,7 @@ public class HomebrewController {
             File destFile = new File(descPath);
             ImageIO.write(rescaledImage, imageFormat, destFile);
 
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
@@ -94,7 +84,7 @@ public class HomebrewController {
      * @param model Model
      * @return 맥주 발효재료 메인
      */
-    @RequestMapping(value =  {"/", ""}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
     public String main(Model model) {
         logger.info("homebrew index");
         Account account = AuthenticationUtils.getUser();
@@ -110,7 +100,7 @@ public class HomebrewController {
         Account account = AuthenticationUtils.getUser();
 
         // 맥주 레시피 목록 조회
-        recipe.setBrewer(account.getId()+"");
+        recipe.setBrewer(account.getId() + "");
         List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
 
         model.addAttribute("account", account);
@@ -119,7 +109,7 @@ public class HomebrewController {
         return "homebrew/myrecipes";
     }
 
-    @RequestMapping(value="/update/{seq}", method=RequestMethod.GET)
+    @RequestMapping(value = "/update/{seq}", method = RequestMethod.GET)
     public String selectRecipeUpdate(Model model, @PathVariable("seq") Integer seq) {
 
         Recipe recipe = new Recipe();
@@ -182,14 +172,14 @@ public class HomebrewController {
      */
     @RequestMapping(value = "/publish/update", method = RequestMethod.POST)
     public String writeBoardMain(@ModelAttribute("paramRecipe") Recipe recipe,
-                                 @RequestParam MultipartFile file,
-                                 @RequestParam MultipartFile coverFile,
-                                 HttpServletRequest request,
-                                 BindingResult result,
-                                 RedirectAttributes redirectAttributes) throws IOException {
+        @RequestParam MultipartFile file,
+        @RequestParam MultipartFile coverFile,
+        HttpServletRequest request,
+        BindingResult result,
+        RedirectAttributes redirectAttributes) throws IOException {
 
 
-       logger.info("upload file path : {}", environment.getProperty("upload.filepath"));
+        logger.info("upload file path : {}", environment.getProperty("upload.filepath"));
 
 
 
@@ -200,7 +190,7 @@ public class HomebrewController {
 
         ParameterBlock pb = new ParameterBlock();
 
-        if(coverFile.getSize() > 0){
+        if (coverFile.getSize() > 0) {
             FileInfo coverFileInfo = new FileInfo();
 
             String coverFileName = coverFile.getOriginalFilename();   //파일명
@@ -215,13 +205,13 @@ public class HomebrewController {
             SimpleDateFormat simDate = new SimpleDateFormat("yyyyMMddHHmmss");
             Date nowTime = gc.getTime();
             String[] ArrFileName = null;
-            if( coverFileName.indexOf(".") >= 0 ) {
+            if (coverFileName.indexOf(".") >= 0) {
                 ArrFileName = coverFileName.split("\\.");
             }
             String fileName = "";
-            fileName = ArrFileName[0] + "_" + simDate.format(nowTime)+"."+ArrFileName[1];
+            fileName = ArrFileName[0] + "_" + simDate.format(nowTime) + "." + ArrFileName[1];
 
-            coverFile.transferTo(new File(coverFilePath+fileName));
+            coverFile.transferTo(new File(coverFilePath + fileName));
             Long coverFileSze = coverFile.getSize();
 
 
@@ -234,7 +224,7 @@ public class HomebrewController {
 
             int fileInsertCount = commonService.insertNoticeFile(coverFileInfo);
 
-            logger.info("file path " + coverFilePath+coverFileName);
+            logger.info("file path " + coverFilePath + coverFileName);
 
             /*
             Image image = ImageLoader.fromFile(coverFilePath+fileName);
@@ -242,7 +232,7 @@ public class HomebrewController {
             */
 
             //썸네일 이미지 생성
-            pb.add(coverFilePath+fileName);
+            pb.add(coverFilePath + fileName);
             RenderedOp rOp = JAI.create("fileload", pb);
 
             /*
@@ -251,15 +241,15 @@ public class HomebrewController {
             메인페이지 메뉴 : 190x140
              */
 
-            this.scale(rOp.getAsBufferedImage(), coverFilePath+ArrFileName[0] + "_408x408" +"."+ArrFileName[1], ArrFileName[1], 408, 408);
-            this.scale(rOp.getAsBufferedImage(), coverFilePath+ArrFileName[0] + "_204x204" +"."+ArrFileName[1], ArrFileName[1], 204, 204);
+            this.scale(rOp.getAsBufferedImage(), coverFilePath + ArrFileName[0] + "_408x408" + "." + ArrFileName[1], ArrFileName[1], 408, 408);
+            this.scale(rOp.getAsBufferedImage(), coverFilePath + ArrFileName[0] + "_204x204" + "." + ArrFileName[1], ArrFileName[1], 204, 204);
 
         }
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
 
-        recipe.setAtchFileId(fileseq+"");
+        recipe.setAtchFileId(fileseq + "");
         recipe.setAtchCoverFileId(coverFileseq + "");
         recipe.setBrewer(account.getId() + "");
 
@@ -275,7 +265,7 @@ public class HomebrewController {
      * </pre>
      *
      * @param model Model
-     * @param seq 맥주 레시피 영문명
+     * @param seq   맥주 레시피 영문명
      * @return 맥주 레시피 삭제 여부
      */
     @RequestMapping(value = "/delete/{seq}", method = RequestMethod.GET)

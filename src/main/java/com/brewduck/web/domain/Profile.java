@@ -8,14 +8,14 @@ import java.io.Serializable;
 
 public class Profile implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     //프로필 ID
     private int id;
 
-	//@NotEmpty
+    //@NotEmpty
     //계정 ID
-	private int accountId;
+    private int accountId;
 
     private String userName;
 

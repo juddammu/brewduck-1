@@ -54,14 +54,14 @@ public class AccountServiceValidationTest {
         account = new Account("hukorunaver.com", "test");
 
         Set<ConstraintViolation<Account>> constraintViolations =
-                validator.validate( account );
+            validator.validate(account);
 
-     //   assertEquals( 1, constraintViolations.size() );
+        //   assertEquals( 1, constraintViolations.size() );
 
         //System.out.println(constraintViolations.iterator().next().getMessage());
         assertEquals(
-                "may not be null",
-                constraintViolations.iterator().next().getMessage()
+            "may not be null",
+            constraintViolations.iterator().next().getMessage()
         );
 
         System.out.println(constraintViolations.iterator().next().getMessage());
@@ -102,7 +102,7 @@ public class AccountServiceValidationTest {
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", account);
 
 
-//        assertThat(true, is(resultAccount.getName().equals("세환")));
+        //        assertThat(true, is(resultAccount.getName().equals("세환")));
     }
 
 }

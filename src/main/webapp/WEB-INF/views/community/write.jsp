@@ -6,9 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <section>
 <ol class="breadcrumb">
     <li><a href="/">홈</a></li>
@@ -16,7 +16,11 @@
     <li class="active">쓰기</li>
 </ol>
 <div class="section-header">
-    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 공지사항</h3> <h4><small>공지사항을 추가하거나 삭제할 수 있습니다.</small></h4>
+    <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 공지사항
+    </h3>
+    <h4>
+        <small>공지사항을 추가하거나 삭제할 수 있습니다.</small>
+    </h4>
 </div>
 <div class="section-body">
 <!-- START DATATABLE 1 -->
@@ -24,25 +28,31 @@
 <div class="col-lg-12">
 <div class="box">
 <div class="box-body">
-<form:form id="notice" class="form-horizontal" role="form" method="POST" enctype="multipart/form-data"  action="/community/write" modelAttribute="board">
+<form:form id="notice" class="form-horizontal" role="form" method="POST"
+           enctype="multipart/form-data" action="/community/write" modelAttribute="board">
 <input type="hidden" name="bbsId" id="bbsId" value="${bbsId}"/>
 <input type="hidden" name="fileSeq" id="fileSeq" value="${noticeView.fileSeq}"/>
 <input type="hidden" name="fileNo" id="fileNo" value="${noticeView.fileNo}"/>
-<input type="hidden" name="delfile" id="delfile" />
+<input type="hidden" name="delfile" id="delfile"/>
+
 <div class="form-group">
     <div class="col-lg-1 col-md-2 col-sm-3">
         <label for="title" class="control-label">제목</label>
     </div>
     <div class="col-lg-11 col-md-10 col-sm-9">
-        <input type="text" name="nttSj" id="nttSj" class="form-control" placeholder="제목" value="${noticeView.title}">
+        <input type="text" name="nttSj" id="nttSj" class="form-control" placeholder="제목"
+               value="${noticeView.title}">
     </div>
 </div>
 <div class="form-group">
     <div class="col-lg-1 col-md-2 col-sm-3">
-        <label class="control-label">커버 이미지<small>큰사이즈</small></label>
+        <label class="control-label">커버 이미지
+            <small>큰사이즈</small>
+        </label>
     </div>
     <div class="col-lg-11 col-md-10 col-sm-9">
-        <input name="coverFile" id="coverFile" type="file" multiple />
+        <input name="coverFile" id="coverFile" type="file" multiple/>
+
         <p class="help-block">이미지 사이즈는 819x452으로 올려주세요.</p>
     </div>
 </div>
@@ -51,7 +61,8 @@
         <label class="control-label">이미지</label>
     </div>
     <div class="col-lg-11 col-md-10 col-sm-9">
-        <input name="file" id="file" type="file" multiple />
+        <input name="file" id="file" type="file" multiple/>
+
         <p class="help-block">이미지 사이즈는 819x452으로 올려주세요.</p>
     </div>
 </div>
@@ -121,7 +132,7 @@
     </div>
 </div>
 
-<div class="clearfix css_clear" />
+<div class="clearfix css_clear"/>
 <!-- 툴바 - 기본 시작 -->
 <!--
     @decsription
@@ -132,7 +143,8 @@
     tx-slt-70bg, tx-slt-59bg, tx-slt-42bg, tx-btn-43lrbg, tx-btn-52lrbg, tx-btn-57lrbg, tx-btn-71lrbg
     tx-btn-48lbg, tx-btn-48rbg, tx-btn-30lrbg, tx-btn-46lrbg, tx-btn-67lrbg, tx-btn-49lbg, tx-btn-58bg, tx-btn-46bg, tx-btn-49rbg
 -->
-<div id="tx_toolbar_basic" class="tx-toolbar tx-toolbar-basic"><div class="tx-toolbar-boundary">
+<div id="tx_toolbar_basic" class="tx-toolbar tx-toolbar-basic">
+<div class="tx-toolbar-boundary">
 <ul class="tx-bar tx-bar-left">
     <li class="tx-list">
         <div id="tx_fontfamily" unselectable="on" class="tx-slt-70bg tx-fontfamily">
@@ -271,10 +283,12 @@
         </div>
     </li>
     <li class="tx-list">
-        <div unselectable="on" class="		 tx-btn-rbg 	tx-horizontalrule" id="tx_horizontalrule">
+        <div unselectable="on" class="		 tx-btn-rbg 	tx-horizontalrule"
+             id="tx_horizontalrule">
             <a href="javascript:;" class="tx-icon" title="구분선">구분선</a>
         </div>
-        <div id="tx_horizontalrule_menu" class="tx-horizontalrule-menu tx-menu" unselectable="on"></div>
+        <div id="tx_horizontalrule_menu" class="tx-horizontalrule-menu tx-menu"
+             unselectable="on"></div>
     </li>
 </ul>
 <ul class="tx-bar tx-bar-left">
@@ -340,104 +354,120 @@
         </div>
     </li>
 </ul>
-</div></div>
+</div>
+</div>
 <!-- 툴바 - 기본 끝 -->
 <!-- 툴바 - 더보기 시작 -->
-<div id="tx_toolbar_advanced" class="tx-toolbar tx-toolbar-advanced"><div class="tx-toolbar-boundary">
-    <ul class="tx-bar tx-bar-left">
-        <li class="tx-list">
-            <div class="tx-tableedit-title"></div>
-        </li>
-    </ul>
+<div id="tx_toolbar_advanced" class="tx-toolbar tx-toolbar-advanced">
+    <div class="tx-toolbar-boundary">
+        <ul class="tx-bar tx-bar-left">
+            <li class="tx-list">
+                <div class="tx-tableedit-title"></div>
+            </li>
+        </ul>
 
-    <ul class="tx-bar tx-bar-left tx-group-align">
-        <li class="tx-list">
-            <div unselectable="on" class="tx-btn-lbg tx-mergecells" id="tx_mergecells">
-                <a href="javascript:;" class="tx-icon2" title="병합">병합</a>
-            </div>
-            <div id="tx_mergecells_menu" class="tx-mergecells-menu tx-menu" unselectable="on"></div>
-        </li>
-        <li class="tx-list">
-            <div unselectable="on" class="tx-btn-bg tx-insertcells" id="tx_insertcells">
-                <a href="javascript:;" class="tx-icon2" title="삽입">삽입</a>
-            </div>
-            <div id="tx_insertcells_menu" class="tx-insertcells-menu tx-menu" unselectable="on"></div>
-        </li>
-        <li class="tx-list">
-            <div unselectable="on" class="tx-btn-rbg tx-deletecells" id="tx_deletecells">
-                <a href="javascript:;" class="tx-icon2" title="삭제">삭제</a>
-            </div>
-            <div id="tx_deletecells_menu" class="tx-deletecells-menu tx-menu" unselectable="on"></div>
-        </li>
-    </ul>
+        <ul class="tx-bar tx-bar-left tx-group-align">
+            <li class="tx-list">
+                <div unselectable="on" class="tx-btn-lbg tx-mergecells" id="tx_mergecells">
+                    <a href="javascript:;" class="tx-icon2" title="병합">병합</a>
+                </div>
+                <div id="tx_mergecells_menu" class="tx-mergecells-menu tx-menu"
+                     unselectable="on"></div>
+            </li>
+            <li class="tx-list">
+                <div unselectable="on" class="tx-btn-bg tx-insertcells" id="tx_insertcells">
+                    <a href="javascript:;" class="tx-icon2" title="삽입">삽입</a>
+                </div>
+                <div id="tx_insertcells_menu" class="tx-insertcells-menu tx-menu"
+                     unselectable="on"></div>
+            </li>
+            <li class="tx-list">
+                <div unselectable="on" class="tx-btn-rbg tx-deletecells" id="tx_deletecells">
+                    <a href="javascript:;" class="tx-icon2" title="삭제">삭제</a>
+                </div>
+                <div id="tx_deletecells_menu" class="tx-deletecells-menu tx-menu"
+                     unselectable="on"></div>
+            </li>
+        </ul>
 
-    <ul class="tx-bar tx-bar-left tx-group-align">
-        <li class="tx-list">
-            <div id="tx_cellslinepreview" unselectable="on" class="tx-slt-70lbg tx-cellslinepreview">
-                <a href="javascript:;" title="선 미리보기"></a>
-            </div>
-            <div id="tx_cellslinepreview_menu" class="tx-cellslinepreview-menu tx-menu"
-                 unselectable="on"></div>
-        </li>
-        <li class="tx-list">
-            <div id="tx_cellslinecolor" unselectable="on" class="tx-slt-tbg tx-cellslinecolor">
-                <a href="javascript:;" class="tx-icon2" title="선색">선색</a>
+        <ul class="tx-bar tx-bar-left tx-group-align">
+            <li class="tx-list">
+                <div id="tx_cellslinepreview" unselectable="on"
+                     class="tx-slt-70lbg tx-cellslinepreview">
+                    <a href="javascript:;" title="선 미리보기"></a>
+                </div>
+                <div id="tx_cellslinepreview_menu" class="tx-cellslinepreview-menu tx-menu"
+                     unselectable="on"></div>
+            </li>
+            <li class="tx-list">
+                <div id="tx_cellslinecolor" unselectable="on" class="tx-slt-tbg tx-cellslinecolor">
+                    <a href="javascript:;" class="tx-icon2" title="선색">선색</a>
 
-                <div class="tx-colorpallete" unselectable="on"></div>
-            </div>
-            <div id="tx_cellslinecolor_menu" class="tx-cellslinecolor-menu tx-menu tx-colorpallete"
-                 unselectable="on"></div>
-        </li>
-        <li class="tx-list">
-            <div id="tx_cellslineheight" unselectable="on" class="tx-btn-bg tx-cellslineheight">
-                <a href="javascript:;" class="tx-icon2" title="두께">두께</a>
+                    <div class="tx-colorpallete" unselectable="on"></div>
+                </div>
+                <div id="tx_cellslinecolor_menu"
+                     class="tx-cellslinecolor-menu tx-menu tx-colorpallete"
+                     unselectable="on"></div>
+            </li>
+            <li class="tx-list">
+                <div id="tx_cellslineheight" unselectable="on" class="tx-btn-bg tx-cellslineheight">
+                    <a href="javascript:;" class="tx-icon2" title="두께">두께</a>
 
-            </div>
-            <div id="tx_cellslineheight_menu" class="tx-cellslineheight-menu tx-menu"
-                 unselectable="on"></div>
-        </li>
-        <li class="tx-list">
-            <div id="tx_cellslinestyle" unselectable="on" class="tx-btn-bg tx-cellslinestyle">
-                <a href="javascript:;" class="tx-icon2" title="스타일">스타일</a>
-            </div>
-            <div id="tx_cellslinestyle_menu" class="tx-cellslinestyle-menu tx-menu" unselectable="on"></div>
-        </li>
-        <li class="tx-list">
-            <div id="tx_cellsoutline" unselectable="on" class="tx-btn-rbg tx-cellsoutline">
-                <a href="javascript:;" class="tx-icon2" title="테두리">테두리</a>
+                </div>
+                <div id="tx_cellslineheight_menu" class="tx-cellslineheight-menu tx-menu"
+                     unselectable="on"></div>
+            </li>
+            <li class="tx-list">
+                <div id="tx_cellslinestyle" unselectable="on" class="tx-btn-bg tx-cellslinestyle">
+                    <a href="javascript:;" class="tx-icon2" title="스타일">스타일</a>
+                </div>
+                <div id="tx_cellslinestyle_menu" class="tx-cellslinestyle-menu tx-menu"
+                     unselectable="on"></div>
+            </li>
+            <li class="tx-list">
+                <div id="tx_cellsoutline" unselectable="on" class="tx-btn-rbg tx-cellsoutline">
+                    <a href="javascript:;" class="tx-icon2" title="테두리">테두리</a>
 
-            </div>
-            <div id="tx_cellsoutline_menu" class="tx-cellsoutline-menu tx-menu" unselectable="on"></div>
-        </li>
-    </ul>
-    <ul class="tx-bar tx-bar-left">
-        <li class="tx-list">
-            <div id="tx_tablebackcolor" unselectable="on" class="tx-btn-lrbg tx-tablebackcolor"
-                 style="background-color:#9aa5ea;">
-                <a href="javascript:;" class="tx-icon2" title="테이블 배경색">테이블 배경색</a>
-            </div>
-            <div id="tx_tablebackcolor_menu" class="tx-tablebackcolor-menu tx-menu tx-colorpallete"
-                 unselectable="on"></div>
-        </li>
-    </ul>
-    <ul class="tx-bar tx-bar-left">
-        <li class="tx-list">
-            <div id="tx_tabletemplate" unselectable="on" class="tx-btn-lrbg tx-tabletemplate">
-                <a href="javascript:;" class="tx-icon2" title="테이블 서식">테이블 서식</a>
-            </div>
-            <div id="tx_tabletemplate_menu" class="tx-tabletemplate-menu tx-menu tx-colorpallete"
-                 unselectable="on"></div>
-        </li>
-    </ul>
+                </div>
+                <div id="tx_cellsoutline_menu" class="tx-cellsoutline-menu tx-menu"
+                     unselectable="on"></div>
+            </li>
+        </ul>
+        <ul class="tx-bar tx-bar-left">
+            <li class="tx-list">
+                <div id="tx_tablebackcolor" unselectable="on" class="tx-btn-lrbg tx-tablebackcolor"
+                     style="background-color:#9aa5ea;">
+                    <a href="javascript:;" class="tx-icon2" title="테이블 배경색">테이블 배경색</a>
+                </div>
+                <div id="tx_tablebackcolor_menu"
+                     class="tx-tablebackcolor-menu tx-menu tx-colorpallete"
+                     unselectable="on"></div>
+            </li>
+        </ul>
+        <ul class="tx-bar tx-bar-left">
+            <li class="tx-list">
+                <div id="tx_tabletemplate" unselectable="on" class="tx-btn-lrbg tx-tabletemplate">
+                    <a href="javascript:;" class="tx-icon2" title="테이블 서식">테이블 서식</a>
+                </div>
+                <div id="tx_tabletemplate_menu"
+                     class="tx-tabletemplate-menu tx-menu tx-colorpallete"
+                     unselectable="on"></div>
+            </li>
+        </ul>
 
-</div></div>
+    </div>
+</div>
 <!-- 툴바 - 더보기 끝 -->
 <!-- 편집영역 시작 -->
 <!-- 에디터 Start -->
 <div id="tx_canvas" class="tx-canvas">
-    <div id="tx_loading" class="tx-loading"><div><img src="/resources/editor/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/></div></div>
+    <div id="tx_loading" class="tx-loading">
+        <div><img src="/resources/editor/images/icon/editor/loading2.png" width="113" height="21"
+                  align="absmiddle"/></div>
+    </div>
     <div id="tx_canvas_wysiwyg_holder" class="tx-holder" style="display:block;">
-        <iframe id="tx_canvas_wysiwyg" name="tx_canvas_wysiwyg" allowtransparency="true" frameborder="0"></iframe>
+        <iframe id="tx_canvas_wysiwyg" name="tx_canvas_wysiwyg" allowtransparency="true"
+                frameborder="0"></iframe>
     </div>
     <div class="tx-source-deco">
         <div id="tx_canvas_source_holder" class="tx-holder">
@@ -451,7 +481,8 @@
 <!-- 높이조절 Start -->
 <div id="tx_resizer" class="tx-resize-bar">
     <div class="tx-resize-bar-bg"></div>
-    <img id="tx_resize_holder" src="/resources/editor/images/icon/editor/skin/01/btn_drag01.gif" width="58" height="12" unselectable="on" alt="" />
+    <img id="tx_resize_holder" src="/resources/editor/images/icon/editor/skin/01/btn_drag01.gif"
+         width="58" height="12" unselectable="on" alt=""/>
 </div>
 <div class="tx-side-bi" id="tx_side_bi">
     <div style="text-align: right;">
@@ -465,13 +496,18 @@
     <div id="tx_attach_txt" class="tx-attach-txt">파일 첨부</div>
     <div id="tx_attach_box" class="tx-attach-box">
         <div class="tx-attach-box-inner">
-            <div id="tx_attach_preview" class="tx-attach-preview"><p></p><img src="/resources/editor/images/icon/editor/pn_preview.gif" width="147" height="108" unselectable="on"/></div>
+            <div id="tx_attach_preview" class="tx-attach-preview"><p></p><img
+                    src="/resources/editor/images/icon/editor/pn_preview.gif" width="147"
+                    height="108" unselectable="on"/></div>
             <div class="tx-attach-main">
-                <div id="tx_upload_progress" class="tx-upload-progress"><div>0%</div><p>파일을 업로드하는 중입니다.</p></div>
+                <div id="tx_upload_progress" class="tx-upload-progress">
+                    <div>0%</div>
+                    <p>파일을 업로드하는 중입니다.</p></div>
                 <ul class="tx-attach-top">
                     <li id="tx_attach_delete" class="tx-attach-delete"><a>전체삭제</a></li>
                     <li id="tx_attach_size" class="tx-attach-size">
-                        파일: <span id="tx_attach_up_size" class="tx-attach-size-up"></span>/<span id="tx_attach_max_size"></span>
+                        파일: <span id="tx_attach_up_size" class="tx-attach-size-up"></span>/<span
+                            id="tx_attach_max_size"></span>
                     </li>
                     <li id="tx_attach_tools" class="tx-attach-tools">
                     </li>
@@ -493,9 +529,12 @@
     <button type="button" onclick='loadContent();' class="btn btn-default">Reset</button>
 </div>
 </form:form>
-</div><!--end .box-body -->
-</div><!--end .box -->
-</div><!--end .col-lg-12 -->
+</div>
+<!--end .box-body -->
+</div>
+<!--end .box -->
+</div>
+<!--end .col-lg-12 -->
 </div>
 <!-- END DATATABLE 1 -->
 </div>
@@ -511,7 +550,8 @@
     <script src="/resources/expert/js/core/demo/Demo.js"></script>
 
     <link rel="stylesheet" href="/resources/editor/css/editor.css" type="text/css" charset="utf-8"/>
-    <script src="/resources/editor/js/editor_loader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/resources/editor/js/editor_loader.js" type="text/javascript"
+            charset="utf-8"></script>
     <script>
         var config = {
             txHost: '', /* 런타임 시 리소스들을 로딩할 때 필요한 부분으로, 경로가 변경되면 이 부분 수정이 필요. ex) http://xxx.xxx.com */
@@ -520,11 +560,11 @@
             txProject: 'sample', /* 수정필요없음. 프로젝트가 여러개일 경우만 수정한다. */
             initializedId: "", /* 대부분의 경우에 빈문자열 */
             wrapper: "tx_trex_container", /* 에디터를 둘러싸고 있는 레이어 이름(에디터 컨테이너) */
-            form: 'notice'+"", /* 등록하기 위한 Form 이름 */
+            form: 'notice' + "", /* 등록하기 위한 Form 이름 */
             txIconPath: "/resources/editor/images/icon/editor/", /*에디터에 사용되는 이미지 디렉터리, 필요에 따라 수정한다. */
             txDecoPath: "/resources/editor/images/deco/contents/", /*본문에 사용되는 이미지 디렉터리, 서비스에서 사용할 때는 완성된 컨텐츠로 배포되기 위해 절대경로로 수정한다. */
             canvas: {
-                exitEditor:{
+                exitEditor: {
                     /*
                      desc:'빠져 나오시려면 shift+b를 누르세요.',
                      hotKey: {
@@ -563,7 +603,7 @@
             }
         };
 
-        EditorJSLoader.ready(function(Editor) {
+        EditorJSLoader.ready(function (Editor) {
             var editor = new Editor(config);
         });
 
@@ -665,15 +705,15 @@
             </c:if>
             attachments['file'] = [];
             <c:if test="${noticeView.filename != null}">
-                attachments['file'].push({
-                    'attacher': 'file',
-                    'data': {
-                        'attachurl': '/resources/upload/',
-                        'filemime': '${noticeView.filemime}',
-                        'filename': '${noticeView.filename}',
-                        'filesize': '${noticeView.filesize}'
-                    }
-                });
+            attachments['file'].push({
+                'attacher': 'file',
+                'data': {
+                    'attachurl': '/resources/upload/',
+                    'filemime': '${noticeView.filemime}',
+                    'filename': '${noticeView.filename}',
+                    'filesize': '${noticeView.filesize}'
+                }
+            });
             </c:if>
 
             /* 저장된 컨텐츠를 불러오기 위한 함수 호출 */
@@ -689,7 +729,7 @@
             });
         }
 
-        $(document).ready(function(){
+        $(document).ready(function () {
             loadContent();
 
         });

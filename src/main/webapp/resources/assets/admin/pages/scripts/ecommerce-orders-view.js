@@ -15,7 +15,7 @@ var EcommerceOrdersView = function () {
             },
             loadingMessage: 'Loading...',
             dataTable: { // here you can define a typical datatable settings from http://datatables.net/usage/options 
-                
+
                 // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
                 // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/scripts/datatable.js). 
                 // So when dropdowns used the scrollable div should be removed. 
@@ -68,7 +68,7 @@ var EcommerceOrdersView = function () {
     var handleCreditMemos = function () {
 
         var grid = new Datatable();
-        
+
         grid.init({
             src: $("#datatable_credit_memos"),
             onSuccess: function (grid) {
@@ -93,10 +93,12 @@ var EcommerceOrdersView = function () {
                 "ajax": {
                     "url": "demo/ecommerce_order_credit_memos.php", // ajax source
                 },
-                "columnDefs": [{ // define columns sorting options(by default all columns are sortable extept the first checkbox column)
-                    'orderable': true,
-                    'targets': [0]
-                }],
+                "columnDefs": [
+                    { // define columns sorting options(by default all columns are sortable extept the first checkbox column)
+                        'orderable': true,
+                        'targets': [0]
+                    }
+                ],
                 "order": [
                     [0, "asc"]
                 ] // set first column as a default sort by asc
@@ -127,10 +129,12 @@ var EcommerceOrdersView = function () {
                 "ajax": {
                     "url": "demo/ecommerce_order_shipment.php", // ajax source
                 },
-                "columnDefs": [{ // define columns sorting options(by default all columns are sortable extept the first checkbox column)
-                    'orderable': true,
-                    'targets': [0]
-                }],
+                "columnDefs": [
+                    { // define columns sorting options(by default all columns are sortable extept the first checkbox column)
+                        'orderable': true,
+                        'targets': [0]
+                    }
+                ],
                 "order": [
                     [0, "asc"]
                 ] // set first column as a default sort by asc
@@ -160,10 +164,12 @@ var EcommerceOrdersView = function () {
                 "ajax": {
                     "url": "demo/ecommerce_order_history.php", // ajax source
                 },
-                "columnDefs": [{ // define columns sorting options(by default all columns are sortable extept the first checkbox column)
-                    'orderable': true,
-                    'targets': [0]
-                }],
+                "columnDefs": [
+                    { // define columns sorting options(by default all columns are sortable extept the first checkbox column)
+                        'orderable': true,
+                        'targets': [0]
+                    }
+                ],
                 "order": [
                     [0, "asc"]
                 ] // set first column as a default sort by asc

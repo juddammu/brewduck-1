@@ -49,15 +49,15 @@ public class UserDetailServiceImpl implements UserDetailsService {
             LOGGER.info("추후 언제 로그인 했는지 기록 예정");
 
             return new UserDetailService(
-                                    account.getEmail(),
-                                    account.getPassword(),
-                                    true,
-                                    true,
-                                    true,
-                                    true,
-                                    this.createAuthorities(account),
-                                    account
-                                );
+                account.getEmail(),
+                account.getPassword(),
+                true,
+                true,
+                true,
+                true,
+                this.createAuthorities(account),
+                account
+            );
         }
 
         return null;
@@ -76,17 +76,17 @@ public class UserDetailServiceImpl implements UserDetailsService {
         authorities.add(new SimpleGrantedAuthority(LoginAuthorityType.ROLE_SIGNIN.name()));
 
         // 로그인 인증 사용자 권한 부여
-        if ( LoginAuthorityType.ROLE_USER.name().equals(loginUser.getAuthority()) ) {
+        if (LoginAuthorityType.ROLE_USER.name().equals(loginUser.getAuthority())) {
             authorities.add(new SimpleGrantedAuthority(LoginAuthorityType.ROLE_USER.name()));
         }
 
         // 매니저 권한 부여
-        if ( LoginAuthorityType.ROLE_MANAGER.name().equals(loginUser.getAuthority()) ) {
+        if (LoginAuthorityType.ROLE_MANAGER.name().equals(loginUser.getAuthority())) {
             authorities.add(new SimpleGrantedAuthority(LoginAuthorityType.ROLE_MANAGER.name()));
         }
 
         // 관리자 권한 부여
-        if ( LoginAuthorityType.ROLE_ADMIN.name().equals(loginUser.getAuthority()) ) {
+        if (LoginAuthorityType.ROLE_ADMIN.name().equals(loginUser.getAuthority())) {
             authorities.add(new SimpleGrantedAuthority(LoginAuthorityType.ROLE_ADMIN.name()));
         }
 

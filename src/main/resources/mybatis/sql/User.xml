@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="User">
 
     <select id="User.selectOne"
@@ -7,12 +8,12 @@
             resultType="User">
         <!-- 내 활동 내역 목록을 조회 -->
         SELECT userid
-              ,name
-              ,email
-          FROM account
-         WHERE 1 = 1
+        ,name
+        ,email
+        FROM account
+        WHERE 1 = 1
         <if test="userid != null">
-           AND userid = #{userid}
+            AND userid = #{userid}
         </if>
     </select>
 
@@ -21,17 +22,17 @@
             resultType="User">
         <!-- 유저 조회 -->
         SELECT
-            ID,
-            ACCOUNT_ID,
-            GENDER,
-            HEIGHT,
-            WEIGHT,
-            BLOOD_TYPE,
-            ADDRESS_ID,
-            BIRTH_DATE,
-            FAMILY_RELATIONS
-          FROM USERS
-         WHERE 1=1
+        ID,
+        ACCOUNT_ID,
+        GENDER,
+        HEIGHT,
+        WEIGHT,
+        BLOOD_TYPE,
+        ADDRESS_ID,
+        BIRTH_DATE,
+        FAMILY_RELATIONS
+        FROM USERS
+        WHERE 1=1
         <if test="accountId != 0">
             AND account_id = #{accountId}
         </if>
@@ -42,22 +43,22 @@
             resultType="User">
         <!-- 유저 조회 리스트 -->
         SELECT
-            ID,
-            ACCOUNT_ID,
-            GENDER,
-            HEIGHT,
-            WEIGHT,
-            BLOOD_TYPE,
-            ADDRESS_ID,
-            BIRTH_DATE,
-            FAMILY_RELATIONS,
-            BIRTH_YEAR,
-            BIRTH_MONTH,
-            BIRTH_DAY
-          FROM USERS
-         WHERE 1=1
+        ID,
+        ACCOUNT_ID,
+        GENDER,
+        HEIGHT,
+        WEIGHT,
+        BLOOD_TYPE,
+        ADDRESS_ID,
+        BIRTH_DATE,
+        FAMILY_RELATIONS,
+        BIRTH_YEAR,
+        BIRTH_MONTH,
+        BIRTH_DAY
+        FROM USERS
+        WHERE 1=1
         <if test="accountId != 0">
-           AND account_id = #{accountId}
+            AND account_id = #{accountId}
         </if>
     </select>
 
@@ -90,8 +91,8 @@
             parameterType="User"
             resultType="int">
         SELECT count(1) userCnt
-          FROM USERS
-         WHERE ROWNUM = 1
+        FROM USERS
+        WHERE ROWNUM = 1
         <if test="accountId != 0">
             AND account_id = #{accountId}
         </if>

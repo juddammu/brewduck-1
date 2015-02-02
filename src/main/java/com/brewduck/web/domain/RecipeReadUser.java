@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * 레시피 조회한 사용자 목록, Value Object
- *
+ * <p/>
  * 신재근, 2014-02-27
  */
 public class RecipeReadUser implements Serializable {

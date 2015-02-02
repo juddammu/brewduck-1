@@ -15,7 +15,7 @@ import java.util.List;
  * 맥주 홉 DAO 구현체.
  * </pre>
  *
- * @author  chacha
+ * @author chacha
  * @version 1.0, 2014.02.16
  */
 @Repository("HopDao")

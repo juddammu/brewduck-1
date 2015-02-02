@@ -34,12 +34,12 @@ public class BoardDaoImpl implements BoardDao {
     private SqlSessionTemplate sqlSessionTemplate;
 
     @Override
-    public List<Board> selectBoard(Board board){
+    public List<Board> selectBoard(Board board) {
         return sqlSessionTemplate.selectList("Common.selectBoard", board);
     }
 
     @Override
-    public List<Board> selectBoardList(Board board){
+    public List<Board> selectBoardList(Board board) {
         return sqlSessionTemplate.selectList("Common.selectBoardList", board);
     }
 

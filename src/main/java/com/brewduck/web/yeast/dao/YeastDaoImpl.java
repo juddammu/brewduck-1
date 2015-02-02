@@ -62,5 +62,5 @@ public class YeastDaoImpl implements YeastDao {
     public Integer deleteYeast(Yeast yeast) {
         return sqlSession.update("Yeast.deleteYeast", yeast);
     }
-    
+
 }

@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 효모, Value Object
- *
+ * <p/>
  * 신재근, 2014-02-10
  */
 public class Yeast implements Serializable {
@@ -102,7 +102,7 @@ public class Yeast implements Serializable {
 
     public int cmtBbsId;
 
-    private  String brewer;
+    private String brewer;
 
     public Double getMaxAttenuation() {
         return maxAttenuation;
@@ -269,7 +269,7 @@ public class Yeast implements Serializable {
 
     /**
      * 효모 상품 ID
-     * 
+     *
      * @return 상품 ID
      */
     public String getProductId() {

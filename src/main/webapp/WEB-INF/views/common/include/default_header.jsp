@@ -1,10 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <head>
     <title>Welcome to Brewduck</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300" rel="stylesheet" type="text/css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300" rel="stylesheet"
+          type="text/css">
     <link rel="stylesheet" href="/resources/css/normalize.css"/>
     <link rel="stylesheet" href="/resources/css/jquery.sidr.light.css"/>
     <link rel="stylesheet" href="/resources/css/animate.min.css"/>

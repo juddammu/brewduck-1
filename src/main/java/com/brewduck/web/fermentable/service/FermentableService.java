@@ -35,6 +35,7 @@ public interface FermentableService {
      * @return 맥주 맥아 내용
      */
     public Fermentable countFermentableOrigin();
+
     /**
      * <pre>
      * 맥주 맥아 상세 조회.

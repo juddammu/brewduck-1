@@ -9,11 +9,7 @@
  */
 package com.brewduck.web.common.dao;
 
-import com.brewduck.web.domain.Board;
 import com.brewduck.web.domain.FileInfo;
-import org.springframework.dao.DataAccessException;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.

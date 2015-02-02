@@ -12,19 +12,28 @@ import java.io.Serializable;
  * 계정 정보
  */
 public class Account implements Serializable {
-    private static final long serialVersionUID = 1L;
-
     public static final GuestUser GUEST_USER = new GuestUser();
-
-    public static interface Login {}
-
-    public static interface Join {}
-
+    private static final long serialVersionUID = 1L;
     // UserId
     private int id;
-
     @NotNull(message = "may not be null")
     private String manufacturer;
+    @NotEmpty(message = "menu.color.converter", groups = {Join.class})
+    @Size(min = 2, max = 40, message = "이름은 2자에서 40자까지 입력하세요.", groups = {Join.class})
+    private String name;
+    @NotEmpty(message = "이메일은 필수 입력입니다.", groups = {Join.class, Login.class})
+    @Email(message = "올바른 이메일 형식이 아닙니다.", groups = {Join.class, Login.class})
+    @Size(min = 6, max = 100, message = "이메일은 6자에서 100자까지 입력 가능합니다.")
+    private String email;
+    private String reEmail;
+    @NotEmpty(message = "비밀번호는 필수 입력입니다.", groups = {Join.class, Login.class})
+    @Size(min = 6, max = 20, message = "비밀번호는 6자에서 20자까지 입력하세요.", groups = {Join.class, Login.class})
+    private String password;
+    private String rePassword;
+    // 권한
+    private String authority;
+    // 계정 활성화 (ENABLE / DISABLE)
+    private String activation;
 
     public Account() {
     }
@@ -40,36 +49,10 @@ public class Account implements Serializable {
         this.name = name;
     }
 
-
-    @NotEmpty(message = "menu.color.converter", groups = { Join.class })
-    @Size(min = 2, max = 40, message = "이름은 2자에서 40자까지 입력하세요.", groups = { Join.class })
-    private String name;
-
-    @NotEmpty(message = "이메일은 필수 입력입니다.", groups = { Join.class, Login.class })
-    @Email(message = "올바른 이메일 형식이 아닙니다.", groups = { Join.class, Login.class })
-    @Size(min = 6, max = 100, message = "이메일은 6자에서 100자까지 입력 가능합니다.")
-    private String email;
-
-    private String reEmail;
-
-    @NotEmpty(message = "비밀번호는 필수 입력입니다.", groups = { Join.class, Login.class })
-    @Size(min = 6, max = 20, message = "비밀번호는 6자에서 20자까지 입력하세요.", groups = { Join.class, Login.class })
-    private String password;
-
-    private String rePassword;
-
-    // 권한
-    private String authority;
-
-    // 계정 활성화 (ENABLE / DISABLE)
-    private String activation;
-
-
-
-
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -77,6 +60,7 @@ public class Account implements Serializable {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -84,6 +68,7 @@ public class Account implements Serializable {
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -91,6 +76,7 @@ public class Account implements Serializable {
     public String getReEmail() {
         return reEmail;
     }
+
     public void setReEmail(String reEmail) {
         this.reEmail = reEmail;
     }
@@ -98,6 +84,7 @@ public class Account implements Serializable {
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -105,6 +92,7 @@ public class Account implements Serializable {
     public String getRePassword() {
         return rePassword;
     }
+
     public void setRePassword(String rePassword) {
         this.rePassword = rePassword;
     }
@@ -112,6 +100,7 @@ public class Account implements Serializable {
     public String getAuthority() {
         return authority;
     }
+
     public void setAuthority(String authority) {
         this.authority = authority;
     }
@@ -119,6 +108,7 @@ public class Account implements Serializable {
     public String getActivation() {
         return activation;
     }
+
     public void setActivation(String activation) {
         this.activation = activation;
     }
@@ -132,9 +122,15 @@ public class Account implements Serializable {
         return false;
     }
 
+    public static interface Login {
+    }
+
+    public static interface Join {
+    }
+
     public static class GuestUser extends Account {
-        private GuestUser guestUser;
         private static final String GUEST = "GUEST";
+        private GuestUser guestUser;
 
         GuestUser() {
             guestUser = new GuestUser(0, GUEST, GUEST);

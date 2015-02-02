@@ -11,22 +11,21 @@ package com.brewduck.framework.exception;
 
 /**
  * @author bluepoet
- *
  */
 public class AuthenticationNotException extends Exception {
-	public AuthenticationNotException() {
-		super();
-	}
+    public AuthenticationNotException() {
+        super();
+    }
 
-	public AuthenticationNotException(String message, Throwable cause) {
-		super(message, cause);
-	}
+    public AuthenticationNotException(String message, Throwable cause) {
+        super(message, cause);
+    }
 
-	public AuthenticationNotException(String message) {
-		super(message);
-	}
+    public AuthenticationNotException(String message) {
+        super(message);
+    }
 
-	public AuthenticationNotException(Throwable cause) {
-		super(cause);
-	}
+    public AuthenticationNotException(Throwable cause) {
+        super(cause);
+    }
 }

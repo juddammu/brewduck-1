@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
-<%@ page import="com.brewduck.web.domain.Account" %>
 <div id="tm-header-top">
     <div class="tm-wrap tm-table">
         <div class="tm-logo">
@@ -29,8 +28,10 @@
         </nav>
         -->
         <div class="tm-search">
-            <form:form class="form-horizontal form-banded form-bordered" id="searchForm"  action="/search/" name="searchForm" modelAttribute="recipe"  method="post">
-                <input type="text" autocomplete="on" placeholder="검색어를 입력해보세요." name="name" class="tm-input">
+            <form:form class="form-horizontal form-banded form-bordered" id="searchForm"
+                       action="/search/" name="searchForm" modelAttribute="recipe" method="post">
+                <input type="text" autocomplete="on" placeholder="검색어를 입력해보세요." name="name"
+                       class="tm-input">
                 <button role="button" type="submit" class="tm-button">검색</button>
             </form:form>
         </div>

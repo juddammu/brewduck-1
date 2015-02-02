@@ -1,14 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!doctype html >
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
 <head>
     <!-- start:global -->
     <meta charset="utf-8">
@@ -19,9 +20,10 @@
     <!-- end:page title -->
 
     <!-- start:meta info -->
-    <meta name="description" content="BRWEDUCK - 세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다." />
-    <meta name="keywords" content="ale, beer, brewduck, Home Brewing, lager, SOMA, 곡주, 공방, 과실주, 라거, 맥주, 문화, 바이젠, 발효, 숙성, 양조, 에일, 옥수동, 옥토버페스트, 와인, 맥만동, 임세환, 제조, 주조, 증류주, 포도주, 프로젝트, 홈 브루잉, 효모" />
-    <meta name="Author" content="brewduck, http://www.brewduck.com, 맥주 대동여지도" />
+    <meta name="description" content="BRWEDUCK - 세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다."/>
+    <meta name="keywords"
+          content="ale, beer, brewduck, Home Brewing, lager, SOMA, 곡주, 공방, 과실주, 라거, 맥주, 문화, 바이젠, 발효, 숙성, 양조, 에일, 옥수동, 옥토버페스트, 와인, 맥만동, 임세환, 제조, 주조, 증류주, 포도주, 프로젝트, 홈 브루잉, 효모"/>
+    <meta name="Author" content="brewduck, http://www.brewduck.com, 맥주 대동여지도"/>
     <!-- end:meta info -->
 
     <!-- start:responsive web design -->
@@ -29,7 +31,8 @@
     <!-- end:responsive web design -->
 
     <!-- start:web fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,500italic,400italic,700,700italic%7CRoboto+Condensed:400,700%7CRoboto+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,500italic,400italic,700,700italic%7CRoboto+Condensed:400,700%7CRoboto+Slab'
+          rel='stylesheet' type='text/css'>
     <!-- end:web fonts -->
 
     <!-- start:stylesheets -->
@@ -65,7 +68,7 @@
     <!-- start:sidr -->
     <div id="sidr">
         <form id="search-form-mobile">
-            <input type="text" name="qsearch" placeholder="검색어를 입력해보세요." />
+            <input type="text" name="qsearch" placeholder="검색어를 입력해보세요."/>
         </form>
         <ul>
             <li class="cat-news">
@@ -189,7 +192,8 @@
         <!-- start:col -->
         <div class="col-xs-6">
             <!-- start:logo -->
-            <h1><a href="#"><img src="/resources/front/images/logo-white-mobile.png" alt="Weekly News" /></a></h1>
+            <h1><a href="#"><img src="/resources/front/images/logo-white-mobile.png"
+                                 alt="Weekly News"/></a></h1>
             <!-- end:logo -->
         </div>
         <!-- end:col -->
@@ -209,196 +213,231 @@
 <!-- start:page header -->
 <header id="page-header" class="hidden-xs">
 
-<!-- start:header-branding -->
-<div id="header-branding">
+    <!-- start:header-branding -->
+    <div id="header-branding">
 
-    <!-- start:container -->
-    <div class="container">
+        <!-- start:container -->
+        <div class="container">
 
-        <!-- start:row -->
-        <div class="row">
+            <!-- start:row -->
+            <div class="row">
 
-            <!-- start:col -->
-            <div class="col-sm-6 col-md-4">
-                <!-- start:logo -->
-                <h1><a href="/"><img src="/resources/front/images/logo-white.png" alt="브루덕 로고" /></a></h1>
-                <!-- end:logo -->
-            </div>
-            <!-- end:col -->
+                <!-- start:col -->
+                <div class="col-sm-6 col-md-4">
+                    <!-- start:logo -->
+                    <h1><a href="/"><img src="/resources/front/images/logo-white.png" alt="브루덕 로고"/></a>
+                    </h1>
+                    <!-- end:logo -->
+                </div>
+                <!-- end:col -->
 
-            <!-- start:col -->
-            <div class="col-sm-6 col-md-4 text-center">
+                <!-- start:col -->
+                <div class="col-sm-6 col-md-4 text-center">
 
-                <form id="search-form">
-                    <input type="text" name="qsearch" placeholder="검색어를 입력해보세요." />
-                    <button><span class="glyphicon glyphicon-search"></span></button>
-                </form>
+                    <form id="search-form">
+                        <input type="text" name="qsearch" placeholder="검색어를 입력해보세요."/>
+                        <button><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
 
-            </div>
-            <!-- end:col -->
+                </div>
+                <!-- end:col -->
 
-            <!-- start:col -->
-            <div class="visible-md visible-lg col-md-4 text-right">
+                <!-- start:col -->
+                <div class="visible-md visible-lg col-md-4 text-right">
 
-                <!--div class="weather">
-                    <i class="icon wi-day-cloudy"></i>
-                    <h3><span class="glyphicon glyphicon-map-marker"></span> LA, California <span class="temp">+12&deg; C</span></h3>
+                    <!--div class="weather">
+                        <i class="icon wi-day-cloudy"></i>
+                        <h3><span class="glyphicon glyphicon-map-marker"></span> LA, California <span class="temp">+12&deg; C</span></h3>
                     <span class="date">Thursday, 20.4.2014.</span>
                 </div-->
 
+                </div>
+                <!-- end:col -->
+
             </div>
-            <!-- end:col -->
+            <!-- end:row -->
 
         </div>
-        <!-- end:row -->
+        <!-- end:container -->
 
     </div>
-    <!-- end:container -->
+    <!-- end:header-branding -->
 
-</div>
-<!-- end:header-branding -->
+    <!-- start:header-navigation -->
+    <div id="header-navigation">
 
-<!-- start:header-navigation -->
-<div id="header-navigation">
+        <!-- start:container -->
+        <div class="container">
 
-<!-- start:container -->
-<div class="container">
+            <!-- start:menu -->
+            <nav id="menu">
+                <ul class="nav clearfix">
+                    <li class="home"><a href="/"><span class="glyphicon glyphicon-home"></span></a>
+                    </li>
 
-<!-- start:menu -->
-<nav id="menu">
-<ul class="nav clearfix">
-<li class="home"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li class="cat-news">
+                        <a href="#">뉴스</a>
+                        <!-- start:submenu-tech -->
+                        <!--div class="dropnav-container">
+                            <ul class="dropnav-menu">
+                                <li><a href="#">Gadgets</a></li>
+                                <li><a href="#">Mobile</a></li>
+                                <li><a href="#">Internet</a></li>
+                                <li><a href="#">Security</a></li>
+                                <li><a href="#">Technocast</a></li>
+                            </ul>
+                        </div-->
+                        <!-- end:submenu-tech -->
+                    </li>
+                    <li class="cat-tech">
+                        <a href="#">레시피</a>
+                        <!-- start:submenu-news -->
+                        <div class="subnav-container">
+                            <ul class="subnav-menu">
+                                <li class="current">
+                                    <a href="#">라거</a>
 
-<li class="cat-news">
-    <a href="#">뉴스</a>
-    <!-- start:submenu-tech -->
-    <!--div class="dropnav-container">
-        <ul class="dropnav-menu">
-            <li><a href="#">Gadgets</a></li>
-            <li><a href="#">Mobile</a></li>
-            <li><a href="#">Internet</a></li>
-            <li><a href="#">Security</a></li>
-            <li><a href="#">Technocast</a></li>
-        </ul>
-    </div-->
-    <!-- end:submenu-tech -->
-</li>
-<li class="cat-tech">
-<a href="#">레시피</a>
-<!-- start:submenu-news -->
-<div class="subnav-container">
-    <ul class="subnav-menu">
-        <li class="current">
-            <a href="#">라거</a>
-            <div class="subnav-posts">
-                <c:forEach items="${lagerMenuList}" var="lagerMenuList" varStatus="status">
-                <!-- start:article -->
-                <article>
-                    <a href="#"><img src="/resources/upload/${lagerMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
-                    <h3><a href="#">${lagerMenuList.name}</a></h3>
-                </article>
-                </c:forEach>
-            </div>
-        </li>
-        <li>
-            <a href="#">IPA/스트롱</a>
-            <div class="subnav-posts">
-                <c:forEach items="${ipaMenuList}" var="ipaMenuList" varStatus="status">
-                    <!-- start:article -->
-                    <article>
-                        <a href="#"><img src="/resources/upload/${ipaMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
-                        <h3><a href="#">${ipaMenuList.name}</a></h3>
-                    </article>
-                </c:forEach>
-            </div>
-        </li>
-        <li>
-            <a href="#">에일</a>
-            <div class="subnav-posts">
-                <c:forEach items="${paleMenuList}" var="paleMenuList" varStatus="status">
-                    <!-- start:article -->
-                    <article>
-                        <a href="#"><img src="/resources/upload/${paleMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
-                        <h3><a href="#">${paleMenuList.name}</a></h3>
-                    </article>
-                </c:forEach>
-            </div>
-        </li>
-        <li>
-            <a href="#">밀맥주</a>
-            <div class="subnav-posts">
-                <!-- start:article -->
-                <c:forEach items="${wheatMenuList}" var="wheatMenuList" varStatus="status">
-                    <!-- start:article -->
-                    <article>
-                        <a href="#"><img src="/resources/upload/${wheatMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
-                        <h3><a href="#">${wheatMenuList.name}</a></h3>
-                    </article>
-                </c:forEach>
-            </div>
-        </li>
-        <li>
-            <a href="#">포터/스타우트</a>
-            <div class="subnav-posts">
-                <c:forEach items="${porterMenuList}" var="porterMenuList" varStatus="status">
-                    <!-- start:article -->
-                    <article>
-                        <a href="#"><img src="/resources/upload/${porterMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
-                        <h3><a href="#">${porterMenuList.name}</a></h3>
-                    </article>
-                </c:forEach>
-            </div>
-        </li>
-        <li>
-            <a href="#">사우어</a>
-            <div class="subnav-posts">
-                <c:forEach items="${sourMenuList}" var="sourMenuList" varStatus="status">
-                    <!-- start:article -->
-                    <article>
-                        <a href="#"><img src="/resources/upload/${sourMenuList.atchCoverFileName}" width="190" height="140" alt="" /></a>
-                        <h3><a href="#">${sourMenuList.name}</a></h3>
-                    </article>
-                </c:forEach>
-            </div>
-        </li>
-    </ul>
-</div>
-<!-- end:submenu-news -->
-</li>
-<li class="cat-sports">
-<a href="/recipe/create">만들기</a>
-<!-- start:submenu-sports -->
-<!-- end:submenu-sports -->
-</li>
-<li class="cat-lifestyle">
-    <a href="#">자료실</a>
-    <!-- start:submenu-lifestyle -->
-    <div class="dropnav-container">
-        <ul class="dropnav-menu">
-            <li><a href="/style/">스타일 (BJCP)</a></li>
-            <li><a href="/fermentable/">발효재료 (Fermentable)</a></li>
-            <li><a href="/hop/">홉 (Hop)</a></li>
-            <li><a href="/yeast/">효모 (Yeast)</a></li>
-            <li><a href="/misc/">기타재료</a></li>
-        </ul>
+                                    <div class="subnav-posts">
+                                        <c:forEach items="${lagerMenuList}" var="lagerMenuList"
+                                                   varStatus="status">
+                                            <!-- start:article -->
+                                            <article>
+                                                <a href="#"><img
+                                                        src="/resources/upload/${lagerMenuList.atchCoverFileName}"
+                                                        width="190" height="140" alt=""/></a>
+
+                                                <h3><a href="#">${lagerMenuList.name}</a></h3>
+                                            </article>
+                                        </c:forEach>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">IPA/스트롱</a>
+
+                                    <div class="subnav-posts">
+                                        <c:forEach items="${ipaMenuList}" var="ipaMenuList"
+                                                   varStatus="status">
+                                            <!-- start:article -->
+                                            <article>
+                                                <a href="#"><img
+                                                        src="/resources/upload/${ipaMenuList.atchCoverFileName}"
+                                                        width="190" height="140" alt=""/></a>
+
+                                                <h3><a href="#">${ipaMenuList.name}</a></h3>
+                                            </article>
+                                        </c:forEach>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">에일</a>
+
+                                    <div class="subnav-posts">
+                                        <c:forEach items="${paleMenuList}" var="paleMenuList"
+                                                   varStatus="status">
+                                            <!-- start:article -->
+                                            <article>
+                                                <a href="#"><img
+                                                        src="/resources/upload/${paleMenuList.atchCoverFileName}"
+                                                        width="190" height="140" alt=""/></a>
+
+                                                <h3><a href="#">${paleMenuList.name}</a></h3>
+                                            </article>
+                                        </c:forEach>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">밀맥주</a>
+
+                                    <div class="subnav-posts">
+                                        <!-- start:article -->
+                                        <c:forEach items="${wheatMenuList}" var="wheatMenuList"
+                                                   varStatus="status">
+                                            <!-- start:article -->
+                                            <article>
+                                                <a href="#"><img
+                                                        src="/resources/upload/${wheatMenuList.atchCoverFileName}"
+                                                        width="190" height="140" alt=""/></a>
+
+                                                <h3><a href="#">${wheatMenuList.name}</a></h3>
+                                            </article>
+                                        </c:forEach>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">포터/스타우트</a>
+
+                                    <div class="subnav-posts">
+                                        <c:forEach items="${porterMenuList}" var="porterMenuList"
+                                                   varStatus="status">
+                                            <!-- start:article -->
+                                            <article>
+                                                <a href="#"><img
+                                                        src="/resources/upload/${porterMenuList.atchCoverFileName}"
+                                                        width="190" height="140" alt=""/></a>
+
+                                                <h3><a href="#">${porterMenuList.name}</a></h3>
+                                            </article>
+                                        </c:forEach>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">사우어</a>
+
+                                    <div class="subnav-posts">
+                                        <c:forEach items="${sourMenuList}" var="sourMenuList"
+                                                   varStatus="status">
+                                            <!-- start:article -->
+                                            <article>
+                                                <a href="#"><img
+                                                        src="/resources/upload/${sourMenuList.atchCoverFileName}"
+                                                        width="190" height="140" alt=""/></a>
+
+                                                <h3><a href="#">${sourMenuList.name}</a></h3>
+                                            </article>
+                                        </c:forEach>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end:submenu-news -->
+                    </li>
+                    <li class="cat-sports">
+                        <a href="/recipe/create">만들기</a>
+                        <!-- start:submenu-sports -->
+                        <!-- end:submenu-sports -->
+                    </li>
+                    <li class="cat-lifestyle">
+                        <a href="#">자료실</a>
+                        <!-- start:submenu-lifestyle -->
+                        <div class="dropnav-container">
+                            <ul class="dropnav-menu">
+                                <li><a href="/style/">스타일 (BJCP)</a></li>
+                                <li><a href="/fermentable/">발효재료 (Fermentable)</a></li>
+                                <li><a href="/hop/">홉 (Hop)</a></li>
+                                <li><a href="/yeast/">효모 (Yeast)</a></li>
+                                <li><a href="/misc/">기타재료</a></li>
+                            </ul>
+                        </div>
+                        <!-- end:submenu-lifestyle -->
+                    </li>
+                    <li class="cat-showtime">
+                        <a href="#">버그제보</a>
+                        <!-- start:submenu-showtime -->
+                        <!-- end:submenu-showtime -->
+                    </li>
+                    <li class="options"><a href="/account/login"><span
+                            class="glyphicon glyphicon-asterisk"></span> 로그인</a> | <a
+                            href="/account/signup"><span class="glyphicon glyphicon-pencil"></span>
+                        멤버 등록</a></li>
+                </ul>
+            </nav>
+            <!-- end:menu -->
+
+        </div>
+        <!-- end:container -->
+
     </div>
-    <!-- end:submenu-lifestyle -->
-</li>
-<li class="cat-showtime">
-<a href="#">버그제보</a>
-<!-- start:submenu-showtime -->
-<!-- end:submenu-showtime -->
-</li>
-<li class="options"><a href="/account/login"><span class="glyphicon glyphicon-asterisk"></span> 로그인</a> | <a href="/account/signup"><span class="glyphicon glyphicon-pencil"></span> 멤버 등록</a></li>
-</ul>
-</nav>
-<!-- end:menu -->
-
-</div>
-<!-- end:container -->
-
-</div>
-<!-- end:header-navigation -->
+    <!-- end:header-navigation -->
 
 </header>
 <!-- end:page header -->
@@ -412,16 +451,19 @@
 <!-- start:carousel -->
 <div id="slider-carousel">
 
-    <div class="row">
+<div class="row">
 
     <!-- start:col -->
     <div class="col-sm-8">
 
         <article class="linkbox large cat-news">
             <a href="#">
-                <img src="/resources/recipe/ballast-point-drink-it.jpg" width="819" height="452" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/recipe/ballast-point-drink-it.jpg" width="819" height="452"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h2>Ballast Point Clone 레시피 특집 </h2>
+
                     <p> 집에서 만들어볼까요?</p>
                 </div>
             </a>
@@ -436,17 +478,19 @@
     <div class="col-sm-4">
 
         <c:forEach items="${newRecipeList}" var="newRecipeList" varStatus="status">
-        <article class="linkbox cat-news">
-            <a href="#">
-                <img src="/resources/upload/${newRecipeList.atchCoverFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
-                <div class="overlay">
-                    <h3>${newRecipeList.name}</h3>
-                </div>
-            </a>
-            <a href="#" class="theme">
-                신규 레시피
-            </a>
-        </article>
+            <article class="linkbox cat-news">
+                <a href="#">
+                    <img src="/resources/upload/${newRecipeList.atchCoverFileName}" width="560"
+                         height="390" alt="Responsive image" class="img-responsive"/>
+
+                    <div class="overlay">
+                        <h3>${newRecipeList.name}</h3>
+                    </div>
+                </a>
+                <a href="#" class="theme">
+                    신규 레시피
+                </a>
+            </article>
         </c:forEach>
 
     </div>
@@ -458,9 +502,12 @@
     <div class="col-sm-8">
         <article class="linkbox large cat-sports">
             <a href="#">
-                <img src="/resources/recipe/ballast-point-drink-it.jpg" width="819" height="452" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/recipe/ballast-point-drink-it.jpg" width="819" height="452"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h2>Ballast Point Clone 레시피 특집 </h2>
+
                     <p> 집에서 만들어볼까요?</p>
                 </div>
             </a>
@@ -471,11 +518,13 @@
     </div>
 
     <!-- start:col -->
-        <div class="col-sm-4">
-            <c:forEach items="${new_post}" var="new_post" varStatus="status">
+    <div class="col-sm-4">
+        <c:forEach items="${new_post}" var="new_post" varStatus="status">
             <article class="linkbox cat-sports">
                 <a href="#">
-                    <img src="/resources/upload/${new_post.atchCoverFileName}" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/upload/${new_post.atchCoverFileName}" width="560"
+                         height="390" alt="Responsive image" class="img-responsive"/>
+
                     <div class="overlay">
                         <h3>${new_post.nttSj}</h3>
                     </div>
@@ -484,9 +533,9 @@
                     뉘우스
                 </a>
             </article>
-            </c:forEach>
-        </div>
-        <!-- end:col -->
+        </c:forEach>
+    </div>
+    <!-- end:col -->
 
 </div>
 <!-- end:row -->
@@ -499,10 +548,15 @@
 
         <article class="linkbox large cat-news">
             <a href="#">
-                <img src="/resources/front/images/dummy/819x452.jpg" width="819" height="452" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/819x452.jpg" width="819" height="452"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h2>Jimenez signing keeps O's in contention</h2>
-                    <p>The concern within the Baltimore Orioles’ organization, as the negotiations with Ubaldo Jimenez began percolating over the last 48 hours, was that the Boston Red Sox or Toronto Blue Jays would snag...</p>
+
+                    <p>The concern within the Baltimore Orioles’ organization, as the negotiations
+                        with Ubaldo Jimenez began percolating over the last 48 hours, was that the
+                        Boston Red Sox or Toronto Blue Jays would snag...</p>
                 </div>
             </a>
             <a href="#" class="theme">
@@ -517,7 +571,9 @@
 
         <article class="linkbox cat-news">
             <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Levy wins first European Tour title in China</h3>
                 </div>
@@ -529,7 +585,9 @@
 
         <article class="linkbox cat-news">
             <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Barkley and Shaq speak on on Donald Sterling</h3>
                 </div>
@@ -541,7 +599,9 @@
 
         <article class="linkbox cat-news">
             <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Ranking the top 100 prospects in the NFL draft</h3>
                 </div>
@@ -565,10 +625,15 @@
 
         <article class="linkbox large cat-showtime">
             <a href="#">
-                <img src="/resources/front/images/dummy/819x452.jpg" width="819" height="452" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/819x452.jpg" width="819" height="452"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h2>Jimenez signing keeps O's in contention</h2>
-                    <p>The concern within the Baltimore Orioles’ organization, as the negotiations with Ubaldo Jimenez began percolating over the last 48 hours, was that the Boston Red Sox or Toronto Blue Jays would snag...</p>
+
+                    <p>The concern within the Baltimore Orioles’ organization, as the negotiations
+                        with Ubaldo Jimenez began percolating over the last 48 hours, was that the
+                        Boston Red Sox or Toronto Blue Jays would snag...</p>
                 </div>
             </a>
             <a href="#" class="theme">
@@ -584,7 +649,9 @@
 
         <article class="linkbox cat-showtime">
             <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Levy wins first European Tour title in China</h3>
                 </div>
@@ -596,7 +663,9 @@
 
         <article class="linkbox cat-showtime">
             <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Barkley and Shaq speak on on Donald Sterling</h3>
                 </div>
@@ -608,7 +677,9 @@
 
         <article class="linkbox cat-showtime">
             <a href="#">
-                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/350x150.jpg" width="560" height="390"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Ranking the top 100 prospects in the NFL draft</h3>
                 </div>
@@ -656,7 +727,9 @@
 
 <article class="linkbox large cat-news">
     <a href="#">
-        <img src="/resources/front/images/dummy/560x390.jpg" width="560" height="390" alt="Responsive image" class="img-responsive" />
+        <img src="/resources/front/images/dummy/560x390.jpg" width="560" height="390"
+             alt="Responsive image" class="img-responsive"/>
+
         <div class="overlay">
             <h2>Budget drops lower benefits, adds $56 billion in spending</h2>
         </div>
@@ -673,7 +746,8 @@
         <!-- start:col -->
         <div class="col-sm-6">
             <div class="thumb-wrap relative">
-                <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160" alt="Responsive image" class="img-responsive" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/265x160.jpg" width="265"
+                                 height="160" alt="Responsive image" class="img-responsive"/></a>
                 <a href="#" class="theme">
                     Sport
                 </a>
@@ -701,7 +775,9 @@
         <!-- start:article.linkbox -->
         <article class="linkbox cat-sports">
             <a href="#">
-                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
@@ -718,7 +794,9 @@
         <!-- start:article.linkbox -->
         <article class="linkbox cat-sports">
             <a href="#">
-                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
@@ -740,7 +818,9 @@
         <!-- start:article.linkbox -->
         <article class="linkbox cat-sports">
             <a href="#">
-                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
@@ -757,7 +837,9 @@
         <!-- start:article.linkbox -->
         <article class="linkbox cat-sports">
             <a href="#">
-                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
@@ -779,7 +861,9 @@
         <!-- start:article.linkbox -->
         <article class="linkbox cat-sports">
             <a href="#">
-                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
@@ -796,7 +880,9 @@
         <!-- start:article.linkbox -->
         <article class="linkbox cat-sports">
             <a href="#">
-                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/265x160.jpg" width="265" height="160"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <div class="overlay">
                     <h3>Lorem ipsum dolor sit amet</h3>
                 </div>
@@ -910,7 +996,9 @@
 
             <article class="linkbox cat-showtime">
                 <a href="#">
-                    <img src="/resources/front/images/dummy/334x301.jpg" width="334" height="301" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/front/images/dummy/334x301.jpg" width="334" height="301"
+                         alt="Responsive image" class="img-responsive"/>
+
                     <div class="overlay">
                         <h2>A wonderful serenity has taken possession </h2>
                     </div>
@@ -928,7 +1016,9 @@
 
             <article class="linkbox cat-showtime">
                 <a href="#">
-                    <img src="/resources/front/images/dummy/270x165.jpg" width="274" height="150" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/front/images/dummy/270x165.jpg" width="274" height="150"
+                         alt="Responsive image" class="img-responsive"/>
+
                     <div class="overlay">
                         <h3>Budget drops lower benefits, adds $56 billion in spending</h3>
                     </div>
@@ -940,7 +1030,9 @@
 
             <article class="linkbox cat-showtime">
                 <a href="#">
-                    <img src="/resources/front/images/dummy/270x165.jpg" width="274" height="150" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/front/images/dummy/270x165.jpg" width="274" height="150"
+                         alt="Responsive image" class="img-responsive"/>
+
                     <div class="overlay">
                         <h3>Budget drops lower benefits, adds $56 billion in spending</h3>
                     </div>
@@ -974,9 +1066,12 @@
             <!-- start:article.linkbox -->
             <article class="review">
                 <a href="#">
-                    <img src="/resources/front/images/dummy/120x105.jpg" width="120" height="105" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/front/images/dummy/120x105.jpg" width="120" height="105"
+                         alt="Responsive image" class="img-responsive"/>
+
                     <h3>Aliquam sollicitudin enim sit hendrerit</h3>
                 </a>
+
                 <div class="review-rating">
                     <ul class="rating">
                         <li class="li-rated"></li>
@@ -996,9 +1091,12 @@
             <!-- start:article.linkbox -->
             <article class="review">
                 <a href="#">
-                    <img src="/resources/front/images/dummy/120x105.jpg" width="120" height="105" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/front/images/dummy/120x105.jpg" width="120" height="105"
+                         alt="Responsive image" class="img-responsive"/>
+
                     <h3>Maecenas in egestas ligula</h3>
                 </a>
+
                 <div class="review-rating">
                     <ul class="rating">
                         <li class="li-rated"></li>
@@ -1018,9 +1116,12 @@
             <!-- start:article.linkbox -->
             <article class="review">
                 <a href="#">
-                    <img src="/resources/front/images/dummy/120x105.jpg" width="120" height="105" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/front/images/dummy/120x105.jpg" width="120" height="105"
+                         alt="Responsive image" class="img-responsive"/>
+
                     <h3>Ligula eu feugiat lectus</h3>
                 </a>
+
                 <div class="review-rating">
                     <ul class="rating">
                         <li class="li-rated"></li>
@@ -1040,9 +1141,12 @@
             <!-- start:article.linkbox -->
             <article class="review">
                 <a href="#">
-                    <img src="/resources/front/images/dummy/120x105.jpg" width="120" height="105" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/front/images/dummy/120x105.jpg" width="120" height="105"
+                         alt="Responsive image" class="img-responsive"/>
+
                     <h3>Odio non volutpat pulvinar</h3>
                 </a>
+
                 <div class="review-rating">
                     <ul class="rating">
                         <li class="li-rated"></li>
@@ -1056,7 +1160,6 @@
             <!-- end:article.linkbox -->
         </div>
         <!-- end:col -->
-
 
 
     </div>
@@ -1079,7 +1182,8 @@
             <!-- start:article -->
             <article class="clearfix">
                 <h3><a href="#">Maecenas in egestas ligula, eu feugiat</a></h3>
-                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100" height="80" alt="" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100"
+                                 height="80" alt=""/></a>
                 <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                 <span class="published">February 18, 2014</span>
             </article>
@@ -1088,7 +1192,8 @@
             <!-- start:article -->
             <article class="clearfix">
                 <h3><a href="#">Maecenas in egestas ligula, eu feugiat</a></h3>
-                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100" height="80" alt="" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100"
+                                 height="80" alt=""/></a>
                 <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                 <span class="published">February 18, 2014</span>
             </article>
@@ -1097,7 +1202,8 @@
             <!-- start:article -->
             <article class="clearfix">
                 <h3><a href="#">Maecenas in egestas ligula, eu feugiat</a></h3>
-                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100" height="80" alt="" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100"
+                                 height="80" alt=""/></a>
                 <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                 <span class="published">February 18, 2014</span>
             </article>
@@ -1106,7 +1212,8 @@
             <!-- start:article -->
             <article class="clearfix">
                 <h3><a href="#">Maecenas in egestas ligula, eu feugiat</a></h3>
-                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100" height="80" alt="" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100"
+                                 height="80" alt=""/></a>
                 <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                 <span class="published">February 18, 2014</span>
             </article>
@@ -1131,7 +1238,8 @@
             <!-- start:article -->
             <article class="clearfix">
                 <h3><a href="#">Maecenas in egestas ligula, eu feugiat</a></h3>
-                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100" height="80" alt="" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100"
+                                 height="80" alt=""/></a>
                 <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                 <span class="published">February 18, 2014</span>
             </article>
@@ -1140,7 +1248,8 @@
             <!-- start:article -->
             <article class="clearfix">
                 <h3><a href="#">Maecenas in egestas ligula, eu feugiat</a></h3>
-                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100" height="80" alt="" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100"
+                                 height="80" alt=""/></a>
                 <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                 <span class="published">February 18, 2014</span>
             </article>
@@ -1149,7 +1258,8 @@
             <!-- start:article -->
             <article class="clearfix">
                 <h3><a href="#">Maecenas in egestas ligula, eu feugiat</a></h3>
-                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100" height="80" alt="" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100"
+                                 height="80" alt=""/></a>
                 <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                 <span class="published">February 18, 2014</span>
             </article>
@@ -1158,7 +1268,8 @@
             <!-- start:article -->
             <article class="clearfix">
                 <h3><a href="#">Maecenas in egestas ligula, eu feugiat</a></h3>
-                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100" height="80" alt="" /></a>
+                <a href="#"><img src="/resources/front/images/dummy/100x80.jpg" width="100"
+                                 height="80" alt=""/></a>
                 <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                 <span class="published">February 18, 2014</span>
             </article>
@@ -1194,7 +1305,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1206,7 +1318,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1218,7 +1331,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1230,7 +1344,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1242,7 +1357,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1254,7 +1370,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1266,7 +1383,8 @@
     </section>
     <!-- end:latest-news -->
     <div class="ad">
-        <a href=""><img src="/resources/front/images/dummy/banner_160x600.png" width="160" height="600" alt="" /></a>
+        <a href=""><img src="/resources/front/images/dummy/banner_160x600.png" width="160"
+                        height="600" alt=""/></a>
     </div>
 
     <!-- start:latest-news -->
@@ -1284,7 +1402,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1296,7 +1415,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1308,7 +1428,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1320,7 +1441,8 @@
             <div class="col-xs-4 col-sm-12">
                 <!-- start:article -->
                 <article>
-                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a></h3>
+                    <h3><a href="#">A wonderful serenity has taken possession of my entire soul</a>
+                    </h3>
                     <span class="text">Sed tempor, odio non volutpat pulvinar, est libero congue lorem...</span>
                     <span class="published">February 18, 2014</span>
                 </article>
@@ -1344,9 +1466,12 @@
 
         <article class="review">
             <a href="#">
-                <img src="/resources/front/images/dummy/170x150.jpg" width="170" height="150" alt="Responsive image" class="img-responsive" />
+                <img src="/resources/front/images/dummy/170x150.jpg" width="170" height="150"
+                     alt="Responsive image" class="img-responsive"/>
+
                 <h3>Aliquam sollicitudin enim sit hendrerit</h3>
             </a>
+
             <div class="review-rating">
                 <ul class="rating">
                     <li class="li-rated"></li>
@@ -1376,7 +1501,8 @@
 
 <!-- start:advertising -->
 <div class="ad">
-    <a href=""><img src="/resources/front/images/dummy/banner_300x250.png" width="300" height="250" alt=""></a>
+    <a href=""><img src="/resources/front/images/dummy/banner_300x250.png" width="300" height="250"
+                    alt=""></a>
 </div>
 <!-- end:advertising -->
 
@@ -1394,50 +1520,65 @@
         <article>
             <span class="published">Today</span>
             <span class="published-time">15:00</span>
+
             <div class="cnt">
                 <i class="bullet bullet-sports"></i>
                 <span class="category cat-sports"><a href="#">Sport</a></span>
-                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+
+                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has
+                    taken possession</a></h3>
             </div>
         </article>
 
         <article>
             <span class="published">Yesterday</span>
             <span class="published-time">15:00</span>
+
             <div class="cnt">
                 <i class="bullet bullet-showtime"></i>
                 <span class="category cat-showtime"><a href="#">Showtime</a></span>
-                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+
+                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has
+                    taken possession</a></h3>
             </div>
         </article>
 
         <article>
             <span class="published">Feb 18th</span>
             <span class="published-time">15:00</span>
+
             <div class="cnt">
                 <i class="bullet bullet-lifestyle"></i>
                 <span class="category cat-lifestyle"><a href="#">Lifestyle</a></span>
-                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+
+                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has
+                    taken possession</a></h3>
             </div>
         </article>
 
         <article>
             <span class="published">Feb 15th</span>
             <span class="published-time">15:00</span>
+
             <div class="cnt">
                 <i class="bullet bullet-business"></i>
                 <span class="category cat-business"><a href="#">Business</a></span>
-                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+
+                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has
+                    taken possession</a></h3>
             </div>
         </article>
 
         <article>
             <span class="published">Feb 10th</span>
             <span class="published-time">15:00</span>
+
             <div class="cnt">
                 <i class="bullet bullet-tech"></i>
                 <span class="category cat-tech"><a href="#">Tech</a></span>
-                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+
+                <h3><a href="#">A wonderful serenity has taken possession of my entire soul has
+                    taken possession</a></h3>
             </div>
         </article>
     </div>
@@ -1459,7 +1600,7 @@
     <blockquote>
         <p>${hop.shortKoreanNotes}</p>
         <footer>
-                <cite title="Source Title">${hop.originKorean}</cite>
+            <cite title="Source Title">${hop.originKorean}</cite>
         </footer>
     </blockquote>
     <!-- end:blockquote-quote -->
@@ -1520,30 +1661,43 @@
     <div class="article-container">
         <!-- start:article -->
         <article class="clearfix">
-            <a href="#"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80" alt="" /></a>
+            <a href="#"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100"
+                             height="80" alt=""/></a>
             <span class="published">Feb 18, 2014 <span class="category cat-sports"><a href="#">Sports</a></span></span>
-            <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+
+            <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken
+                possession</a></h3>
         </article>
         <!-- end:article -->
         <!-- start:article -->
         <article class="clearfix">
-            <a href="#"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80" alt="" /></a>
-            <span class="published">Feb 18, 2014 <span class="category cat-news"><a href="#">News</a></span></span>
-            <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+            <a href="#"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100"
+                             height="80" alt=""/></a>
+            <span class="published">Feb 18, 2014 <span class="category cat-news"><a
+                    href="#">News</a></span></span>
+
+            <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken
+                possession</a></h3>
         </article>
         <!-- end:article -->
         <!-- start:article -->
         <article class="clearfix">
-            <a href="#"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80" alt="" /></a>
+            <a href="#"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100"
+                             height="80" alt=""/></a>
             <span class="published">Feb 18, 2014 <span class="category cat-lifestyle"><a href="#">Lifestyle</a></span></span>
-            <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+
+            <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken
+                possession</a></h3>
         </article>
         <!-- end:article -->
         <!-- start:article -->
         <article class="clearfix">
-            <a href="#"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80" alt="" /></a>
+            <a href="#"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100"
+                             height="80" alt=""/></a>
             <span class="published">Feb 18, 2014 <span class="category cat-showtime"><a href="#">Showtime</a></span></span>
-            <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken possession</a></h3>
+
+            <h3><a href="#">A wonderful serenity has taken possession of my entire soul has taken
+                possession</a></h3>
         </article>
         <!-- end:article -->
     </div>
@@ -1553,7 +1707,8 @@
 
 <!-- start:advertising -->
 <div class="ad ad-separator">
-    <a href=""><img src="/resources/front/images/dummy/banner_300x250.png" width="300" height="250" alt=""></a>
+    <a href=""><img src="/resources/front/images/dummy/banner_300x250.png" width="300" height="250"
+                    alt=""></a>
 </div>
 <!-- end:advertising -->
 
@@ -1571,9 +1726,11 @@
         <div class="row">
             <!-- start:article -->
             <article class="clearfix">
-                <p>Aliquam sollicitudin, enim sit amet hendrerit consequat, velit orci posuere elit, eu facilisis lacus odio ac nunc. </p>
+                <p>Aliquam sollicitudin, enim sit amet hendrerit consequat, velit orci posuere elit,
+                    eu facilisis lacus odio ac nunc. </p>
                 <a href="/resources/front/images/dummy/photo-big.jpg">
-                    <img src="/resources/front/images/dummy/300x200.jpg" width="300" height="200" alt="Responsive image" class="img-responsive" />
+                    <img src="/resources/front/images/dummy/300x200.jpg" width="300" height="200"
+                         alt="Responsive image" class="img-responsive"/>
                 </a>
             </article>
             <!-- end:article -->
@@ -1586,7 +1743,9 @@
             <div class="col-xs-4">
                 <!-- start:article -->
                 <article class="clearfix">
-                    <a href="/resources/front/images/dummy/photo-big.jpg"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80" alt="Responsive image" class="img-responsive" /></a>
+                    <a href="/resources/front/images/dummy/photo-big.jpg"><img
+                            src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80"
+                            alt="Responsive image" class="img-responsive"/></a>
                 </article>
                 <!-- end:article -->
             </div>
@@ -1595,7 +1754,9 @@
             <div class="col-xs-4">
                 <!-- start:article -->
                 <article class="clearfix">
-                    <a href="/resources/front/images/dummy/photo-big.jpg"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80" alt="Responsive image" class="img-responsive" /></a>
+                    <a href="/resources/front/images/dummy/photo-big.jpg"><img
+                            src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80"
+                            alt="Responsive image" class="img-responsive"/></a>
                 </article>
                 <!-- end:article -->
             </div>
@@ -1604,7 +1765,9 @@
             <div class="col-xs-4">
                 <!-- start:article -->
                 <article class="clearfix">
-                    <a href="/resources/front/images/dummy/photo-big.jpg"><img src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80" alt="Responsive image" class="img-responsive" /></a>
+                    <a href="/resources/front/images/dummy/photo-big.jpg"><img
+                            src="/resources/front/images/dummy/100x80_2.jpg" width="100" height="80"
+                            alt="Responsive image" class="img-responsive"/></a>
                 </article>
                 <!-- end:article -->
             </div>
@@ -1634,7 +1797,8 @@
 
         <nav id="foot-menu" class="hidden-xs">
             <ul class="clearfix">
-                <li class="home current"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="home current"><a href="#"><span class="glyphicon glyphicon-home"></span></a>
+                </li>
                 <li class="cat-news"><a href="#">News</a></li>
                 <li class="cat-sports"><a href="#">Sports</a></li>
                 <li class="cat-lifestyle"><a href="#">Lifestyle</a></li>
@@ -1642,7 +1806,8 @@
                 <li class="cat-tech"><a href="#">Tech</a></li>
                 <li class="cat-business"><a href="#">Business</a></li>
                 <li class="cat-extra"><a href="#">Extra +</a></li>
-                <li class="options"><a href="#" class="scrollToTop">Back to top <span class="glyphicon glyphicon-chevron-up"></span></a></li>
+                <li class="options"><a href="#" class="scrollToTop">Back to top <span
+                        class="glyphicon glyphicon-chevron-up"></span></a></li>
             </ul>
         </nav>
 
@@ -1651,17 +1816,20 @@
 
             <!-- start:col -->
             <div class="col-sm-12 col-md-3">
-                <h3><a href="#"><img src="/resources/front/images/logo-black.png" alt="Weekly News" /></a></h3>
+                <h3><a href="#"><img src="/resources/front/images/logo-black.png"
+                                     alt="Weekly News"/></a></h3>
             </div>
             <!-- end:col -->
 
             <!-- start:col -->
             <div class="col-sm-6 col-md-5">
                 <h4>브루덕 프로젝트</h4>
+
                 <p>단순히 맥주를 좋아하다가 시작한 브루덕 프로젝트. </br>
-                맥주에 관련된 소박한 일상을 담고 싶습니다.
+                    맥주에 관련된 소박한 일상을 담고 싶습니다.
                 </p>
-                <a href="https://www.facebook.com/brewduck"><i class="fa fa-facebook-square fa-lg"></i></a>
+                <a href="https://www.facebook.com/brewduck"><i
+                        class="fa fa-facebook-square fa-lg"></i></a>
                 <!--a href="#"><i class="fa fa-linkedin-square fa-lg"></i></a>
                 <a href="#"><i class="fa fa-google-plus-square fa-lg"></i></a>
                 <a href="#"><i class="fa fa-vimeo-square fa-lg"></i></a>

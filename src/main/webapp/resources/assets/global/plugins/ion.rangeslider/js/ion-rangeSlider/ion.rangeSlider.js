@@ -53,23 +53,22 @@
             // irs = ion range slider css prefix
             var baseHTML =
                 '<span class="irs">' +
-                '<span class="irs-line"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span>' +
-                '<span class="irs-min">0</span><span class="irs-max">1</span>' +
-                '<span class="irs-from">0</span><span class="irs-to">0</span><span class="irs-single">0</span>' +
-                '</span>' +
-                '<span class="irs-grid"></span>';
+                    '<span class="irs-line"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span>' +
+                    '<span class="irs-min">0</span><span class="irs-max">1</span>' +
+                    '<span class="irs-from">0</span><span class="irs-to">0</span><span class="irs-single">0</span>' +
+                    '</span>' +
+                    '<span class="irs-grid"></span>';
 
             var singleHTML =
                 '<span class="irs-slider single"></span>';
 
             var doubleHTML =
                 '<span class="irs-diapason"></span>' +
-                '<span class="irs-slider from"></span>' +
-                '<span class="irs-slider to"></span>';
+                    '<span class="irs-slider from"></span>' +
+                    '<span class="irs-slider to"></span>';
 
             var disableHTML =
                 '<span class="irs-disable-mask"></span>';
-
 
 
             return this.each(function () {
@@ -96,7 +95,6 @@
                 }, options);
 
 
-
                 var slider = $(this),
                     self = this,
                     allow_values = false,
@@ -109,7 +107,6 @@
 
                 plugin_count += 1;
                 this.plugin_count = plugin_count;
-
 
 
                 // check default values
@@ -176,7 +173,6 @@
                 }
 
 
-
                 // extend from data-*
                 if (typeof slider.data("min") === "number") {
                     settings.min = parseFloat(slider.data("min"));
@@ -228,7 +224,6 @@
                 }
 
 
-
                 // Set Min and Max if no
                 settings.min = testNumber(settings.min);
                 if (!settings.min && settings.min !== 0) {
@@ -241,7 +236,6 @@
                 }
 
 
-
                 // Set values
                 if (Object.prototype.toString.call(settings.values) !== "[object Array]") {
                     settings.values = null;
@@ -252,7 +246,6 @@
                     settings.step = 1;
                     allow_values = true;
                 }
-
 
 
                 // Set From and To if no
@@ -272,7 +265,6 @@
                 if (!settings.step) {
                     settings.step = 1;
                 }
-
 
 
                 // fix diapason
@@ -353,7 +345,6 @@
                 }
 
 
-
                 // public methods
                 this.updateData = function (options) {
                     $.extend(settings, options);
@@ -369,9 +360,6 @@
                     slider.data("isActive", false);
                     slider.show();
                 };
-
-
-
 
 
                 // private methods
@@ -884,15 +872,15 @@
                         if (allow_values) {
                             _single =
                                 settings.prefix +
-                                settings.values[numbers.fromNumber] +
-                                maxPostfix +
-                                settings.postfix;
+                                    settings.values[numbers.fromNumber] +
+                                    maxPostfix +
+                                    settings.postfix;
                         } else {
                             _single =
                                 settings.prefix +
-                                prettify(numbers.fromNumber) +
-                                maxPostfix +
-                                settings.postfix;
+                                    prettify(numbers.fromNumber) +
+                                    maxPostfix +
+                                    settings.postfix;
                         }
 
                         $fieldSingle.html(_single);
@@ -940,56 +928,56 @@
                         if (allow_values) {
                             _from =
                                 settings.prefix +
-                                settings.values[numbers.fromNumber] +
-                                settings.postfix;
+                                    settings.values[numbers.fromNumber] +
+                                    settings.postfix;
 
                             _to =
                                 settings.prefix +
-                                settings.values[numbers.toNumber] +
-                                maxPostfix +
-                                settings.postfix;
+                                    settings.values[numbers.toNumber] +
+                                    maxPostfix +
+                                    settings.postfix;
 
                             if (numbers.fromNumber !== numbers.toNumber) {
                                 _single =
                                     settings.prefix +
-                                    settings.values[numbers.fromNumber] +
-                                    " — " + settings.prefix +
-                                    settings.values[numbers.toNumber] +
-                                    maxPostfix +
-                                    settings.postfix;
+                                        settings.values[numbers.fromNumber] +
+                                        " — " + settings.prefix +
+                                        settings.values[numbers.toNumber] +
+                                        maxPostfix +
+                                        settings.postfix;
                             } else {
                                 _single =
                                     settings.prefix +
-                                    settings.values[numbers.fromNumber] +
-                                    maxPostfix +
-                                    settings.postfix;
+                                        settings.values[numbers.fromNumber] +
+                                        maxPostfix +
+                                        settings.postfix;
                             }
                         } else {
                             _from =
                                 settings.prefix +
-                                prettify(numbers.fromNumber) +
-                                settings.postfix;
+                                    prettify(numbers.fromNumber) +
+                                    settings.postfix;
 
                             _to =
                                 settings.prefix +
-                                prettify(numbers.toNumber) +
-                                maxPostfix +
-                                settings.postfix;
+                                    prettify(numbers.toNumber) +
+                                    maxPostfix +
+                                    settings.postfix;
 
                             if (numbers.fromNumber !== numbers.toNumber) {
                                 _single =
                                     settings.prefix +
-                                    prettify(numbers.fromNumber) +
-                                    " — " + settings.prefix +
-                                    prettify(numbers.toNumber) +
-                                    maxPostfix +
-                                    settings.postfix;
+                                        prettify(numbers.fromNumber) +
+                                        " — " + settings.prefix +
+                                        prettify(numbers.toNumber) +
+                                        maxPostfix +
+                                        settings.postfix;
                             } else {
                                 _single =
                                     settings.prefix +
-                                    prettify(numbers.fromNumber) +
-                                    maxPostfix +
-                                    settings.postfix;
+                                        prettify(numbers.fromNumber) +
+                                        maxPostfix +
+                                        settings.postfix;
                             }
                         }
 
@@ -1093,7 +1081,6 @@
                         cont_width = normalWidth - (settings.gridMargin * 2);
 
 
-
                     for (i = 0; i <= smNum; i += 1) {
                         step = Math.floor(cont_width / smNum * i);
 
@@ -1151,7 +1138,6 @@
                 };
 
 
-
                 // Disable state
                 var setMask = function () {
                     $container.addClass("irs-disabled");
@@ -1162,7 +1148,6 @@
                     $container.removeClass("irs-disabled");
                     $container.find(".irs-disable-mask").remove();
                 };
-
 
 
                 placeHTML();

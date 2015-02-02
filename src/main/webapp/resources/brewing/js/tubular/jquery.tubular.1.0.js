@@ -1,27 +1,28 @@
 /* jQuery tubular plugin
-|* by Sean McCambridge
-|* http://www.seanmccambridge.com/tubular
-|* version: 1.0
-|* updated: October 1, 2012
-|* since 2010
-|* licensed under the MIT License
-|* Enjoy.
-|* 
-|* Thanks,
-|* Sean */
+ |* by Sean McCambridge
+ |* http://www.seanmccambridge.com/tubular
+ |* version: 1.0
+ |* updated: October 1, 2012
+ |* since 2010
+ |* licensed under the MIT License
+ |* Enjoy.
+ |*
+ |* Thanks,
+ |* Sean */
 
-;(function ($, window) {
+;
+(function ($, window) {
 
     // test for feature support and return if failure
-    
+
     // defaults
     var defaults = {
-        ratio: 16/9, // usually either 4/3 or 16/9 -- tweak as needed
+        ratio: 16 / 9, // usually either 4/3 or 16/9 -- tweak as needed
         videoId: 'RT4PrdJ0Wi0', // toy robot in space is a good default, no?
         mute: false,
         repeat: true,
         width: $(window).width(),
-        wrapperZIndex:0,
+        wrapperZIndex: 0,
         playButtonClass: 'tubular-play',
         pauseButtonClass: 'tubular-pause',
         muteButtonClass: 'tubular-mute',
@@ -33,10 +34,10 @@
 
     // methods
 
-    var tubular = function(node, options) { // should be called on the wrapper div
+    var tubular = function (node, options) { // should be called on the wrapper div
         var options = $.extend({}, defaults, options),
             $body = $('body') // cache body node
-            $node = $(node); // cache wrapper node
+        $node = $(node); // cache wrapper node
 
         // build container
         var tubularContainer = '<div id="tubular-container" style="overflow: hidden; position: fixed; top:0; left:0; z-index:0; width: 100%; height: 100%"><div id="tubular-player" style="position: absolute"></div></div><div id="tubular-shield" style="width: 100%; height: 100%; z-index: 0; position: absolute; left: 0; top: 0;"></div>';
@@ -48,7 +49,7 @@
 
         // set up iframe player, use global scope so YT api can talk
         window.player;
-        window.onYouTubeIframeAPIReady = function() {
+        window.onYouTubeIframeAPIReady = function () {
             player = new YT.Player('tubular-player', {
                 width: options.width,
                 height: Math.ceil(options.width / options.ratio),
@@ -66,21 +67,21 @@
             });
         }
 
-        window.onPlayerReady = function(e) {
+        window.onPlayerReady = function (e) {
             resize();
             if (options.mute) e.target.mute();
             e.target.seekTo(options.start);
             e.target.playVideo();
         }
 
-        window.onPlayerStateChange = function(state) {
+        window.onPlayerStateChange = function (state) {
             if (state.data === 0 && options.repeat) { // video ended and repeat option is set true
                 player.seekTo(options.start); // restart
             }
         }
 
         // resize handler updates width, height and offset of player after resize/init
-        var resize = function() {
+        var resize = function () {
             var width = $(window).width(),
                 pWidth, // player width, to be defined
                 height = $(window).height(),
@@ -100,25 +101,25 @@
         }
 
         // events
-        $(window).on('resize.tubular', function() {
+        $(window).on('resize.tubular', function () {
             resize();
         })
 
-        $('body').on('click','.' + options.playButtonClass, function(e) { // play button
+        $('body').on('click', '.' + options.playButtonClass,function (e) { // play button
             e.preventDefault();
             player.playVideo();
-        }).on('click', '.' + options.pauseButtonClass, function(e) { // pause button
+        }).on('click', '.' + options.pauseButtonClass,function (e) { // pause button
             e.preventDefault();
             player.pauseVideo();
-        }).on('click', '.' + options.muteButtonClass, function(e) { // mute button
+        }).on('click', '.' + options.muteButtonClass,function (e) { // mute button
             e.preventDefault();
             (player.isMuted()) ? player.unMute() : player.mute();
-        }).on('click', '.' + options.volumeDownClass, function(e) { // volume down button
+        }).on('click', '.' + options.volumeDownClass,function (e) { // volume down button
             e.preventDefault();
             var currentVolume = player.getVolume();
             if (currentVolume < options.increaseVolumeBy) currentVolume = options.increaseVolumeBy;
             player.setVolume(currentVolume - options.increaseVolumeBy);
-        }).on('click', '.' + options.volumeUpClass, function(e) { // volume up button
+        }).on('click', '.' + options.volumeUpClass, function (e) { // volume up button
             e.preventDefault();
             if (player.isMuted()) player.unMute(); // if mute is on, unmute
             var currentVolume = player.getVolume();
@@ -139,8 +140,8 @@
     $.fn.tubular = function (options) {
         return this.each(function () {
             if (!$.data(this, 'tubular_instantiated')) { // let's only run one
-                $.data(this, 'tubular_instantiated', 
-                tubular(this, options));
+                $.data(this, 'tubular_instantiated',
+                    tubular(this, options));
             }
         });
     }

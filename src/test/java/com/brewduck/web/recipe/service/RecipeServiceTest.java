@@ -59,7 +59,7 @@ public class RecipeServiceTest {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         style = new Style();
         recipe = new Recipe();
         listSize = 77;
@@ -68,7 +68,7 @@ public class RecipeServiceTest {
     /**
      * 기본 수행 테스트
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     @Ignore
     public void selectRecipeList() {
         List<Recipe> selectRecipeList = recipeDao.selectRecipeList(recipe);

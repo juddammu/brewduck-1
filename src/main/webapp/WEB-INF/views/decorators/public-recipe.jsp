@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><decorator:title /> | BREWDUCK - 맥주의 모든것</title>
+    <title><decorator:title/> | BREWDUCK - 맥주의 모든것</title>
     <%@ include file="/WEB-INF/views/common/include/home_header.jsp" %>
 </head>
 <body class="woocommerce woocommerce-page">
@@ -11,7 +11,7 @@
     <%@ include file="/WEB-INF/views/common/include/home_top_menu.jsp" %>
     <!--tm-header-nav-->
 </header>
-<decorator:body />
+<decorator:body/>
 <!--tm-page-body-default-box-->
 <footer>
     <div class="tm-wrap tm-table">
@@ -49,8 +49,10 @@
 <script type="text/javascript" src="/resources/front/3rd/jquery/jquery-validate.js"></script>
 <script type="text/javascript" src="/resources/front/3rd/pretty-photo/pretty-photo.js"></script>
 <script type="text/javascript" src="/resources/front/3rd/layerslider/js/greensock.js"></script>
-<script type="text/javascript" src="/resources/front/3rd/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
-<script type="text/javascript" src="/resources/front/3rd/layerslider/js/layerslider.transitions.js"></script>
+<script type="text/javascript"
+        src="/resources/front/3rd/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+<script type="text/javascript"
+        src="/resources/front/3rd/layerslider/js/layerslider.transitions.js"></script>
 <script type="text/javascript" src="/resources/front/js/theme.js"></script>
 </body>
 </html>

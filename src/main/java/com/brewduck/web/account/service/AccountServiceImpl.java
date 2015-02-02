@@ -51,7 +51,7 @@ public class AccountServiceImpl implements AccountService {
         }
 
         Account accountByEmail = new Account();
-        accountByEmail.setEmail( authentication.getName() );
+        accountByEmail.setEmail(authentication.getName());
 
         Account account = this.selectAccount(accountByEmail);
         return account.getId();
@@ -79,9 +79,9 @@ public class AccountServiceImpl implements AccountService {
             if (insertCount > 0) {
                 try {
                     authKey = SimpleCrypto.encrypt(
-                                    SimpleCrypto.seed,
-                                    String.valueOf(account.getId())
-                                );
+                        SimpleCrypto.seed,
+                        String.valueOf(account.getId())
+                    );
                     LOGGER.info("가입 인증키 : " + authKey);
                 } catch (Exception e) {
                     throw new RuntimeException("이메일 인증키 암호화하는 도중에 오류가 발생하였습니다.", e);
@@ -90,13 +90,13 @@ public class AccountServiceImpl implements AccountService {
                 if (authKey != null) {
                     MailService mailService = new MailService();
                     result = mailService.sendMail(
-                                    account.getEmail(),
-                                    "[브루덕] 회원 가입을 축하드립니다.",
-                                    authKey
-                                );
+                        account.getEmail(),
+                        "[브루덕] 회원 가입을 축하드립니다.",
+                        authKey
+                    );
 
                     // 이메일 전송이 실패되면 회원 가입 롤백
-                    if ( ! result ) {
+                    if (!result) {
                         throw new RuntimeException("이메일 발송 실패하였습니다.");
                     }
                 }
@@ -105,8 +105,7 @@ public class AccountServiceImpl implements AccountService {
         // 동일한 이메일이 존재하는지 체크
         else if (currentAccount.getEmail().equalsIgnoreCase(account.getEmail())) {
             return duplicateEmail;
-        }
-        else {
+        } else {
             LOGGER.info("회원 가입 처리");
         }
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 당화(매쉬), Value Object
- *
+ * <p/>
  * 신재근, 2014-02-27
  */
 public class Mash implements Serializable {
@@ -60,7 +60,6 @@ public class Mash implements Serializable {
     private Boolean updateFlag;
     // 삭제 성공 여부
     private Boolean deleteFlag;
-
 
 
     /**

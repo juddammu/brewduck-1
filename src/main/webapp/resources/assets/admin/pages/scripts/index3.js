@@ -1,13 +1,13 @@
-var Index = function() {
+var Index = function () {
 
     var dashboardMainChart = null;
 
     return {
 
         //main function
-        init: function() {
-            Metronic.addResizeHandler(function() {
-                jQuery('.vmaps').each(function() {
+        init: function () {
+            Metronic.addResizeHandler(function () {
+                jQuery('.vmaps').each(function () {
                     var map = jQuery(this);
                     map.width(map.parent().width());
                 });
@@ -18,17 +18,17 @@ var Index = function() {
             Index.initJQVMAP();
         },
 
-        initJQVMAP: function() {
+        initJQVMAP: function () {
             if (!jQuery().vectorMap) {
                 return;
             }
 
-            var showMap = function(name) {
+            var showMap = function (name) {
                 jQuery('.vmaps').hide();
                 jQuery('#vmap_' + name).show();
             }
 
-            var setMap = function(name) {
+            var setMap = function (name) {
                 var data = {
                     map: 'world_en',
                     backgroundColor: null,
@@ -45,15 +45,15 @@ var Index = function() {
                     selectedColor: '#c9dfaf',
                     selectedRegion: null,
                     showTooltip: true,
-                    onLabelShow: function(event, label, code) {
+                    onLabelShow: function (event, label, code) {
 
                     },
-                    onRegionOver: function(event, code) {
+                    onRegionOver: function (event, code) {
                         if (code == 'ca') {
                             event.preventDefault();
                         }
                     },
-                    onRegionClick: function(element, code, region) {
+                    onRegionClick: function (element, code, region) {
                         var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
                         alert(message);
                     }
@@ -77,21 +77,21 @@ var Index = function() {
             setMap("germany");
             showMap("world");
 
-            jQuery('#regional_stat_world').click(function() {
+            jQuery('#regional_stat_world').click(function () {
                 showMap("world");
             });
 
-            jQuery('#regional_stat_usa').click(function() {
+            jQuery('#regional_stat_usa').click(function () {
                 showMap("usa");
             });
 
-            jQuery('#regional_stat_europe').click(function() {
+            jQuery('#regional_stat_europe').click(function () {
                 showMap("europe");
             });
-            jQuery('#regional_stat_russia').click(function() {
+            jQuery('#regional_stat_russia').click(function () {
                 showMap("russia");
             });
-            jQuery('#regional_stat_germany').click(function() {
+            jQuery('#regional_stat_germany').click(function () {
                 showMap("germany");
             });
 
@@ -99,7 +99,7 @@ var Index = function() {
             $('#region_statistics_content').show();
         },
 
-        initCharts: function() {
+        initCharts: function () {
             if (Morris.EventEmitter) {
                 // Use Morris.Area instead of Morris.Line
                 dashboardMainChart = Morris.Area({
@@ -110,27 +110,33 @@ var Index = function() {
                     gridLineColor: false,
                     axes: false,
                     fillOpacity: 1,
-                    data: [{
-                        period: '2011 Q1',
-                        sales: 1400,
-                        profit: 400
-                    }, {
-                        period: '2011 Q2',
-                        sales: 1100,
-                        profit: 600
-                    }, {
-                        period: '2011 Q3',
-                        sales: 1600,
-                        profit: 500
-                    }, {
-                        period: '2011 Q4',
-                        sales: 1200,
-                        profit: 400
-                    }, {
-                        period: '2012 Q1',
-                        sales: 1550,
-                        profit: 800
-                    }],
+                    data: [
+                        {
+                            period: '2011 Q1',
+                            sales: 1400,
+                            profit: 400
+                        },
+                        {
+                            period: '2011 Q2',
+                            sales: 1100,
+                            profit: 600
+                        },
+                        {
+                            period: '2011 Q3',
+                            sales: 1600,
+                            profit: 500
+                        },
+                        {
+                            period: '2011 Q4',
+                            sales: 1200,
+                            profit: 400
+                        },
+                        {
+                            period: '2012 Q1',
+                            sales: 1550,
+                            profit: 800
+                        }
+                    ],
                     lineColors: ['#399a8c', '#92e9dc'],
                     xkey: 'period',
                     ykeys: ['sales', 'profit'],
@@ -144,15 +150,15 @@ var Index = function() {
             }
         },
 
-        redrawCharts: function() {
+        redrawCharts: function () {
             dashboardMainChart.resizeHandler();
         },
 
-        initMiniCharts: function() {
+        initMiniCharts: function () {
 
             // IE8 Fix: function.bind polyfill
             if (Metronic.isIE8() && !Function.prototype.bind) {
-                Function.prototype.bind = function(oThis) {
+                Function.prototype.bind = function (oThis) {
                     if (typeof this !== "function") {
                         // closest thing possible to the ECMAScript 5 internal IsCallable function
                         throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
@@ -160,8 +166,9 @@ var Index = function() {
 
                     var aArgs = Array.prototype.slice.call(arguments, 1),
                         fToBind = this,
-                        fNOP = function() {},
-                        fBound = function() {
+                        fNOP = function () {
+                        },
+                        fBound = function () {
                             return fToBind.apply(this instanceof fNOP && oThis ? this : oThis,
                                 aArgs.concat(Array.prototype.slice.call(arguments)));
                         };

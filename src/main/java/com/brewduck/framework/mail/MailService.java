@@ -12,7 +12,7 @@ import java.util.Properties;
 
 /**
  * 이메일 발송
- *
+ * <p/>
  * User: JAEGER
  * Date: 13. 8. 19
  * Time: 오후 1:00
@@ -127,8 +127,8 @@ public class MailService {
      * @return
      */
     public boolean sendMail(String receiveEmail,
-                            String sendTitle,
-                            String authKey) {
+        String sendTitle,
+        String authKey) {
         // TODO : 향후에 외부 설정으로 빠져야 함.
         String smtpHost = "smtp.gmail.com";
         String smtpPort = "587";    // TLS 포트 번호
@@ -146,31 +146,31 @@ public class MailService {
         try {
             // TLS 방식으로 이메일 전송
             result = sendMailTLS(
-                            smtpHost,
-                            smtpPort,
-                            sendEmail,
-                            SimpleCrypto.decrypt(SimpleCrypto.seed, sendPassword),
-                            receiveEmail,
-                            sendTitle,
-                            content,
-                            charset
-                        );
+                smtpHost,
+                smtpPort,
+                sendEmail,
+                SimpleCrypto.decrypt(SimpleCrypto.seed, sendPassword),
+                receiveEmail,
+                sendTitle,
+                content,
+                charset
+            );
             logger.debug("TLS 방식의 이메일 전송 결과 : " + result);
 
             // 이메일 전송 실패시 SSL 방식으로 이메일 전송
-            if ( ! result) {
+            if (!result) {
                 smtpPort = "465";    // SSL 포트 번호
 
                 result = sendMailSSL(
-                                smtpHost,
-                                smtpPort,
-                                sendEmail,
-                                SimpleCrypto.decrypt(SimpleCrypto.seed, sendPassword),
-                                receiveEmail,
-                                sendTitle,
-                                content,
-                                charset
-                            );
+                    smtpHost,
+                    smtpPort,
+                    sendEmail,
+                    SimpleCrypto.decrypt(SimpleCrypto.seed, sendPassword),
+                    receiveEmail,
+                    sendTitle,
+                    content,
+                    charset
+                );
                 logger.debug("SSL 방식의 이메일 전송 결과 : " + result);
             }
         } catch (Exception e) {
@@ -194,13 +194,13 @@ public class MailService {
      * @return
      */
     private boolean sendMailSSL(String host,
-                                String port,
-                                String hostMailId,
-                                String hostPassword,
-                                String targetId,
-                                String title,
-                                String content,
-                                String charset) {
+        String port,
+        String hostMailId,
+        String hostPassword,
+        String targetId,
+        String title,
+        String content,
+        String charset) {
         boolean result = false;
         final String username = hostMailId;
         final String password = hostPassword;
@@ -214,13 +214,13 @@ public class MailService {
         props.put("mail.smtp.port", port);
 
         Session session = Session.getDefaultInstance(
-                                    props,
-                                    new Authenticator() {
-                                        protected PasswordAuthentication getPasswordAuthentication() {
-                                            return new PasswordAuthentication(username, password);
-                                        }
-                                    }
-                                );
+            props,
+            new Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(username, password);
+                }
+            }
+        );
 
         try {
             Message message = new MimeMessage(session);
@@ -257,14 +257,14 @@ public class MailService {
      * @param charset
      * @return
      */
-    private boolean sendMailTLS (String host,
-                                 String port,
-                                 String hostMailId,
-                                 String hostPassword,
-                                 String targetId,
-                                 String title,
-                                 String content,
-                                 String charset)  {
+    private boolean sendMailTLS(String host,
+        String port,
+        String hostMailId,
+        String hostPassword,
+        String targetId,
+        String title,
+        String content,
+        String charset) {
         boolean result = false;
         final String username = hostMailId;
         final String password = hostPassword;
@@ -277,12 +277,12 @@ public class MailService {
         props.put("mail.smtp.port", port);
 
         Session session = Session.getDefaultInstance(
-                props,
-                new Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(username, password);
-                    }
+            props,
+            new Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(username, password);
                 }
+            }
         );
 
         try {

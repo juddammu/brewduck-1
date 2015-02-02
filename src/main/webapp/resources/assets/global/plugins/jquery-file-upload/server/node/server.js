@@ -17,7 +17,7 @@
     'use strict';
     var path = require('path'),
         fs = require('fs'),
-        // Since Node 0.8, .existsSync() moved from path to fs:
+    // Since Node 0.8, .existsSync() moved from path to fs:
         _existsSync = fs.existsSync || path.existsSync,
         formidable = require('formidable'),
         nodeStatic = require('node-static'),
@@ -47,11 +47,11 @@
                 allowHeaders: 'Content-Type, Content-Range, Content-Disposition'
             },
             /* Uncomment and edit this section to provide the service via HTTPS:
-            ssl: {
-                key: fs.readFileSync('/Applications/XAMPP/etc/ssl.key/server.key'),
-                cert: fs.readFileSync('/Applications/XAMPP/etc/ssl.crt/server.crt')
-            },
-            */
+             ssl: {
+             key: fs.readFileSync('/Applications/XAMPP/etc/ssl.key/server.key'),
+             cert: fs.readFileSync('/Applications/XAMPP/etc/ssl.crt/server.crt')
+             },
+             */
             nodeStatic: {
                 cache: 3600 // seconds to cache served files
             }
@@ -101,7 +101,7 @@
                         res.writeHead(200, {
                             'Content-Type': req.headers.accept
                                 .indexOf('application/json') !== -1 ?
-                                        'application/json' : 'text/plain'
+                                'application/json' : 'text/plain'
                         });
                         res.end(JSON.stringify(result));
                     }
@@ -113,32 +113,32 @@
                 },
                 handler = new UploadHandler(req, res, handleResult);
             switch (req.method) {
-            case 'OPTIONS':
-                res.end();
-                break;
-            case 'HEAD':
-            case 'GET':
-                if (req.url === '/') {
-                    setNoCacheHeaders();
-                    if (req.method === 'GET') {
-                        handler.get();
+                case 'OPTIONS':
+                    res.end();
+                    break;
+                case 'HEAD':
+                case 'GET':
+                    if (req.url === '/') {
+                        setNoCacheHeaders();
+                        if (req.method === 'GET') {
+                            handler.get();
+                        } else {
+                            res.end();
+                        }
                     } else {
-                        res.end();
+                        fileServer.serve(req, res);
                     }
-                } else {
-                    fileServer.serve(req, res);
-                }
-                break;
-            case 'POST':
-                setNoCacheHeaders();
-                handler.post();
-                break;
-            case 'DELETE':
-                handler.destroy();
-                break;
-            default:
-                res.statusCode = 405;
-                res.end();
+                    break;
+                case 'POST':
+                    setNoCacheHeaders();
+                    handler.post();
+                    break;
+                case 'DELETE':
+                    handler.destroy();
+                    break;
+                default:
+                    res.statusCode = 405;
+                    res.end();
             }
         };
     fileServer.respond = function (pathname, status, _headers, files, stat, req, res, finish) {
@@ -179,8 +179,8 @@
             this.url = this.deleteUrl = baseUrl + encodeURIComponent(this.name);
             Object.keys(options.imageVersions).forEach(function (version) {
                 if (_existsSync(
-                        options.uploadDir + '/' + version + '/' + that.name
-                    )) {
+                    options.uploadDir + '/' + version + '/' + that.name
+                )) {
                     that[version + 'Url'] = baseUrl + version + '/' +
                         encodeURIComponent(that.name);
                 }
@@ -224,17 +224,17 @@
                 }
             };
         form.uploadDir = options.tmpDir;
-        form.on('fileBegin', function (name, file) {
+        form.on('fileBegin',function (name, file) {
             tmpFiles.push(file.path);
             var fileInfo = new FileInfo(file, handler.req, true);
             fileInfo.safeName();
             map[path.basename(file.path)] = fileInfo;
             files.push(fileInfo);
-        }).on('field', function (name, value) {
+        }).on('field',function (name, value) {
             if (name === 'redirect') {
                 redirect = value;
             }
-        }).on('file', function (name, file) {
+        }).on('file',function (name, file) {
             var fileInfo = map[path.basename(file.path)];
             fileInfo.size = file.size;
             if (!fileInfo.validate()) {
@@ -255,13 +255,13 @@
                     }, finish);
                 });
             }
-        }).on('aborted', function () {
+        }).on('aborted',function () {
             tmpFiles.forEach(function (file) {
                 fs.unlink(file);
             });
-        }).on('error', function (e) {
+        }).on('error',function (e) {
             console.log(e);
-        }).on('progress', function (bytesReceived) {
+        }).on('progress',function (bytesReceived) {
             if (bytesReceived > options.maxPostSize) {
                 handler.req.connection.destroy();
             }

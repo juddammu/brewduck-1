@@ -30,7 +30,6 @@ public interface RecipeService {
     public List<Recipe> selectPublicRecipeMenuList(Recipe recipe);
 
 
-
     /**
      * <pre>
      * 맥주 레시피 상세 조회.

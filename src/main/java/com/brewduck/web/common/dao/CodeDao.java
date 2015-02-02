@@ -28,5 +28,4 @@ public interface CodeDao {
     public List<Common> selectCodeList(Common common) throws DataAccessException;
 
 
-
 }

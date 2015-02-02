@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
     <!-- 상단 메뉴 -->
     <%@ include file="/WEB-INF/views/common/include/default_top_menu.jsp" %>
 
-    <decorator:body />
+    <decorator:body/>
 
     <!-- 상단 메뉴 -->
     <%@ include file="/WEB-INF/views/common/include/default_footer.jsp" %>

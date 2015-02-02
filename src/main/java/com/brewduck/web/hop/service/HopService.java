@@ -1,6 +1,7 @@
 package com.brewduck.web.hop.service;
 
 import com.brewduck.web.domain.Hop;
+
 import java.util.List;
 
 
@@ -9,7 +10,7 @@ import java.util.List;
  * 맥주 홉 Service 인터페이스.
  * </pre>
  *
- * @author  chacha
+ * @author chacha
  * @version 1.0, 2014.02.16
  */
 public interface HopService {
@@ -56,7 +57,6 @@ public interface HopService {
      * @return 맥주 홉 목록
      */
     public List<Hop> selectHopUsedForList(Hop hop);
-
 
 
     /**

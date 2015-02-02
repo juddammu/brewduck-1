@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <title>발효재료 - FERMENTABLES</title>
 
@@ -10,7 +10,9 @@
     <div class="container-fluid">
         <!-- BEGIN PAGE TITLE -->
         <div class="page-title">
-            <h1>발효재료 <small>FERMENTABLES</small></h1>
+            <h1>발효재료
+                <small>FERMENTABLES</small>
+            </h1>
         </div>
         <!-- END PAGE TITLE -->
     </div>
@@ -42,7 +44,8 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light">
                     <div class="portlet-title">
-                        <form:form class="form-horizontal" action="/fermentable/" id="searchForm"  name="searchForm" modelAttribute="paramFermentable">
+                        <form:form class="form-horizontal" action="/fermentable/" id="searchForm"
+                                   name="searchForm" modelAttribute="paramFermentable">
 
                             <div class="form-group">
                                 <div class="col-md-2">
@@ -50,8 +53,11 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" value="${paramFermentable.name}">
-                                        <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+                                        <input class="form-control" placeholder="검색어를 입력하세요."
+                                               name="name" id="name"
+                                               value="${paramFermentable.name}">
+                                        <span class="input-group-addon"><i id="search" name="search"
+                                                                           class="fa fa-search"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -63,12 +69,30 @@
                                     <div class="input-group">
                                         <div>
                                             <div>
-                                                <button id="usButton" type="button" class="btn btn btn-default btn-sm" value="US" onclick="setOriginSearch('US')" > </button>
-                                                <button id="deButton" type="button" class="btn btn btn-default btn-sm" value="DE" onclick="setOriginSearch('DE')"> </button>
-                                                <button id="ukButton" type="button" class="btn btn btn-default btn-sm" value="UK" onclick="setOriginSearch('UK')"> </button>
-                                                <button id="beButton" type="button" class="btn btn btn-default btn-sm" value="BE" onclick="setOriginSearch('BE')"> </button>
-                                                <button id="caButton" type="button" class="btn btn btn-default btn-sm" value="CA" onclick="setOriginSearch('CA')"> </button>
-                                                <button id="etcButton" type="button" class="btn btn btn-default btn-sm" value="ETC" onclick="setOriginSearch('ETC')"> </button>
+                                                <button id="usButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        value="US"
+                                                        onclick="setOriginSearch('US')"></button>
+                                                <button id="deButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        value="DE"
+                                                        onclick="setOriginSearch('DE')"></button>
+                                                <button id="ukButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        value="UK"
+                                                        onclick="setOriginSearch('UK')"></button>
+                                                <button id="beButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        value="BE"
+                                                        onclick="setOriginSearch('BE')"></button>
+                                                <button id="caButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        value="CA"
+                                                        onclick="setOriginSearch('CA')"></button>
+                                                <button id="etcButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        value="ETC"
+                                                        onclick="setOriginSearch('ETC')"></button>
                                             </div>
                                         </div>
                                     </div>
@@ -85,10 +109,13 @@
                     <div class="portlet-body">
 
 
-                        <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+                        <div class="table-responsive" data-pattern="priority-columns"
+                             data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true"
+                             data-add-display-all-btn="true" data-add-focus-btn="true">
 
 
-                            <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                            <table cellspacing="0"
+                                   class="table table-small-font table-bordered table-striped">
                                 <thead>
                                 <tr>
                                     <th data-hide="phone" data-priority="1">영문명</th>
@@ -103,15 +130,18 @@
                                 <tbody>
                                 <c:forEach items="${list}" var="list">
                                     <tr>
-                                        <td><a href="/fermentable/${list.id}/${list.titleInUrl}">${list.name}</a></td>
+                                        <td>
+                                            <a href="/fermentable/${list.id}/${list.titleInUrl}">${list.name}</a>
+                                        </td>
                                         <td> ${list.koreanName}</td>
                                         <td> ${list.typeKorean}</td>
                                         <td> ${list.originKorean}</td>
-                                        <td> <fmt:formatNumber value="${list.specificGravity}" />
+                                        <td><fmt:formatNumber value="${list.specificGravity}"/>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm" style="background :${list.colorCode};"></button>
-                                            ${list.color} °L
+                                            <button type="button" class="btn btn-sm"
+                                                    style="background :${list.colorCode};"></button>
+                                                ${list.color} °L
                                         </td>
 
                                     </tr>
@@ -134,34 +164,39 @@
 <!-- END PAGE CONTENT -->
 
 
-
 <content tag="local_script">
 
     <script>
-        function goDetail(id, titleInUrl){
-            location.href = "/style/"+id+"/"+titleInUrl;
+        function goDetail(id, titleInUrl) {
+            location.href = "/style/" + id + "/" + titleInUrl;
         }
 
-        function getNationCount(){
-            $.get("/fermentable/countFermentableOrigin", function(data, status){
+        function getNationCount() {
+            $.get("/fermentable/countFermentableOrigin", function (data, status) {
                 //alert("US 값은 : " + data.usCnt + "\n" + "de 값은 : " + data.deCnt + "\n");
-                $("#usButton").html("("+data.usCntName +data.usCnt+" 건)"); /*미국*/
-                $("#deButton").html("("+data.deCntName +data.deCnt+" 건)"); /*독일*/
-                $("#ukButton").html("("+data.ukCntName +data.ukCnt+" 건)"); /*영국*/
-                $("#beButton").html("("+data.beCntName +data.beCnt+" 건)"); /*벨기에*/
-                $("#caButton").html("("+data.caCntName +data.caCnt+" 건)"); /*캐나다*/
-                $("#etcButton").html("("+data.etcCntName +data.etcCnt+" 건)"); /*기타*/
+                $("#usButton").html("(" + data.usCntName + data.usCnt + " 건)");
+                /*미국*/
+                $("#deButton").html("(" + data.deCntName + data.deCnt + " 건)");
+                /*독일*/
+                $("#ukButton").html("(" + data.ukCntName + data.ukCnt + " 건)");
+                /*영국*/
+                $("#beButton").html("(" + data.beCntName + data.beCnt + " 건)");
+                /*벨기에*/
+                $("#caButton").html("(" + data.caCntName + data.caCnt + " 건)");
+                /*캐나다*/
+                $("#etcButton").html("(" + data.etcCntName + data.etcCnt + " 건)");
+                /*기타*/
             })
         }
 
         // This JavaScript Will Replace Checkboxes in dropdown toggles
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
 
             getNationCount();                  //원산지별 카운트 (조회영역)
 
             $("#name").focus();
 
-            $("#search").click(function(){
+            $("#search").click(function () {
                 search();
             })
         });

@@ -29,7 +29,7 @@ public class WeightConverterTest {
     final private double OUNCE_TO_KILOGRAMS = 0.0283495231;
     final private double OUNCE_TO_GRAMS = 028.3495231;
 
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void WeightConverterTest() {
 
         String fromUnit = "gram";
@@ -63,22 +63,22 @@ public class WeightConverterTest {
 
 
 
-        assertEquals(requestWeight*POUNDS_TO_KILOGRAMS, weightConverter.getPoundToKg(requestWeight), delta);
-        assertEquals(requestWeight*POUNDS_TO_GRAMS,     weightConverter.getPoundToGrams(requestWeight), delta);
+        assertEquals(requestWeight * POUNDS_TO_KILOGRAMS, weightConverter.getPoundToKg(requestWeight), delta);
+        assertEquals(requestWeight * POUNDS_TO_GRAMS, weightConverter.getPoundToGrams(requestWeight), delta);
 
-        assertEquals(requestWeight*OUNCE_TO_KILOGRAMS, weightConverter.getOunceToKg(requestWeight), delta);
-        assertEquals(requestWeight*OUNCE_TO_GRAMS,     weightConverter.getOunceToGrams(requestWeight), delta);
+        assertEquals(requestWeight * OUNCE_TO_KILOGRAMS, weightConverter.getOunceToKg(requestWeight), delta);
+        assertEquals(requestWeight * OUNCE_TO_GRAMS, weightConverter.getOunceToGrams(requestWeight), delta);
 
-        assertEquals(requestWeight/GRAMS_TO_OZ,     weightConverter.getGramsToOunce(requestWeight), delta);
-        assertEquals(requestWeight/GRAMS_TO_POUNDS, weightConverter.getGramsToPound(requestWeight), delta);
+        assertEquals(requestWeight / GRAMS_TO_OZ, weightConverter.getGramsToOunce(requestWeight), delta);
+        assertEquals(requestWeight / GRAMS_TO_POUNDS, weightConverter.getGramsToPound(requestWeight), delta);
 
-        assertEquals(requestWeight/KILOGRAMS_TO_OZ,     weightConverter.getKgToOunce(requestWeight), delta);
-        assertEquals(requestWeight/KILOGRAMS_TO_POUNDS, weightConverter.getKgToPound(requestWeight), delta);
+        assertEquals(requestWeight / KILOGRAMS_TO_OZ, weightConverter.getKgToOunce(requestWeight), delta);
+        assertEquals(requestWeight / KILOGRAMS_TO_POUNDS, weightConverter.getKgToPound(requestWeight), delta);
 
 
     }
 
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void WeightConverterSwitchTest() {
 
         String fromUnit = "gram";

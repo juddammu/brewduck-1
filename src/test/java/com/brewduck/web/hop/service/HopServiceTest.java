@@ -35,7 +35,7 @@ public class HopServiceTest {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         hop = new Hop();
         listSize = 158;
 
@@ -44,22 +44,22 @@ public class HopServiceTest {
     /**
      * 기본 수행 테스트
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void selectHopListTest() {
         List<Hop> selectHopListTest = hopDao.selectHopList(hop);
-        assertThat(true,  is(selectHopListTest.size() > 0));
+        assertThat(true, is(selectHopListTest.size() > 0));
         assertEquals(listSize, selectHopListTest.size());
     }
 
     /**
      * 데이터 테스트
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void notEmptyTest() {
         List<Hop> selectHopList = hopDao.selectHopList(hop);
 
         //필수입력 테스트
-        for(int i=0;i<selectHopList.size();i++){
+        for (int i = 0; i < selectHopList.size(); i++) {
 
             //이름
             assertNotNull("색상코드 확인", ((Hop) (selectHopList.get(i))).getName());
@@ -77,12 +77,12 @@ public class HopServiceTest {
      * 기본 수행 테스트
      * </pre>
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void selectHopDetailTest() {
         Hop selectHopDetail = new Hop();
         hop.setId(1);
         selectHopDetail = hopDao.selectHopDetail(hop);
-        assertThat(true,  is(selectHopDetail != null));
+        assertThat(true, is(selectHopDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopDetail);
         assertThat(true, is(selectHopDetail.getName().equals("Admiral")));
     }
@@ -104,8 +104,8 @@ public class HopServiceTest {
      * 홉 사용용도 리스트
      * </pre>
      */
-    @Test(timeout=5000)
-    public void selectHopUsedForListTest(){
+    @Test(timeout = 5000)
+    public void selectHopUsedForListTest() {
         hop.setId(1);
         List<Hop> selectHopUsedForListTest = hopDao.selectHopUsedForList(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopUsedForListTest);
@@ -116,20 +116,20 @@ public class HopServiceTest {
      * 홉 아로마 리스트
      * </pre>
      */
-    @Test(timeout=5000)
-    public void selectHopAromaListTest(){
+    @Test(timeout = 5000)
+    public void selectHopAromaListTest() {
         hop.setId(1);
         List<Hop> selectHopAromaListTest = hopDao.selectHopAromaList(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopAromaListTest);
     }
-    
+
     /**
      * <pre>
      * 홉 대체 리스트
      * </pre>
      */
-    @Test(timeout=5000)
-    public void selectHopSubstitutesListTest(){
+    @Test(timeout = 5000)
+    public void selectHopSubstitutesListTest() {
         hop.setId(1);
         List<Hop> selectHopSubstitutesListTest = hopDao.selectHopSubstitutesList(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopSubstitutesListTest);
@@ -181,7 +181,7 @@ public class HopServiceTest {
      */
     public void insertHopTest() {
         Hop hop = new Hop();
-        Integer insertHop =  hopDao.insertHop(hop);
+        Integer insertHop = hopDao.insertHop(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", insertHop);
     }
 
@@ -192,7 +192,7 @@ public class HopServiceTest {
      */
     public void updateHopTest() {
         Hop hop = new Hop();
-        Integer updateHop =  hopDao.updateHop(hop);
+        Integer updateHop = hopDao.updateHop(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateHop);
     }
 
@@ -203,7 +203,7 @@ public class HopServiceTest {
      */
     public void updateViewCountTest() {
         Hop hop = new Hop();
-        Integer updateViewCount =  hopDao.updateViewCount(hop);
+        Integer updateViewCount = hopDao.updateViewCount(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateViewCount);
     }
 
@@ -214,8 +214,8 @@ public class HopServiceTest {
      */
     public void deleteHopTest() {
         Hop hop = new Hop();
-        Integer deleteHop =  hopDao.deleteHop(hop);
+        Integer deleteHop = hopDao.deleteHop(hop);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", deleteHop);
     }
-    
+
 }

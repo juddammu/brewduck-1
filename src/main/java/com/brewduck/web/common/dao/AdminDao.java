@@ -10,7 +10,6 @@
 package com.brewduck.web.common.dao;
 
 import com.brewduck.web.domain.Admin;
-import org.springframework.dao.DataAccessException;
 
 import java.util.List;
 

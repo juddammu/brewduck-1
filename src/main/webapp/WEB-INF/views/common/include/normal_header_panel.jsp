@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div class="settings-pane">
 
     <a href="#" data-toggle="settings-pane" data-animate="true">
@@ -15,7 +15,8 @@
 
                     <div class="user-image">
                         <a href="#">
-                            <img src="/resources/commons/images/user-2.png" class="img-responsive img-circle" />
+                            <img src="/resources/commons/images/user-2.png"
+                                 class="img-responsive img-circle"/>
                         </a>
                     </div>
 
@@ -50,19 +51,23 @@
 
                     <ul class="list-unstyled">
                         <li>
-                            <input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk1" />
+                            <input type="checkbox" class="cbr cbr-primary" checked="checked"
+                                   id="sp-chk1"/>
                             <label for="sp-chk1">Messages</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk2" />
+                            <input type="checkbox" class="cbr cbr-primary" checked="checked"
+                                   id="sp-chk2"/>
                             <label for="sp-chk2">Events</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk3" />
+                            <input type="checkbox" class="cbr cbr-primary" checked="checked"
+                                   id="sp-chk3"/>
                             <label for="sp-chk3">Updates</label>
                         </li>
                         <li>
-                            <input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk4" />
+                            <input type="checkbox" class="cbr cbr-primary" checked="checked"
+                                   id="sp-chk4"/>
                             <label for="sp-chk4">Server Uptime</label>
                         </li>
                     </ul>

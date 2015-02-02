@@ -15,7 +15,7 @@ import java.util.List;
  * 맥주 홉 Service 구현체.
  * </pre>
  *
- * @author  chacha
+ * @author chacha
  * @version 1.0, 2014.02.16
  */
 @Service("hopService")
@@ -30,7 +30,6 @@ public class HopServiceImpl implements HopService {
     private HopDao hopDao;
 
 
-
     @Override
     public List<Hop> selectHopList(Hop hop) {
         return hopDao.selectHopList(hop);
@@ -40,7 +39,6 @@ public class HopServiceImpl implements HopService {
     public List<Hop> selectAromaList() {
         return hopDao.selectAromaList();
     }
-
 
 
     @Override

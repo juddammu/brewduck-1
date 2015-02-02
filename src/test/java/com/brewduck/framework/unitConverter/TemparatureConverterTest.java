@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class TemparatureConverterTest {
 
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void TemparatureConverterTest() {
         String fromUnit = "ceisius";
 

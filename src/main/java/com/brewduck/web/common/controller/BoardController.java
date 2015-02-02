@@ -120,18 +120,18 @@ public class BoardController {
      */
     @ResponseBody
     @RequestMapping(value = "/replyList/{nttId}/{bbsId}", method = RequestMethod.GET)
-    public List<Board> replyList (Model model, @PathVariable("nttId") Integer nttId, @PathVariable("bbsId") Integer bbsId) {
+    public List<Board> replyList(Model model, @PathVariable("nttId") Integer nttId, @PathVariable("bbsId") Integer bbsId) {
 
-            Account account = AuthenticationUtils.getUser();
-            String name = account.getName();
-            Board board = new Board();
-            board.setBbsId(bbsId);
-            board.setNttId(nttId);
-            List<Board> replyList  = boardService.selectReplyList(board);
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+        Board board = new Board();
+        board.setBbsId(bbsId);
+        board.setNttId(nttId);
+        List<Board> replyList = boardService.selectReplyList(board);
 
-            logger.info("Reply List Size : {}", replyList.size());
-            model.addAttribute("replyList", replyList);
-            return replyList;
+        logger.info("Reply List Size : {}", replyList.size());
+        model.addAttribute("replyList", replyList);
+        return replyList;
     }
 
 
@@ -142,19 +142,19 @@ public class BoardController {
      */
     @ResponseBody
     @RequestMapping(value = "/writeReply", method = RequestMethod.POST)
-    public Board writeReply (Model model, @RequestBody Board board) {
+    public Board writeReply(Model model, @RequestBody Board board) {
 
-            Account account = AuthenticationUtils.getUser();
-            String name = account.getName();
-            board.setInsertId(name);
-            board.setWrterNm(name);
-            board.setWrterId(name);
-            board.setUseAt("Y");
-            int writeReply =  boardService.writeReply(board);
-            logger.info("Write Reply");
-            logger.info(" @@@ " + board.getAnswer());
-            Board returnBoard = new Board();
-            returnBoard.setInsertFlag(writeReply);
+        Account account = AuthenticationUtils.getUser();
+        String name = account.getName();
+        board.setInsertId(name);
+        board.setWrterNm(name);
+        board.setWrterId(name);
+        board.setUseAt("Y");
+        int writeReply = boardService.writeReply(board);
+        logger.info("Write Reply");
+        logger.info(" @@@ " + board.getAnswer());
+        Board returnBoard = new Board();
+        returnBoard.setInsertFlag(writeReply);
 
         return returnBoard;
     }
@@ -169,7 +169,7 @@ public class BoardController {
      */
 
     @RequestMapping(value = "/deleteReply", method = {RequestMethod.GET, RequestMethod.POST})
-    public void deleteReply (Model model, Board board) {
+    public void deleteReply(Model model, Board board) {
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
@@ -178,7 +178,7 @@ public class BoardController {
         board.setWrterNm(name);
         board.setUseAt("Y");
         board.setInsertId(name);
-        int writeReply =  boardService.deleteReply(board);
+        int writeReply = boardService.deleteReply(board);
 
         logger.info("Write Reply");
         logger.info(" @@@ " + board.getAnswer());
@@ -210,8 +210,7 @@ public class BoardController {
         List<Board> selectNewPostList = boardService.getNewPost(board);
         String insertId = boardDetail.getInsertId();
 
-        if( ! insertId.equals(loginId))
-        {
+        if (!insertId.equals(loginId)) {
             int hitCount = boardService.updateHitCount(board);
             logger.info("Board Hit {}: ", hitCount);
             logger.info("Insert ID {}: ", insertId);
@@ -220,8 +219,8 @@ public class BoardController {
 
         String regiID = boardDetail.getInsertId();
 
-        model.addAttribute("loginId",loginId);
-        model.addAttribute("regiId",regiID);
+        model.addAttribute("loginId", loginId);
+        model.addAttribute("regiId", regiID);
         model.addAttribute("newPostList", selectNewPostList);
         model.addAttribute("newRecipeList", selectNewPublicRecipeList);
         model.addAttribute("account", account);
@@ -250,7 +249,7 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/write", method = RequestMethod.POST)
-    public String writeBoardIndex(HttpServletRequest request, Model model,Board board) {
+    public String writeBoardIndex(HttpServletRequest request, Model model, Board board) {
         logger.info("write board!!!!!!!!!!!!!!!!!!");
         Integer bbsId = Integer.parseInt(request.getParameter("bbsId"));
         board.setBbsId(bbsId);
@@ -262,10 +261,10 @@ public class BoardController {
 
     @RequestMapping(value = "/writeArticle", method = RequestMethod.POST)
     public String writeBoardMain(@ModelAttribute("board") Board board,
-                                 BindingResult result,
-                                 RedirectAttributes redirectAttributes) {
+        BindingResult result,
+        RedirectAttributes redirectAttributes) {
 
-        logger.info("Write getBbsId  "+ board.getBbsId());
+        logger.info("Write getBbsId  " + board.getBbsId());
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
@@ -294,7 +293,7 @@ public class BoardController {
 			#{insertId},
          */
 
-        return "redirect:/board/main/"+bbsId;
+        return "redirect:/board/main/" + bbsId;
     }
 
 
@@ -330,9 +329,9 @@ public class BoardController {
      * @return 게시판 생성
      */
     @RequestMapping(value = "/insertBoardMaster", method = RequestMethod.POST)
-        public String insertBoardMaster(@ModelAttribute("board") Board board,
-                BindingResult result,
-                RedirectAttributes redirectAttributes) {
+    public String insertBoardMaster(@ModelAttribute("board") Board board,
+        BindingResult result,
+        RedirectAttributes redirectAttributes) {
 
         Account account = AuthenticationUtils.getUser();
 
@@ -359,7 +358,7 @@ public class BoardController {
         board.setPosblAtchFileSize(102400);
         board.setTmplatId("TMPLAT_BOARD_DEFAULT");
         board.setUseAt("Y");
-        board.setFrstRegisterId(account.getId()+"");
+        board.setFrstRegisterId(account.getId() + "");
 
         int insertCount = boardService.insertBoardMaster(board);
 
@@ -379,8 +378,8 @@ public class BoardController {
      */
     @RequestMapping(value = "/writeBoardArticle", method = RequestMethod.POST)
     public String writeBoardArticle(@ModelAttribute("board") Board board,
-                                    BindingResult result,
-                                    RedirectAttributes redirectAttributes) {
+        BindingResult result,
+        RedirectAttributes redirectAttributes) {
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
@@ -401,8 +400,8 @@ public class BoardController {
 
     @RequestMapping(value = "/updateBoardArticle", method = RequestMethod.POST)
     public String updateBoardArticle(@ModelAttribute("board") Board board,
-                                    BindingResult result,
-                                    RedirectAttributes redirectAttributes) {
+        BindingResult result,
+        RedirectAttributes redirectAttributes) {
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
@@ -416,15 +415,14 @@ public class BoardController {
         logger.info("Update Board Article");
         logger.info(" @@@ " + board.getBbsNm());
 
-        return "redirect:/board/main/"+bbsId;
+        return "redirect:/board/main/" + bbsId;
     }
-
 
 
     @ResponseBody
     @RequestMapping(value = "/list/{boardId}", method = RequestMethod.GET)
     public List insertHop(Model model,
-                           @PathVariable("boardId") Integer boardId) {
+        @PathVariable("boardId") Integer boardId) {
         // 맥주 홉 저장
         Board board = new Board();
         board.setNttId(1);
@@ -436,7 +434,7 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/deleteBoardArticle/{bbsId}/{nttId}", method = RequestMethod.GET)
-    public String deleteBoardArticle(@ModelAttribute("board") Board board,@PathVariable("bbsId") Integer bbsId, @PathVariable("nttId") Integer nttId){
+    public String deleteBoardArticle(@ModelAttribute("board") Board board, @PathVariable("bbsId") Integer bbsId, @PathVariable("nttId") Integer nttId) {
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
@@ -450,7 +448,7 @@ public class BoardController {
         logger.info("Delete Board Article");
         logger.info(" @@@ " + board.getBbsNm());
 
-        return "redirect:/board/main/"+bbsId;
+        return "redirect:/board/main/" + bbsId;
     }
 }
 

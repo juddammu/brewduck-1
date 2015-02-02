@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 기타 재료, Value Object
- *
+ * <p/>
  * 신재근, 2014-02-27
  */
 public class Misc implements Serializable {
@@ -90,6 +90,7 @@ public class Misc implements Serializable {
     public String typeKorean;
 
     public String brewer;
+
     /**
      * 기타 재료 영문명
      *
@@ -172,8 +173,6 @@ public class Misc implements Serializable {
     }
 
     /**
-     *
-     *
      * @param miscUse
      */
     public void setMiscUse(String miscUse) {
@@ -255,7 +254,7 @@ public class Misc implements Serializable {
     /**
      * 기타 재료의 사용 항목에 대한 한글 설명
      *
-     * @param  기타 재료의 사용 항목에 대한 한글 설명
+     * @param 기타 재료의 사용 항목에 대한 한글 설명
      */
     public String getUseForKorean() {
         return useForKorean;

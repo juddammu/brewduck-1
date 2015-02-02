@@ -18,15 +18,18 @@ public class ServiceBusinessException extends RuntimeException {
     public ServiceBusinessException(String customMessage) {
         this.customMessage = customMessage;
     }
+
     public ServiceBusinessException(String customMessage, int status) {
         this.customMessage = customMessage;
         this.status = status;
     }
+
     public ServiceBusinessException(String customMessage, Throwable cause) {
         super(customMessage, cause);
         this.customMessage = customMessage;
         this.cause = cause;
     }
+
     public ServiceBusinessException(String customMessage, Throwable cause, int status) {
         super(customMessage, cause);
         this.customMessage = customMessage;
@@ -37,6 +40,7 @@ public class ServiceBusinessException extends RuntimeException {
     public String getCustomMessage() {
         return customMessage;
     }
+
     public void setCustomMessageg(String customMessage) {
         this.customMessage = customMessage;
     }
@@ -44,6 +48,7 @@ public class ServiceBusinessException extends RuntimeException {
     public int getStatus() {
         return status;
     }
+
     public void setStatus(int status) {
         this.status = status;
     }
@@ -51,6 +56,7 @@ public class ServiceBusinessException extends RuntimeException {
     public Throwable getCause() {
         return cause;
     }
+
     public void setCause(Throwable cause) {
         this.cause = cause;
     }

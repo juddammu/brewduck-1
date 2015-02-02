@@ -10,7 +10,7 @@ var PortletDraggable = function () {
 
             $("#sortable_portlets").sortable({
                 connectWith: ".portlet",
-                items: ".portlet", 
+                items: ".portlet",
                 opacity: 0.8,
                 coneHelperSize: true,
                 placeholder: 'portlet-sortable-placeholder',
@@ -22,10 +22,10 @@ var PortletDraggable = function () {
                 helper: "clone",
                 cancel: ".portlet-sortable-empty, .portlet-fullscreen", // cancel dragging if portlet is in fullscreen mode
                 revert: 250, // animation in milliseconds
-                update: function(b, c) {
+                update: function (b, c) {
                     if (c.item.prev().hasClass("portlet-sortable-empty")) {
                         c.item.prev().before(c.item);
-                    }                    
+                    }
                 }
             });
         }

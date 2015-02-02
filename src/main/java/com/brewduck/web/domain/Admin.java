@@ -1,9 +1,4 @@
 package com.brewduck.web.domain;
-import com.google.api.client.util.DateTime;
-import org.apache.ibatis.session.ResultHandler;
-
-import java.util.Date;
-import java.util.PriorityQueue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,7 +7,7 @@ import java.util.PriorityQueue;
  * Time: 오후 11:53
  * To change this template use File | Settings | File Templates.
  */
-public class Admin{
+public class Admin {
 
     private static final long serialVersionUID = 1L;
     //가입자 ID

@@ -25,12 +25,14 @@ import java.util.List;
 @Controller
 public class UserController {
 
-	/** The Constant logger. */
-	private static final Logger logger = LoggerFactory
-			.getLogger(UserController.class);
+    /**
+     * The Constant logger.
+     */
+    private static final Logger logger = LoggerFactory
+        .getLogger(UserController.class);
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private RecipeService recipeService;
@@ -38,10 +40,10 @@ public class UserController {
     @Autowired
     private BoardService boardService;
 
-    @RequestMapping(value="/public/recipe/{user_id}/{seq}/*", method=RequestMethod.GET)
+    @RequestMapping(value = "/public/recipe/{user_id}/{seq}/*", method = RequestMethod.GET)
     public String selectPublicRecipeDetail(Model model,
-                                           @PathVariable("seq") Integer seq,
-                                           @PathVariable("user_id") String user_id) {
+        @PathVariable("seq") Integer seq,
+        @PathVariable("user_id") String user_id) {
 
         Recipe recipe = new Recipe();
         recipe.setSeq(seq);
@@ -63,9 +65,9 @@ public class UserController {
         return "public-recipe/detail";
     }
 
-    @RequestMapping(value="/list/recipe/{user_id}/*", method=RequestMethod.GET)
+    @RequestMapping(value = "/list/recipe/{user_id}/*", method = RequestMethod.GET)
     public String selectPublicRecipeList(Model model,
-                                           @PathVariable("user_id") String user_id) {
+        @PathVariable("user_id") String user_id) {
 
         Recipe recipe = new Recipe();
 
@@ -94,7 +96,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/public/recipe/replyList/{user_id}/{recipe_id}", method = RequestMethod.GET)
-    public List<Board> replyList (Model model, @PathVariable("user_id") Integer user_id, @PathVariable("recipe_id") Integer recipe_id) {
+    public List<Board> replyList(Model model, @PathVariable("user_id") Integer user_id, @PathVariable("recipe_id") Integer recipe_id) {
 
         Account account = AuthenticationUtils.getUser();
         String name = account.getName();
@@ -104,7 +106,7 @@ public class UserController {
         board.setUserId(user_id);
         board.setRecipeId(recipe_id);
 
-        List<Board> replyList  = recipeService.selectReplyList(board);
+        List<Board> replyList = recipeService.selectReplyList(board);
         model.addAttribute("replyList", replyList);
         return replyList;
     }
@@ -143,20 +145,21 @@ public class UserController {
 
         return countReply;
     }
-	/**
-	 * Gets the all.
-	 * 
-	 * @param map 
-	 * @return the all
-	 * @throws Throwable 
-	 */
-	@RequestMapping(value = "/user/getAll", method = RequestMethod.GET)
-	public final void getAll(final ModelMap map,
-			final HttpServletRequest request) throws Throwable {
-		List<User> users = this.userService.getSelectOne(new User());
-		
-		map.put("users", users);
-	}
+
+    /**
+     * Gets the all.
+     *
+     * @param map
+     * @return the all
+     * @throws Throwable
+     */
+    @RequestMapping(value = "/user/getAll", method = RequestMethod.GET)
+    public final void getAll(final ModelMap map,
+        final HttpServletRequest request) throws Throwable {
+        List<User> users = this.userService.getSelectOne(new User());
+
+        map.put("users", users);
+    }
 
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public String profile(@PathVariable("id") Integer id, Model model) {

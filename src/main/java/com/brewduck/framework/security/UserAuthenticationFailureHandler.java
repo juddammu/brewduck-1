@@ -1,6 +1,5 @@
 package com.brewduck.framework.security;
 
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.AuthenticationException;
@@ -19,12 +18,12 @@ public class UserAuthenticationFailureHandler extends SimpleUrlAuthenticationFai
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request,
-                                        HttpServletResponse response,
-                                        AuthenticationException exception) throws IOException, ServletException {
+        HttpServletResponse response,
+        AuthenticationException exception) throws IOException, ServletException {
         LOGGER.info("### Login Failed!!");
 
         String forwardUrl = "/account/login?login_error=false" +
-                            "&error_message=" + URLEncoder.encode(exception.getMessage(), "UTF-8");
+            "&error_message=" + URLEncoder.encode(exception.getMessage(), "UTF-8");
 
         LOGGER.info("### Login Error Message : {}", exception.getMessage());
         saveException(request, exception);

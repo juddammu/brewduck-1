@@ -4,7 +4,6 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
 
 /**
  * 레시피, Value Object
- *
+ * <p/>
  * 신재근, 2014-02-27
  */
 public class Recipe implements Serializable {
@@ -41,7 +40,7 @@ public class Recipe implements Serializable {
     // 스타일 레터
     private String styleLetter;
 
-    private List< Integer > styleSeqs;
+    private List<Integer> styleSeqs;
     // 맥주 스타일 카테고리
     private Integer styleCategory;
     // 맥주 스타일 명
@@ -201,9 +200,9 @@ public class Recipe implements Serializable {
     //레시피 상태 (1: 비공개, 2: 공개)
     private String status;
 
-    private String  atchFileId;
+    private String atchFileId;
 
-    private String  atchFileName;
+    private String atchFileName;
 
     private String atchCoverFileId;
 
@@ -380,7 +379,6 @@ public class Recipe implements Serializable {
     }
 
 
-
     public Integer getRecipeYeastSeq() {
         return recipeYeastSeq;
     }
@@ -476,7 +474,6 @@ public class Recipe implements Serializable {
     public Double[] getRecipeHopAmounts() {
         return recipeHopAmounts;
     }
-
 
 
     public String[] getRecipeHopUses() {
@@ -582,7 +579,6 @@ public class Recipe implements Serializable {
     public void setCoverImageFile(MultipartFile coverImageFile) {
         this.coverImageFile = coverImageFile;
     }
-
 
 
     /**

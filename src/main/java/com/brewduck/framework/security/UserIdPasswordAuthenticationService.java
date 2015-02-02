@@ -42,7 +42,7 @@ public class UserIdPasswordAuthenticationService implements AuthenticationServic
         // 향후에는 패스워드 암호화 필요
         // 이메일 인증 회원인지 체크 필요
         // throw new AuthenticationNotException("### 이메일 인증이 필요합니다.");
-        if ( ! account.getPassword().equals(password)) {
+        if (!account.getPassword().equals(password)) {
             LOGGER.error("비밀번호가 틀렸습니다.");
             throw new PasswordMismatchException("비밀번호가 틀렸습니다.");
         }

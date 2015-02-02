@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <title>효모 - YEAST</title>
 
@@ -10,7 +10,9 @@
     <div class="container-fluid">
         <!-- BEGIN PAGE TITLE -->
         <div class="page-title">
-            <h1>효모 <small>YEAST</small></h1>
+            <h1>효모
+                <small>YEAST</small>
+            </h1>
         </div>
         <!-- END PAGE TITLE -->
     </div>
@@ -42,38 +44,61 @@
                 <!-- Begin: life time stats -->
                 <div class="portlet light">
                     <div class="portlet-title">
-                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm" name="searchForm" modelAttribute="paramYeast">
-                            <input id ="type" name="type" type="hidden">
-                        <div class="form-group">
-                            <div class="col-md-2">
-                                <label class="control-label">이름</label>
-                            </div>
-                            <div class="col-md-10">
-                                <div class="input-group">
-                                    <input class="form-control" placeholder="검색어를 입력하세요." name="name" id="name" onkeypress="if(event.keyCode==13){return false;};"  >
-                                    <span class="input-group-addon"><i id="search" name="search" class="fa fa-search"></i></span>
+                        <form:form class="form-horizontal form-banded form-bordered" id="searchForm"
+                                   name="searchForm" modelAttribute="paramYeast">
+                            <input id="type" name="type" type="hidden">
+
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">이름</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="검색어를 입력하세요."
+                                               name="name" id="name"
+                                               onkeypress="if(event.keyCode==13){return false;};">
+                                        <span class="input-group-addon"><i id="search" name="search"
+                                                                           class="fa fa-search"></i></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-2">
-                                <h5>타입</h5>
-                            </div>
-                            <div class="col-md-10">
-                                <div class="input-group">
-                                    <div>
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <h5>타입</h5>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
                                         <div>
-                                            <button id="aleButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(1)" value="1"> </button>
-                                            <button id="lagerButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(3)" value="3"> </button>
-                                            <button id="wheatButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(4)" value="4"> </button>
-                                            <button id="wineButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(5)" value="5"> </button>
-                                            <button id="champagneButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch(2)" value="2"> </button>
-                                            <button id="allButton" type="button" class="btn btn btn-default btn-sm" onclick="setTypeSearch()">  전체   </button>
+                                            <div>
+                                                <button id="aleButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        onclick="setTypeSearch(1)"
+                                                        value="1"></button>
+                                                <button id="lagerButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        onclick="setTypeSearch(3)"
+                                                        value="3"></button>
+                                                <button id="wheatButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        onclick="setTypeSearch(4)"
+                                                        value="4"></button>
+                                                <button id="wineButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        onclick="setTypeSearch(5)"
+                                                        value="5"></button>
+                                                <button id="champagneButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        onclick="setTypeSearch(2)"
+                                                        value="2"></button>
+                                                <button id="allButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        onclick="setTypeSearch()"> 전체
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         </form:form>
 
                         <div class="caption pull-right">
@@ -84,10 +109,13 @@
                     <div class="portlet-body">
 
 
-                        <div class="table-responsive" data-pattern="priority-columns" data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true" data-add-display-all-btn="true" data-add-focus-btn="true">
+                        <div class="table-responsive" data-pattern="priority-columns"
+                             data-focus-btn-icon="fa-asterisk" data-sticky-table-header="true"
+                             data-add-display-all-btn="true" data-add-focus-btn="true">
 
 
-                            <table cellspacing="0" class="table table-small-font table-bordered table-striped">
+                            <table cellspacing="0"
+                                   class="table table-small-font table-bordered table-striped">
                                 <thead>
                                 <tr>
                                     <th data-hide="phone" data-priority="1">영문명</th>
@@ -102,12 +130,16 @@
                                 <tbody>
                                 <c:forEach items="${list}" var="list">
                                     <tr>
-                                        <td><a href="/yeast/${list.id}/${list.titleInUrl}">${list.name}</a></td>
+                                        <td>
+                                            <a href="/yeast/${list.id}/${list.titleInUrl}">${list.name}</a>
+                                        </td>
                                         <td> ${list.koreanName}</td>
                                         <td> ${list.type}</td>
                                         <td> ${list.form}</td>
-                                        <td><span class="badge badge-success">${list.maxTemperature} °C</span></td>
-                                        <td><span class="badge badge-success">${list.minTemperature} °C</span></td>
+                                        <td><span class="badge badge-success">${list.maxTemperature} °C</span>
+                                        </td>
+                                        <td><span class="badge badge-success">${list.minTemperature} °C</span>
+                                        </td>
                                     </tr>
                                 </c:forEach>
 
@@ -130,29 +162,34 @@
 
 <content tag="local_script">
     <script>
-        function getTypeCount(){
-            $.get("/yeast/countYeastType", function(data, status){
+        function getTypeCount() {
+            $.get("/yeast/countYeastType", function (data, status) {
                 /*alert("에일 값은 : " + data.aleCntName + "\n" + "de 값은 : " + data.aleCnt + "\n");*/
-                $("#aleButton").html("("+data.aleCntName +data.aleCnt+" 건)"); /*에일*/
-                $("#lagerButton").html("("+data.lagerCntName +data.lagerCnt+" 건)"); /*라거*/
-                $("#wheatButton").html("("+data.wheatCntName +data.wheatCnt+" 건)"); /*위트*/
-                $("#wineButton").html("("+data.wineCntName +data.wineCnt+" 건)"); /*와인*/
-                $("#champagneButton").html("("+data.champagneCntName +data.champagneCnt+" 건)"); /*샴페인*/
+                $("#aleButton").html("(" + data.aleCntName + data.aleCnt + " 건)");
+                /*에일*/
+                $("#lagerButton").html("(" + data.lagerCntName + data.lagerCnt + " 건)");
+                /*라거*/
+                $("#wheatButton").html("(" + data.wheatCntName + data.wheatCnt + " 건)");
+                /*위트*/
+                $("#wineButton").html("(" + data.wineCntName + data.wineCnt + " 건)");
+                /*와인*/
+                $("#champagneButton").html("(" + data.champagneCntName + data.champagneCnt + " 건)");
+                /*샴페인*/
             })
         }
 
-        function search(){
+        function search() {
 
             $("#result").html("");
             $("#result").load("/yeast/list", $("#searchForm").serialize());
 
         }
 
-        function goDetail(seq, titleInUrl){
-            location.href = "/yeast/"+seq+"/"+titleInUrl;
+        function goDetail(seq, titleInUrl) {
+            location.href = "/yeast/" + seq + "/" + titleInUrl;
         }
 
-        function setTypeSearch(data){
+        function setTypeSearch(data) {
 
             $("#type").val(data);
 
@@ -160,17 +197,17 @@
 
         }
 
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
 
             getTypeCount();                  //타입별 카운트 (조회영역)
             search();                        //조회
             $("#name").focus();              //이름칸으로 포커스
 
-            $("#search").click(function(){
-            search();
+            $("#search").click(function () {
+                search();
             })
 
-            $("#fullSearch").click(function(){
+            $("#fullSearch").click(function () {
                 $("#type").val('');             //TODO : 초기화 함수로 뺄것
                 $("#name").val('');
                 search();

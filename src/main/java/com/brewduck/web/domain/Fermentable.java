@@ -8,10 +8,10 @@ import java.util.Date;
 
 /**
  * 발효재료, Value Object
- *
+ * <p/>
  * 신재근, 2014-02-12
  */
-public class Fermentable extends Common implements Serializable  {
+public class Fermentable extends Common implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String titleInUrl;
@@ -179,9 +179,9 @@ public class Fermentable extends Common implements Serializable  {
     public String getTypeCode() {
         return typeCode;
     }
+
     /**
      * 발효재료 종류
-     *
      */
     public void setTypeCode(String typeCode) {
         this.typeCode = typeCode;

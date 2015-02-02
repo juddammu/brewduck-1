@@ -15,8 +15,8 @@
  * 			cookie management via jQuery config options
  */
 
-(function($) {
-    $.fn.styleSwitcher = function(options) {
+(function ($) {
+    $.fn.styleSwitcher = function (options) {
         var defaults = {
             slidein: true,
             preview: true,
@@ -48,18 +48,18 @@
         var baseStyle = $("link[id=theme]").attr("href");
         if (opts.preview) {
             $(opts.container + " a").hover(
-                function() {
+                function () {
                     var newStyle = opts.directory + this.id + ".css";
                     $("link[id=theme]").attr("href", newStyle);
                 },
-                function() {
+                function () {
                     $("link[id=theme]").attr("href", baseStyle);
                 }
             );
         }
 
         $(opts.container + " a").click(
-            function() {
+            function () {
                 var newStyle = opts.directory + this.id + ".css";
                 $("link[id=theme]").attr("href", newStyle);
                 baseStyle = newStyle;

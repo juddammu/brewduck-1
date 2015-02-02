@@ -3,7 +3,6 @@ package com.brewduck.web.yeast.service;
 import com.brewduck.web.domain.Yeast;
 import com.brewduck.web.yeast.dao.YeastDao;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,7 @@ public class YeastServiceTest {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         yeast = new Yeast();
         listSize = 231;
 
@@ -45,10 +44,10 @@ public class YeastServiceTest {
     /**
      * 기본 수행 테스트
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void selectYeastListTest() {
         List<Yeast> selectYeastListTest = yeastDao.selectYeastList(yeast);
-        assertThat(true,  is(selectYeastListTest.size() > 0));
+        assertThat(true, is(selectYeastListTest.size() > 0));
         assertEquals(listSize, selectYeastListTest.size());
     }
 
@@ -57,13 +56,13 @@ public class YeastServiceTest {
      * 기본 수행 테스트
      * </pre>
      */
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     //@Ignore
     public void selectYeastDetailTest() {
         Yeast selectYeastDetail = new Yeast();
         yeast.setId(1);
         selectYeastDetail = yeastDao.selectYeastDetail(yeast);
-        assertThat(true,  is(selectYeastDetail != null));
+        assertThat(true, is(selectYeastDetail != null));
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectYeastDetail);
         assertThat(true, is(selectYeastDetail.getName().equals("Abbey Ale")));
     }
@@ -73,8 +72,8 @@ public class YeastServiceTest {
      * 맥주 이스트 타입 별 갯수 조회.
      * </pre>
      */
-    @Test(timeout=5000)
-    public void countYeastTypeTest(){
+    @Test(timeout = 5000)
+    public void countYeastTypeTest() {
         Yeast yeast = new Yeast();
         Yeast countYeastType = new Yeast();
 
@@ -87,9 +86,9 @@ public class YeastServiceTest {
      * 맥주 이스트 저장.
      * </pre>
      */
-    public void insertYeastTest(){
+    public void insertYeastTest() {
         Yeast yeast = new Yeast();
-        Integer insertYeast =  yeastDao.insertYeast(yeast);
+        Integer insertYeast = yeastDao.insertYeast(yeast);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", insertYeast);
     }
 
@@ -98,9 +97,9 @@ public class YeastServiceTest {
      * 맥주 이스트 수정.
      * </pre>
      */
-    public void updateYeastTest(){
+    public void updateYeastTest() {
         Yeast yeast = new Yeast();
-        Integer updateYeast =  yeastDao.updateYeast(yeast);
+        Integer updateYeast = yeastDao.updateYeast(yeast);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", updateYeast);
     }
 
@@ -109,9 +108,9 @@ public class YeastServiceTest {
      * 맥주 이스트 삭제.
      * </pre>
      */
-    public void deleteYeastTest(){
+    public void deleteYeastTest() {
         Yeast yeast = new Yeast();
-        Integer deleteYeast =  yeastDao.deleteYeast(yeast);
+        Integer deleteYeast = yeastDao.deleteYeast(yeast);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", deleteYeast);
     }
 }

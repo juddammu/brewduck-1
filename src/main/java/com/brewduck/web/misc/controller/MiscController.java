@@ -9,7 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -43,7 +46,7 @@ public class MiscController {
      * @return 맥주 기타 재료 맥덕 모드 메인
      */
 
-    @RequestMapping(value =  {"/", ""}, method =  { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = {"/", ""}, method = {RequestMethod.GET, RequestMethod.POST})
     public String main(Model model, Misc paramMisc) {
         logger.info("Misc index");
 
@@ -78,7 +81,6 @@ public class MiscController {
 
         return "misc/miscIndex";
     }
-
 
 
     /**
@@ -137,7 +139,7 @@ public class MiscController {
         return list;
     }
 
-      /**
+    /**
      * <pre>
      * 맥주 기타 재료 맥덕 모드 상세 조회.
      * </pre>
@@ -145,7 +147,7 @@ public class MiscController {
      * @param model Model
      * @return 맥주 기타 맥덕 모드 재료 상세.
      */
-    @RequestMapping(value="{id}/*", method=RequestMethod.GET)
+    @RequestMapping(value = "{id}/*", method = RequestMethod.GET)
     public String detail(Model model, @PathVariable("id") Integer id) {
 
         logger.info("Misc id : {}", id);
@@ -153,7 +155,7 @@ public class MiscController {
         Misc misc = new Misc();
         misc.setId(id);
         //misc.setName(name);
-       //misc.setid(id);
+        //misc.setid(id);
 
         // 맥주 기타 재료 상세 조회
         Misc miscDetail = miscService.selectMiscDetail(misc);
@@ -171,7 +173,7 @@ public class MiscController {
      * @param model Model
      * @return 맥주 기타 재료 상세.
      */
-    @RequestMapping(value="/miscDetail/{id}/*", method=RequestMethod.GET)
+    @RequestMapping(value = "/miscDetail/{id}/*", method = RequestMethod.GET)
     public String miscDetail(Model model, @PathVariable("id") Integer id) {
 
         logger.info("Misc id : {}", id);

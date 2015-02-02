@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     //유저 정보 카운트
     private int userCnt;
@@ -126,7 +126,6 @@ public class User implements Serializable {
     }
 
 
-
     public void setFamilyRelationId(int familyRelationId) {
         this.familyRelationId = familyRelationId;
     }
@@ -158,7 +157,6 @@ public class User implements Serializable {
     public int getAddressId() {
         return addressId;
     }
-
 
 
     public int getFamilyRelationId() {

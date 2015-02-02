@@ -38,6 +38,7 @@ var ComponentsDropdowns = function () {
             if (!state.id) return state.text; // optgroup
             return "<img class='flag' src='" + Metronic.getGlobalImgPath() + "flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
         }
+
         $("#select2_sample4").select2({
             placeholder: "Select a Country",
             allowClear: true,
@@ -154,6 +155,7 @@ var ComponentsDropdowns = function () {
             if (!state.id) return state.text; // optgroup
             return "<img class='flag' src='" + Metronic.getGlobalImgPath() + "flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
         }
+
         $("#select2_sample_modal_4").select2({
             allowClear: true,
             formatResult: format,
@@ -232,7 +234,7 @@ var ComponentsDropdowns = function () {
         });
     }
 
-    var handleBootstrapSelect = function() {
+    var handleBootstrapSelect = function () {
         $('.bs-select').selectpicker({
             iconBase: 'fa',
             tickIcon: 'fa-check'
@@ -248,7 +250,7 @@ var ComponentsDropdowns = function () {
 
     return {
         //main function to initiate the module
-        init: function () {            
+        init: function () {
             handleSelect2();
             handleSelect2Modal();
             handleMultiSelect();

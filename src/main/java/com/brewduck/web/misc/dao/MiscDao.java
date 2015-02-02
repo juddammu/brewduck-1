@@ -1,6 +1,5 @@
 package com.brewduck.web.misc.dao;
 
-import com.brewduck.web.domain.Fermentable;
 import com.brewduck.web.domain.Misc;
 
 import java.util.List;
@@ -64,7 +63,7 @@ public interface MiscDao {
      *
      * @param misc 맥주 스타일
      * @return 수정 성공 횟수
-    */
+     */
     public Integer updateMisc(Misc misc);
 
     /**

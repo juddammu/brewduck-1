@@ -1,6 +1,6 @@
 <%@ page import="com.brewduck.framework.security.AuthenticationUtils" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <div class="page-header">
 <!-- BEGIN HEADER TOP -->
@@ -8,7 +8,8 @@
 <div class="container-fluid">
 <!-- BEGIN LOGO -->
 <div class="page-logo">
-    <a href="/"><img src="/resources/assets/admin/layout3/img/logo-default.png" alt="logo" class="logo-default"></a>
+    <a href="/"><img src="/resources/assets/admin/layout3/img/logo-default.png" alt="logo"
+                     class="logo-default"></a>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -316,14 +317,15 @@
     <%
         if (AuthenticationUtils.isAuthenticated() == false) {
     %>
-    <a href="/account/login" >
+    <a href="/account/login">
         <span class="username username-hide-mobile">맥덕인증</span>
     </a>
     <%
     } else {
     %>
 
-    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+       data-close-others="true">
         <img alt="" class="img-circle" src="/resources/assets/admin/layout3/img/avatar9.jpg">
         <span class="username username-hide-mobile">Nick</span>
     </a>
@@ -374,148 +376,151 @@
 <!-- END HEADER TOP -->
 <!-- BEGIN HEADER MENU -->
 <div class="page-header-menu">
-<div class="container-fluid">
-<!-- BEGIN HEADER SEARCH BOX -->
-<form class="search-form" action="extra_search.html" method="GET">
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="검색어를 입력하세요." name="query">
+    <div class="container-fluid">
+        <!-- BEGIN HEADER SEARCH BOX -->
+        <form class="search-form" action="extra_search.html" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="검색어를 입력하세요." name="query">
 					<span class="input-group-btn">
 					<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
 					</span>
+            </div>
+        </form>
+        <!-- END HEADER SEARCH BOX -->
+        <!-- BEGIN MEGA MENU -->
+        <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+        <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
+        <div class="hor-menu ">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">홈</a>
+                </li>
+                <li>
+                    <a href="#">레시피</a>
+                </li>
+                <li>
+                    <a href="#">만들기</a>
+                </li>
+                <li class="menu-dropdown classic-menu-dropdown ">
+                    <a data-hover="megamenu-dropdown" data-close-others="true"
+                       data-toggle="dropdown" href="javascript:;">
+                        <spring:message code="menu.ingredient"/> <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-left">
+                        <li class="">
+                            <a href="/style/">
+                                <i class="fa fa-glass"></i>
+                                <spring:message code="menu.style"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/fermentable/">
+                                <i class="fa fa-recycle"></i>
+                                <spring:message code="menu.fermentable"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/hop/">
+                                <i class="fa fa-leaf"></i>
+                                <spring:message code="menu.hop"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/yeast/">
+                                <i class="fa fa-flask"></i>
+                                <spring:message code="menu.yeast"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/misc/">
+                                <i class="fa fa-asterisk"></i>
+                                <spring:message code="menu.misc"/>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-dropdown classic-menu-dropdown ">
+                    <a data-hover="megamenu-dropdown" data-close-others="true"
+                       data-toggle="dropdown" href="javascript:;">
+                        <spring:message code="menu.board"/> <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-left">
+                        <li class="">
+                            <a href="/board/main/1">
+                                <i class="fa fa-book"></i>
+                                <spring:message code="menu.notice"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/board/main/2">
+                                <i class="fa fa-book"></i>
+                                <spring:message code="menu.free"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/board/main/3">
+                                <i class="fa fa-glass"></i>
+                                <spring:message code="menu.styleboard"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/board/main/4">
+                                <i class="fa fa-recycle"></i>
+                                <spring:message code="menu.fermentableboard"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/board/main/5">
+                                <i class="fa fa-leaf"></i>
+                                <spring:message code="menu.hopboard"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/board/main/6">
+                                <i class="fa fa-flask"></i>
+                                <spring:message code="menu.yeastboard"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/board/main/7">
+                                <i class="fa fa-asterisk"></i>
+                                <spring:message code="menu.miscboard"/>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-dropdown classic-menu-dropdown ">
+                    <a data-hover="megamenu-dropdown" data-close-others="true"
+                       data-toggle="dropdown" href="javascript:;">
+                        <spring:message code="menu.calculators"/> <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-left">
+                        <li class="">
+                            <a href="/calc/unit-converter">
+                                <i class="fa fa-joomla"></i>
+                                <spring:message code="menu.unit.calculators"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/calc/abv-calculator">
+                                <i class="fa fa-glass"></i>
+                                <spring:message code="menu.alcohol.calculators"/>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/calc/color-converter">
+                                <i class="fa fa-recycle"></i>
+                                <spring:message code="menu.color.converter"/>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!-- END MEGA MENU -->
     </div>
-</form>
-<!-- END HEADER SEARCH BOX -->
-<!-- BEGIN MEGA MENU -->
-<!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
-<!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
-<div class="hor-menu ">
-<ul class="nav navbar-nav">
-<li>
-    <a href="/">홈</a>
-</li>
-<li>
-    <a href="#">레시피</a>
-</li>
-<li>
-    <a href="#">만들기</a>
-</li>
-<li class="menu-dropdown classic-menu-dropdown ">
-    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
-        <spring:message code="menu.ingredient"/> <i class="fa fa-angle-down"></i>
-    </a>
-    <ul class="dropdown-menu pull-left">
-        <li class="">
-            <a href="/style/">
-            <i class="fa fa-glass"></i>
-            <spring:message code="menu.style"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/fermentable/">
-            <i class="fa fa-recycle"></i>
-            <spring:message code="menu.fermentable"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/hop/">
-                <i class="fa fa-leaf"></i>
-                <spring:message code="menu.hop"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/yeast/">
-                <i class="fa fa-flask"></i>
-                <spring:message code="menu.yeast"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/misc/">
-                <i class="fa fa-asterisk"></i>
-                <spring:message code="menu.misc"/>
-            </a>
-        </li>
-    </ul>
-</li>
-<li class="menu-dropdown classic-menu-dropdown ">
-    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
-        <spring:message code="menu.board"/> <i class="fa fa-angle-down"></i>
-    </a>
-    <ul class="dropdown-menu pull-left">
-        <li class="">
-            <a href="/board/main/1">
-                <i class="fa fa-book"></i>
-                <spring:message code="menu.notice"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/board/main/2">
-                <i class="fa fa-book"></i>
-                <spring:message code="menu.free"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/board/main/3">
-                <i class="fa fa-glass"></i>
-                <spring:message code="menu.styleboard"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/board/main/4">
-                <i class="fa fa-recycle"></i>
-                <spring:message code="menu.fermentableboard"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/board/main/5">
-                <i class="fa fa-leaf"></i>
-                <spring:message code="menu.hopboard"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/board/main/6">
-                <i class="fa fa-flask"></i>
-                <spring:message code="menu.yeastboard"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/board/main/7">
-                <i class="fa fa-asterisk"></i>
-                <spring:message code="menu.miscboard"/>
-            </a>
-        </li>
-    </ul>
-</li>
-
-<li class="menu-dropdown classic-menu-dropdown ">
-    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;">
-        <spring:message code="menu.calculators"/> <i class="fa fa-angle-down"></i>
-    </a>
-    <ul class="dropdown-menu pull-left">
-        <li class="">
-            <a href="/calc/unit-converter">
-                <i class="fa fa-joomla"></i>
-                <spring:message code="menu.unit.calculators"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/calc/abv-calculator">
-                <i class="fa fa-glass"></i>
-                <spring:message code="menu.alcohol.calculators"/>
-            </a>
-        </li>
-        <li class="">
-            <a href="/calc/color-converter">
-                <i class="fa fa-recycle"></i>
-                <spring:message code="menu.color.converter"/>
-            </a>
-        </li>
-    </ul>
-</li>
-
-</ul>
-</div>
-<!-- END MEGA MENU -->
-</div>
 </div>
 <!-- END HEADER MENU -->
 </div>

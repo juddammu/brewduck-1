@@ -44,7 +44,7 @@ public class StyleController {
      * @return 맥주 스타일 메인
      */
 
-    @RequestMapping(value =  {"/", ""}, method =  { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = {"/", ""}, method = {RequestMethod.GET, RequestMethod.POST})
     public String main(Model model, Style paramStyle) {
         List<Style> list = styleService.selectStyleList(paramStyle);
 
@@ -62,7 +62,7 @@ public class StyleController {
      * @param model Model
      * @return 맥주 스타일 상세.
      */
-    @RequestMapping(value="{id}/*", method=RequestMethod.GET)
+    @RequestMapping(value = "{id}/*", method = RequestMethod.GET)
     public String detail(Model model, @PathVariable("id") Integer id) {
 
         Style style = new Style();
@@ -73,7 +73,7 @@ public class StyleController {
         Style styleDetail = styleService.selectStyleDetail(style);
         String examples[] = null;
 
-        if(styleDetail.getExamples() != null){
+        if (styleDetail.getExamples() != null) {
             examples = styleDetail.getExamples().split(",");
         }
 

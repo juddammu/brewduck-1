@@ -1,266 +1,568 @@
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (1,1,25,'Admiral',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (2,1,86,'Admiral',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (3,1,139,'Admiral',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (4,3,4,'Ahtanum ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (5,3,22,'Ahtanum ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (6,4,22,'Amarillo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (7,4,24,'Amarillo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (8,4,115,'Amarillo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (9,5,22,'Amarillo Gold',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (10,5,24,'Amarillo Gold',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (11,6,17,'Apollo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (12,6,32,'Apollo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (13,6,88,'Apollo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (14,8,18,'Atlas ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (15,8,29,'Aquila ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (16,9,18,'Atlas (Styrian Atlas)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (17,10,131,'Aurora ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (18,11,130,'Aurora (Super Styrian Aurora)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (19,12,29,'Banner ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (20,15,87,'Bobek ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (21,16,36,'Bramling Cross',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (22,16,105,'Bramling Cross',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (23,16,153,'Bramling Cross',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (24,17,31,'Bravo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (25,17,143,'Bravo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (26,17,155,'Bravo ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (27,18,20,'Brewer''s Gold',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (28,18,22,'Brewer''s Gold',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (29,18,27,'Brewer''s Gold',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (30,18,48,'Brewer''s Gold',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (31,18,86,'Brewer''s Gold',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (32,18,87,'Brewer''s Gold',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (33,19,18,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (34,19,27,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (35,19,39,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (36,20,18,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (37,20,27,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (38,20,31,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (39,20,39,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (40,20,48,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (41,20,87,'Bullion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (42,21,0,'Calypso ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (43,22,24,'Cascade ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (44,23,110,'Celeia ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (45,23,131,'Celeia ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (46,24,20,'Centennial ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (47,24,39,'Centennial ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (48,24,48,'Centennial ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (49,24,88,'Centennial ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (50,25,0,'Challenger ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (51,26,48,'Chelan ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (52,27,20,'Chinook ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (53,27,39,'Chinook ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (54,27,48,'Chinook ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (55,27,88,'Chinook ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (56,29,39,'Cluster ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (57,29,48,'Cluster ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (58,30,46,'Columbia ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (59,30,154,'Columbia ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (60,31,24,'Columbus ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (61,32,27,'Columbus / Tomahawk / Zeus ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (62,32,32,'Columbus / Tomahawk / Zeus ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (63,32,48,'Columbus / Tomahawk / Zeus ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (64,32,87,'Columbus / Tomahawk / Zeus ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (65,32,88,'Columbus / Tomahawk / Zeus ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (66,32,139,'Columbus / Tomahawk / Zeus ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (67,33,0,'Comet ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (68,34,58,'Crystal ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (69,34,72,'Crystal ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (70,35,44,'Delta ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (71,35,154,'Delta ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (72,36,43,'East Kent Goldings ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (73,36,46,'East Kent Goldings ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (74,36,105,'East Kent Goldings ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (75,36,130,'East Kent Goldings ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (76,36,139,'East Kent Goldings ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (77,36,153,'East Kent Goldings ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (78,37,0,'El Dorado',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (79,38,47,'Ella ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (80,39,27,'Eroica ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (81,39,48,'Eroica ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (82,39,87,'Eroica ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (83,40,0,'Falconer''s Flight',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (84,41,0,'Falconer''s Flight 7C''s Blend ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (85,43,34,'First Gold ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (86,43,36,'First Gold ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (87,44,130,'Fuggle ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (88,44,154,'Fuggle ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (89,45,44,'Fuggle, Organic',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (90,46,36,'Fuggles ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (91,46,154,'Fuggles ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (92,47,0,'Galaxy ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (93,48,27,'Galena ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (94,48,29,'Galena ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (95,48,39,'Galena ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (96,48,87,'Galena ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (97,49,61,'German Tradition ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (98,49,69,'German Tradition ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (99,49,72,'German Tradition ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (100,51,36,'Goldings, B.C.',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (101,51,46,'Goldings, B.C.',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (102,52,46,'Goldings, East Kent ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (103,52,51,'Goldings, East Kent ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (104,53,131,'Green Bullet ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (105,54,0,'Greenburg ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (106,55,49,'Hallertau ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (107,55,58,'Hallertau ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (108,55,72,'Hallertau ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (109,56,31,'Hallertau Magnum ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (110,56,57,'Hallertau Magnum ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (111,56,88,'Hallertau Magnum ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (112,57,49,'Hallertau Taurus',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (113,57,56,'Hallertau Taurus',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (114,58,34,'Hallertauer ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (115,58,61,'Hallertauer ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (116,58,72,'Hallertauer ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (117,59,61,'Hallertauer ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (118,60,58,'Hallertauer Hersbrucker ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (119,60,61,'Hallertauer Hersbrucker ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (120,60,72,'Hallertauer Hersbrucker ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (121,60,82,'Hallertauer Hersbrucker ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (122,61,34,'Hallertauer Mittelfrueh ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (123,61,58,'Hallertauer Mittelfrueh ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (124,61,72,'Hallertauer Mittelfrueh ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (125,61,82,'Hallertauer Mittelfrueh ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (126,62,110,'Harmonie ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (127,69,61,'Hersbrucker ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (128,69,72,'Hersbrucker ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (129,69,82,'Hersbrucker ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (130,69,126,'Hersbrucker ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (131,71,75,'Horizon ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (132,72,34,'Liberty ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (133,72,55,'Liberty ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (134,72,82,'Liberty ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (135,73,110,'Lublin ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (136,73,141,'Lublin ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (137,74,110,'Lublin (Lubelski)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (138,74,124,'Lublin (Lubelski)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (139,74,141,'Lublin (Lubelski)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (140,75,32,'Magnum',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (141,75,56,'Magnum',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (142,75,88,'Magnum',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (143,77,27,'Marynka ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (144,77,36,'Marynka ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (145,78,56,'Merkur (Hallertauer Merkur)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (146,78,75,'Merkur (Hallertauer Merkur)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (147,79,31,'Millenium ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (148,79,88,'Millenium ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (149,79,143,'Millenium ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (150,79,155,'Millenium ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (151,81,110,'Motueka ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (152,82,34,'Mt. Hood',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (153,82,58,'Mt. Hood',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (154,82,72,'Mt. Hood',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (155,83,44,'Mt. Rainier',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (156,83,55,'Mt. Rainier',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (157,84,0,'Nelson Sauvin',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (158,85,48,'Newport ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (159,86,87,'Northdown ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (160,87,58,'Northern Brewer ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (161,87,61,'Northern Brewer ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (162,88,27,'Nugget ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (163,89,18,'Olympic ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (164,91,97,'Orion ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (165,92,20,'Pacific Gem ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (166,93,27,'Pacific Hallertau (aka Pacifica)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (167,93,61,'Pacific Hallertau (aka Pacifica)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (168,93,72,'Pacific Hallertau (aka Pacifica)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (169,93,82,'Pacific Hallertau (aka Pacifica)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (170,94,0,'Pacific Jade',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (171,95,27,'Pacifica ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (172,95,61,'Pacifica ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (173,96,154,'Palisade ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (174,98,25,'Phoenix ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (175,98,36,'Phoenix ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (176,98,86,'Phoenix ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (177,101,36,'Pioneer ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (178,103,110,'Premiant ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (179,104,29,'Pride of Ringwood',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (180,104,48,'Pride of Ringwood',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (181,105,46,'Progress ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (182,106,4,'Rakau (Alpharoma)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (183,106,133,'Rakau (Alpharoma)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (184,108,109,'Rubin ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (185,109,73,'Saaz',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (186,109,141,'Saaz',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (187,110,73,'Saaz ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (188,110,109,'Saaz ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (189,110,124,'Saaz ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (190,111,121,'Santiam ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (191,111,123,'Santiam ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (192,111,140,'Santiam ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (193,112,61,'Saphir',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (194,113,48,'Satus ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (195,114,110,'Select Spalt ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (196,114,122,'Select Spalt ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (197,114,140,'Select Spalt ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (198,116,110,'Sladek ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (199,121,110,'Spalt Spalter ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (200,121,141,'Spalt Spalter ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (201,122,110,'Spalter ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (202,122,140,'Spalter ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (203,123,110,'Spalter Select ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (204,123,121,'Spalter Select ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (205,123,141,'Spalter Select ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (206,124,73,'Sterling ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (207,124,110,'Sterling ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (208,125,87,'Sticklebract ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (209,126,34,'Strisslespalt ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (210,126,60,'Strisslespalt ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (211,126,82,'Strisslespalt ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (212,127,128,'Styrian Aurora ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (213,127,130,'Styrian Aurora ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (214,128,44,'Styrian Bobek',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (215,128,130,'Styrian Bobek',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (216,128,154,'Styrian Bobek',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (217,130,36,'Styrian Golding',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (218,130,44,'Styrian Golding',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (219,130,154,'Styrian Golding',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (220,131,46,'Styrian Goldings',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (221,131,154,'Styrian Goldings',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (222,132,0,'Summer ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (223,133,31,'Summit ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (224,133,79,'Summit ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (225,133,143,'Summit ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (226,133,152,'Summit ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (227,133,155,'Summit ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (228,136,48,'Super Galena',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (229,137,104,'Super Pride',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (230,138,61,'Sylva ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (231,138,66,'Sylva ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (232,139,36,'Target ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (233,140,110,'Tettnang ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (234,140,121,'Tettnang ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (235,141,61,'Tettnang (Tettnang Tettnager)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (236,141,110,'Tettnang (Tettnang Tettnager)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (237,141,121,'Tettnang (Tettnang Tettnager)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (238,142,26,'Tillicum ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (239,142,48,'Tillicum ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (240,143,27,'Tomahawk ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (241,143,48,'Tomahawk ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (242,143,88,'Tomahawk ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (243,143,143,'Tomahawk ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (244,143,155,'Tomahawk ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (245,145,61,'Tradition ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (246,145,72,'Tradition ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (247,145,147,'Tradition ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (248,147,58,'Ultra',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (249,147,72,'Ultra',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (250,147,110,'Ultra',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (251,147,145,'Ultra',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (252,148,61,'Vanguard ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (253,151,55,'Wakatu (Hallertau Aroma)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (254,151,72,'Wakatu (Hallertau Aroma)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (255,152,31,'Warrior ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (256,152,75,'Warrior ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (257,152,88,'Warrior ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (258,153,36,'Whitbread Golding Variety (WGV)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (259,153,105,'Whitbread Golding Variety (WGV)',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (260,154,36,'Willamette ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (261,154,46,'Willamette ',null,'2014-04-13 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (262,157,154,'Golding',null,'2014-10-01 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (263,157,158,'Golding',null,'2014-10-01 00:00:00',null,null,null,null);
-insert into `HOPS_SUBSTITUTES`(`ID`,`HOP_ID`,`SUBSTITUTES_ID`,`NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (264,158,154,'Fuggle',null,'2014-10-01 00:00:00',null,null,null,null);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (1, 1, 25, 'Admiral', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (2, 1, 86, 'Admiral', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (3, 1, 139, 'Admiral', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (4, 3, 4, 'Ahtanum ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (5, 3, 22, 'Ahtanum ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (6, 4, 22, 'Amarillo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (7, 4, 24, 'Amarillo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (8, 4, 115, 'Amarillo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (9, 5, 22, 'Amarillo Gold', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (10, 5, 24, 'Amarillo Gold', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (11, 6, 17, 'Apollo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (12, 6, 32, 'Apollo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (13, 6, 88, 'Apollo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (14, 8, 18, 'Atlas ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (15, 8, 29, 'Aquila ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (16, 9, 18, 'Atlas (Styrian Atlas)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (17, 10, 131, 'Aurora ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (18, 11, 130, 'Aurora (Super Styrian Aurora)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+        NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (19, 12, 29, 'Banner ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (20, 15, 87, 'Bobek ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (21, 16, 36, 'Bramling Cross', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (22, 16, 105, 'Bramling Cross', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (23, 16, 153, 'Bramling Cross', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (24, 17, 31, 'Bravo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (25, 17, 143, 'Bravo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (26, 17, 155, 'Bravo ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (27, 18, 20, 'Brewer''s Gold', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (28, 18, 22, 'Brewer''s Gold', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (29, 18, 27, 'Brewer''s Gold', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (30, 18, 48, 'Brewer''s Gold', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (31, 18, 86, 'Brewer''s Gold', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (32, 18, 87, 'Brewer''s Gold', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (33, 19, 18, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (34, 19, 27, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (35, 19, 39, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (36, 20, 18, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (37, 20, 27, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (38, 20, 31, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (39, 20, 39, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (40, 20, 48, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (41, 20, 87, 'Bullion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (42, 21, 0, 'Calypso ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (43, 22, 24, 'Cascade ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (44, 23, 110, 'Celeia ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (45, 23, 131, 'Celeia ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (46, 24, 20, 'Centennial ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (47, 24, 39, 'Centennial ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (48, 24, 48, 'Centennial ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (49, 24, 88, 'Centennial ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (50, 25, 0, 'Challenger ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (51, 26, 48, 'Chelan ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (52, 27, 20, 'Chinook ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (53, 27, 39, 'Chinook ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (54, 27, 48, 'Chinook ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (55, 27, 88, 'Chinook ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (56, 29, 39, 'Cluster ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (57, 29, 48, 'Cluster ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (58, 30, 46, 'Columbia ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (59, 30, 154, 'Columbia ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (60, 31, 24, 'Columbus ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (61, 32, 27, 'Columbus / Tomahawk / Zeus ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (62, 32, 32, 'Columbus / Tomahawk / Zeus ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (63, 32, 48, 'Columbus / Tomahawk / Zeus ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (64, 32, 87, 'Columbus / Tomahawk / Zeus ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (65, 32, 88, 'Columbus / Tomahawk / Zeus ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (66, 32, 139, 'Columbus / Tomahawk / Zeus ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (67, 33, 0, 'Comet ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (68, 34, 58, 'Crystal ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (69, 34, 72, 'Crystal ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (70, 35, 44, 'Delta ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (71, 35, 154, 'Delta ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (72, 36, 43, 'East Kent Goldings ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (73, 36, 46, 'East Kent Goldings ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (74, 36, 105, 'East Kent Goldings ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (75, 36, 130, 'East Kent Goldings ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (76, 36, 139, 'East Kent Goldings ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (77, 36, 153, 'East Kent Goldings ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (78, 37, 0, 'El Dorado', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (79, 38, 47, 'Ella ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (80, 39, 27, 'Eroica ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (81, 39, 48, 'Eroica ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (82, 39, 87, 'Eroica ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (83, 40, 0, 'Falconer''s Flight', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (84, 41, 0, 'Falconer''s Flight 7C''s Blend ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+        NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (85, 43, 34, 'First Gold ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (86, 43, 36, 'First Gold ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (87, 44, 130, 'Fuggle ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (88, 44, 154, 'Fuggle ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (89, 45, 44, 'Fuggle, Organic', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (90, 46, 36, 'Fuggles ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (91, 46, 154, 'Fuggles ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (92, 47, 0, 'Galaxy ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (93, 48, 27, 'Galena ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (94, 48, 29, 'Galena ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (95, 48, 39, 'Galena ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (96, 48, 87, 'Galena ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (97, 49, 61, 'German Tradition ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (98, 49, 69, 'German Tradition ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (99, 49, 72, 'German Tradition ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (100, 51, 36, 'Goldings, B.C.', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (101, 51, 46, 'Goldings, B.C.', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (102, 52, 46, 'Goldings, East Kent ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (103, 52, 51, 'Goldings, East Kent ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (104, 53, 131, 'Green Bullet ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (105, 54, 0, 'Greenburg ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (106, 55, 49, 'Hallertau ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (107, 55, 58, 'Hallertau ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (108, 55, 72, 'Hallertau ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (109, 56, 31, 'Hallertau Magnum ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (110, 56, 57, 'Hallertau Magnum ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (111, 56, 88, 'Hallertau Magnum ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (112, 57, 49, 'Hallertau Taurus', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (113, 57, 56, 'Hallertau Taurus', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (114, 58, 34, 'Hallertauer ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (115, 58, 61, 'Hallertauer ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (116, 58, 72, 'Hallertauer ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (117, 59, 61, 'Hallertauer ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (118, 60, 58, 'Hallertauer Hersbrucker ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (119, 60, 61, 'Hallertauer Hersbrucker ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (120, 60, 72, 'Hallertauer Hersbrucker ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (121, 60, 82, 'Hallertauer Hersbrucker ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (122, 61, 34, 'Hallertauer Mittelfrueh ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (123, 61, 58, 'Hallertauer Mittelfrueh ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (124, 61, 72, 'Hallertauer Mittelfrueh ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (125, 61, 82, 'Hallertauer Mittelfrueh ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (126, 62, 110, 'Harmonie ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (127, 69, 61, 'Hersbrucker ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (128, 69, 72, 'Hersbrucker ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (129, 69, 82, 'Hersbrucker ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (130, 69, 126, 'Hersbrucker ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (131, 71, 75, 'Horizon ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (132, 72, 34, 'Liberty ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (133, 72, 55, 'Liberty ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (134, 72, 82, 'Liberty ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (135, 73, 110, 'Lublin ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (136, 73, 141, 'Lublin ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (137, 74, 110, 'Lublin (Lubelski)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (138, 74, 124, 'Lublin (Lubelski)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (139, 74, 141, 'Lublin (Lubelski)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (140, 75, 32, 'Magnum', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (141, 75, 56, 'Magnum', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (142, 75, 88, 'Magnum', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (143, 77, 27, 'Marynka ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (144, 77, 36, 'Marynka ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (145, 78, 56, 'Merkur (Hallertauer Merkur)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (146, 78, 75, 'Merkur (Hallertauer Merkur)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (147, 79, 31, 'Millenium ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (148, 79, 88, 'Millenium ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (149, 79, 143, 'Millenium ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (150, 79, 155, 'Millenium ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (151, 81, 110, 'Motueka ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (152, 82, 34, 'Mt. Hood', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (153, 82, 58, 'Mt. Hood', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (154, 82, 72, 'Mt. Hood', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (155, 83, 44, 'Mt. Rainier', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (156, 83, 55, 'Mt. Rainier', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (157, 84, 0, 'Nelson Sauvin', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (158, 85, 48, 'Newport ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (159, 86, 87, 'Northdown ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (160, 87, 58, 'Northern Brewer ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (161, 87, 61, 'Northern Brewer ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (162, 88, 27, 'Nugget ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (163, 89, 18, 'Olympic ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (164, 91, 97, 'Orion ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (165, 92, 20, 'Pacific Gem ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (166, 93, 27, 'Pacific Hallertau (aka Pacifica)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (167, 93, 61, 'Pacific Hallertau (aka Pacifica)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (168, 93, 72, 'Pacific Hallertau (aka Pacifica)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (169, 93, 82, 'Pacific Hallertau (aka Pacifica)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (170, 94, 0, 'Pacific Jade', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (171, 95, 27, 'Pacifica ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (172, 95, 61, 'Pacifica ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (173, 96, 154, 'Palisade ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (174, 98, 25, 'Phoenix ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (175, 98, 36, 'Phoenix ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (176, 98, 86, 'Phoenix ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (177, 101, 36, 'Pioneer ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (178, 103, 110, 'Premiant ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (179, 104, 29, 'Pride of Ringwood', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (180, 104, 48, 'Pride of Ringwood', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (181, 105, 46, 'Progress ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (182, 106, 4, 'Rakau (Alpharoma)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (183, 106, 133, 'Rakau (Alpharoma)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (184, 108, 109, 'Rubin ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (185, 109, 73, 'Saaz', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (186, 109, 141, 'Saaz', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (187, 110, 73, 'Saaz ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (188, 110, 109, 'Saaz ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (189, 110, 124, 'Saaz ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (190, 111, 121, 'Santiam ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (191, 111, 123, 'Santiam ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (192, 111, 140, 'Santiam ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (193, 112, 61, 'Saphir', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (194, 113, 48, 'Satus ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (195, 114, 110, 'Select Spalt ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (196, 114, 122, 'Select Spalt ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (197, 114, 140, 'Select Spalt ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (198, 116, 110, 'Sladek ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (199, 121, 110, 'Spalt Spalter ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (200, 121, 141, 'Spalt Spalter ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (201, 122, 110, 'Spalter ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (202, 122, 140, 'Spalter ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (203, 123, 110, 'Spalter Select ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (204, 123, 121, 'Spalter Select ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (205, 123, 141, 'Spalter Select ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (206, 124, 73, 'Sterling ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (207, 124, 110, 'Sterling ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (208, 125, 87, 'Sticklebract ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (209, 126, 34, 'Strisslespalt ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (210, 126, 60, 'Strisslespalt ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (211, 126, 82, 'Strisslespalt ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (212, 127, 128, 'Styrian Aurora ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (213, 127, 130, 'Styrian Aurora ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (214, 128, 44, 'Styrian Bobek', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (215, 128, 130, 'Styrian Bobek', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (216, 128, 154, 'Styrian Bobek', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (217, 130, 36, 'Styrian Golding', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (218, 130, 44, 'Styrian Golding', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (219, 130, 154, 'Styrian Golding', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (220, 131, 46, 'Styrian Goldings', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (221, 131, 154, 'Styrian Goldings', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (222, 132, 0, 'Summer ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (223, 133, 31, 'Summit ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (224, 133, 79, 'Summit ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (225, 133, 143, 'Summit ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (226, 133, 152, 'Summit ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (227, 133, 155, 'Summit ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (228, 136, 48, 'Super Galena', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (229, 137, 104, 'Super Pride', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (230, 138, 61, 'Sylva ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (231, 138, 66, 'Sylva ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (232, 139, 36, 'Target ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (233, 140, 110, 'Tettnang ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (234, 140, 121, 'Tettnang ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (235, 141, 61, 'Tettnang (Tettnang Tettnager)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (236, 141, 110, 'Tettnang (Tettnang Tettnager)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (237, 141, 121, 'Tettnang (Tettnang Tettnager)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (238, 142, 26, 'Tillicum ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (239, 142, 48, 'Tillicum ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (240, 143, 27, 'Tomahawk ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (241, 143, 48, 'Tomahawk ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (242, 143, 88, 'Tomahawk ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (243, 143, 143, 'Tomahawk ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (244, 143, 155, 'Tomahawk ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (245, 145, 61, 'Tradition ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (246, 145, 72, 'Tradition ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (247, 145, 147, 'Tradition ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (248, 147, 58, 'Ultra', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (249, 147, 72, 'Ultra', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (250, 147, 110, 'Ultra', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (251, 147, 145, 'Ultra', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (252, 148, 61, 'Vanguard ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (253, 151, 55, 'Wakatu (Hallertau Aroma)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (254, 151, 72, 'Wakatu (Hallertau Aroma)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (255, 152, 31, 'Warrior ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (256, 152, 75, 'Warrior ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (257, 152, 88, 'Warrior ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (258, 153, 36, 'Whitbread Golding Variety (WGV)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (259, 153, 105, 'Whitbread Golding Variety (WGV)', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (260, 154, 36, 'Willamette ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (261, 154, 46, 'Willamette ', NULL, '2014-04-13 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (262, 157, 154, 'Golding', NULL, '2014-10-01 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (263, 157, 158, 'Golding', NULL, '2014-10-01 00:00:00', NULL, NULL, NULL, NULL);
+INSERT INTO `HOPS_SUBSTITUTES` (`ID`, `HOP_ID`, `SUBSTITUTES_ID`, `NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (264, 158, 154, 'Fuggle', NULL, '2014-10-01 00:00:00', NULL, NULL, NULL, NULL);
 
-commit;
+COMMIT;

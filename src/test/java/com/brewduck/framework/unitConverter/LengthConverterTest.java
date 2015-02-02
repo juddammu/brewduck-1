@@ -15,8 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class LengthConverterTest {
 
 
-
-    @Test(timeout=5000)
+    @Test(timeout = 5000)
     public void LengthConverterTest() {
         String fromUnit = "in";
 

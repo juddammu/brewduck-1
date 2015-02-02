@@ -9,7 +9,7 @@ import java.lang.annotation.*;
  * Time: 오후 1:02
  * To change this template use File | Settings | File Templates.
  */
-@Target(value={ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER})
+@Target(value = {ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface MaskFormat {

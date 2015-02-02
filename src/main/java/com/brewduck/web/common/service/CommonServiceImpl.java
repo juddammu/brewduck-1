@@ -58,13 +58,19 @@ import java.util.regex.Pattern;
 public class CommonServiceImpl implements CommonService {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    /** Global instance of the HTTP transport. */
+    /**
+     * Global instance of the HTTP transport.
+     */
     private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 
-    /** Global instance of the JSON factory. */
+    /**
+     * Global instance of the JSON factory.
+     */
     private static final JsonFactory JSON_FACTORY = new JacksonFactory();
 
-    /** Global instance of Youtube object to make all API requests. */
+    /**
+     * Global instance of Youtube object to make all API requests.
+     */
     private static YouTube youtube;
 
     /* Global instance of the format used for the video being uploaded (MIME type). */
@@ -104,8 +110,8 @@ public class CommonServiceImpl implements CommonService {
             public boolean accept(File dir, String name) {
                 String lowercaseName = name.toLowerCase();
                 if (lowercaseName.endsWith(".webm") || lowercaseName.endsWith(".flv")
-                        || lowercaseName.endsWith(".f4v") || lowercaseName.endsWith(".mov") || lowercaseName.endsWith(".avi")
-                        || lowercaseName.endsWith(".mp4")) {
+                    || lowercaseName.endsWith(".f4v") || lowercaseName.endsWith(".mov") || lowercaseName.endsWith(".avi")
+                    || lowercaseName.endsWith(".mp4")) {
                     return true;
                 } else {
                     return false;
@@ -147,10 +153,11 @@ public class CommonServiceImpl implements CommonService {
      * not testing the upper limit of an integer (2,147,483,647). I just go up to 999,999,999.
      *
      * @param input String to test.
-     * @param max Integer must be less then this Maximum number.
+     * @param max   Integer must be less then this Maximum number.
      */
     public static boolean isValidIntegerSelection(String input, int max) {
-        if (input.length() > 9) return false;
+        if (input.length() > 9)
+            return false;
 
         boolean validNumber = false;
         // Only accepts positive numbers of up to 9 numbers.
@@ -170,26 +177,26 @@ public class CommonServiceImpl implements CommonService {
 
         // Load client secrets.
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(
-                JSON_FACTORY, UploadVideo.class.getResourceAsStream("/client_secrets.json"));
+            JSON_FACTORY, UploadVideo.class.getResourceAsStream("/client_secrets.json"));
 
         // Checks that the defaults have been replaced (Default = "Enter X here").
         if (clientSecrets.getDetails().getClientId().startsWith("Enter")
-                || clientSecrets.getDetails().getClientSecret().startsWith("Enter ")) {
+            || clientSecrets.getDetails().getClientSecret().startsWith("Enter ")) {
             System.out.println(
-                    "Enter Client ID and Secret from https://code.google.com/apis/console/?api=youtube"
-                            + "into youtube-cmdline-uploadvideo-sample/src/main/resources/client_secrets.json");
+                "Enter Client ID and Secret from https://code.google.com/apis/console/?api=youtube"
+                    + "into youtube-cmdline-uploadvideo-sample/src/main/resources/client_secrets.json");
             System.exit(1);
         }
 
         // Set up file credential store.
         FileCredentialStore credentialStore = new FileCredentialStore(
-                new File(System.getProperty("user.home"), ".credentials/youtube-api-uploadvideo.json"),
-                JSON_FACTORY);
+            new File(System.getProperty("user.home"), ".credentials/youtube-api-uploadvideo.json"),
+            JSON_FACTORY);
 
         // Set up authorization code flow.
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-                HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, scopes).setCredentialStore(credentialStore)
-                .build();
+            HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, scopes).setCredentialStore(credentialStore)
+            .build();
 
         // Build the local server and bind it to port 9000
         LocalServerReceiver localReceiver = new LocalServerReceiver.Builder().setPort(80).build();
@@ -207,7 +214,7 @@ public class CommonServiceImpl implements CommonService {
 
             // YouTube object used to make all API requests.
             youtube = new YouTube.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).setApplicationName(
-                    "youtube-cmdline-uploadvideo-sample").build();
+                "youtube-cmdline-uploadvideo-sample").build();
 
             // We get the user selected local video file to upload.
             //File videoFile = getVideoFromUser();
@@ -262,7 +269,7 @@ public class CommonServiceImpl implements CommonService {
             videoObjectDefiningMetadata.setSnippet(snippet);
 
             InputStreamContent mediaContent = new InputStreamContent(
-                    VIDEO_FILE_FORMAT, new BufferedInputStream(new FileInputStream(videoFile)));
+                VIDEO_FILE_FORMAT, new BufferedInputStream(new FileInputStream(videoFile)));
             mediaContent.setLength(videoFile.length());
 
       /*
@@ -270,7 +277,7 @@ public class CommonServiceImpl implements CommonService {
        * uploaded. 2. Metadata we want associated with the uploaded video. 3. Video file itself.
        */
             YouTube.Videos.Insert videoInsert = youtube.videos()
-                    .insert("snippet,statistics,status", videoObjectDefiningMetadata, mediaContent);
+                .insert("snippet,statistics,status", videoObjectDefiningMetadata, mediaContent);
 
             // Set the upload type and add event listener.
             MediaHttpUploader uploader = videoInsert.getMediaHttpUploader();
@@ -390,7 +397,7 @@ public class CommonServiceImpl implements CommonService {
 
         if (fileseq > 0) {
             LOGGER.info("파일SEQ 가져오기 성공");
-        }else {
+        } else {
             LOGGER.info("파일SEQ 가져오기 오류");
         }
 
@@ -406,7 +413,7 @@ public class CommonServiceImpl implements CommonService {
 
         if (fileseq > 0) {
             LOGGER.info("파일SEQ 가져오기 성공");
-        }else {
+        } else {
             LOGGER.info("파일SEQ 가져오기 오류");
         }
 
@@ -435,7 +442,7 @@ public class CommonServiceImpl implements CommonService {
 
         if (insertCount > 0) {
             LOGGER.info("등록 처리");
-        }else {
+        } else {
             LOGGER.info("등록 오류");
         }
 
@@ -452,7 +459,7 @@ public class CommonServiceImpl implements CommonService {
 
         if (updateCount > 0) {
             LOGGER.info("수정 처리");
-        }else {
+        } else {
             LOGGER.info("수정 오류");
         }
 
@@ -469,7 +476,7 @@ public class CommonServiceImpl implements CommonService {
         LOGGER.info("deleteCount : " + deleteCount);
         if (deleteCount > 0) {
             LOGGER.info("삭제 처리");
-        }else {
+        } else {
             LOGGER.info("삭제 오류");
         }
 

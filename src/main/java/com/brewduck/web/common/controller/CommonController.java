@@ -32,7 +32,7 @@ public class CommonController {
     private CommonService commonService;
 
     /**
-     *  지역(시,군) 리스트
+     * 지역(시,군) 리스트
      *
      * @return
      */
@@ -44,7 +44,7 @@ public class CommonController {
     }
 
     /**
-     *  지역(동,읍) 리스트
+     * 지역(동,읍) 리스트
      *
      * @return
      */
@@ -52,15 +52,14 @@ public class CommonController {
     @ResponseBody
     public List getSubArea(@PathVariable("subArea") String subArea) {
         Common common = new Common();
-     //   common.setParentCode(subArea);
+        //   common.setParentCode(subArea);
         List<Common> getSubArea = commonService.selectSubAreaList(common);
         return getSubArea;
     }
 
 
-
     /**
-     *  대메뉴 카테고리
+     * 대메뉴 카테고리
      *
      * @return
      */
@@ -72,7 +71,7 @@ public class CommonController {
     }
 
     /**
-     *  중메뉴 카테고리
+     * 중메뉴 카테고리
      *
      * @return
      */
@@ -80,15 +79,14 @@ public class CommonController {
     @ResponseBody
     public List getSubCategory(@PathVariable("mainCategory") String mainCategory) {
         Common common = new Common();
-      //  common.setParentCode(mainCategory);
+        //  common.setParentCode(mainCategory);
         List<Common> subCategory = commonService.selectSubCategoryList(common);
         return subCategory;
     }
 
 
-
     /**
-     *  월 가져오기
+     * 월 가져오기
      *
      * @return
      */
@@ -102,49 +100,49 @@ public class CommonController {
     @RequestMapping(value = "/getBirthDate/{birthYear}/{birthMonth}", method = RequestMethod.GET)
     @ResponseBody
     public List getBirthDate(@PathVariable("birthYear") Integer birthYear,
-                             @PathVariable("birthMonth") Integer birthMonth) {
+        @PathVariable("birthMonth") Integer birthMonth) {
         List<String> dayMonthList = new ArrayList<String>();
 
         int birthday = lastDay(birthYear, birthMonth);
-        for(int i = 1 ; i < birthday + 1 ; i++){
-            dayMonthList.add(i+"");
+        for (int i = 1; i < birthday + 1; i++) {
+            dayMonthList.add(i + "");
         }
 
         return dayMonthList;
     }
 
     /**
-     *  해당년월에 마지막날 구하기
+     * 해당년월에 마지막날 구하기
      *
      * @param year
      * @param month
      * @return
      */
-    public static int lastDay(int year, int month){
+    public static int lastDay(int year, int month) {
         int totalDay = totalDay(year);
-        int [] months ;
+        int[] months;
         int lastDay = 0;
 
-        if (leapYearTF(year)){
+        if (leapYearTF(year)) {
             //1월부터 12월까지 달의 마지막 날
-            months = new int[] {31,29,31,30,31,30,31,31,30,31,30,31};
+            months = new int[] {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
             //이전달까지의 날 합구하기
-            for(int j = 0  ; j < month - 1 ; j++ ){
+            for (int j = 0; j < month - 1; j++) {
                 totalDay += months[j];
             }
 
-        }else {
-            months = new int[] {31,28,31,30,31,30,31,31,30,31,30,31};
+        } else {
+            months = new int[] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-            for(int j = 0  ; j < month - 1 ; j++ ){
+            for (int j = 0; j < month - 1; j++) {
                 totalDay += months[j];
             }
         }
 
         int preWeekday = totalDay % 7;
 
-        for(int i = 1 ; i < months[month-1] + 1 ; i++){
+        for (int i = 1; i < months[month - 1] + 1; i++) {
             preWeekday++;
             lastDay = i;
         }
@@ -153,28 +151,28 @@ public class CommonController {
     }
 
     /**
-     *  이전년도까지의 날 합구하기
+     * 이전년도까지의 날 합구하기
      *
      * @param year
      * @return
      */
     public static boolean leapYearTF(int year) {
         boolean yearTF = false;
-        if (( 0 == (year % 4) && 0 != (year % 100) ) || 0 == year % 400 ){
+        if ((0 == (year % 4) && 0 != (year % 100)) || 0 == year % 400) {
             yearTF = true;
         }
         return yearTF;
     }
 
     /**
-     *  이전년도까지의 날 합구하기
+     * 이전년도까지의 날 합구하기
      *
      * @param year
      * @return
      */
-    public static int totalDay(int year){
-        int totalDay = (year-1)*365 + (year-1)/4 - (year-1)/100 + (year-1)/400 ;
-        return  totalDay;
+    public static int totalDay(int year) {
+        int totalDay = (year - 1) * 365 + (year - 1) / 4 - (year - 1) / 100 + (year - 1) / 400;
+        return totalDay;
     }
 }
 

@@ -23,7 +23,7 @@
             "type": "MIT",
             "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
         },
-		{
+        {
             "type": "GPL 2",
             "url": "http://www.gnu.org/licenses/gpl-2.0.html"
         }
@@ -35,5 +35,5 @@
         "jquery": ">=1.6",
         "jquery.ui": ">=1.8"
     },
-	"demo": "http://powerconsulting.co/Samples/Tabelizer"
+    "demo": "http://powerconsulting.co/Samples/Tabelizer"
 }

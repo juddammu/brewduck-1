@@ -1,15 +1,13 @@
 package com.brewduck.framework.security;
 
-import com.brewduck.web.domain.Account;
 import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 
 import java.io.Serializable;
 
 /**
  * 회원 등급 권한 평가
- *
+ * <p/>
  * User: JAEGER
  * Date: 2014. 08. 09
  */
@@ -24,15 +22,15 @@ public class UserGradePermissionEvaluator implements PermissionEvaluator {
     @Override
     public boolean hasPermission(Authentication authentication, Object targetDomainObject, Object permission) {
         boolean hasPermission = false;
-//
-//        if ( authentication != null &&  permission instanceof String){
-//            Account account = sessionService.getLoginUser();
-//            String grade = account.getAuthority();
-//
-//            if ("관리자".equals(grade)) {
-//                hasPermission = true;
-//            }
-//        }
+        //
+        //        if ( authentication != null &&  permission instanceof String){
+        //            Account account = sessionService.getLoginUser();
+        //            String grade = account.getAuthority();
+        //
+        //            if ("관리자".equals(grade)) {
+        //                hasPermission = true;
+        //            }
+        //        }
 
         return hasPermission;
     }

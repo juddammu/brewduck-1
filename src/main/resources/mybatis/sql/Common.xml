@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Common">
 
     <!-- 공통코드 -->
@@ -20,31 +21,31 @@
 
     <select id="Common.selectCodeMaster"
             resultType="Common">
-        <include refid="Common.selectCode" />
-       GROUP BY COMMON_SET
+        <include refid="Common.selectCode"/>
+        GROUP BY COMMON_SET
     </select>
 
     <select id="Common.selectCodeList"
             resultType="Common">
-        <include refid="Common.selectCode" />
+        <include refid="Common.selectCode"/>
     </select>
 
     <!-- 성별 리스트  -->
     <select id="Common.selectGenderList"
             resultType="Common">
-        <include refid="Common.selectCode" />
+        <include refid="Common.selectCode"/>
         WHERE GROUP_CODE = '2100'
-     ORDER BY GROUP_CODE,
-              DISPLAY
+        ORDER BY GROUP_CODE,
+        DISPLAY
     </select>
 
     <!-- 월 리스트 -->
     <select id="Common.selectMonthList"
             resultType="Common">
-        <include refid="Common.selectCode" />
+        <include refid="Common.selectCode"/>
         WHERE GROUP_CODE = '0000'
-     ORDER BY GROUP_CODE,
-               TO_NUMBER(DISPLAY)
+        ORDER BY GROUP_CODE,
+        TO_NUMBER(DISPLAY)
     </select>
 
     <!-- 메인 카테고리 리스트 -->
@@ -62,16 +63,16 @@
     <!-- 메인 카테고리 -->
     <select id="Common.selectMainCategory"
             resultType="Common">
-        <include refid="Common.selectCode" />
+        <include refid="Common.selectCode"/>
         WHERE GROUP_CODE = '1000'
-          AND CODE = #{code}
-          AND ROWNUM = 1
+        AND CODE = #{code}
+        AND ROWNUM = 1
     </select>
 
     <!-- 서브 카테고리 -->
     <select id="Common.selectSubCategory"
             resultType="Common">
-        <include refid="Common.selectCode" />
+        <include refid="Common.selectCode"/>
         WHERE PARENT_CODE = #{parentCode}
         AND CODE = #{code}
         AND ROWNUM = 1
@@ -80,9 +81,9 @@
     <!-- 서브 카테고리 리스트 -->
     <select id="Common.selectSubCategoryList"
             resultType="Common">
-        <include refid="Common.selectCode" />
+        <include refid="Common.selectCode"/>
         <if test="parentCode != null">
-        WHERE PARENT_CODE = #{parentCode}
+            WHERE PARENT_CODE = #{parentCode}
         </if>
 
         ORDER BY GROUP_CODE,
@@ -92,7 +93,7 @@
     <!-- 지역(시,군) 리스트 -->
     <select id="Common.selectMainAreaList"
             resultType="Common">
-        <include refid="Common.selectCode" />
+        <include refid="Common.selectCode"/>
         WHERE GROUP_CODE = '2300'
         ORDER BY GROUP_CODE,
         TO_NUMBER(DISPLAY)
@@ -101,7 +102,7 @@
     <!-- 지역(동,읍) 리스트 -->
     <select id="Common.selectSubAreaList"
             resultType="Common">
-        <include refid="Common.selectCode" />
+        <include refid="Common.selectCode"/>
         <if test="parentCode != null">
             WHERE PARENT_CODE = #{parentCode}
         </if>
@@ -120,7 +121,7 @@
         ,DELETE_YN
         ,CREATE_DATE
         ) values (
-         #{imageId}
+        #{imageId}
         ,#{talentId}
         ,#{imageName}
         ,#{deleteYn}
@@ -140,10 +141,10 @@
         FROM MOVIES
     </select>
 
-<!--    <select id="Common.nextIntegerId" resultType="Board">
-        SELECT IFNULL(MAX(SORT_ORDR),0)+1 AS nextIntegerId  FROM BOARD
-            WHERE BBS_ID = '3'
-    </select>-->
+    <!--    <select id="Common.nextIntegerId" resultType="Board">
+            SELECT IFNULL(MAX(SORT_ORDR),0)+1 AS nextIntegerId  FROM BOARD
+                WHERE BBS_ID = '3'
+        </select>-->
 
     <sql id="Common.selectBoard">
         SELECT
@@ -176,18 +177,18 @@
           AND DELETE_ID IS NULL
     </select>
 
-    <select id="Common.selectBoardList"  parameterType="Board" resultType="Board">
-        <include refid="Common.selectBoard" />
+    <select id="Common.selectBoardList" parameterType="Board" resultType="Board">
+        <include refid="Common.selectBoard"/>
 
-            <if test="sort != null and sort == 'subject'">
-              AND A.SUBJECT like CONCAT('%', #{searchVal}, '%')
-            </if>
-            <if test="sort != null and sort == 'content'">
-                AND A.CONTENT like CONCAT('%', #{searchVal}, '%')
-            </if>
-            <if test="sort != null and sort == 'userId'">
-                AND A.INSERT_ID like CONCAT('%', #{searchVal}, '%')
-            </if>
+        <if test="sort != null and sort == 'subject'">
+            AND A.SUBJECT like CONCAT('%', #{searchVal}, '%')
+        </if>
+        <if test="sort != null and sort == 'content'">
+            AND A.CONTENT like CONCAT('%', #{searchVal}, '%')
+        </if>
+        <if test="sort != null and sort == 'userId'">
+            AND A.INSERT_ID like CONCAT('%', #{searchVal}, '%')
+        </if>
         AND A.MASTER_ID = #{bbsId}
 
         AND A.DELETE_ID IS NULL
@@ -196,7 +197,7 @@
 
     <select id="Common.selectBoardDetail" parameterType="Board" resultType="Board">
         <!-- 게시판 상세 조회 -->
-        <include refid="Common.selectBoard" />
+        <include refid="Common.selectBoard"/>
         AND A.DELETE_ID IS NULL
         <if test="nttId != null">
             AND A.ID = #{nttId}
@@ -205,7 +206,7 @@
 
     <select id="Common.editBoard" parameterType="Board" resultType="Board">
         <!-- 게시판 상세 조회 -->
-        <include refid="Common.selectBoard" />
+        <include refid="Common.selectBoard"/>
         AND A.DELETE_ID IS NULL
         <if test="nttId != null">
             AND A.ID = #{nttId}
@@ -213,7 +214,7 @@
     </select>
 
 
-    <insert id="Common.writeBoardArticle" parameterType="Board" >
+    <insert id="Common.writeBoardArticle" parameterType="Board">
 
 			INSERT INTO BOARD
 			(
@@ -248,6 +249,7 @@
 
     <update id="Common.updateBoardArticle" parameterType="Board">
         <![CDATA[
+
             UPDATE brewduckdb.BOARD
             SET
               NTT_SJ = #{nttSj}
@@ -258,11 +260,13 @@
             WHERE ID = #{nttId}
               AND BBS_ID = #{bbsId}
               AND DELETE_ID is null
-		]]>
+
+        ]]>
     </update>
 
     <insert id="Common.insertBoardMaster" parameterType="Board">
 		<![CDATA[
+
 			INSERT INTO BOARD_MASTER (
               BBS_TY_CODE,
               BBS_ATTRB_CODE,
@@ -290,40 +294,41 @@
 			  #{frstRegisterId},
 			  SYSDATE()
 			 )
-		]]>
+
+        ]]>
     </insert>
 
-<!--    <select id="Common.selectBoardList"
-            resultType="Board">
-        SELECT
-            A.MASTER_ID          bbs_id,
-            A.KOREAN_NAME          KOREAN_NAME,
-            A.BBS_TY_CODE     ty_code,
-            A.BBS_ATTRB_CODE  attrb_code,
-            A.TMPLAT_ID       tmplat_id,
-            B.ID          b_ID,
-            B.BBS_ID          b_bbs_id,
-            B.NTT_NO          b_ntt_no,
-            B.NTT_SJ          b_ntt_sj,
-            B.CONTENT          b_CONTENT,
-            B.ANSWER_AT       b_answer_at,
-            B.PARNTSCTT_NO    b_parntsctt_no,
-            B.ANSWER_LC       b_answer_lc,
-            B.SORT_ORDR       b_sort_order,
-            B.RDCNT           b_rdcnt,
-            B.USE_YN          b_USE_YN,
-            B.NTCE_BGNDE      b_ntce_bgnde,
-            B.NTCE_ENDDE      b_ntce_endde,
-            B.NTCR_ID         b_ntcr_id,
-            B.NTCR_NM         b_ntcr_nm,
-            B.PASSWORD        b_password,
-            B.ATCH_FILE_ID    b_atch_file_id
-            FROM BOARD_MASTER A,
-            BOARD B
-       WHERE A.USE_YN = 'Y'
-         AND A.MASTER_ID = B.BBS_ID
-         AND A.MASTER_ID = #{bbsId}
-    </select>-->
+    <!--    <select id="Common.selectBoardList"
+                resultType="Board">
+            SELECT
+                A.MASTER_ID          bbs_id,
+                A.KOREAN_NAME          KOREAN_NAME,
+                A.BBS_TY_CODE     ty_code,
+                A.BBS_ATTRB_CODE  attrb_code,
+                A.TMPLAT_ID       tmplat_id,
+                B.ID          b_ID,
+                B.BBS_ID          b_bbs_id,
+                B.NTT_NO          b_ntt_no,
+                B.NTT_SJ          b_ntt_sj,
+                B.CONTENT          b_CONTENT,
+                B.ANSWER_AT       b_answer_at,
+                B.PARNTSCTT_NO    b_parntsctt_no,
+                B.ANSWER_LC       b_answer_lc,
+                B.SORT_ORDR       b_sort_order,
+                B.RDCNT           b_rdcnt,
+                B.USE_YN          b_USE_YN,
+                B.NTCE_BGNDE      b_ntce_bgnde,
+                B.NTCE_ENDDE      b_ntce_endde,
+                B.NTCR_ID         b_ntcr_id,
+                B.NTCR_NM         b_ntcr_nm,
+                B.PASSWORD        b_password,
+                B.ATCH_FILE_ID    b_atch_file_id
+                FROM BOARD_MASTER A,
+                BOARD B
+           WHERE A.USE_YN = 'Y'
+             AND A.MASTER_ID = B.BBS_ID
+             AND A.MASTER_ID = #{bbsId}
+        </select>-->
 
     <select id="Common.selectCommentList"
             resultType="Board">
@@ -348,26 +353,28 @@
 
     <update id="deleteBoardArticle" parameterType="Board">
         <![CDATA[
+
         UPDATE brewduckdb.BOARD
         SET delete_id = #{deleteId}
         ,delete_date = SYSDATE()
         WHERE ID = #{nttId}
         AND BBS_ID = #{bbsId}
-         ]]>
+
+        ]]>
     </update>
 
     <select id="getNewPost" resultType="Board">
         SELECT
-        A.ID      nttId,
-        A.SUBJECT      nttSj,
-        A.CONTENT      nttCn,
+        A.ID nttId,
+        A.SUBJECT nttSj,
+        A.CONTENT nttCn,
         A.ATCH_FILE_ID atchFileId,
         (SELECT B.FILENAME FROM FILEINFO B WHERE A.ATCH_FILE_ID = B.SEQ) atchFileName,
         (SELECT C.FILENAME FROM FILEINFO C WHERE A.ATCH_COVER_FILE_ID = C.SEQ) atchCoverFileName,
-        A.INSERT_ID   insertId,
+        A.INSERT_ID insertId,
         A.INSERT_DATE insertDate
         from BOARD A
-       WHERE 1 = 1
+        WHERE 1 = 1
         AND DELETE_ID is null
         <if test="bbsId != null">
             AND A.MASTER_ID = #{bbsId}
@@ -424,6 +431,7 @@
 
     <insert id="Common.deleteReply" parameterType="Board">
 		<![CDATA[
+
              INTO BOARD_COMMENT(
                ID
               ,BBS_ID
@@ -447,7 +455,8 @@
               ,SYSDATE()
               ,#{insertId}
             )
-		]]>
+
+        ]]>
     </insert>
 
 

@@ -11,12 +11,12 @@ var MapsGoogle = function () {
     var mapMarker = function () {
         var map = new GMaps({
             div: '#gmap_marker',
-           lat: -51.38739,
-                lng: -6.187181,
+            lat: -51.38739,
+            lng: -6.187181,
         });
         map.addMarker({
-           lat: -51.38739,
-                lng: -6.187181,
+            lat: -51.38739,
+            lng: -6.187181,
             title: 'Lima',
             details: {
                 database_id: 42,

@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     $('.loader').loader({
         progress: 0,
         frontSpeed: 0.021,
@@ -10,7 +10,7 @@ $(function() {
     });
 
     var progr = 1;
-    setInterval(function() {
+    setInterval(function () {
         $('.loader').loader('setProgress', ++progr
 
 

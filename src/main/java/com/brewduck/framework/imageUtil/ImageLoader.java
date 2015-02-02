@@ -1,22 +1,19 @@
 package com.brewduck.framework.imageUtil;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 
 /**
- *
  * @author James
  */
 public class ImageLoader {
 
-    private ImageLoader() {}
-    
+    private ImageLoader() {
+    }
+
     /**
      * Load image from URL
+     *
      * @param url URL of image
      * @throws java.io.IOException If there is a problem loading the image from the URL
      */
@@ -26,6 +23,7 @@ public class ImageLoader {
 
     /**
      * Load image from URL string
+     *
      * @param url URL of image
      * @throws java.io.IOException If there is a problem loading the image from the URL
      */
@@ -35,6 +33,7 @@ public class ImageLoader {
 
     /**
      * Load image from file
+     *
      * @param file
      * @throws java.io.IOException If there is a problem loading the image from the file
      */
@@ -44,6 +43,7 @@ public class ImageLoader {
 
     /**
      * Load image from file string
+     *
      * @param file
      * @throws java.io.IOException If there is a problem loading the image from the file
      */
@@ -53,6 +53,7 @@ public class ImageLoader {
 
     /**
      * Load image from byte array
+     *
      * @param data image in the form of a byte array
      * @throws java.io.IOException
      */
@@ -62,7 +63,8 @@ public class ImageLoader {
 
     /**
      * Load image from byte array
-     * @param data image in the form of a byte array
+     *
+     * @param data       image in the form of a byte array
      * @param sourceType hint that may be used when you eventually write the image
      * @throws java.io.IOException
      */
@@ -72,6 +74,7 @@ public class ImageLoader {
 
     /**
      * Load image from an input stream
+     *
      * @param in image in the form of an input stream
      * @throws java.io.IOException
      */
@@ -81,7 +84,8 @@ public class ImageLoader {
 
     /**
      * Load image from an input stream
-     * @param in image in the form of an input stream
+     *
+     * @param in         image in the form of an input stream
      * @param sourceType hint that may be used when you eventually write the image
      * @throws java.io.IOException
      */

@@ -12,7 +12,7 @@ import java.util.Date;
  * 홉 Value Object.
  * </pre>
  *
- * @author  chacha
+ * @author chacha
  * @version 1.0, 2014.02.16
  */
 public class Hop extends Common implements Serializable {
@@ -283,9 +283,13 @@ public class Hop extends Common implements Serializable {
         this.type = type;
     }
 
-    public String getTypeKorean() { return typeKorean;  }
+    public String getTypeKorean() {
+        return typeKorean;
+    }
 
-    public void setTypeKorean(String typeKorean) { this.typeKorean = typeKorean; }
+    public void setTypeKorean(String typeKorean) {
+        this.typeKorean = typeKorean;
+    }
 
     public String getForm() {
         return form;

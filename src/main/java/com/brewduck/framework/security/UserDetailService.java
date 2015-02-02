@@ -21,20 +21,20 @@ public class UserDetailService extends User {
     private Account account;
 
     public UserDetailService(String username,
-                             String password,
-                             boolean enabled,
-                             boolean accountNonExpired,
-                             boolean credentialsNonExpired,
-                             boolean accountNonLocked,
-                             Collection<? extends GrantedAuthority> authorities,
-                             Account account) {
+        String password,
+        boolean enabled,
+        boolean accountNonExpired,
+        boolean credentialsNonExpired,
+        boolean accountNonLocked,
+        Collection<? extends GrantedAuthority> authorities,
+        Account account) {
         super(username,
-              password,
-              enabled,
-              accountNonExpired,
-              credentialsNonExpired,
-              accountNonLocked,
-              authorities);
+            password,
+            enabled,
+            accountNonExpired,
+            credentialsNonExpired,
+            accountNonLocked,
+            authorities);
 
         this.account = account;
     }

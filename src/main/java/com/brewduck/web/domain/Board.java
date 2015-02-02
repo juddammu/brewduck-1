@@ -1,10 +1,5 @@
 package com.brewduck.web.domain;
 
-import org.apache.ibatis.session.ResultHandler;
-
-import java.util.Date;
-import java.util.PriorityQueue;
-
 /**
  * Created with IntelliJ IDEA.
  * User: hukoru
@@ -12,7 +7,7 @@ import java.util.PriorityQueue;
  * Time: 오후 11:53
  * To change this template use File | Settings | File Templates.
  */
-public class Board{
+public class Board {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,34 +19,34 @@ public class Board{
     private Integer recipeId;
 
     //게시판 ID
-    private Integer  bbsId;
+    private Integer bbsId;
 
-    private String  bbsTyCode;
+    private String bbsTyCode;
 
-    private String  bbsAttrbCode;
+    private String bbsAttrbCode;
 
-    private String  bbsIntrcn;
+    private String bbsIntrcn;
 
-    private String  replyPosblAt;
+    private String replyPosblAt;
 
-    private String  fileAtchPosblAt;
+    private String fileAtchPosblAt;
 
-    private Integer  posblAtchFileNumber;
+    private Integer posblAtchFileNumber;
 
-    private Integer  posblAtchFileSize;
+    private Integer posblAtchFileSize;
 
-    private String  tmplatId;
+    private String tmplatId;
 
-    private String  frstRegisterId;
+    private String frstRegisterId;
 
     //게시물 번호
     private Integer nttNo;
     //게시물 제목
-    private String  nttSj;
+    private String nttSj;
     //게시물 내용
-    private String  nttCn;
+    private String nttCn;
     //답변여부
-    private String  answerAt;
+    private String answerAt;
     //부모글 번호
     private Integer parntscttNo;
     //답변 위치
@@ -61,17 +56,17 @@ public class Board{
     //조회수
     private Integer rdcnt;
     //게시시작일
-    private String  ntceBgnde;
+    private String ntceBgnde;
     //게시종료일
-    private String  ntceEndde;
+    private String ntceEndde;
     //게시자 ID
-    private String  ntcrId;
+    private String ntcrId;
     //게시자 명
-    private String  ntcrNm;
+    private String ntcrNm;
     //게시물 첨부파일 아이디
-    private String  atchFileId;
+    private String atchFileId;
 
-    private String  atchFileName;
+    private String atchFileName;
 
     private String atchCoverFileId;
 
@@ -98,10 +93,10 @@ public class Board{
     //패스워드
     private String password;
     //게시판명
-    private String  bbsNm;
+    private String bbsNm;
 
     //게시판 영문명
-    private String  bbsEnNm;
+    private String bbsEnNm;
 
     private String searchVal;
 
@@ -109,7 +104,7 @@ public class Board{
 
     private String sort;
 
-    private  String deleteId;
+    private String deleteId;
 
     private String deletDate;
 

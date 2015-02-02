@@ -64,13 +64,16 @@ var TableEditable = function () {
             "language": {
                 "lengthMenu": " _MENU_ records"
             },
-            "columnDefs": [{ // set default column settings
-                'orderable': true,
-                'targets': [0]
-            }, {
-                "searchable": true,
-                "targets": [0]
-            }],
+            "columnDefs": [
+                { // set default column settings
+                    'orderable': true,
+                    'targets': [0]
+                },
+                {
+                    "searchable": true,
+                    "targets": [0]
+                }
+            ],
             "order": [
                 [0, "asc"]
             ] // set first column as a default sort by asc
@@ -99,7 +102,7 @@ var TableEditable = function () {
                     oTable.fnDeleteRow(nEditing); // cancel
                     nEditing = null;
                     nNew = false;
-                    
+
                     return;
                 }
             }

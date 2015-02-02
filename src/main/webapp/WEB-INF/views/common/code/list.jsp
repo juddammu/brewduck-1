@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -27,18 +27,24 @@
     <ul class="tooltip-area">
         <li>
             <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-table="table-toggle-column" data-table-target="#toggle-column"  title="Table Column"><i class="fa fa-th-list"></i></button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        data-table="table-toggle-column" data-table-target="#toggle-column"
+                        title="Table Column"><i class="fa fa-th-list"></i></button>
                 <ul class="dropdown-menu arrow pull-right" role="menu"></ul>
             </div>
         </li>
-        <li><a href="javascript:void(0)" class="btn btn-collapse" title="Collapse"><i class="fa fa-sort-amount-asc"></i></a></li>
-        <li><a href="javascript:void(0)" class="btn btn-reload"  title="Reload"><i class="fa fa-retweet"></i></a></li>
-        <li><a href="javascript:void(0)" class="btn btn-close" title="Close"><i class="fa fa-times"></i></a></li>
+        <li><a href="javascript:void(0)" class="btn btn-collapse" title="Collapse"><i
+                class="fa fa-sort-amount-asc"></i></a></li>
+        <li><a href="javascript:void(0)" class="btn btn-reload" title="Reload"><i
+                class="fa fa-retweet"></i></a></li>
+        <li><a href="javascript:void(0)" class="btn btn-close" title="Close"><i
+                class="fa fa-times"></i></a></li>
     </ul>
 </div>
 <div class="panel-body">
 <form>
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-hover" data-provide="data-table" id="toggle-column">
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-hover"
+       data-provide="data-table" id="toggle-column">
 <thead>
 <tr>
     <th>Rendering engine</th>
@@ -52,7 +58,8 @@
 <tr class="odd gradeX">
     <td>Trident</td>
     <td>Internet
-        Explorer 4.0</td>
+        Explorer 4.0
+    </td>
     <td>Win 95+</td>
     <td class="center"> 4</td>
     <td class="center">X</td>
@@ -60,7 +67,8 @@
 <tr class="even gradeC">
     <td>Trident</td>
     <td>Internet
-        Explorer 5.0</td>
+        Explorer 5.0
+    </td>
     <td>Win 95+</td>
     <td class="center">5</td>
     <td class="center">C</td>
@@ -68,7 +76,8 @@
 <tr class="odd gradeA">
     <td>Trident</td>
     <td>Internet
-        Explorer 5.5</td>
+        Explorer 5.5
+    </td>
     <td>Win 95+</td>
     <td class="center">5.5</td>
     <td class="center">A</td>
@@ -76,7 +85,8 @@
 <tr class="even gradeA">
     <td>Trident</td>
     <td>Internet
-        Explorer 6</td>
+        Explorer 6
+    </td>
     <td>Win 98+</td>
     <td class="center">6</td>
     <td class="center">A</td>
@@ -490,35 +500,37 @@
     <!-- Library Themes Customize-->
     <script type="text/javascript" src="/resources/js/caplet.custom.js"></script>
     <!-- Library datable -->
-    <script type="text/javascript" src="/resources/plugins/datable/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="/resources/plugins/datable/dataTables.bootstrap.js"></script>
+    <script type="text/javascript"
+            src="/resources/plugins/datable/jquery.dataTables.min.js"></script>
+    <script type="text/javascript"
+            src="/resources/plugins/datable/dataTables.bootstrap.js"></script>
 
 
     <script type="text/javascript">
 
-        function fnShowHide( iCol , table){
+        function fnShowHide(iCol, table) {
             var oTable = $(table).dataTable();
             var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
-            oTable.fnSetColumnVis( iCol, bVis ? false : true );
+            oTable.fnSetColumnVis(iCol, bVis ? false : true);
         }
 
-        $(function() {
+        $(function () {
 
             //////////     DATA TABLE  COLUMN TOGGLE    //////////
-            $('[data-table="table-toggle-column"]').each(function(i) {
-                var data=$(this).data(),
-                        table=$(this).data("table-target"),
-                        dropdown=$(this).parent().find(".dropdown-menu"),
-                        col=new Array;
-                $(table).find("thead th").each(function(i) {
-                    $("<li><a  class='toggle-column' href='javascript:void(0)' onclick=fnShowHide("+i+",'"+table+"') ><i class='fa fa-check'></i> "+$(this).text()+"</a></li>").appendTo(dropdown);
+            $('[data-table="table-toggle-column"]').each(function (i) {
+                var data = $(this).data(),
+                        table = $(this).data("table-target"),
+                        dropdown = $(this).parent().find(".dropdown-menu"),
+                        col = new Array;
+                $(table).find("thead th").each(function (i) {
+                    $("<li><a  class='toggle-column' href='javascript:void(0)' onclick=fnShowHide(" + i + ",'" + table + "') ><i class='fa fa-check'></i> " + $(this).text() + "</a></li>").appendTo(dropdown);
                 });
             });
 
             //////////     COLUMN  TOGGLE     //////////
-            $("a.toggle-column").on('click',function(){
-                $(this).toggleClass( "toggle-column-hide" );
-                $(this).find('.fa').toggleClass( "fa-times" );
+            $("a.toggle-column").on('click', function () {
+                $(this).toggleClass("toggle-column-hide");
+                $(this).find('.fa').toggleClass("fa-times");
             });
 
             // Call dataTable in this page only

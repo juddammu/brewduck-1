@@ -22,21 +22,20 @@ import java.io.IOException;
 
 /**
  * @author hukoru
- *
  */
 public class LogoutHandler extends SimpleUrlLogoutSuccessHandler {
-	Logger logger = LoggerFactory.getLogger(LogoutHandler.class);
+    Logger logger = LoggerFactory.getLogger(LogoutHandler.class);
 
-	@Override
-	public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
-			throws IOException, ServletException {
-		clearSession(request);
+    @Override
+    public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
+        throws IOException, ServletException {
+        clearSession(request);
 
-		super.onLogoutSuccess(request, response, authentication);
-	}
+        super.onLogoutSuccess(request, response, authentication);
+    }
 
-	private void clearSession(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		session.invalidate();
-	}
+    private void clearSession(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.invalidate();
+    }
 }

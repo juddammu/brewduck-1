@@ -1,384 +1,1354 @@
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (1,2,'Agnus ','02','Spicy',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (2,2,'Agnus ','11','Strong hop aroma',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (3,3,'Ahtanum ','06','Citrus aromas',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (4,3,'Ahtanum ','01','Distinctive floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (5,4,'Amarillo ','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (6,4,'Amarillo ','07','Intensely fruity (citrus, melon, and stone friuts)',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (7,4,'Amarillo ','07','Tropical notes',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (8,5,'Amarillo Gold','06','Citrus',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (9,5,'Amarillo Gold','01','Flowery',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (10,6,'Apollo ','11','Hoppy notes',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (11,6,'Apollo ','07','Strong grapefruit',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (12,9,'Atlas (Styrian Atlas)',null,'Fresh hoppy aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (13,11,'Aurora (Super Styrian Aurora)','11','Intense',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (14,11,'Aurora (Super Styrian Aurora)','15','Pleasant hoppy aroma',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (15,13,'Belma ','07','Melon',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (16,13,'Belma ','07','Slight grapefruit',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (17,13,'Belma ','07','Strawberry',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (18,13,'Belma ','07','Tropical (but not mango/guava, more like pineapple)',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (19,13,'Belma ','06','Very orange',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (20,14,'Boadicea ','02','Spicy characteristics with slightly grassy overtones',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (21,16,'Bramling Cross',null,'Currant aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (22,16,'Bramling Cross','07','Fruity',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (23,16,'Bramling Cross','10','Mild',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (24,17,'Bravo ','01','Floral aroma',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (25,17,'Bravo ','07','Fruity',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (26,18,'Brewer''s Gold',null,'Bittering hop with neutral aroma character',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (27,18,'Brewer''s Gold','02','Spice noted to its flavor and aroma',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (28,19,'Bullion ',null,'Bitter in flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (29,19,'Bullion ',null,'Intense Black currant aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (30,19,'Bullion ',null,'Pungent',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (31,19,'Bullion ','11','Strong',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (32,20,'Bullion ',null,'Bitter in flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (33,20,'Bullion ',null,'Intense Black currant aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (34,20,'Bullion ',null,'Pungent',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (35,20,'Bullion ','11','Strong',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (36,21,'Calypso ','06','Citrus',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (37,21,'Calypso ',null,'Notes of cherry',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (38,21,'Calypso ',null,'Peaches',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (39,21,'Calypso ',null,'Pear',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (40,22,'Cascade ','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (41,22,'Cascade ',null,'Grapefruit character',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (42,22,'Cascade ',null,'Strong spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (43,23,'Celeia ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (44,24,'Centennial ','06','Citrus aroma',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (45,24,'Centennial ',null,'Clean bittering flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (46,24,'Centennial ','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (47,24,'Centennial ',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (48,25,'Challenger ',null,'Blends well',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (49,25,'Challenger ',null,'Fruity in flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (50,25,'Challenger ',null,'Spicy aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (51,26,'Chelan ',null,'Pleasant citrus notes ',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (52,27,'Chinook ',null,'Heavy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (53,27,'Chinook ',null,'Spicy aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (54,28,'Citra  ','06','Interesting citrus',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (55,28,'Citra  ','07','Tropical fruit character',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (56,29,'Cluster ','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (57,29,'Cluster ',null,'Sharp aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (58,29,'Cluster ',null,'Sharp flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (59,29,'Cluster ',null,'Slightly spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (60,30,'Columbia ',null,'Close to Fuggles',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (61,31,'Columbus ',null,'Pungent',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (62,31,'Columbus ',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (63,31,'Columbus ',null,'Strongly aromatic',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (64,32,'Columbus / Tomahawk / Zeus ',null,'Pungent',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (65,32,'Columbus / Tomahawk / Zeus ',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (66,32,'Columbus / Tomahawk / Zeus ',null,'Strongly aromatic',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (67,33,'Comet ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (68,34,'Crystal ',null,'Clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (69,34,'Crystal ',null,'Mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (70,34,'Crystal ',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (71,34,'Crystal ',null,'Slightly spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (72,35,'Delta ','10','Mild',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (73,35,'Delta ',null,'Pleasant aroma; slightly spicy with a hint of citrus.',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (74,36,'East Kent Goldings ',null,'Aromatic',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (75,36,'East Kent Goldings ','04','Earthy',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (76,36,'East Kent Goldings ','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (77,36,'East Kent Goldings ',null,'Slightly sweet spicy flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (78,37,'El Dorado',null,'Cherries',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (79,37,'El Dorado',null,'Lifesavers',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (80,37,'El Dorado',null,'Pear',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (81,37,'El Dorado',null,'Tropical fruit flavors',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (82,37,'El Dorado',null,'Watermelon',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (83,38,'Ella ',null,'Apricot',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (84,38,'Ella ',null,'Grapefruit',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (85,38,'Ella ','06','Lemon',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (86,38,'Ella ',null,'Melon',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (87,38,'Ella ',null,'Subtle hints of star anise',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (88,38,'Ella ','01','Sweet and floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (89,38,'Ella ',null,'Tropical',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (90,39,'Eroica ',null,'Clean bittering hop',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (91,39,'Eroica ',null,'Very bitter',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (92,40,'Falconer''s Flight','06','Citrus',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (93,40,'Falconer''s Flight',null,'Distinct tropical',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (94,40,'Falconer''s Flight','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (95,40,'Falconer''s Flight',null,'Grapefruit tones',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (96,40,'Falconer''s Flight',null,'Lemon',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (97,41,'Falconer''s Flight 7C''s Blend ',null,'Citrus/grapefruit character alongside fruity',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (98,41,'Falconer''s Flight 7C''s Blend ',null,'Earthy notes',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (99,41,'Falconer''s Flight 7C''s Blend ',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (100,42,'Feux Coeur Francais',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (101,43,'First Gold ',null,'Similar to other Golding varieties',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (102,43,'First Gold ','02','Spicy',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (103,44,'Fuggle ','07','Fruity',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (104,44,'Fuggle ','10','Mild',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (105,44,'Fuggle ',null,'Soft',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (106,44,'Fuggle ',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (107,44,'Fuggle ',null,'Woody',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (108,45,'Fuggle, Organic','01','floral character',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (109,45,'Fuggle, Organic',null,'Pipe-tobacco',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (110,45,'Fuggle, Organic',null,'Wonderful earthy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (111,46,'Fuggles ','01','floral aroma',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (112,46,'Fuggles ','01','Grassy',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (113,46,'Fuggles ','10','Mild',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (114,46,'Fuggles ',null,'Soft',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (115,47,'Galaxy ',null,'Unique hop aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (116,48,'Galena ',null,'Clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (117,48,'Galena ',null,'Strong',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (118,49,'German Tradition ',null,'Herbal (grassy) tones',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (119,49,'German Tradition ','01','Medium intense floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (120,50,'Glacier ',null,'Excellent',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (121,50,'Glacier ',null,'hoppy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (122,51,'Goldings, B.C.','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (123,51,'Goldings, B.C.',null,'Rounded mild aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (124,51,'Goldings, B.C.',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (125,52,'Goldings, East Kent ',null,'Aromatic',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (126,52,'Goldings, East Kent ',null,'Earthy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (127,52,'Goldings, East Kent ','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (128,52,'Goldings, East Kent ',null,'Slightly sweet spicy flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (129,53,'Green Bullet ','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (130,53,'Green Bullet ',null,'Raisin aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (131,54,'Greenburg ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (132,55,'Hallertau ',null,'considered mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (133,55,'Hallertau ',null,'pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (134,55,'Hallertau ',null,'slightly flowery & spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (135,56,'Hallertau Magnum ',null,'stable spicy flavo',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (136,57,'Hallertau Taurus',null,'flavorful',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (137,57,'Hallertau Taurus',null,'seasoned',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (138,57,'Hallertau Taurus',null,'zesty character',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (139,58,'Hallertauer ',null,'clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (140,58,'Hallertauer ',null,'mild spicy flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (141,58,'Hallertauer ',null,'neutral flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (142,58,'Hallertauer ',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (143,59,'Hallertauer ',null,'clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (144,59,'Hallertauer ',null,'mild spicy flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (145,59,'Hallertauer ',null,'neutral flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (146,59,'Hallertauer ',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (147,60,'Hallertauer Hersbrucker ',null,'clean flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (148,60,'Hallertauer Hersbrucker ',null,'Noble',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (149,60,'Hallertauer Hersbrucker ',null,'pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (150,61,'Hallertauer Mittelfrueh ',null,'assertive',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (151,61,'Hallertauer Mittelfrueh ',null,'mild herbal aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (152,61,'Hallertauer Mittelfrueh ',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (153,62,'Harmonie ',null,'typical Czech aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (154,63,'HBC 291 (Experimental)','01','floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (155,63,'HBC 291 (Experimental)',null,'fruity',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (156,63,'HBC 291 (Experimental)',null,'Typically described as peppery',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (157,64,'HBC 342 (Experimental)',null,'melon notes',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (158,64,'HBC 342 (Experimental)',null,'Mild citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (159,64,'HBC 342 (Experimental)',null,'tropical fruit',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (160,65,'HBC 366 (Experimental)',null,'Exceptional aroma profile includes notes of citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (161,65,'HBC 366 (Experimental)',null,'pine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (162,65,'HBC 366 (Experimental)',null,'tropical',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (163,66,'Helga (Southern Hallertau)',null,'Ddelicate flora',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (164,66,'Helga (Southern Hallertau)',null,'subtle herbal aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (165,67,'Herald ',null,'acceptable',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (166,67,'Herald ',null,'Strong',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (167,68,'Herkules ',null,'hints of pine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (168,68,'Herkules ',null,'hop notes',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (169,68,'Herkules ',null,'lemon',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (170,68,'Herkules ',null,'pepper',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (171,68,'Herkules ',null,'Spicy flora',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (172,69,'Hersbrucker ',null,'Classicly spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (173,69,'Hersbrucker ',null,'herbal',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (174,69,'Hersbrucker ',null,'hints of citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (175,69,'Hersbrucker ',null,'stone fruit',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (176,70,'HopShot',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (177,71,'Horizon ',null,'hoppy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (178,71,'Horizon ',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (179,72,'Liberty ',null,'Fine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (180,72,'Liberty ',null,'mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (181,72,'Liberty ',null,'slightly spicy flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (182,73,'Lublin ',null,'mild flavor similar to Saaz',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (183,73,'Lublin ',null,'Noble',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (184,74,'Lublin (Lubelski)',null,'mild flavor similar to Saaz',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (185,74,'Lublin (Lubelski)',null,'Noble',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (186,75,'Magnum',null,'No distinctive aroma characteristics',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (187,76,'Mandarina Bavaria',null,'citrus flavors',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (188,76,'Mandarina Bavaria',null,'Distinct tangerine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (189,77,'Marynka ',null,'high aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (190,78,'Merkur (Hallertauer Merkur)',null,'citrus impressions',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (191,78,'Merkur (Hallertauer Merkur)','01','floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (192,78,'Merkur (Hallertauer Merkur)',null,'Strong earthy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (193,79,'Millenium ',null,'herbal',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (194,79,'Millenium ',null,'Mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (195,80,'Mosaic ',null,'blueberry',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (196,80,'Mosaic ',null,'citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (197,80,'Mosaic ',null,'lemon',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (198,80,'Mosaic ',null,'notably',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (199,80,'Mosaic ',null,'pine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (200,80,'Mosaic ',null,'Rich in mango',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (201,81,'Motueka ',null,'notable aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (202,82,'Mt. Hood',null,'Mild with a clean aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (203,82,'Mt. Hood',null,'neutral flavo',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (204,82,'Mt. Hood',null,'Somewhat pungent',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (205,83,'Mt. Rainier',null,'citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (206,83,'Mt. Rainier',null,'Excellent flora',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (207,83,'Mt. Rainier',null,'licorice tones.',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (208,83,'Mt. Rainier',null,'noble aromas',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (209,84,'Nelson Sauvin',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (210,85,'Newport ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (211,86,'Northdown ',null,'aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (212,86,'Northdown ',null,'flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (213,86,'Northdown ',null,'Good bittering',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (214,87,'Northern Brewer ',null,'clean bittering',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (215,87,'Northern Brewer ',null,'dry',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (216,87,'Northern Brewer ',null,'Fine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (217,87,'Northern Brewer ',null,'Unique flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (218,88,'Nugget ',null,'heavy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (219,88,'Nugget ',null,'herbal aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (220,88,'Nugget ',null,'spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (221,88,'Nugget ',null,'Strong bittering',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (222,89,'Olympic ',null,'citrus aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (223,89,'Olympic ',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (224,90,'Opal ',null,'High aroma hops with hints of spice',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (225,90,'Opal ',null,'subtle citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (226,91,'Orion ',null,'hoppy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (227,91,'Orion ',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (228,92,'Pacific Gem ',null,'Pleasant - some blackberry aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (229,93,'Pacific Hallertau (aka Pacifica)',null,'citrus aroma notes when used in late addition',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (230,93,'Pacific Hallertau (aka Pacifica)',null,'Clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (231,93,'Pacific Hallertau (aka Pacifica)','01','floral with slight cinnamon-like spiciness',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (232,93,'Pacific Hallertau (aka Pacifica)',null,'Orange marmalade',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (233,93,'Pacific Hallertau (aka Pacifica)',null,'Soft finish if used in bittering',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (234,94,'Pacific Jade',null,'black pepper flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (235,94,'Pacific Jade',null,'Citrus aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (236,95,'Pacifica ',null,'citrus aroma notes',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (237,95,'Pacifica ',null,'Orange marmalade',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (238,96,'Palisade ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (239,97,'Perle ','01','Delicate floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (240,97,'Perle ',null,'fruity tones',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (241,98,'Phoenix ',null,'Similar to Wye Challenger hops',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (242,99,'Pilgrim ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (243,100,'Pilot ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (244,101,'Pioneer ',null,'Mild English hop aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (245,102,'Polaris ','01','Intense flora',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (246,102,'Polaris ',null,'pleasant mint tones',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (247,103,'Premiant ',null,'Czech aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (248,104,'Pride of Ringwood',null,'clean bittering flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (249,104,'Pride of Ringwood',null,'Moderate citric aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (250,105,'Progress ',null,'aromatic',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (251,105,'Progress ',null,'Similar to Fuggles',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (252,105,'Progress ',null,'slightly sweet',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (253,106,'Rakau (Alpharoma)',null,'apricot/peach',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (254,106,'Rakau (Alpharoma)',null,'passion fruit',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (255,106,'Rakau (Alpharoma)',null,'Tropical fruit',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (256,107,'Riwaka ',null,'citrus character',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (257,107,'Riwaka ',null,'hoppy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (258,107,'Riwaka ',null,'Some grapefruit',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (259,107,'Riwaka ',null,'Strong',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (260,108,'Rubin ',null,'Similar to old middle European aroma hops',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (261,109,'Saaz',null,'Clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (262,109,'Saaz',null,'Delicate',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (263,109,'Saaz',null,'mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (264,109,'Saaz',null,'noble hops',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (265,109,'Saaz ',null,'Seasoned herbal character',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (266,109,'Saaz',null,'somewhat Flora',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (267,110,'Saaz',null,'Clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (268,110,'Saaz',null,'Delicate',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (269,110,'Saaz',null,'mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (270,110,'Saaz',null,'noble hops',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (271,110,'Saaz ',null,'Seasoned herbal character',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (272,110,'Saaz',null,'somewhat Flora',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (273,111,'Santiam ',null,'Triploid aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (274,112,'Saphir',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (275,113,'Satus ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (276,114,'Select Spalt ',null,'spalt aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (277,114,'Select Spalt ',null,'Very fine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (278,115,'Simcoe ',null,'Citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (279,115,'Simcoe ',null,'pine-like aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (280,116,'Sladek ',null,'hoppy aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (281,117,'Smaragd (Emerald)',null,'Fine aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (282,117,'Smaragd (Emerald)','01','floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (283,117,'Smaragd (Emerald)',null,'fruity',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (284,117,'Smaragd (Emerald)',null,'spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (285,118,'Sorachi Ace',null,'a bold hop for bold beers',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (286,118,'Sorachi Ace',null,'Striking lemon character',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (287,119,'Southern Cross',null,'lemony',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (288,119,'Southern Cross',null,'slight pine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (289,119,'Southern Cross',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (290,119,'Southern Cross',null,'wood flavors',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (291,120,'Sovereign ',null,'intensely fruity',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (292,120,'Sovereign ',null,'softer flavors',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (293,120,'Sovereign ',null,'stone fruits such as peach',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (294,121,'Spalt Spalter ',null,'delicate',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (295,121,'Spalt Spalter ',null,'Fine/spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (296,121,'Spalt Spalter ','01','floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (297,121,'Spalt Spalter ',null,'herbal',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (298,121,'Spalt Spalter ',null,'woody',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (299,122,'Spalter ',null,'Mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (300,122,'Spalter ',null,'pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (301,122,'Spalter ',null,'slight spice',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (302,123,'Spalter Select ','01','floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (303,123,'Spalter Select ',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (304,123,'Spalter Select ',null,'woody',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (305,124,'Sterling ',null,'citrus hints',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (306,124,'Sterling ',null,'Herbal',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (307,124,'Sterling ','01','some floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (308,124,'Sterling ',null,'spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (309,125,'Sticklebract ',null,'Pine-like with a hint of citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (310,126,'Strisslespalt ',null,'hoppy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (311,126,'Strisslespalt ',null,'Medium intensity',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (312,126,'Strisslespalt ',null,'pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (313,127,'Styrian Aurora ',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (314,127,'Styrian Aurora ',null,'yet pleasant hoppiness',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (315,128,'Styrian Bobek',null,'Intense',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (316,128,'Styrian Bobek',null,'pleasant hoppy aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (317,129,'Styrian Celeja','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (318,129,'Styrian Celeja',null,'fruit',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (319,130,'Styrian Golding',null,'Delicate',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (320,130,'Styrian Golding','01','floral aroma',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (321,130,'Styrian Golding',null,'Similar to Fuggle',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (322,130,'Styrian Golding',null,'slightly spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (323,130,'Styrian Golding',null,'soft',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (324,131,'Styrian Goldings',null,' Similar to Fuggles',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (325,131,'Styrian Goldings','01','floral aroma',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (326,131,'Styrian Goldings',null,'grassy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (327,131,'Styrian Goldings',null,'Mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (328,131,'Styrian Goldings',null,'soft',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (329,132,'Summer ',null,'light apricot',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (330,132,'Summer ',null,'melon flavors',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (331,132,'Summer ',null,'Subtle',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (332,133,'Summit ',null,'grapefruit notes',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (333,133,'Summit ',null,'Strong citrus',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (334,134,'Sun ',null,'hoppy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (335,134,'Sun ',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (336,135,'Super Alpha',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (337,135,'Super Alpha',null,'resin like aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (338,136,'Super Galena',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (339,137,'Super Pride',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (340,138,'Sylva ',null,'Complex',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (341,138,'Sylva ','01','floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (342,138,'Sylva ',null,'herbal characteristics',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (343,138,'Sylva ',null,'subtle',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (344,139,'Target ',null,'flavor',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (345,139,'Target ',null,'Robust aroma',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (346,140,'Tettnang ',null,'fine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (347,140,'Tettnang ',null,'mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (348,140,'Tettnang ',null,'Noble',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (349,140,'Tettnang ',null,'slightly spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (350,141,'Tettnang (Tettnang Tettnager)','01','floral aroma impressions',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (351,141,'Tettnang (Tettnang Tettnager)',null,'herbal',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (352,141,'Tettnang (Tettnang Tettnager)',null,'Mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (353,141,'Tettnang (Tettnang Tettnager)',null,'Noble',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (354,141,'Tettnang (Tettnang Tettnager)',null,'pleasant with balanced earthy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (355,142,'Tillicum ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (356,143,'Tomahawk ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (357,144,'Topaz ',null,'-',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (358,145,'Tradition ',null,'Fine - similar to Hallertauer Mittelfrueh',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (359,146,'Tsingtao Flower','01','Floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (360,146,'Tsingtao Flower',null,'Spicy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (361,147,'Ultra',null,'Saaz',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (362,148,'Vanguard ',null,'Strong aromatic notes',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (363,149,'Vic Secret ',null,'Clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (364,149,'Vic Secret ',null,'distinct fruit',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (365,149,'Vic Secret ',null,'pine',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (366,151,'Wakatu (Hallertau Aroma)',null,'freshly zested lime',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (367,151,'Wakatu (Hallertau Aroma)','01','Restrained floral notes',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (368,152,'Warrior ',null,'clean',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (369,152,'Warrior ',null,'mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (370,152,'Warrior ',null,'Neutral',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (371,153,'Whitbread Golding Variety (WGV)',null,'hoppy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (372,153,'Whitbread Golding Variety (WGV)',null,'Pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (373,153,'Whitbread Golding Variety (WGV)',null,'slightly intense',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (374,154,'Willamette ','01','floral',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (375,154,'Willamette ',null,'grassy',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (376,154,'Willamette ',null,'Mild',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (377,154,'Willamette ','02','slightly spicy',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (378,155,'Zeus ',null,'Aromatic',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (379,155,'Zeus ',null,'pleasant',null,'2014-04-13 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (380,156,'Zythos ','06','citrus tones',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (381,156,'Zythos ','07','Distinct tropical (pineapple)',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
-insert into `HOPS_AROMA`(`ID`,`HOP_ID`,`NAME`,`AROMA_CODE`,`AROMA_NAME`,`INSERT_ID`,`INSERT_DATE`,`UPDATE_ID`,`UPDATE_DATE`,`DELETE_ID`,`DELETE_DATE`) values (382,156,'Zythos ','05','slight pine characteristics',null,'2014-04-16 00:00:00','2014-04-13 22:45:04',null,null,null);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (1, 2, 'Agnus ', '02', 'Spicy', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (2, 2, 'Agnus ', '11', 'Strong hop aroma', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (3, 3, 'Ahtanum ', '06', 'Citrus aromas', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (4, 3, 'Ahtanum ', '01', 'Distinctive floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (5, 4, 'Amarillo ', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (6, 4, 'Amarillo ', '07', 'Intensely fruity (citrus, melon, and stone friuts)', NULL,
+        '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (7, 4, 'Amarillo ', '07', 'Tropical notes', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (8, 5, 'Amarillo Gold', '06', 'Citrus', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (9, 5, 'Amarillo Gold', '01', 'Flowery', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (10, 6, 'Apollo ', '11', 'Hoppy notes', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (11, 6, 'Apollo ', '07', 'Strong grapefruit', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (12, 9, 'Atlas (Styrian Atlas)', NULL, 'Fresh hoppy aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (13, 11, 'Aurora (Super Styrian Aurora)', '11', 'Intense', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (14, 11, 'Aurora (Super Styrian Aurora)', '15', 'Pleasant hoppy aroma', NULL,
+        '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (15, 13, 'Belma ', '07', 'Melon', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (16, 13, 'Belma ', '07', 'Slight grapefruit', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (17, 13, 'Belma ', '07', 'Strawberry', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (18, 13, 'Belma ', '07', 'Tropical (but not mango/guava, more like pineapple)', NULL,
+        '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (19, 13, 'Belma ', '06', 'Very orange', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (20, 14, 'Boadicea ', '02', 'Spicy characteristics with slightly grassy overtones', NULL,
+        '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (21, 16, 'Bramling Cross', NULL, 'Currant aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (22, 16, 'Bramling Cross', '07', 'Fruity', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (23, 16, 'Bramling Cross', '10', 'Mild', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (24, 17, 'Bravo ', '01', 'Floral aroma', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (25, 17, 'Bravo ', '07', 'Fruity', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (26, 18, 'Brewer''s Gold', NULL, 'Bittering hop with neutral aroma character', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (27, 18, 'Brewer''s Gold', '02', 'Spice noted to its flavor and aroma', NULL,
+        '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (28, 19, 'Bullion ', NULL, 'Bitter in flavor', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (29, 19, 'Bullion ', NULL, 'Intense Black currant aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (30, 19, 'Bullion ', NULL, 'Pungent', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (31, 19, 'Bullion ', '11', 'Strong', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (32, 20, 'Bullion ', NULL, 'Bitter in flavor', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (33, 20, 'Bullion ', NULL, 'Intense Black currant aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (34, 20, 'Bullion ', NULL, 'Pungent', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (35, 20, 'Bullion ', '11', 'Strong', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (36, 21, 'Calypso ', '06', 'Citrus', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (37, 21, 'Calypso ', NULL, 'Notes of cherry', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (38, 21, 'Calypso ', NULL, 'Peaches', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (39, 21, 'Calypso ', NULL, 'Pear', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (40, 22, 'Cascade ', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (41, 22, 'Cascade ', NULL, 'Grapefruit character', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (42, 22, 'Cascade ', NULL, 'Strong spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (43, 23, 'Celeia ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (44, 24, 'Centennial ', '06', 'Citrus aroma', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (45, 24, 'Centennial ', NULL, 'Clean bittering flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (46, 24, 'Centennial ', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (47, 24, 'Centennial ', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (48, 25, 'Challenger ', NULL, 'Blends well', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (49, 25, 'Challenger ', NULL, 'Fruity in flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (50, 25, 'Challenger ', NULL, 'Spicy aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (51, 26, 'Chelan ', NULL, 'Pleasant citrus notes ', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (52, 27, 'Chinook ', NULL, 'Heavy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (53, 27, 'Chinook ', NULL, 'Spicy aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (54, 28, 'Citra  ', '06', 'Interesting citrus', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (55, 28, 'Citra  ', '07', 'Tropical fruit character', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (56, 29, 'Cluster ', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (57, 29, 'Cluster ', NULL, 'Sharp aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (58, 29, 'Cluster ', NULL, 'Sharp flavor', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (59, 29, 'Cluster ', NULL, 'Slightly spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (60, 30, 'Columbia ', NULL, 'Close to Fuggles', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (61, 31, 'Columbus ', NULL, 'Pungent', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (62, 31, 'Columbus ', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (63, 31, 'Columbus ', NULL, 'Strongly aromatic', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (64, 32, 'Columbus / Tomahawk / Zeus ', NULL, 'Pungent', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (65, 32, 'Columbus / Tomahawk / Zeus ', NULL, 'Spicy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (66, 32, 'Columbus / Tomahawk / Zeus ', NULL, 'Strongly aromatic', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (67, 33, 'Comet ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+        NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (68, 34, 'Crystal ', NULL, 'Clean', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (69, 34, 'Crystal ', NULL, 'Mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (70, 34, 'Crystal ', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (71, 34, 'Crystal ', NULL, 'Slightly spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (72, 35, 'Delta ', '10', 'Mild', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (73, 35, 'Delta ', NULL, 'Pleasant aroma; slightly spicy with a hint of citrus.', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (74, 36, 'East Kent Goldings ', NULL, 'Aromatic', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (75, 36, 'East Kent Goldings ', '04', 'Earthy', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (76, 36, 'East Kent Goldings ', '01', 'Floral', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (77, 36, 'East Kent Goldings ', NULL, 'Slightly sweet spicy flavor', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (78, 37, 'El Dorado', NULL, 'Cherries', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (79, 37, 'El Dorado', NULL, 'Lifesavers', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (80, 37, 'El Dorado', NULL, 'Pear', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (81, 37, 'El Dorado', NULL, 'Tropical fruit flavors', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (82, 37, 'El Dorado', NULL, 'Watermelon', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (83, 38, 'Ella ', NULL, 'Apricot', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (84, 38, 'Ella ', NULL, 'Grapefruit', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (85, 38, 'Ella ', '06', 'Lemon', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (86, 38, 'Ella ', NULL, 'Melon', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (87, 38, 'Ella ', NULL, 'Subtle hints of star anise', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (88, 38, 'Ella ', '01', 'Sweet and floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (89, 38, 'Ella ', NULL, 'Tropical', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (90, 39, 'Eroica ', NULL, 'Clean bittering hop', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (91, 39, 'Eroica ', NULL, 'Very bitter', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (92, 40, 'Falconer''s Flight', '06', 'Citrus', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (93, 40, 'Falconer''s Flight', NULL, 'Distinct tropical', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (94, 40, 'Falconer''s Flight', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (95, 40, 'Falconer''s Flight', NULL, 'Grapefruit tones', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (96, 40, 'Falconer''s Flight', NULL, 'Lemon', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (97, 41, 'Falconer''s Flight 7C''s Blend ', NULL, 'Citrus/grapefruit character alongside fruity',
+   NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (98, 41, 'Falconer''s Flight 7C''s Blend ', NULL, 'Earthy notes', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (99, 41, 'Falconer''s Flight 7C''s Blend ', NULL, 'Spicy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (100, 42, 'Feux Coeur Francais', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (101, 43, 'First Gold ', NULL, 'Similar to other Golding varieties', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (102, 43, 'First Gold ', '02', 'Spicy', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (103, 44, 'Fuggle ', '07', 'Fruity', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (104, 44, 'Fuggle ', '10', 'Mild', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (105, 44, 'Fuggle ', NULL, 'Soft', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (106, 44, 'Fuggle ', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (107, 44, 'Fuggle ', NULL, 'Woody', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (108, 45, 'Fuggle, Organic', '01', 'floral character', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (109, 45, 'Fuggle, Organic', NULL, 'Pipe-tobacco', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (110, 45, 'Fuggle, Organic', NULL, 'Wonderful earthy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (111, 46, 'Fuggles ', '01', 'floral aroma', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (112, 46, 'Fuggles ', '01', 'Grassy', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (113, 46, 'Fuggles ', '10', 'Mild', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (114, 46, 'Fuggles ', NULL, 'Soft', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (115, 47, 'Galaxy ', NULL, 'Unique hop aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (116, 48, 'Galena ', NULL, 'Clean', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (117, 48, 'Galena ', NULL, 'Strong', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (118, 49, 'German Tradition ', NULL, 'Herbal (grassy) tones', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (119, 49, 'German Tradition ', '01', 'Medium intense floral', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (120, 50, 'Glacier ', NULL, 'Excellent', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (121, 50, 'Glacier ', NULL, 'hoppy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (122, 51, 'Goldings, B.C.', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (123, 51, 'Goldings, B.C.', NULL, 'Rounded mild aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (124, 51, 'Goldings, B.C.', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (125, 52, 'Goldings, East Kent ', NULL, 'Aromatic', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (126, 52, 'Goldings, East Kent ', NULL, 'Earthy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (127, 52, 'Goldings, East Kent ', '01', 'Floral', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (128, 52, 'Goldings, East Kent ', NULL, 'Slightly sweet spicy flavor', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (129, 53, 'Green Bullet ', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (130, 53, 'Green Bullet ', NULL, 'Raisin aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (131, 54, 'Greenburg ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (132, 55, 'Hallertau ', NULL, 'considered mild', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (133, 55, 'Hallertau ', NULL, 'pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (134, 55, 'Hallertau ', NULL, 'slightly flowery & spicy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (135, 56, 'Hallertau Magnum ', NULL, 'stable spicy flavo', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (136, 57, 'Hallertau Taurus', NULL, 'flavorful', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (137, 57, 'Hallertau Taurus', NULL, 'seasoned', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (138, 57, 'Hallertau Taurus', NULL, 'zesty character', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (139, 58, 'Hallertauer ', NULL, 'clean', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (140, 58, 'Hallertauer ', NULL, 'mild spicy flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (141, 58, 'Hallertauer ', NULL, 'neutral flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (142, 58, 'Hallertauer ', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (143, 59, 'Hallertauer ', NULL, 'clean', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (144, 59, 'Hallertauer ', NULL, 'mild spicy flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (145, 59, 'Hallertauer ', NULL, 'neutral flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (146, 59, 'Hallertauer ', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (147, 60, 'Hallertauer Hersbrucker ', NULL, 'clean flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (148, 60, 'Hallertauer Hersbrucker ', NULL, 'Noble', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (149, 60, 'Hallertauer Hersbrucker ', NULL, 'pleasant', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (150, 61, 'Hallertauer Mittelfrueh ', NULL, 'assertive', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (151, 61, 'Hallertauer Mittelfrueh ', NULL, 'mild herbal aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (152, 61, 'Hallertauer Mittelfrueh ', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (153, 62, 'Harmonie ', NULL, 'typical Czech aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (154, 63, 'HBC 291 (Experimental)', '01', 'floral', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (155, 63, 'HBC 291 (Experimental)', NULL, 'fruity', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (156, 63, 'HBC 291 (Experimental)', NULL, 'Typically described as peppery', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (157, 64, 'HBC 342 (Experimental)', NULL, 'melon notes', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (158, 64, 'HBC 342 (Experimental)', NULL, 'Mild citrus', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (159, 64, 'HBC 342 (Experimental)', NULL, 'tropical fruit', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (160, 65, 'HBC 366 (Experimental)', NULL, 'Exceptional aroma profile includes notes of citrus',
+   NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (161, 65, 'HBC 366 (Experimental)', NULL, 'pine', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (162, 65, 'HBC 366 (Experimental)', NULL, 'tropical', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (163, 66, 'Helga (Southern Hallertau)', NULL, 'Ddelicate flora', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (164, 66, 'Helga (Southern Hallertau)', NULL, 'subtle herbal aroma', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (165, 67, 'Herald ', NULL, 'acceptable', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (166, 67, 'Herald ', NULL, 'Strong', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (167, 68, 'Herkules ', NULL, 'hints of pine', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (168, 68, 'Herkules ', NULL, 'hop notes', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (169, 68, 'Herkules ', NULL, 'lemon', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (170, 68, 'Herkules ', NULL, 'pepper', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (171, 68, 'Herkules ', NULL, 'Spicy flora', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (172, 69, 'Hersbrucker ', NULL, 'Classicly spicy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (173, 69, 'Hersbrucker ', NULL, 'herbal', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (174, 69, 'Hersbrucker ', NULL, 'hints of citrus', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (175, 69, 'Hersbrucker ', NULL, 'stone fruit', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (176, 70, 'HopShot', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (177, 71, 'Horizon ', NULL, 'hoppy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (178, 71, 'Horizon ', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (179, 72, 'Liberty ', NULL, 'Fine', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (180, 72, 'Liberty ', NULL, 'mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (181, 72, 'Liberty ', NULL, 'slightly spicy flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (182, 73, 'Lublin ', NULL, 'mild flavor similar to Saaz', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (183, 73, 'Lublin ', NULL, 'Noble', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (184, 74, 'Lublin (Lubelski)', NULL, 'mild flavor similar to Saaz', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (185, 74, 'Lublin (Lubelski)', NULL, 'Noble', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (186, 75, 'Magnum', NULL, 'No distinctive aroma characteristics', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (187, 76, 'Mandarina Bavaria', NULL, 'citrus flavors', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (188, 76, 'Mandarina Bavaria', NULL, 'Distinct tangerine', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (189, 77, 'Marynka ', NULL, 'high aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (190, 78, 'Merkur (Hallertauer Merkur)', NULL, 'citrus impressions', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (191, 78, 'Merkur (Hallertauer Merkur)', '01', 'floral', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (192, 78, 'Merkur (Hallertauer Merkur)', NULL, 'Strong earthy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (193, 79, 'Millenium ', NULL, 'herbal', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (194, 79, 'Millenium ', NULL, 'Mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (195, 80, 'Mosaic ', NULL, 'blueberry', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (196, 80, 'Mosaic ', NULL, 'citrus', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (197, 80, 'Mosaic ', NULL, 'lemon', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (198, 80, 'Mosaic ', NULL, 'notably', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (199, 80, 'Mosaic ', NULL, 'pine', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (200, 80, 'Mosaic ', NULL, 'Rich in mango', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (201, 81, 'Motueka ', NULL, 'notable aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (202, 82, 'Mt. Hood', NULL, 'Mild with a clean aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (203, 82, 'Mt. Hood', NULL, 'neutral flavo', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (204, 82, 'Mt. Hood', NULL, 'Somewhat pungent', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (205, 83, 'Mt. Rainier', NULL, 'citrus', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (206, 83, 'Mt. Rainier', NULL, 'Excellent flora', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (207, 83, 'Mt. Rainier', NULL, 'licorice tones.', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (208, 83, 'Mt. Rainier', NULL, 'noble aromas', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (209, 84, 'Nelson Sauvin', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (210, 85, 'Newport ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (211, 86, 'Northdown ', NULL, 'aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (212, 86, 'Northdown ', NULL, 'flavor', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (213, 86, 'Northdown ', NULL, 'Good bittering', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (214, 87, 'Northern Brewer ', NULL, 'clean bittering', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (215, 87, 'Northern Brewer ', NULL, 'dry', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (216, 87, 'Northern Brewer ', NULL, 'Fine', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (217, 87, 'Northern Brewer ', NULL, 'Unique flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (218, 88, 'Nugget ', NULL, 'heavy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (219, 88, 'Nugget ', NULL, 'herbal aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (220, 88, 'Nugget ', NULL, 'spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+        NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (221, 88, 'Nugget ', NULL, 'Strong bittering', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (222, 89, 'Olympic ', NULL, 'citrus aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (223, 89, 'Olympic ', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (224, 90, 'Opal ', NULL, 'High aroma hops with hints of spice', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (225, 90, 'Opal ', NULL, 'subtle citrus', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (226, 91, 'Orion ', NULL, 'hoppy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (227, 91, 'Orion ', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (228, 92, 'Pacific Gem ', NULL, 'Pleasant - some blackberry aroma', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (229, 93, 'Pacific Hallertau (aka Pacifica)', NULL,
+        'citrus aroma notes when used in late addition', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (230, 93, 'Pacific Hallertau (aka Pacifica)', NULL, 'Clean', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (231, 93, 'Pacific Hallertau (aka Pacifica)', '01', 'floral with slight cinnamon-like spiciness',
+   NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (232, 93, 'Pacific Hallertau (aka Pacifica)', NULL, 'Orange marmalade', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (233, 93, 'Pacific Hallertau (aka Pacifica)', NULL, 'Soft finish if used in bittering', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (234, 94, 'Pacific Jade', NULL, 'black pepper flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (235, 94, 'Pacific Jade', NULL, 'Citrus aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (236, 95, 'Pacifica ', NULL, 'citrus aroma notes', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (237, 95, 'Pacifica ', NULL, 'Orange marmalade', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (238, 96, 'Palisade ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (239, 97, 'Perle ', '01', 'Delicate floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (240, 97, 'Perle ', NULL, 'fruity tones', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (241, 98, 'Phoenix ', NULL, 'Similar to Wye Challenger hops', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (242, 99, 'Pilgrim ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (243, 100, 'Pilot ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (244, 101, 'Pioneer ', NULL, 'Mild English hop aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (245, 102, 'Polaris ', '01', 'Intense flora', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (246, 102, 'Polaris ', NULL, 'pleasant mint tones', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (247, 103, 'Premiant ', NULL, 'Czech aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (248, 104, 'Pride of Ringwood', NULL, 'clean bittering flavor', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (249, 104, 'Pride of Ringwood', NULL, 'Moderate citric aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (250, 105, 'Progress ', NULL, 'aromatic', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (251, 105, 'Progress ', NULL, 'Similar to Fuggles', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (252, 105, 'Progress ', NULL, 'slightly sweet', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (253, 106, 'Rakau (Alpharoma)', NULL, 'apricot/peach', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (254, 106, 'Rakau (Alpharoma)', NULL, 'passion fruit', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (255, 106, 'Rakau (Alpharoma)', NULL, 'Tropical fruit', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (256, 107, 'Riwaka ', NULL, 'citrus character', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (257, 107, 'Riwaka ', NULL, 'hoppy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (258, 107, 'Riwaka ', NULL, 'Some grapefruit', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (259, 107, 'Riwaka ', NULL, 'Strong', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (260, 108, 'Rubin ', NULL, 'Similar to old middle European aroma hops', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (261, 109, 'Saaz', NULL, 'Clean', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (262, 109, 'Saaz', NULL, 'Delicate', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (263, 109, 'Saaz', NULL, 'mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (264, 109, 'Saaz', NULL, 'noble hops', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (265, 109, 'Saaz ', NULL, 'Seasoned herbal character', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (266, 109, 'Saaz', NULL, 'somewhat Flora', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (267, 110, 'Saaz', NULL, 'Clean', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (268, 110, 'Saaz', NULL, 'Delicate', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (269, 110, 'Saaz', NULL, 'mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (270, 110, 'Saaz', NULL, 'noble hops', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (271, 110, 'Saaz ', NULL, 'Seasoned herbal character', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (272, 110, 'Saaz', NULL, 'somewhat Flora', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (273, 111, 'Santiam ', NULL, 'Triploid aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (274, 112, 'Saphir', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (275, 113, 'Satus ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (276, 114, 'Select Spalt ', NULL, 'spalt aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (277, 114, 'Select Spalt ', NULL, 'Very fine', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (278, 115, 'Simcoe ', NULL, 'Citrus', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (279, 115, 'Simcoe ', NULL, 'pine-like aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (280, 116, 'Sladek ', NULL, 'hoppy aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (281, 117, 'Smaragd (Emerald)', NULL, 'Fine aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (282, 117, 'Smaragd (Emerald)', '01', 'floral', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (283, 117, 'Smaragd (Emerald)', NULL, 'fruity', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (284, 117, 'Smaragd (Emerald)', NULL, 'spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (285, 118, 'Sorachi Ace', NULL, 'a bold hop for bold beers', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (286, 118, 'Sorachi Ace', NULL, 'Striking lemon character', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (287, 119, 'Southern Cross', NULL, 'lemony', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (288, 119, 'Southern Cross', NULL, 'slight pine', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (289, 119, 'Southern Cross', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (290, 119, 'Southern Cross', NULL, 'wood flavors', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (291, 120, 'Sovereign ', NULL, 'intensely fruity', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (292, 120, 'Sovereign ', NULL, 'softer flavors', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (293, 120, 'Sovereign ', NULL, 'stone fruits such as peach', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (294, 121, 'Spalt Spalter ', NULL, 'delicate', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (295, 121, 'Spalt Spalter ', NULL, 'Fine/spicy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (296, 121, 'Spalt Spalter ', '01', 'floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (297, 121, 'Spalt Spalter ', NULL, 'herbal', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (298, 121, 'Spalt Spalter ', NULL, 'woody', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (299, 122, 'Spalter ', NULL, 'Mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (300, 122, 'Spalter ', NULL, 'pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (301, 122, 'Spalter ', NULL, 'slight spice', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (302, 123, 'Spalter Select ', '01', 'floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (303, 123, 'Spalter Select ', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (304, 123, 'Spalter Select ', NULL, 'woody', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (305, 124, 'Sterling ', NULL, 'citrus hints', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (306, 124, 'Sterling ', NULL, 'Herbal', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (307, 124, 'Sterling ', '01', 'some floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (308, 124, 'Sterling ', NULL, 'spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (309, 125, 'Sticklebract ', NULL, 'Pine-like with a hint of citrus', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (310, 126, 'Strisslespalt ', NULL, 'hoppy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (311, 126, 'Strisslespalt ', NULL, 'Medium intensity', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (312, 126, 'Strisslespalt ', NULL, 'pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (313, 127, 'Styrian Aurora ', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (314, 127, 'Styrian Aurora ', NULL, 'yet pleasant hoppiness', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (315, 128, 'Styrian Bobek', NULL, 'Intense', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (316, 128, 'Styrian Bobek', NULL, 'pleasant hoppy aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (317, 129, 'Styrian Celeja', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (318, 129, 'Styrian Celeja', NULL, 'fruit', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (319, 130, 'Styrian Golding', NULL, 'Delicate', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (320, 130, 'Styrian Golding', '01', 'floral aroma', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (321, 130, 'Styrian Golding', NULL, 'Similar to Fuggle', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (322, 130, 'Styrian Golding', NULL, 'slightly spicy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (323, 130, 'Styrian Golding', NULL, 'soft', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (324, 131, 'Styrian Goldings', NULL, ' Similar to Fuggles', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (325, 131, 'Styrian Goldings', '01', 'floral aroma', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (326, 131, 'Styrian Goldings', NULL, 'grassy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (327, 131, 'Styrian Goldings', NULL, 'Mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (328, 131, 'Styrian Goldings', NULL, 'soft', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (329, 132, 'Summer ', NULL, 'light apricot', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (330, 132, 'Summer ', NULL, 'melon flavors', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (331, 132, 'Summer ', NULL, 'Subtle', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (332, 133, 'Summit ', NULL, 'grapefruit notes', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (333, 133, 'Summit ', NULL, 'Strong citrus', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (334, 134, 'Sun ', NULL, 'hoppy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (335, 134, 'Sun ', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (336, 135, 'Super Alpha', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (337, 135, 'Super Alpha', NULL, 'resin like aroma', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (338, 136, 'Super Galena', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (339, 137, 'Super Pride', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (340, 138, 'Sylva ', NULL, 'Complex', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (341, 138, 'Sylva ', '01', 'floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (342, 138, 'Sylva ', NULL, 'herbal characteristics', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (343, 138, 'Sylva ', NULL, 'subtle', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (344, 139, 'Target ', NULL, 'flavor', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (345, 139, 'Target ', NULL, 'Robust aroma', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (346, 140, 'Tettnang ', NULL, 'fine', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (347, 140, 'Tettnang ', NULL, 'mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (348, 140, 'Tettnang ', NULL, 'Noble', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (349, 140, 'Tettnang ', NULL, 'slightly spicy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (350, 141, 'Tettnang (Tettnang Tettnager)', '01', 'floral aroma impressions', NULL,
+        '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (351, 141, 'Tettnang (Tettnang Tettnager)', NULL, 'herbal', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (352, 141, 'Tettnang (Tettnang Tettnager)', NULL, 'Mild', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (353, 141, 'Tettnang (Tettnang Tettnager)', NULL, 'Noble', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (354, 141, 'Tettnang (Tettnang Tettnager)', NULL, 'pleasant with balanced earthy', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (355, 142, 'Tillicum ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (356, 143, 'Tomahawk ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (357, 144, 'Topaz ', NULL, '-', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (358, 145, 'Tradition ', NULL, 'Fine - similar to Hallertauer Mittelfrueh', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (359, 146, 'Tsingtao Flower', '01', 'Floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (360, 146, 'Tsingtao Flower', NULL, 'Spicy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (361, 147, 'Ultra', NULL, 'Saaz', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL,
+   NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (362, 148, 'Vanguard ', NULL, 'Strong aromatic notes', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (363, 149, 'Vic Secret ', NULL, 'Clean', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (364, 149, 'Vic Secret ', NULL, 'distinct fruit', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (365, 149, 'Vic Secret ', NULL, 'pine', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (366, 151, 'Wakatu (Hallertau Aroma)', NULL, 'freshly zested lime', NULL, '2014-04-13 00:00:00',
+   '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (367, 151, 'Wakatu (Hallertau Aroma)', '01', 'Restrained floral notes', NULL,
+        '2014-04-16 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (368, 152, 'Warrior ', NULL, 'clean', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (369, 152, 'Warrior ', NULL, 'mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (370, 152, 'Warrior ', NULL, 'Neutral', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (371, 153, 'Whitbread Golding Variety (WGV)', NULL, 'hoppy', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (372, 153, 'Whitbread Golding Variety (WGV)', NULL, 'Pleasant', NULL, '2014-04-13 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (373, 153, 'Whitbread Golding Variety (WGV)', NULL, 'slightly intense', NULL,
+        '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (374, 154, 'Willamette ', '01', 'floral', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (375, 154, 'Willamette ', NULL, 'grassy', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04',
+        NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (376, 154, 'Willamette ', NULL, 'Mild', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (377, 154, 'Willamette ', '02', 'slightly spicy', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (378, 155, 'Zeus ', NULL, 'Aromatic', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (379, 155, 'Zeus ', NULL, 'pleasant', NULL, '2014-04-13 00:00:00', '2014-04-13 22:45:04', NULL,
+   NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES
+  (380, 156, 'Zythos ', '06', 'citrus tones', NULL, '2014-04-16 00:00:00', '2014-04-13 22:45:04',
+   NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (381, 156, 'Zythos ', '07', 'Distinct tropical (pineapple)', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
+INSERT INTO `HOPS_AROMA` (`ID`, `HOP_ID`, `NAME`, `AROMA_CODE`, `AROMA_NAME`, `INSERT_ID`, `INSERT_DATE`, `UPDATE_ID`, `UPDATE_DATE`, `DELETE_ID`, `DELETE_DATE`)
+VALUES (382, 156, 'Zythos ', '05', 'slight pine characteristics', NULL, '2014-04-16 00:00:00',
+        '2014-04-13 22:45:04', NULL, NULL, NULL);
 
-commit;
+COMMIT;

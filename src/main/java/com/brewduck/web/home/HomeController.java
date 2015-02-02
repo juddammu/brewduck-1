@@ -57,7 +57,7 @@ public class HomeController {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model,
-                       HttpServletRequest request) {
+        HttpServletRequest request) {
         // Account account = AuthenticationUtils.getUser();
         // model.addAttribute("account", account);
         /* 잠시 보류
@@ -93,7 +93,7 @@ public class HomeController {
 
     @RequestMapping(value = "/new_home", method = RequestMethod.GET)
     public String sample(Model model,
-                       HttpServletRequest request) {
+        HttpServletRequest request) {
 
         Account account = AuthenticationUtils.getUser();
 
@@ -106,7 +106,7 @@ public class HomeController {
 
         List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
 
-        List< Integer > lagerMenuList = new ArrayList< Integer >( );
+        List<Integer> lagerMenuList = new ArrayList<Integer>();
         lagerMenuList.add(7);
         lagerMenuList.add(8);
         lagerMenuList.add(9);
@@ -135,7 +135,7 @@ public class HomeController {
         recipe.setStyleSeqs(lagerMenuList);
         List<Recipe> selectPublicLagerRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
-        List< Integer > ipaMenuList = new ArrayList< Integer >( );
+        List<Integer> ipaMenuList = new ArrayList<Integer>();
         ipaMenuList.add(22);
         ipaMenuList.add(24);
         ipaMenuList.add(33);
@@ -151,7 +151,7 @@ public class HomeController {
         recipe.setStyleSeqs(ipaMenuList);
         List<Recipe> selectPublicIpaRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
-        List< Integer > paleMenuList = new ArrayList< Integer >( );
+        List<Integer> paleMenuList = new ArrayList<Integer>();
         paleMenuList.add(6);
         paleMenuList.add(19);
         paleMenuList.add(25);
@@ -174,7 +174,7 @@ public class HomeController {
         recipe.setStyleSeqs(paleMenuList);
         List<Recipe> selectPublicPaleRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
-        List< Integer > wheatMenuList = new ArrayList< Integer >( );
+        List<Integer> wheatMenuList = new ArrayList<Integer>();
         wheatMenuList.add(23);
         wheatMenuList.add(11);
         wheatMenuList.add(16);
@@ -185,7 +185,7 @@ public class HomeController {
         recipe.setStyleSeqs(wheatMenuList);
         List<Recipe> selectPublicWheatRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
-        List< Integer > porterMenuList = new ArrayList< Integer >( );
+        List<Integer> porterMenuList = new ArrayList<Integer>();
         porterMenuList.add(13);
         porterMenuList.add(15);
         porterMenuList.add(17);
@@ -198,7 +198,7 @@ public class HomeController {
         recipe.setStyleSeqs(porterMenuList);
         List<Recipe> selectPublicPorterRecipeMenuList = recipeService.selectPublicRecipeMenuList(recipe);
 
-        List< Integer > sourMenuList = new ArrayList< Integer >( );
+        List<Integer> sourMenuList = new ArrayList<Integer>();
         sourMenuList.add(1);
 
         sourMenuList.add(2);
@@ -222,17 +222,17 @@ public class HomeController {
         model.addAttribute("hopAromaList", hopAromaList);
         model.addAttribute("newRecipeList", selectNewPublicRecipeList);
         model.addAttribute("lagerMenuList", selectPublicLagerRecipeMenuList);
-        model.addAttribute("ipaMenuList",   selectPublicIpaRecipeMenuList);
-        model.addAttribute("paleMenuList",  selectPublicPaleRecipeMenuList);
-        model.addAttribute("wheatMenuList",   selectPublicWheatRecipeMenuList);
-        model.addAttribute("porterMenuList",   selectPublicPorterRecipeMenuList);
-        model.addAttribute("sourMenuList",   selectPublicSourRecipeMenuList);
+        model.addAttribute("ipaMenuList", selectPublicIpaRecipeMenuList);
+        model.addAttribute("paleMenuList", selectPublicPaleRecipeMenuList);
+        model.addAttribute("wheatMenuList", selectPublicWheatRecipeMenuList);
+        model.addAttribute("porterMenuList", selectPublicPorterRecipeMenuList);
+        model.addAttribute("sourMenuList", selectPublicSourRecipeMenuList);
         return "new_home";
     }
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String basic(Model model,
-                             HttpServletRequest request) {
+        HttpServletRequest request) {
 
 
         Hop hop = hopService.selectRandomHop();
@@ -265,7 +265,7 @@ public class HomeController {
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test(Model model,
-                        HttpServletRequest request) {
+        HttpServletRequest request) {
 
         Account account = AuthenticationUtils.getUser();
         model.addAttribute("account", account);
@@ -275,7 +275,7 @@ public class HomeController {
 
     @RequestMapping(value = "/write", method = RequestMethod.GET)
     public String write(Model model,
-                       HttpServletRequest request) {
+        HttpServletRequest request) {
 
         Account account = AuthenticationUtils.getUser();
         model.addAttribute("account", account);

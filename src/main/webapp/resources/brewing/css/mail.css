@@ -8,7 +8,7 @@ Author: themesmile
 -------------------------------------------------------------------*/
 
 .star {
-    color: #fff!important;
+    color: #fff !important;
     background: #B7C1D3;
     display: block;
     height: 30px;
@@ -19,17 +19,21 @@ Author: themesmile
     border-radius: 50%;
     border: 1px solid #B7C1D3;
 }
+
 .side-mail {
     margin-top: 20px;
 }
+
 .button-mail {
     margin: 0 0 15px;
     text-align: left;
     width: 100%;
 }
+
 .list-btn-mail {
     margin-bottom: 15px;
 }
+
 .list-btn-mail > span {
     float: left;
     font-size: 16px;
@@ -40,6 +44,7 @@ Author: themesmile
     color: #888;
     font-weight: bold;
 }
+
 .list-btn-mail > i {
     background: none repeat scroll 0 0 #39B3D7;
     border-radius: 12px;
@@ -48,13 +53,16 @@ Author: themesmile
     font-style: normal;
     padding: 0 5px;
 }
+
 .list-btn-mail > a {
     color: #666;
 }
+
 .list-btn-mail.active {
     border-bottom: 1px solid #39B3D7;
     padding: 0 0 14px;
 }
+
 #content-mail {
     background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 4px;
@@ -63,15 +71,18 @@ Author: themesmile
     padding: 17px 0;
     width: 100%;
 }
+
 .mail_header {
     border-radius: 4px;
     margin: 10px 0 0;
     width: 100%;
 }
+
 .mail-btn {
     position: relative;
     left: 35px;
 }
+
 .mail-btn li {
     display: inline;
     height: 40px;
@@ -90,6 +101,7 @@ Author: themesmile
     left: -35px;
     top: 3px;
 }
+
 .mail-btn li b {
     font-weight: normal;
     font-size: 13px;
@@ -97,6 +109,7 @@ Author: themesmile
     position: relative;
     top: -2px;
 }
+
 .mail-btn li b small {
     background: rgba(0, 0, 0, 0.1);
     width: 20px;
@@ -107,12 +120,15 @@ Author: themesmile
     border-radius: 50%;
     margin: 0 0 0 5px;
 }
+
 .mail-btn li i {
     float: left;
 }
+
 .mail-btn li p {
     float: left;
 }
+
 .mail-btn li span {
     position: absolute;
     top: 0;

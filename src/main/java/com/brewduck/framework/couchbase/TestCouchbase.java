@@ -3,15 +3,7 @@ package com.brewduck.framework.couchbase;
 import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.CouchbaseCluster;
 import com.couchbase.client.java.document.JsonDocument;
-import com.couchbase.client.java.document.json.JsonArray;
 import com.couchbase.client.java.document.json.JsonObject;
-
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-import java.security.SecureRandom;
-import java.text.DecimalFormat;
 
 /**
  * 암호화 / 복호화 모듈
@@ -35,7 +27,7 @@ public class TestCouchbase {
         JsonObject content = JsonObject.empty();
 
         // Connect to the bucket and open it
-        Bucket bucket = cluster.openBucket("mobile","sv@13579");
+        Bucket bucket = cluster.openBucket("mobile", "sv@13579");
 
         content = JsonObject.create().put("hello", "world");
 
@@ -50,10 +42,10 @@ public class TestCouchbase {
         //JsonDocument inserted = bucket.insert(JsonDocument.create("helloworld", content));
 
         // Read the document and print the "hello" field
-       // JsonDocument found = bucket.get("helloworld");
+        // JsonDocument found = bucket.get("helloworld");
         //System.out.println("Couchbase is the best database in the " + found.content().getString(""));
 
-            // Close all buckets and disconnect
+        // Close all buckets and disconnect
         cluster.disconnect();
 
     }

@@ -10,7 +10,7 @@ import java.util.List;
  * 맥주 홉 DAO 인터페이스.
  * </pre>
  *
- * @author  chacha
+ * @author chacha
  * @version 1.0, 2014-02-16
  */
 public interface HopDao {
@@ -74,7 +74,6 @@ public interface HopDao {
     public List<Hop> selectHopUsedForList(Hop hop);
 
 
-
     /**
      * <pre>
      * 맥주 홉 상세 조회.
@@ -95,7 +94,6 @@ public interface HopDao {
      * @return 맥주 홉
      */
     public Hop selectRandomHop();
-
 
 
     /**
@@ -136,7 +134,6 @@ public interface HopDao {
      * @return 수정 성공 횟수
      */
     public Integer updateViewCount(Hop hop);
-
 
 
     /**

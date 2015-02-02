@@ -1,7 +1,6 @@
 package com.brewduck.web.api.dao;
 
 import com.brewduck.web.domain.Api;
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +15,7 @@ import java.util.List;
  * 맥주 홉 DAO 구현체.
  * </pre>
  *
- * @author  chacha
+ * @author chacha
  * @version 1.0, 2014.02.16
  */
 @Repository("ApiDao")

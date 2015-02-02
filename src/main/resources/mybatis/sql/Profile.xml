@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Profile">
 
     <select id="Profile.selectPopularTalent"
@@ -41,8 +42,8 @@
             parameterType="Profile"
             resultType="int">
         SELECT count(1) profileCnt
-          FROM profiles
-         WHERE ROWNUM = 1
+        FROM profiles
+        WHERE ROWNUM = 1
         <if test="accountId != 0">
             AND account_id = #{accountId}
         </if>

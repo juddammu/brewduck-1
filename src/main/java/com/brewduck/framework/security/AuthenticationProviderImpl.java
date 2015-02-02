@@ -1,6 +1,5 @@
 package com.brewduck.framework.security;
 
-import com.brewduck.framework.exception.AuthenticationNotException;
 import com.brewduck.framework.exception.PasswordMismatchException;
 import com.brewduck.framework.exception.UserNotFoundException;
 import org.slf4j.Logger;
@@ -62,7 +61,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider, Initi
     }
 
     private void login(String email, String password) {
-        LOGGER.info("Login Email    : {}", email   );
+        LOGGER.info("Login Email    : {}", email);
         LOGGER.info("Login Password : {}", password);
 
         try {
