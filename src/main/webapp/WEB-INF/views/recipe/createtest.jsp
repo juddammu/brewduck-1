@@ -284,66 +284,42 @@
 
                                 <div class="table-scrollable"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="datatable_orders" aria-describedby="datatable_orders_info" role="grid">
                                     <thead>
-                                    <tr role="row" class="heading"><th width="2%" class="sorting_disabled" rowspan="1" colspan="1">
+                                    <tr role="row" class="heading">
+                                        <th width="2%" class="sorting_disabled" rowspan="1" colspan="1">
                                         <div class="checker"><span><input type="checkbox" class="group-checkable"></span></div>
-                                    </th><th width="5%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
-                                        Order&nbsp;#
-                                    </th><th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
-                                        Purchased&nbsp;On
-                                    </th><th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
-                                        Customer
-                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
-                                        Ship&nbsp;To
-                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
-                                        Base&nbsp;Price
-                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
-                                        Purchased&nbsp;Price
-                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
-                                        Status
-                                    </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                        </th>
+                                        <th width="35%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                            재료명 &nbsp;
+                                        </th>
+                                        <th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                            수량&nbsp;
+                                        </th>
+                                        <th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                            단위
+                                        </th>
+                                        <th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                            L
+                                        </th>
+                                        <th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
+                                         PPG
+                                        </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
                                         Actions
                                     </th></tr>
                                     <tr role="row" class="filter"><td rowspan="1" colspan="1">
                                     </td><td rowspan="1" colspan="1">
                                         <input type="text" class="form-control form-filter input-sm" name="order_id">
                                     </td><td rowspan="1" colspan="1">
-                                        <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-                                            <input type="text" class="form-control form-filter input-sm" readonly="" name="order_date_from" placeholder="From">
-											<span class="input-group-btn">
-											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-                                        </div>
-                                        <div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-                                            <input type="text" class="form-control form-filter input-sm" readonly="" name="order_date_to" placeholder="To">
-											<span class="input-group-btn">
-											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-                                        </div>
+
                                     </td><td rowspan="1" colspan="1">
                                         <input type="text" class="form-control form-filter input-sm" name="order_customer_name">
                                     </td><td rowspan="1" colspan="1">
                                         <input type="text" class="form-control form-filter input-sm" name="order_ship_to">
                                     </td><td rowspan="1" colspan="1">
-                                        <div class="margin-bottom-5">
-                                            <input type="text" class="form-control form-filter input-sm" name="order_base_price_from" placeholder="From">
-                                        </div>
+
                                         <input type="text" class="form-control form-filter input-sm" name="order_base_price_to" placeholder="To">
                                     </td><td rowspan="1" colspan="1">
                                         <div class="margin-bottom-5">
-                                            <input type="text" class="form-control form-filter input-sm margin-bottom-5 clearfix" name="order_purchase_price_from" placeholder="From">
-                                        </div>
-                                        <input type="text" class="form-control form-filter input-sm" name="order_purchase_price_to" placeholder="To">
-                                    </td><td rowspan="1" colspan="1">
-                                        <select name="order_status" class="form-control form-filter input-sm">
-                                            <option value="">Select...</option>
-                                            <option value="pending">Pending</option>
-                                            <option value="closed">Closed</option>
-                                            <option value="hold">On Hold</option>
-                                            <option value="fraud">Fraud</option>
-                                        </select>
-                                    </td><td rowspan="1" colspan="1">
-                                        <div class="margin-bottom-5">
-                                            <button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> 삭제</button>
+                                            <button class="btn btn-sm yellow filter-submit margin-bottom">삭제</button>
                                         </div>
                                     </td></tr>
                                     </thead>
@@ -362,7 +338,7 @@
                                     </a>
                                 </div>
 
-                                <div id="chartdiv" class="chart" style="height: 150px;">
+                                <div id="chartdiv" class="chart" style="height: 250px;">
                                 </div>
 
                                 <div class="top-news">
