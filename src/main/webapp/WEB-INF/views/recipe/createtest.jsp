@@ -376,7 +376,7 @@
                                 </div>
 
                                 <div id="chartdiv" class="chart" style="height: 50px;">
-                                    <input id="range_4" type="text" name="range_4" value="1.045;1.065"/>
+                                    <input id="range_1" type="text" name="range_1" value="1.045;1.065"/>
 
                                 </div>
 
@@ -449,7 +449,7 @@
                             }, 1000);
 
 
-                            $("#range_4").ionRangeSlider("update", {
+                            $("#range_1").ionRangeSlider("update", {
                                 min: data.ogMin - 0.01,
                                 max: data.ogMax + 0.01,
                                 from:  data.ogMin,
@@ -481,11 +481,11 @@
                         //main function to initiate the module
                         init: function () {
 
-                            $("#range_4").ionRangeSlider({
-                                min: 1.01,
-                                max: 1.1,
+                            $("#range_1").ionRangeSlider({
+                                min: 1.035,
+                                max: 1.07,
                                 from: 1.045,
-                                to: 1.60,
+                                to: 1.06,
                                 type: 'double',
                                 step: 0.001,
                                 hasGrid: true
