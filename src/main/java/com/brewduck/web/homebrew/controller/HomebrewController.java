@@ -103,8 +103,8 @@ public class HomebrewController {
         recipe.setBrewerId(account.getId());
         List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
 
-        model.addAttribute("account", account);
-        model.addAttribute("recipeList", recipeList);
+        //model.addAttribute("account", account);
+        //model.addAttribute("recipeList", recipeList);
 
         return "homebrew/myrecipes";
     }
@@ -132,9 +132,9 @@ public class HomebrewController {
         recipe.setId(id);
         recipe.setBrewerId(account.getId());
 
-        Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
+       //Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
-        model.addAttribute("recipeDetail", recipeDetail);
+       // model.addAttribute("recipeDetail", recipeDetail);
 
         return "homebrew/view";
     }

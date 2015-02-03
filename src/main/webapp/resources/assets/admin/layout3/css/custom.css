@@ -1,6 +1,4 @@
 /* here you can put your own css to customize and override the theme */
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
 /***
 Rounded Portlets
 ***/
@@ -18,3 +16,15 @@ Rounded Portlets
 	border-radius: 0px 0px 4px 4px !important;
 }
 */
+
+@charset "utf-8";
+
+@font-face{
+    font-family:'NanumGothicWeb';
+    font-style:normal;
+    font-weight:normal;
+    src:url('/resources/assets/global/fonts/NanumGothic.eot');
+    src:local('☺'),url('/resources/assets/global/fonts/NanumGothic.woff') format('woff')
+}
+
+body { font-family: 'NanumGothicWeb'; }
