@@ -102,7 +102,7 @@ public class Yeast implements Serializable {
 
     public int cmtBbsId;
 
-    private String brewer;
+    private Integer brewerId;
 
     public Double getMaxAttenuation() {
         return maxAttenuation;
@@ -732,12 +732,11 @@ public class Yeast implements Serializable {
         this.cmtBbsId = cmtBbsId;
     }
 
-    public String getBrewer() {
-        return brewer;
+    public Integer getBrewerId() {
+        return brewerId;
     }
 
-    public void setBrewer(String brewer) {
-        this.brewer = brewer;
+    public void setBrewerId(Integer brewerId) {
+        this.brewerId = brewerId;
     }
-
 }

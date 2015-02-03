@@ -89,7 +89,7 @@ License: You must have a valid license purchased only from themeforest(the above
             </form-->
             <ul class="social-icons margin-top-20">
                 <li>
-                    <a href="www.facebook.com/brewduck" data-original-title="Facebook"
+                    <a href="http://www.facebook.com/brewduck" data-original-title="Facebook"
                        class="facebook">
                     </a>
                 </li>

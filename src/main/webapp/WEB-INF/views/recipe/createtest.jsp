@@ -4,6 +4,28 @@
 
 <title>스타일 STYLE (BJCP-2008)</title>
 
+<input id="styleOgMin" name="styleOgMin" type="hidden" value="1.028">
+<input id="styleOgMax" name="styleOgMax" type="hidden" value="1.04">
+
+<input id="styleFgMin" name="styleFgMin" type="hidden" value="0.998">
+<input id="styleFgMax" name="styleFgMax" type="hidden" value="1.008">
+
+<input id="styleIbuMin" name="styleIbuMin" type="hidden" value="8">
+<input id="styleIbuMax" name="styleIbuMax" type="hidden" value="12">
+
+<input id="styleAbvMin" name="styleAbvMin" type="hidden" value="2.8">
+<input id="styleAbvMax" name="styleAbvMax" type="hidden" value="4.2">
+
+<input id="styleSrmMin" name="styleSrmMin" type="hidden" value="2">
+<input id="styleSrmMax" name="styleSrmMax" type="hidden" value="3">
+
+<input id="resultOg" name="resultOg" type="hidden">
+<input id="resultFg" name="resultFg" type="hidden">
+
+<input id="resultIbu" name="resultIbu" type="hidden">
+<input id="resultAbv" name="resultAbv" type="hidden">
+<input id="resultSrm" name="resultSrm" type="hidden">
+
 <!-- BEGIN PAGE HEAD -->
 <div class="page-head">
     <div class="container-fluid">
@@ -24,10 +46,13 @@
                 <form:form  id="insert" class="form-horizontal form-row-seperated" name="insert"
                             method="POST" enctype="multipart/form-data" action="/recipe/insertRecipe"
                             modelAttribute="paramRecipe">
+
+                    <input type="hidden"  id="id" name="id" value="${recipeId}">
+
                 <!-- Begin: life time stats -->
                 <div class="note note-info note-bordered">
                     <p>
-                        에러나 기능 개선이 필요하시면 <a href="ui_colors.html" target="_blank">
+                        에러나 기능 개선이 필요하시면 <a href="#" target="_blank">
                         기능개선 게시판</a>을 활용해주세요.
                     </p>
                 </div>
@@ -65,7 +90,7 @@
                                                         * </span>
                                                 </label>
                                                 <div class="col-md-10">
-                                                    <input class="form-control input-lg" type="text" placeholder="레시피 이름">
+                                                    <input class="form-control input-lg" type="text"  id="name" name="name" placeholder="레시피 이름">
                                                 </div>
                                             </div>
 
@@ -75,11 +100,11 @@
                                                 <div class="col-md-10">
                                                     <div class="btn-group" data-toggle="buttons">
                                                         <label class="btn btn-default active">
-                                                            <input type="radio" class="toggle"> 완전곡물 </label>
+                                                            <input type="radio" id="typeCode" name="typeCode" value="1" class="toggle"> 완전곡물 </label>
                                                         <label class="btn btn-default">
-                                                            <input type="radio" class="toggle"> 부분곡물 </label>
+                                                            <input type="radio" name="typeCode" value="2" class="toggle"> 부분곡물 </label>
                                                         <label class="btn btn-default">
-                                                            <input type="radio" class="toggle"> 원액 캔 - Extract</label>
+                                                            <input type="radio" name="typeCode" value="3" class="toggle"> 원액 캔 - Extract</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,7 +113,7 @@
                                                 <label class="col-md-2 control-label">맥주 스타일<span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-10">
-                                                    <select class="form-control select2-list" id="styleSeq" name="styleSeq"
+                                                    <select class="form-control select2-list" id="styleId" name="styleId"
                                                             data-placeholder="Select an item">
                                                         <optgroup label="1. LIGHT LAGER">
                                                             <option value="14">라이트 미국식 라거</option>
@@ -219,18 +244,19 @@
                                                 <label class="col-md-2 control-label">배치 용량<span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-4">
-                                                    <div class='input-group' style='width:140px;'>
-                                                        <input id="batchSize" name="batchSize" type="text"
-                                                               class="form-control control-width-small" value="19" required>
-                                                        <span class='input-group-addon'>리터(ℓ)</span>
+
+                                                    <div class="input-group">
+                                                        <input type="text"  id="batchSize" name="batchSize" class="form-control"  value="20" required>
+                                                        <span class="input-group-addon">
+                                                        리터(ℓ)
+                                                        </span>
                                                     </div>
                                                 </div>
                                                 <label class="col-md-2 control-label">수율<span class="required"> * </span>
                                                 </label>
                                                 <div class="col-md-4">
-                                                    <div class='input-group' style='width:135px;'>
-                                                        <input id="efficiency" name="efficiency" type="text"
-                                                               class="form-control control-width-small" value="65" required>
+                                                    <div class='input-group'>
+                                                        <input id="efficiency" name="efficiency" type="text" class="form-control control-width-small" value="65" required>
                                                         <span class='input-group-addon'>%</span>
                                                     </div>
                                                 </div>
@@ -243,6 +269,15 @@
                                                               rows="3"></textarea>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label"></label>
+                                                <div class="col-md-10">
+                                                    <button type="submit" class="btn btn-primary" id="insertRecipe" name="insertRecipe">완료</button>
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="tab_2">
@@ -274,7 +309,7 @@
                         <div class="row">
 
 
-                            <div class="col-xs-8 invoice-block">
+                            <div class="col-xs-9 invoice-block">
                                 <div class="table-actions-wrapper pull-right  margin-bottom-10">
 									<span>
 									</span>
@@ -282,7 +317,8 @@
                                 </div>
 
 
-                                <div class="table-scrollable"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="datatable_orders" aria-describedby="datatable_orders_info" role="grid">
+                                <div class="table-scrollable">
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="datatable_orders" aria-describedby="datatable_orders_info" role="grid">
                                     <thead>
                                     <tr role="row" class="heading">
                                         <th width="2%" class="sorting_disabled" rowspan="1" colspan="1">
@@ -328,24 +364,26 @@
                                 </table></div>
                             </div>
 
-                            <div class="col-xs-4">
+                            <div class="col-xs-3">
+
+
                                 <div class="top-news">
-                                    <a href="javascript:;" class="btn green-haze">
-										<span>
-										1.05 OG</span>
-                                        <em>1.045 ~ 1.065 (BJDP GUIDE)</em>
+                                    <a id="ogCheck" href="javascript:;" class="btn green-haze">
+										<span id="ogText">0 OG</span>
+                                        <em id="ogSpec">1.045 ~ 1.065 (BJDP GUIDE)</em>
                                         <i class="fa fa-briefcase top-news-icon"></i>
                                     </a>
                                 </div>
 
-                                <div id="chartdiv" class="chart" style="height: 250px;">
+                                <div id="chartdiv" class="chart" style="height: 50px;">
+                                    <input id="range_4" type="text" name="range_4" value="1.045;1.065"/>
+
                                 </div>
 
                                 <div class="top-news">
                                     <a href="javascript:;" class="btn green-haze">
-										<span>
-										7 SRM</span>
-                                        <em>2 ~ 5 (BJDP GUIDE)</em>
+										<span id="srmText"> 0 SRM</span>
+                                        <em id="srmSpec">2 ~ 5 (BJDP GUIDE)</em>
                                         <i class="fa fa-briefcase top-news-icon"></i>
                                     </a>
                                 </div>
@@ -359,98 +397,128 @@
 
                 </form:form>
         </div>
+        </div>
+    </div>
+</div>
 
 
         <content tag="local_script">
 
-            <script src="/resources/assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
-            <script src="/resources/assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
+            <link href="/resources/assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
+            <link href="/resources/assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.Metronic.css" rel="stylesheet" type="text/css"/>
+
+
+            <script type="text/javascript" src="/resources/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+            <script src="/resources/assets/global/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+
+            <script src="/resources/assets/admin/pages/scripts/recipe-form-validation.js"></script
+            <script src="/resources/assets/admin/pages/scripts/recipe-components-ion-sliders.js"></script>
+
 
             <script type="text/javascript">
                 $(document).ready(function () {
-                    $('#styleSeq').select2();
+                    $('#styleId').select2();
+
+                    FormValidation.init();
+                    ComponentsIonSliders.init();
+
+                    $('#styleId').change(function () {
+                        var id = $("#styleId option:selected").val();
+
+                        $.get("/style/getDetail/" + id, function (data, status) {
+                            $("#styleOgMin").val(data.ogMin);
+                            $("#styleOgMax").val(data.ogMax);
+                            $("#styleFgMin").val(data.fgMin);
+                            $("#styleFgMax").val(data.fgMax);
+                            $("#styleIbuMin").val(data.ibuMin);
+                            $("#styleIbuMax").val(data.ibuMax);
+                            $("#styleAbvMin").val(data.abvMin);
+                            $("#styleAbvMax").val(data.abvMax);
+                            $("#styleSrmMin").val(data.colorMin);
+                            $("#styleSrmMax").val(data.colorMax);
+
+                            $('#ogSpec').html(data.ogMin + ' ~ ' + data.ogMax + " (BJDP GUIDE)");
+                            $('#srmSpec').html(data.colorMin + ' ~ ' + data.colorMax + " (BJDP GUIDE)");
+
+
+
+                            Metronic.startPageLoading({animate: true});
+
+                            window.setTimeout(function () {
+                                Metronic.stopPageLoading();
+                            }, 1000);
+
+
+                            $("#range_4").ionRangeSlider("update", {
+                                min: data.ogMin - 0.01,
+                                max: data.ogMax + 0.01,
+                                from:  data.ogMin,
+                                to: data.ogMax,
+                                type: 'double',
+                                step: 0.001,
+                                hasGrid: true
+                            });
+
+                            /*
+                            $('#ogSpec').html("<span class='tag label label-info'>OG  </span>" + data.ogMin + ' ~ ' + data.ogMax);
+                            $('#fgSpec').html("<span class='tag label label-info'>FG  </span>" + data.ogMin + ' ~ ' + data.ogMax);
+                            $('#srmSpec').html("<span class='tag label label-info'>SRM  </span>" + data.colorMin + ' ~ ' + data.colorMax);
+                            $('#ibuSpec').html("<span class='tag label label-info'>IBU  </span>" + data.ibuMin + ' ~ ' + data.ibuMax);
+                            $('#abvSpec').html("<span class='tag label label-info'>ADV  </span>" + data.abvMin + ' ~ ' + data.abvMax);
+                            */
+                        })
+
+
+                        //calc();
+                    });
+
 
                 });
 
-                var chart;
+                var ComponentsIonSliders = function () {
 
-                var chartData = [
-                    {
-                        "year": 1.045,
-                        "income": 1.045,
-                        "expenses": 1.05
-                    },
-                    {
-                        "year": 1.065,
-                        "income": 1.065,
-                        "expenses": 1.05
-                    }
-                ];
+                    return {
+                        //main function to initiate the module
+                        init: function () {
+
+                            $("#range_4").ionRangeSlider({
+                                min: 1.01,
+                                max: 1.1,
+                                from: 1.045,
+                                to: 1.60,
+                                type: 'double',
+                                step: 0.001,
+                                hasGrid: true
+                            });
+
+/*
+                            $("#updateLast").on("click", function () {
+
+                                $("#range_3").ionRangeSlider("update", {
+                                    min: Math.round(10000 + Math.random() * 40000),
+                                    max: Math.round(200000 + Math.random() * 100000),
+                                    step: 1,
+                                    from: Math.round(40000 + Math.random() * 40000),
+                                    to: Math.round(150000 + Math.random() * 80000)
+                                });
+
+                            });
+*/
+
+                        }
+
+                    };
+
+                }();
 
 
-                AmCharts.ready(function () {
-                    // SERIAL CHART
-                    chart = new AmCharts.AmSerialChart();
-                    chart.dataProvider = chartData;
-                    chart.categoryField = "year";
-                    chart.title = "OG"
-                    chart.text = "OG"
 
-                    // AXES
-                    // category
-                    var categoryAxis = chart.categoryAxis;
-                    categoryAxis.gridPosition = "start";
-                    categoryAxis.axisColor = "#DADADA";
-                    categoryAxis.dashLength = 3;
-
-
-                    // GRAPHS
-                    // column graph
-                    var graph1 = new AmCharts.AmGraph();
-                    graph1.type = "column";
-                    graph1.title = "OG Guide";
-                    graph1.valueField = "income";
-                    graph1.lineAlpha = 0;
-                    graph1.fillColors = "#ADD981";
-                    graph1.fillAlphas = 0.8;
-                    graph1.balloonText = "<span style='font-size:13px;'>OG (Guide) :<b>[[income]]</b></span>";
-                    chart.addGraph(graph1);
-
-                    // line graph
-                    var graph2 = new AmCharts.AmGraph();
-                    graph2.type = "line";
-                    graph2.lineColor = "#27c5ff";
-                    graph2.bulletColor = "#FFFFFF";
-                    graph2.bulletBorderColor = "#27c5ff";
-                    graph2.bulletBorderThickness = 2;
-                    graph2.bulletBorderAlpha = 1;
-                    graph2.title = "OG (You)";
-                    graph2.valueField = "expenses";
-                    graph2.lineThickness = 2;
-                    graph2.bullet = "round";
-                    graph2.fillAlphas = 0;
-                    graph2.balloonText = "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>";
-                    chart.addGraph(graph2);
-
-                    // LEGEND
-                    var legend = new AmCharts.AmLegend();
-                    legend.useGraphSettings = true;
-                    chart.addLegend(legend);
-
-                    chart.creditsPosition = "top-right";
-
-                    // WRITE
-                    chart.write("chartdiv");
-                });
-
+                function getLineFeed() {
+                    var note = $("#note").val().replace(/\n/g, '<br>');
+                    $("#notes").val(note);
+                }
 
             </script>
+
+
         </content>

@@ -149,9 +149,9 @@
     </select>
 
     <select id="Recipe.selectRecipeSeq" parameterType="Recipe" resultType="Recipe">
-      SELECT IFNULL(MAX(SEQ)+1,1) as seq
-        FROM RECIPE
-       WHERE brewer =  #{brewer}
+      SELECT IFNULL(MAX(ID)+1,1) as id
+        FROM RECIPES
+       WHERE brewer_id =  #{brewerId}
     </select>
 
     <select id="Recipe.selectRecipeDetail" parameterType="Recipe" resultType="Recipe">
@@ -224,14 +224,14 @@
 
     <insert id="Recipe.insertRecipe" parameterType="Recipe">
         <!-- 맥주 레시피 저장 -->
-        INSERT INTO brewduckdb.RECIPE (
-        seq
+        INSERT INTO RECIPES (
+        id
         ,name
         ,version
-        ,type
-        ,brewer
-        ,style_seq
-        ,asst_brewer
+        ,type_code
+        ,brewer_id
+        ,style_id
+        ,asst_brewer_id
         ,batch_size
         ,boil_size
         ,boil_time
@@ -239,22 +239,21 @@
         ,notes
         ,og
         ,fg
-        ,primary_age
-        ,primary_temp
-        ,secondary_age
-        ,secondary_temp
-        ,age
-        ,age_temp
-        ,priming_sugar_name
+        ,PRIMARY_FERMENTATION_TIME
+        ,PRIMARY_FERMENTATION_TEMP
+        ,SECONDARY_FERMENTATION_TIME
+        ,SECONDARY_FERMENTATION_TEMP
+        ,AGE_TIME
+        ,AGE_TEMP
         ,insert_id
         ,insert_date
         ) VALUES (
-        #{seq}
+        #{id}
         ,#{name}
         ,#{version}
-        ,#{type}
-        ,#{brewer}
-        ,#{styleSeq}
+        ,#{typeCode}
+        ,#{brewerId}
+        ,#{styleId}
         ,#{asstBrewer}
         ,#{batchSize}
         ,#{boilSize}
@@ -269,7 +268,6 @@
         ,#{secondaryTemp}
         ,#{age}
         ,#{ageTemp}
-        ,#{primingSugarName}
         ,#{insertId}
         ,now()
         )
@@ -368,8 +366,8 @@
         UPDATE brewduckdb.RECIPE
         SET delete_id = #{deleteId}
         ,delete_date = now()
-        WHERE seq = #{seq}
-        AND brewer = #{brewer}
+        WHERE id = #{id}
+        AND brewer_id = #{brewerId}
     </update>
 
     <update id="deleteRecipeFermentable" parameterType="Recipe">

@@ -130,7 +130,7 @@ public class StyleController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getDetail/{seq}", method = RequestMethod.GET)
+    @RequestMapping(value = "/getDetail/{id}", method = RequestMethod.GET)
     public Style getDetail(Model model, @PathVariable("id") Integer id) {
 
         // 맥주 레시피 저장했는지 성공 세팅

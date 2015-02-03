@@ -6,8 +6,6 @@
     <li><a href="#">홈</a></li>
     <li><a href="#">레시피</a></li>
     <li class="active">레시피 만들기</li>
-
-
 </ol>
 <div class="section-header">
     <h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i> 레시피 만들기

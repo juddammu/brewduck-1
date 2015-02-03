@@ -21,7 +21,7 @@ public class Recipe implements Serializable {
     //커버 이미지
     private MultipartFile coverImageFile;
     // 레시피 순번
-    private Integer seq;
+    private Integer id;
 
     private Integer limit;
 
@@ -31,11 +31,11 @@ public class Recipe implements Serializable {
     // 레시피 버전
     private Integer version;
     // 레시피 종류 (추출물, 부분 곡물, 완전 곡물)
-    private String type;
+    private String typeCode;
     // 맥주 스타일 이름
     private String styleName;
     // 맥주 스타일
-    private Integer styleSeq;
+    private Integer styleId;
 
     // 스타일 레터
     private String styleLetter;
@@ -50,11 +50,11 @@ public class Recipe implements Serializable {
     // 맥주 스타일 번호
     private Integer categoryNumber;
     // 레시피 양조자
-    private String brewer;
+    private Integer brewerId;
     // 레시피 보조 양조자
     private String asstBrewer;
     // 레시피 배치 완성 사이즈
-    private Double batchSize;
+    private Integer batchSize;
     // 레시피 워트 보일링시 사이즈
     private Integer boilSize;
     // 레시피 워트 보일링 시간 (분)
@@ -586,17 +586,17 @@ public class Recipe implements Serializable {
      *
      * @return 레시피 순번
      */
-    public Integer getSeq() {
-        return seq;
+    public Integer getId() {
+        return id;
     }
 
     /**
      * 레시피 순번
      *
-     * @param seq 레시피 순번
+     * @param id 레시피 순번
      */
-    public void setSeq(Integer seq) {
-        this.seq = seq;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**
@@ -640,17 +640,17 @@ public class Recipe implements Serializable {
      *
      * @return 레시피 종류
      */
-    public String getType() {
-        return type;
+    public String getTypeCode() {
+        return typeCode;
     }
 
     /**
      * 레시피 종류 (추출물, 부분 곡물, 완전 곡물)
      *
-     * @param type 레시피 종류
+     * @param
      */
-    public void setType(String type) {
-        this.type = type;
+    public void setTypeCode(String typeCode) {
+        this.typeCode = typeCode;
     }
 
     /**
@@ -676,12 +676,12 @@ public class Recipe implements Serializable {
      *
      * @return 맥주 스타일
      */
-    public Integer getStyleSeq() {
-        return styleSeq;
+    public Integer getStyleId() {
+        return styleId;
     }
 
-    public void setStyleSeq(Integer styleSeq) {
-        this.styleSeq = styleSeq;
+    public void setStyleId(Integer styleId) {
+        this.styleId = styleId;
     }
 
     /**
@@ -728,17 +728,17 @@ public class Recipe implements Serializable {
      *
      * @return 레시피 양조자
      */
-    public String getBrewer() {
-        return brewer;
+    public Integer getBrewerId() {
+        return brewerId;
     }
 
     /**
      * 레시피 양조자
      *
-     * @param brewer 레시피 양조자
+     * @param
      */
-    public void setBrewer(String brewer) {
-        this.brewer = brewer;
+    public void setBrewerId(Integer brewerId) {
+        this.brewerId = brewerId;
     }
 
     /**
@@ -765,7 +765,7 @@ public class Recipe implements Serializable {
      * @return 레시피 배치 완성 사이즈
      */
 
-    public Double getBatchSize() {
+    public Integer getBatchSize() {
         return batchSize;
     }
 
@@ -775,7 +775,7 @@ public class Recipe implements Serializable {
      * @param batchSize 레시피 배치 완성 사이즈
      */
 
-    public void setBatchSize(Double batchSize) {
+    public void setBatchSize(Integer batchSize) {
         this.batchSize = batchSize;
     }
 

@@ -327,7 +327,7 @@
     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
        data-close-others="true">
         <img alt="" class="img-circle" src="/resources/assets/admin/layout3/img/avatar9.jpg">
-        <span class="username username-hide-mobile">Nick</span>
+        <span class="username username-hide-mobile"><%=AuthenticationUtils.getUser().getName()%></span>
     </a>
     <ul class="dropdown-menu dropdown-menu-default">
         <li>
@@ -439,7 +439,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu-dropdown classic-menu-dropdown ">
+                <!--li class="menu-dropdown classic-menu-dropdown ">
                     <a data-hover="megamenu-dropdown" data-close-others="true"
                        data-toggle="dropdown" href="javascript:;">
                         <spring:message code="menu.board"/> <i class="fa fa-angle-down"></i>
@@ -488,7 +488,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li-->
 
                 <li class="menu-dropdown classic-menu-dropdown ">
                     <a data-hover="megamenu-dropdown" data-close-others="true"

@@ -73,6 +73,14 @@ public class RecipeController {
         model.addAttribute("yeastList", yeastList);
         model.addAttribute("miscList",  miscList);*/
 
+        Account account = AuthenticationUtils.getUser();
+        Recipe paramRecipe = new Recipe();
+        paramRecipe.setBrewerId(account.getId());
+
+        Integer recipeId = recipeService.selectRecipeSeq(paramRecipe).getId();
+
+        model.addAttribute("recipeId", recipeId);
+
         return "recipe/createtest";
     }
 
@@ -111,10 +119,10 @@ public class RecipeController {
      * @return 맥주 레시피 메인
      */
     @RequestMapping(value = "/main/{seq}", method = RequestMethod.GET)
-    public String recipeMain(Model model, Recipe recipe, @PathVariable("seq") Integer seq) {
+    public String recipeMain(Model model, Recipe recipe, @PathVariable("id") Integer id) {
 
 
-        recipe.setStyleSeq(seq);
+        recipe.setStyleId(id);
         Account account = AuthenticationUtils.getUser();
         Recipe recipeMain = recipeService.selectCategoryMain(recipe);
         model.addAttribute("recipeMain", recipeMain);
@@ -143,7 +151,7 @@ public class RecipeController {
 
     @RequestMapping(value = "/detail/{seq}/{titleInUrl}/{brewer}", method = RequestMethod.GET)
     public String abv(Model model, @PathVariable("seq") Integer seq, @PathVariable("titleInUrl") String titleInUrl
-        , @PathVariable("brewer") String brewer) {
+        , @PathVariable("brewer") Integer brewer) {
 
         Recipe recipe = new Recipe();
         Recipe recipeDetail = recipeService.selectCategoryDetail(recipe, seq, brewer);
@@ -168,7 +176,7 @@ public class RecipeController {
         Account account = AuthenticationUtils.getUser();
 
         // 맥주 레시피 목록 조회
-        recipe.setBrewer(account.getId() + "");
+        recipe.setBrewerId(account.getId());
         List<Recipe> list = recipeService.selectRecipeList(recipe);
         LOGGER.info("Recipe List Size : {}", list.size());
 
@@ -182,15 +190,15 @@ public class RecipeController {
      * </pre>
      *
      * @param model Model
-     * @param seq   맥주 레시피 영문명
+     * @param id   맥주 레시피 영문명
      * @return 맥주 레시피 상세.
      */
-    @RequestMapping(value = "{seq}/*", method = RequestMethod.GET)
-    public String selectRecipeDetail(Model model, @PathVariable("seq") Integer seq) {
-        LOGGER.info("Recipe Name : {}", seq);
+    @RequestMapping(value = "{id}/*", method = RequestMethod.GET)
+    public String selectRecipeDetail(Model model, @PathVariable("id") Integer id) {
+        LOGGER.info("Recipe Name : {}", id);
 
         Recipe recipe = new Recipe();
-        recipe.setSeq(seq);
+        recipe.setId(id);
 
         // 맥주 레시피 상세 조회
         Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
@@ -222,7 +230,7 @@ public class RecipeController {
     }
 
     @RequestMapping(value = "/insertRecipe", method = RequestMethod.POST)
-    public String join(@ModelAttribute("recipe") Recipe paramRecipe,
+    public String insertRecipe(@ModelAttribute("recipe") Recipe paramRecipe,
         Model model,
         BindingResult result,
         RedirectAttributes redirectAttributes) {
@@ -232,12 +240,12 @@ public class RecipeController {
         }
 */
 
-
+        System.out.println("@@@@@@@@@@@@ " + paramRecipe.getId());
         Account account = AuthenticationUtils.getUser();
 
         paramRecipe.setVersion(0);
-        paramRecipe.setBrewer(account.getId() + "");
-        paramRecipe.setBoilSize(19);
+        paramRecipe.setBrewerId(account.getId());
+        paramRecipe.setBoilSize(paramRecipe.getBatchSize());
         paramRecipe.setBoilTime(60);
         paramRecipe.setInsertId(account.getId() + "");
         //paramRecipe.setCoverImageFile(file);
@@ -250,6 +258,9 @@ public class RecipeController {
         int hopSize = 0;
         int yeastSize = 0;
         int miscSize = 0;
+
+        Integer recipeSeq = paramRecipe.getId();
+/*
 
         if (paramRecipe.getRecipeFermantableSeqs() != null) {
             fermentableSize = paramRecipe.getRecipeFermantableSeqs().length;
@@ -264,7 +275,7 @@ public class RecipeController {
             miscSize = paramRecipe.getRecipeMiscSeqs().length;
         }
 
-        Integer recipeSeq = recipeService.selectRecipeSeq(paramRecipe).getSeq();
+
 
         if (fermentableSize > 0) {
             for (int i = 0; i < fermentableSize; i++) {
@@ -273,7 +284,7 @@ public class RecipeController {
                 paramRecipeFermantable.setRecipeFermantableAmount(paramRecipe.getRecipeFermantableAmounts()[i]);
                 paramRecipeFermantable.setRecipeFermantableUse(paramRecipe.getRecipeFermantableUses()[i]);
                 paramRecipeFermantable.setRecipeFermantableType("1");
-                paramRecipeFermantable.setBrewer(account.getId() + "");
+                paramRecipeFermantable.setBrewerId(account.getId());
                 paramRecipeFermantable.setInsertId(account.getId() + "");
                 recipeService.insertRecipeFermentable(paramRecipeFermantable);
             }
@@ -289,7 +300,7 @@ public class RecipeController {
                 paramRecipeHop.setRecipeHopTime(paramRecipe.getRecipeHopTimes()[i]);
                 paramRecipeHop.setRecipeHopForm(paramRecipe.getRecipeHopForms()[i]);
                 paramRecipeHop.setRecipeHopAlpha(paramRecipe.getRecipeHopAlphas()[i]);
-                paramRecipeHop.setBrewer(account.getId() + "");
+                paramRecipeHop.setBrewerId(account.getId());
                 paramRecipeHop.setInsertId(account.getId() + "");
                 recipeService.insertRecipeHop(paramRecipeHop);
             }
@@ -301,7 +312,7 @@ public class RecipeController {
                 paramRecipeYeast.setRecipeYeastSeq(paramRecipe.getRecipeYeastSeqs()[i]);
                 //paramRecipeYeast.setRecipeYeastMinTemperature(paramRecipe.getRecipeYeastMinTemperatures()[i]);
                 //paramRecipeYeast.setRecipeYeastMaxTemperature(paramRecipe.getRecipeYeastMaxTemperatures()[i]);
-                paramRecipeYeast.setBrewer(account.getId() + "");
+                paramRecipeYeast.setBrewerId(account.getId());
                 paramRecipeYeast.setInsertId(account.getId() + "");
                 recipeService.insertRecipeYeast(paramRecipeYeast);
             }
@@ -314,13 +325,14 @@ public class RecipeController {
                 paramRecipeMisc.setRecipeMiscAmount(paramRecipe.getRecipeMiscAmounts()[i]);
                 paramRecipeMisc.setRecipeMiscTime(paramRecipe.getRecipeMiscTimes()[i]);
                 paramRecipeMisc.setRecipeMiscUse(paramRecipe.getRecipeMiscUses()[i]);
-                paramRecipeMisc.setBrewer(account.getId() + "");
+                paramRecipeMisc.setBrewerId(account.getId());
                 paramRecipeMisc.setInsertId(account.getId() + "");
                 recipeService.insertRecipeMisc(paramRecipeMisc);
             }
         }
+*/
 
-        paramRecipe.setSeq(recipeSeq);
+        paramRecipe.setId(recipeSeq);
         Boolean insertFlag = recipeService.insertRecipe(paramRecipe);
 
         if (insertFlag == true) {
@@ -384,12 +396,12 @@ public class RecipeController {
 
     @ResponseBody
     @RequestMapping(value = "/srm/{seq}/{batchSize}", method = RequestMethod.GET)
-    public String getSrm(Model model, @PathVariable("seq") Integer seq, @PathVariable("batchSize") Double batchSize) {
+    public String getSrm(Model model, @PathVariable("id") Integer id, @PathVariable("batchSize") Double batchSize) {
 
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
-        recipe.setSeq(seq);
-        recipe.setBrewer(account.getId() + "");
+        recipe.setId(id);
+        recipe.setBrewerId(account.getId());
         Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
         //Double batchSize = 0.0;

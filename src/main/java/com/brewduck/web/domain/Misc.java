@@ -89,7 +89,7 @@ public class Misc implements Serializable {
     //기타 재료 타입 한글 타입
     public String typeKorean;
 
-    public String brewer;
+    public Integer brewerId;
 
     /**
      * 기타 재료 영문명
@@ -254,7 +254,7 @@ public class Misc implements Serializable {
     /**
      * 기타 재료의 사용 항목에 대한 한글 설명
      *
-     * @param 기타 재료의 사용 항목에 대한 한글 설명
+     * @param
      */
     public String getUseForKorean() {
         return useForKorean;
@@ -578,12 +578,12 @@ public class Misc implements Serializable {
         this.titleInUrl = titleInUrl;
     }
 
-    public String getBrewer() {
-        return brewer;
+    public Integer getBrewerId() {
+        return brewerId;
     }
 
-    public void setBrewer(String brewer) {
-        this.brewer = brewer;
+    public void setBrewerId(Integer brewerId) {
+        this.brewerId = brewerId;
     }
 
     public Integer getId() {

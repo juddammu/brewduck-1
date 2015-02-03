@@ -100,7 +100,7 @@ public class HomebrewController {
         Account account = AuthenticationUtils.getUser();
 
         // 맥주 레시피 목록 조회
-        recipe.setBrewer(account.getId() + "");
+        recipe.setBrewerId(account.getId());
         List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
 
         model.addAttribute("account", account);
@@ -109,13 +109,13 @@ public class HomebrewController {
         return "homebrew/myrecipes";
     }
 
-    @RequestMapping(value = "/update/{seq}", method = RequestMethod.GET)
-    public String selectRecipeUpdate(Model model, @PathVariable("seq") Integer seq) {
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String selectRecipeUpdate(Model model, @PathVariable("id") Integer id) {
 
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
-        recipe.setSeq(seq);
-        recipe.setBrewer(account.getId() + "");
+        recipe.setId(id);
+        recipe.setBrewerId(account.getId());
 
         Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
@@ -125,12 +125,12 @@ public class HomebrewController {
     }
 
     @RequestMapping(value = "/{seq}/**", method = RequestMethod.GET)
-    public String abv(Model model, @PathVariable("seq") Integer seq) {
+    public String abv(Model model, @PathVariable("id") Integer id) {
 
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
-        recipe.setSeq(seq);
-        recipe.setBrewer(account.getId() + "");
+        recipe.setId(id);
+        recipe.setBrewerId(account.getId());
 
         Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
@@ -148,12 +148,12 @@ public class HomebrewController {
      * @return 맥주 발효재료 메인
      */
     @RequestMapping(value = "/publish/{seq}", method = RequestMethod.GET)
-    public String publish(Model model, @PathVariable("seq") Integer seq) {
+    public String publish(Model model, @PathVariable("id") Integer id) {
 
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
-        recipe.setSeq(seq);
-        recipe.setBrewer(account.getId() + "");
+        recipe.setId(id);
+        recipe.setBrewerId(account.getId());
 
         Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
@@ -251,7 +251,7 @@ public class HomebrewController {
 
         recipe.setAtchFileId(fileseq + "");
         recipe.setAtchCoverFileId(coverFileseq + "");
-        recipe.setBrewer(account.getId() + "");
+        recipe.setBrewerId(account.getId());
 
         recipeService.updateRecipe(recipe);
         //TODO : 레시피 상태와 이미지 update 처리
@@ -273,8 +273,8 @@ public class HomebrewController {
 
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
-        recipe.setSeq(seq);
-        recipe.setBrewer(account.getId() + "");
+        recipe.setId(seq);
+        recipe.setBrewerId(account.getId());
         recipe.setDeleteId(account.getId() + "");
 
         // 맥주 레시피 삭제

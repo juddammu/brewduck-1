@@ -76,7 +76,7 @@ public interface RecipeService {
      * @param recipe 맥주 레시피 스타일 상세
      * @return 맥주 레시피 스타일 상세
      */
-    public Recipe selectCategoryDetail(Recipe recipe, Integer seq, String brewer);
+    public Recipe selectCategoryDetail(Recipe recipe, Integer seq, Integer brewer);
 
 
     /**

@@ -72,26 +72,26 @@ public class RecipeServiceImpl implements RecipeService {
         // 레시피 조회
         Recipe newPublicRecipe = recipeDao.selectRecipeDetail(recipe);
 
-        Integer recipeSeq = newPublicRecipe.getSeq();
-        String brewer = newPublicRecipe.getBrewer();
+        Integer recipeSeq = newPublicRecipe.getId();
+        Integer brewer = newPublicRecipe.getBrewerId();
 
         // 레시피 제조시 입력한 스타일 맥주 이름
         Style paramStyle = new Style();
         Fermentable paramFermentable = new Fermentable();
-        paramFermentable.setId(newPublicRecipe.getSeq());
-        paramFermentable.setBrewer(newPublicRecipe.getBrewer());
+        paramFermentable.setId(newPublicRecipe.getId());
+        paramFermentable.setBrewerId(newPublicRecipe.getBrewerId());
 
         Hop paramHop = new Hop();
-        paramHop.setSeq(newPublicRecipe.getSeq());
-        paramHop.setBrewer(newPublicRecipe.getBrewer());
+        paramHop.setSeq(newPublicRecipe.getId());
+        paramHop.setBrewerId(newPublicRecipe.getBrewerId());
 
         Yeast paramYeast = new Yeast();
-        paramYeast.setSeq(newPublicRecipe.getSeq());
-        paramYeast.setBrewer(newPublicRecipe.getBrewer());
+        paramYeast.setSeq(newPublicRecipe.getId());
+        paramYeast.setBrewerId(newPublicRecipe.getBrewerId());
 
         Misc paramMisc = new Misc();
-        paramMisc.setSeq(newPublicRecipe.getSeq());
-        paramMisc.setBrewer(newPublicRecipe.getBrewer());
+        paramMisc.setSeq(newPublicRecipe.getId());
+        paramMisc.setBrewerId(newPublicRecipe.getBrewerId());
 
         // 레시피 작성시 선택한 스타일 맥주
         //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
@@ -108,7 +108,7 @@ public class RecipeServiceImpl implements RecipeService {
         newPublicRecipe.setMiscs(miscDao.selectRecipeMiscList(paramMisc));
 
         // 조회수 업데이트
-        newPublicRecipe.setUpdateId(newPublicRecipe.getBrewer());
+        newPublicRecipe.setUpdateId(newPublicRecipe.getBrewerId()+"");
         //recipeDao.updateRecipe(newRecipe);
 
         return newPublicRecipe;
@@ -120,26 +120,26 @@ public class RecipeServiceImpl implements RecipeService {
         // 레시피 조회
         Recipe newRecipe = recipeDao.selectRecipeDetail(recipe);
 
-        Integer recipeSeq = newRecipe.getSeq();
-        String brewer = newRecipe.getBrewer();
+        Integer recipeSeq = newRecipe.getId();
+        Integer brewer = newRecipe.getBrewerId();
 
         // 레시피 제조시 입력한 스타일 맥주 이름
         Style paramStyle = new Style();
         Fermentable paramFermentable = new Fermentable();
-        paramFermentable.setId(newRecipe.getSeq());
+        paramFermentable.setId(newRecipe.getId());
         paramFermentable.setBrewer(account.getId() + "");
 
         Hop paramHop = new Hop();
-        paramHop.setSeq(newRecipe.getSeq());
+        paramHop.setSeq(newRecipe.getId());
         paramHop.setBrewer(account.getId() + "");
 
         Yeast paramYeast = new Yeast();
-        paramYeast.setSeq(newRecipe.getSeq());
-        paramYeast.setBrewer(account.getId() + "");
+        paramYeast.setSeq(newRecipe.getId());
+        paramYeast.setBrewerId(account.getId());
 
         Misc paramMisc = new Misc();
-        paramMisc.setSeq(newRecipe.getSeq());
-        paramMisc.setBrewer(account.getId() + "");
+        paramMisc.setSeq(newRecipe.getId());
+        paramMisc.setBrewerId(account.getId());
 
         // 레시피 작성시 선택한 스타일 맥주
         //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));
@@ -174,12 +174,12 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe selectCategoryDetail(Recipe recipe, Integer seq, String brewer) {
+    public Recipe selectCategoryDetail(Recipe recipe, Integer seq, Integer brewer) {
 
 
         Account account = AuthenticationUtils.getUser();
-        recipe.setSeq(seq);
-        recipe.setBrewer(brewer);
+        recipe.setId(seq);
+        recipe.setBrewerId(brewer);
         // 레시피 조회
         Recipe categoryRecipe = recipeDao.selectCategoryDetail(recipe);
 
@@ -187,19 +187,19 @@ public class RecipeServiceImpl implements RecipeService {
         Style paramStyle = new Style();
         Fermentable paramFermentable = new Fermentable();
         paramFermentable.setId(seq);
-        paramFermentable.setBrewer(brewer);
+        paramFermentable.setBrewerId(brewer);
 
         Hop paramHop = new Hop();
         paramHop.setSeq(seq);
-        paramHop.setBrewer(brewer);
+        paramHop.setBrewerId(brewer);
 
         Yeast paramYeast = new Yeast();
         paramYeast.setSeq(seq);
-        paramYeast.setBrewer(brewer);
+        paramYeast.setBrewerId(brewer);
 
         Misc paramMisc = new Misc();
         paramMisc.setSeq(seq);
-        paramMisc.setBrewer(brewer);
+        paramMisc.setBrewerId(brewer);
 
         // 레시피에 포함되는 맥아 리스트
         categoryRecipe.setFermentables(fermentableDao.selectRecipeFermentableList(paramFermentable));

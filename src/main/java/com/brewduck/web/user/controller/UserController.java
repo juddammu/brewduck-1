@@ -40,14 +40,14 @@ public class UserController {
     @Autowired
     private BoardService boardService;
 
-    @RequestMapping(value = "/public/recipe/{user_id}/{seq}/*", method = RequestMethod.GET)
+    @RequestMapping(value = "/public/recipe/{user_id}/{id}/*", method = RequestMethod.GET)
     public String selectPublicRecipeDetail(Model model,
-        @PathVariable("seq") Integer seq,
-        @PathVariable("user_id") String user_id) {
+        @PathVariable("id") Integer id,
+        @PathVariable("user_id") Integer user_id) {
 
         Recipe recipe = new Recipe();
-        recipe.setSeq(seq);
-        recipe.setBrewer(user_id);
+        recipe.setId(id);
+        recipe.setBrewerId(user_id);
         recipe.setStatus("2");
         recipe.setLimit(4);
         Board board = new Board();
@@ -67,11 +67,11 @@ public class UserController {
 
     @RequestMapping(value = "/list/recipe/{user_id}/*", method = RequestMethod.GET)
     public String selectPublicRecipeList(Model model,
-        @PathVariable("user_id") String user_id) {
+        @PathVariable("user_id") Integer user_id) {
 
         Recipe recipe = new Recipe();
 
-        recipe.setBrewer(user_id);
+        recipe.setBrewerId(user_id);
         recipe.setStatus("2");
         List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
 
