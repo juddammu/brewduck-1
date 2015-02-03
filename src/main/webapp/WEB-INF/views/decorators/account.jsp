@@ -2,55 +2,110 @@
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]> <html class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>BREWDUCK - 맥주의 모든것</title>
-    <meta name="Author" content="brewduck, http://www.brewduck.com, 맥주 대동여지도"/>
+    <title><decorator:title/> | BREWDUCK</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
-    <meta name="description" content="BRWEDUCK - 세상에는 당신이 맛보지 않은 맥주들이 너무나 많습니다."/>
-    <meta name="keywords"
-          content="ale, beer, brewduck, Home Brewing, lager, SOMA, 곡주, 공방, 과실주, 라거, 맥주, 문화, 바이젠, 발효, 배병우, 소마, 숙성, 양조, 에일, 옥수동, 옥토버페스트, 와인, 맥만동, 임세환, 제조, 주조, 증류주, 포도주, 프로젝트, 홈 브루잉, 효모"/>
-
-    <!-- BEGIN STYLESHEETS -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800'
-          rel='stylesheet' type='text/css'/>
-    <link type="text/css" rel="stylesheet"
-          href="/resources/expert/css/theme-default/bootstrap.css?1400695306"/>
-    <link type="text/css" rel="stylesheet"
-          href="/resources/expert/css/theme-default/boostbox.css?1401297311"/>
-    <link type="text/css" rel="stylesheet"
-          href="/resources/expert/css/theme-default/boostbox_responsive.css?1400695309"/>
-    <link type="text/css" rel="stylesheet"
-          href="/resources/expert/css/theme-default/font-awesome.min.css?1400333030"/>
-    <!-- END STYLESHEETS -->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script type="text/javascript"
-            src="/resources/expert/js/libs/utils/html5shiv.js?1400333019"></script>
-    <script type="text/javascript"
-            src="/resources/expert/js/libs/utils/respond.min.js?1400333017"></script>
-    <![endif]-->
+    <meta content="" name="author"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="/resources/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="/resources/assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/assets/admin/pages/css/login-soft.css" rel="stylesheet" type="text/css"/>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="/resources/assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css"/>
+    <link href="/resources/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+    <link id="style_color" href="/resources/assets/admin/layout/css/themes/default.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-<body class="body-dark">
-<!-- START LOGIN BOX -->
-<div class="box-type-login">
-    <decorator:body/>
-</div>
-<!-- END LOGIN BOX -->
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="login">
+<!-- BEGIN LOGO -->
+<div class="logo">
+    <a href="/">
+        <img src="/resources/assets/admin/layout3/img/logo-default.png" alt="logo" class="logo-default">
 
-<!-- BEGIN JAVASCRIPT -->
-<script src="/resources/expert/js/libs/jquery/jquery-1.11.0.min.js"></script>
-<script src="/resources/expert/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
-<script src="/resources/expert/js/core/BootstrapFixed.js"></script>
-<script src="/resources/expert/js/libs/bootstrap/bootstrap.min.js"></script>
-<script src="/resources/expert/js/libs/spin.js/spin.min.js"></script>
-<script src="/resources/expert/js/libs/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="/resources/expert/js/core/App.js"></script>
-<script src="/resources/expert/js/core/demo/Demo.js"></script>
-<!-- END JAVASCRIPT -->
+    </a>
+</div>
+<!-- END LOGO -->
+<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+<div class="menu-toggler sidebar-toggler">
+</div>
+<!-- END SIDEBAR TOGGLER BUTTON -->
+<!-- BEGIN LOGIN -->
+<div class="content">
+    <decorator:body/>
+    <!-- END REGISTRATION FORM -->
+</div>
+<!-- END LOGIN -->
+<!-- BEGIN COPYRIGHT -->
+<div class="copyright">
+    2014 &copy; Brewduck. Open Project Team
+</div>
+<!-- END COPYRIGHT -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="/resources/assets/global/plugins/respond.min.js"></script>
+<script src="/resources/assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="/resources/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="/resources/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="/resources/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/resources/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/resources/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/resources/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="/resources/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/resources/assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/resources/assets/global/plugins/select2/select2.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="/resources/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="/resources/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="/resources/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="/resources/assets/admin/pages/scripts/login-soft.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        Login.init();
+        Demo.init();
+        // init background slide images
+        $.backstretch([
+            "/resources/assets/admin/pages/media/bg/1.jpg",
+            "/resources/assets/admin/pages/media/bg/2.jpg",
+            "/resources/assets/admin/pages/media/bg/3.jpg",
+            "/resources/assets/admin/pages/media/bg/4.jpg"
+        ], {
+                    fade: 1000,
+                    duration: 8000
+                }
+        );
+    });
+</script>
 <decorator:getProperty property="page.local_script"></decorator:getProperty>
+<!-- END JAVASCRIPTS -->
 </body>
+<!-- END BODY -->
 </html>
