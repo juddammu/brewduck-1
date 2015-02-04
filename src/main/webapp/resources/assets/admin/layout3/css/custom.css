@@ -28,3 +28,13 @@ Rounded Portlets
 }
 
 body { font-family: 'NanumGothicWeb'; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'NanumGothicWeb';
+    font-weight: 300;
+}
