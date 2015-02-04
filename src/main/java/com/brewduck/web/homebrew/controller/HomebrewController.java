@@ -93,6 +93,17 @@ public class HomebrewController {
         return "homebrew/index";
     }
 
+
+    /**
+     * 계정 변경
+     *
+     * @return
+     */
+    @RequestMapping(value = "/account-update", method = RequestMethod.GET)
+    public String update(Model model) {
+        return "homebrew/accountUpdate";
+    }
+
     @RequestMapping(value = "/myrecipes", method = RequestMethod.GET)
     public String abv(Model model) {
 

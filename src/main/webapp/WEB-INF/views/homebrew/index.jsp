@@ -49,7 +49,7 @@
         <!-- END SIDEBAR USER TITLE -->
         <!-- SIDEBAR BUTTONS -->
         <div class="profile-userbuttons">
-            <button type="button" class="btn btn-circle green-haze btn-sm">스토킹</button>
+            <button type="button" class="btn btn-circle green-haze btn-sm">팔로우</button>
             <button type="button" class="btn btn-circle btn-danger btn-sm">메시지</button>
         </div>
         <!-- END SIDEBAR BUTTONS -->
@@ -62,7 +62,7 @@
                         대시보드 </a>
                 </li>
                 <li>
-                    <a href="extra_profile_account.html">
+                    <a href="/homebrew/account-update">
                         <i class="icon-settings"></i>
                         계정설정 </a>
                 </li>

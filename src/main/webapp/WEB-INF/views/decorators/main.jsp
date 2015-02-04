@@ -26,6 +26,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
+    <meta name="google-site-verification" content="oYdyCK93H5ERr4lRasA-Bj6vRNKBVnRAFHuuRVBlQW4" />
+
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
           rel="stylesheet" type="text/css">

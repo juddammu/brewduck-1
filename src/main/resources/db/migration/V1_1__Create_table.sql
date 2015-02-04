@@ -21,7 +21,7 @@ CREATE TABLE `brewduck`.`HOPS` (
   `UPDATE_DATE`   DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`     VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`   DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '홉';
 
 -- 홉
@@ -68,7 +68,7 @@ CREATE TABLE `brewduck`.`RECIPES` (
   `UPDATE_DATE`                 DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`                   VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`                 DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '레시피';
 
 -- 레시피
@@ -92,7 +92,7 @@ CREATE TABLE `brewduck`.`RECIPES_HOPS` (
   `TIME`         INTEGER      NULL     COMMENT '시간', -- 시간
   `TIME_CODE`    VARCHAR(2)   NULL     COMMENT '시간코드', -- 시간코드
   `BREWER_ID`    INTEGER      NULL     COMMENT '양조자일련번호' -- 양조자일련번호
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '레시피_홉_맵핑';
 
 -- 레시피_홉_맵핑
@@ -129,7 +129,7 @@ CREATE TABLE `brewduck`.`FERMENTABLES` (
   `UPDATE_DATE`      DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`        VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`      DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '발효재료';
 
 -- 발효재료
@@ -163,7 +163,7 @@ CREATE TABLE `brewduck`.`YEASTS` (
   `UPDATE_DATE`      DATETIME      NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`        VARCHAR(400)  NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`      DATETIME      NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '효모';
 
 -- 효모
@@ -212,7 +212,7 @@ CREATE TABLE `brewduck`.`STYLES` (
   `UPDATE_DATE`     DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`       VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`     DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '스타일';
 
 -- 스타일
@@ -239,7 +239,7 @@ CREATE TABLE `brewduck`.`MISCS` (
   `UPDATE_DATE` DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`   VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE` DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '기타재료';
 
 -- 기타재료
@@ -267,7 +267,7 @@ CREATE TABLE `brewduck`.`RECIPES_FERMENTABLES` (
   `DELETE_ID`      VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`    DATETIME     NULL     COMMENT '삭제일시', -- 삭제일시
   `BREWER_ID`      INTEGER      NULL     COMMENT '양조자일련번호' -- 양조자일련번호
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '레시피_발효재료_맵핑';
 
 -- 레시피_발효재료_맵핑
@@ -290,7 +290,7 @@ CREATE TABLE `brewduck`.`RECIPES_YEASTS` (
   `DELETE_ID`    VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`  DATETIME     NULL     COMMENT '삭제일시', -- 삭제일시
   `BREWER_ID`    INTEGER      NULL     COMMENT '양조자일련번호' -- 양조자일련번호
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '레시피_효모_맵핑';
 
 -- 레시피_효모_맵핑
@@ -318,7 +318,7 @@ CREATE TABLE `brewduck`.`RECIPES_MISCS` (
   `DELETE_ID`        VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`      DATETIME     NULL     COMMENT '삭제일시', -- 삭제일시
   `BREWER_ID`        INTEGER      NULL     COMMENT '양조자일련번호' -- 양조자일련번호
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '레시피_기타재료_맵핑';
 
 -- 레시피_기타재료_맵핑
@@ -340,7 +340,7 @@ CREATE TABLE `brewduck`.`HOPS_SUBSTITUTES` (
   `UPDATE_DATE`    DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`      VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`    DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '홉 대체';
 
 -- 홉 대체
@@ -370,7 +370,7 @@ CREATE TABLE `brewduck`.`BOARD_MASTER` (
   `UPDATE_DATE`        DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`          VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`        DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '게시판 마스터';
 
 -- 게시판 마스터
@@ -399,7 +399,7 @@ CREATE TABLE `brewduck`.`BOARD` (
   `UPDATE_DATE`   DATETIME      NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`     VARCHAR(400)  NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`   DATETIME      NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '게시판';
 
 -- 게시판
@@ -423,7 +423,7 @@ CREATE TABLE `brewduck`.`BOARD_COMMENT` (
   `UPDATE_DATE` DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`   VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE` DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '게시판 댓글';
 
 -- 게시판 댓글
@@ -448,7 +448,7 @@ CREATE TABLE `brewduck`.`COMMON_CODE` (
   `UPDATE_DATE` DATETIME     NULL COMMENT '수정일시', -- 수정일시
   `DELETE_ID`   VARCHAR(400) NULL COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE` DATETIME     NULL COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '공통코드';
 
 -- 파일정보
@@ -466,7 +466,7 @@ CREATE TABLE `brewduck`.`FILEINFO` (
   `UPDATE_DATE`    DATETIME     NULL COMMENT '수정일시', -- 수정일시
   `DELETE_ID`      VARCHAR(400) NULL COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE`    DATETIME     NULL COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '파일정보';
 
 -- 홉 아로마
@@ -482,7 +482,7 @@ CREATE TABLE `brewduck`.`HOPS_AROMA` (
   `UPDATE_DATE` DATETIME     NULL     COMMENT '수정일시', -- 수정일시
   `DELETE_ID`   VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
   `DELETE_DATE` DATETIME     NULL     COMMENT '삭제일시' -- 삭제일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '홉 아로마';
 
 -- 홉 아로마
@@ -501,7 +501,7 @@ CREATE TABLE `brewduck`.`ACCOUNT` (
   `AUTHORITY`   VARCHAR(100)  NOT NULL COMMENT '권한', -- 권한
   `ACTIVATION`  VARCHAR(100)  NULL     COMMENT '활성화', -- 활성화
   `INSERT_DATE` DATETIME      NULL     COMMENT '저장일시' -- 저장일시
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '계정';
 
 -- 계정
