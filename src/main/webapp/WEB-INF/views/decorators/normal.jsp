@@ -15,6 +15,7 @@
     <meta charset="utf-8">
     <title><decorator:title/> | BREWDUCK</title>
     <%@ include file="/WEB-INF/views/common/include/normal_header.jsp" %>
+
 </head>
 <!-- 헤드 끝 -->
 

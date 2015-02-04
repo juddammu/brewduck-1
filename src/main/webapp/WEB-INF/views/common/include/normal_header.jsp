@@ -7,7 +7,7 @@
 <meta name="keywords"
       content="ale, beer, brewduck, Home Brewing, lager, SOMA, 곡주, 공방, 과실주, 라거, 맥주, 문화, 바이젠, 발효, 배병우, 소마, 숙성, 양조, 에일, 옥수동, 옥토버페스트, 와인, 맥만동, 임세환, 제조, 주조, 증류주, 포도주, 프로젝트, 홈 브루잉, 효모"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<meta name="google-site-verification" content="oYdyCK93H5ERr4lRasA-Bj6vRNKBVnRAFHuuRVBlQW4" />
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
 <link href="/resources/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"

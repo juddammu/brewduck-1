@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<title>스타일 STYLE (BJCP-2008)</title>
+<title>레시피 만들기</title>
 
 <input id="styleOgMin" name="styleOgMin" type="hidden" value="1.028">
 <input id="styleOgMax" name="styleOgMax" type="hidden" value="1.04">
