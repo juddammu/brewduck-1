@@ -84,66 +84,84 @@
 </form:form>
 
 <form class="forget-form" action="index.html" method="post">
-    <h3>Forget Password ?</h3>
+    <h3 class="form-title">맥덕모드 인증 시스템</h3>
+    <h4>패스워드 찾기</h4>
     <p>
-        Enter your e-mail address below to reset your password.
+        가입시 등록하신 이메일 주소를 입력해주세요.
     </p>
     <div class="form-group">
         <div class="input-icon">
             <i class="fa fa-envelope"></i>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="이메일 주소를 입력하세요." name="email"/>
         </div>
     </div>
     <div class="form-actions">
         <button type="button" id="back-btn" class="btn">
             <i class="m-icon-swapleft"></i> Back </button>
         <button type="submit" class="btn blue pull-right">
-            Submit <i class="m-icon-swapright m-icon-white"></i>
+            확인 <i class="m-icon-swapright m-icon-white"></i>
         </button>
     </div>
 </form>
 
-
-<form:form class="register-form" action="#" method="post">
-<h3>Sign Up</h3>
-<p>
-    Enter your personal details below:
-</p>
+<form:form class="register-form" id="authentication" method="POST"
+           action="/account/join" modelAttribute="account">
+<h3 class="form-title">맥덕모드 인증 시스템</h3>
+<h4>회원 가입</h4>
+<%--<p>
+    가입 정보를 작성해 주십시오.
+</p>--%>
 <div class="form-group">
-    <label class="control-label visible-ie8 visible-ie9">Full Name</label>
+    <label class="control-label visible-ie8 visible-ie9">성명 입력</label>
     <div class="input-icon">
-        <i class="fa fa-font"></i>
-        <input class="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname"/>
+        <i class="fa fa-user"></i>
+        <input class="form-control placeholder-no-fix" id="name" name="name" type="text" placeholder="성명을 입력하세요."/>
     </div>
 </div>
 <div class="form-group">
     <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-    <label class="control-label visible-ie8 visible-ie9">Email</label>
+    <label class="control-label visible-ie8 visible-ie9">이메일 주소 입력</label>
     <div class="input-icon">
         <i class="fa fa-envelope"></i>
-        <input class="form-control placeholder-no-fix" type="text" placeholder="Email" name="email"/>
+        <input class="form-control placeholder-no-fix" id="email" name="email" type="text" placeholder="이메일 주소를 입력하세요."/>
     </div>
 </div>
 <div class="form-group">
+    <label class="control-label visible-ie8 visible-ie9">패스워드 입력</label>
+    <div class="input-icon">
+        <i class="fa fa-lock"></i>
+        <input class="form-control placeholder-no-fix" id="password" name="password" type="password" autocomplete="off" placeholder="패스워드를 입력하세요."/>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label visible-ie8 visible-ie9">패스워드 재 입력</label>
+    <div class="controls">
+        <div class="input-icon">
+            <i class="fa fa-check"></i>
+            <input class="form-control placeholder-no-fix" id="rePassword" name="rePassword" type="password" autocomplete="off" placeholder="패스워드를 다시 입력하세요."/>
+        </div>
+    </div>
+</div>
+<%--<div class="form-group">
     <label class="control-label visible-ie8 visible-ie9">Address</label>
     <div class="input-icon">
         <i class="fa fa-check"></i>
         <input class="form-control placeholder-no-fix" type="text" placeholder="Address" name="address"/>
     </div>
-</div>
-<div class="form-group">
+</div>--%>
+<%--<div class="form-group">
     <label class="control-label visible-ie8 visible-ie9">City/Town</label>
     <div class="input-icon">
         <i class="fa fa-location-arrow"></i>
         <input class="form-control placeholder-no-fix" type="text" placeholder="City/Town" name="city"/>
     </div>
-</div>
+</div>--%>
 <div class="form-group">
-<label class="control-label visible-ie8 visible-ie9">Country</label>
+<label class="control-label visible-ie8 visible-ie9">country</label>
 <select name="country" id="select2_sample4" class="select2 form-control">
 <option value=""></option>
-<option value="AF">Afghanistan</option>
-<option value="AL">Albania</option>
+<option value="KR">대한민국(Korea, Republic of)</option>
+<%--<option value="AL">Albania</option>
 <option value="DZ">Algeria</option>
 <option value="AS">American Samoa</option>
 <option value="AD">Andorra</option>
@@ -376,13 +394,13 @@
 <option value="EH">Western Sahara</option>
 <option value="YE">Yemen</option>
 <option value="ZM">Zambia</option>
-<option value="ZW">Zimbabwe</option>
+<option value="ZW">Zimbabwe</option>--%>
 </select>
 </div>
-<p>
+<%--<p>
     Enter your account details below:
-</p>
-<div class="form-group">
+</p>--%>
+<%--<div class="form-group">
     <label class="control-label visible-ie8 visible-ie9">Username</label>
     <div class="input-icon">
         <i class="fa fa-user"></i>
@@ -404,7 +422,7 @@
             <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword"/>
         </div>
     </div>
-</div>
+</div>--%>
 <div class="form-group">
     <label>
         <input type="checkbox" name="tnc"/> <a href="#">
@@ -419,7 +437,7 @@
     <button id="register-back-btn" type="button" class="btn">
         <i class="m-icon-swapleft"></i> Back </button>
     <button type="submit" id="register-submit-btn" class="btn blue pull-right">
-        Sign Up <i class="m-icon-swapright m-icon-white"></i>
+        회원가입 <i class="m-icon-swapright m-icon-white"></i>
     </button>
 </div>
 </form:form>
