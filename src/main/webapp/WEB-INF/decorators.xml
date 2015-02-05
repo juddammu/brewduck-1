@@ -8,6 +8,7 @@
         <pattern>/resource/images/*</pattern>
         <pattern>/resource/images/*/*</pattern>
         <pattern>/resource/images/*/*/*</pattern>
+        <pattern>/common/popup/*</pattern>
         <!--
         <pattern>/service/*/*</pattern>
         <pattern>/service/*</pattern>
@@ -21,6 +22,7 @@
     <decorator name="main-content" page="main.jsp">
         <pattern>/</pattern>
     </decorator>
+
 
     <decorator name="normal" page="normal.jsp">
 

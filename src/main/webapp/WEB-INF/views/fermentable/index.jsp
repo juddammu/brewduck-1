@@ -123,7 +123,7 @@
                                     <th data-hide="phone" data-priority="4">타입</th>
                                     <th data-hide="phone" data-priority="5">원산지</th>
                                     <th data-hide="phone" data-priority="6">SG</th>
-                                    <th data-hide="phone" data-priority="7">색상</th>
+                                    <th data-hide="phone" colspan="2" data-priority="7">색상</th>
 
                                 </tr>
                                 </thead>
@@ -138,11 +138,12 @@
                                         <td> ${list.originKorean}</td>
                                         <td><fmt:formatNumber value="${list.specificGravity}"/>
                                         </td>
-                                        <td>
-                                            <button type="button" class="btn btn-sm"
-                                                    style="background :${list.colorCode};"></button>
-                                                ${list.color} °L
-                                        </td>
+                                        <td><div class='input-group'>
+                                            <ul class='icheck-colors'>
+                                                <li class='purple' style='background:${list.colorCode}'>
+                                            </ul>
+                                        </div></td>
+                                        <td> ${list.color} °L</td>
 
                                     </tr>
                                 </c:forEach>

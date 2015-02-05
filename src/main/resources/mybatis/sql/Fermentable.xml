@@ -336,7 +336,7 @@
 
                 </when>
                 <when test="typeCode != null">
-                    AND type = #{typeCode}
+                    AND type_code = #{typeCode}
                 </when>
                 <otherwise>
 
@@ -354,6 +354,7 @@
                 </otherwise>
             </choose>
             AND delete_id IS NULL
+            AND specific_gravity > 0
         </trim>
     </select>
 

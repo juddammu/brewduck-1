@@ -54,6 +54,9 @@ public class StyleController {
         return "style/index";
     }
 
+
+
+
     /**
      * <pre>
      * 맥주 스타일 상세 조회.

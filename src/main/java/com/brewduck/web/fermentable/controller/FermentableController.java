@@ -109,6 +109,8 @@ public class FermentableController {
     }
 
 
+
+
     /**
      * <pre>
      * 맥주 맥아 목록 조회.
@@ -124,7 +126,7 @@ public class FermentableController {
 
         // 맥주 맥아 목록 조회
         List<Fermentable> list = fermentableService.selectFermentableList(paramFermentable);
-        logger.info("Fermentable List Size : {}", list.size());
+
         model.addAttribute("list", list);
 
         return list;

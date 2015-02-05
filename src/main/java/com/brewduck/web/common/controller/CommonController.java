@@ -2,10 +2,13 @@ package com.brewduck.web.common.controller;
 
 import com.brewduck.web.common.service.CommonService;
 import com.brewduck.web.domain.Common;
+import com.brewduck.web.domain.Fermentable;
+import com.brewduck.web.fermentable.service.FermentableService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,6 +33,32 @@ public class CommonController {
 
     @Autowired
     private CommonService commonService;
+
+    @Autowired
+    private FermentableService fermentableService;
+
+    @RequestMapping(value = "/popup/fermentables",method = RequestMethod.GET)
+    public String popup(Model model, Fermentable paramFermentable) {
+
+        /*List<Fermentable> list = fermentableService.selectFermentableList(paramFermentable);
+
+        model.addAttribute("list_cnt", list.size());
+        model.addAttribute("list", list);
+        model.addAttribute("paramStyle", paramFermentable);*/
+
+        return "common/popup/fermentables-index";
+    }
+
+
+    @RequestMapping(value = "/popup/fermentables/list", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Fermentable> fermentableData(Model model, Fermentable paramFermentable) {
+        // 맥주 맥아 목록 조회
+        List<Fermentable> list = fermentableService.selectFermentableList(paramFermentable);
+        logger.info("Fermentable List Size : {}", list.size());
+
+        return list;
+    }
 
     /**
      * 지역(시,군) 리스트
