@@ -4,7 +4,7 @@
 
 <form:form id="authentication" method="POST"
            action="/account/authentication" modelAttribute="account" class="login-form">
-    <h3 class="form-title">맥덕모드 인증 시스템</h3>
+    <h3 class="form-title text-center">맥덕모드 인증 시스템</h3>
 
     <c:if test="${loginError eq 'false'}">
         <div class="alert alert-danger">
@@ -84,8 +84,8 @@
 </form:form>
 
 <form class="forget-form" action="index.html" method="post">
-    <h3 class="form-title">맥덕모드 인증 시스템</h3>
-    <h4>패스워드 찾기</h4>
+    <h3 class="form-title text-center">맥덕모드 인증 시스템</h3>
+    <h4 class="text-center">패스워드 찾기</h4>
     <p>
         가입시 등록하신 이메일 주소를 입력해주세요.
     </p>
@@ -106,7 +106,7 @@
 
 <form:form class="register-form" id="authentication" method="POST"
            action="/account/join" modelAttribute="account">
-<h3 class="form-title">맥덕모드 인증 시스템</h3>
+<h3 class="form-title text-center">맥덕모드 인증 시스템</h3>
 <h4>회원 가입</h4>
 <%--<p>
     가입 정보를 작성해 주십시오.
