@@ -27,18 +27,18 @@ public class Hop extends Common implements Serializable {
     // 홉 투명도
     private Double alpha;
     // 홉 량
-    private Double amount;
+    private Double amounts;
     private Double gravity;
     // 홉 사용 용도
-    private String hopsUse;
+    private String useCode;
     // 홉 사용 용도의 시간(단위:분)
-
+    private String timeCode;
     // 설명
     private String notes;
     // 설명
     private String koreanNotes;
     // 홉의 용도 ( Bittering,Aroma,Both)
-    private String type;
+    private String typeCode;
     // 홉의 용도 한글 (쓴맛,향,둘다)
     private String typeKorean;
     // 홉의 형태(Pellet, Plug, Leaf)
@@ -48,7 +48,7 @@ public class Hop extends Common implements Serializable {
     // 홉 알파값 손실율(단위: %)
     private Double hsi;
     // 홉 원산지
-    private String origin;
+    private String originCode;
     //원산지 명
     public String originKorean;
     // 홉 대체 재료
@@ -251,20 +251,20 @@ public class Hop extends Common implements Serializable {
         this.alpha = alpha;
     }
 
-    public Double getAmount() {
-        return amount;
+    public Double getAmounts() {
+        return amounts;
     }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setAmounts(Double amounts) {
+        this.amounts = amounts;
     }
 
-    public String getHopsUse() {
-        return hopsUse;
+    public String getUseCode() {
+        return useCode;
     }
 
-    public void setHopsUse(String hopsUse) {
-        this.hopsUse = hopsUse;
+    public void setUseCode(String useCode) {
+        this.useCode = useCode;
     }
 
     public String getNotes() {
@@ -275,12 +275,12 @@ public class Hop extends Common implements Serializable {
         this.notes = notes;
     }
 
-    public String getType() {
-        return type;
+    public String getTypeCode() {
+        return typeCode;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTypeCode(String typeCode) {
+        this.typeCode = typeCode;
     }
 
     public String getTypeKorean() {
@@ -315,12 +315,20 @@ public class Hop extends Common implements Serializable {
         this.hsi = hsi;
     }
 
-    public String getOrigin() {
-        return origin;
+    public String getOriginCode() {
+        return originCode;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public void setOriginCode(String originCode) {
+        this.originCode = originCode;
+    }
+
+    public String getTimeCode() {
+        return timeCode;
+    }
+
+    public void setTimeCode(String timeCode) {
+        this.timeCode = timeCode;
     }
 
     public String getSubstitutes() {

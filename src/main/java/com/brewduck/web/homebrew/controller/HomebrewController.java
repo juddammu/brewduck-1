@@ -135,17 +135,21 @@ public class HomebrewController {
         return "homebrew/update";
     }
 
-    @RequestMapping(value = "/{seq}/**", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/**", method = RequestMethod.GET)
     public String abv(Model model, @PathVariable("id") Integer id) {
+
+        logger.info("homebrew view");
 
         Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
         recipe.setId(id);
         recipe.setBrewerId(account.getId());
 
-       //Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
 
-       // model.addAttribute("recipeDetail", recipeDetail);
+
+        Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
+
+        model.addAttribute("recipeDetail", recipeDetail);
 
         return "homebrew/view";
     }

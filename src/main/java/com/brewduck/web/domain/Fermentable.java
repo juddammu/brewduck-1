@@ -24,9 +24,9 @@ public class Fermentable extends Common implements Serializable {
 
     private String titleYn;
     // 발효재료의 양 (발효재료, 추출 또는 설탕의 무게 : "Kg")
-    private Double amount;
+    private Double amounts;
     // 발효재료 사용처
-    private String fermentableUse;
+    private String useCode;
     //SG
     private Double specificGravity;
     private Integer ppg;
@@ -39,7 +39,7 @@ public class Fermentable extends Common implements Serializable {
     // 끓인 후 추가되는 것의 유무 (Default : "FALSE")
     private Boolean addAfterBoil;
     // 원산지 국가 및 장소
-    private String origin;
+    private String originCode;
     //원산지 명
     public String originKorean;
     // 공급 업체 (곡물 / 추출 / 설탕의 공급 업체)
@@ -193,8 +193,8 @@ public class Fermentable extends Common implements Serializable {
      *
      * @return 발효재료의 양
      */
-    public Double getAmount() {
-        return amount;
+    public Double getAmounts() {
+        return amounts;
     }
 
     /**
@@ -202,8 +202,8 @@ public class Fermentable extends Common implements Serializable {
      *
      * @param amount 발효재료의 양
      */
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setAmounts(Double amount) {
+        this.amounts = amounts;
     }
 
     /**
@@ -211,17 +211,17 @@ public class Fermentable extends Common implements Serializable {
      *
      * @return 발효재료 사용처
      */
-    public String getFermentableUse() {
-        return fermentableUse;
+    public String getUseCode() {
+        return useCode;
     }
 
     /**
      * 발효재료 사용처
      *
-     * @param fermentableUse 발효재료 사용처
+     * @param
      */
-    public void setFermentableUse(String fermentableUse) {
-        this.fermentableUse = fermentableUse;
+    public void setUseCode(String useCode) {
+        this.useCode = useCode;
     }
 
     /**
@@ -304,17 +304,17 @@ public class Fermentable extends Common implements Serializable {
      *
      * @return 원산지 국가 및 장소
      */
-    public String getOrigin() {
-        return origin;
+    public String getOriginCode() {
+        return originCode;
     }
 
     /**
      * 원산지 국가 및 장소
      *
-     * @param origin 원산지 국가 및 장소
+     * @param originCode 원산지 국가 및 장소
      */
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public void setOriginCode(String originCode) {
+        this.originCode = originCode;
     }
 
     /**

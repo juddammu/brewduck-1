@@ -425,7 +425,7 @@ public class RecipeController {
                 lovibond = 0.0;
                 weight = 0.0;
                 lovibond = ((Fermentable) (Fermentables.get(i))).getColor();
-                weight = ((Fermentable) (Fermentables.get(i))).getAmount();
+                weight = ((Fermentable) (Fermentables.get(i))).getAmounts();
                 weight = weight * 2.2046;
 
                 srm = 0.3 * weight * lovibond;

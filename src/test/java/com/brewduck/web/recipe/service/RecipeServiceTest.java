@@ -1,7 +1,6 @@
 package com.brewduck.web.recipe.service;
 
-import com.brewduck.web.domain.Recipe;
-import com.brewduck.web.domain.Style;
+import com.brewduck.web.domain.*;
 import com.brewduck.web.fermentable.dao.FermentableDao;
 import com.brewduck.web.hop.dao.HopDao;
 import com.brewduck.web.misc.dao.MiscDao;
@@ -19,6 +18,7 @@ import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 
 /**
@@ -101,5 +101,51 @@ public class RecipeServiceTest {
         int insertCount = recipeDao.deleteRecipe(recipe);
 
         assertThat(true, is(insertCount > 0));
+
+
     }
+
+    @Test(timeout = 5000)
+    public void selectRecipeDetailTest() {
+
+        recipe.setId(28);
+        recipe.setBrewerId(3);
+        Recipe resultRecipe = new Recipe();
+
+        Recipe resultFermentable = new Recipe();
+
+        Recipe newPublicRecipe = recipeDao.selectRecipeDetail(recipe);
+
+        Fermentable paramFermentable = new Fermentable();
+        paramFermentable.setId(recipe.getId());
+        paramFermentable.setBrewerId(recipe.getBrewerId());
+
+        Hop paramHop = new Hop();
+        paramHop.setId(newPublicRecipe.getId());
+        paramHop.setBrewerId(newPublicRecipe.getBrewerId());
+
+        Yeast paramYeast = new Yeast();
+        paramYeast.setSeq(newPublicRecipe.getId());
+        paramYeast.setBrewerId(newPublicRecipe.getBrewerId());
+
+        Misc paramMisc = new Misc();
+        paramMisc.setSeq(newPublicRecipe.getId());
+        paramMisc.setBrewerId(newPublicRecipe.getBrewerId());
+
+        resultRecipe  = recipeDao.selectRecipeDetail(recipe);
+        List<Fermentable> selectFermentableListTest = fermentableDao.selectRecipeFermentableList(paramFermentable);
+        List<Hop> selectHopListTest = hopDao.selectRecipeHopList(paramHop);
+        List<Yeast> selectYeastListTest = yeastDao.selectRecipeYeastList(paramYeast);
+
+
+        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", resultRecipe); test 통과
+        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableListTest); // test 통과
+        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopListTest); // test 통과
+
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectYeastListTest);
+    }
+
+
+
+
 }

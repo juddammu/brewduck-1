@@ -27,11 +27,11 @@ public class Yeast implements Serializable {
     // 효모 버전
     private Integer version;
     // 효모 종류
-    private String type;
+    private String typeCode;
     // 효모 유형
-    private String form;
+    private String formCode;
     // 효모 양
-    private Double amount;
+    private Double amounts;
     // 효모 양과 중량
     private Boolean amountIsWeight;
     // 효모의 실험실에서 생산한 이름
@@ -180,36 +180,36 @@ public class Yeast implements Serializable {
      *
      * @return 종류
      */
-    public String getType() {
-        return type;
+    public String getTypeCode() {
+        return typeCode;
     }
 
     /**
      * 효모 종류
      *
-     * @param type 종류
+     * @param typeCode 종류
      */
-    public void setType(String type) {
-        this.type = type;
+    public void setTypeCode(String typeCode) {
+        this.typeCode = typeCode;
     }
-
     /**
      * 효모 유형
      * Liquid, Dry, Slant or Culture
      *
      * @return 유형
      */
-    public String getForm() {
-        return form;
+
+    public String getFormCode() {
+        return formCode;
     }
 
     /**
      * 효모 유형
      *
-     * @param form 유형
+     * @param formCode 유형
      */
-    public void setForm(String form) {
-        this.form = form;
+    public void setFormCode(String formCode) {
+        this.formCode = formCode;
     }
 
     /**
@@ -218,17 +218,17 @@ public class Yeast implements Serializable {
      *
      * @return 양
      */
-    public Double getAmount() {
-        return amount;
+    public Double getAmounts() {
+        return amounts;
     }
 
     /**
      * 효모 양
      *
-     * @param amount 양
+     * @param amounts 양
      */
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setAmounts(Double amounts) {
+        this.amounts = amounts;
     }
 
     /**
