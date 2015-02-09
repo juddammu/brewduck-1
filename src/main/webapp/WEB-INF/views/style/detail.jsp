@@ -110,20 +110,19 @@
                                         <div class="well clearfix">
                                             <h4>STYLE GUIDE</h4>
                                             <h5><span class="badge">향 - AROMA</span></h5>
-
                                             <p>${StyleDetail.smell} </p>
+
                                             <h5><span class="badge">외관 - LOOK</span></h5>
-
                                             <p>${StyleDetail.look} </p>
+
                                             <h5><span class="badge">풍미 - TASTE</span></h5>
-
                                             <p>${StyleDetail.taste} </p>
+
                                             <h5><span class="badge">총평 - OVERALL</span></h5>
-
                                             <p>${StyleDetail.mouthfeel} </p>
-                                            <h5><span class="badge">코멘트 - COMMENT</span></h5>
 
-                                            <p>총평: 매우 상쾌하고 갈증 해소용 </p>
+                                            <h5><span class="badge">코멘트 - COMMENT</span></h5>
+                                            <p>${StyleDetail.comment} </p>
                                         </div>
                                     </div>
                                 </article>
