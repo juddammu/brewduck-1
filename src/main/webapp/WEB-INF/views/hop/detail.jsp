@@ -98,8 +98,9 @@
                                                         <c:forEach
                                                                 items="${selectHopSubstitutesList}"
                                                                 var="substitutesName">
-                                                            <a href="/hop/${substitutesName.substitutesSeq}/"
-                                                               class="button shrink">${substitutesName.substitutesName}</a>
+                                                            <a href="/hop/${substitutesName.substitutesSeq}/">
+                                                                <button type="button" class="btn btn-xs blue">${substitutesName.substitutesName}
+                                                                </button></a>
                                                         </c:forEach></td>
                                                 </tr>
                                             </c:if>
@@ -212,61 +213,6 @@
     <script>
 
         var bbsId = '6';
-        var nttId = ${HopDetail.seq};
-
-        $('#insertReply').on('click', function () {
-            var json = { "bbsId": bbsId, "nttId": nttId, "amswer": $('#answer').val().replace(/\n/g, '<br>')};
-            $.ajax({
-                type: "POST",
-                url: "/community/writeReply",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify(json),
-                success: function (data) {
-                    if (data.insertFlag == 1) {
-                        replyList();
-                        getReplyCount();
-                        $('#answer').val('');
-                    }
-
-                }
-            });
-        });
-
-        function replyList() {
-            //getLoadingTime();
-            var box = $("#reply_list");
-            boostbox.App.addBoxLoader(box);
-
-            $("#reply_list").html("");
-            var replyListHtml = "";
-
-            $.get("/community/replyList/" + nttId + "/" + bbsId, function (data, status) {
-                $.each(data, function (i) {
-                    //<optgroup  label="1. LIGHT LAGER">
-                    replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
-                    replyListHtml = replyListHtml + "<div class='box-body'>";
-                    replyListHtml = replyListHtml + "<h4 class='comment-title'>" + data[i].insertId + " <small>" + data[i].insertDate + "</small></h4>";
-                    replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
-                    replyListHtml = replyListHtml + "<p>" + data[i].answer + "</p>";
-                    replyListHtml = replyListHtml + "</div>";
-                });
-                $("#reply_list").append(replyListHtml);
-                boostbox.App.removeBoxLoader(box);
-            })
-        }
-
-        function getReplyCount() {
-
-            $.get("/community/countReply/" + nttId + "/" + bbsId, function (data, status) {
-                $("#replyCount").html(data.countNum + " Comments");
-            })
-        }
-
-        function loadAnimatedWidget_pure_white() {
-            var icons = new Skycons({"color": "white"});
-            icons.play();
-        }
 
         function goDetail(seq, titleInUrl) {
             location.href = "/hop/" + seq + "/" + titleInUrl;
@@ -291,9 +237,9 @@
         }
 
         $(document).ready(function () {
-            search();                          //조회
-            getReplyCount();
-            replyList();
+         //   search();                          //조회
+          //  getReplyCount();
+          //  replyList();
             $("#origin").val('');
             $("#type").val('');
             $("#name").val('');

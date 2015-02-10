@@ -217,90 +217,15 @@
         var bbsId = '4';
         var nttId = ${StyleDetail.id};
 
-        $('#insertReply').on('click', function () {
-            var json = { "bbsId": bbsId, "nttId": nttId, "amswer": $('#answer').val().replace(/\n/g, '<br>')};
-            $.ajax({
-                type: "POST",
-                url: "/community/writeReply",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify(json),
-                success: function (data) {
-                    if (data.insertFlag == 1) {
-                        replyList();
-                        getReplyCount();
-                        $('#answer').val('');
-                    }
-                }
-            });
-        });
-
-        function replyList() {
-            //getLoadingTime();
-            var box = $("#reply_list");
-            //boostbox.App.addBoxLoader(box);
-
-            $("#reply_list").html("");
-            var replyListHtml = "";
-
-            $.get("/community/replyList/" + nttId + "/" + bbsId, function (data, status) {
-                $.each(data, function (i) {
-                    //<optgroup  label="1. LIGHT LAGER">
-                    replyListHtml = replyListHtml + "<div class='comment-avatar'><i class='glyphicon glyphicon-user text-gray-lighter'></i></div>";
-                    replyListHtml = replyListHtml + "<div class='box-body'>";
-                    replyListHtml = replyListHtml + "<h4 class='comment-title'>" + data[i].insertId + " <small>" + data[i].insertDate + "</small></h4>";
-                    replyListHtml = replyListHtml + "<!--a class='btn btn-inverse stick-top-right' href='#respond'>Reply</a-->";
-                    replyListHtml = replyListHtml + "<p>" + data[i].answer + "</p>";
-                    replyListHtml = replyListHtml + "</div>";
-                });
-                $("#reply_list").append(replyListHtml);
-                //  boostbox.App.removeBoxLoader(box);
-            })
-
-            /*
-             <div class="comment-avatar"><i class="glyphicon glyphicon-user text-gray-lighter"></i></div>
-             <div class="box-body">
-             <h4 class="comment-title">Jim Peters <small>20/06/2013 at 4:02 pm</small></h4>
-             <a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
-             <p>Etiam dui libero, tempor quis congue in, interdum eget tortor. Vivamus aliquam dictum lacus quis tincidunt. Phasellus rhoncus ante sollicitudin nisl consectetur ultricies. Sed rhoncus ullamcorper mauris, ac condimentum metus egestas ut. Nam et urna ante, vitae pretium lacus.</p>
-             </div>
-
-             $("#result").html("");
-             $( "#result" ).load("/style/list", $("#searchForm").serialize(), function( response, status, xhr ) {
-
-             if ( status == "success" ) {
-             boostbox.App.removeBoxLoader(box);
-             }
-             });*/
-        }
-
-        function getReplyCount() {
-
-            $.get("/community/countReply/" + nttId + "/" + bbsId, function (data, status) {
-                $("#replyCount").html(data.countNum + " Comments");
-                /*미국*/
-            })
-        }
-
-        function goWarning() {
-            alert("사례 바로가기는 준비중 입니다!");
-        }
-
         function goDetail(seq, titleInUrl) {
             location.href = "/style/" + seq + "/" + titleInUrl;
         }
 
-        function search() {
-            //    $("#result").html("");
-            //  $("#result").load("/style/list", $("#searchForm").serialize());
-        }
+
 
 
         $(document).ready(function () {
-            //  search();                          //조회
-            //    getReplyCount();
-            //  replyList();                       //댓글 조회
-            //$("#name").val('');
+            //alert();
         });
 
     </script>

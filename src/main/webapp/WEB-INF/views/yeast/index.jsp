@@ -134,8 +134,8 @@
                                             <a href="/yeast/${list.id}/${list.titleInUrl}">${list.name}</a>
                                         </td>
                                         <td> ${list.koreanName}</td>
-                                        <td> ${list.type}</td>
-                                        <td> ${list.form}</td>
+                                        <td> ${list.typeCode}</td>
+                                        <td> ${list.formCode}</td>
                                         <td><span class="badge badge-success">${list.maxTemperature} °C</span>
                                         </td>
                                         <td><span class="badge badge-success">${list.minTemperature} °C</span>

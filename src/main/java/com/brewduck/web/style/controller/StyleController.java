@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -44,7 +43,7 @@ public class StyleController {
      * @return 맥주 스타일 메인
      */
 
-    @RequestMapping(value = {"/", ""}, method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "", method = {RequestMethod.GET, RequestMethod.POST})
     public String main(Model model, Style paramStyle) {
         List<Style> list = styleService.selectStyleList(paramStyle);
 
@@ -66,7 +65,11 @@ public class StyleController {
      * @return 맥주 스타일 상세.
      */
     @RequestMapping(value = "{id}/*", method = RequestMethod.GET)
-    public String detail(Model model, @PathVariable("id") Integer id) {
+    public String detail(@PathVariable("id") Integer id, Model model ) {
+
+        logger.info("Style detail searching.........");
+
+        logger.info("id........." + id);
 
         Style style = new Style();
         //style.setName(name);
@@ -114,7 +117,7 @@ public class StyleController {
 
         return list;
     }
-
+/*
     @ResponseBody
     @RequestMapping(value = "/getStyleList", method = RequestMethod.GET)
     public List<Style> selectStyleList(Model model) {
@@ -145,6 +148,6 @@ public class StyleController {
         Style styleDetail = styleService.selectStyleDetail(style);
 
         return styleDetail;
-    }
+    }*/
 }
 

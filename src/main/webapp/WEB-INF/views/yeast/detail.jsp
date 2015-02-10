@@ -47,44 +47,35 @@
                                     <h3 class="text-light">제원</h3>
                                     <ul class="nav nav-pills nav-stacked nav-transparent">
                                         <table class="table table-bordered table-striped">
-
-                                            <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>정보</th>
-                                            </tr>
-                                            </thead>
                                             <tbody>
                                             <tr>
                                                 <td>실험실</td>
-                                                <td><a href="#">${YeastDetail.laboratory}</a></td>
+                                                <td>${YeastDetail.laboratory}</td>
                                             </tr>
                                             <tr>
                                                 <td>제품ID</td>
-                                                <td><a href="#">${YeastDetail.productId}</a></td>
+                                                <td>${YeastDetail.productId}</td>
                                             </tr>
                                             <tr>
                                                 <td>타입</td>
-                                                <td><a href="#">${YeastDetail.type}</a></td>
+                                                <td>${YeastDetail.typeCode}</td>
                                             </tr>
                                             <tr>
                                                 <td>형태</td>
-                                                <td><a href="#">${YeastDetail.form}</a></td>
+                                                <td>${YeastDetail.formCode}</td>
                                             </tr>
                                             <tr>
                                                 <td>온도</td>
-                                                <td>
-                                                    <a href="#">${YeastDetail.minTemperature}${YeastDetail.maxTemperature}</a>
-                                                    ℃
+                                                <td>${YeastDetail.minTemperature} ~ ${YeastDetail.maxTemperature} ℃
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>응집</td>
-                                                <td><a href="#">${YeastDetail.flocculation}</a></td>
+                                                <td>${YeastDetail.flocculation}</td>
                                             </tr>
                                             <tr>
                                                 <td>재사용</td>
-                                                <td><a href="#">${YeastDetail.maxReuse}</a> 회</td>
+                                                <td>${YeastDetail.maxReuse} 회</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -270,11 +261,11 @@
             $("#result").load("/yeast/list", $("#searchForm").serialize());
         }
         $(document).ready(function () {
-            search();                          //조회
-            setBbsId();
-            replyList();                        //댓글 조회
-            getReplyCount();
-            $("#name").val('');
+            //search();                          //조회
+          //  setBbsId();
+          //  replyList();                        //댓글 조회
+         //   getReplyCount();
+          //  $("#name").val('');
         });
 
 

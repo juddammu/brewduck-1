@@ -16,11 +16,11 @@
               ,(select B.NAME
                   from COMMON_CODE B
                  where common_set = 'yeast_type'
-                   and A.type_code = B.common_code) as type
+                   and A.type_code = B.common_code) as typeCode
               ,(select B.name
                   from COMMON_CODE B
                  where common_set = 'form_code'
-                   and A.form_code = B.common_code) as form
+                   and A.form_code = B.common_code) as formCode
               /*,amount              amount*/
               /*,amount_is_weight    amountIsWeight*/
               ,laboratory          laboratory
@@ -118,8 +118,8 @@
         <if test="name != null">
             AND name = #{name}
         </if>
-        <if test="type != null">
-            AND type = #{type}
+        <if test="typeCode != null">
+            AND type_code = #{typeCode}
         </if>
     </select>
 

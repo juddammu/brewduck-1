@@ -3,6 +3,10 @@
 <decorators defaultdir="/WEB-INF/views/decorators">
     <excludes>
         <pattern>/resource/*</pattern>
+        <pattern>/resource/*/*</pattern>
+        <pattern>/resource/*/*/*</pattern>
+        <pattern>/resource/*/*/*/*</pattern>
+        <pattern>/resource/*/*/*/*/*</pattern>
         <pattern>/resource/js/*</pattern>
         <pattern>/resource/css/*</pattern>
         <pattern>/resource/images/*</pattern>
@@ -27,8 +31,9 @@
     <decorator name="normal" page="normal.jsp">
 
         <pattern>/style</pattern>
-        <pattern>/style/</pattern>
+        <pattern>/style/*</pattern>
         <pattern>/style/*/*</pattern>
+
         <pattern>/recipe/</pattern>
         <pattern>/recipe/detail/*</pattern>
         <pattern>/recipe/main/*</pattern>
@@ -95,8 +100,6 @@
     <decorator name="nonlayout-content" page="nonlayout-content.jsp">
         <pattern>/hop/list/</pattern>
         <pattern>/hop/list/*</pattern>
-        <pattern>/style/list/</pattern>
-        <pattern>/style/list/*</pattern>
         <pattern>/yeast/list/</pattern>
         <pattern>/yeast/list/*</pattern>
         <pattern>/fermentable/list/</pattern>

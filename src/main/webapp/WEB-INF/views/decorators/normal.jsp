@@ -23,16 +23,7 @@
 <!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
 <!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
 <body class="page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1 page-header-menu-fixed">
-<div id="spot-im-root"></div>
-<div id="spot-im-root"></div>
-<script type="text/javascript">!function (t, o, p) {
-    function e() {
-        var t = o.createElement("script");
-        t.type = "text/javascript", t.async = !0, t.src = ("https:" == o.location.protocol ? "https" : "http") + ":" + p, o.body.appendChild(t)
-    }
 
-    t.spotId = "b19bb651adaa4d34941f348fd8329ff1", t.spotName = "", t.allowDesktop = !0, t.allowMobile = !1, t.containerId = "spot-im-root", e()
-}(window.SPOTIM = {}, document, "//www.spot.im/embed/scripts/launcher.js");</script>
 <!-- BEGIN HEADER -->
 <%@ include file="/WEB-INF/views/common/include/normal_top_menu.jsp" %>
 
@@ -109,11 +100,12 @@
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
     jQuery(document).ready(function () {
-        Metronic.init(); // init metronic core componets
-        Layout.init(); // init layout
-        Demo.init(); // init demo(theme settings page)
+
+        //Metronic.init(); // init metronic core componets
+       // Layout.init(); // init layout
+        //Demo.init(); // init demo(theme settings page)
         // Index.init(); // init index page
-        Tasks.initDashboardWidget(); // init tash dashboard widget
+      //  Tasks.initDashboardWidget(); // init tash dashboard widget
     });
 </script>
 <decorator:getProperty property="page.local_script"></decorator:getProperty>

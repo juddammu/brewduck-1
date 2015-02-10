@@ -20,7 +20,6 @@
     </beans:bean>
 
     <beans:bean id="logoutHandler" class="com.brewduck.framework.security.LogoutHandler"/>
-
     <http pattern="/resources/**" security="none"/>
     <http pattern="/favicon.ico" security="none"/>
 
