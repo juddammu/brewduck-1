@@ -105,7 +105,7 @@ public class RecipeServiceTest {
 
     }
 
-    @Test(timeout = 5000)
+    @Test(timeout = 7000)
     public void selectRecipeDetailTest() {
 
         recipe.setId(28);
@@ -125,7 +125,7 @@ public class RecipeServiceTest {
         paramHop.setBrewerId(newPublicRecipe.getBrewerId());
 
         Yeast paramYeast = new Yeast();
-        paramYeast.setSeq(newPublicRecipe.getId());
+        paramYeast.setId(newPublicRecipe.getId());
         paramYeast.setBrewerId(newPublicRecipe.getBrewerId());
 
         Misc paramMisc = new Misc();
