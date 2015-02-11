@@ -57,7 +57,7 @@
         <div class="profile-usermenu">
             <ul class="nav">
                 <li class="active">
-                    <a href="extra_profile.html">
+                    <a href="/homebrew/">
                         <i class="icon-home"></i>
                         대시보드 </a>
                 </li>
@@ -67,14 +67,9 @@
                         계정설정 </a>
                 </li>
                 <li>
-                    <a href="page_todo.html" target="_blank">
+                    <a href="/homebrew/myrecipes">
                         <i class="icon-check"></i>
                         레시피 </a>
-                </li>
-                <li>
-                    <a href="extra_profile_help.html">
-                        <i class="icon-info"></i>
-                        질문답변 게시판 </a>
                 </li>
             </ul>
         </div>
@@ -174,8 +169,11 @@
                 <table class="table table-hover table-light">
                     <thead>
                     <tr class="uppercase">
-                        <th colspan="2">
-                            공동 양조자
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            이름
                         </th>
                         <th>
                             스타일
@@ -186,91 +184,37 @@
                         <th>
                             수율
                         </th>
-                        <th>
-                            완성도
-                        </th>
                     </tr>
                     </thead>
+                    <c:forEach items="${recipeList}" var="recipeList">
                     <tr>
                         <td class="fit">
-                            <img class="user-pic" src="/resources/assets/admin/layout3/img/avatar4.jpg">
+                            ${recipeList.id}
                         </td>
                         <td>
-                            <a href="#" class="primary-link">Brain</a>
+                            <a href="/homebrew/${recipeList.id}/${recipeList.titleInUrl}" class="primary-link">${recipeList.name}</a>
                         </td>
                         <td>
-                            $345
+                            ${recipeList.styleName}
                         </td>
                         <td>
-                            45
+                            <c:choose>
+                                <c:when test="${recipeList.typeCode=='1'}">
+                                    완전곡물
+                                </c:when>
+                                <c:when test="${recipeList.typeCode=='2'}">
+                                    부분곡물
+                                </c:when>
+                                <c:when test="${recipeList.typeCode=='3'}">
+                                    원액 캔
+                                </c:when>
+                            </c:choose>
                         </td>
                         <td>
-                            124
-                        </td>
-                        <td>
-                            <span class="bold theme-font">80%</span>
+                            ${recipeList.efficiency} %
                         </td>
                     </tr>
-                    <tr>
-                        <td class="fit">
-                            <img class="user-pic" src="/resources/assets/admin/layout3/img/avatar5.jpg">
-                        </td>
-                        <td>
-                            <a href="#" class="primary-link">Nick</a>
-                        </td>
-                        <td>
-                            $560
-                        </td>
-                        <td>
-                            12
-                        </td>
-                        <td>
-                            24
-                        </td>
-                        <td>
-                            <span class="bold theme-font">67%</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">
-                            <img class="user-pic" src="/resources/assets/admin/layout3/img/avatar6.jpg">
-                        </td>
-                        <td>
-                            <a href="#" class="primary-link">Tim</a>
-                        </td>
-                        <td>
-                            $1,345
-                        </td>
-                        <td>
-                            450
-                        </td>
-                        <td>
-                            46
-                        </td>
-                        <td>
-                            <span class="bold theme-font">98%</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">
-                            <img class="user-pic" src="/resources/assets/admin/layout3/img/avatar7.jpg">
-                        </td>
-                        <td>
-                            <a href="#" class="primary-link">Tom</a>
-                        </td>
-                        <td>
-                            $645
-                        </td>
-                        <td>
-                            50
-                        </td>
-                        <td>
-                            89
-                        </td>
-                        <td>
-                            <span class="bold theme-font">58%</span>
-                        </td>
-                    </tr>
+                    </c:forEach>
                 </table>
             </div>
         </div>

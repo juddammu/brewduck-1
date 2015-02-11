@@ -17,8 +17,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.*;
 
 
 /**
@@ -105,10 +105,10 @@ public class RecipeServiceTest {
 
     }
 
-    @Test(timeout = 7000)
+    @Test
     public void selectRecipeDetailTest() {
 
-        recipe.setId(28);
+        recipe.setId(27);
         recipe.setBrewerId(3);
         Recipe resultRecipe = new Recipe();
 
@@ -129,22 +129,32 @@ public class RecipeServiceTest {
         paramYeast.setBrewerId(newPublicRecipe.getBrewerId());
 
         Misc paramMisc = new Misc();
-        paramMisc.setSeq(newPublicRecipe.getId());
+        paramMisc.setId(newPublicRecipe.getId());
         paramMisc.setBrewerId(newPublicRecipe.getBrewerId());
 
         resultRecipe  = recipeDao.selectRecipeDetail(recipe);
         List<Fermentable> selectFermentableListTest = fermentableDao.selectRecipeFermentableList(paramFermentable);
         List<Hop> selectHopListTest = hopDao.selectRecipeHopList(paramHop);
         List<Yeast> selectYeastListTest = yeastDao.selectRecipeYeastList(paramYeast);
+        List<Misc> selectMiscListTest = miscDao.selectRecipeMiscList(paramMisc);
 
-
-        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", resultRecipe); test 통과
-        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableListTest); // test 통과
-        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopListTest); // test 통과
-
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", resultRecipe);
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectFermentableListTest);
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectHopListTest);
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectYeastListTest);
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectMiscListTest);
     }
 
+    @Test
+    public void selectRecipeListTest() {
+
+        recipe.setBrewerId(3);
+        Recipe resultRecipe = new Recipe();
+
+        List<Recipe> selectRecipeListTest  = recipeDao.selectRecipeList(recipe);
+
+        assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectRecipeListTest);
+    }
 
 
 

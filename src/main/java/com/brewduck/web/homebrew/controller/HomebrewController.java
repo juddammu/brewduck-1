@@ -86,8 +86,15 @@ public class HomebrewController {
      */
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
     public String main(Model model) {
-        logger.info("homebrew index");
+
+        Recipe recipe = new Recipe();
         Account account = AuthenticationUtils.getUser();
+
+        // 맥주 레시피 목록 조회
+        recipe.setBrewerId(account.getId());
+        List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
+
+        model.addAttribute("recipeList", recipeList);
         model.addAttribute("account", account);
 
         return "homebrew/index";
@@ -115,7 +122,7 @@ public class HomebrewController {
         List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
 
         //model.addAttribute("account", account);
-        //model.addAttribute("recipeList", recipeList);
+        model.addAttribute("recipeList", recipeList);
 
         return "homebrew/myrecipes";
     }
@@ -193,10 +200,7 @@ public class HomebrewController {
         BindingResult result,
         RedirectAttributes redirectAttributes) throws IOException {
 
-
         logger.info("upload file path : {}", environment.getProperty("upload.filepath"));
-
-
 
         int fileseq = 0;
         int coverFileseq = 0;
@@ -211,7 +215,6 @@ public class HomebrewController {
             String coverFileName = coverFile.getOriginalFilename();   //파일명
             String coverFilemime = coverFile.getContentType();        //마임 타입
             String coverFilePath = "/home/brewduck/upload/";       //파일 path
-
 
             coverFileseq = commonService.selectFileSeq();
             coverFileInfo.setFileNo(coverFileseq);

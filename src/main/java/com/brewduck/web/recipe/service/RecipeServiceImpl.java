@@ -82,15 +82,15 @@ public class RecipeServiceImpl implements RecipeService {
         paramFermentable.setBrewerId(newPublicRecipe.getBrewerId());
 
         Hop paramHop = new Hop();
-        paramHop.setSeq(newPublicRecipe.getId());
+        paramHop.setId(newPublicRecipe.getId());
         paramHop.setBrewerId(newPublicRecipe.getBrewerId());
 
         Yeast paramYeast = new Yeast();
-        paramYeast.setSeq(newPublicRecipe.getId());
+        paramYeast.setId(newPublicRecipe.getId());
         paramYeast.setBrewerId(newPublicRecipe.getBrewerId());
 
         Misc paramMisc = new Misc();
-        paramMisc.setSeq(newPublicRecipe.getId());
+        paramMisc.setId(newPublicRecipe.getId());
         paramMisc.setBrewerId(newPublicRecipe.getBrewerId());
 
         // 레시피 작성시 선택한 스타일 맥주
@@ -108,7 +108,7 @@ public class RecipeServiceImpl implements RecipeService {
         newPublicRecipe.setMiscs(miscDao.selectRecipeMiscList(paramMisc));
 
         // 조회수 업데이트
-        newPublicRecipe.setUpdateId(newPublicRecipe.getBrewerId()+"");
+        //newPublicRecipe.setUpdateId(newPublicRecipe.getBrewerId()+"");
         //recipeDao.updateRecipe(newRecipe);
 
         return newPublicRecipe;
@@ -120,26 +120,26 @@ public class RecipeServiceImpl implements RecipeService {
         // 레시피 조회
         Recipe newRecipe = recipeDao.selectRecipeDetail(recipe);
 
-        Integer recipeSeq = newRecipe.getId();
-        Integer brewer = newRecipe.getBrewerId();
+        Integer recipeId = recipe.getId();
+        Integer brewerId = newRecipe.getBrewerId();
 
         // 레시피 제조시 입력한 스타일 맥주 이름
         Style paramStyle = new Style();
         Fermentable paramFermentable = new Fermentable();
-        paramFermentable.setId(newRecipe.getId());
-        paramFermentable.setBrewer(account.getId() + "");
+        paramFermentable.setId(recipeId);
+        paramFermentable.setBrewerId(brewerId);
 
         Hop paramHop = new Hop();
-        paramHop.setSeq(newRecipe.getId());
-        paramHop.setBrewer(account.getId() + "");
+        paramHop.setId(recipeId);
+        paramHop.setBrewerId(brewerId);
 
         Yeast paramYeast = new Yeast();
-        paramYeast.setSeq(newRecipe.getId());
-        paramYeast.setBrewerId(account.getId());
+        paramYeast.setId(recipeId);
+        paramYeast.setBrewerId(brewerId);
 
         Misc paramMisc = new Misc();
-        paramMisc.setSeq(newRecipe.getId());
-        paramMisc.setBrewerId(account.getId());
+        paramMisc.setId(recipeId);
+        paramMisc.setBrewerId(brewerId);
 
         // 레시피 작성시 선택한 스타일 맥주
         //newRecipe.setStyle(styleDao.selectStyleDetail(paramStyle));

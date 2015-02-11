@@ -202,7 +202,7 @@ public class Fermentable extends Common implements Serializable {
      *
      * @param amount 발효재료의 양
      */
-    public void setAmounts(Double amount) {
+    public void setAmounts(Double amounts) {
         this.amounts = amounts;
     }
 

@@ -244,8 +244,8 @@
     </a>
     <ul class="dropdown-menu dropdown-menu-default">
         <li>
-            <a href="#">
-                <i class="icon-user"></i> 프로필 설정 </a>
+            <a href="/homebrew/">
+                <i class="icon-user"></i> 포트폴리오 </a>
         </li>
         <!--li>
             <a href="page_calendar.html">
@@ -264,6 +264,10 @@
             </a>
         </li-->
         <li class="divider">
+        </li>
+        <li>
+            <a href="#">
+                <i class="icon-lock"></i> 화면 잠금 </a>
         </li>
         <li>
             <a href="#">

@@ -31,11 +31,11 @@ public class Misc implements Serializable {
     // 기타 재료 종류 ("Spice", "Fining", "Water Agent", "Herb", "Flavor" or "Other")
     private String typeCode;
     // 기타 재료 사용 ("Boil", "Mash", "Primary", "Secondary", "Bottling")
-    private String miscUse;
+    private String useCode;
     // 기타 재료의 사용되는 시간
     private Integer time;
     // 기타 재료의 무게(kg) 또는 양(리터, L)
-    private Integer amount;
+    private double weight;
     // 기타 재료의 무게, 양을 측정 여부
     private Boolean amountIsWeight;
     // 기타 재료의 사용 항목에 대한 간단한 설명
@@ -168,15 +168,15 @@ public class Misc implements Serializable {
      *
      * @return 기타 재료 사용
      */
-    public String getMiscUse() {
-        return miscUse;
+    public String getUseCode() {
+        return useCode;
     }
 
     /**
-     * @param miscUse
+     * @param useCode
      */
-    public void setMiscUse(String miscUse) {
-        this.miscUse = miscUse;
+    public void setUseCode(String useCode) {
+        this.useCode = useCode;
     }
 
     /**
@@ -202,17 +202,17 @@ public class Misc implements Serializable {
      *
      * @return 기타 재료의 무게 또는 양
      */
-    public Integer getAmount() {
-        return amount;
+    public double getWeight() {
+        return weight;
     }
 
     /**
      * 기타 재료의 무게 또는 양
      *
-     * @param amount 기타 재료의 무게 또는 양
+     * @param weight 기타 재료의 무게 또는 양
      */
-    public void setAmount(Integer amount) {
-        this.amount = amount;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     /**
