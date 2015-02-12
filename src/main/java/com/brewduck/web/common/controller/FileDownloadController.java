@@ -74,4 +74,11 @@ public class FileDownloadController {
             printwriter.close();
         }
     }
+
+
+    @RequestMapping(value = "/downloadPdf.do")
+    public void downloadPdf(@RequestParam(value = "requestedFile") String requestedFile,
+        HttpServletResponse response) throws Exception {
+
+    }
 }

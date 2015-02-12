@@ -76,7 +76,7 @@
 
                     fermentableHtml = fermentableHtml + "<tr>";
 
-                    fermentableHtml = fermentableHtml + "<td><a href=javascript:parent_fuction('" + data[i].name + "'); class='btn btn-default'><i class='fa fa-plus'></i> 추가</a></td>";
+                    fermentableHtml = fermentableHtml + "<td><a href=javascript:parent_fuction('" + data[i].id + "'); class='btn btn-default' value='" + data[i].color + "'><i class='fa fa-plus'></i> 추가</a></td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].name + " </td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].koreanName + "</td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].originKorean + "</td>";

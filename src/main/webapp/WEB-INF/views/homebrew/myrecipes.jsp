@@ -113,7 +113,7 @@
                                 <input type="checkbox"/>
                             </td>
                             <td>
-                                <a href="/homebrew/publish/${list.seq}">
+                                <a href="/homebrew/publish/${list.id}">
                                     <c:choose>
                                         <c:when test="${list.status=='2'}">
                                             <span class="label label-primary">OPEN</span>
@@ -125,7 +125,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="/homebrew/${list.seq}/${list.titleInUrl}">${list.name}</a>
+                                <a href="/homebrew/${list.id}/${list.titleInUrl}">${list.name}</a>
                             </td>
                             <td>${list.styleName}</td>
                             <td>${list.batchSize}리터</td>

@@ -319,7 +319,8 @@
 
 
                                 <div class="table-scrollable">
-                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="datatable_orders" aria-describedby="datatable_orders_info" role="grid">
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer"
+                                           id="fermantableListTable" name="fermantableListTable" aria-describedby="datatable_orders_info" role="grid">
                                     <thead>
                                     <tr role="row" class="heading">
                                         <th width="2%" class="sorting_disabled" rowspan="1" colspan="1">
@@ -341,24 +342,8 @@
                                          PPG
                                         </th><th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" rowspan="1" colspan="1">
                                         Actions
-                                    </th></tr>
-                                    <tr role="row" class="filter"><td rowspan="1" colspan="1">
-                                    </td><td rowspan="1" colspan="1">
-                                        <input type="text" class="form-control form-filter input-sm" name="order_id">
-                                    </td><td rowspan="1" colspan="1">
-
-                                    </td><td rowspan="1" colspan="1">
-                                        <input type="text" class="form-control form-filter input-sm" name="order_customer_name">
-                                    </td><td rowspan="1" colspan="1">
-                                        <input type="text" class="form-control form-filter input-sm" name="order_ship_to">
-                                    </td><td rowspan="1" colspan="1">
-
-                                        <input type="text" class="form-control form-filter input-sm" name="order_base_price_to" placeholder="To">
-                                    </td><td rowspan="1" colspan="1">
-                                        <div class="margin-bottom-5">
-                                            <button class="btn btn-sm yellow filter-submit margin-bottom">삭제</button>
-                                        </div>
-                                    </td></tr>
+                                        </th>
+                                    </tr>
                                     </thead>
                                     <tbody>
                                     </tbody>
@@ -431,11 +416,26 @@
 
             <script type="text/javascript">
                 function parent_fuction(){
+
+                    var lovibond = this.value();
+
+
                     fermentableHtml = "";
-                    fermentableHtml = fermentableHtml + "<tr>";
-                    fermentableHtml = fermentableHtml + "<td>";
-                    fermentableHtml = fermentableHtml + "</td> ";
-                    fermentableHtml = fermentableHtml + "</tr> ";
+                    fermentableHtml = fermentableHtml + "<tr role='row' class='filter'>";
+                    fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                    fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'>";
+                    fermentableHtml = fermentableHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id'>";
+                    fermentableHtml = fermentableHtml + "    </td>";
+                    fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                    fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                    fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                    fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                    fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'>";
+                    fermentableHtml = fermentableHtml + "        <div class='margin-bottom-5'>";
+                    fermentableHtml = fermentableHtml + "            <button class='btn btn-sm yellow filter-submit margin-bottom'>삭제</button>";
+                    fermentableHtml = fermentableHtml + "        </div>";
+                    fermentableHtml = fermentableHtml + "    </td>";
+                    fermentableHtml = fermentableHtml + "</tr>";
                     $("#fermantableListTable").append(fermentableHtml);
                 }
                 $(document).ready(function () {

@@ -114,15 +114,15 @@ public class HomebrewController {
     @RequestMapping(value = "/myrecipes", method = RequestMethod.GET)
     public String abv(Model model) {
 
-        Recipe recipe = new Recipe();
-        Account account = AuthenticationUtils.getUser();
+        //Recipe recipe = new Recipe();
+        //Account account = AuthenticationUtils.getUser();
 
         // 맥주 레시피 목록 조회
-        recipe.setBrewerId(account.getId());
-        List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
+        //recipe.setBrewerId(account.getId());
+        //List<Recipe> recipeList = recipeService.selectRecipeList(recipe);
 
         //model.addAttribute("account", account);
-        model.addAttribute("recipeList", recipeList);
+        //model.addAttribute("recipeList", recipeList);
 
         return "homebrew/myrecipes";
     }
@@ -169,7 +169,7 @@ public class HomebrewController {
      * @param model Model
      * @return 맥주 발효재료 메인
      */
-    @RequestMapping(value = "/publish/{seq}", method = RequestMethod.GET)
+    @RequestMapping(value = "/publish/{id}", method = RequestMethod.GET)
     public String publish(Model model, @PathVariable("id") Integer id) {
 
         Recipe recipe = new Recipe();
