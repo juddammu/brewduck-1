@@ -95,7 +95,6 @@
 <script src="/resources/assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
 <script src="/resources/assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
 <script src="/resources/assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
-
 <script type="text/javascript" src="/resources/assets/global/plugins/select2/select2.min.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>

@@ -350,7 +350,7 @@
                                 </table></div>
                             </div>
 
-                            <div class="modal fade modal-scroll bs-modal-lg"  tabindex="-1" id="ajax" role="basic"  aria-hidden="true">
+                            <div class="modal fade modal-scroll bs-modal-lg"  tabindex="-1" id="ajax" role="dialog"  aria-hidden="true">
 
                             <div class="page-loading page-loading-boxed">
                                     <img src="/resources/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
@@ -415,10 +415,9 @@
 
 
             <script type="text/javascript">
-                function parent_fuction(){
+               /* function parent_fuction(){
 
-                    var lovibond = this.value();
-
+                    //todo : 값가져와야댐
 
                     fermentableHtml = "";
                     fermentableHtml = fermentableHtml + "<tr role='row' class='filter'>";
@@ -438,11 +437,47 @@
                     fermentableHtml = fermentableHtml + "</tr>";
                     $("#fermantableListTable").append(fermentableHtml);
                 }
-                $(document).ready(function () {
+
+                */
+
+               function parent_fuction(fermentableData){
+
+                   alert(fermentableData[0]);
+                   return;
+
+                   fermentableHtml = "";
+                   fermentableHtml = fermentableHtml + "<tr role='row' class='filter'>";
+                   fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                   fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'>";
+                   fermentableHtml = fermentableHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id' value='"+fermentableData[0]+"'>";
+                   fermentableHtml = fermentableHtml + "    </td>";
+                   fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                   fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1' >";
+                   fermentableHtml = fermentableHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id' value='"+fermentableData[0]+"'>";
+                   fermentableHtml = fermentableHtml + "    </td>";
+                   fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                   fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'></td>";
+                   fermentableHtml = fermentableHtml + "    <td rowspan='1' colspan='1'>";
+                   fermentableHtml = fermentableHtml + "        <div class='margin-bottom-5'>";
+                   fermentableHtml = fermentableHtml + "            <button class='btn btn-sm yellow filter-submit margin-bottom'>삭제</button>";
+                   fermentableHtml = fermentableHtml + "        </div>";
+                   fermentableHtml = fermentableHtml + "    </td>";
+                   fermentableHtml = fermentableHtml + "</tr>";
+                   $("#fermantableListTable").append(fermentableHtml);
+               }
+
+
+               $(document).ready(function () {
                     $('#styleId').select2();
 
                     FormValidation.init();
                     ComponentsIonSliders.init();
+
+                    $('#add_fermentable').on('click', function (e) {
+                        alert();
+                        var id = $(this).val();
+                        alert(id);
+                    })
 
                     $('#styleId').change(function () {
                         var id = $("#styleId option:selected").val();

@@ -58,7 +58,7 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn blue">닫기</button>
+    <button type="button" class="btn blue" data-dismiss="modal">닫기</button>
 </div>
 <script src="/resources/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script>
@@ -73,10 +73,11 @@
             ,success:function(data){
                 $.each(data, function (i) {
 
+                    //var fermentableData = [data[i].name, data[i].color, data[i].specificGravity];
+                    //onclick='parent_fuction(this.value);'
 
                     fermentableHtml = fermentableHtml + "<tr>";
-
-                    fermentableHtml = fermentableHtml + "<td><a href=javascript:parent_fuction('" + data[i].id + "'); class='btn btn-default' value='" + data[i].color + "'><i class='fa fa-plus'></i> 추가</a></td>";
+                    fermentableHtml = fermentableHtml + "<td><button id='add_fermentable'  type='button' value='" + data[i].name + "' class='btn btn-default'><i class='fa fa-plus'></i> 추가</a></td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].name + " </td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].koreanName + "</td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].originKorean + "</td>";
