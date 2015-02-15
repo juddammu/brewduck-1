@@ -46,7 +46,7 @@
                     <div class="portlet-title">
                         <form:form class="form-horizontal form-banded form-bordered" id="searchForm"
                                    name="searchForm" modelAttribute="paramMisc">
-                            <input name="type" id="type" type="hidden" class="form-control"
+                            <input name="typeCode" id="typeCode" type="hidden" class="form-control"
                                    value="">
 
                             <div class="form-group">
@@ -174,7 +174,7 @@
 
         function search() {
 
-            var box = $("#result_list");
+/*            var box = $("#result_list");
             boostbox.App.addBoxLoader(box);
 
             $("#result").html("");
@@ -183,7 +183,8 @@
                 if (status == "success") {
                     boostbox.App.removeBoxLoader(box);
                 }
-            });
+            });*/
+            $("#searchForm").submit();
         }
 
         function goDetail(seq, titleInUrl) {
@@ -191,28 +192,27 @@
         }
 
         function setTypeSearch(data) {
-            $("#type").val(data);
+            $("#typeCode").val(data);
             search();
         }
 
         jQuery(document).ready(function ($) {
 
-            $("#type").val("");
+            $("#typeCode").val("");
             $("#name").val("");
             $("#name").focus();              //이름칸으로 포커스
             getTypeCount();                  //타입별 카운트 (조회영역)
-            search();                        //조회
 
             $("#search").click(function () {
                 search();
-            })
+            });
 
-            $('#name').on('keyup', function () {
+/*            $('#name').on('keyup', function () {
                 if (($('#name').val()).length > 2) {
                     search();
                 }
 
-            })
+            })*/
         });
     </script>
 </content>
