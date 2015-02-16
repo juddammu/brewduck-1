@@ -46,7 +46,7 @@
                     <div class="portlet-title">
                         <form:form class="form-horizontal form-banded form-bordered" id="searchForm"
                                    name="searchForm" modelAttribute="paramYeast">
-                            <input id="type" name="type" type="hidden">
+                            <input id="typeCode" name="typeCode" type="hidden">
 
                             <div class="form-group">
                                 <div class="col-md-2">
@@ -180,8 +180,9 @@
 
         function search() {
 
-            $("#result").html("");
-            $("#result").load("/yeast/list", $("#searchForm").serialize());
+/*            $("#result").html("");
+            $("#result").load("/yeast/list", $("#searchForm").serialize());*/
+            $("#searchForm").submit();
 
         }
 
@@ -191,7 +192,7 @@
 
         function setTypeSearch(data) {
 
-            $("#type").val(data);
+            $("#typeCode").val(data);
 
             search();
 
@@ -200,7 +201,6 @@
         jQuery(document).ready(function ($) {
 
             getTypeCount();                  //타입별 카운트 (조회영역)
-            search();                        //조회
             $("#name").focus();              //이름칸으로 포커스
 
             $("#search").click(function () {
@@ -208,12 +208,12 @@
             })
 
             $("#fullSearch").click(function () {
-                $("#type").val('');             //TODO : 초기화 함수로 뺄것
+                $("#typeCode").val('');             //TODO : 초기화 함수로 뺄것
                 $("#name").val('');
                 search();
             })
 
-            $("#aleButton").click(setTypeSearch);
+/*            $("#aleButton").click(setTypeSearch);*/
         });
     </script>
 </content>

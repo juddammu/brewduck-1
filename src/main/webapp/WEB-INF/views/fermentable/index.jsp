@@ -46,6 +46,7 @@
                     <div class="portlet-title">
                         <form:form class="form-horizontal" action="/fermentable/" id="searchForm"
                                    name="searchForm" modelAttribute="paramFermentable">
+                            <input name="originCode" id="originCode" type ="hidden" value="" placeholder="발효재료 이름">
 
                             <div class="form-group">
                                 <div class="col-md-2">
@@ -93,6 +94,10 @@
                                                         class="btn btn btn-default btn-sm"
                                                         value="ETC"
                                                         onclick="setOriginSearch('ETC')"></button>
+                                                <button id="allButton" type="button"
+                                                        class="btn btn btn-default btn-sm"
+                                                        onclick="setOriginSearch()"> 전체
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -189,6 +194,26 @@
                 /*기타*/
             })
         }
+
+        function setOriginSearch(){
+            $("#originCode").val(jQuery(this).val());
+            search();
+        }
+
+        function search(){
+
+/*            $("#result").html("");
+            $("#result").load("/fermentable/", */
+            $("#searchForm").submit();
+        }
+
+        $("#usButton").click(setOriginSearch);
+        $("#deButton").click(setOriginSearch);
+        $("#ukButton").click(setOriginSearch);
+        $("#beButton").click(setOriginSearch);
+        $("#caButton").click(setOriginSearch);
+        $("#etcButton").click(setOriginSearch);
+        $("#allButton").click(setOriginSearch);
 
         // This JavaScript Will Replace Checkboxes in dropdown toggles
         jQuery(document).ready(function ($) {
