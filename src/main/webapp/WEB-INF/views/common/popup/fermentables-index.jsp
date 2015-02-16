@@ -73,11 +73,11 @@
             ,success:function(data){
                 $.each(data, function (i) {
 
-                    //var fermentableData = [data[i].name, data[i].color, data[i].specificGravity];
+                    var fermentableData = data[i].id + "^" + data[i].name + "^" + data[i].specificGravity + "^" + data[i].color+ "^" + data[i].ppg;
                     //onclick='parent_fuction(this.value);'
 
                     fermentableHtml = fermentableHtml + "<tr>";
-                    fermentableHtml = fermentableHtml + "<td><button id='add_fermentable'  type='button' value='" + data[i].name + "' class='btn btn-default'><i class='fa fa-plus'></i> 추가</a></td>";
+                    fermentableHtml = fermentableHtml + "<td><button type='button' onclick='add_fermententable(this.value);' value='" + fermentableData + "' class='btn btn-default'><i class='fa fa-plus'></i> 추가</a></td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].name + " </td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].koreanName + "</td>";
                     fermentableHtml = fermentableHtml + "<td>" + data[i].originKorean + "</td>";
