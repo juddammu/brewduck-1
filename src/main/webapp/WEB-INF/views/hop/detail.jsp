@@ -108,8 +108,6 @@
                             <div class="col-md-9">
                                 <article class="style-white">
                                     <div class="box-body">
-                                        <br/>
-
                                         <p class="lead">설명</p>
 
                                         <div class="well clearfix">
@@ -131,11 +129,9 @@
                                        type="text"></label>
 
                                 <div class="box style-white" id="reply_count">
-                                    <ul class="list-comments">
+                                    <ul>
                                         <li>
-                                            <div class="box style-white" id="reply_list">
 
-                                            </div>
                                             <!--end .box -->
                                         </li>
                                         <!-- end comment -->

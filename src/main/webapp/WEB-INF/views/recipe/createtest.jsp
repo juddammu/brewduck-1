@@ -4,8 +4,8 @@
 
 <title>레시피 만들기</title>
 
-<input id="styleOgMin" name="styleOgMin" type="text" value="1.028">
-<input id="styleOgMax" name="styleOgMax" type="text" value="1.04">
+<input id="styleOgMin" name="styleOgMin" type="hidden" value="1.028">
+<input id="styleOgMax" name="styleOgMax" type="hidden" value="1.04">
 
 <input id="styleFgMin" name="styleFgMin" type="hidden" value="0.998">
 <input id="styleFgMax" name="styleFgMax" type="hidden" value="1.008">
@@ -24,7 +24,7 @@
 
 <input id="resultIbu" name="resultIbu" type="hidden">
 <input id="resultAbv" name="resultAbv" type="hidden">
-<input id="resultSrm" name="resultSrm" type="text">
+<input id="resultSrm" name="resultSrm" type="hidden">
 
 <!-- BEGIN PAGE HEAD -->
 <div class="page-head">
@@ -75,22 +75,22 @@
     </li>
     <li>
         <a href="#tab_2" data-toggle="tab">
-            노트 </a>
+            배치 & 보일링 설정 </a>
     </li>
     <li>
-        <a href="#tab_4" data-toggle="tab">
-            설정 </a>
+        <a href="#tab_3" data-toggle="tab">
+            당화스탭 </a>
     </li>
 </ul>
 <div class="tab-content no-space">
 <div class="tab-pane active" id="tab_1">
     <div class="form-body">
         <div class="form-group">
-            <label class="col-md-2 control-label">레시피 이름<span class="required">
-                                                        * </span>
+            <label class="col-md-2 control-label">레시피 이름
+                <span class="required"> * </span>
             </label>
             <div class="col-md-10">
-                <input class="form-control input-lg" type="text"  id="name" name="name" placeholder="레시피 이름">
+                <input class="form-control input-lg" onkeyup='expectText();' type="text" id="name" name="name" placeholder="레시피 이름">
             </div>
         </div>
 
@@ -241,31 +241,6 @@
         </div>
 
         <div class="form-group">
-            <label class="col-md-2 control-label">배치 용량<span class="required"> * </span>
-            </label>
-            <div class="col-md-4">
-
-                <div class="input-group input-small ">
-                    <input type="text"  id="batchSize" name="batchSize" class="form-control form-control text-right"  value="20" required>
-                                                        <span class="input-group-addon">
-                                                        리터(ℓ)
-                                                        </span>
-                </div>
-            </div>
-            <label class="col-md-2 control-label">수율<span class="required"> * </span>
-            </label>
-            <div class="col-md-4">
-
-                <div class="input-group input-small ">
-                    <input type="text"  id="efficiency" name="efficiency" class="form-control form-control text-right"  value="65" required>
-                                                        <span class="input-group-addon">
-                                                        %
-                                                        </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
             <label class="col-md-2 control-label">레시피 컨셉 설명 </label>
             <div class="col-md-10">
                 <textarea id="note" name="note" class="form-control" onchange="getLineFeed()"
@@ -284,7 +259,49 @@
     </div>
 </div>
 <div class="tab-pane" id="tab_2">
-    브루잉 프로세스
+    <div class="form-body">
+        <div class="form-group">
+            <label class="col-md-2 control-label">배치 용량<span class="required"> * </span></label>
+            <div class="col-md-4">
+                <div class="input-group input-small ">
+                    <input type="text"  id="batchSize" name="batchSize" onkeyup='expectText();' class="form-control form-control text-right"  value="20" required>
+                        <span class="input-group-addon">
+                        리터(ℓ)
+                        </span>
+                </div>
+            </div>
+            <label class="col-md-2 control-label">수율<span class="required"> * </span></label>
+            <div class="col-md-4">
+                <div class="input-group input-small ">
+                    <input type="text"  id="efficiency" name="efficiency" onkeyup='expectText();' class="form-control form-control text-right"  value="65" required>
+                        <span class="input-group-addon">
+                        %
+                        </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">보일링 용량<span class="required"> * </span></label>
+            <div class="col-md-4">
+                <div class="input-group input-small ">
+                    <input type="text"  id="boilSize" name="boilSize" onkeyup='expectText();'  class="form-control form-control text-right"  value="22" required>
+                        <span class="input-group-addon">
+                        리터(ℓ)
+                        </span>
+                </div>
+            </div>
+            <label class="col-md-2 control-label">보일링 시간<span class="required"> * </span></label>
+            <div class="col-md-4">
+                <div class="input-group input-small ">
+                    <input type="text"  id="boilTime" name="boilTime" onkeyup='expectText();' class="form-control form-control text-right"  value="60" required>
+                        <span class="input-group-addon">
+                        분
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="tab-pane" id="tab_3">
     설정
@@ -376,10 +393,11 @@
                 </div>
 
                 <div class="portlet light">
-
-                    좀비더스트 클론 <span class="font-blue caption-helper small">(14B. 미국식 IPA)</span>
-
-                    <br/><br/>
+                    <span class="font-blue caption-helper small" id="expectStyle" name="expectStyle">(1A. 라이트 미국식 라거)</span>
+                    <div id="expectName" name="expectName">
+                    <strong> - </strong>
+                    </div>
+                    <br/>
                     <div class="portlet-title">
                         <table class="table">
                             <tbody>
@@ -389,7 +407,7 @@
                             </tr>
                             <tr>
                                 <td><span class="font-blue">보일링용량</span></td>
-                                <td id="expectBoilingSize" name="expectBoilingSize" colspan="2">22리터 @ 60분</td>
+                                <td id="expectBoilingSetting" name="expectBoilingSetting" colspan="2">22리터 @ 60분</td>
                             </tr>
                             <tr>
                                 <td><span class="font-blue">OG</span></td>
@@ -543,7 +561,7 @@ function calcSrm() {
 
     $('#srmResultText').html('');
 
-    //todo: pass 여부 체크
+    //pass 여부 체크
     if(sumSrm >= $("#styleSrmMin").val()){
         console.warn("색상 최소값 통과");
 
@@ -606,9 +624,8 @@ function calcOg() {
         $('#resultOg').val(sumOg);
     }
 
-    //todo: pass 여부 체크
+    //pass 여부 체크
     if(sumOg >= $("#styleOgMin").val()){
-
         console.warn("최소값 통과");
         if(sumOg <= $("#styleOgMax").val()){
             console.warn("최대값 통과");
@@ -619,6 +636,33 @@ function calcOg() {
     }else{
         $('#ogResultText').html('Fail');
     }
+
+}
+
+function expectText(){
+
+    $('#expectName').html("<strong>"+$("#name").val() + "</strong>");
+    $('#expectStyle').html("<strong>"+$("#styleId option:selected").text() + "</strong>");
+
+
+    if (isNaN($("#batchSize").val())) {
+        $('#expectBatchSize').html(" - ");
+    }else{
+        $('#expectBatchSize').html($("#batchSize").val() + " 리터");
+    }
+
+    if (isNaN($("#efficiency").val())) {
+        $('#expectEfficiency').html(" - ");
+    }else{
+        $('#expectEfficiency').html($("#efficiency").val() + " %");
+    }
+
+    if (isNaN($("#boilSize").val()) && isNaN($("#boilTime").val())) {
+        $('#expectBoilingSetting').html(" - ");
+    }else{
+        $('#expectBoilingSetting').html($("#boilSize").val() + " 리터 @ "+$("#boilTime").val() + " 분");
+    }
+
 
 }
 
@@ -692,8 +736,6 @@ $(document).ready(function () {
 
     FormValidation.init();
 
-
-
     $('#styleId').change(function () {
 
         var id = $("#styleId option:selected").val();
@@ -727,7 +769,9 @@ $(document).ready(function () {
              $('#ibuSpec').html("<span class='tag label label-info'>IBU  </span>" + data.ibuMin + ' ~ ' + data.ibuMax);
              $('#abvSpec').html("<span class='tag label label-info'>ADV  </span>" + data.abvMin + ' ~ ' + data.abvMax);
              */
-        })
+        });
+
+        expectText()
 
 
         //calc();
