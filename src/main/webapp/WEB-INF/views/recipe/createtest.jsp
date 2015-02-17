@@ -395,7 +395,7 @@
                 <div class="portlet light">
                     <span class="font-blue caption-helper small" id="expectStyle" name="expectStyle">(1A. 라이트 미국식 라거)</span>
                     <div id="expectName" name="expectName">
-                    <strong> - </strong>
+                    <strong> 이름없음 </strong>
                     </div>
                     <br/>
                     <div class="portlet-title">
