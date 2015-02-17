@@ -156,6 +156,120 @@ public class RecipeServiceTest {
         assertNotNull("테스트 대상이 잘 생성되었는지 확인", selectRecipeListTest);
     }
 
+    @Test
+    public void selectSingleMaltOgTest() {
+        Fermentable fermentable = new Fermentable();
+        fermentable.setId(85);
 
+        Double efficiency = 75.0; //수율
+        Double batchSize  = 20.0; //배치사이즈
+
+        Double recipeFermantableAmounts = 7.0;
+
+
+        //공식에 맞게 변환
+        efficiency = efficiency / 100.0;
+        batchSize = batchSize / 3.78534;
+        recipeFermantableAmounts = recipeFermantableAmounts * 2.204623;
+
+        Fermentable returnFermentable = new Fermentable();
+
+        returnFermentable = fermentableDao.selectFermentableDetail(fermentable);
+
+        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", returnFermentable);
+
+        //단일 og 테스트
+        double ppg = returnFermentable.getPpg();
+
+        assertThat(true, is(ppg > 0));
+
+        System.out.println("ppg" + ppg);
+
+        double og = (recipeFermantableAmounts * ppg * efficiency) / batchSize;
+
+        System.out.println("recipeFermantableAmounts : " + recipeFermantableAmounts);
+        System.out.println("efficiency : " + efficiency);
+        System.out.println("batchSize : " + batchSize);
+        System.out.println("og : " + og);
+
+        og = (og / 1000) + 1;
+
+        System.out.println("og : " + og);
+
+        og = Math.round(og / .001) * .001;
+
+        System.out.println("og : " + og);
+
+        assertThat(true, is(og == 1.079));
+
+        //http://brewduck.com/fermentable/15/Caraaroma
+    }
+
+    @Test
+    public void selectDoubleMaltOgTest() {
+        Fermentable paramFermentable1 = new Fermentable();
+        paramFermentable1.setId(85);
+
+        Fermentable paramFermentable2 = new Fermentable();
+        paramFermentable2.setId(15);
+
+        Double efficiency = 75.0; //수율
+        Double batchSize  = 20.0; //배치사이즈
+        Double recipeFermantableAmounts1 = 7.0; //수량
+        Double recipeFermantableAmounts2 = 1.0; //수량
+
+        //공식에 맞게 변환
+        efficiency = efficiency / 100.0;
+        batchSize = batchSize / 3.78534;
+        recipeFermantableAmounts1 = recipeFermantableAmounts1 * 2.204623;
+        recipeFermantableAmounts2 = recipeFermantableAmounts2 * 2.204623;
+        Double sumRecipeFermantableAmounts = recipeFermantableAmounts1 + recipeFermantableAmounts2 ;
+
+        Fermentable returnFermentable1 = new Fermentable();
+        Fermentable returnFermentable2 = new Fermentable();
+
+        returnFermentable1 = fermentableDao.selectFermentableDetail(paramFermentable1);
+        returnFermentable2 = fermentableDao.selectFermentableDetail(paramFermentable2);
+
+        //assertNotNull("테스트 대상이 잘 생성되었는지 확인", returnFermentable);
+
+        //단일 og 테스트
+        double ppg1 = returnFermentable1.getPpg();
+        double ppg2 = returnFermentable2.getPpg();
+        double sumPpg = ppg1 + ppg2;
+
+        System.out.println("ppg1 : " + ppg1);
+        System.out.println("ppg2 :" + ppg2);
+
+        double og1 = (recipeFermantableAmounts1 * ppg1 * efficiency) / batchSize;
+        double og2 = (recipeFermantableAmounts2 * ppg2 * efficiency) / batchSize;
+        double resultOg = og1 + og2;
+
+        System.out.println("og1 : " + og1);
+        System.out.println("og2 : " + og2);
+        System.out.println("resultOg : " + resultOg);
+
+        og1 = (og1 / 1000) + 1;
+        og2 = (og2 / 1000) + 1;
+        resultOg = (resultOg / 1000) + 1;
+
+        System.out.println("og1 : " + og1);
+        System.out.println("og2 : " + og2);
+        System.out.println("resultOg : " + resultOg);
+
+
+        og1 = Math.round(og1 / .001) * .001;
+        og2 = Math.round(og2 / .001) * .001;
+        resultOg = Math.round(resultOg / .001) * .001;
+
+        System.out.println("og1 : " + og1);
+        System.out.println("og2 : " + og2);
+        System.out.println("resultOg : " + resultOg);
+
+
+        assertThat(true, is(og1 == 1.079));
+
+        //http://brewduck.com/fermentable/15/Caraaroma
+    }
 
 }

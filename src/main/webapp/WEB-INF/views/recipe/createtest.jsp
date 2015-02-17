@@ -369,6 +369,67 @@
 
             <div class="col-xs-3">
 
+                <div class="top-news">
+                    <a href="javascript:;" class="btn green-haze">
+                        <em>예상 맥주</em>
+                    </a>
+                </div>
+
+                <div class="portlet light">
+
+                    좀비더스트 클론 <span class="font-blue caption-helper small">(14B. 미국식 IPA)</span>
+
+                    <br/><br/>
+                    <div class="portlet-title">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td><span class="font-blue">배치용량</span></td>
+                                <td id="expectBatchSize" name="expectBatchSize" colspan="2">20 리터</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">보일링용량</span></td>
+                                <td id="expectBoilingSize" name="expectBoilingSize" colspan="2">22리터 @ 60분</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">OG</span></td>
+                                <td id="expectOg" name="expectOg" colspan="2">1.087</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">FG</span></td>
+                                <td id="expectFg" name="expectFg" colspan="2">1.022</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">색상</span></td>
+                                <td id="expectSrm" name="expectSrm" >38.5° SRM
+                                </td>
+                                <td>
+                                    <ul class="icheck-colors">
+                                        <li id="expectSrmCode" name="expectSrmCode" style="background:#730800">
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">수율</span></td>
+                                <td id="expectEfficiency" name="expectEfficiency" colspan="2">65 %</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">Bitterness</span></td>
+                                <td id="expectIbu" name="expectIbu" colspan="2">0.0 IBU (tinseth)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">Alcohol</span></td>
+                                <td id="expectAbv" name="expectAbv" colspan="2">8.4% ABV</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">Calories</span></td>
+                                <td id="expectCalories" name="expectCalories" colspan="2">304 per 12oz</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
                 <div class="top-news">
                     <a id="ogCheck" href="javascript:;" class="btn green-haze">
@@ -380,9 +441,9 @@
                     <div class="portlet-title right">
                         <div class="caption">
                             <i class="icon-pin font-yellow-crusta"></i>
-								            <span class="caption-subject bold font-yellow-crusta uppercase" id="ogText" name="ogText">
-								            0
-                                            </span>
+                                <span class="caption-subject bold font-yellow-crusta uppercase" id="ogText" name="ogText">
+                                0
+                                </span>
                             <span class="caption-helper small">OG</span>
                         </div>
                         <h4 class="pull-right" id="ogResultText" name="ogResultText"></h4>
@@ -506,53 +567,44 @@ function calcOg() {
     var ppg = 0;
     var recipeFermantableAmounts = 0;
     var og = 0;
+    var sumOg= 0 ;
 
     if (isNaN(batchSize)) {
-        //$('#abv').html('&ndash;');
+        return;
+    } else {
+        batchSize = literToGalon(batchSize);
+    }
+    if (isNaN(efficiency)) {
         return;
     } else {
         efficiency = efficiency / 100;
     }
 
-    console.log("efficiency : "+ efficiency);
-
-    for (var i = 0; i < $("input[name='ppg']").length; i++) {
-        ppg = ppg + parseFloat($("input[name='ppg']").eq(i).val());
+    if($("input[name='ppg']").length != $("input[name='recipeFermantableAmounts']").length){
+        return;
     }
 
-
-    //todo : og 값 체크할것
-    var sumOg= 0 ;
-    for (var i = 0; i < $("input[name='recipeFermantableAmounts']").length; i++) {
-       // ppg = parseFloat($("input[name='ppg']").eq(i).val());
+    for (var i = 0; i < $("input[name='ppg']").length; i++) {
+        ppg = parseFloat($("input[name='ppg']").eq(i).val());
         recipeFermantableAmounts = parseFloat($("input[name='recipeFermantableAmounts']").eq(i).val());
+        recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
         og = (recipeFermantableAmounts * ppg * efficiency) / batchSize;
         sumOg = sumOg + og;
     }
-    console.log("recipeFermantableAmounts : "+ recipeFermantableAmounts);
-
-
 
     if ($("input[name='ppg']").length == 0) {
         $('#ogText').html('');
         $('#resultOg').val('');
     } else {
-        recipeFermantableAmounts = gramToPound(recipeFermantableAmounts);
-        batchSize = literToGalon(batchSize);
-
-        //og = og / (i+1);
 
         sumOg = (sumOg / 1000) + 1;
         sumOg = sumOg.toFixed(3);
 
         $('#ogText').html('');
-
         $('#ogText').html('OG : ' + sumOg);
+        $('#expectOg').html(sumOg);
         $('#resultOg').val(sumOg);
     }
-
-    console.warn("sumOg : " + og);
-
 
     //todo: pass 여부 체크
     if(sumOg >= $("#styleOgMin").val()){
@@ -564,8 +616,6 @@ function calcOg() {
         }else{
             $('#ogResultText').html('Fail');
         }
-
-
     }else{
         $('#ogResultText').html('Fail');
     }

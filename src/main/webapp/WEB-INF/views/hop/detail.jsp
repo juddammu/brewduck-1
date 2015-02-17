@@ -46,41 +46,35 @@
                                     <h3 class="text-light">제원</h3>
                                     <ul class="nav nav-pills nav-stacked nav-transparent">
                                         <table class="table table-bordered table-striped">
-
-                                            <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>내용</th>
-                                            </tr>
-                                            </thead>
                                             <tbody>
                                             <tr>
-                                                <td>원산지</td>
-                                                <td><a href="#">${HopDetail.originKorean}</a></td>
+                                                <th>원산지</th>
+                                                <td>${HopDetail.originKorean}</td>
                                             </tr>
                                             <tr>
-                                                <td>타입</td>
-                                                <td><a href="#">${HopDetail.typeKorean}</a></td>
+                                                <th>타입</th>
+                                                <td>${HopDetail.typeKorean}</td>
                                             </tr>
                                             <tr>
-                                                <td>Alpha</td>
-                                                <td><a href="#">${HopDetail.alpha}</a> %</td>
+                                                <th>Alpha</th>
+                                                <td>${HopDetail.alpha} %</td>
                                             </tr>
                                             <tr>
-                                                <td>Beta</td>
-                                                <td><a href="#">${HopDetail.beta}</a></td>
+                                                <th>Beta</th>
+                                                <td>${HopDetail.beta}</td>
                                             </tr>
                                             <tr>
-                                                <td>HSI</td>
-                                                <td><a href="#">${HopDetail.hsi}</a></td>
+                                                <th>HSI</th>
+                                                <td>${HopDetail.hsi}</td>
                                             </tr>
                                             <c:if test="${!empty hopAromaList}">
                                                 <tr>
                                                     <th>풍미</th>
                                                     <td>
-                                                        <c:forEach items="${hopAromaList}"
-                                                                   var="aromaName">
-                                                            <a href="#">${aromaName.aromaName}</a>
+                                                        <c:forEach
+                                                            items="${hopAromaList}"
+                                                            var="aromaName">
+                                                            ${aromaName.aromaName}
                                                         </c:forEach></td>
                                                 </tr>
                                             </c:if>
@@ -119,7 +113,7 @@
                                         <p class="lead">설명</p>
 
                                         <div class="well clearfix">
-                                            <p>${HopDetail.notes}</p>
+                                            <p>${HopDetail.koreanNotes}</p>
                                         </div>
                                         <br/>
                                     </div>
