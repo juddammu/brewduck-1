@@ -318,7 +318,7 @@
 <div class="portlet light bordered">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-gift"></i> 몰트 & 발효재료
+            <i class="fa fa-gift"></i> 재료 구성
         </div>
     </div>
 
@@ -336,7 +336,6 @@
                     <button class="btn btn-sm yellow" href="/common/popup/fermentables" data-target="#ajax" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
 
                 </div>
-
 
                 <div class="table-scrollable">
                     <table class="table table-striped table-bordered table-hover dataTable no-footer"
@@ -375,8 +374,21 @@
 
                 <div class="page-loading page-loading-boxed">
                     <img src="/resources/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
-									<span>
-									&nbsp;&nbsp;Loading... </span>
+                        <span>
+                        &nbsp;&nbsp;Loading... </span>
+                </div>
+                <div class="modal-dialog  modal-lg">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade modal-scroll bs-modal-lg"  tabindex="-1" id="ajax2" role="dialog"  aria-hidden="true">
+
+                <div class="page-loading page-loading-boxed">
+                    <img src="/resources/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
+                        <span>
+                        &nbsp;&nbsp;Loading... </span>
                 </div>
                 <div class="modal-dialog  modal-lg">
                     <div class="modal-content">
@@ -419,13 +431,14 @@
                             </tr>
                             <tr>
                                 <td><span class="font-blue">색상</span></td>
-                                <td id="expectSrm" name="expectSrm" >38.5° SRM
+                                <td id="expectSrm" name="expectSrm" >
+                                     0 L
                                 </td>
                                 <td>
-                                    <ul class="icheck-colors">
+                                    <!--ul class="icheck-colors">
                                         <li id="expectSrmCode" name="expectSrmCode" style="background:#730800">
                                         </li>
-                                    </ul>
+                                    </ul-->
                                 </td>
                             </tr>
                             <tr>
@@ -434,7 +447,7 @@
                             </tr>
                             <tr>
                                 <td><span class="font-blue">Bitterness</span></td>
-                                <td id="expectIbu" name="expectIbu" colspan="2">0.0 IBU (tinseth)</td>
+                                <td id="expectIbu" name="expectIbu" colspan="2">0.0 IBU</td>
                             </tr>
                             <tr>
                                 <td><span class="font-blue">Alcohol</span></td>
@@ -450,39 +463,117 @@
                 </div>
 
                 <div class="top-news">
-                    <a id="ogCheck" href="javascript:;" class="btn green-haze">
-                        <em id="ogSpec">OG : 1.028 ~ 1.04 (가이드)</em>
+                    <a href="javascript:;" class="btn green-haze">
+                        <em>스타일 마법사 (OG / SRM)</em>
                     </a>
                 </div>
-
                 <div class="portlet light">
-                    <div class="portlet-title right">
-                        <div class="caption">
-                            <i class="icon-pin font-yellow-crusta"></i>
-                                <span class="caption-subject bold font-yellow-crusta uppercase" id="ogText" name="ogText">
-                                0
-                                </span>
-                            <span class="caption-helper small">OG</span>
-                        </div>
-                        <h4 class="pull-right" id="ogResultText" name="ogResultText"></h4>
+                    <span class="font-blue caption-helper small" id="expectStyle" name="expectStyle"></span>
+                    <div class="portlet-title">
+                        <table class="table table-striped">
+                            <tbody>
+                            <tr>
+                                <td ><span class="font-blue">OG (가이드)</span> <em id="ogResultText"></em></td>
+                                <td id="ogSpec" name="ogSpec" >1.028 ~ 1.04</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">OG </span></td>
+                                <td id="ogText" name="ogText"></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">SRM (가이드) </span><em id="srmResultText"></em></td>
+                                <td id="srmSpec" name="srmSpec">2 ~ 3 °</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-blue">SRM</span></td>
+                                <td id="srmText" name="srmText"></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-xs-9 invoice-block">
+                <div class="table-actions-wrapper pull-right  margin-bottom-10">
+                    <span>
+                    </span>
+                    <button class="btn btn-sm yellow" href="/common/popup/hops" data-target="#ajax2" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
+                </div>
+
+                <div class="table-scrollable">
+                    <table class="table table-striped table-bordered table-hover dataTable no-footer"
+                           id="hopListTable" name="hopListTable" aria-describedby="datatable_orders_info" role="grid">
+                        <thead>
+                        <tr role="row" class="heading">
+                            <th class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                재료명 &nbsp;
+                            </th>
+                            <th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                사용방법
+                            </th>
+                            <th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                수량&nbsp;
+                            </th>
+                            <th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+
+                            </th>
+                            <th width="10%" cclass="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                시간
+                            </th>
+                            <th width="10%" cclass="sorting" tabindex="0" aria-controls="datatable_orders" >
+
+                            </th>
+                            <th width="6%" class="sorting" tabindex="0" aria-conwmatrols="datatable_orders" >
+                                알파
+                            </th>
+                            </th><th width="5%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                            삭제
+                        </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table></div>
+            </div>
+
+            <div class="modal fade modal-scroll bs-modal-lg"  tabindex="-1" id="ajax" role="dialog"  aria-hidden="true">
+
+                <div class="page-loading page-loading-boxed">
+                    <img src="/resources/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
+									<span>
+									&nbsp;&nbsp;Loading... </span>
+                </div>
+                <div class="modal-dialog  modal-lg">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+
+
                 <div class="top-news">
-                    <a href="javascript:;" class="btn green-haze">
-                        <em id="srmSpec">SRM : 2 ~ 3 (GUIDE)</em>
+                    <a id="ibuCheck" href="javascript:;" class="btn green-haze">
+                        <em id="ibuSpec">IBU : 8 ~ 12 (가이드)</em>
                     </a>
                 </div>
+
+
                 <div class="portlet light">
                     <div class="portlet-title right">
                         <div class="caption">
                             <i class="icon-pin font-yellow-crusta"></i>
-								            <span class="caption-subject bold font-yellow-crusta uppercase" id="srmText" name="srmText">
+								            <span class="caption-subject bold font-yellow-crusta uppercase" id="ibuText" name="ibuText">
 								            0
                                             </span>
-                            <span class="caption-helper small">SRM</span>
+                            <span class="caption-helper small">IBU</span>
                         </div>
-                        <h4 class="pull-right" id="srmResultText" name="srmResultText"></h4>
+                        <h4 class="pull-right" id="ibuResultText" name="ibuResultText"></h4>
                     </div>
                 </div>
 
@@ -530,14 +621,14 @@ function calcSrm() {
 
         mcu = (lovibond * recipeFermantableAmounts ) /batchSize;
 
-        console.warn("mcu " + mcu);
+       // console.warn("mcu " + mcu);
 
         //This works great for beers that are light in color but due to the fact that light absorbance is logarithmic and not linear we need to use the Morey equation:
         srm = 1.49 * (mcu * 0.69);
         //SRM Color = 1.49 * (MCU * 0.69)
 
        // srm = 0.3 * recipeFermantableAmounts * lovibond;
-        console.warn("srm " + srm);
+     //   console.warn("srm " + srm);
 
        // srm = srm / batchSize;
         sumSrm = sumSrm + srm;
@@ -555,6 +646,8 @@ function calcSrm() {
 
         $('#srmText').html(sumSrm + '°');
         $('#resultSrm').val(sumSrm);
+        $('#expectSrm').html(sumSrm+ '°');
+
     }
 
     var srmResultText = "";
@@ -619,7 +712,7 @@ function calcOg() {
         sumOg = sumOg.toFixed(3);
 
         $('#ogText').html('');
-        $('#ogText').html('OG : ' + sumOg);
+        $('#ogText').html(sumOg);
         $('#expectOg').html(sumOg);
         $('#resultOg').val(sumOg);
     }
@@ -636,6 +729,66 @@ function calcOg() {
     }else{
         $('#ogResultText').html('Fail');
     }
+
+}
+
+function calcIbu() {
+    var batchSize = parseFloat($('#batchSize').val());
+
+    var alpha = 0;
+    var amount = 0;
+    var og = parseFloat($('#resultOg').val());
+    var time = 0;
+    var ibu = 0;
+
+
+    if (isNaN(og)) {
+        $('#ibuText').html('');
+        return;
+    }
+
+    if (isNaN(batchSize)) {
+        $('#ibuText').html('');
+        return;
+    }
+
+    if ($("input[name='recipeHopTimes']").length == 0) {
+        $('#ibuText').html('');
+        return;
+    }
+
+    if ($("input[name='recipeHopAlphas']").length == 0) {
+        $('#ibuText').html('');
+        return;
+    }
+
+    if ($("input[name='recipeHopAmounts']").length == 0) {
+        $('#ibuText').html('');
+        return;
+    }
+
+    for (var i = 0; i < $("input[name='recipeHopTimes']").length; i++) {
+        time = time + parseFloat($("input[name='recipeHopTimes']").eq(i).val());
+    }
+
+    for (var i = 0; i < $("input[name='recipeHopAlphas']").length; i++) {
+        alpha = alpha + parseFloat($("input[name='recipeHopAlphas']").eq(i).val());
+    }
+
+    for (var i = 0; i < $("input[name='recipeHopAmounts']").length; i++) {
+        amount = amount + parseFloat($("input[name='recipeHopAmounts']").eq(i).val());
+    }
+
+    console.log("hop link" + "/hop/utilization/" + og + "/" + time + "/" + batchSize + "/" + amount + "/" + alpha);
+
+    $.get("/hop/utilization/" + og + "/" + time + "/" + batchSize + "/" + amount + "/" + alpha, function (data, status) {
+        var ibu = parseFloat(data);
+        ibu = ibu * 10000;
+        ibu = ibu.toFixed(1);
+        $('#ibuText').html('IBU : ' + ibu);
+        $('#resultIbu').val(ibu);
+        $('#expectIbu').html(ibu);
+    })
 
 }
 
@@ -669,6 +822,7 @@ function expectText(){
 function calc() {
     calcSrm();
     calcOg();
+    calcIbu();
 
     /*calcSrm();
      calcOg();
@@ -718,8 +872,6 @@ function add_fermententable(fermentableData){
     fermentableHtml = fermentableHtml + "        <div class='margin-bottom-5'>";
     fermentableHtml = fermentableHtml + "<button type='button' class='btn btn-sm red filter-submit margin-bottom row_fermantable_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
 
-
-
     fermentableHtml = fermentableHtml + "        </div>";
     fermentableHtml = fermentableHtml + "    </td>";
     fermentableHtml = fermentableHtml + "</tr>";
@@ -729,6 +881,57 @@ function add_fermententable(fermentableData){
     calc();
 }
 
+function add_hop(hopData){
+
+
+
+    var returnHopData = hopData.split("^");
+
+  /*  $.each(returnHopData, function(i){
+     console.log(returnHopData[i]);
+    });*/
+
+
+    hopHtml = "";
+    hopHtml = hopHtml + "<tr role='row' class='filter'>";
+    hopHtml = hopHtml + "    <td>";
+    hopHtml = hopHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id' value='"+returnHopData[1]+"'>";
+    hopHtml = hopHtml + "    </td>";
+    hopHtml = hopHtml + "    <td>";
+    hopHtml = hopHtml + "<select id='recipeHopUses' name ='recipeHopUses' class='form-control' required> ";
+    hopHtml = hopHtml + "<option value=''>Choose...</option><option value='3' selected>끓임 - Boil</option><option value='5'>드라이 홉 - Dry Hop</option><option value='1'>당화 - First Wort Hopping</option><option value='2'>플레임 아웃 - Flame Out</option><option value='6'>월풀 - Whirlpool</option>";
+    hopHtml = hopHtml + "</select> ";
+    hopHtml = hopHtml + "    </td>";
+    hopHtml = hopHtml + "    <td>";
+    hopHtml = hopHtml + "        <input type='text' class='form-control input-sm' id='recipeHopAmounts' onkeyup='javascript:calc(this);' name='recipeHopAmounts' value='28'>";
+    hopHtml = hopHtml + "    </td>";
+    hopHtml = hopHtml + "    <td>";
+    hopHtml = hopHtml + "        <select id='recipeWeightUnit' name ='recipeWeightUnit' class='form-control form-filter input-sm' required> ";
+    hopHtml = hopHtml + "            <option value='1'>oz</option><option value='2' selected>g</option>";
+    hopHtml = hopHtml + "        </select> ";
+    hopHtml = hopHtml + "    </td> ";
+    hopHtml = hopHtml + "    <td>";
+    hopHtml = hopHtml + "        <input type='text' class='form-control input-sm' id='recipeHopTimes' onkeyup='javascript:calc(this);' name='recipeHopTimes' value='0'>";
+    hopHtml = hopHtml + "    </td>";
+    hopHtml = hopHtml + "    <td>";
+    hopHtml = hopHtml + "        <select id='recipeTimeUnit' name ='recipeTimeUnit' class='form-control form-filter input-sm' required> ";
+    hopHtml = hopHtml + "            <option value='1' selected>분</option><option value='2'>일</option>";
+    hopHtml = hopHtml + "        </select> ";
+    hopHtml = hopHtml + "    </td>";
+    hopHtml = hopHtml + "    <td >";
+    hopHtml = hopHtml + "        <input type='text' class='form-control form-filter input-sm' name='recipeHopAlphas' id='recipeHopAlphas' onkeyup='javascript:calc(this);' value='"+returnHopData[4]+"'>";
+    hopHtml = hopHtml + "    </td>";
+    hopHtml = hopHtml + "    <td>";
+    hopHtml = hopHtml + "        <div class='margin-bottom-5'>";
+    hopHtml = hopHtml + "<button type='button' class='btn btn-sm red filter-submit margin-bottom row_hop_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+    hopHtml = hopHtml + "        </div>";
+    hopHtml = hopHtml + "    </td>";
+    hopHtml = hopHtml + "</tr>";
+
+    $("#hopListTable").append(hopHtml);
+
+    calc();
+}
 
 $(document).ready(function () {
 
@@ -752,8 +955,8 @@ $(document).ready(function () {
             $("#styleSrmMin").val(data.colorMin);
             $("#styleSrmMax").val(data.colorMax);
 
-            $('#ogSpec').html(data.ogMin + ' ~ ' + data.ogMax + " (BJDP GUIDE)");
-            $('#srmSpec').html(data.colorMin + ' ~ ' + data.colorMax + " (BJDP GUIDE)");
+            $('#ogSpec').html(data.ogMin + ' ~ ' + data.ogMax );
+            $('#srmSpec').html(data.colorMin + ' ~ ' + data.colorMax );
 
 
             Metronic.startPageLoading({animate: true});

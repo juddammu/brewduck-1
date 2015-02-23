@@ -3,7 +3,11 @@ package com.brewduck.web.common.controller;
 import com.brewduck.web.common.service.CommonService;
 import com.brewduck.web.domain.Common;
 import com.brewduck.web.domain.Fermentable;
+import com.brewduck.web.domain.Hop;
 import com.brewduck.web.fermentable.service.FermentableService;
+import com.brewduck.web.hop.service.HopService;
+import com.brewduck.web.misc.service.MiscService;
+import com.brewduck.web.yeast.service.YeastService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,14 +41,17 @@ public class CommonController {
     @Autowired
     private FermentableService fermentableService;
 
+    @Autowired
+    private HopService hopService;
+
+    @Autowired
+    private YeastService yeastService;
+
+    @Autowired
+    private MiscService miscService;
+
     @RequestMapping(value = "/popup/fermentables",method = RequestMethod.GET)
     public String popup(Model model, Fermentable paramFermentable) {
-
-        /*List<Fermentable> list = fermentableService.selectFermentableList(paramFermentable);
-
-        model.addAttribute("list_cnt", list.size());
-        model.addAttribute("list", list);
-        model.addAttribute("paramStyle", paramFermentable);*/
 
         return "common/popup/fermentables-index";
     }
@@ -59,6 +66,26 @@ public class CommonController {
 
         return list;
     }
+
+
+    @RequestMapping(value = "/popup/hops",method = RequestMethod.GET)
+    public String hopPopup(Model model, Hop paramHop) {
+
+        return "common/popup/hops-index";
+    }
+
+
+    @RequestMapping(value = "/popup/hops/list", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Hop> hopData(Model model, Hop paramHop) {
+        // 맥주 맥아 목록 조회
+        List<Hop> list = hopService.selectHopList(paramHop);
+        logger.info("Fermentable List Size : {}", list.size());
+
+        return list;
+    }
+
+
 
     /**
      * 지역(시,군) 리스트
