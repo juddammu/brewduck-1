@@ -272,4 +272,71 @@ public class RecipeServiceTest {
         //http://brewduck.com/fermentable/15/Caraaroma
     }
 
+    @Test
+    public void selectDoubleMaltSingleYeastFgTest() {
+
+        Double batchSize  = 20.0; //배치사이즈
+        batchSize = batchSize / 3.78534;
+        Double recipeFermantableAmounts1 = 7.0; //수량
+        Double recipeFermantableAmounts2 = 1.0; //수량
+
+        Fermentable paramFermentable1 = new Fermentable();
+        paramFermentable1.setId(85);
+
+        Fermentable paramFermentable2 = new Fermentable();
+        paramFermentable2.setId(15);
+
+        Fermentable returnFermentable1 = new Fermentable();
+        Fermentable returnFermentable2 = new Fermentable();
+
+        returnFermentable1 = fermentableDao.selectFermentableDetail(paramFermentable1);
+        returnFermentable2 = fermentableDao.selectFermentableDetail(paramFermentable2);
+
+        recipeFermantableAmounts1 = recipeFermantableAmounts1 * 2.204623;
+        recipeFermantableAmounts2 = recipeFermantableAmounts2 * 2.204623;
+
+        double ppg1 = returnFermentable1.getPpg();
+        double ppg2 = returnFermentable2.getPpg();
+
+        System.out.println("batchSize : " + batchSize);
+        System.out.println("ppg1 : " + ppg1);
+        System.out.println("ppg2 :" + ppg2);
+        System.out.println("recipeFermantableAmounts1 :" + recipeFermantableAmounts1);
+        System.out.println("recipeFermantableAmounts2 :" + recipeFermantableAmounts2);
+
+        //37 x 6.5 / 6 = 40.1
+        ppg1 = ppg1 * recipeFermantableAmounts1 / batchSize;
+        ppg2 = ppg2 * recipeFermantableAmounts2 / batchSize;
+
+        System.out.println("ppg1 : " + ppg1);
+        System.out.println("ppg2 :" + ppg2);
+
+        double tg = ppg1 + ppg2;
+
+        System.out.println("tg :" + tg);
+    }
+
+    @Test
+    public void selectSingleYeastAdvTest() {
+        Yeast yeast = new Yeast();
+        yeast.setId(1);
+
+        Double efficiency = 75.0; //수율
+        Double batchSize  = 20.0; //배치사이즈
+
+        Double og = 1.078;
+        Double fg = 1.01;
+
+        //(((Original Gravity - Final Gravity) * 1.05) / Final Gravity) / 0.79
+
+        Double adv  = (og - fg) * 131;
+
+
+        System.out.println("adv : " + adv);
+
+
+
+    }
+
+
 }

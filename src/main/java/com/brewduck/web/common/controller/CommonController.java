@@ -1,9 +1,7 @@
 package com.brewduck.web.common.controller;
 
 import com.brewduck.web.common.service.CommonService;
-import com.brewduck.web.domain.Common;
-import com.brewduck.web.domain.Fermentable;
-import com.brewduck.web.domain.Hop;
+import com.brewduck.web.domain.*;
 import com.brewduck.web.fermentable.service.FermentableService;
 import com.brewduck.web.hop.service.HopService;
 import com.brewduck.web.misc.service.MiscService;
@@ -85,7 +83,33 @@ public class CommonController {
         return list;
     }
 
+    @RequestMapping(value = "/popup/yeasts",method = RequestMethod.GET)
+    public String yeastPopup(Model model, Yeast paramYeast) {
+        return "common/popup/yeast-index";
+    }
 
+
+    @RequestMapping(value = "/popup/yeasts/list", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Yeast> yeastData(Model model, Yeast paramYeast) {
+        // 맥주 맥아 목록 조회
+        List<Yeast> list = yeastService.selectYeastList(paramYeast);
+        return list;
+    }
+
+    @RequestMapping(value = "/popup/miscs",method = RequestMethod.GET)
+    public String miscPopup(Model model, Yeast paramYeast) {
+        return "common/popup/misc-index";
+    }
+
+
+    @RequestMapping(value = "/popup/miscts/list", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Misc> miscData(Model model, Misc paramMisc) {
+        // 맥주 맥아 목록 조회
+        List<Misc> list = miscService.selectMiscList(paramMisc);
+        return list;
+    }
 
     /**
      * 지역(시,군) 리스트

@@ -120,11 +120,14 @@
                                 <tr>
                                     <th data-hide="phone" data-priority="1">영문명</th>
                                     <th data-hide="phone" data-priority="2">이스트명</th>
-                                    <th data-hide="phone" data-priority="4">타입</th>
+                                    <th data-hide="phone" data-priority="4">품번</th>
                                     <th data-hide="phone" data-priority="5">형태</th>
+                                    <th data-hide="phone" data-priority="5">용도</th>
+                                    <th data-hide="phone" data-priority="6">제조사</th>
+                                    <th data-hide="phone" data-priority="6">최소발효도</th>
+                                    <th data-hide="phone" data-priority="6">최대발효도</th>
                                     <th data-hide="phone" data-priority="6">최대온도</th>
                                     <th data-hide="phone" data-priority="7">최소온도</th>
-
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -134,11 +137,19 @@
                                             <a href="/yeast/${list.id}/${list.titleInUrl}">${list.name}</a>
                                         </td>
                                         <td> ${list.koreanName}</td>
+                                        <td> ${list.productId}</td>
                                         <td> ${list.typeCode}</td>
                                         <td> ${list.formCode}</td>
-                                        <td><span class="badge badge-success">${list.maxTemperature} °C</span>
+                                        <td> ${list.laboratory}</td>
+                                        <td>
+                                            <span class="badge badge-info badge-roundless">${list.minAttenuation}</span> %
                                         </td>
-                                        <td><span class="badge badge-success">${list.minTemperature} °C</span>
+                                        <td>
+                                            <span class="badge badge-success badge-roundless">${list.maxAttenuation}</span> %
+                                        </td>
+                                        <td><span class="badge badge-info badge-roundless">${list.maxTemperature}</span> °C
+                                        </td>
+                                        <td><span class="badge badge-success badge-roundless">${list.minTemperature}</span> °C
                                         </td>
                                     </tr>
                                 </c:forEach>

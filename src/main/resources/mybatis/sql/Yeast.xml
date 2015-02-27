@@ -29,6 +29,9 @@
               ,max_temperature     maxTemperature
               ,flocculation        flocculation
               /*,attenuation         attenuation*/
+              ,min_attenuation     minAttenuation
+              ,max_attenuation     maxAttenuation
+              ,(min_attenuation+max_attenuation)/2 attenuation
               ,notes               notes
               ,best_for            bestFor
               ,times_cultured      timesCultured
@@ -57,7 +60,7 @@
           ,b.min_temperature     minTemperature
           ,b.max_temperature     maxTemperature
           ,b.flocculation        flocculation
-          ,COALESCE(a.RECIPE_ATTENUATION, (b.min_temperature+b.max_temperature)/2) attenuation
+          ,COALESCE(a.RECIPE_ATTENUATION, (b.max_attenuation+b.max_attenuation)/2) attenuation
           ,b.notes               notes
           ,b.best_for            bestFor
           ,b.times_cultured      timesCultured
@@ -85,6 +88,7 @@
             <if test="typeCode != null and typeCode != 0">AND type_code = #{typeCode}</if>
             AND delete_id IS NULL
         </trim>
+        ORDER BY laboratory desc, PRODUCT_ID
     </select>
 
     <select id="Yeast.selectRecipeYeastList" parameterType="Yeast" resultType="Yeast">

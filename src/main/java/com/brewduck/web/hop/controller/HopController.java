@@ -274,21 +274,21 @@ public class HopController {
         fg = 1.65 * gb;
 
         time = -0.04 * time;
-        logger.info("time = " + time);
+        //logger.info("time = " + time);
         gravity = gravity - 1.0;
 
         e = Math.pow(e, time);
 
-        logger.info("e = " + e);
+        //logger.info("e = " + e);
 
         ft = (1 - e) / 4.15;
         utilization = fg * ft;
 
         ibu = aau * utilization * 75 / batchSize;
 
-        logger.info("batchSize = " + batchSize);
+       /* logger.info("batchSize = " + batchSize);
         logger.info("utilization = " + utilization);
-        logger.info("ibu = " + ibu);
+        logger.info("ibu = " + ibu);*/
         // model.addAttribute("Hop", Hop);
         // return "/Hop/HopView";
 

@@ -19,8 +19,8 @@
 <input id="styleSrmMin" name="styleSrmMin" type="hidden" value="2">
 <input id="styleSrmMax" name="styleSrmMax" type="hidden" value="3">
 
-<input id="resultOg" name="resultOg" type="hidden">
-<input id="resultFg" name="resultFg" type="hidden">
+<input id="resultOg" name="resultOg" type="text">
+<input id="resultFg" name="resultFg" type="text">
 
 <input id="resultIbu" name="resultIbu" type="hidden">
 <input id="resultAbv" name="resultAbv" type="hidden">
@@ -45,6 +45,7 @@
 <div class="col-md-12">
 <form:form  id="insert" class="form-horizontal form-row-seperated" name="insert"
             method="POST" enctype="multipart/form-data" action="/recipe/insertRecipe"
+            onsubmit="return false;"
             modelAttribute="paramRecipe">
 
 <input type="hidden"  id="id" name="id" value="${recipeId}">
@@ -82,7 +83,7 @@
             당화스탭 </a>
     </li>
 </ul>
-<div class="tab-content no-space">
+<div class="tab-content col-xs-9 no-space">
 <div class="tab-pane active" id="tab_1">
     <div class="form-body">
         <div class="form-group">
@@ -307,6 +308,64 @@
     설정
 </div>
 </div>
+<div class="col-xs-3">
+    <div class="portlet light">
+        <span class="font-blue caption-helper small" id="expectStyle" name="expectStyle">(1A. 라이트 미국식 라거)</span>
+        <div id="expectName" name="expectName">
+            <strong> 이름없음 </strong>
+        </div>
+        <br/>
+        <div class="portlet-title">
+            <table class="table table-bordered table-striped table-condensed flip-content">
+                <tr>
+                    <td><span class="font-blue">배치용량</span></td>
+                    <td id="expectBatchSize" name="expectBatchSize" colspan="2">20 리터</td>
+                </tr>
+                <tr>
+                    <td><span class="font-blue">보일링용량</span></td>
+                    <td id="expectBoilingSetting" name="expectBoilingSetting" colspan="2">22리터 @ 60분</td>
+                </tr>
+                <tr>
+                    <td><span class="font-blue">OG</span></td>
+                    <td id="expectOg" name="expectOg" colspan="2">1.087</td>
+                </tr>
+                <tr>
+                    <td><span class="font-blue">FG</span></td>
+                    <td id="expectFg" name="expectFg" colspan="2">1.022</td>
+                </tr>
+                <tr>
+                    <td><span class="font-blue">색상</span></td>
+                    <td id="expectSrm" name="expectSrm" >
+                        0 L
+                    </td>
+                    <td>
+                        <!--ul class="icheck-colors">
+                            <li id="expectSrmCode" name="expectSrmCode" style="background:#730800">
+                            </li>
+                        </ul-->
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="font-blue">수율</span></td>
+                    <td id="expectEfficiency" name="expectEfficiency" colspan="2">65 %</td>
+                </tr>
+                <tr>
+                    <td><span class="font-blue">Bitterness</span></td>
+                    <td id="expectIbu" name="expectIbu" colspan="2">0.0 IBU</td>
+                </tr>
+                <tr>
+                    <td><span class="font-blue">Alcohol</span></td>
+                    <td id="expectAbv" name="expectAbv" colspan="2">8.4% ABV</td>
+                </tr>
+                <tr>
+                    <td><span class="font-blue">Calories</span></td>
+                    <td id="expectCalories" name="expectCalories" colspan="2">304 per 12oz</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
 </div>
 </div>
 </div>
@@ -396,71 +455,33 @@
                 </div>
             </div>
 
+            <div class="modal fade modal-scroll bs-modal-lg"  tabindex="-1" id="ajax3" role="dialog"  aria-hidden="true">
+
+                <div class="page-loading page-loading-boxed">
+                    <img src="/resources/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
+									<span>
+									&nbsp;&nbsp;Loading... </span>
+                </div>
+                <div class="modal-dialog  modal-lg">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade modal-scroll bs-modal-lg"  tabindex="-1" id="ajax4" role="dialog"  aria-hidden="true">
+
+                <div class="page-loading page-loading-boxed">
+                    <img src="/resources/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
+									<span>
+									&nbsp;&nbsp;Loading... </span>
+                </div>
+                <div class="modal-dialog  modal-lg">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+
             <div class="col-xs-3">
-
-                <div class="top-news">
-                    <a href="javascript:;" class="btn green-haze">
-                        <em>예상 맥주</em>
-                    </a>
-                </div>
-
-                <div class="portlet light">
-                    <span class="font-blue caption-helper small" id="expectStyle" name="expectStyle">(1A. 라이트 미국식 라거)</span>
-                    <div id="expectName" name="expectName">
-                    <strong> 이름없음 </strong>
-                    </div>
-                    <br/>
-                    <div class="portlet-title">
-                        <table class="table">
-                            <tbody>
-                            <tr>
-                                <td><span class="font-blue">배치용량</span></td>
-                                <td id="expectBatchSize" name="expectBatchSize" colspan="2">20 리터</td>
-                            </tr>
-                            <tr>
-                                <td><span class="font-blue">보일링용량</span></td>
-                                <td id="expectBoilingSetting" name="expectBoilingSetting" colspan="2">22리터 @ 60분</td>
-                            </tr>
-                            <tr>
-                                <td><span class="font-blue">OG</span></td>
-                                <td id="expectOg" name="expectOg" colspan="2">1.087</td>
-                            </tr>
-                            <tr>
-                                <td><span class="font-blue">FG</span></td>
-                                <td id="expectFg" name="expectFg" colspan="2">1.022</td>
-                            </tr>
-                            <tr>
-                                <td><span class="font-blue">색상</span></td>
-                                <td id="expectSrm" name="expectSrm" >
-                                     0 L
-                                </td>
-                                <td>
-                                    <!--ul class="icheck-colors">
-                                        <li id="expectSrmCode" name="expectSrmCode" style="background:#730800">
-                                        </li>
-                                    </ul-->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="font-blue">수율</span></td>
-                                <td id="expectEfficiency" name="expectEfficiency" colspan="2">65 %</td>
-                            </tr>
-                            <tr>
-                                <td><span class="font-blue">Bitterness</span></td>
-                                <td id="expectIbu" name="expectIbu" colspan="2">0.0 IBU</td>
-                            </tr>
-                            <tr>
-                                <td><span class="font-blue">Alcohol</span></td>
-                                <td id="expectAbv" name="expectAbv" colspan="2">8.4% ABV</td>
-                            </tr>
-                            <tr>
-                                <td><span class="font-blue">Calories</span></td>
-                                <td id="expectCalories" name="expectCalories" colspan="2">304 per 12oz</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
                 <div class="top-news">
                     <a href="javascript:;" class="btn green-haze">
@@ -468,7 +489,6 @@
                     </a>
                 </div>
                 <div class="portlet light">
-                    <span class="font-blue caption-helper small" id="expectStyle" name="expectStyle"></span>
                     <div class="portlet-title">
                         <table class="table table-striped">
                             <tbody>
@@ -496,6 +516,7 @@
             </div>
         </div>
 
+        <!-- 홉 추가 화면 시작 -->
         <div class="row">
 
             <div class="col-xs-9 invoice-block">
@@ -541,19 +562,6 @@
                     </table></div>
             </div>
 
-            <div class="modal fade modal-scroll bs-modal-lg"  tabindex="-1" id="ajax" role="dialog"  aria-hidden="true">
-
-                <div class="page-loading page-loading-boxed">
-                    <img src="/resources/assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
-									<span>
-									&nbsp;&nbsp;Loading... </span>
-                </div>
-                <div class="modal-dialog  modal-lg">
-                    <div class="modal-content">
-                    </div>
-                </div>
-            </div>
-
             <div class="col-xs-3">
 
 
@@ -574,6 +582,74 @@
                             <span class="caption-helper small">IBU</span>
                         </div>
                         <h4 class="pull-right" id="ibuResultText" name="ibuResultText"></h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 효모 추가 화면 시작 -->
+        <div class="row">
+
+            <div class="col-xs-9 invoice-block">
+                <div class="table-actions-wrapper pull-right  margin-bottom-10">
+                    <span>
+                    </span>
+                    <button class="btn btn-sm yellow" href="/common/popup/yeasts" data-target="#ajax3" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
+                </div>
+
+                <div class="table-scrollable">
+                    <table class="table table-striped table-bordered table-hover dataTable no-footer"
+                           id="yeastListTable" name="yeastListTable" aria-describedby="datatable_orders_info" role="grid">
+                        <thead>
+                        <tr role="row" class="heading">
+                            <th class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                이스트명 &nbsp;
+                            </th>
+                            <th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                제조사
+                            </th>
+                            <th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                제품 ID&nbsp;
+                            </th>
+                            <th width="10%" cclass="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                종류
+                            </th>
+                            <th width="6%" class="sorting" tabindex="0" aria-conwmatrols="datatable_orders" >
+                                발효도
+                            </th>
+                            </th><th width="5%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                            삭제
+                        </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table></div>
+            </div>
+
+
+
+            <div class="col-xs-3">
+
+
+                <div class="top-news">
+                    <a id="abvCheck" href="javascript:;" class="btn green-haze">
+                        <em id="abvSpec">ABV : 2.8 ~ 4.2 % (가이드)</em>
+                    </a>
+                </div>
+
+
+                <div class="portlet light">
+                    <div class="portlet-title right">
+                        <div class="caption">
+                            <i class="icon-pin font-yellow-crusta"></i>
+                                <span class="caption-subject bold font-yellow-crusta uppercase" id="abvText" name="abvText">
+                                0
+                                </span>
+                            <span class="caption-helper small">ABV</span>
+                        </div>
+                        <h4 class="pull-right" id="abvResultText" name="abvResultText"></h4>
                     </div>
                 </div>
 
@@ -792,9 +868,91 @@ function calcIbu() {
 
 }
 
+function calcAbv() {
+    console.warn("시작");
+    var og = parseFloat($('#resultOg').val());
+    var fg = parseFloat($('#resultFg').val());
+
+    console.warn("og" + og);
+    console.warn("fg"+ fg);
+
+    if (isNaN(og) || isNaN(fg)) {
+        $('#abv').html('&ndash;');
+        return;
+    }
+
+    var abv = (og - fg) * 131;
+    abv = abv.toFixed(1);
+    $('#abvText').html('');
+    $('#abvText').html(abv);
+    $('#expectOg').html(abv);
+    $('#resultAbv').val(abv);
+
+    if(abv >= $("#styleAdvMin").val()){
+        console.warn("최소값 통과");
+        if(styleAdv <= $("#styleAdvMax").val()){
+            console.warn("최대값 통과");
+            $('#advResultText').html('PASS');
+        }else{
+            $('#advResultText').html('Fail');
+        }
+    }else{
+        $('#advResultText').html('Fail');
+    }
+}
+
+function calcFg() {
+
+
+    var batchSize = parseFloat($('#batchSize').val());
+    var efficiency = parseFloat($('#efficiency').val());
+
+    var og = parseFloat($('#resultOg').val());
+    var fg = 0;
+    var tg = 0;
+    og = (og - 1) * 1000;
+
+    var minAttenuation = 0;
+    var maxAttenuation = 0;
+    var attenuation = 0;
+
+    console.warn("Fg length" +  $("input[name='attenuation']").length);
+
+    for (var i = 0; i < $("input[name='attenuation']").length; i++) {
+      /*  minAttenuation = parseFloat($("input[name='minAttenuation']").eq(i).val());
+        maxAttenuation = parseFloat($("input[name='maxAttenuation']").eq(i).val());*/
+        attenuation = parseFloat($("input[name='attenuation']").eq(i).val());
+    }
+
+    if ($("input[name='attenuation']").length == 0) {
+        $('#fgText').html('');
+        $('#resultFg').val('');
+        $('#abvText').html('');
+    } else {
+        attenuation = attenuation / $("input[name='attenuation']").length;
+        attenuation = attenuation / 100;
+
+        console.warn("attenuation" +  attenuation);
+
+        tg = og * attenuation;
+        fg = og - tg;
+        fg = (fg / 1000) + 1;
+        fg = fg.toFixed(3);
+        $('#fgText').html('FG : ' + fg);
+        $('#resultFg').val(fg);
+    }
+
+}
+
 function expectText(){
 
-    $('#expectName').html("<strong>"+$("#name").val() + "</strong>");
+    if (isNaN($("#name").val())) {
+        $('#expectName').html("이름없음");
+    }else{
+        $('#expectName').html("<strong>"+$("#name").val() + "</strong>");
+    }
+
+
     $('#expectStyle').html("<strong>"+$("#styleId option:selected").text() + "</strong>");
 
 
@@ -822,8 +980,9 @@ function expectText(){
 function calc() {
     calcSrm();
     calcOg();
+    calcFg();
     calcIbu();
-
+    calcAbv();
     /*calcSrm();
      calcOg();
      calcFg();
@@ -933,6 +1092,43 @@ function add_hop(hopData){
     calc();
 }
 
+function add_yeast(yeastData){
+
+    var returnYeastData = yeastData.split("^");
+
+     $.each(returnYeastData, function(i){
+        console.log(returnYeastData[i]);
+     });
+
+    yeastHtml = "";
+    yeastHtml = yeastHtml + "<tr role='row' class='filter'>";
+    yeastHtml = yeastHtml + "    <td>";
+    yeastHtml = yeastHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id' value='"+returnYeastData[1]+"'>";
+    yeastHtml = yeastHtml + "    </td>";
+    yeastHtml = yeastHtml + "    <td>";
+    yeastHtml = yeastHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id' value='"+returnYeastData[3]+"'>";
+    yeastHtml = yeastHtml + "    </td>";
+    yeastHtml = yeastHtml + "    <td>";
+    yeastHtml = yeastHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id' value='"+returnYeastData[2]+"'>";
+    yeastHtml = yeastHtml + "    </td>";
+    yeastHtml = yeastHtml + "    <td>";
+    yeastHtml = yeastHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id' value='"+returnYeastData[5]+"'>";
+    yeastHtml = yeastHtml + "    </td> ";
+    yeastHtml = yeastHtml + "    <td>";
+    yeastHtml = yeastHtml + "        <input type='text' class='form-control form-filter input-sm' name='attenuation' value='"+returnYeastData[4]+"'>";
+    yeastHtml = yeastHtml + "    </td>";
+    yeastHtml = yeastHtml + "    <td>";
+    yeastHtml = yeastHtml + "        <div class='margin-bottom-5'>";
+    yeastHtml = yeastHtml + "<button type='button' class='btn btn-sm red filter-submit margin-bottom row_yeast_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+    yeastHtml = yeastHtml + "        </div>";
+    yeastHtml = yeastHtml + "    </td>";
+    yeastHtml = yeastHtml + "</tr>";
+
+    $("#yeastListTable").append(yeastHtml);
+
+    calc();
+}
+
 $(document).ready(function () {
 
     $('#styleId').select2();
@@ -974,7 +1170,7 @@ $(document).ready(function () {
              */
         });
 
-        expectText()
+        expectText();
 
 
         //calc();
