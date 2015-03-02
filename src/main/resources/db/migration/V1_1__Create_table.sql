@@ -1,5 +1,5 @@
 -- 홉
-CREATE TABLE `brewduck`.`HOPS` (
+CREATE TABLE `HOPS` (
   `ID`            INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `NAME`          VARCHAR(800) NOT NULL COMMENT '이름', -- 이름
   `KOREAN_NAME`   VARCHAR(400) NULL     COMMENT '한글 이름', -- 한글 이름
@@ -25,14 +25,14 @@ CREATE TABLE `brewduck`.`HOPS` (
   COMMENT '홉';
 
 -- 홉
-ALTER TABLE `brewduck`.`HOPS`
+ALTER TABLE `HOPS`
 ADD CONSTRAINT `PK_HOPS` -- 홉 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 레시피
-CREATE TABLE `brewduck`.`RECIPES` (
+CREATE TABLE `RECIPES` (
   `ID`                          INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `BREWER_ID`                   INTEGER      NOT NULL COMMENT '양조자일련번호', -- 양조자일련번호
   `STYLE_ID`                    INTEGER      NOT NULL COMMENT '스타일일련번호', -- 스타일일련번호
@@ -72,7 +72,7 @@ CREATE TABLE `brewduck`.`RECIPES` (
   COMMENT '레시피';
 
 -- 레시피
-ALTER TABLE `brewduck`.`RECIPES`
+ALTER TABLE `RECIPES`
 ADD CONSTRAINT `PK_RECIPES` -- 레시피 기본키
 PRIMARY KEY (
     `ID`,        -- 일련번호
@@ -80,30 +80,32 @@ PRIMARY KEY (
   );
 
 -- 레시피_홉_맵핑
-CREATE TABLE `brewduck`.`RECIPES_HOPS` (
-  `ID`           INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
-  `HOP_ID`       INTEGER      NULL     COMMENT '홉 일련번호', -- 홉 일련번호
-  `RECIPE_ID`    INTEGER      NULL     COMMENT '레시피 일련번호', -- 레시피 일련번호
-  `DISPLAY_NAME` VARCHAR(400) NULL     COMMENT '표시이름', -- 표시이름
-  `RECIPE_ALPHA` DOUBLE       NULL     COMMENT '알파', -- 알파
-  `AMOUNTS`      DOUBLE       NULL     COMMENT '수량', -- 수량
-  `USE_CODE`     VARCHAR(2)   NULL     COMMENT '사용코드', -- 사용코드
-  `TYPE_CODE`    VARCHAR(6)   NULL     COMMENT '형태코드', -- 형태코드
-  `TIME`         INTEGER      NULL     COMMENT '시간', -- 시간
-  `TIME_CODE`    VARCHAR(2)   NULL     COMMENT '시간코드', -- 시간코드
-  `BREWER_ID`    INTEGER      NULL     COMMENT '양조자일련번호' -- 양조자일련번호
+CREATE TABLE `RECIPES_HOPS` (
+  `ID`                 INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
+  `HOP_ID`             INTEGER      NULL     COMMENT '홉 일련번호', -- 홉 일련번호
+  `RECIPE_ID`          INTEGER      NULL     COMMENT '레시피 일련번호', -- 레시피 일련번호
+  `DISPLAY_NAME`       VARCHAR(400) NULL     COMMENT '표시이름', -- 표시이름
+  `RECIPE_ALPHA`       DOUBLE       NULL     COMMENT '알파', -- 알파
+  `AMOUNTS`            DOUBLE       NULL     COMMENT '수량', -- 수량
+  `WEIGHT_UNIT_CODE`   VARCHAR(2)   NULL     COMMENT '무게단위코드', -- 무게단위코드
+  `USE_CODE`           VARCHAR(2)   NULL     COMMENT '사용코드', -- 사용코드
+  `TYPE_CODE`          VARCHAR(2)   NULL     COMMENT '형태코드', -- 형태코드
+  `TIME`               INTEGER      NULL     COMMENT '시간', -- 시간
+  `TIME_CODE`          VARCHAR(2)   NULL     COMMENT '시간코드', -- 시간코드
+  `RECIPE_ORIGIN_CODE` VARCHAR(2)   NULL     COMMENT '레시피원산지코드', -- 레시피원산지코드
+  `BREWER_ID`          INTEGER      NULL     COMMENT '양조자일련번호' -- 양조자일련번호
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '레시피_홉_맵핑';
 
 -- 레시피_홉_맵핑
-ALTER TABLE `brewduck`.`RECIPES_HOPS`
+ALTER TABLE `RECIPES_HOPS`
 ADD CONSTRAINT `PK_RECIPES_HOPS` -- 레시피_홉_맵핑 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 발효재료
-CREATE TABLE `brewduck`.`FERMENTABLES` (
+CREATE TABLE `FERMENTABLES` (
   `ID`               INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `NAME`             VARCHAR(800) NOT NULL COMMENT '이름', -- 이름
   `KOREAN_NAME`      VARCHAR(400) NULL     COMMENT '한국이름', -- 한국이름
@@ -133,25 +135,27 @@ CREATE TABLE `brewduck`.`FERMENTABLES` (
   COMMENT '발효재료';
 
 -- 발효재료
-ALTER TABLE `brewduck`.`FERMENTABLES`
+ALTER TABLE `FERMENTABLES`
 ADD CONSTRAINT `PK_FERMENTABLES` -- 발효재료 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 효모
-CREATE TABLE `brewduck`.`YEASTS` (
+CREATE TABLE `YEASTS` (
   `ID`               INTEGER       NOT NULL COMMENT '일련번호', -- 일련번호
   `NAME`             VARCHAR(800)  NULL     COMMENT '이름', -- 이름
   `KOREAN_NAME`      VARCHAR(400)  NULL     COMMENT '한글이름', -- 한글이름
   `VERSION`          INTEGER       NULL     COMMENT '버젼', -- 버젼
   `TYPE_CODE`        VARCHAR(2)    NULL     COMMENT '종류코드', -- 종류코드
   `FORM_CODE`        VARCHAR(2)    NULL     COMMENT '유형코드', -- 유형코드
-  `LABORATORY`       VARCHAR(100)  NULL     COMMENT '연구소', -- 연구소
+  `LABORATORY`       VARCHAR(400)  NULL     COMMENT '연구소', -- 연구소
   `PRODUCT_ID`       VARCHAR(100)  NULL     COMMENT '제품일련번호', -- 제품일련번호
   `MIN_TEMPERATURE`  DOUBLE        NULL     COMMENT '최소온도', -- 최소온도
   `MAX_TEMPERATURE`  DOUBLE        NULL     COMMENT '최대온도', -- 최대온도
   `FLOCCULATION`     VARCHAR(200)  NULL     COMMENT '응집력', -- 응집력
+  `MAX_ATTENUATION`  DOUBLE        NULL     COMMENT '최대발효도', -- 최대발효도
+  `MIN_ATTENUATION`  DOUBLE        NULL     COMMENT '최소발효도', -- 최소발효도
   `NOTES`            TEXT          NULL     COMMENT '설명', -- 설명
   `BEST_FOR`         VARCHAR(2000) NULL     COMMENT 'BEST방법', -- BEST방법
   `TIMES_CULTURED`   DOUBLE        NULL     COMMENT '효모배앙횟수', -- 효모배앙횟수
@@ -167,14 +171,14 @@ CREATE TABLE `brewduck`.`YEASTS` (
   COMMENT '효모';
 
 -- 효모
-ALTER TABLE `brewduck`.`YEASTS`
+ALTER TABLE `YEASTS`
 ADD CONSTRAINT `PK_YEASTS` -- 효모 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 스타일
-CREATE TABLE `brewduck`.`STYLES` (
+CREATE TABLE `STYLES` (
   `ID`              INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `NAME`            VARCHAR(800) NULL     COMMENT '이름', -- 이름
   `KOREAN_NAME`     VARCHAR(400) NULL     COMMENT '한글이름', -- 한글이름
@@ -216,19 +220,20 @@ CREATE TABLE `brewduck`.`STYLES` (
   COMMENT '스타일';
 
 -- 스타일
-ALTER TABLE `brewduck`.`STYLES`
+ALTER TABLE `STYLES`
 ADD CONSTRAINT `PK_STYLES` -- 스타일 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
-ALTER TABLE `brewduck`.`STYLES`
+ALTER TABLE `STYLES`
 MODIFY COLUMN `ID` INTEGER NOT NULL AUTO_INCREMENT COMMENT '일련번호';
 
 -- 기타재료
-CREATE TABLE `brewduck`.`MISCS` (
+CREATE TABLE `MISCS` (
   `ID`          INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `NAME`        VARCHAR(800) NULL     COMMENT '이름', -- 이름
+  `KOREAN_NAME` VARCHAR(400) NULL     COMMENT '한글이름', -- 한글이름
   `VERSION`     INTEGER      NULL     COMMENT '버젼', -- 버젼
   `TYPE_CODE`   VARCHAR(2)   NULL     COMMENT '종류코드', -- 종류코드
   `USE_FOR`     VARCHAR(2)   NULL     COMMENT '사용방법', -- 사용방법
@@ -243,19 +248,19 @@ CREATE TABLE `brewduck`.`MISCS` (
   COMMENT '기타재료';
 
 -- 기타재료
-ALTER TABLE `brewduck`.`MISCS`
+ALTER TABLE `MISCS`
 ADD CONSTRAINT `PK_MISCS` -- 기타재료 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 레시피_발효재료_맵핑
-CREATE TABLE `brewduck`.`RECIPES_FERMENTABLES` (
+CREATE TABLE `RECIPES_FERMENTABLES` (
   `ID`             INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `RECIPE_ID`      INTEGER      NULL     COMMENT '레시피 일련번호', -- 레시피 일련번호
   `FERMENTABLE_ID` INTEGER      NULL     COMMENT '발효재료 일련번호', -- 발효재료 일련번호
   `VERSION`        INTEGER      NULL     COMMENT '버젼', -- 버젼
-  `DISPLAY_NAME`   INTEGER      NULL     COMMENT '표시이름', -- 표시이름
+  `DISPLAY_NAME`   VARCHAR(400) NULL     COMMENT '표시이름', -- 표시이름
   `AMOUNTS`        DOUBLE       NULL     COMMENT '수량', -- 수량
   `WEIGHT_UNIT`    VARCHAR(2)   NULL     COMMENT '무게단위', -- 무게단위
   `TYPE_CODE`      VARCHAR(2)   NULL     COMMENT '종류코드', -- 종류코드
@@ -271,37 +276,40 @@ CREATE TABLE `brewduck`.`RECIPES_FERMENTABLES` (
   COMMENT '레시피_발효재료_맵핑';
 
 -- 레시피_발효재료_맵핑
-ALTER TABLE `brewduck`.`RECIPES_FERMENTABLES`
+ALTER TABLE `RECIPES_FERMENTABLES`
 ADD CONSTRAINT `PK_RECIPES_FERMENTABLES` -- 레시피_발효재료_맵핑 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 레시피_효모_맵핑
-CREATE TABLE `brewduck`.`RECIPES_YEASTS` (
-  `ID`           INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
-  `YEAST_ID`     INTEGER      NULL     COMMENT '효모일련번호', -- 효모일련번호
-  `RECIPE_ID`    INTEGER      NULL     COMMENT '레시피일련번호', -- 레시피일련번호
-  `DISPLAY_NAME` VARCHAR(400) NULL     COMMENT '표시이름', -- 표시이름
-  `INSERT_ID`    VARCHAR(400) NULL     COMMENT '저장아이디', -- 저장아이디
-  `INSERT_DATE`  DATETIME     NULL     COMMENT '저장일시', -- 저장일시
-  `UPDATE_ID`    VARCHAR(400) NULL     COMMENT '수정아이디', -- 수정아이디
-  `UPDATE_DATE`  DATETIME     NULL     COMMENT '수정일시', -- 수정일시
-  `DELETE_ID`    VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
-  `DELETE_DATE`  DATETIME     NULL     COMMENT '삭제일시', -- 삭제일시
-  `BREWER_ID`    INTEGER      NULL     COMMENT '양조자일련번호' -- 양조자일련번호
+CREATE TABLE `RECIPES_YEASTS` (
+  `ID`                 INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
+  `YEAST_ID`           INTEGER      NULL     COMMENT '효모일련번호', -- 효모일련번호
+  `RECIPE_ID`          INTEGER      NULL     COMMENT '레시피일련번호', -- 레시피일련번호
+  `DISPLAY_NAME`       VARCHAR(400) NULL     COMMENT '표시이름', -- 표시이름
+  `RECIPE_ATTENUATION` DOUBLE       NULL     COMMENT '레시피_발효도', -- 레시피_발효도
+  `RECIPE_LABORATORY`  VARCHAR(400) NULL     COMMENT '레시피_연구소', -- 레시피_연구소
+  `RECIPE_PRODUCT_ID`  INTEGER      NULL     COMMENT '레시피_제품일련번호', -- 레시피_제품일련번호
+  `INSERT_ID`          VARCHAR(400) NULL     COMMENT '저장아이디', -- 저장아이디
+  `INSERT_DATE`        DATETIME     NULL     COMMENT '저장일시', -- 저장일시
+  `UPDATE_ID`          VARCHAR(400) NULL     COMMENT '수정아이디', -- 수정아이디
+  `UPDATE_DATE`        DATETIME     NULL     COMMENT '수정일시', -- 수정일시
+  `DELETE_ID`          VARCHAR(400) NULL     COMMENT '삭제아이디', -- 삭제아이디
+  `DELETE_DATE`        DATETIME     NULL     COMMENT '삭제일시', -- 삭제일시
+  `BREWER_ID`          INTEGER      NULL     COMMENT '양조자일련번호' -- 양조자일련번호
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
   COMMENT '레시피_효모_맵핑';
 
 -- 레시피_효모_맵핑
-ALTER TABLE `brewduck`.`RECIPES_YEASTS`
+ALTER TABLE `RECIPES_YEASTS`
 ADD CONSTRAINT `PK_RECIPES_YEASTS` -- 레시피_효모_맵핑 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 레시피_기타재료_맵핑
-CREATE TABLE `brewduck`.`RECIPES_MISCS` (
+CREATE TABLE `RECIPES_MISCS` (
   `ID`               INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `RECIPE_ID`        INTEGER      NULL     COMMENT '레시피일련번호', -- 레시피일련번호
   `MISC_ID`          INTEGER      NULL     COMMENT '기타재료 일련번호', -- 기타재료 일련번호
@@ -322,14 +330,14 @@ CREATE TABLE `brewduck`.`RECIPES_MISCS` (
   COMMENT '레시피_기타재료_맵핑';
 
 -- 레시피_기타재료_맵핑
-ALTER TABLE `brewduck`.`RECIPES_MISCS`
+ALTER TABLE `RECIPES_MISCS`
 ADD CONSTRAINT `PK_RECIPES_MISCS` -- 레시피_기타재료_맵핑 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 홉 대체
-CREATE TABLE `brewduck`.`HOPS_SUBSTITUTES` (
+CREATE TABLE `HOPS_SUBSTITUTES` (
   `ID`             INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `HOP_ID`         INTEGER      NULL     COMMENT '홉 일련번호', -- 홉 일련번호
   `SUBSTITUTES_ID` INTEGER      NULL     COMMENT '대체품 일련번호', -- 대체품 일련번호
@@ -344,14 +352,14 @@ CREATE TABLE `brewduck`.`HOPS_SUBSTITUTES` (
   COMMENT '홉 대체';
 
 -- 홉 대체
-ALTER TABLE `brewduck`.`HOPS_SUBSTITUTES`
+ALTER TABLE `HOPS_SUBSTITUTES`
 ADD CONSTRAINT `PK_HOPS_SUBSTITUTES` -- 홉 대체 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 게시판 마스터
-CREATE TABLE `brewduck`.`BOARD_MASTER` (
+CREATE TABLE `BOARD_MASTER` (
   `ID`                 INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `NAME`               VARCHAR(800) NULL     COMMENT '이름', -- 이름
   `KOREAN_NAME`        VARCHAR(400) NULL     COMMENT '한글이름', -- 한글이름
@@ -374,14 +382,14 @@ CREATE TABLE `brewduck`.`BOARD_MASTER` (
   COMMENT '게시판 마스터';
 
 -- 게시판 마스터
-ALTER TABLE `brewduck`.`BOARD_MASTER`
+ALTER TABLE `BOARD_MASTER`
 ADD CONSTRAINT `PK_BOARD_MASTER` -- 게시판 마스터 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 게시판
-CREATE TABLE `brewduck`.`BOARD` (
+CREATE TABLE `BOARD` (
   `ID`            INTEGER       NOT NULL COMMENT '일련번호', -- 일련번호
   `MASTER_ID`     INTEGER       NULL     COMMENT '마스터일련번호', -- 마스터일련번호
   `NUM`           INTEGER       NULL     COMMENT '번호', -- 번호
@@ -403,14 +411,14 @@ CREATE TABLE `brewduck`.`BOARD` (
   COMMENT '게시판';
 
 -- 게시판
-ALTER TABLE `brewduck`.`BOARD`
+ALTER TABLE `BOARD`
 ADD CONSTRAINT `PK_BOARD` -- 게시판 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 게시판 댓글
-CREATE TABLE `brewduck`.`BOARD_COMMENT` (
+CREATE TABLE `BOARD_COMMENT` (
   `ID`          INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `ID2`         INTEGER      NULL     COMMENT '게시판마스터일련번호', -- 게시판마스터일련번호
   `ID3`         INTEGER      NULL     COMMENT '게시판일련번호', -- 게시판일련번호
@@ -427,17 +435,17 @@ CREATE TABLE `brewduck`.`BOARD_COMMENT` (
   COMMENT '게시판 댓글';
 
 -- 게시판 댓글
-ALTER TABLE `brewduck`.`BOARD_COMMENT`
+ALTER TABLE `BOARD_COMMENT`
 ADD CONSTRAINT `PK_BOARD_COMMENT` -- 게시판 댓글 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
-ALTER TABLE `brewduck`.`BOARD_COMMENT`
+ALTER TABLE `BOARD_COMMENT`
 MODIFY COLUMN `ID` INTEGER NOT NULL AUTO_INCREMENT COMMENT '일련번호';
 
 -- 공통코드
-CREATE TABLE `brewduck`.`COMMON_CODE` (
+CREATE TABLE `COMMON_CODE` (
   `COMMON_SET`  VARCHAR(20)  NULL COMMENT '공통설정', -- 공통설정
   `COMMON_CODE` VARCHAR(20)  NULL COMMENT '공통코드', -- 공통코드
   `NOTES`       TEXT         NULL COMMENT '설명', -- 설명
@@ -452,7 +460,7 @@ CREATE TABLE `brewduck`.`COMMON_CODE` (
   COMMENT '공통코드';
 
 -- 파일정보
-CREATE TABLE `brewduck`.`FILEINFO` (
+CREATE TABLE `FILEINFO` (
   `ID`             INTEGER      NULL COMMENT '일련번호', -- 일련번호
   `FILE_NUM`       INTEGER      NULL COMMENT '파일번호', -- 파일번호
   `SIZE`           INTEGER      NULL COMMENT '용량', -- 용량
@@ -470,7 +478,7 @@ CREATE TABLE `brewduck`.`FILEINFO` (
   COMMENT '파일정보';
 
 -- 홉 아로마
-CREATE TABLE `brewduck`.`HOPS_AROMA` (
+CREATE TABLE `HOPS_AROMA` (
   `ID`          INTEGER      NOT NULL COMMENT '일련번호', -- 일련번호
   `HOP_ID`      INTEGER      NULL     COMMENT '홉 일련번호', -- 홉 일련번호
   `NAME`        VARCHAR(800) NULL     COMMENT '이름', -- 이름
@@ -486,14 +494,14 @@ CREATE TABLE `brewduck`.`HOPS_AROMA` (
   COMMENT '홉 아로마';
 
 -- 홉 아로마
-ALTER TABLE `brewduck`.`HOPS_AROMA`
+ALTER TABLE `HOPS_AROMA`
 ADD CONSTRAINT `PK_HOPS_AROMA` -- 홉 아로마 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
 -- 계정
-CREATE TABLE `brewduck`.`ACCOUNT` (
+CREATE TABLE `ACCOUNT` (
   `ID`          INTEGER       NOT NULL COMMENT '일련번호', -- 일련번호
   `NAME`        VARCHAR(800)  NOT NULL COMMENT '이름', -- 이름
   `EMAIL`       VARCHAR(1000) NOT NULL COMMENT '이메일', -- 이메일
@@ -505,11 +513,11 @@ CREATE TABLE `brewduck`.`ACCOUNT` (
   COMMENT '계정';
 
 -- 계정
-ALTER TABLE `brewduck`.`ACCOUNT`
+ALTER TABLE `ACCOUNT`
 ADD CONSTRAINT `PK_ACCOUNT` -- 계정 기본키
 PRIMARY KEY (
     `ID` -- 일련번호
   );
 
-ALTER TABLE `brewduck`.`ACCOUNT`
+ALTER TABLE `ACCOUNT`
 MODIFY COLUMN `ID` INTEGER NOT NULL AUTO_INCREMENT COMMENT '일련번호';
