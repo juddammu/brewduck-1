@@ -266,14 +266,6 @@
         <li class="divider">
         </li>
         <li>
-            <a href="#">
-                <i class="icon-lock"></i> 화면 잠금 </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="icon-lock"></i> 화면 잠금 </a>
-        </li>
-        <li>
             <a href="/account/logout">
                 <i class="icon-key"></i> 로그 아웃 </a>
         </li>
@@ -315,9 +307,9 @@
                 <li>
                     <a href="#">레시피</a>
                 </li>
-                <li>
+                <!--li>
                     <a href="#">만들기</a>
-                </li>
+                </li-->
                 <li class="menu-dropdown classic-menu-dropdown ">
                     <a data-hover="megamenu-dropdown" data-close-others="true"
                        data-toggle="dropdown" href="javascript:;">

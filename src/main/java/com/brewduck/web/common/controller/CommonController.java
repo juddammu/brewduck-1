@@ -99,11 +99,11 @@ public class CommonController {
 
     @RequestMapping(value = "/popup/miscs",method = RequestMethod.GET)
     public String miscPopup(Model model, Yeast paramYeast) {
-        return "common/popup/misc-index";
+        return "common/popup/miscs-index";
     }
 
 
-    @RequestMapping(value = "/popup/miscts/list", method = RequestMethod.POST)
+    @RequestMapping(value = "/popup/miscs/list", method = RequestMethod.POST)
     @ResponseBody
     public List<Misc> miscData(Model model, Misc paramMisc) {
         // 맥주 맥아 목록 조회

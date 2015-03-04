@@ -19,8 +19,8 @@
 <input id="styleSrmMin" name="styleSrmMin" type="hidden" value="2">
 <input id="styleSrmMax" name="styleSrmMax" type="hidden" value="3">
 
-<input id="resultOg" name="resultOg" type="text">
-<input id="resultFg" name="resultFg" type="text">
+<input id="resultOg" name="resultOg" type="hidden">
+<input id="resultFg" name="resultFg" type="hidden">
 
 <input id="resultIbu" name="resultIbu" type="hidden">
 <input id="resultAbv" name="resultAbv" type="hidden">
@@ -381,19 +381,13 @@
         </div>
     </div>
 
-
     <div class="portlet-body">
-
 
         <div class="row">
 
-
             <div class="col-xs-9 invoice-block">
                 <div class="table-actions-wrapper pull-right  margin-bottom-10">
-									<span>
-									</span>
                     <button class="btn btn-sm yellow" href="/common/popup/fermentables" data-target="#ajax" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
-
                 </div>
 
                 <div class="table-scrollable">
@@ -521,8 +515,6 @@
 
             <div class="col-xs-9 invoice-block">
                 <div class="table-actions-wrapper pull-right  margin-bottom-10">
-                    <span>
-                    </span>
                     <button class="btn btn-sm yellow" href="/common/popup/hops" data-target="#ajax2" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
                 </div>
 
@@ -652,6 +644,55 @@
                         <h4 class="pull-right" id="abvResultText" name="abvResultText"></h4>
                     </div>
                 </div>
+
+            </div>
+        </div>
+
+        <!-- 기타재료 추가 화면 시작 -->
+        <div class="row">
+
+            <div class="col-xs-9 invoice-block">
+                <div class="table-actions-wrapper pull-right  margin-bottom-10">
+                    <span>
+                    </span>
+                    <button class="btn btn-sm yellow" href="/common/popup/miscs" data-target="#ajax4" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
+                </div>
+
+                <div class="table-scrollable">
+                    <table class="table table-striped table-bordered table-hover dataTable no-footer"
+                           id="miscListTable" name="miscListTable" aria-describedby="datatable_orders_info" role="grid">
+                        <thead>
+                        <tr role="row" class="heading">
+                            <th class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                재료명 &nbsp;
+                            </th>
+                            <th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                수량&nbsp;
+                            </th>
+                            <th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+
+                            </th>
+                            <th width="10%" cclass="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                시간
+                            </th>
+                            <th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+
+                            </th>
+                            <th width="6%" class="sorting" tabindex="0" aria-conwmatrols="datatable_orders" >
+                                사용방법                            </th>
+                            </th><th width="5%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                            삭제
+                        </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table></div>
+            </div>
+
+
+
+            <div class="col-xs-3">
 
             </div>
         </div>
@@ -931,8 +972,6 @@ function calcFg() {
     } else {
         attenuation = attenuation / $("input[name='attenuation']").length;
         attenuation = attenuation / 100;
-
-        console.warn("attenuation" +  attenuation);
 
         tg = og * attenuation;
         fg = og - tg;

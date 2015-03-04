@@ -63,6 +63,8 @@ CREATE TABLE `RECIPES` (
   `STATUS`                      INTEGER      NULL     COMMENT '상태', -- 상태
   `ATCH_FILE_ID`                INTEGER      NULL     COMMENT '첨부파일일련번호', -- 첨부파일일련번호
   `INSERT_ID`                   VARCHAR(400) NULL     COMMENT '저장아이디', -- 저장아이디
+  `MAIN_DISPLAY_YN`             VARCHAR(1)   NULL     COMMENT '메인노출여부', -- 메인노출여부
+  `ATCH_COVER_FILE_ID`          INTEGER      NULL     COMMENT '첨부커버파일일련번호', -- 첨부커버파일일련번호
   `INSERT_DATE`                 DATETIME     NULL     COMMENT '저장일시', -- 저장일시
   `UPDATE_ID`                   VARCHAR(400) NULL     COMMENT '수정아이디', -- 수정아이디
   `UPDATE_DATE`                 DATETIME     NULL     COMMENT '수정일시', -- 수정일시

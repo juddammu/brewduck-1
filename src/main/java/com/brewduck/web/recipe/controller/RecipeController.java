@@ -152,6 +152,14 @@ public class RecipeController {
     @RequestMapping(value = "/detail/{seq}/{titleInUrl}/{brewer}", method = RequestMethod.GET)
     public String abv(Model model, @PathVariable("seq") Integer seq, @PathVariable("titleInUrl") String titleInUrl
         , @PathVariable("brewer") Integer brewer) {
+
+        Recipe recipe = new Recipe();
+        recipe.setId(seq);
+        recipe.setBrewerId(brewer);
+        Recipe recipeDetail = recipeService.selectRecipeDetail(recipe);
+
+        model.addAttribute("recipeDetail", recipeDetail);
+
 /*
 
         Recipe recipe = new Recipe();

@@ -190,20 +190,41 @@
                             </c:otherwise>
                         </c:choose>
                     </td>
-                    <td>${hops.time} min</td>
                     <td>
                         <c:choose>
-                            <c:when test="${hops.form=='1'}">
+                            <c:when test="${hops.useCode=='1'}">
+
+                            </c:when>
+                            <c:when test="${hops.useCode=='2'}">
+
+                            </c:when>
+                            <c:when test="${hops.useCode=='3'}">
+                                ${hops.time} min
+                            </c:when>
+                            <c:when test="${hops.useCode=='5'}">
+
+                            </c:when>
+                            <c:when test="${hops.useCode=='6'}">
+
+                            </c:when>
+                            <c:otherwise>
+                                ${hops.time} min
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${hops.useCode=='1'}">
                                 Plug
                             </c:when>
-                            <c:when test="${hops.form=='2'}">
-                                -
+                            <c:when test="${hops.useCode=='2'}">
+                                Pellet
                             </c:when>
-                            <c:when test="${hops.form=='3'}">
+                            <c:when test="${hops.useCode=='3'}">
                                 Leaf
                             </c:when>
-                            <c:when test="${hops.form=='4'}">
-                                Pellet
+                            <c:when test="${hops.useCode=='4'}">
+
                             </c:when>
                             <c:otherwise>
                                 -
@@ -269,26 +290,26 @@
             <c:forEach items="${recipeDetail.miscs}" var="miscs" varStatus="i">
                 <tr>
                     <td>${miscs.koreanName}</td>
-                    <td>${miscs.amount}</td>
+                    <td>${miscs.weight}</td>
                     <td>${miscs.time}</td>
                     <td>
                         <c:choose>
-                            <c:when test="${miscs.miscUse=='1'}">
+                            <c:when test="${miscs.useFor=='1'}">
                                 Mash
                             </c:when>
-                            <c:when test="${miscs.miscUse=='2'}">
+                            <c:when test="${miscs.useFor=='2'}">
                                 Boil
                             </c:when>
-                            <c:when test="${miscs.miscUse=='3'}">
+                            <c:when test="${miscs.useFor=='3'}">
                                 Primary
                             </c:when>
-                            <c:when test="${miscs.miscUse=='4'}">
+                            <c:when test="${miscs.useFor=='4'}">
                                 Secondary
                             </c:when>
-                            <c:when test="${miscs.miscUse=='5'}">
+                            <c:when test="${miscs.useFor=='5'}">
                                 Bottle
                             </c:when>
-                            <c:when test="${miscs.miscUse=='6'}">
+                            <c:when test="${miscs.useFor=='6'}">
                                 Keg
                             </c:when>
                             <c:otherwise>

@@ -58,14 +58,28 @@ public class HomeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model,
         HttpServletRequest request) {
+
+        Recipe recipe = new Recipe();
+        recipe.setStatus("2");
+        recipe.setLimit(4);
+        recipe.setMainDisplayYn("Y");
+
+        List<Recipe> selectRecomendPublicRecipeList = recipeService.selectNewPublicRecipeList(recipe);
+
+        Recipe NewRecipe = new Recipe();
+        NewRecipe.setStatus("2");
+        NewRecipe.setLimit(4);
+
+        List<Recipe> selectNewPublicRecipeList = recipeService.selectNewPublicRecipeList(NewRecipe);
+
+        model.addAttribute("recomendPublicRecipeList", selectRecomendPublicRecipeList);
+        model.addAttribute("newPublicRecipeList", selectNewPublicRecipeList);
+
         // Account account = AuthenticationUtils.getUser();
         // model.addAttribute("account", account);
         /* 잠시 보류
         Hop hop = hopService.selectRandomHop();
-        Recipe recipe = new Recipe();
-        recipe.setStatus("2");
-        recipe.setLimit(4);
-        recipe.setMainDisplayYn("2");
+
 
 
 
@@ -83,8 +97,7 @@ public class HomeController {
 
         System.out.println("한글한글");
 
-        model.addAttribute("recomendPublicRecipeList", selectRecomendPublicRecipeList);
-        model.addAttribute("newPublicRecipeList", selectNewPublicRecipeList);
+
         model.addAttribute("hop", hop);
  */
         return "home";
@@ -239,7 +252,7 @@ public class HomeController {
         Recipe recipe = new Recipe();
         recipe.setStatus("2");
         recipe.setLimit(4);
-        recipe.setMainDisplayYn("2");
+        recipe.setMainDisplayYn("Y");
 
 
         /* 잠시 보류

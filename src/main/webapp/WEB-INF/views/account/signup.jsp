@@ -8,6 +8,14 @@
                 class="fa fa-rocket fa-fw"></i></h2>
         <h4 class="text-light text-inverse-alt">브루덕에 가입하기</h4>
     </div>
+
+    <c:if test="${loginError eq 'false'}">
+        <div class="alert alert-danger">
+            <button class="close" data-close="alert"></button>
+            <span>${errorMessage}</span>
+        </div>
+    </c:if>
+
     <div class="box-body box-centered style-inverse">
         <form:form id="authentication" class="form-content login-form" method="POST"
                    action="/account/join" modelAttribute="account">

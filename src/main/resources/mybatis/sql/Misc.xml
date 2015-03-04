@@ -7,6 +7,7 @@
         SELECT
                A.id               id
               ,A.name             name
+              ,A.korean_name             koreanName
               ,A.name             titleInUrl
               ,A.version          version
               ,A.TYPE_CODE        typeCode

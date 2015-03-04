@@ -334,9 +334,18 @@ public class RecipeServiceTest {
 
         System.out.println("adv : " + adv);
 
-
-
     }
 
+    @Test
+    public void selecNewPublicRecipeTest() {
+
+        Recipe recipe = new Recipe();
+        recipe.setStatus("2");
+        recipe.setLimit(4);
+        recipe.setMainDisplayYn("Y");
+
+        List<Recipe> selectRecomendPublicRecipeList = recipeDao.selectNewPublicRecipeList(recipe);
+
+    }
 
 }
