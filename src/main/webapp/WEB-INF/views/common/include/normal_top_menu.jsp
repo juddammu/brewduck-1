@@ -287,9 +287,9 @@
 <div class="page-header-menu">
     <div class="container-fluid">
         <!-- BEGIN HEADER SEARCH BOX -->
-        <form class="search-form" action="extra_search.html" method="GET">
+        <form class="search-form" action="/search/" method="POST">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="검색어를 입력하세요." name="query">
+                <input type="text" class="form-control" placeholder="검색어를 입력하세요." name="name" id="name">
 					<span class="input-group-btn">
 					<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
 					</span>

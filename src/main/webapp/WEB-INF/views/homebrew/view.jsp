@@ -217,10 +217,10 @@
                             <c:when test="${hops.useCode=='1'}">
                                 Plug
                             </c:when>
-                            <c:when test="${hops.useCode=='2'}">
+                            <c:when test="${hops.useCode=='3'}">
                                 Pellet
                             </c:when>
-                            <c:when test="${hops.useCode=='3'}">
+                            <c:when test="${hops.useCode=='2'}">
                                 Leaf
                             </c:when>
                             <c:when test="${hops.useCode=='4'}">

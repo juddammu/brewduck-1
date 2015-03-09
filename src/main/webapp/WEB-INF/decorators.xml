@@ -34,6 +34,10 @@
         <pattern>/style/*</pattern>
         <pattern>/style/*/*</pattern>
 
+        <pattern>/search/</pattern>
+        <pattern>/search/*</pattern>
+        <pattern>/search/*/*</pattern>
+
         <pattern>/recipe/</pattern>
         <pattern>/recipe/detail/*</pattern>
         <pattern>/recipe/main/*</pattern>
@@ -75,7 +79,7 @@
 
     <decorator name="public-content" page="public.jsp">
         <pattern>/public/recipe/*/*/*</pattern>
-        <pattern>/search/*/*</pattern>
+
         <!--        <pattern>/board/main/*</pattern>-->
         <pattern>/board/off-flavor</pattern>
         <pattern>/board/detail/*</pattern>
@@ -83,17 +87,9 @@
         <pattern>/board/editBoard/*</pattern>
     </decorator>
 
-    <decorator name="recipe-content" page="public-recipe.jsp">
-        <pattern>/list/recipe/*/*</pattern>
-        <pattern>/search/*</pattern>
-    </decorator>
 
     <decorator name="board-content" page="public-list.jsp">
         <pattern>/board/list</pattern>
-    </decorator>
-
-    <decorator name="expert2" page="recipe2.jsp">
-        <pattern>/common/code/list</pattern>
     </decorator>
 
 

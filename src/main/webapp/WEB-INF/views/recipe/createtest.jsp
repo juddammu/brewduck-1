@@ -48,12 +48,14 @@
             onsubmit="return false;"
             modelAttribute="paramRecipe">
 
+<input style="VISIBILITY: hidden; WIDTH: 0px">
+
 <input type="hidden"  id="id" name="id" value="${recipeId}">
 
 <!-- Begin: life time stats -->
 <div class="note note-info note-bordered">
     <p>
-        에러나 기능 개선이 필요하시면 <a href="#" target="_blank">
+        에러나 기능 개선이 필요하시면 <a href="https://github.com/opensource-brewduck/brewduck/issues" target="_blank">
         기능개선 게시판</a>을 활용해주세요.
     </p>
 </div>
@@ -249,13 +251,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <button type="submit" class="btn btn-primary" id="insertRecipe" name="insertRecipe">완료</button>
-            </div>
-        </div>
-
 
     </div>
 </div>
@@ -355,11 +350,7 @@
                 </tr>
                 <tr>
                     <td><span class="font-blue">Alcohol</span></td>
-                    <td id="expectAbv" name="expectAbv" colspan="2">8.4% ABV</td>
-                </tr>
-                <tr>
-                    <td><span class="font-blue">Calories</span></td>
-                    <td id="expectCalories" name="expectCalories" colspan="2">304 per 12oz</td>
+                    <td id="expectAbv" name="expectAbv" colspan="2">0 % ABV</td>
                 </tr>
             </table>
         </div>
@@ -375,19 +366,22 @@
 
 
 <div class="portlet light bordered">
-    <div class="portlet-title">
-        <div class="caption">
-            <i class="fa fa-gift"></i> 재료 구성
-        </div>
-    </div>
+
 
     <div class="portlet-body">
+
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i> 몰트 (Fermentables)
+            </div>
+        </div>
+
 
         <div class="row">
 
             <div class="col-xs-9 invoice-block">
                 <div class="table-actions-wrapper pull-right  margin-bottom-10">
-                    <button class="btn btn-sm yellow" href="/common/popup/fermentables" data-target="#ajax" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
+                    <button type="button" class="btn btn-sm yellow" href="/common/popup/fermentables" data-target="#ajax" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
                 </div>
 
                 <div class="table-scrollable">
@@ -515,7 +509,7 @@
 
             <div class="col-xs-9 invoice-block">
                 <div class="table-actions-wrapper pull-right  margin-bottom-10">
-                    <button class="btn btn-sm yellow" href="/common/popup/hops" data-target="#ajax2" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
+                    <button type="button" class="btn btn-sm yellow" href="/common/popup/hops" data-target="#ajax2" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
                 </div>
 
                 <div class="table-scrollable">
@@ -587,7 +581,7 @@
                 <div class="table-actions-wrapper pull-right  margin-bottom-10">
                     <span>
                     </span>
-                    <button class="btn btn-sm yellow" href="/common/popup/yeasts" data-target="#ajax3" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
+                    <button type="button" class="btn btn-sm yellow" href="/common/popup/yeasts" data-target="#ajax3" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
                 </div>
 
                 <div class="table-scrollable">
@@ -653,9 +647,7 @@
 
             <div class="col-xs-9 invoice-block">
                 <div class="table-actions-wrapper pull-right  margin-bottom-10">
-                    <span>
-                    </span>
-                    <button class="btn btn-sm yellow" href="/common/popup/miscs" data-target="#ajax4" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
+                    <button type="button" class="btn btn-sm yellow" href="/common/popup/miscs" data-target="#ajax4" data-toggle="modal"><i class="fa fa-check"></i> 추가</button>
                 </div>
 
                 <div class="table-scrollable">
@@ -663,14 +655,11 @@
                            id="miscListTable" name="miscListTable" aria-describedby="datatable_orders_info" role="grid">
                         <thead>
                         <tr role="row" class="heading">
-                            <th class="sorting" tabindex="0" aria-controls="datatable_orders" >
-                                재료명 &nbsp;
+                            <th width="20%" class="sorting" tabindex="0" aria-controls="datatable_orders">
+                                재료명
                             </th>
-                            <th width="15%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
-                                수량&nbsp;
-                            </th>
-                            <th width="10%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
-
+                            <th width="30%" colspan="2" class="sorting" tabindex="0" aria-controls="datatable_orders">
+                                수량
                             </th>
                             <th width="10%" cclass="sorting" tabindex="0" aria-controls="datatable_orders" >
                                 시간
@@ -679,23 +668,32 @@
 
                             </th>
                             <th width="6%" class="sorting" tabindex="0" aria-conwmatrols="datatable_orders" >
-                                사용방법                            </th>
-                            </th><th width="5%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
+                                사용방법
+                            </th>
+                            <th width="5%" class="sorting" tabindex="0" aria-controls="datatable_orders" >
                             삭제
-                        </th>
+                            </th>
                         </tr>
                         </thead>
-                        <tbody>
-                        </tbody>
-                    </table></div>
+                        <tbody></tbody>
+                    </table>
+                </div>
             </div>
-
-
 
             <div class="col-xs-3">
 
             </div>
         </div>
+
+
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <button type="submit" class="btn btn-primary" id="insertRecipe" name="insertRecipe">완료</button>
+            </div>
+        </div>
+
     </div>
     <!-- End: life time stats -->
 </div>
@@ -1080,9 +1078,6 @@ function add_fermententable(fermentableData){
 }
 
 function add_hop(hopData){
-
-
-
     var returnHopData = hopData.split("^");
 
   /*  $.each(returnHopData, function(i){
@@ -1168,7 +1163,53 @@ function add_yeast(yeastData){
     calc();
 }
 
+function add_misc(yeastData){
+
+    var returnYeastData = yeastData.split("^");
+
+    miscHtml = "";
+    miscHtml = miscHtml + "<tr role='row' class='filter'>";
+    miscHtml = miscHtml + "    <td>";
+    miscHtml = miscHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id' value='"+returnYeastData[1]+"'>";
+    miscHtml = miscHtml + "    </td>";
+    miscHtml = miscHtml + "    <td>";
+    miscHtml = miscHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id'>";
+    miscHtml = miscHtml + "    </td>";
+    miscHtml = miscHtml + "    <td>";
+    miscHtml = miscHtml + "        <select id='recipeWeightUnit' name ='recipeWeightUnit' class='form-control form-filter input-sm' required> ";
+    miscHtml = miscHtml + "                <option value='each'>each</option><option value='floz'>floz</option><option value='g'>g</option><option value='gal'>gal</option><option value='kg'>kg</option><option value='L'>L</option><option value='lb'>lb</option><option value='ml'>ml</option><option value='oz'>oz</option><option value='pt'>pt</option><option value='qt'>qt</option><option value='tbs'>tbs</option><option value='tsp'>tsp</option>";
+    miscHtml = miscHtml + "        </select> ";
+    miscHtml = miscHtml + "    </td>";
+    miscHtml = miscHtml + "    <td>";
+    miscHtml = miscHtml + "        <input type='text' class='form-control form-filter input-sm' name='order_id'>";
+    miscHtml = miscHtml + "    </td> ";
+    miscHtml = miscHtml + "    <td>";
+    miscHtml = miscHtml + "        <select id='recipeWeightUnit' name ='recipeWeightUnit' class='form-control form-filter input-sm' required> ";
+    miscHtml = miscHtml + "                <option value='days'>일</option><option value='hr'>시간</option><option value='min'>분</option><option value='week'>주</option><option value='yr'>년</option>";
+    miscHtml = miscHtml + "        </select> ";
+    miscHtml = miscHtml + "    </td>";
+    miscHtml = miscHtml + "    <td>";
+    miscHtml = miscHtml + "        <select id='recipeWeightUnit' name ='recipeWeightUnit' class='form-control form-filter input-sm' required> ";
+    miscHtml = miscHtml + "            <option value='2'>Boil</option><option value='5'>Bottle</option><option value='6'>Keg</option><option value='1'>Mash</option><option value='3'>Primary</option><option value='4'>Secondary</option>";
+    miscHtml = miscHtml + "        </select> ";
+    miscHtml = miscHtml + "    </td>";
+    miscHtml = miscHtml + "    <td>";
+    miscHtml = miscHtml + "        <div class='margin-bottom-5'>";
+    miscHtml = miscHtml + "<button type='button' class='btn btn-sm red filter-submit margin-bottom row_yeast_delete'><i class='fa fa-trash-o'></i> 삭제</button>";
+    miscHtml = miscHtml + "        </div>";
+    miscHtml = miscHtml + "    </td>";
+    miscHtml = miscHtml + "</tr>";
+
+    $("#miscListTable").append(miscHtml);
+
+    calc();
+}
+
 $(document).ready(function () {
+
+    $('#insert').submit(function(){
+        return false;
+    });
 
     $('#styleId').select2();
 

@@ -179,7 +179,6 @@
 
     <select id="Common.selectBoardList" parameterType="Board" resultType="Board">
         <include refid="Common.selectBoard"/>
-
         <if test="sort != null and sort == 'subject'">
             AND A.SUBJECT like CONCAT('%', #{searchVal}, '%')
         </if>
@@ -190,9 +189,7 @@
             AND A.INSERT_ID like CONCAT('%', #{searchVal}, '%')
         </if>
         AND A.MASTER_ID = #{bbsId}
-
         AND A.DELETE_ID IS NULL
-
     </select>
 
     <select id="Common.selectBoardDetail" parameterType="Board" resultType="Board">

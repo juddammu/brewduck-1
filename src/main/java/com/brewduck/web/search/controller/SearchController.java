@@ -39,18 +39,16 @@ public class SearchController {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String search(Model model, Board board) {
-
-
         return "search/index";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String result(Model model, Recipe recipe) {
-        System.out.println("name : " + recipe.getName());
-
         List<Recipe> recipeList = recipeService.searchRecipeList(recipe);
 
         model.addAttribute("recipeList", recipeList);
+        model.addAttribute("recipeListSize", recipeList.size());
+        model.addAttribute("name", recipe.getName());
 
         return "search/index";
     }
