@@ -5,45 +5,39 @@
 
     <sql id="Recipe.selectRecipe">
         SELECT
-               seq                   seq
-              ,name                  name
-              ,status                status
-              ,name                  titleInUrl
-              ,version               version
-              ,type                  type
-              ,style_seq             styleSeq
-              ,(SELECT B.KOREAN_NAME FROM STYLE B WHERE style_seq = B.SEQ) styleName
-              ,(SELECT B.STYLE_LETTER FROM STYLE B WHERE style_seq = B.SEQ) styleLetter
-              ,brewer                brewer
-              ,(SELECT C.name FROM account C WHERE C.id = brewer) brewerNm
-              ,asst_brewer           asstBrewer
-              ,batch_size            batchSize
-              ,boil_size             boilSize
-              ,boil_time             boilTime
-              ,efficiency            efficiency
-              ,notes                 notes
-              ,substring(notes, 1, 60)    shortNotes
-              ,og                    og
-              ,fg                    fg
-              ,primary_age           primaryAge
-              ,primary_temp          primaryTemp
-              ,secondary_age         secondaryAge
-              ,secondary_temp        secondaryTemp
-              ,age                   age
-              ,age_temp              ageTemp
-              ,priming_sugar_name    primingSugarName
-              ,read_count            readCount
-              ,ATCH_FILE_ID          atchFileId
-              ,ATCH_COVER_FILE_ID    atchCoverFileId
-              ,(SELECT B.FILENAME FROM FILEINFO B WHERE ATCH_FILE_ID = B.SEQ) atchFileName
-              ,(SELECT C.FILENAME FROM FILEINFO C WHERE ATCH_COVER_FILE_ID = C.SEQ) atchCoverFileName
-              ,insert_id             insertId
-              ,substring(insert_date, 1, 10)  insertDate
-              ,update_id             updateId
-              ,update_date           updateDate
-              ,delete_id             deleteId
-              ,delete_date           deleteDate
-          FROM brewduckdb.RECIPE
+           id                   id
+          ,name                  name
+          ,status                status
+          ,name                  titleInUrl
+          ,version               version
+          ,type_code             typeCode
+          ,style_id              styleId
+          ,(SELECT B.KOREAN_NAME FROM STYLES B WHERE style_id = B.id) styleName
+          ,(SELECT B.STYLE_LETTER FROM STYLES B WHERE style_id = B.id) styleLetter
+          ,brewer_id             brewerId
+          ,(SELECT C.name FROM ACCOUNT C WHERE C.id = brewer_id) brewerNm
+          ,asst_brewer_id        asstBrewerId
+          ,batch_size            batchSize
+          ,boil_size             boilSize
+          ,boil_time             boilTime
+          ,efficiency            efficiency
+          ,notes                 notes
+          ,substring(notes, 1, 60)    shortNotes
+          ,og                    og
+          ,fg                    fg
+          ,PRIMARY_FERMENTATION_TIME           primaryFermentationTime
+          ,PRIMARY_FERMENTATION_TEMP          primaryFermentationTemp
+          ,SECONDARY_FERMENTATION_TIME         secondaryFermentationTime
+          ,SECONDARY_FERMENTATION_TEMP        secondaryFermentationTemp
+          ,AGE_TIME                   ageTime
+          ,age_temp              ageTemp
+          ,insert_id             insertId
+          ,substring(insert_date, 1, 10)  insertDate
+          ,update_id             updateId
+          ,update_date           updateDate
+          ,delete_id             deleteId
+          ,delete_date           deleteDate
+        FROM RECIPES
     </sql>
 
     <sql id="Recipe.categoryList">
@@ -55,7 +49,7 @@
             ,A.type                  type
             ,A.style_seq             styleSeq
             ,(SELECT B.KOREAN_NAME FROM STYLE B WHERE style_seq = B.SEQ) styleName
-            ,A.brewer                brewer
+            ,A.brewer                brewerId
             ,(SELECT C.name FROM account C WHERE C.id = brewer) brewerNm
             ,A.asst_brewer           asstBrewer
             ,A.batch_size            batchSize
@@ -100,22 +94,22 @@
     <select id="Recipe.selectRecipeList" parameterType="Recipe" resultType="Recipe">
         select
         R.*
-        ,IFNULL((SELECT 1 FROM RECIPE_FERMENTABLE A WHERE A.brewer = R.brewer AND A.recipe_seq =
-        R.seq LIMIT 1),0)
-        +IFNULL((SELECT 1 FROM RECIPE_YEAST A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq
+        ,IFNULL((SELECT 1 FROM RECIPES_FERMENTABLES A WHERE A.brewer_id = R.brewerId AND A.recipe_id =
+        R.id LIMIT 1),0)
+        +IFNULL((SELECT 1 FROM RECIPES_YEASTS A WHERE A.brewer_id = R.brewerId AND A.recipe_id = R.id
         LIMIT 1),0)
-        +IFNULL((SELECT 1 FROM RECIPE_HOPS A WHERE A.brewer = R.brewer AND A.recipe_seq = R.seq
+        +IFNULL((SELECT 1 FROM RECIPES_HOPS A WHERE A.brewer_id = R.brewerId AND A.recipe_id = R.id
         LIMIT 1),0) as completeness
         FROM (
         <include refid="Recipe.selectRecipe"/>
         WHERE delete_id IS NULL
-        <if test="brewer != null">
-            AND brewer = #{brewer}
+        <if test="brewerId != null">
+            AND brewer_id = #{brewerId}
         </if>
         <if test="status != null">
             AND STATUS = #{status}
         </if>
-        ORDER BY seq desc ) R
+        ORDER BY id desc ) R
     </select>
 
     <select id="Recipe.selectNewPublicRecipeList" parameterType="Recipe" resultType="Recipe">
@@ -125,9 +119,8 @@
             AND STATUS = #{status}
         </if>
         <if test="mainDisplayYn != null">
-            AND MAIN_DISPLAY_YN = #{status}
+            AND MAIN_DISPLAY_YN = #{mainDisplayYn}
         </if>
-        AND ATCH_COVER_FILE_ID IS NOT NULL
         ORDER BY insert_date desc
         <if test="limit != null">
             LIMIT #{limit}
@@ -158,17 +151,17 @@
         <!-- 맥주 레시피 상세 조회 -->
         <include refid="Recipe.selectRecipe"/>
         WHERE delete_id IS NULL
-        <if test="seq != null">
-            AND seq = #{seq}
+        <if test="id != null">
+            AND id = #{id}
         </if>
         <if test="name != null">
             AND name = #{name}
         </if>
-        <if test="type != null">
-            AND type = #{type}
+        <if test="typeCode != null">
+            AND typeCode = #{typeCode}
         </if>
-        <if test="brewer != null">
-            AND brewer = #{brewer}
+        <if test="brewerId != null">
+            AND brewer_id = #{brewerId}
         </if>
         <if test="insertId != null">
             AND insert_id = #{insertId}
@@ -539,7 +532,7 @@
 
     <select id="countReply" parameterType="Board" resultType="Board">
 
-        select COUNT(ANSWER_NO) as countNum
+      select COUNT(ANSWER_NO) as countNum
       FROM RECIPE_COMMENT
       WHERE USER_ID = #{userId}
       AND RECIPE_ID = #{recipeId};
